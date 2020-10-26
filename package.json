@@ -1,0 +1,45 @@
+{
+    "name": "dataspot",
+    "version": "1.0.0",
+    "description": "Data Science Package for Javascript",
+    "scripts": {
+        "test": "jest --coverage --passWithNoTests",
+        "lint": "npm run lint:json && npm run lint:ts",
+        "lint:json": "prettier --list-different .eslintrc *.json",
+        "lint:ts": "eslint --ext .js,.ts --ignore-path .gitignore .",
+        "build": "tsc",
+        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ascentcore/dataspot.git"
+    },
+    "keywords": [
+        "data",
+        "science",
+        "clustering"
+    ],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ascentcore/dataspot/issues"
+    },
+    "homepage": "https://github.com/ascentcore/dataspot#readme",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.2.0",
+        "@typescript-eslint/parser": "^2.2.0",
+        "eslint": "^6.1.0",
+        "jest": "^26.4.2",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^26.3.0",
+        "typedoc": "^0.19.1",
+        "typedoc-plugin-markdown": "^2.4.2",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-prettier": "^3.1.0",
+        "prettier": "^1.18.2",
+        "typescript": "^3.6.3"
+    },
+    "dependencies": {}
+}
