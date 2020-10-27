@@ -1,12 +1,12 @@
 import Point from '../models/point'
-import { distance, minimum, averageVector, randomInt } from '../common/utils'
+import { VectorUtils, MathUtils } from '../math-utils'
 
 class KMeansPoint extends Point {
-    updateLabel(centroids: KMeansCentroid[]) {
+    updateLabel(centroids: KMeansCentroid[], distance: (v1: number[], v2: number[]) => number) {
         const distancesSquared = centroids.map((centroid: KMeansCentroid) => {
             return distance(this.Location, centroid.Location)
         })
-        this.label = minimum(distancesSquared)
+        this.label = VectorUtils.indexOfSmallest(distancesSquared)
     }
 }
 
@@ -16,26 +16,50 @@ class KMeansCentroid extends Point {
             return point.Label === this.Label
         })
         if (pointsWithThisCentroid.length > 0) {
-            this.location = averageVector(pointsWithThisCentroid.map((point) => point.Location))
+            this.location = VectorUtils.average(pointsWithThisCentroid.map((point) => point.Location))
         }
     }
 }
 
 export default class KMeans {
-    constructor(private nClusters: number, private maxIter = 300) {}
-
-    fit(data: number[][]): { points: KMeansPoint[]; centroids: KMeansCentroid[] } {
+    static fit(
+        data: number[][],
+        options: {
+            nClusters?: number
+            distance?: (v1: number[], v2: number[]) => number
+        } = {}
+    ): { points: KMeansPoint[]; centroids: KMeansCentroid[] } {
         const nClusters =
-            this.nClusters && this.nClusters <= data.length ? this.nClusters : Math.round(Math.sqrt(data.length / 2))
+            options.nClusters && options.nClusters <= data.length
+                ? options.nClusters
+                : Math.round(Math.sqrt(data.length / 2))
+        const distance = options.distance || VectorUtils.euclideanDistance
+
         const points = data.map((vector) => new KMeansPoint(vector, null))
         const centroids: KMeansCentroid[] = []
         for (let i = 0; i < nClusters; i++) {
-            centroids.push(new KMeansCentroid(points[randomInt(0, points.length)].Location, i))
+            centroids.push(new KMeansCentroid(points[MathUtils.randomInt(0, points.length)].Location, i))
         }
 
-        for (let iter = 0; iter < this.maxIter; iter++) {
-            points.forEach((point: KMeansPoint) => point.updateLabel(centroids))
-            centroids.forEach((centroid: KMeansCentroid) => centroid.updateLocation(points))
+        // eslint-disable-next-line no-constant-condition
+        while (true) {
+            let updated = false
+
+            points.forEach((point: KMeansPoint) => point.updateLabel(centroids, distance))
+            centroids.forEach((centroid: KMeansCentroid) => {
+                const oldCentroidLocation = [...centroid.Location]
+                centroid.updateLocation(points)
+                if (
+                    centroid.Location.filter((item: number, index: number) => item !== oldCentroidLocation[index])
+                        .length
+                ) {
+                    updated = true
+                }
+            })
+
+            if (!updated) {
+                break
+            }
         }
 
         return {
