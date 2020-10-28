@@ -32,10 +32,20 @@ export class MathUtils {
     }
 
     static random(min: number, max: number): number {
-        return MathUtils.rand() * (max - min) + min
+        return Math.random() * (max - min) + min
     }
 
     static randomInt(min: number, max: number): number {
+        const intMin = Math.ceil(min)
+        const intMax = Math.floor(max)
+        return Math.floor(Math.random() * (intMax - intMin)) + intMin
+    }
+
+    static seededRandom(min: number, max: number): number {
+        return MathUtils.rand() * (max - min) + min
+    }
+
+    static seededRandomInt(min: number, max: number): number {
         const intMin = Math.ceil(min)
         const intMax = Math.floor(max)
         return Math.floor(MathUtils.rand() * (intMax - intMin)) + intMin

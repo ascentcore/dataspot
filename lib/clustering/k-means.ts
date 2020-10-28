@@ -38,7 +38,7 @@ export default class KMeans {
         const points = data.map((vector) => new KMeansPoint(vector, null))
         const centroids: KMeansCentroid[] = []
         for (let i = 0; i < nClusters; i++) {
-            centroids.push(new KMeansCentroid(points[MathUtils.randomInt(0, points.length)].Location, i))
+            centroids.push(new KMeansCentroid(points[MathUtils.seededRandomInt(0, points.length)].Location, i))
         }
 
         // eslint-disable-next-line no-constant-condition
