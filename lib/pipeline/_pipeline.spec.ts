@@ -14,7 +14,7 @@ class TestStep extends Step<any, any> {
 }
 
 describe('Pipeline Unit Tests', () => {
-    it('should be able to create pipeline', async () => {
+    it('should be able to create pipeline', async (done) => {
         const pipe: Pipeline = new Pipeline()
         let index = 0
         const pipeEl = new TestStep(() => index++)
@@ -22,9 +22,10 @@ describe('Pipeline Unit Tests', () => {
         await pipe.execute()
 
         expect(index).toBe(1)
+        done()
     })
 
-    it('should be able to execute multiple steps', async () => {
+    it('should be able to execute multiple steps', async (done) => {
         const pipe: Pipeline = new Pipeline()
         let index = 0
         const pipeEl = new TestStep((input: number) => {
@@ -38,9 +39,10 @@ describe('Pipeline Unit Tests', () => {
 
         expect(index).toBe(3)
         expect(result).toBe(8)
+        done()
     })
 
-    it('should be able to execute in sync', async () => {
+    it('should be able to execute in sync', async (done) => {
         const pipe: Pipeline = new Pipeline()
         const seq: number[] = []
         const first = new TestStep(() => {
@@ -65,9 +67,10 @@ describe('Pipeline Unit Tests', () => {
         await pipe.execute()
 
         expect(seq).toEqual([1, 2])
+        done()
     })
 
-    it('should be able to execute in parallel', async () => {
+    it('should be able to execute in parallel', async (done) => {
         const pipe: Pipeline = new ParalelPipeline()
         const seq: number[] = []
         const first = new TestStep(() => {
@@ -92,9 +95,10 @@ describe('Pipeline Unit Tests', () => {
         await pipe.execute()
 
         expect(seq).toEqual([2, 1])
+        done()
     })
 
-    it('should be able to execute in waterfall', async () => {
+    it('should be able to execute in waterfall', async (done) => {
         const pipe: Pipeline = new WaterfallPipeline()
         const seq: number[] = []
         const first = new TestStep(() => {
@@ -119,5 +123,36 @@ describe('Pipeline Unit Tests', () => {
         await pipe.execute()
 
         expect(seq).toEqual([1, 2])
+        done()
+    })
+
+    it('should be able to share state between pipeline and steps', async (done) => {
+        const state = {}
+
+        const pipe: Pipeline = new Pipeline()
+        const pipeEl = new TestStep(() => {})
+        pipe.add(pipeEl)
+        pipe.setState(state)
+        pipe.setStateKey('key', 'value')
+
+        expect(pipeEl.getStateKey('key')).toBe('value')
+        done()
+    })
+
+    it('should be able to share state between pipeline and inner pipeline', async (done) => {
+        const state = {}
+
+        const pipe: Pipeline = new Pipeline()
+        const innerPipe: Pipeline = new Pipeline()
+        const pipeEl = new TestStep(() => {})
+
+        innerPipe.add(pipeEl)
+        pipe.add(innerPipe)
+
+        pipe.setState(state)
+        pipe.setStateKey('key', 'value')
+
+        expect(pipeEl.getStateKey('key')).toBe('value')
+        done()
     })
 })

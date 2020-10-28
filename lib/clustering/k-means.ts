@@ -1,7 +1,7 @@
 import Point from '../models/point'
 import { VectorUtils, MathUtils } from '../math-utils'
 
-class KMeansPoint extends Point {
+export class KMeansPoint extends Point {
     updateLabel(centroids: KMeansCentroid[], distance: (v1: number[], v2: number[]) => number) {
         const distancesSquared = centroids.map((centroid: KMeansCentroid) => {
             return distance(this.Location, centroid.Location)
@@ -10,7 +10,7 @@ class KMeansPoint extends Point {
     }
 }
 
-class KMeansCentroid extends Point {
+export class KMeansCentroid extends Point {
     updateLocation(points: Point[]) {
         const pointsWithThisCentroid = points.filter((point) => {
             return point.Label === this.Label
@@ -22,13 +22,13 @@ class KMeansCentroid extends Point {
 }
 
 export default class KMeans {
-    static fit(
+    static *fit(
         data: number[][],
         options: {
             nClusters?: number
             distance?: (v1: number[], v2: number[]) => number
         } = {}
-    ): { points: KMeansPoint[]; centroids: KMeansCentroid[] } {
+    ): Generator<KMeansCentroid[]> {
         const nClusters =
             options.nClusters && options.nClusters <= data.length
                 ? options.nClusters
@@ -60,6 +60,8 @@ export default class KMeans {
             if (!updated) {
                 break
             }
+
+            yield centroids
         }
 
         return {
