@@ -15,6 +15,7 @@
         "max-classes-per-file": ["off"],
         "no-plusplus": ["off"],
         "import/no-unresolved": ["off"],
-        "no-undef": "off"
+        "no-undef": "off",
+        "no-continue": "off"
     }
 }
