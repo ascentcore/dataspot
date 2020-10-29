@@ -2,11 +2,6 @@
 export class MathUtils {
     private static rand = MathUtils.mulberry32(MathUtils.xmur3('apples')())
 
-    static roundToPrecision(input: number, precision: number): number {
-        const prec = 10 ** precision
-        return Math.round(input * prec) / prec
-    }
-
     private static xmur3(str: string): () => number {
         let h = 1779033703 ^ str.length
         for (let i = 0; i < str.length; i++) {
@@ -29,6 +24,11 @@ export class MathUtils {
             t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
             return ((t ^ (t >>> 14)) >>> 0) / 4294967296
         }
+    }
+
+    static roundToPrecision(input: number, precision: number): number {
+        const prec = 10 ** precision
+        return Math.round(input * prec) / prec
     }
 
     static random(min: number, max: number): number {
