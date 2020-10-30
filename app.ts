@@ -1,6 +1,13 @@
 import KMeans, { KMeansCentroid, KMeansPoint } from './lib/clustering/k-means'
 
-const kmeans = KMeans.fit([[1, 1], [10, 10], [-10, -10], [1, 2], [10, 11], [-11, -10]])
+const kmeans = KMeans.fit([
+    [1, 1], //
+    [10, 10],
+    [-10, -10],
+    [1, 2],
+    [10, 11],
+    [-11, -10]
+])
 
 let done: boolean | undefined = false
 let result: { points: KMeansPoint[]; centroids: KMeansCentroid[] } = { points: [], centroids: [] }
