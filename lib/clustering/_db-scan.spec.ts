@@ -1,10 +1,9 @@
-import fillSpace from '../dataset/benchmark/fillSpaceDataset'
 import DBScan, { DBScanPoint } from '../clustering/db-scan'
 
 describe('DBScan', () => {
-    const data = fillSpace()
+    const data = [[-10, -10], [0, 0], [10, 10], [-10, -11], [0, 1], [10, 11]]
     it('performs clustering with dbscan', () => {
-        const dbscan = DBScan.fit(data, 0.02, 5)
+        const dbscan = DBScan.fit(data, 1.5, 2)
         let done: boolean | undefined = false
         let result: { clusters: number; points: DBScanPoint[] } = { clusters: -1, points: [] }
         while (!done) {
@@ -14,6 +13,6 @@ describe('DBScan', () => {
                 result = <{ clusters: number; points: DBScanPoint[] }>dbscanvalue.value
             }
         }
-        expect(result.clusters).toEqual(1)
+        expect(result.clusters).toEqual(3)
     })
 })

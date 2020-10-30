@@ -34,7 +34,7 @@ export default class DBScan {
 
             const neighbourIndexes = points[i].getNeighbourIndexes(points, epsilon, distance)
 
-            if (neighbourIndexes.length > minNeighbours) {
+            if (neighbourIndexes.length >= minNeighbours) {
                 currentCluster++
                 while (neighbourIndexes.length) {
                     const val: number | undefined = neighbourIndexes.pop()
