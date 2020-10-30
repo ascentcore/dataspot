@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import BaseVisualization from './basevis'
 
 export default class Scatter extends BaseVisualization {

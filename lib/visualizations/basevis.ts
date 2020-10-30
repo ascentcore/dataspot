@@ -7,8 +7,6 @@ export type DOMLikeRef = {
 export default abstract class BaseVisualization {
     protected globals: any = {}
 
-    protected serializable: any = {}
-
     public config: any = {}
 
     public initialize(svgRef: HTMLElement, width: number, height: number) {

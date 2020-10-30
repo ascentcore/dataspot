@@ -14,6 +14,6 @@ export default class RegisterInstance {
     }
 }
 
-export function getInstance<T>(ref: T): T {
-    return registry[ref.name]
+export function getInstance<T>(ref: { name: string }): T {
+    return <T>registry[ref.name]
 }

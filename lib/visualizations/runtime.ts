@@ -4,17 +4,12 @@ import { getInstance } from '../registry/registry'
 import Lab from '../lab'
 
 export default class VisualizationWrapper extends BaseVisualization {
-    
-    setupGlobals(): void {}
+    setupGlobals(): void {
+        // no globals to set for the wrapper
+    }
 
-    private pLab: Lab | undefined
-
-    get lab() {
-        if (!this.pLab) {
-            this.pLab = getInstance(Lab)
-        }
-
-        return this.pLab
+    get lab(): Lab {
+        return getInstance(Lab)
     }
 
     constructor(private visualization: BaseVisualization, width = 800, height = 600) {
