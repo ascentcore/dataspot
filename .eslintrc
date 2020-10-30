@@ -10,12 +10,13 @@
         "no-unused-vars": ["off"],
         "@typescript-eslint/no-unused-vars": ["error"],
         "no-empty-function": ["off"],
-        "@typescript-eslint/no-empty-function": ["error"],
+        "@typescript-eslint/no-empty-function": ["off"],
         "no-else-return": ["off"],
         "max-classes-per-file": ["off"],
         "no-plusplus": ["off"],
         "import/no-unresolved": ["off"],
         "no-undef": "off",
-        "no-continue": "off"
+        "no-continue": "off",
+        "import/extensions": "off"
     }
 }

@@ -44,7 +44,12 @@ describe('VectorUtils', () => {
     })
 
     it('average', () => {
-        expect(VectorUtils.average([[1, 2, 3], [4, 5, 6]])).toEqual([2.5, 3.5, 4.5])
+        expect(
+            VectorUtils.average([
+                [1, 2, 3], //
+                [4, 5, 6]
+            ])
+        ).toEqual([2.5, 3.5, 4.5])
     })
 
     it('index of smallest', () => {
