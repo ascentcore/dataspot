@@ -2,7 +2,9 @@
     "name": "@ascentcore/dataspot",
     "version": "1.0.0",
     "description": "Data Science Package for Javascript",
+    "main": "app.ts",
     "scripts": {
+        "dev": "nodemon",
         "test": "jest --coverage --passWithNoTests",
         "lint": "npm run lint:json && npm run lint:ts",
         "lint:json": "prettier --list-different .eslintrc *.json",
@@ -39,9 +41,11 @@
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-prettier": "^3.1.0",
         "jest": "^26.4.2",
+        "nodemon": "^2.0.4",
         "prettier": "^1.18.2",
         "rimraf": "^3.0.2",
         "ts-jest": "^26.3.0",
+        "ts-node": "^9.0.0",
         "typedoc": "^0.19.1",
         "typedoc-plugin-markdown": "^2.4.2",
         "typescript": "^3.8.0"
