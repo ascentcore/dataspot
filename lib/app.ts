@@ -1,27 +1,30 @@
-import calculate, { DOMAIN } from './dataset/benchmark/ackley'
+import { DOMAIN } from './dataset/benchmark/ackley'
 import Lab from './lab'
-import VisualizationWrapper from './visualizations/runtime'
-import Scatter from './visualizations/scatter'
+import SVGVisualizationWrapper from './visualizations/svg/svgvisualization'
+import Scatter from './visualizations/svg/scatter'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 ;(async () => {
-    // eslint-disable-next-line no-new
-    new Lab('research')
-    const vis1 = new VisualizationWrapper(new Scatter(), 500, 400)
-    const [min, max] = DOMAIN
-    vis1.setup({ min, max })
+    const lab = new Lab('research')
+    try {
+        await lab.connected
+    } catch (err) {
+        console.log('Unable to connect to lab...')
+    }
 
-    for (let i = 0; i < 100; i++) {
+    const [min, max] = DOMAIN
+    const vis1 = new SVGVisualizationWrapper(new Scatter(), { min, max }, 'scatter-plot', 300, 300)
+    for (let it = 0; it < 100; it++) {
         const data = []
         for (let i = min; i < max; i += 6) {
             for (let j = min; j < max; j += 6) {
-                data.push([i + Math.random() * 3, j + Math.random() * 3, Math.abs(Math.random() * 10), calculate(i, j)])
+                data.push([i + Math.round(Math.random() * 3), j + Math.round(Math.random() * 3), 2])
             }
         }
 
         vis1.dataUpdate(data)
 
         // eslint-disable-next-line no-await-in-loop
-        await snooze(1000)
+        await snooze(100)
     }
 })()
