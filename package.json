@@ -1,5 +1,5 @@
 {
-    "name": "dataspot",
+    "name": "@ascentcore/dataspot",
     "version": "1.0.0",
     "description": "Data Science Package for Javascript",
     "main": "app.ts",
@@ -28,6 +28,11 @@
     },
     "homepage": "https://github.com/ascentcore/dataspot#readme",
     "devDependencies": {
+        "@types/d3": "^5.16.3",
+        "@types/jsdom": "^16.2.4",
+        "@types/node-fetch": "^2.5.7",
+        "@types/pouchdb": "^6.4.0",
+        "@types/sharp": "^0.26.0",
         "@typescript-eslint/eslint-plugin": "^2.2.0",
         "@typescript-eslint/parser": "^2.2.0",
         "eslint": "^6.1.0",
@@ -45,5 +50,12 @@
         "typedoc-plugin-markdown": "^2.4.2",
         "typescript": "^3.8.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "canvas": "^2.6.1",
+        "d3": "^6.2.0",
+        "jsdom": "^16.4.0",
+        "node-fetch": "^2.6.1",
+        "pouchdb": "^7.2.2",
+        "sharp": "^0.26.2"
+    }
 }
