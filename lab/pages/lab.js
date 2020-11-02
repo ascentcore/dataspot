@@ -39,12 +39,12 @@ export default function Lab() {
             </Head>
 
             <main>
-                {/* <D3Visualization
+                <D3Visualization
                     db={db}
                     document='scatter-plot'
-                    key={docs['scater-plot-setup']}
+                    key={docs['scatter-plot-setup']}
                     rev={docs['scatter-plot-data']}
-                /> */}
+                />
                 <D3Visualization
                     db={db}
                     document='sigmoid-plot'

@@ -8,11 +8,6 @@ export default function D3Visualization({ db, document, rev }) {
     const [updateExpression, setUpdateExpression] = useState(null)
 
     const componentIsMounted = useRef(true)
-    useEffect(() => {
-        return () => {
-            componentIsMounted.current = false
-        }
-    }, [])
 
     function loadData() {
         db.get(`${document}-data`).then(function(doc) {
@@ -35,6 +30,9 @@ export default function D3Visualization({ db, document, rev }) {
 
             Object.assign(block, { config })
 
+            if (!block.dependencies.svg || block.dependencies.svg.empty()) {
+                block.dependencies.svg = d3.select(divRef.current.querySelector('svg'))
+            }
 
             let globalsExpr = prepareDependenciesExpr
                 .replace(/\/\/.*/g, '')
@@ -59,6 +57,10 @@ export default function D3Visualization({ db, document, rev }) {
             setUpdateExpression(() => dataUpdateExpression)
             setNode(doc.node)
         })
+
+        return () => {
+            componentIsMounted.current = false
+        }
     }, [])
 
     useEffect(() => {

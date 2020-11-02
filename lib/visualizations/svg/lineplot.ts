@@ -9,8 +9,6 @@ export default class LinePlot extends SVGBaseVisualization {
 
         svg.selectAll('*').remove()
 
-        
-
         const x = d3
             .scaleLinear()
             .domain([d3.min(data, (d: any) => d[0]), d3.max(data, (d: any) => d[0])])
@@ -41,9 +39,6 @@ export default class LinePlot extends SVGBaseVisualization {
             .x((d: any) => x(d[0]))
             .y((d: any) => y(d[1]))
 
-
-        
-
         svg.append('path')
             .datum(data)
             .attr('fill', 'none')
@@ -53,6 +48,5 @@ export default class LinePlot extends SVGBaseVisualization {
             .attr('stroke-linejoin', 'round')
             .attr('stroke-linecap', 'round')
             .attr('d', line)
-
     }
 }

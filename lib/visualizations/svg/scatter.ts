@@ -1,49 +1,45 @@
-import BaseVisualization from './svgbase'
-/*
-export default class Scatter extends BaseVisualization {
-    setup() {
-        const { d3 } = this.dependencies
-        const { min, max, width, height } = this.config
+import SVGBaseVisualization from './svgbase'
+
+export default class Scatter extends SVGBaseVisualization {
+    setup() {}
+
+    dataUpdate(data: any): void {
+        const { margin, width, height } = this.config
+        const { d3, svg } = this.dependencies
+
+        svg.selectAll('*').remove()
 
         const x = d3
             .scaleLinear()
-            .domain([min, max])
-            .range([20, width])
+            .domain([d3.min(data, (d: any) => d[0]), d3.max(data, (d: any) => d[0])])
+            .nice()
+            .range([margin.left, width - margin.right])
 
-        // Add Y axis
         const y = d3
             .scaleLinear()
-            .domain([min, max])
-            .range([height - 20, 0])
-
-        Object.assign(this.dependencies, { x, y })
-    }
-
-    setup(): void {
-        const { d3, svg, x, y } = this.dependencies
-        const { height } = this.config
+            .domain([d3.min(data, (d: any) => d[1]), d3.max(data, (d: any) => d[1])])
+            .nice()
+            .range([height - margin.bottom, margin.top])
 
         svg.append('g')
-            .attr('transform', `translate(0,${height - 20})`)
-            .call(d3.axisBottom(x))
-
-        svg.append('g')
-            .attr('transform', `translate(20,0)`)
+            .attr('transform', `translate(${margin.left},0)`)
             .call(d3.axisLeft(y))
-    }
 
-    dataUpdate(data: any): void {
-        const { svg, x, y } = this.dependencies
-        svg.selectAll('circle').remove()
+        svg.append('g')
+            .attr('transform', `translate(0,${height - margin.bottom})`)
+            .call(
+                d3
+                    .axisBottom(x)
+                    .ticks(width / 80)
+                    .tickSizeOuter(0)
+            )
 
         svg.append('g')
             .selectAll('circle')
             .data(data)
             .enter()
             .append('circle')
-            .attr('cx', (d: any[]) => {
-                return x(d[0]) || 0
-            })
+            .attr('cx', (d: any[]) => x(d[0]) || 0)
             .attr('cy', (d: any[]) => y(d[1]) || 0)
             .style('fill', `rgb(0, 0, 0)`)
             // .transition()
@@ -51,4 +47,3 @@ export default class Scatter extends BaseVisualization {
             .attr('r', (d: any[]) => d[2])
     }
 }
-*/
