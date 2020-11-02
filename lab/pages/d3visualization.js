@@ -35,11 +35,12 @@ export default function D3Visualization({ db, document, rev }) {
 
             Object.assign(block, { config })
 
+
             let globalsExpr = prepareDependenciesExpr
                 .replace(/\/\/.*/g, '')
                 .replace(/\n/g, ' ')
                 .replace(/this\./g, 'block.')
-                .replace(/prepareDependencies\(\) +{/g, '')
+                .replace(/setup\(\) +{/g, '')
                 .replace(/}$/g, '')
 
             let dataUpdateExpression = dataUpdateExpr

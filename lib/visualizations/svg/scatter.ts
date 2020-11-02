@@ -1,7 +1,7 @@
 import BaseVisualization from './svgbase'
-
+/*
 export default class Scatter extends BaseVisualization {
-    prepareDependencies() {
+    setup() {
         const { d3 } = this.dependencies
         const { min, max, width, height } = this.config
 
@@ -34,10 +34,7 @@ export default class Scatter extends BaseVisualization {
 
     dataUpdate(data: any): void {
         const { svg, x, y } = this.dependencies
-        svg.selectAll('circle')
-            // .transition()
-            // .duration(600)
-            .attr('r', '0')
+        svg.selectAll('circle').remove()
 
         svg.append('g')
             .selectAll('circle')
@@ -48,14 +45,10 @@ export default class Scatter extends BaseVisualization {
                 return x(d[0]) || 0
             })
             .attr('cy', (d: any[]) => y(d[1]) || 0)
-            .style(
-                'fill',
-                `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(
-                    Math.random() * 255
-                )})`
-            )
+            .style('fill', `rgb(0, 0, 0)`)
             // .transition()
             // .duration(1200)
             .attr('r', (d: any[]) => d[2])
     }
 }
+*/
