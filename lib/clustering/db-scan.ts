@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { VectorUtils } from '../math-utils'
-import Point from '../models/point'
+import Point from './point'
 
 export class DBScanPoint extends Point {
     getNeighbourIndexes(

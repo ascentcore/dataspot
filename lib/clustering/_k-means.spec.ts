@@ -1,4 +1,4 @@
-import fillSpace from '../dataset/benchmark/fillSpaceDataset'
+import fillSpace from '../dataset/fillSpaceDataset'
 import KMeans, { KMeansPoint, KMeansCentroid } from '../clustering/k-means'
 
 describe('K-means', () => {

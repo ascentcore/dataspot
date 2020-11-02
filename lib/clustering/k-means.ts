@@ -1,4 +1,4 @@
-import Point from '../models/point'
+import Point from './point'
 import { VectorUtils, MathUtils } from '../math-utils'
 
 export class KMeansPoint extends Point {

@@ -5,7 +5,7 @@ import ackley from './ackley'
 import griewank from './griewank'
 import rosenbrock from './rosenbrock'
 
-describe('Optimization Functions', () => {
+describe('Optimization Functions Benchmark', () => {
     it('Rastrigin tests', async () => {
         expect(rastrigin(0, 0)).toBe(0)
         expect(rastrigin(1, 1)).toBe(2)
