@@ -1,4 +1,8 @@
-.home-container h1{
+.home-container h1 {
     cursor: pointer;
     text-transform: capitalize;
+}
+
+.lab-container .lab-name {
+    text-transform: capitalize; 
 }

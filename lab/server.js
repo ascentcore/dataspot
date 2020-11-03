@@ -4,7 +4,7 @@ const expressPouch = require('express-pouchdb')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
+const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
 app.prepare()
