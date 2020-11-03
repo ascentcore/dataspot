@@ -57,14 +57,10 @@ class Lab extends RegisterInstance {
                 _id: key
             }
             try {
-                console.log('gettin...')
                 storeData = await this.db.get(key)
-                console.log(storeData)
             } catch (err) {
                 console.log('error', err)
             }
-
-            console.log('puttin....')
 
             return this.db.put(Object.assign(storeData, data)).catch((err: any) => console.log(err))
         } catch (err) {
