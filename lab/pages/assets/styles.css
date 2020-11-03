@@ -1,0 +1,4 @@
+.home-container h1{
+    cursor: pointer;
+    text-transform: capitalize;
+}

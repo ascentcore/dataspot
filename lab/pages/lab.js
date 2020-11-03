@@ -2,13 +2,21 @@ import PouchDB from 'pouchdb'
 import Head from 'next/head'
 import D3Visualization from './d3visualization'
 import { useEffect, useState } from 'react'
-
-var db = new PouchDB('http://localhost:3000/db/research')
+import { useRouter } from 'next/router'
 
 export default function Lab() {
     const [docs, setDocs] = useState({})
+    const [keys, setKeys] = useState([])
+    const router = useRouter()
+    const [db] = useState(() => {
+        return new PouchDB(`http://localhost:3000/db/${router.query.project}`)
+    })
 
     useEffect(() => {
+        db.allDocs().then((data) => {
+            const keys = Array.from(new Set(data.rows.map((row) => row.key.replace(/-data$|-setup$/, ''))))
+            setKeys(keys)
+        })
         const localState = {}
         const changes = db
             .changes({
@@ -39,18 +47,13 @@ export default function Lab() {
             </Head>
 
             <main>
-                <D3Visualization
-                    db={db}
-                    document='scatter-plot'
-                    key={docs['scatter-plot-setup']}
-                    rev={docs['scatter-plot-data']}
-                />
-                <D3Visualization
-                    db={db}
-                    document='sigmoid-plot'
-                    key={docs['sigmoid-plot-setup']}
-                    rev={docs['sigmoid-plot-data']}
-                />
+                {keys.map((key) => (
+                    <React.Fragment>
+                        <h1>{key}</h1>
+                        <D3Visualization db={db} document={key} key={docs[`${key}-setup`]} rev={docs[`${key}-data`]} />
+                        <br />
+                    </React.Fragment>
+                ))}
             </main>
         </div>
     )
