@@ -23,19 +23,12 @@ export default function D3Visualization({ db, document, rev }) {
 
     useEffect(() => {
         db.get(`${document}-setup`).then(function(doc) {
-            let { config, prepareDependenciesExpr, colorFn, dataUpdateExpr } = doc
+            let { config, prepareDependenciesExpr, dataUpdateExpr } = doc
             const block = {
                 dependencies: { d3 }
             }
-            if (colorFn) {
-                colorFn = colorFn
-                    .replace(/\/\/.*/g, '')
-                    .replace(/\n/g, ' ')
-                    .replace(/^[ ]{0,}(function|)[ ]{0,}\([^\)]{0,}\)[ ]{0,}(=>|)[ ]{0,}{/g, '')
-                    .replace(/}$/g, '')
-            }
 
-            Object.assign(block, { config: { ...config, colorFn: colorFn && Function('data', colorFn) } })
+            Object.assign(block, { config })
 
             if (!block.dependencies.svg || block.dependencies.svg.empty()) {
                 block.dependencies.svg = d3.select(divRef.current.querySelector('svg'))

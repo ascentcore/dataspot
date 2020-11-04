@@ -30,7 +30,6 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         if (this.lab) {
             this.lab.store(`${this.name}-setup`, {
                 config: this.visualization.config,
-                colorFn: this.visualization.config.colorFn ? this.visualization.config.colorFn.toString() : undefined,
                 node: this.visualization.getDependency('svg').node().outerHTML,
                 prepareDependenciesExpr: this.visualization.setup.toString(),
                 dataUpdateExpr: this.visualization.dataUpdate.toString()
