@@ -1,6 +1,6 @@
 import PouchDB from 'pouchdb'
 import Head from 'next/head'
-import D3Visualization from './d3visualization'
+import D3Visualization from './components/d3visualization'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 

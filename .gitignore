@@ -7,6 +7,6 @@ samples/output
 .vscode
 
 
-lab/log.txt
-lab/.next
-lab/dbs/*
+log.txt
+.next
+dbs/*
