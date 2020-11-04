@@ -17,8 +17,21 @@ export default function Home() {
         return date.toUTCString()
     }
 
+    const getEmpty = () => {
+        if (projects.length === 0) {
+            return (
+                <h2 className='text-center'>
+                    There are currently no research projects in progress. Feel free to explore our samples
+                </h2>
+            )
+        }
+
+        return null
+    }
+
     return (
         <div>
+            {getEmpty()}
             {projects.map((project) => (
                 <div className='column col-4 col-xs-12' key={project.name}>
                     <div
