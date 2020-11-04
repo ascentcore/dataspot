@@ -6,7 +6,6 @@ coverage
 samples/output
 .vscode
 
-
 log.txt
 .next
 dbs/*

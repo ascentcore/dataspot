@@ -1,62 +1,78 @@
-import { DOMAIN } from './lib/dataset/benchmark/ackley'
+import KMeans, { KMeansCentroid, KMeansPoint } from './lib/clustering/k-means'
 import Lab from './lib/lab'
 import SVGVisualizationWrapper from './lib/visualizations/svg/svgvisualizationwrapper'
 import Scatter from './lib/visualizations/svg/scatter'
+import potatoDataset from './lib/dataset/potatoDataset'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 ;(async () => {
-    const lab = new Lab('research')
+    const lab = new Lab('clustering')
     try {
         await lab.connected
     } catch (err) {
         console.log('Unable to connect to lab...')
     }
 
-    const [min, max] = DOMAIN
-    const vis1 = new SVGVisualizationWrapper(new Scatter({}), 'scatter-plot')
-    for (let it = 0; it < 100; it++) {
-        const data = []
-        for (let i = min; i < max; i += 6) {
-            for (let j = min; j < max; j += 6) {
-                data.push([i + Math.round(Math.random() * 3), j + Math.round(Math.random() * 3), 2])
-            }
+    const data1 = potatoDataset()
+    const kmeans = KMeans.fit(data1, { nClusters: 5 })
+    const vis1 = new SVGVisualizationWrapper(new Scatter({}), 'k-means', data1.map((data) => [...data, 1]))
+
+    let done: boolean | undefined = false
+    let result: { points: KMeansPoint[]; centroids: KMeansCentroid[] } = { points: [], centroids: [] }
+    while (!done) {
+        const kmeansValue = kmeans.next()
+        done = kmeansValue.done
+        if (!done) {
+            vis1.dataUpdate([
+                ...data1.map((data) => [...data, 1]),
+                ...kmeansValue.value.map((centroid: KMeansCentroid) => [...centroid.Location, 4])
+            ])
+        } else {
+            result = <{ points: KMeansPoint[]; centroids: KMeansCentroid[] }>kmeansValue.value
+            vis1.dataUpdate([
+                ...data1.map((data) => [...data, 1]),
+                ...result.centroids.map((centroid: KMeansCentroid) => [...centroid.Location, 4])
+            ])
         }
-
-        vis1.dataUpdate(data)
-
         // eslint-disable-next-line no-await-in-loop
-        await snooze(5000)
+        await snooze(500)
     }
+
+    console.log('\n-------------\n')
+
+    console.log(result.centroids)
 })()
 
-// import KMeans, { KMeansCentroid, KMeansPoint } from './lib/clustering/k-means'
+// import { DOMAIN } from './lib/dataset/benchmark/ackley'
+// import Lab from './lib/lab'
+// import SVGVisualizationWrapper from './lib/visualizations/svg/svgvisualizationwrapper'
+// import Scatter from './lib/visualizations/svg/scatter'
 
-// const kmeans = KMeans.fit([
-//     [1, 1], //
-//     [10, 10],
-//     [-10, -10],
-//     [1, 2],
-//     [10, 11],
-//     [-11, -10]
-// ])
-
-// let done: boolean | undefined = false
-// let result: { points: KMeansPoint[]; centroids: KMeansCentroid[] } = { points: [], centroids: [] }
-// while (!done) {
-//     const kmeansValue = kmeans.next()
-//     done = kmeansValue.done
-//     if (!done) {
-//         console.log('STEP')
-//         console.log(kmeansValue.value)
-//     } else {
-//         result = <{ points: KMeansPoint[]; centroids: KMeansCentroid[] }>kmeansValue.value
+// const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+// ;(async () => {
+//     const lab = new Lab('research')
+//     try {
+//         await lab.connected
+//     } catch (err) {
+//         console.log('Unable to connect to lab...')
 //     }
-// }
 
-// console.log('\n-------------\n')
+//     const [min, max] = DOMAIN
+//     const vis1 = new SVGVisualizationWrapper(new Scatter({}), 'scatter-plot')
+//     for (let it = 0; it < 100; it++) {
+//         const data = []
+//         for (let i = min; i < max; i += 6) {
+//             for (let j = min; j < max; j += 6) {
+//                 data.push([i + Math.round(Math.random() * 3), j + Math.round(Math.random() * 3), 2])
+//             }
+//         }
 
-// console.log(result.centroids)
-// console.log(result.points)
+//         vis1.dataUpdate(data)
+
+//         // eslint-disable-next-line no-await-in-loop
+//         await snooze(5000)
+//     }
+// })()
 
 // import { sigmoid, relu } from './functions/activations'
 // import Lab from './lab'
