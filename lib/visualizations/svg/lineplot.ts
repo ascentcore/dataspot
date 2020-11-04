@@ -4,7 +4,7 @@ export default class LinePlot extends SVGBaseVisualization {
     setup() {}
 
     dataUpdate(data: any): void {
-        const { margin, width, height } = this.config
+        const { margin, width, height, colorFn } = this.config
         const { d3, svg } = this.dependencies
 
         svg.selectAll('*').remove()
@@ -43,7 +43,7 @@ export default class LinePlot extends SVGBaseVisualization {
             .datum(data)
             .attr('fill', 'none')
             .attr('class', 'plot-path')
-            .attr('stroke', 'steelblue')
+            .attr('stroke', colorFn ? colorFn(data) : 'steelblue')
             .attr('stroke-width', 1.5)
             .attr('stroke-linejoin', 'round')
             .attr('stroke-linecap', 'round')

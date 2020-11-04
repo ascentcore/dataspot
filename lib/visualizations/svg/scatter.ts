@@ -4,7 +4,7 @@ export default class Scatter extends SVGBaseVisualization {
     setup() {}
 
     dataUpdate(data: any): void {
-        const { margin, width, height } = this.config
+        const { margin, width, height, colorFn } = this.config
         const { d3, svg } = this.dependencies
 
         svg.selectAll('*').remove()
@@ -41,7 +41,7 @@ export default class Scatter extends SVGBaseVisualization {
             .append('circle')
             .attr('cx', (d: any[]) => x(d[0]) || 0)
             .attr('cy', (d: any[]) => y(d[1]) || 0)
-            .style('fill', `rgb(0, 0, 0)`)
+            .style('fill', (d: any[]) => (colorFn ? colorFn(d) : `#d76aa3`))
             // .transition()
             // .duration(1200)
             .attr('r', (d: any[]) => d[2] || 1)

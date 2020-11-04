@@ -15,7 +15,12 @@ const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
     const data1 = potatoDataset()
     const kmeans = KMeans.fit(data1, { nClusters: 5 })
-    const vis1 = new SVGVisualizationWrapper(new Scatter({}), 'k-means', data1.map((data) => [...data, 1]))
+
+    const colorFn = (data: number[]) => {
+        return `#${Math.floor(Math.abs(Math.sin(data[3]) * 16777215) % 16777215).toString(16)}`
+    }
+
+    const vis1 = new SVGVisualizationWrapper(new Scatter({ colorFn }), 'k-means', data1.map((data) => [...data, 1, -1]))
 
     let done: boolean | undefined = false
     let result: { points: KMeansPoint[]; centroids: KMeansCentroid[] } = { points: [], centroids: [] }
@@ -23,24 +28,21 @@ const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
         const kmeansValue = kmeans.next()
         done = kmeansValue.done
         if (!done) {
+            result = <{ points: KMeansPoint[]; centroids: KMeansCentroid[] }>kmeansValue.value
             vis1.dataUpdate([
-                ...data1.map((data) => [...data, 1]),
-                ...kmeansValue.value.map((centroid: KMeansCentroid) => [...centroid.Location, 4])
+                ...result.points.map((point: KMeansPoint) => [...point.Location, 1, point.Label]),
+                ...result.centroids.map((centroid: KMeansCentroid) => [...centroid.Location, 4, centroid.Label])
             ])
         } else {
             result = <{ points: KMeansPoint[]; centroids: KMeansCentroid[] }>kmeansValue.value
             vis1.dataUpdate([
-                ...data1.map((data) => [...data, 1]),
-                ...result.centroids.map((centroid: KMeansCentroid) => [...centroid.Location, 4])
+                ...result.points.map((point: KMeansPoint) => [...point.Location, 1, point.Label]),
+                ...result.centroids.map((centroid: KMeansCentroid) => [...centroid.Location, 4, centroid.Label])
             ])
         }
         // eslint-disable-next-line no-await-in-loop
         await snooze(500)
     }
-
-    console.log('\n-------------\n')
-
-    console.log(result.centroids)
 })()
 
 // import { DOMAIN } from './lib/dataset/benchmark/ackley'

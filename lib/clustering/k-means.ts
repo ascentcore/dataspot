@@ -28,7 +28,7 @@ export default class KMeans {
             nClusters?: number
             distance?: (v1: number[], v2: number[]) => number
         } = {}
-    ): Generator<KMeansCentroid[]> {
+    ): Generator<{ points: KMeansPoint[]; centroids: KMeansCentroid[] }> {
         const nClusters =
             options.nClusters && options.nClusters <= data.length
                 ? options.nClusters
@@ -61,7 +61,10 @@ export default class KMeans {
                 break
             }
 
-            yield centroids
+            yield {
+                points,
+                centroids
+            }
         }
 
         return {
