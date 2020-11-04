@@ -1,7 +1,8 @@
 import PouchDB from 'pouchdb'
-import D3Visualization from './d3visualization'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+
+import D3Visualization from './components/d3visualization'
 
 export default function Lab() {
     const [docs, setDocs] = useState({})
@@ -15,8 +16,8 @@ export default function Lab() {
         }
     }, [router.query.project])
 
-    useEffect(()=> {
-        if(db !== null){
+    useEffect(() => {
+        if (db !== null) {
             db.allDocs().then((data) => {
                 const keys = Array.from(new Set(data.rows.map((row) => row.key.replace(/-data$|-setup$/, ''))))
                 setKeys(keys)
@@ -36,7 +37,7 @@ export default function Lab() {
                     console.log(err)
                     // handle errors
                 })
-    
+
             return () => {
                 console.log('Unsubscribing listener ...')
                 changes.cancel()

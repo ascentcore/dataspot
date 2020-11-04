@@ -44,6 +44,6 @@ export default class Scatter extends SVGBaseVisualization {
             .style('fill', `rgb(0, 0, 0)`)
             // .transition()
             // .duration(1200)
-            .attr('r', (d: any[]) => d[2])
+            .attr('r', (d: any[]) => d[2] || 1)
     }
 }

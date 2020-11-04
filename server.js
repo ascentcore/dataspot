@@ -1,11 +1,16 @@
+const fs = require('fs')
 const express = require('express')
-const PouchDB = require('pouchdb')
+const PouchDB = require('pouchdb').defaults({ prefix: 'dbs/' })
 const expressPouch = require('express-pouchdb')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
+
+if (!fs.existsSync('dbs')) {
+    fs.mkdirSync('dbs')
+}
 
 app.prepare()
     .then(() => {
@@ -35,7 +40,7 @@ const server = expressPouch({
     }
 })
 
-server.setPouchDB(require('pouchdb'))
+server.setPouchDB(PouchDB)
 
 server.listen(3100, (err) => {
     if (err) throw err
