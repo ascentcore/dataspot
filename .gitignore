@@ -7,10 +7,6 @@ samples/output
 .vscode
 
 
-lab/_replicator
-lab/_users
-lab/lab
-lab/research
-lab/pouch__all_dbs__
 lab/log.txt
 lab/.next
+lab/dbs/*
