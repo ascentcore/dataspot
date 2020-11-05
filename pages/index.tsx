@@ -30,7 +30,7 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className='home-container'>
             {getEmpty()}
             {projects.map((project) => (
                 <div className='column col-4 col-xs-12' key={project.name}>
@@ -55,27 +55,4 @@ export default function Home() {
             ))}
         </div>
     )
-
-    // return (
-    //     <div classNameName='home-container'>
-    //         <main>
-    //             {projects.map((project) => {
-
-    //                 return (
-    //                     <h1
-    //                         key={project}
-    //                         onClick={() => {
-    //                             router.push({
-    //                                 pathname: '/lab',
-    //                                 query: { project }
-    //                             })
-    //                         }}
-    //                     >
-    //                         {project}
-    //                     </h1>
-    //                 )
-    //             })}
-    //         </main>
-    //     </div>
-    // )
 }

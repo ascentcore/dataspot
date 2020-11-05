@@ -3,7 +3,6 @@ dist
 reports
 docs
 coverage
-samples/output
 .vscode
 
 log.txt
