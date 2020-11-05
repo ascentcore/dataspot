@@ -22,7 +22,7 @@ export default abstract class BaseVisualization {
      * Isomorphic method used on every data update
      * @param data array of data values
      */
-    abstract dataUpdate(data: any): void
+    abstract dataUpdate(data: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]): void
 
     public getDependency(key: string): any {
         return this.dependencies[key]

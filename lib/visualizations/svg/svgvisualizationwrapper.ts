@@ -8,7 +8,11 @@ import SVGBaseVisualization from './svgbase'
 export default class SVGVisualizationWrapper extends SVGBaseVisualization {
     private container!: Element | null
 
-    constructor(private visualization: SVGBaseVisualization, private name: string, initialData?: any) {
+    constructor(
+        private visualization: SVGBaseVisualization,
+        private name: string,
+        initialData?: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]
+    ) {
         super(visualization.config)
         this.setup(initialData)
     }
@@ -37,7 +41,7 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         }
     }
 
-    dataUpdate(data: any): void {
+    dataUpdate(data: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]): void {
         this.visualization.dataUpdate(data)
         if (this.lab) {
             this.lab.store(`${this.name}-data`, { data })
