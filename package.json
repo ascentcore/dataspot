@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "nodemon",
         "lab": "node server.js",
+        "build-lab": "next export",
         "test": "jest --coverage --passWithNoTests",
         "lint": "npm run lint:json && npm run lint:ts",
         "lint:json": "prettier --list-different .eslintrc *.json",
