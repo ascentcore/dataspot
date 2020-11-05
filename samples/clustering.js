@@ -3,21 +3,20 @@ const DBScan = require('../dist/clustering/db-scan').default
 const Lab = require('../dist/lab').default
 const SVGVisualizationWrapper = require('../dist/visualizations/svg/svgvisualizationwrapper').default
 const Scatter = require('../dist/visualizations/svg/scatter').default
-const concentricRingsDataset = require('../dist/dataset/concentricRingsDataset').default
 const VectorUtils = require('../dist/math-utils').VectorUtils
 
-const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-;(async () => {
-    const lab = new Lab('clustering')
-    try {
-        await lab.connected
-    } catch (err) {
-        console.log('Unable to connect to lab...')
-    }
+const arcDataset = require('../dist/dataset/arcDataset').default
+const blobDataset = require('../dist/dataset/blobDataset').default
+const concentricRingsDataset = require('../dist/dataset/concentricRingsDataset').default
+const fillSpaceDataset = require('../dist/dataset/fillSpaceDataset').default
+const noisyWithBlobDataset = require('../dist/dataset/noisyWithBlobDataset').default
+const potatoDataset = require('../dist/dataset/potatoDataset').default
 
-    const initialConcentricRingsDataset = concentricRingsDataset()
-    const kmeans = KMeans.fit(initialConcentricRingsDataset, { nClusters: 3 })
-    const dbscan = DBScan.fit(initialConcentricRingsDataset, {
+const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+const plotClustering = async (initialDataset, datasetName, nClusters) => {
+    const kmeans = KMeans.fit(initialDataset, { nClusters })
+    const dbscan = DBScan.fit(initialDataset, {
         epsilon: 0.05,
         minNeighbours: 8,
         distance: VectorUtils.manhattanDistance
@@ -25,15 +24,15 @@ const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
     const visKMeans = new SVGVisualizationWrapper(
         new Scatter({}),
-        'k-means',
-        initialConcentricRingsDataset.map((data) => {
+        `kmeans-${datasetName}`,
+        initialDataset.map((data) => {
             return { x: data[0], y: data[1], r: 1, color: -1 }
         })
     )
     const vizDBScan = new SVGVisualizationWrapper(
         new Scatter({}),
-        'dbscan',
-        initialConcentricRingsDataset.map((data) => {
+        `dbscan-${datasetName}`,
+        initialDataset.map((data) => {
             return { x: data[0], y: data[1], r: 1, color: -1 }
         })
     )
@@ -91,4 +90,26 @@ const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
         // eslint-disable-next-line no-await-in-loop
         await snooze(500)
     }
+}
+
+;(async () => {
+    const lab = new Lab('clustering')
+    try {
+        await lab.connected
+    } catch (err) {
+        console.log('Unable to connect to lab...')
+    }
+
+    const initialArcDataset = arcDataset()
+    const initialBlobDataset = blobDataset()
+    const initialConcentricRingsDataset = concentricRingsDataset()
+    const initialFillSpaceDataset = fillSpaceDataset()
+    const initialNoisyWithBlobDataset = noisyWithBlobDataset()
+    const initialPotatoDataset = potatoDataset()
+    plotClustering(initialArcDataset, 'arc')
+    plotClustering(initialBlobDataset, 'blob')
+    plotClustering(initialConcentricRingsDataset, 'concentric-ring')
+    plotClustering(initialFillSpaceDataset, 'fill-space')
+    plotClustering(initialNoisyWithBlobDataset, 'noisy-with-blob')
+    plotClustering(initialPotatoDataset, 'potato')
 })()
