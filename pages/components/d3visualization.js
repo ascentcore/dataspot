@@ -23,7 +23,7 @@ export default function D3Visualization({ db, document, rev }) {
 
     useEffect(() => {
         db.get(`${document}-setup`).then(function(doc) {
-            const { config, prepareDependenciesExpr, dataUpdateExpr } = doc
+            let { config, prepareDependenciesExpr, dataUpdateExpr } = doc
             const block = {
                 dependencies: { d3 }
             }

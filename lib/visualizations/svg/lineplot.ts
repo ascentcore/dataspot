@@ -3,7 +3,7 @@ import SVGBaseVisualization from './svgbase'
 export default class LinePlot extends SVGBaseVisualization {
     setup() {}
 
-    dataUpdate(data: any): void {
+    dataUpdate(data: { x: number; y: number }[]): void {
         const { margin, width, height } = this.config
         const { d3, svg } = this.dependencies
 
@@ -11,13 +11,19 @@ export default class LinePlot extends SVGBaseVisualization {
 
         const x = d3
             .scaleLinear()
-            .domain([d3.min(data, (d: any) => d[0]), d3.max(data, (d: any) => d[0])])
+            .domain([
+                d3.min(data, (d: { x: number; y: number }) => d.x),
+                d3.max(data, (d: { x: number; y: number }) => d.x)
+            ])
             .nice()
             .range([margin.left, width - margin.right])
 
         const y = d3
             .scaleLinear()
-            .domain([d3.min(data, (d: any) => d[1]), d3.max(data, (d: any) => d[1])])
+            .domain([
+                d3.min(data, (d: { x: number; y: number }) => d.y),
+                d3.max(data, (d: { x: number; y: number }) => d.y)
+            ])
             .nice()
             .range([height - margin.bottom, margin.top])
 
@@ -36,8 +42,8 @@ export default class LinePlot extends SVGBaseVisualization {
 
         const line = d3
             .line()
-            .x((d: any) => x(d[0]))
-            .y((d: any) => y(d[1]))
+            .x((d: { x: number; y: number }) => x(d.x))
+            .y((d: { x: number; y: number }) => y(d.y))
 
         svg.append('path')
             .datum(data)

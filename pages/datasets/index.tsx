@@ -13,7 +13,11 @@ function Representation({ data, name, width, height }) {
         const plot = new Scatter({ width, height })
         plot.setContainer(svgRef.current)
         plot.setup()
-        plot.dataUpdate(data)
+        plot.dataUpdate(
+            data.map((d) => {
+                return { x: d[0], y: d[1] }
+            })
+        )
     }, [svgRef])
 
     return (

@@ -10,7 +10,7 @@
         "test": "jest --coverage --passWithNoTests",
         "lint": "npm run lint:json && npm run lint:ts",
         "lint:json": "prettier --list-different .eslintrc *.json",
-        "lint:ts": "eslint --ext .js,.ts --ignore-path .gitignore .",
+        "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
         "build": "tsc",
         "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown"
     },
@@ -44,29 +44,28 @@
         "eslint-config-prettier": "^6.3.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-prettier": "^3.1.0",
-        "express": "^4.17.1",
-        "express-pouchdb": "^4.2.0",
         "jest": "^26.4.2",
-        "next": "9.5.3",
         "nodemon": "^2.0.4",
-        "pouchdb": "^7.2.2",
         "pouchdb-fauxton": "0.0.6",
         "prettier": "^1.18.2",
-        "react": "16.13.1",
         "react-dom": "16.13.1",
         "rimraf": "^3.0.2",
         "ts-jest": "^26.3.0",
         "ts-node": "^9.0.0",
         "typedoc": "^0.19.1",
         "typedoc-plugin-markdown": "^2.4.2",
-        "typescript": "^3.8.0"
+        "typescript": "^3.8.0",
+        "node-fetch": "^2.6.1"
     },
     "dependencies": {
+        "react": "16.13.1",
         "canvas": "^2.6.1",
         "d3": "^6.2.0",
         "jsdom": "^16.4.0",
-        "node-fetch": "^2.6.1",
         "pouchdb": "^7.2.2",
-        "sharp": "^0.26.2"
+        "sharp": "^0.26.2",
+        "express": "^4.17.1",
+        "express-pouchdb": "^4.2.0",
+        "next": "9.5.3"
     }
 }
