@@ -10,7 +10,7 @@
         "lint": "npm run lint:json && npm run lint:ts",
         "lint:json": "prettier --list-different .eslintrc *.json",
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
-        "build": "tsc",
+        "build": "tsc --p ./lib",
         "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown"
     },
     "repository": {
@@ -57,14 +57,15 @@
         "node-fetch": "^2.6.1"
     },
     "dependencies": {
-        "react": "16.13.1",
         "canvas": "^2.6.1",
         "d3": "^6.2.0",
-        "jsdom": "^16.4.0",
-        "pouchdb": "^7.2.2",
-        "sharp": "^0.26.2",
         "express": "^4.17.1",
         "express-pouchdb": "^4.2.0",
-        "next": "9.5.3"
+        "jsdom": "^16.4.0",
+        "next": "9.5.3",
+        "pouchdb": "^7.2.2",
+        "preact-compat": "^3.19.0",
+        "react": "16.13.1",
+        "sharp": "^0.26.2"
     }
 }

@@ -1,16 +1,16 @@
-const KMeans = require('../dist/clustering/k-means').default
-const DBScan = require('../dist/clustering/db-scan').default
-const Lab = require('../dist/lab').default
-const SVGVisualizationWrapper = require('../dist/visualizations/svg/svgvisualizationwrapper').default
-const Scatter = require('../dist/visualizations/svg/scatter').default
-const VectorUtils = require('../dist/math-utils').VectorUtils
+const KMeans = require('../../dist/clustering/k-means').default
+const DBScan = require('../../dist/clustering/db-scan').default
+const Lab = require('../../dist/lab').default
+const SVGVisualizationWrapper = require('../../dist/visualizations/svg/svgvisualizationwrapper').default
+const Scatter = require('../../dist/visualizations/svg/scatter').default
+const VectorUtils = require('../../dist/math-utils').VectorUtils
 
-const arcDataset = require('../dist/dataset/arcDataset').default
-const blobDataset = require('../dist/dataset/blobDataset').default
-const concentricRingsDataset = require('../dist/dataset/concentricRingsDataset').default
-const fillSpaceDataset = require('../dist/dataset/fillSpaceDataset').default
-const noisyWithBlobDataset = require('../dist/dataset/noisyWithBlobDataset').default
-const potatoDataset = require('../dist/dataset/potatoDataset').default
+const arcDataset = require('../../dist/dataset/arcDataset').default
+const blobDataset = require('../../dist/dataset/blobDataset').default
+const concentricRingsDataset = require('../../dist/dataset/concentricRingsDataset').default
+const fillSpaceDataset = require('../../dist/dataset/fillSpaceDataset').default
+const noisyWithBlobDataset = require('../../dist/dataset/noisyWithBlobDataset').default
+const potatoDataset = require('../../dist/dataset/potatoDataset').default
 
 const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 

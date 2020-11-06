@@ -1,31 +1,43 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { relu, identity, sigmoid } from '../../lib/functions/activations'
 import LinePlot from '../../lib/visualizations/svg/lineplot'
 
-function Representation({ data, name, width, height }) {
-    const svgRef = useRef(null)
+function Representation({
+    data,
+    name,
+    width,
+    height
+}: {
+    data: number[][]
+    name: string
+    width: number
+    height: number
+}) {
+    const svgRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        const plot = new LinePlot({ width, height })
-        plot.setContainer(svgRef.current)
-        plot.setup()
-        plot.dataUpdate(
-            data.map((d) => {
-                return { x: d[0], y: d[1] }
-            })
-        )
+        if (svgRef.current) {
+            const plot = new LinePlot({ width, height })
+            plot.setContainer(svgRef.current)
+            plot.setup()
+            plot.dataUpdate(
+                data.map((d: number[]) => {
+                    return { x: d[0], y: d[1] }
+                })
+            )
+        }
     }, [svgRef])
 
     return (
         <div>
             <h4>{name}</h4>
-            <div ref={svgRef} width={width} height={height}></div>
+            <div ref={svgRef}></div>
         </div>
     )
 }
 
-function getData(activationFn, min = -1, max = 1, step = 0.01) {
+function getData(activationFn: (x: number) => number, min = -1, max = 1, step = 0.01) {
     const data = []
     for (let i = min; i < max; i += step) {
         data.push([i, activationFn(i), 2])
