@@ -11,7 +11,8 @@
         "lint:json": "prettier --list-different .eslintrc *.json",
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
         "build": "tsc --p ./lib",
-        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown"
+        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown",
+        "generate-showcase": "cd showcase-generator && npm run build-prod"
     },
     "repository": {
         "type": "git",
