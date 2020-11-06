@@ -1,21 +1,21 @@
-const KMeans = require('../../dist/clustering/k-means').default
-const DBScan = require('../../dist/clustering/db-scan').default
-const Lab = require('../../dist/lab').default
-const SVGVisualizationWrapper = require('../../dist/visualizations/svg/svgvisualizationwrapper').default
-const Scatter = require('../../dist/visualizations/svg/scatter').default
-const VectorUtils = require('../../dist/math-utils').VectorUtils
+import KMeans from '../../lib/clustering/k-means'
+import DBScan from '../../lib/clustering/db-scan'
+import Lab from '../../lib/lab'
+import SVGVisualizationWrapper from '../../lib/visualizations/svg/svgvisualizationwrapper'
+import Scatter from '../../lib/visualizations/svg/scatter'
+const VectorUtils = require('../../lib/math-utils').VectorUtils
 
-const arcDataset = require('../../dist/dataset/arcDataset').default
-const blobDataset = require('../../dist/dataset/blobDataset').default
-const concentricRingsDataset = require('../../dist/dataset/concentricRingsDataset').default
-const fillSpaceDataset = require('../../dist/dataset/fillSpaceDataset').default
-const noisyWithBlobDataset = require('../../dist/dataset/noisyWithBlobDataset').default
-const potatoDataset = require('../../dist/dataset/potatoDataset').default
+import arcDataset from '../../lib/dataset/arcDataset'
+import blobDataset from '../../lib/dataset/blobDataset'
+import concentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
+import fillSpaceDataset from '../../lib/dataset/fillSpaceDataset'
+import noisyWithBlobDataset from '../../lib/dataset/noisyWithBlobDataset'
+import potatoDataset from '../../lib/dataset/potatoDataset'
 
-const snooze = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-const plotClustering = async (initialDataset, datasetName, nClusters) => {
-    const kmeans = KMeans.fit(initialDataset, { nClusters })
+const plotClustering = async (initialDataset, datasetName) => {
+    const kmeans = KMeans.fit(initialDataset)
     const dbscan = DBScan.fit(initialDataset, {
         epsilon: 0.05,
         minNeighbours: 8,

@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
