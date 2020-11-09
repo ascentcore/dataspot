@@ -77,6 +77,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         playBtn.disabled = false
         nextBtn.disabled = false
         iterations = 0
+        iterationsContainer.innerHTML = `Iterations: ${iterations} `
         kmeans = KMeans.fit(initialDataset)
         dbscan = DBScan.fit(initialDataset, {
             epsilon: 0.05,
@@ -164,8 +165,6 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
             // eslint-disable-next-line no-await-in-loop
             await snooze(100)
         }
-        playBtn.disabled = false
-        nextBtn.disabled = false
         resetBtn.disabled = false
     }
 
