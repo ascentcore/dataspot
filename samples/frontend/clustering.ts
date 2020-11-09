@@ -28,7 +28,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
 
     const card = document.createElement('div')
     card.setAttribute('class', 'card')
-    card.setAttribute('style', 'margin-bottom: 100px')
+    card.setAttribute('style', 'margin-bottom: 100px; padding: 50px 25px;')
     container.appendChild(card)
 
     const header = document.createElement('div')
@@ -37,8 +37,8 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
     card.appendChild(header)
 
     const plots = document.createElement('div')
-    plots.setAttribute('class', 'plots')
-    plots.setAttribute('style', 'display: flex;justify-content: space-evenly;padding: 100px 0;')
+    plots.setAttribute('class', 'plots card-body')
+    plots.setAttribute('style', 'display: flex; justify-content: space-evenly; padding: 100px 0; flex-wrap: wrap;')
     card.appendChild(plots)
 
     const footer = document.createElement('div')
@@ -117,20 +117,40 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
                 resultKmeans = kmeansValue.value
                 visKMeans.dataUpdate([
                     ...resultKmeans.points.map((point: Point) => {
-                        return { x: point.Location[0], y: point.Location[1], r: 1, color: point.Label || 0 }
+                        return {
+                            x: point.Location[0],
+                            y: point.Location[1],
+                            r: 1,
+                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
+                        }
                     }),
                     ...resultKmeans.centroids.map((centroid: Point) => {
-                        return { x: centroid.Location[0], y: centroid.Location[1], r: 5, color: centroid.Label || 0 }
+                        return {
+                            x: centroid.Location[0],
+                            y: centroid.Location[1],
+                            r: 5,
+                            color: centroid.Label !== undefined && centroid.Label !== null ? centroid.Label : -1
+                        }
                     })
                 ])
             } else {
                 resultKmeans = kmeansValue.value
                 visKMeans.dataUpdate([
                     ...resultKmeans.points.map((point: Point) => {
-                        return { x: point.Location[0], y: point.Location[1], r: 1, color: point.Label || 0 }
+                        return {
+                            x: point.Location[0],
+                            y: point.Location[1],
+                            r: 1,
+                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
+                        }
                     }),
                     ...resultKmeans.centroids.map((centroid: Point) => {
-                        return { x: centroid.Location[0], y: centroid.Location[1], r: 5, color: centroid.Label || 0 }
+                        return {
+                            x: centroid.Location[0],
+                            y: centroid.Location[1],
+                            r: 5,
+                            color: centroid.Label !== undefined && centroid.Label !== null ? centroid.Label : -1
+                        }
                     })
                 ])
             }
@@ -142,14 +162,24 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
             if (!doneDBScan) {
                 vizDBScan.dataUpdate([
                     ...dbscanValue.value.map((point: Point) => {
-                        return { x: point.Location[0], y: point.Location[1], r: 1, color: point.Label || 0 }
+                        return {
+                            x: point.Location[0],
+                            y: point.Location[1],
+                            r: 1,
+                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
+                        }
                     })
                 ])
             } else {
                 resultDBScan = dbscanValue.value
                 vizDBScan.dataUpdate([
                     ...resultDBScan.points.map((point: Point) => {
-                        return { x: point.Location[0], y: point.Location[1], r: 1, color: point.Label || 0 }
+                        return {
+                            x: point.Location[0],
+                            y: point.Location[1],
+                            r: 1,
+                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
+                        }
                     })
                 ])
             }
@@ -184,7 +214,7 @@ export default function plot(container: HTMLElement): void {
 
     const title = document.createElement('h1')
     title.setAttribute('style', 'text-align: center; margin-bottom: 50px;')
-    title.innerHTML = 'Clustering. KMeans vs DBScan'
+    title.innerHTML = 'Clustering - KMeans vs DBScan'
     container.appendChild(title)
 
     plotClustering(container, initialArcDataset, 'arc')
