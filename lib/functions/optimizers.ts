@@ -1,9 +1,18 @@
+export function mseDerivatesCostFunction(input: number, target: number, weight: number, bias: number): number[] {
+    const derivate = []
+    derivate.push(-2 * input * (target - (weight * input + bias)))
+    derivate.push(-2 * (target - (weight * input + bias)))
+
+    return derivate
+}
+
 export default function gradientDescent(
     input: number[],
     target: number[],
     weight: number,
     bias: number,
-    learningRate: number
+    learningRate: number,
+    derivatesCostFunction: Function
 ) {
     let newWeight = 0
     let newBias = 0
@@ -14,12 +23,10 @@ export default function gradientDescent(
     const samples = input.length
 
     for (let i = 0; i < samples; i++) {
-        // Calculate partial derivatives
-        // -2x(y - (mx + b))
-        weightDeriv += -2 * input[i] * (target[i] - (weight * input[i] + bias))
+        const [wD, bD] = derivatesCostFunction(input, target, weight, bias)
 
-        // -2(y - (mx + b))
-        biasDeriv += -2 * (target[i] - (weight * input[i] + bias))
+        weightDeriv += wD
+        biasDeriv += bD
     }
 
     stepSizeWeight = (weightDeriv / samples) * learningRate
