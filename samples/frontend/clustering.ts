@@ -28,6 +28,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
 
     const card = document.createElement('div')
     card.setAttribute('class', 'card')
+    card.setAttribute('style', 'margin-bottom: 100px')
     container.appendChild(card)
 
     const header = document.createElement('div')
