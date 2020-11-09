@@ -5,6 +5,12 @@ export default class Scatter extends SVGBaseVisualization {
         const { d3 } = this.dependencies
         const palette = d3.scaleOrdinal(d3.schemeAccent)
         Object.assign(this.dependencies, { palette })
+        if (this.dependencies.x) {
+            this.dependencies.x = null
+        }
+        if (this.dependencies.y) {
+            this.dependencies.y = null
+        }
     }
 
     dataUpdate(data: { x: number; y: number; r?: number; color?: number }[]): void {
