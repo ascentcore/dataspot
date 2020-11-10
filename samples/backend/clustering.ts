@@ -26,14 +26,14 @@ const plotClustering = async (initialDataset, datasetName) => {
         new Scatter({}),
         `kmeans-${datasetName}`,
         initialDataset.map((data) => {
-            return { x: data[0], y: data[1], r: 1, color: -1 }
+            return { x: data[0], y: data[1], r: 1 }
         })
     )
     const vizDBScan = new SVGVisualizationWrapper(
         new Scatter({}),
         `dbscan-${datasetName}`,
         initialDataset.map((data) => {
-            return { x: data[0], y: data[1], r: 1, color: -1 }
+            return { x: data[0], y: data[1], r: 1 }
         })
     )
 

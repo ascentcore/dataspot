@@ -25,7 +25,7 @@ export default class DBScan {
             minNeighbours?: number
             distance?: (v1: number[], v2: number[]) => number
         } = {}
-    ): Generator<DBScanPoint[]> {
+    ): Generator<{ points: DBScanPoint[]; clusters: number }> {
         if (!options.epsilon) {
             options.epsilon = 0.1
         }
@@ -65,7 +65,7 @@ export default class DBScan {
                 points[i].setLabel(null)
             }
 
-            yield points
+            yield { points, clusters: currentCluster + 1 }
         }
 
         return { clusters: currentCluster + 1, points }

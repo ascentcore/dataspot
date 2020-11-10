@@ -91,14 +91,14 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         visKMeans.setup()
         visKMeans.dataUpdate(
             initialDataset.map((data) => {
-                return { x: data[0], y: data[1], r: 2, color: -1 }
+                return { x: data[0], y: data[1], r: 1.2 }
             })
         )
 
         vizDBScan.setup()
         vizDBScan.dataUpdate(
             initialDataset.map((data) => {
-                return { x: data[0], y: data[1], r: 2, color: -1 }
+                return { x: data[0], y: data[1], r: 1.2 }
             })
         )
     }
@@ -113,76 +113,41 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         if (!doneKmeans) {
             const kmeansValue = kmeans.next()
             doneKmeans = kmeansValue.done || false
-            if (!doneKmeans) {
-                resultKmeans = kmeansValue.value
-                visKMeans.dataUpdate([
-                    ...resultKmeans.points.map((point: Point) => {
-                        return {
-                            x: point.Location[0],
-                            y: point.Location[1],
-                            r: 2,
-                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
-                        }
-                    }),
-                    ...resultKmeans.centroids.map((centroid: Point) => {
-                        return {
-                            x: centroid.Location[0],
-                            y: centroid.Location[1],
-                            r: 5,
-                            color: centroid.Label !== undefined && centroid.Label !== null ? centroid.Label : -1
-                        }
-                    })
-                ])
-            } else {
-                resultKmeans = kmeansValue.value
-                visKMeans.dataUpdate([
-                    ...resultKmeans.points.map((point: Point) => {
-                        return {
-                            x: point.Location[0],
-                            y: point.Location[1],
-                            r: 2,
-                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
-                        }
-                    }),
-                    ...resultKmeans.centroids.map((centroid: Point) => {
-                        return {
-                            x: centroid.Location[0],
-                            y: centroid.Location[1],
-                            r: 5,
-                            color: centroid.Label !== undefined && centroid.Label !== null ? centroid.Label : -1
-                        }
-                    })
-                ])
-            }
+            resultKmeans = kmeansValue.value
+            visKMeans.dataUpdate([
+                ...resultKmeans.points.map((point: Point) => {
+                    return {
+                        x: point.Location[0],
+                        y: point.Location[1],
+                        r: 1.2,
+                        color: point.Label
+                    }
+                }),
+                ...resultKmeans.centroids.map((centroid: Point) => {
+                    return {
+                        x: centroid.Location[0],
+                        y: centroid.Location[1],
+                        r: 5,
+                        color: centroid.Label
+                    }
+                })
+            ])
         }
 
         if (!doneDBScan) {
             const dbscanValue = dbscan.next()
             doneDBScan = dbscanValue.done || false
-            if (!doneDBScan) {
-                vizDBScan.dataUpdate([
-                    ...dbscanValue.value.map((point: Point) => {
-                        return {
-                            x: point.Location[0],
-                            y: point.Location[1],
-                            r: 2,
-                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
-                        }
-                    })
-                ])
-            } else {
-                resultDBScan = dbscanValue.value
-                vizDBScan.dataUpdate([
-                    ...resultDBScan.points.map((point: Point) => {
-                        return {
-                            x: point.Location[0],
-                            y: point.Location[1],
-                            r: 2,
-                            color: point.Label !== undefined && point.Label !== null ? point.Label : -1
-                        }
-                    })
-                ])
-            }
+            resultDBScan = dbscanValue.value
+            vizDBScan.dataUpdate([
+                ...resultDBScan.points.map((point: Point) => {
+                    return {
+                        x: point.Location[0],
+                        y: point.Location[1],
+                        r: 1.2,
+                        color: point.Label
+                    }
+                })
+            ])
         }
     }
 
