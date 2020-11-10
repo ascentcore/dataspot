@@ -32,27 +32,29 @@ export default function Home() {
     return (
         <div className='home-container'>
             {getEmpty()}
-            {projects.map((project) => (
-                <div className='column col-4 col-xs-12' key={project.name}>
-                    <div
-                        className='card'
-                        onClick={() => {
-                            router.push({
-                                pathname: '/lab',
-                                query: { project: project.name }
-                            })
-                        }}
-                    >
-                        <div className='card-image'>
-                            <img className='img-responsive' style={{ width: '100%' }} src='/header-img.jpeg' />
+            <div className='columns'>
+                {projects.map((project) => (
+                    <div className='column col-4 col-xs-12' key={project.name} style={{ cursor: 'pointer' }}>
+                        <div
+                            className='card'
+                            onClick={() => {
+                                router.push({
+                                    pathname: '/lab',
+                                    query: { project: project.name }
+                                })
+                            }}
+                        >
+                            <div className='card-image'>
+                                <img className='img-responsive' style={{ width: '100%' }} src='/header-img.jpeg' />
+                            </div>
+                            <div className='card-header'>
+                                <div className='card-title h5'>{project.name}</div>
+                            </div>
+                            <div className='card-body'>Last update: {getUpdateValue(project.update)}</div>
                         </div>
-                        <div className='card-header'>
-                            <div className='card-title h5'>{project.name}</div>
-                        </div>
-                        <div className='card-body'>Last update: {getUpdateValue(project.update)}</div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }
