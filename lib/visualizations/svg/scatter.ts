@@ -5,6 +5,12 @@ export default class Scatter extends SVGBaseVisualization {
         const { d3 } = this.dependencies
         const palette = d3.scaleOrdinal(d3.schemeAccent)
         Object.assign(this.dependencies, { palette })
+        if (this.dependencies.x) {
+            this.dependencies.x = null
+        }
+        if (this.dependencies.y) {
+            this.dependencies.y = null
+        }
     }
 
     dataUpdate(data: { x: number; y: number; r?: number; color?: number }[]): void {
@@ -52,7 +58,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color ? palette(d.color) : 'steelblue'
+                    d.color !== undefined ? palette(d.color) : 'steelblue'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         } else {
@@ -62,7 +68,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color ? palette(d.color) : 'steelblue'
+                    d.color !== undefined ? palette(d.color) : 'steelblue'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
                 .enter()
@@ -70,7 +76,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color ? palette(d.color) : 'steelblue'
+                    d.color !== undefined ? palette(d.color) : 'steelblue'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         }
