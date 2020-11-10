@@ -35,6 +35,11 @@ const config = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.tsx', '.ts']
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 4500
     }
 }
 

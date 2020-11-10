@@ -20,10 +20,10 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
     let doneDBScan = false
     let resultKmeans = { points: [], centroids: [] }
     let resultDBScan = { points: [], centroids: 0 }
-    let visKMeans,
-        vizDBScan,
-        kmeans,
-        dbscan,
+    let visKMeans: any,
+        vizDBScan: any,
+        kmeans: any,
+        dbscan: any,
         iterations = 0
 
     const card = document.createElement('div')
@@ -91,14 +91,14 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         visKMeans.setup()
         visKMeans.dataUpdate(
             initialDataset.map((data) => {
-                return { x: data[0], y: data[1], r: 1, color: -1 }
+                return { x: data[0], y: data[1], r: 2, color: -1 }
             })
         )
 
         vizDBScan.setup()
         vizDBScan.dataUpdate(
             initialDataset.map((data) => {
-                return { x: data[0], y: data[1], r: 1, color: -1 }
+                return { x: data[0], y: data[1], r: 2, color: -1 }
             })
         )
     }
@@ -120,7 +120,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
                         return {
                             x: point.Location[0],
                             y: point.Location[1],
-                            r: 1,
+                            r: 2,
                             color: point.Label !== undefined && point.Label !== null ? point.Label : -1
                         }
                     }),
@@ -140,7 +140,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
                         return {
                             x: point.Location[0],
                             y: point.Location[1],
-                            r: 1,
+                            r: 2,
                             color: point.Label !== undefined && point.Label !== null ? point.Label : -1
                         }
                     }),
@@ -165,7 +165,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
                         return {
                             x: point.Location[0],
                             y: point.Location[1],
-                            r: 1,
+                            r: 2,
                             color: point.Label !== undefined && point.Label !== null ? point.Label : -1
                         }
                     })
@@ -177,7 +177,7 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
                         return {
                             x: point.Location[0],
                             y: point.Location[1],
-                            r: 1,
+                            r: 2,
                             color: point.Label !== undefined && point.Label !== null ? point.Label : -1
                         }
                     })
