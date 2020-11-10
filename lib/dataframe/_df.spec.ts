@@ -74,11 +74,31 @@ describe('DataFrame', () => {
         expect(df.length).toBe(200)
     })
 
-    it('expect to allow sort', () => {
+    it('expect to get column(s)', () => {
+        const df: DataFrame = DataFrame.fromArray(
+            [['a', 6, 1], ['b', 5, 1], ['c', 4, 2], ['d', 3, 1], ['e', 2, 3], ['f', 1, 2]],
+            {
+                columns: ['letter', 'value', 'group']
+            }
+        )
+
+        expect(df.getColumns(['value'])).toBe()
+    })
+
+    it('expect to allow indexing', () => {
         const df: DataFrame = DataFrame.fromArray([['a', 6], ['b', 5], ['c', 4], ['d', 3], ['e', 2], ['f', 1]], {
             columns: ['letter', 'value']
         })
 
-        expect(df.indexBy('value')).toThrowError()
+        expect(df.indexBy('value'))
+        expect(df.indexBy('letter'))
+    })
+
+    it('expect to allow sorting', () => {
+        const df: DataFrame = DataFrame.fromArray([['a', 6], ['b', 5], ['c', 4], ['d', 3], ['e', 2], ['f', 1]], {
+            columns: ['letter', 'value']
+        })
+
+        expect(df.sortBy('value'))
     })
 })
