@@ -22,7 +22,7 @@ function gradientDescent(
     const samples = input.length
 
     for (let i = 0; i < samples; i++) {
-        const [wD, bD] = derivatesCostFunction(input, target, weight, bias)
+        const [wD, bD] = derivatesCostFunction(input[i], target[i], weight, bias)
 
         weightDeriv += wD
         biasDeriv += bD
