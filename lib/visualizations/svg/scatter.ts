@@ -58,7 +58,9 @@ export default class Scatter extends SVGBaseVisualization {
                 .append('circle')
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
-                .style('fill', 'black')
+                .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
+                )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         } else {
             svg.select('#point-group')
