@@ -2,7 +2,7 @@ import KMeans from '../../lib/clustering/k-means'
 import DBScan from '../../lib/clustering/db-scan'
 
 import Scatter from '../../lib/visualizations/svg/scatter'
-import Point from '../../dist/clustering/point'
+import Point from '../../lib/clustering/point'
 
 import { VectorUtils } from '../../lib/math-utils'
 

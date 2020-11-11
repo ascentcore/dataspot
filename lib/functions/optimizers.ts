@@ -1,4 +1,4 @@
-function mseDerivatesCostFunction(input: number, target: number, weight: number, bias: number): number[] {
+function mseCostFunction(input: number, target: number, weight: number, bias: number): number[] {
     const derivate = []
     derivate.push(-2 * input * (target - (weight * input + bias)))
     derivate.push(-2 * (target - (weight * input + bias)))
@@ -6,13 +6,13 @@ function mseDerivatesCostFunction(input: number, target: number, weight: number,
     return derivate
 }
 
-function gradientDescent(
+export default function gradientDescent(
     input: number[],
     target: number[],
     weight: number,
     bias: number,
     learningRate: number,
-    derivatesCostFunction: Function
+    costFunction: Function
 ): number[] {
     let weightDeriv = 0
     let biasDeriv = 0
@@ -22,7 +22,7 @@ function gradientDescent(
     const samples = input.length
 
     for (let i = 0; i < samples; i++) {
-        const [wD, bD] = derivatesCostFunction(input[i], target[i], weight, bias)
+        const [wD, bD] = costFunction(input[i], target[i], weight, bias)
 
         weightDeriv += wD
         biasDeriv += bD
@@ -37,4 +37,4 @@ function gradientDescent(
     return update
 }
 
-export { gradientDescent, mseDerivatesCostFunction }
+export { gradientDescent, mseCostFunction }
