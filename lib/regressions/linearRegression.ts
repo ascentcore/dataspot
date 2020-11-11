@@ -46,8 +46,9 @@ export default class LinearRegression {
                 costHistory.length >= 3 &&
                 costHistory[costHistory.length - 1] === costHistory[costHistory.length - 2] &&
                 costHistory[costHistory.length - 2] === costHistory[costHistory.length - 3]
-            )
+            ) {
                 updated = false
+            }
 
             if (!updated || currentEpoch === epochs) {
                 break
