@@ -17,10 +17,10 @@ export default abstract class SVGBaseVisualization extends BaseVisualization {
         Object.assign(this.dependencies, { d3 })
     }
 
-    public setContainer(svgRef: HTMLElement) {
+    public setContainer(containerRef: HTMLElement) {
         const { width, height } = this.config
         const svg = d3
-            .select(svgRef)
+            .select(containerRef)
             .append('svg')
             .attr('width', width)
             .attr('height', height)
