@@ -1,4 +1,7 @@
+import * as THREE from 'three'
 import ThreeBaseVisualization from './threebase'
+
+const OrbitControls = require('three-orbit-controls')(THREE)
 
 export default class MeshPlot extends ThreeBaseVisualization {
     setup() {}
@@ -11,13 +14,14 @@ export default class MeshPlot extends ThreeBaseVisualization {
         yMin: number
         yMax: number
     }): void {
-        const { THREE, renderer } = this.dependencies
+        const { three, renderer } = this.dependencies
         const { segments, width, height } = this.config
 
-        const scene = new THREE.Scene()
-        scene.background = new THREE.Color(0xffffff)
+        let frameId: number
+        const scene = new three.Scene()
+        scene.background = new three.Color(0xffffff)
 
-        const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100000)
+        const camera = new three.PerspectiveCamera(50, width / height, 0.1, 100000)
         camera.position.set(0, 0, 750)
         scene.add(camera)
 
@@ -30,7 +34,9 @@ export default class MeshPlot extends ThreeBaseVisualization {
             target.set(x, y, z)
         }
 
-        const graphGeometry = new THREE.ParametricGeometry(meshFunction, segments, segments)
+        const controls = new OrbitControls(camera, renderer.domElement)
+
+        const graphGeometry = new three.ParametricGeometry(meshFunction, segments, segments)
         graphGeometry.computeBoundingBox()
 
         const zMin = graphGeometry.boundingBox!.min.z
@@ -43,39 +49,39 @@ export default class MeshPlot extends ThreeBaseVisualization {
 
         for (let i = 0; i < graphGeometry.vertices.length; i++) {
             point = graphGeometry.vertices[i]
-            color = new THREE.Color(0x0000ff)
+            color = new three.Color(0x0000ff)
             color.setHSL((0.7 * (zMax - point.z)) / zRange, 1, 0.5)
             graphGeometry.colors[i] = color
         }
 
         for (let i = 0; i < graphGeometry.faces.length; i++) {
             face = graphGeometry.faces[i]
-            numberOfSides = face instanceof THREE.Face3 ? 3 : 4
+            numberOfSides = face instanceof three.Face3 ? 3 : 4
             for (let j = 0; j < numberOfSides; j++) {
                 vertexIndex = face[faceIndices[j]]
                 face.vertexColors[j] = graphGeometry.colors[vertexIndex]
             }
         }
 
-        new THREE.TextureLoader().load('texture.png', (wireTexture: any) => {
+        new three.TextureLoader().load('texture.png', (wireTexture: any) => {
             // eslint-disable-next-line no-multi-assign, no-param-reassign
-            wireTexture.wrapS = wireTexture.wrapT = THREE.RepeatWrapping
+            wireTexture.wrapS = wireTexture.wrapT = three.RepeatWrapping
             wireTexture.repeat.set(40, 40)
 
-            const material = new THREE.MeshBasicMaterial({
+            const material = new three.MeshBasicMaterial({
                 map: wireTexture,
                 vertexColors: true,
-                side: THREE.DoubleSide,
+                side: three.DoubleSide,
                 transparent: true,
                 opacity: 0.4,
                 color: 0xffffff
             })
             material.map.repeat.set(segments, segments)
 
-            const graphMesh = new THREE.Mesh(graphGeometry, material)
+            const graphMesh = new three.Mesh(graphGeometry, material)
             scene.add(graphMesh)
 
-            const size = new THREE.Vector3()
+            const size = new three.Vector3()
             graphGeometry.boundingBox!.getSize(size)
             const maxDim = Math.max(size.x, size.y, size.z)
 
@@ -87,7 +93,7 @@ export default class MeshPlot extends ThreeBaseVisualization {
             camera.position.z = cameraZ
 
             // add axes
-            const axesHelper = new THREE.AxesHelper(maxDim)
+            const axesHelper = new three.AxesHelper(maxDim)
 
             const colors = (axesHelper as any).geometry.attributes.color
             colors.setXYZ(0, 0, 0, 0)
@@ -99,7 +105,32 @@ export default class MeshPlot extends ThreeBaseVisualization {
 
             scene.add(axesHelper)
 
-            renderer.render(scene, camera)
+            const animate = () => {
+                renderer.render(scene, camera)
+
+                frameId = window.requestAnimationFrame(animate)
+            }
+
+            const start = () => {
+                if (!frameId) {
+                    frameId = requestAnimationFrame(animate)
+                }
+            }
+
+            start()
+            controls.update()
+            Object.assign(this.dependencies, { graphMesh, scene, camera, axesHelper })
         })
+    }
+
+    destroy() {
+        const { graphMesh, scene, renderer, camera, axesHelper, containerRef } = this.dependencies
+        graphMesh.material.dispose()
+        graphMesh.geometry.dispose()
+        scene.remove(graphMesh)
+        scene.remove(camera)
+        scene.remove(axesHelper)
+        renderer.renderLists.dispose()
+        containerRef.removeChild(renderer.domElement)
     }
 }

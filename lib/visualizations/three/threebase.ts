@@ -15,7 +15,7 @@ export default abstract class ThreeBaseVisualization extends BaseVisualization {
             ...config
         })
 
-        Object.assign(this.dependencies, { THREE })
+        Object.assign(this.dependencies, { three: THREE })
     }
 
     public setContainer(containerRef: HTMLElement) {
@@ -23,9 +23,7 @@ export default abstract class ThreeBaseVisualization extends BaseVisualization {
 
         const renderer = new THREE.WebGLRenderer({ antialias: true })
         renderer.setSize(width, height)
-
         containerRef.appendChild(renderer.domElement)
-
-        Object.assign(this.dependencies, { renderer })
+        Object.assign(this.dependencies, { renderer, containerRef })
     }
 }

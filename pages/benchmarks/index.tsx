@@ -32,18 +32,19 @@ function Representation({
     const svgRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        if (svgRef.current) {
-            const plot = new MeshPlot({ width, height })
-            plot.setContainer(svgRef.current)
-            plot.dataUpdate({
-                zFunc,
-                xMin,
-                xMax,
-                yMin,
-                yMax
-            })
+        const newPlot = new MeshPlot({ width, height })
+        newPlot.setContainer(svgRef.current)
+        newPlot.dataUpdate({
+            zFunc,
+            xMin,
+            xMax,
+            yMin,
+            yMax
+        })
+        return () => {
+            newPlot.destroy()
         }
-    }, [svgRef])
+    }, [])
 
     return (
         <div>
@@ -86,14 +87,14 @@ const reps = [
         yMin: rastrigin.DOMAIN[0],
         yMax: rastrigin.DOMAIN[1]
     },
-    {
-        name: 'Rosenbrock',
-        zFunc: rosenbrock.default,
-        xMin: rosenbrock.DOMAIN[0],
-        xMax: rosenbrock.DOMAIN[1],
-        yMin: rosenbrock.DOMAIN[0],
-        yMax: rosenbrock.DOMAIN[1]
-    },
+    // {
+    //     name: 'Rosenbrock',
+    //     zFunc: rosenbrock.default,
+    //     xMin: rosenbrock.DOMAIN[0],
+    //     xMax: rosenbrock.DOMAIN[1],
+    //     yMin: rosenbrock.DOMAIN[0],
+    //     yMax: rosenbrock.DOMAIN[1]
+    // },
     {
         name: 'Schwefel',
         zFunc: schwefel.default,
@@ -127,8 +128,8 @@ export default function Benchmarks() {
                     yMin={val.yMin}
                     yMax={val.yMax}
                     name={val.name}
-                    width={300}
-                    height={200}
+                    width={500}
+                    height={500}
                 />
             ))}
         </div>
