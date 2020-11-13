@@ -16,6 +16,9 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/datasets' className='btn btn-link'>
                         Datasets
                     </a>
+                    <a href='/benchmarks' className='btn btn-link'>
+                        Benchmarks
+                    </a>
                 </section>
                 <section className='navbar-section'></section>
             </header>

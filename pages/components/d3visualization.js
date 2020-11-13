@@ -23,7 +23,7 @@ export default function D3Visualization({ db, document, rev }) {
 
     useEffect(() => {
         db.get(`${document}-setup`).then(function(doc) {
-            let { config, prepareDependenciesExpr, dataUpdateExpr } = doc
+            const { config, prepareDependenciesExpr, dataUpdateExpr } = doc
             const block = {
                 dependencies: { d3 }
             }
@@ -34,7 +34,7 @@ export default function D3Visualization({ db, document, rev }) {
                 block.dependencies.svg = d3.select(divRef.current.querySelector('svg'))
             }
 
-            let globalsExpr = prepareDependenciesExpr
+            const globalsExpr = prepareDependenciesExpr
                 .replace(/\/\/.*/g, '')
                 .replace(/\n/g, ' ')
                 .replace(/this\./g, 'block.')
@@ -48,9 +48,10 @@ export default function D3Visualization({ db, document, rev }) {
                 .replace(/dataUpdate\(data\) +{/g, '')
                 .replace(/}$/g, '')
 
+            // eslint-disable-next-line no-new-func
             const prepareDependencies = Function('block', globalsExpr)
             prepareDependencies(block)
-
+            // eslint-disable-next-line no-new-func
             dataUpdateExpression = Function('block', 'data', dataUpdateExpression)
 
             setBlock(block)
