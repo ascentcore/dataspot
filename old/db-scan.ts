@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { VectorUtils } from '../math-utils'
+import { euclideanDistance } from '../math/distances'
 import Point from './point'
 
 export class DBScanPoint extends Point {
@@ -33,7 +33,7 @@ export default class DBScan {
             options.minNeighbours = 5
         }
         if (!options.distance) {
-            options.distance = VectorUtils.euclideanDistance
+            options.distance = euclideanDistance
         }
         const points = data.map((vector) => new DBScanPoint(vector))
 

@@ -1,5 +1,6 @@
 import Point from './point'
 import { VectorUtils, MathUtils } from '../math-utils'
+import { euclideanDistance } from '../math/distances'
 
 export class KMeansPoint extends Point {
     updateLabel(centroids: KMeansCentroid[], distance: (v1: number[], v2: number[]) => number) {
@@ -33,7 +34,7 @@ export default class KMeans {
             options.nClusters && options.nClusters <= data.length
                 ? options.nClusters
                 : Math.round(Math.sqrt(data.length / 2))
-        const distance = options.distance || VectorUtils.euclideanDistance
+        const distance = options.distance || euclideanDistance
 
         const points = data.map((vector) => new KMeansPoint(vector, null))
         const centroids: KMeansCentroid[] = []
