@@ -7,7 +7,7 @@ export default abstract class ClusteringAlgorithm<T extends EvolutionaryConfig> 
 
     protected initialized = false
 
-    private prepareDataset(data: number[][]): void {
+    protected prepareDataset(data: number[][]): void {
         if (!data || data.length === 0) {
             throw new Error('Unable to perform fitting without data')
         }
@@ -23,7 +23,7 @@ export default abstract class ClusteringAlgorithm<T extends EvolutionaryConfig> 
             yield this.labels
             this.iteration++
         }
-
+        this.onEndFit()
         return this.labels
     }
 
@@ -33,9 +33,12 @@ export default abstract class ClusteringAlgorithm<T extends EvolutionaryConfig> 
             this.step()
             this.iteration++
         }
+        this.onEndFit()
 
         return this.labels
     }
+
+    onEndFit(): void {}
 
     abstract canStop(): boolean
 

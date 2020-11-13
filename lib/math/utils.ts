@@ -22,3 +22,7 @@ export function indexOfSmallest(v: number[]): number {
         return next < v[lowest] ? index : lowest
     }, 0)
 }
+
+export function gaussianKernel(distance: number, bandwidth: number): number {
+    return (1 / (bandwidth * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * (distance / bandwidth) ** 2)
+}
