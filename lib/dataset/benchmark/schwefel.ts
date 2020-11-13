@@ -7,8 +7,9 @@ export default function calculate(...input: number[]): number {
         sum -= input[i] * Math.sin(Math.sqrt(Math.abs(input[i])))
     }
 
-    return sum + alpha * length
+    return (sum + alpha * length) / 2
 }
 
 export const DOMAIN = [-512, 512]
-export const GLOBAL_M = [420.968746]
+export const GLOBAL_M = [0]
+export const GLOBAL_M_COORD = [420.968746]

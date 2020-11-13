@@ -12,3 +12,4 @@ export default function calculate(...input: number[]): number {
 
 export const DOMAIN = [-32, 32]
 export const GLOBAL_M = [0]
+export const GLOBAL_M_COORD = [0]

@@ -87,14 +87,14 @@ const reps = [
         yMin: rastrigin.DOMAIN[0],
         yMax: rastrigin.DOMAIN[1]
     },
-    // {
-    //     name: 'Rosenbrock',
-    //     zFunc: rosenbrock.default,
-    //     xMin: rosenbrock.DOMAIN[0],
-    //     xMax: rosenbrock.DOMAIN[1],
-    //     yMin: rosenbrock.DOMAIN[0],
-    //     yMax: rosenbrock.DOMAIN[1]
-    // },
+    {
+        name: 'Rosenbrock',
+        zFunc: rosenbrock.default,
+        xMin: rosenbrock.DOMAIN[0],
+        xMax: rosenbrock.DOMAIN[1],
+        yMin: rosenbrock.DOMAIN[0],
+        yMax: rosenbrock.DOMAIN[1]
+    },
     {
         name: 'Schwefel',
         zFunc: schwefel.default,

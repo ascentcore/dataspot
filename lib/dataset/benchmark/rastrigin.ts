@@ -6,8 +6,9 @@ export default function calculate(...input: number[]): number {
         sum += input[i] ** 2 - 10 * Math.cos(2 * Math.PI * input[i])
     }
 
-    return 10 * length + sum
+    return (10 * length + sum) / 10
 }
 
 export const DOMAIN = [-5.12, 5.12]
 export const GLOBAL_M = [0]
+export const GLOBAL_M_COORD = [0]

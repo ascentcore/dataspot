@@ -4,8 +4,9 @@ export default function calculate(...input: number[]): number {
     for (let i = 0; i < length - 1; i++) {
         value += 100 * (input[i] ** 2 - input[i + 1]) ** 2 + (1 - input[i]) ** 2
     }
-    return value
+    return value / 500
 }
 
 export const DOMAIN = [-2.048, 2.048]
-export const GLOBAL_M = [1]
+export const GLOBAL_M = [0]
+export const GLOBAL_M_COORD = [1]
