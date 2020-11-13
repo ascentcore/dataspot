@@ -6,5 +6,4 @@ export default function calculate(x1: number, x2: number): number {
 }
 
 export const DOMAIN = [-5, 5]
-export const GLOBAL_M = [-5]
-export const GLOBAL_M_COORD = [Math.PI]
+export const GLOBAL_M = [Math.PI]

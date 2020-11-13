@@ -8,5 +8,4 @@ export default function calculate(...input: number[]): number {
 }
 
 export const DOMAIN = [-2.048, 2.048]
-export const GLOBAL_M = [0]
-export const GLOBAL_M_COORD = [1]
+export const GLOBAL_M = [1]
