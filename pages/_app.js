@@ -19,6 +19,9 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/benchmarks' className='btn btn-link'>
                         Benchmarks
                     </a>
+                    <a href='/regressions' className='btn btn-link'>
+                        Regressions
+                    </a>
                 </section>
                 <section className='navbar-section'></section>
             </header>
