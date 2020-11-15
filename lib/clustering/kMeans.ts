@@ -1,26 +1,19 @@
 import Convergence from '../common/convergence'
-import { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
 import ObjectUtils from '../common/objectUtils'
-import distances, { DistanceMeasurement } from '../math/distances'
+import { DistanceMeasurement } from '../math/distances'
 import Random from '../math/random'
 import { average } from '../math/utils'
-import ClusteringAlgorithm from './clustering'
+import CentroidClustering, { CentroidConfig } from './centroidClustering'
 
-export class KMeansConfig extends EvolutionaryConfig {
+export class KMeansConfig extends CentroidConfig {
     public clusters: number = 8
 
     public iterations: number = 300
 
     public convergenceIterations: number = -1
-
-    public centroids: number[][] = []
-
-    public distanceFn: string = 'euclideanDistance'
 }
 
-export default class KMeans extends ClusteringAlgorithm<KMeansConfig> {
-    private distanceFunc!: Function
-
+export default class KMeans extends CentroidClustering<KMeansConfig> {
     private convergence!: Convergence
 
     constructor(config?: KMeansConfig | undefined, distanceFunction?: DistanceMeasurement | undefined) {
@@ -65,50 +58,5 @@ export default class KMeans extends ClusteringAlgorithm<KMeansConfig> {
 
     canStop(): boolean {
         return this.convergence && this.convergence.hadConverged()
-    }
-
-    predict(data: number[][]): number[] {
-        if (!this.initialized) {
-            throw new Error(
-                'Algorithm was not initialized. Call fitData, fitDataAsnyc or load pretrained configuration using loadState'
-            )
-        }
-        const { config } = this
-        const { centroids } = config
-        const { length } = data
-
-        const labels = []
-
-        for (let i = 0; i < length; i++) {
-            const point = data[i]
-            let idx = 0
-            let lastDistance = this.distanceFunc(point, centroids[idx])
-            for (let j = 1; j < centroids.length; j++) {
-                const compareDistance = this.distanceFunc(point, centroids[j])
-                if (compareDistance < lastDistance) {
-                    lastDistance = compareDistance
-                    idx = j
-                }
-            }
-
-            labels.push(idx)
-        }
-
-        return labels
-    }
-
-    loadState(config: string): void {
-        super.loadState(config)
-        this.initializeDependencies()
-        this.initialized = true
-    }
-
-    initializeDependencies(distanceFunction?: DistanceMeasurement): void {
-        const { distanceFn } = this.config
-        this.distanceFunc = distanceFunction || distances[distanceFn]
-
-        if (!this.distanceFunc) {
-            throw new Error('distance function not passed or not found')
-        }
     }
 }
