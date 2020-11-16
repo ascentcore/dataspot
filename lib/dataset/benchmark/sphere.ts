@@ -4,7 +4,7 @@ export default function calculate(...input: number[]): number {
     for (let i = 0; i < length; i++) {
         value += input[i] ** 2
     }
-    return value
+    return value / 10
 }
 
 export const DOMAIN = [-5.12, 5.12]
