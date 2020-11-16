@@ -69,7 +69,6 @@ export function updateWeightsAndBias(
     const update: [number[], number] = [weightInit, 0]
     const samples = input.length
 
-    console.log(typeof input)
     const predictions = predictionMultivariable(input, weight, bias)
 
     for (let i = 0; i < samples; i++) {
