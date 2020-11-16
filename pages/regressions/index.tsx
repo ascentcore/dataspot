@@ -47,10 +47,6 @@ function Representation({
             let regressionValue = { updatedWeight: 0, updatedBias: 0, costHistory: [] }
 
             const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-            console.log(
-                'ODSPOAIPOSFIPAISPDOFIA-updateWeightsAndBias',
-                updateWeightsAndBias([[1, 2], [2, 3]], [3, 5], [0.5, 1], 1, 0.001, mseCostFunction)
-            )
 
             while (!doneRegression) {
                 const regressionResult = linearRegression.next()
@@ -105,7 +101,6 @@ export default function Regressions() {
             {vis.map((val) => (
                 <Representation key={val.name} data={val.data} name={val.name} width={300} height={200} />
             ))}
-            {updateWeightsAndBias([[1, 2], [2, 3]], [3, 5], [0.5, 1], 1, 0.001, mseCostFunction)}
         </div>
     )
 }
