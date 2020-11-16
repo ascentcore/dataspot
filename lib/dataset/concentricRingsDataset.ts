@@ -1,4 +1,4 @@
-import { MathUtils } from '../math-utils'
+import { MathUtils } from '../utils/math-utils'
 
 export default function generate(): number[][] {
     const dataset = []

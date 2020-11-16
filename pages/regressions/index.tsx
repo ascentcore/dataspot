@@ -3,6 +3,7 @@ import { mseCostFunction } from '../../lib/functions/optimizers'
 import LinearRegression from '../../lib/regressions/linearRegression'
 import LinePlot from '../../lib/visualizations/svg/lineplot'
 import Scatter from '../../lib/visualizations/svg/scatter'
+import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
 
 function Representation({
     data,
@@ -15,27 +16,34 @@ function Representation({
     width: number
     height: number
 }) {
-    const svgRef = useRef<HTMLDivElement | null>(null)
+    const regressionRef = useRef<HTMLDivElement | null>(null)
+    const costRef = useRef<HTMLDivElement | null>(null)
 
     const plot = async () => {
-        if (svgRef.current) {
-            const scatterPlot = new Scatter({
-                width,
-                height,
-                domainX: { min: 0, max: 9 },
-                domainY: { min: 0, max: 65 }
-            })
-            scatterPlot.setContainer(svgRef.current)
-            scatterPlot.setup()
+        if (regressionRef.current) {
+            const scatterElemSVGId = 'scatter-elem'
+            const lineElemSVGId = 'line-elem'
+            const scatterPlot = new Scatter({}, scatterElemSVGId)
+            const linePlot = new LinePlot({}, lineElemSVGId)
+
+            const multiplePlot = new SVGMultipleVisualization(
+                {
+                    width,
+                    height,
+                    domainX: { min: 0, max: 9 },
+                    domainY: { min: 0, max: 65 }
+                },
+                '',
+                [scatterPlot, linePlot]
+            )
+            multiplePlot.setContainer(regressionRef.current)
+            multiplePlot.setup()
+
             const mappedData = []
             for (let i = 0; i < data[0].length; i++) {
                 mappedData.push({ x: data[0][i], y: data[1][i], r: 3 })
             }
-            scatterPlot.dataUpdate(mappedData)
-
-            const linePlot = new LinePlot({ width, height, domainX: { min: 0, max: 9 }, domainY: { min: 0, max: 65 } })
-            linePlot.setContainer(svgRef.current)
-            linePlot.setup()
+            multiplePlot.dataUpdate(mappedData, scatterElemSVGId)
 
             const input = [1, 2, 3, 4, 5, 6, 7, 8]
             const linearRegression = LinearRegression.fit(
@@ -58,11 +66,12 @@ function Representation({
 
                 doneRegression = regressionResult.done || false
 
-                linePlot.dataUpdate(
+                multiplePlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func
                     input.map((i: number) => {
                         return { x: i, y: i * regressionValue.updatedWeight + regressionValue.updatedBias }
-                    })
+                    }),
+                    lineElemSVGId
                 )
 
                 // eslint-disable-next-line no-await-in-loop
@@ -71,7 +80,7 @@ function Representation({
 
             let iter = 0
             const costPlot = new LinePlot({ width, height })
-            costPlot.setContainer(svgRef.current)
+            costPlot.setContainer(costRef.current)
             costPlot.setup()
             costPlot.dataUpdate(
                 regressionValue.costHistory.map((cost: number) => {
@@ -83,12 +92,13 @@ function Representation({
 
     useEffect(() => {
         plot()
-    }, [svgRef])
+    }, [regressionRef])
 
     return (
         <div>
             <h4>{name}</h4>
-            <div ref={svgRef}></div>
+            <div ref={regressionRef}></div>
+            <div ref={costRef}></div>
         </div>
     )
 }

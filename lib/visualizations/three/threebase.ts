@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import BaseVisualization from '../baseviz'
+import BaseVisualization from '../basevisualization'
 
 const DEFAULT_CONFIG = {
     width: 400,

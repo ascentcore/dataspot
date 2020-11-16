@@ -1,53 +1,21 @@
 import SVGBaseVisualization from './svgbase'
 
 export default class LinePlot extends SVGBaseVisualization {
+    constructor(config: any, svgElemId = 'line-elem') {
+        super(config, svgElemId)
+    }
+
     setup() {
-        const { d3, svg } = this.dependencies
-        const { margin, width, height, domainX, domainY } = this.config
+        const { svg } = this.dependencies
 
-        let { x, y } = this.dependencies
+        svg.select(`#${this.svgElemId} *`).remove()
 
-        if (domainX && domainX.min !== undefined && domainX.max !== undefined) {
-            x = d3
-                .scaleLinear()
-                .domain([domainX.min, domainX.max])
-                .nice()
-                .range([margin.left, width - margin.right])
-
-            svg.append('g')
-                .attr('transform', `translate(0,${height - margin.bottom})`)
-                .call(
-                    d3
-                        .axisBottom(x)
-                        .ticks(width / 80)
-                        .tickSizeOuter(0)
-                )
-        } else {
-            x = null
-        }
-
-        if (domainY && domainY.min !== undefined && domainY.max !== undefined) {
-            y = d3
-                .scaleLinear()
-                .domain([domainY.min, domainY.max])
-                .nice()
-                .range([height - margin.bottom, margin.top])
-
-            svg.append('g')
-                .attr('transform', `translate(${margin.left},0)`)
-                .call(d3.axisLeft(y))
-        } else {
-            y = null
-        }
-
-        Object.assign(this.dependencies, { x, y })
-
-        if (svg.select('#line-group').empty()) {
-            svg.append('g').attr('id', 'line-group')
+        if (svg.select(`#${this.svgElemId}`).empty()) {
+            svg.append('g').attr('id', this.svgElemId)
         }
     }
 
-    dataUpdate(data: { x: number; y: number }[]): void {
+    dataUpdate(data: { x: number; y: number }[], svgElemId = this.svgElemId): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, svg } = this.dependencies
 
@@ -103,8 +71,8 @@ export default class LinePlot extends SVGBaseVisualization {
             .x((d: { x: number; y: number }) => x(d.x))
             .y((d: { x: number; y: number }) => y(d.y))
 
-        svg.selectAll('#line-group path').remove()
-        svg.select('#line-group')
+        svg.selectAll(`#${svgElemId} path`).remove()
+        svg.select(`#${svgElemId}`)
             .append('path')
             .datum(data)
             .attr('fill', 'none')

@@ -1,5 +1,5 @@
 import Point from './point'
-import { VectorUtils, MathUtils } from '../math-utils'
+import { VectorUtils, MathUtils } from '../utils/math-utils'
 
 export class KMeansPoint extends Point {
     updateLabel(centroids: KMeansCentroid[], distance: (v1: number[], v2: number[]) => number) {

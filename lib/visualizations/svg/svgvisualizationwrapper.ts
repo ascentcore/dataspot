@@ -2,7 +2,7 @@ import { JSDOM } from 'jsdom'
 import Sharp from 'sharp'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
-import getReportFolder from '../../osutils'
+import getReportFolder from '../../utils/osutils'
 import SVGBaseVisualization from './svgbase'
 
 export default class SVGVisualizationWrapper extends SVGBaseVisualization {
@@ -13,7 +13,7 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         private name: string,
         initialData?: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]
     ) {
-        super(visualization.config)
+        super(visualization.config, 'wrapper-elem')
         this.setup(initialData)
     }
 
@@ -41,8 +41,11 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         }
     }
 
-    dataUpdate(data: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]): void {
-        this.visualization.dataUpdate(data)
+    dataUpdate(
+        data: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[],
+        svgElemId = this.visualization.svgElemId
+    ): void {
+        this.visualization.dataUpdate(data, svgElemId)
         if (this.lab) {
             this.lab.store(`${this.name}-data`, { data })
         } else {

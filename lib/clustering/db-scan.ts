@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { VectorUtils } from '../math-utils'
+import { VectorUtils } from '../utils/math-utils'
 import Point from './point'
 
 export class DBScanPoint extends Point {

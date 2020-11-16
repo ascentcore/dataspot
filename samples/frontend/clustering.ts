@@ -4,7 +4,7 @@ import DBScan from '../../lib/clustering/db-scan'
 import Scatter from '../../lib/visualizations/svg/scatter'
 import Point from '../../lib/clustering/point'
 
-import { VectorUtils } from '../../lib/math-utils'
+import { VectorUtils } from '../../lib/utils/math-utils'
 
 import arcDataset from '../../lib/dataset/arcDataset'
 import blobDataset from '../../lib/dataset/blobDataset'
@@ -41,6 +41,12 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
     plots.setAttribute('style', 'display: flex; justify-content: space-evenly; padding: 100px 0; flex-wrap: wrap;')
     card.appendChild(plots)
 
+    const plotKmeans = document.createElement('div')
+    const plotDBScan = document.createElement('div')
+
+    plots.appendChild(plotKmeans)
+    plots.appendChild(plotDBScan)
+
     const footer = document.createElement('div')
     footer.setAttribute('class', 'card-footer')
     card.appendChild(footer)
@@ -69,9 +75,9 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
     footer.appendChild(resetBtn)
 
     visKMeans = new Scatter({})
-    visKMeans.setContainer(plots)
+    visKMeans.setContainer(plotKmeans)
     vizDBScan = new Scatter({})
-    vizDBScan.setContainer(plots)
+    vizDBScan.setContainer(plotDBScan)
 
     const initialize = () => {
         playBtn.disabled = false

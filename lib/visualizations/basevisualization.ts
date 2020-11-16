@@ -4,7 +4,7 @@
  *
  */
 export default abstract class BaseVisualization {
-    constructor(public config: any) {}
+    constructor(public config: any, public svgElemId: string) {}
 
     /**
      * List of 3rd party dependencies that are are platform dependent
@@ -26,7 +26,8 @@ export default abstract class BaseVisualization {
         data:
             | { x: number; y: number; r?: number; color?: number }[]
             | { x: number; y: number }[]
-            | { zFunc: (x: number, y: number) => number; xMin: number; xMax: number; yMin: number; yMax: number }
+            | { zFunc: (x: number, y: number) => number; xMin: number; xMax: number; yMin: number; yMax: number },
+        svgElemId?: string
     ): void
 
     public getDependency(key: string): any {
