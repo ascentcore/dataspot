@@ -86,7 +86,7 @@ export default class Scatter extends SVGBaseVisualization {
         }
         Object.assign(this.dependencies, { y })
 
-        if (svg.select('#scatter-group').empty()) {
+        if (svg.select('#point-group').empty()) {
             svg.append('g')
                 .attr('id', 'point-group')
                 .selectAll('circle')
@@ -96,17 +96,17 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color !== undefined ? palette(d.color) : 'steelblue'
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         } else {
-            svg.select('#scatter-group')
+            svg.select('#point-group')
                 .selectAll('circle')
                 .data(data)
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color !== undefined ? palette(d.color) : 'steelblue'
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
                 .enter()
@@ -114,7 +114,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color !== undefined ? palette(d.color) : 'steelblue'
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         }

@@ -37,7 +37,7 @@ const config = {
         extensions: ['.js', '.jsx', '.tsx', '.ts']
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'assets', 'images')],
         compress: true,
         port: 4500
     }
