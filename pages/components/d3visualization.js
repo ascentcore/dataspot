@@ -15,15 +15,21 @@ export default function D3Visualization({ db, document, rev }) {
                 if (!block.dependencies.svg || block.dependencies.svg.empty()) {
                     block.dependencies.svg = d3.select(divRef.current.querySelector('svg'))
                 }
-                const { data } = doc
-                updateExpression(block, data)
+                const { data, svgElemId } = doc
+                updateExpression(block, data, svgElemId)
             }
         })
     }
 
     useEffect(() => {
         db.get(`${document}-setup`).then(function(doc) {
-            const { config, prepareDependenciesExpr, dataUpdateExpr } = doc
+            const {
+                config,
+                prepareDependenciesExpr,
+                dataUpdateExpr,
+                linePlotDataUpdateExpr,
+                scatterPlotDataUpdateExpr
+            } = doc
             const block = {
                 dependencies: { d3 }
             }
@@ -45,14 +51,50 @@ export default function D3Visualization({ db, document, rev }) {
                 .replace(/\/\/.*/g, '')
                 .replace(/\n/g, ' ')
                 .replace(/this\./g, 'block.')
-                .replace(/dataUpdate\(data\) +{/g, '')
+                .replace(/dataUpdate\([^\)]*\) +{/g, '')
                 .replace(/}$/g, '')
+
+            let linePlotDataUpdateExpression = linePlotDataUpdateExpr
+                .replace(/\/\/.*/g, '')
+                .replace(/\n/g, ' ')
+                .replace(/this\./g, 'block.')
+                .replace(/dataUpdate\([^\)]*\) +{/g, '')
+                .replace(/}$/g, '')
+
+            let scatterPlotDataUpdateExpression = scatterPlotDataUpdateExpr
+                .replace(/\/\/.*/g, '')
+                .replace(/\n/g, ' ')
+                .replace(/this\./g, 'block.')
+                .replace(/dataUpdate\([^\)]*\) +{/g, '')
+                .replace(/}$/g, '')
+
+            const getDataUpdateFunction = (svgElemId) => {
+                const svgElem = d3.select(divRef.current.querySelector('svg')).select(`#${svgElemId}`)
+                if (svgElem.empty()) {
+                    return null
+                }
+                let updateFn = null
+                switch (svgElem.attr('data-type')) {
+                    case 'line-plot':
+                        updateFn = Function('block', 'data', 'svgElemId', linePlotDataUpdateExpression)
+                        break
+                    case 'scatter-plot':
+                        updateFn = Function('block', 'data', 'svgElemId', scatterPlotDataUpdateExpression)
+                        break
+                    default:
+                        break
+                }
+                return (data, svgElemId) => updateFn(block, data, svgElemId)
+            }
+
+            Object.assign(block, { getDataUpdateFunction })
 
             // eslint-disable-next-line no-new-func
             const prepareDependencies = Function('block', globalsExpr)
             prepareDependencies(block)
+
             // eslint-disable-next-line no-new-func
-            dataUpdateExpression = Function('block', 'data', dataUpdateExpression)
+            dataUpdateExpression = Function('block', 'data', 'svgElemId', dataUpdateExpression)
 
             setBlock(block)
             setUpdateExpression(() => dataUpdateExpression)

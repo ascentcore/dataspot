@@ -4,6 +4,8 @@ import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
 import getReportFolder from '../../utils/osutils'
 import SVGBaseVisualization from './svgbase'
+import LinePlot from './lineplot'
+import Scatter from './scatter'
 
 export default class SVGVisualizationWrapper extends SVGBaseVisualization {
     private container!: Element | null
@@ -36,7 +38,9 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
                 config: this.visualization.config,
                 node: this.visualization.getDependency('svg').node().outerHTML,
                 prepareDependenciesExpr: this.visualization.setup.toString(),
-                dataUpdateExpr: this.visualization.dataUpdate.toString()
+                dataUpdateExpr: this.visualization.dataUpdate.toString(),
+                linePlotDataUpdateExpr: LinePlot.prototype.dataUpdate.toString(),
+                scatterPlotDataUpdateExpr: Scatter.prototype.dataUpdate.toString()
             })
         }
     }
@@ -47,7 +51,7 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
     ): void {
         this.visualization.dataUpdate(data, svgElemId)
         if (this.lab) {
-            this.lab.store(`${this.name}-data`, { data })
+            this.lab.store(`${this.name}-data`, { data, svgElemId })
         } else {
             const svgContent = this.visualization.getDependency('svg').node().outerHTML
             const buf = Buffer.from(svgContent)

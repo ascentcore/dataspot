@@ -15,12 +15,26 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
     }
 
     setup() {
-        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setup())
+        const { d3 } = this.dependencies
+
+        const palette = d3.scaleOrdinal(d3.schemeAccent)
+        Object.assign(this.dependencies, { palette })
+
+        if (this.visualizations) {
+            Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setup())
+        }
     }
 
     public setContainer(containerRef: HTMLElement) {
         super.setContainer(containerRef)
         Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setContainer(containerRef))
+    }
+
+    private getDataUpdateFunction(svgElemId: string): (data: any, svgElemId: string) => void | null {
+        if (this.visualizations[svgElemId]) {
+            return this.visualizations[svgElemId].dataUpdate.bind(this.visualizations[svgElemId])
+        }
+        return null
     }
 
     dataUpdate(
@@ -30,8 +44,9 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
             | { zFunc: (x: number, y: number) => number; xMin: number; xMax: number; yMin: number; yMax: number },
         svgElemId: string
     ): void {
-        if (this.visualizations[svgElemId]) {
-            this.visualizations[svgElemId].dataUpdate(data, svgElemId)
+        const updateFn = this.getDataUpdateFunction(svgElemId)
+        if (updateFn) {
+            updateFn(data, svgElemId)
         }
     }
 }

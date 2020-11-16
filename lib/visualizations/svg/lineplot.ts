@@ -8,10 +8,10 @@ export default class LinePlot extends SVGBaseVisualization {
     setup() {
         const { svg } = this.dependencies
 
-        svg.select(`#${this.svgElemId} *`).remove()
-
         if (svg.select(`#${this.svgElemId}`).empty()) {
-            svg.append('g').attr('id', this.svgElemId)
+            svg.append('g')
+                .attr('id', this.svgElemId)
+                .attr('data-type', 'line-plot')
         }
     }
 
@@ -72,6 +72,7 @@ export default class LinePlot extends SVGBaseVisualization {
             .y((d: { x: number; y: number }) => y(d.y))
 
         svg.selectAll(`#${svgElemId} path`).remove()
+
         svg.select(`#${svgElemId}`)
             .append('path')
             .datum(data)

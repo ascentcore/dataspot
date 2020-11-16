@@ -11,11 +11,10 @@ export default class Scatter extends SVGBaseVisualization {
         const palette = d3.scaleOrdinal(d3.schemeAccent)
         Object.assign(this.dependencies, { palette })
 
-        svg.select(`#${this.svgElemId} *`).remove()
-
         if (svg.select(`#${this.svgElemId}`).empty()) {
-            console.log('AAAAAA', this.svgElemId)
-            svg.append('g').attr('id', this.svgElemId)
+            svg.append('g')
+                .attr('id', this.svgElemId)
+                .attr('data-type', 'scatter-plot')
         }
     }
 
