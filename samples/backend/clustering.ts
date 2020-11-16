@@ -3,7 +3,7 @@ import DBScan from '../../lib/clustering/db-scan'
 import Lab from '../../lib/lab'
 import SVGVisualizationWrapper from '../../lib/visualizations/svg/svgvisualizationwrapper'
 import Scatter from '../../lib/visualizations/svg/scatter'
-const VectorUtils = require('../../lib/math-utils').VectorUtils
+const VectorUtils = require('../../lib/utils/math-utils').VectorUtils
 
 import arcDataset from '../../lib/dataset/arcDataset'
 import blobDataset from '../../lib/dataset/blobDataset'

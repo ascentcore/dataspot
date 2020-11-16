@@ -61,12 +61,16 @@ export default function D3Visualization({ db, document, rev }) {
                 .replace(/dataUpdate\([^\)]*\) +{/g, '')
                 .replace(/}$/g, '')
 
+            linePlotDataUpdateExpression = Function('block', 'data', 'svgElemId', linePlotDataUpdateExpression)
+
             let scatterPlotDataUpdateExpression = scatterPlotDataUpdateExpr
                 .replace(/\/\/.*/g, '')
                 .replace(/\n/g, ' ')
                 .replace(/this\./g, 'block.')
                 .replace(/dataUpdate\([^\)]*\) +{/g, '')
                 .replace(/}$/g, '')
+
+            scatterPlotDataUpdateExpression = Function('block', 'data', 'svgElemId', scatterPlotDataUpdateExpression)
 
             const getDataUpdateFunction = (svgElemId) => {
                 const svgElem = d3.select(divRef.current.querySelector('svg')).select(`#${svgElemId}`)
@@ -76,10 +80,10 @@ export default function D3Visualization({ db, document, rev }) {
                 let updateFn = null
                 switch (svgElem.attr('data-type')) {
                     case 'line-plot':
-                        updateFn = Function('block', 'data', 'svgElemId', linePlotDataUpdateExpression)
+                        updateFn = linePlotDataUpdateExpression
                         break
                     case 'scatter-plot':
-                        updateFn = Function('block', 'data', 'svgElemId', scatterPlotDataUpdateExpression)
+                        updateFn = scatterPlotDataUpdateExpression
                         break
                     default:
                         break
