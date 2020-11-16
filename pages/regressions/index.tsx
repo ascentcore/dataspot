@@ -19,7 +19,12 @@ function Representation({
 
     const plot = async () => {
         if (svgRef.current) {
-            const scatterPlot = new Scatter({ width, height })
+            const scatterPlot = new Scatter({
+                width,
+                height,
+                domainX: { min: 0, max: 9 },
+                domainY: { min: 0, max: 65 }
+            })
             scatterPlot.setContainer(svgRef.current)
             scatterPlot.setup()
             const mappedData = []
@@ -28,7 +33,7 @@ function Representation({
             }
             scatterPlot.dataUpdate(mappedData)
 
-            const linePlot = new LinePlot({ width, height })
+            const linePlot = new LinePlot({ width, height, domainX: { min: 0, max: 9 }, domainY: { min: 0, max: 65 } })
             linePlot.setContainer(svgRef.current)
             linePlot.setup()
 
@@ -52,7 +57,6 @@ function Representation({
                 regressionValue = regressionResult.value
 
                 doneRegression = regressionResult.done || false
-                console.log(regressionValue)
 
                 linePlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func

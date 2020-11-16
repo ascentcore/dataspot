@@ -2,15 +2,49 @@ import SVGBaseVisualization from './svgbase'
 
 export default class Scatter extends SVGBaseVisualization {
     setup() {
-        const { d3 } = this.dependencies
+        const { d3, svg } = this.dependencies
+        const { margin, width, height, domainX, domainY } = this.config
+
         const palette = d3.scaleOrdinal(d3.schemeAccent)
         Object.assign(this.dependencies, { palette })
-        if (this.dependencies.x) {
-            this.dependencies.x = null
+
+        let { x, y } = this.dependencies
+
+        svg.selectAll('*').remove()
+        if (domainX && domainX.min !== undefined && domainX.max !== undefined) {
+            x = d3
+                .scaleLinear()
+                .domain([domainX.min, domainX.max])
+                .nice()
+                .range([margin.left, width - margin.right])
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(
+                    d3
+                        .axisBottom(x)
+                        .ticks(width / 80)
+                        .tickSizeOuter(0)
+                )
+        } else {
+            x = null
         }
-        if (this.dependencies.y) {
-            this.dependencies.y = null
+
+        if (domainY && domainY.min !== undefined && domainY.max !== undefined) {
+            y = d3
+                .scaleLinear()
+                .domain([domainY.min, domainY.max])
+                .nice()
+                .range([height - margin.bottom, margin.top])
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+        } else {
+            y = null
         }
+
+        Object.assign(this.dependencies, { x, y })
     }
 
     dataUpdate(data: { x: number; y: number; r?: number; color?: number }[]): void {
@@ -18,8 +52,7 @@ export default class Scatter extends SVGBaseVisualization {
         const { d3, svg, palette } = this.dependencies
 
         let { x, y } = this.dependencies
-        if (!x && !y) {
-            svg.selectAll('*').remove()
+        if (!x) {
             x = d3
                 .scaleLinear()
                 .domain([
@@ -28,6 +61,17 @@ export default class Scatter extends SVGBaseVisualization {
                 ])
                 .nice()
                 .range([margin.left, width - margin.right])
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(
+                    d3
+                        .axisBottom(x)
+                        .ticks(width / 80)
+                        .tickSizeOuter(0)
+                )
+            Object.assign(this.dependencies, { x })
+        }
+        if (!y) {
             y = d3
                 .scaleLinear()
                 .domain([
@@ -39,16 +83,10 @@ export default class Scatter extends SVGBaseVisualization {
             svg.append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
-            svg.append('g')
-                .attr('transform', `translate(0,${height - margin.bottom})`)
-                .call(
-                    d3
-                        .axisBottom(x)
-                        .ticks(width / 80)
-                        .tickSizeOuter(0)
-                )
-            Object.assign(this.dependencies, { x, y })
+        }
+        Object.assign(this.dependencies, { y })
 
+        if (svg.select('#scatter-group').empty()) {
             svg.append('g')
                 .attr('id', 'point-group')
                 .selectAll('circle')
@@ -62,7 +100,7 @@ export default class Scatter extends SVGBaseVisualization {
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         } else {
-            svg.select('#point-group')
+            svg.select('#scatter-group')
                 .selectAll('circle')
                 .data(data)
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
