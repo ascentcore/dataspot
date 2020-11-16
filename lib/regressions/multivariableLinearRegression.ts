@@ -1,35 +1,40 @@
 import { meanSquaredError } from '../functions/losses'
-import { updateWeightAndBias } from '../functions/optimizers'
+import { updateWeightsAndBias } from '../functions/optimizers'
 
-export function predictionSinglevariable(input: number[], weight: number, bias: number): number[] {
-    const value = []
-    for (let i = 0; i < input.length; i++) {
-        value.push(weight * input[i] + bias)
-    }
+export function predictionMultivariable(input: number[][], weight: number[], bias: number): number[] {
+    const value: number[] = []
+
+    input.forEach((feature) => {
+        let pred = 0
+        for (let i = 0; i < input[0].length; i++) {
+            pred += feature[i] * weight[i]
+        }
+        value.push(pred + bias)
+    })
 
     return value
 }
 
-export default class LinearRegression {
+export default class MultivariableLinearRegression {
     static *fit(
-        input: number[],
+        input: number[][],
         target: number[],
-        weight: number,
+        weight: number[],
         bias: number,
         learningRate: number,
         epochs: number,
         costFunction: Function
-    ): Generator<{ updatedWeight: number; updatedBias: number; costHistory: number[] }> {
+    ): Generator<{ updatedWeight: number[]; updatedBias: number; costHistory: number[] }> {
         const costHistory = []
         let updatedWeight = weight
         let updatedBias = bias
-        let updatedPrediction = predictionSinglevariable(input, weight, bias)
+        let updatedPrediction = predictionMultivariable(input, weight, bias)
         let currentEpoch = 0
 
         while (true) {
             let updated = true
 
-            const [w, b] = updateWeightAndBias(input, target, updatedWeight, updatedBias, learningRate, costFunction)
+            const [w, b] = updateWeightsAndBias(input, target, updatedWeight, updatedBias, learningRate, costFunction)
 
             updatedWeight = w
             updatedBias = b
@@ -38,7 +43,7 @@ export default class LinearRegression {
             const cost = meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
-            updatedPrediction = predictionSinglevariable(input, updatedWeight, updatedBias)
+            updatedPrediction = predictionMultivariable(input, updatedWeight, updatedBias)
 
             currentEpoch += 1
 
