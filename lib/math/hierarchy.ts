@@ -1,12 +1,17 @@
 import { DistanceMeasurement } from './distances'
-import { distanceMatrix, getPairsFromDistanceMatrix } from './utils'
+import { getPairsFromDistanceMatrix } from './utils'
 
 export type Linkage = (v1: number[][], v2: number[][], distanceFn: DistanceMeasurement) => number
 export type HierarchyPoints = {
-    index: string | number | string[] | number[]
+    index: any
     points: number[][]
-    distances?: number[]
+    distances?: any[]
 }
+
+type HierarchyPointsReduceType = {
+    [key: number]: HierarchyPoints
+}
+
 export function singleLinkage(v1: number[][], v2: number[][], distanceFn: DistanceMeasurement): number {
     let result: number = Infinity
     for (let i = 0; i < v1.length; i++) {
@@ -26,10 +31,7 @@ type Hierarchy = {
     centroid: number[]
 }
 
-export default function hierarchy(hPoints: HierarchyPoints[], linkage: Linkage, distanceFn: DistanceMeasurement) {
-    const { length } = hPoints
-    const dendogram = []
-
+export default function hierarchy(hPoints: HierarchyPoints[], linkage: Linkage, distanceFn: DistanceMeasurement): any {
     const { length: pointsCount } = hPoints
     const distMat: number[][] = []
     for (let i = 0; i < pointsCount; i++) {
@@ -42,29 +44,35 @@ export default function hierarchy(hPoints: HierarchyPoints[], linkage: Linkage, 
     }
 
     const [clusters, distances] = getPairsFromDistanceMatrix(distMat)
-    const clusterArr: any = clusters.reduce((memo: any, cluster: number, index: number) => {
-        memo[cluster] = memo[cluster] || {
-            index: [],
-            distances: [distances[index]],
-            points: []
+    const clusterArr: HierarchyPointsReduceType = {}
+
+    for (let i = 0; i < clusters.length; i++) {
+        const cluster = clusters[i]
+        if (distances[i] === 0) {
+            clusterArr[cluster] = hPoints[i]
+        } else {
+            clusterArr[cluster] =
+                clusterArr[cluster] ||
+                <HierarchyPoints>{
+                    index: [],
+                    distances: [distances[i]],
+                    points: []
+                }
+            const { index: localIndex, points, distances: localDistances } = hPoints[i]
+            clusterArr[cluster].index.push(localIndex)
+            clusterArr[cluster].points.push(...points)
+            if (localDistances) {
+                // eslint-disable-next-line prettier/prettier
+                clusterArr[cluster].distances?.push(localDistances)
+            }
         }
-
-        const { index: localIndex, points, distances: localDistances } = hPoints[index]
-
-        memo[cluster].index.push(localIndex)
-        memo[cluster].points.push(...points)
-        if (localDistances) {
-            memo[cluster].distances.push(localDistances)
-        }
-
-        return memo
-    }, {})
+    }
 
     const values: any[] = Object.values(clusterArr)
 
     if (values.length > 1) {
         return hierarchy(values, linkage, distanceFn)
     } else {
-        return values
+        return values[0]
     }
 }
