@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { updateWeightsAndBias } from '../../dist/functions/optimizers'
 import { mseCostFunction } from '../../lib/functions/optimizers'
 import LinearRegression from '../../lib/regressions/linearRegression'
 import LinePlot from '../../lib/visualizations/svg/lineplot'
