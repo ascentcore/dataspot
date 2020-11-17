@@ -1,4 +1,5 @@
 import SVGBaseVisualization from './svgbase'
+import { TwoDPointLine, TwoDPointScatter, FunctioDefinitionMesh } from '../../models/types'
 
 export default class SVGMultipleVisualization extends SVGBaseVisualization {
     private visualizations: { [name: string]: SVGBaseVisualization } = {}
@@ -37,13 +38,7 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         return null
     }
 
-    dataUpdate(
-        data:
-            | { x: number; y: number; r?: number; color?: number }[]
-            | { x: number; y: number }[]
-            | { zFunc: (x: number, y: number) => number; xMin: number; xMax: number; yMin: number; yMax: number },
-        svgElemId: string
-    ): void {
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh, svgElemId: string): void {
         const updateFn = this.getDataUpdateFunction(svgElemId)
         if (updateFn) {
             updateFn(data, svgElemId)

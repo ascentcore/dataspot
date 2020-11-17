@@ -12,8 +12,8 @@ export default function D3Visualization({ db, document, rev }) {
     function loadData() {
         db.get(`${document}-data`).then(function(doc) {
             if (divRef && updateExpression && block && componentIsMounted.current) {
-                if (!block.dependencies.svg || block.dependencies.svg.empty()) {
-                    block.dependencies.svg = d3.select(divRef.current.querySelector('svg'))
+                if (!block.dependencies.container || block.dependencies.container.empty()) {
+                    block.dependencies.container = d3.select(divRef.current.querySelector('svg'))
                 }
                 const { data, svgElemId } = doc
                 updateExpression(block, data, svgElemId)
@@ -36,8 +36,8 @@ export default function D3Visualization({ db, document, rev }) {
 
             Object.assign(block, { config })
 
-            if (!block.dependencies.svg || block.dependencies.svg.empty()) {
-                block.dependencies.svg = d3.select(divRef.current.querySelector('svg'))
+            if (!block.dependencies.container || block.dependencies.container.empty()) {
+                block.dependencies.container = d3.select(divRef.current.querySelector('svg'))
             }
 
             const globalsExpr = prepareDependenciesExpr

@@ -1,3 +1,4 @@
+import { TwoDPointLine, TwoDPointScatter, FunctioDefinitionMesh } from '../models/types'
 /**
  * Base visualization abstract class.
  * The same logic will be used isomorphically on node and web platforms
@@ -22,13 +23,7 @@ export default abstract class BaseVisualization {
      * Isomorphic method used on every data update
      * @param data array of data values
      */
-    abstract dataUpdate(
-        data:
-            | { x: number; y: number; r?: number; color?: number }[]
-            | { x: number; y: number }[]
-            | { zFunc: (x: number, y: number) => number; xMin: number; xMax: number; yMin: number; yMax: number },
-        svgElemId?: string
-    ): void
+    abstract dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh, svgElemId?: string): void
 
     public getDependency(key: string): any {
         return this.dependencies[key]

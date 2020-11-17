@@ -9,11 +9,14 @@ const DEFAULT_CONFIG = {
 }
 
 export default abstract class ThreeBaseVisualization extends BaseVisualization {
-    constructor(config: any) {
-        super({
-            ...DEFAULT_CONFIG,
-            ...config
-        })
+    constructor(config: any, svgElemId = 'mesh-elem') {
+        super(
+            {
+                ...DEFAULT_CONFIG,
+                ...config
+            },
+            svgElemId
+        )
 
         Object.assign(this.dependencies, { three: THREE })
     }

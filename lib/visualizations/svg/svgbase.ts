@@ -32,12 +32,12 @@ export default abstract class SVGBaseVisualization extends BaseVisualization {
             d3.select(containerRef).append('svg')
         }
 
-        const svg = d3
+        const container = d3
             .select(containerRef)
             .select('svg')
             .attr('width', width)
             .attr('height', height)
 
-        Object.assign(this.dependencies, { svg })
+        Object.assign(this.dependencies, { container })
     }
 }
