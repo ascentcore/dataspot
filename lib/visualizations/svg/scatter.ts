@@ -18,6 +18,7 @@ export default class Scatter extends SVGBaseVisualization {
         const { d3, svg, palette } = this.dependencies
 
         let { x, y } = this.dependencies
+
         if (!x && !y) {
             svg.selectAll('*').remove()
             x = d3
@@ -58,7 +59,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color !== undefined ? palette(d.color) : 'steelblue'
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         } else {
@@ -68,7 +69,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color !== undefined ? palette(d.color) : 'steelblue'
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
                 .enter()
@@ -76,7 +77,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .attr('cx', (d: { x: number; y: number; r?: number; color?: number }) => x(d.x) || 0)
                 .attr('cy', (d: { x: number; y: number; r?: number; color?: number }) => y(d.y) || 0)
                 .style('fill', (d: { x: number; y: number; r?: number; color?: number }) =>
-                    d.color !== undefined ? palette(d.color) : 'steelblue'
+                    d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
                 )
                 .attr('r', (d: { x: number; y: number; r?: number; color?: number }) => d.r || 1)
         }
