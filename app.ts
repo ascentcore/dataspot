@@ -3,6 +3,7 @@ import SVGVisualizationWrapper from './lib/visualizations/svg/svgvisualizationwr
 import Scatter from './lib/visualizations/svg/scatter'
 import SVGMultipleVisualization from './lib/visualizations/svg/svgmultiple'
 import LinePlot from './lib/visualizations/svg/lineplot'
+import Axis from './lib/visualizations/svg/axis'
 import LinearRegression from './lib/regressions/linearRegression'
 import { mseCostFunction } from './lib/functions/optimizers'
 
@@ -18,8 +19,10 @@ const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
     const data = [[1, 2, 3, 4, 5, 6, 7, 8], [1, 4, 9, 16, 25, 36, 49, 64]]
     const scatterElemSVGId = 'scatter-elem'
     const lineElemSVGId = 'line-elem'
+    const axisId = 'axis-elem'
     const scatterPlot = new Scatter({}, scatterElemSVGId)
     const linePlot = new LinePlot({}, lineElemSVGId)
+    const axis = new Axis({}, axisId)
 
     const multiplePlot = new SVGMultipleVisualization(
         {
@@ -27,7 +30,7 @@ const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
             domainY: { min: 0, max: 65 }
         },
         '',
-        [scatterPlot, linePlot]
+        [axis, scatterPlot, linePlot]
     )
 
     const vis1 = new SVGVisualizationWrapper(multiplePlot, 'regression-plot')

@@ -23,15 +23,6 @@ export default class LinePlot extends SVGBaseVisualization {
                 .nice()
                 .range([margin.left, width - margin.right])
 
-            rootContainer
-                .append('g')
-                .attr('transform', `translate(0,${height - margin.bottom})`)
-                .call(
-                    d3
-                        .axisBottom(x)
-                        .ticks(width / 80)
-                        .tickSizeOuter(0)
-                )
             Object.assign(this.dependencies, { x })
         }
 
@@ -44,11 +35,6 @@ export default class LinePlot extends SVGBaseVisualization {
                 ])
                 .nice()
                 .range([height - margin.bottom, margin.top])
-
-            rootContainer
-                .append('g')
-                .attr('transform', `translate(${margin.left},0)`)
-                .call(d3.axisLeft(y))
 
             Object.assign(this.dependencies, { y })
         }
