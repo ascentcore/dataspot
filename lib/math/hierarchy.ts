@@ -31,7 +31,11 @@ type Hierarchy = {
     centroid: number[]
 }
 
-export default function hierarchy(hPoints: HierarchyPoints[], linkage: Linkage, distanceFn: DistanceMeasurement): any {
+export default function hierarchy(
+    hPoints: HierarchyPoints[],
+    linkage: Linkage,
+    distanceFn: DistanceMeasurement
+): HierarchyPoints {
     const { length: pointsCount } = hPoints
     const distMat: number[][] = []
     for (let i = 0; i < pointsCount; i++) {
@@ -62,8 +66,7 @@ export default function hierarchy(hPoints: HierarchyPoints[], linkage: Linkage, 
             clusterArr[cluster].index.push(localIndex)
             clusterArr[cluster].points.push(...points)
             if (localDistances) {
-                // eslint-disable-next-line prettier/prettier
-                clusterArr[cluster].distances?.push(localDistances)
+                clusterArr[cluster].distances.push(localDistances)
             }
         }
     }
@@ -75,4 +78,40 @@ export default function hierarchy(hPoints: HierarchyPoints[], linkage: Linkage, 
     } else {
         return values[0]
     }
+}
+
+function collapse(root: any[]): any[] {
+    const elems = []
+    if (Array.isArray(root)) {
+        for (let i = 0; i < root.length; i++) {
+            const elem = root[i]
+            elems.push(...collapse(elem))
+        }
+    } else {
+        elems.push(root)
+    }
+
+    return elems
+}
+
+export function hCut(tree: HierarchyPoints, cut: number) {
+    const next = []
+
+    let root = tree.index
+
+    for (let i = 0; i < cut; i++) {
+        let nextToProcess = []
+        for (let j = 0; j < root.length; j++) {
+            if (Array.isArray(root[j])) {
+                nextToProcess.push(...root[j])
+            } else {
+                next.push(root[j])
+            }
+        }
+        root = nextToProcess
+    }
+
+    next.push(...root)
+
+    return next.map((item) => collapse(item))
 }

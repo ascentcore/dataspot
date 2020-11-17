@@ -44,6 +44,9 @@ export default class HierarchyPlot extends SVGBaseVisualization {
             .selectAll('path')
             .data(root.links())
             .join('path')
+            .attr('data-id', (d: any) => {
+                return d.data
+            })
             .attr('stroke', '#000')
             .attr('d', treeLink)
 
@@ -54,6 +57,9 @@ export default class HierarchyPlot extends SVGBaseVisualization {
             .selectAll('g')
             .data(root.descendants())
             .join('g')
+            .attr('data-id', (d: any) => {
+                return d.data
+            })
             .attr('transform', (d: any) => (isHorizontal ? `translate(${d.y},${d.x})` : `translate(${d.x},${d.y})`))
 
         node.append('circle')
@@ -69,8 +75,8 @@ export default class HierarchyPlot extends SVGBaseVisualization {
             .attr('text-anchor', (d: any) => (isHorizontal ? (d.children ? 'end' : 'start') : 'end'))
             .text((d: any) => (typeof d.data === 'string' ? d.data : ''))
 
-            .clone(true)
-            .lower()
-            .attr('stroke', 'white')
+        // .clone(true)
+        // .lower()
+        // .attr('stroke', 'white')
     }
 }
