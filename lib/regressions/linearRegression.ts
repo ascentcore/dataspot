@@ -1,5 +1,11 @@
 import { meanSquaredError } from '../functions/losses'
-import { updateWeightAndBias } from '../functions/optimizers'
+import { gradientDescent } from '../functions/optimizers'
+
+export type LinearRegressionOutputType = {
+    updatedWeight: number
+    updatedBias: number
+    costHistory: number[]
+}
 
 export function predictionSinglevariable(input: number[], weight: number, bias: number): number[] {
     const value = []
@@ -19,7 +25,7 @@ export default class LinearRegression {
         learningRate: number,
         epochs: number,
         costFunction: Function
-    ): Generator<{ updatedWeight: number; updatedBias: number; costHistory: number[] }> {
+    ): Generator<LinearRegressionOutputType> {
         const costHistory = []
         let updatedWeight = weight
         let updatedBias = bias
@@ -29,10 +35,10 @@ export default class LinearRegression {
         while (true) {
             let updated = true
 
-            const [w, b] = updateWeightAndBias(input, target, updatedWeight, updatedBias, learningRate, costFunction)
+            const [w, b] = gradientDescent(input, target, updatedWeight, updatedBias, learningRate, costFunction)
 
-            updatedWeight = w
-            updatedBias = b
+            updatedWeight = <number>w
+            updatedBias = <number>b
 
             // Calculate cost for auditing purposes
             const cost = meanSquaredError(updatedPrediction, target)
