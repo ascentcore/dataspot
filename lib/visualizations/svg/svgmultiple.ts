@@ -1,5 +1,5 @@
 import SVGBaseVisualization from './svgbase'
-import { TwoDPointLine, TwoDPointScatter, FunctioDefinitionMesh } from '../../models/types'
+import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 
 export default class SVGMultipleVisualization extends SVGBaseVisualization {
     private visualizations: { [name: string]: SVGBaseVisualization } = {}
@@ -28,20 +28,14 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
 
     public setContainer(containerRef: HTMLElement) {
         super.setContainer(containerRef)
-        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setContainer(containerRef))
+        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setContainer(this))
     }
 
-    private getDataUpdateFunction(svgElemId: string): (data: any, svgElemId: string) => void | null {
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], svgElemId: string) {
         if (this.visualizations[svgElemId]) {
-            return this.visualizations[svgElemId].dataUpdate.bind(this.visualizations[svgElemId])
+            const updateFn = this.visualizations[svgElemId].dataUpdate
+            return updateFn.call(this.visualizations[svgElemId], data, svgElemId)
         }
         return null
-    }
-
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh, svgElemId: string): void {
-        const updateFn = this.getDataUpdateFunction(svgElemId)
-        if (updateFn) {
-            updateFn(data, svgElemId)
-        }
     }
 }

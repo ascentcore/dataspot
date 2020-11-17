@@ -4,8 +4,6 @@ import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
 import getReportFolder from '../../utils/osutils'
 import SVGBaseVisualization from './svgbase'
-import LinePlot from './lineplot'
-import Scatter from './scatter'
 
 import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 
@@ -38,21 +36,38 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         if (this.lab) {
             this.lab.store(`${this.name}-setup`, {
                 config: this.visualization.config,
-                node: this.visualization.getDependency('container').node().outerHTML,
-                prepareDependenciesExpr: this.visualization.setup.toString(),
-                dataUpdateExpr: this.visualization.dataUpdate.toString(),
-                linePlotDataUpdateExpr: LinePlot.prototype.dataUpdate.toString(),
-                scatterPlotDataUpdateExpr: Scatter.prototype.dataUpdate.toString()
+                node: this.visualization.getDependency('rootContainer').node().outerHTML,
+                prepareDependenciesExpr: this.visualization.setup
+                    .toString()
+                    .replace(/\/\/.*/g, '')
+                    .replace(/  +/g, '')
+                    .replace(/\n/g, ' ')
+                    .replace(/setup\([^)]*\) *{/g, '')
+                    .replace(/}$/g, '')
             })
         }
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], svgElemId = this.visualization.svgElemId): void {
-        this.visualization.dataUpdate(data, svgElemId)
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], svgElemId = this.visualization.svgElemId) {
+        // eslint-disable-next-line prettier/prettier
+        const dataUpdateExpr = this.visualization.dataUpdate(data, svgElemId)
+
         if (this.lab) {
-            this.lab.store(`${this.name}-data`, { data, svgElemId })
+            this.lab.store(`${this.name}-data`, {
+                data,
+                svgElemId,
+                dataUpdateExpr: dataUpdateExpr
+                    ? dataUpdateExpr
+                          .toString()
+                          .replace(/\/\/.*/g, '')
+                          .replace(/  +/g, '')
+                          .replace(/\n/g, ' ')
+                          .replace(/updateFn\([^)]*\) *{/g, '')
+                          .replace(/}$/g, '')
+                    : null
+            })
         } else {
-            const svgContent = this.visualization.getDependency('container').node().outerHTML
+            const svgContent = this.visualization.getDependency('rootContainer').node().outerHTML
             const buf = Buffer.from(svgContent)
             try {
                 Sharp(buf)
@@ -64,5 +79,6 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
                 console.log(err)
             }
         }
+        return dataUpdateExpr
     }
 }

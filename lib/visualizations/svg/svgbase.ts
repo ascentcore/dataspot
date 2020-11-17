@@ -20,24 +20,26 @@ export default abstract class SVGBaseVisualization extends BaseVisualization {
         Object.assign(this.dependencies, { d3 })
     }
 
-    public setContainer(containerRef: HTMLElement) {
+    public setContainer(containerRef: HTMLElement | SVGBaseVisualization) {
         const { width, height } = this.config
 
-        if (
-            d3
+        let parentContainer: any
+        let rootContainer: any
+
+        if (!(containerRef instanceof SVGBaseVisualization)) {
+            parentContainer = d3
                 .select(containerRef)
-                .select('svg')
-                .empty()
-        ) {
-            d3.select(containerRef).append('svg')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+            rootContainer = parentContainer
+        } else {
+            parentContainer = containerRef.getDependency('container')
+            rootContainer = containerRef.getDependency('rootContainer')
         }
 
-        const container = d3
-            .select(containerRef)
-            .select('svg')
-            .attr('width', width)
-            .attr('height', height)
+        const container = parentContainer.append('g').attr('id', this.svgElemId)
 
-        Object.assign(this.dependencies, { container })
+        Object.assign(this.dependencies, { container, rootContainer })
     }
 }

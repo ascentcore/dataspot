@@ -6,20 +6,11 @@ export default class LinePlot extends SVGBaseVisualization {
         super(config, svgElemId)
     }
 
-    setup() {
-        const { container } = this.dependencies
+    public setup() {}
 
-        if (container.select(`#${this.svgElemId}`).empty()) {
-            container
-                .append('g')
-                .attr('id', this.svgElemId)
-                .attr('data-type', 'line-plot')
-        }
-    }
-
-    dataUpdate(data: TwoDPointLine[], svgElemId = this.svgElemId): void {
+    private updateFn(data: TwoDPointLine[], svgElemId: string): void {
         const { margin, width, height, domainX, domainY } = this.config
-        const { d3, container } = this.dependencies
+        const { d3, rootContainer } = this.dependencies
 
         let { x, y } = this.dependencies
         if (!x) {
@@ -32,7 +23,7 @@ export default class LinePlot extends SVGBaseVisualization {
                 .nice()
                 .range([margin.left, width - margin.right])
 
-            container
+            rootContainer
                 .append('g')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
@@ -54,7 +45,7 @@ export default class LinePlot extends SVGBaseVisualization {
                 .nice()
                 .range([height - margin.bottom, margin.top])
 
-            container
+            rootContainer
                 .append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
@@ -67,9 +58,9 @@ export default class LinePlot extends SVGBaseVisualization {
             .x((d: TwoDPointLine) => x(d.x))
             .y((d: TwoDPointLine) => y(d.y))
 
-        container.selectAll(`#${svgElemId} path`).remove()
+        rootContainer.selectAll(`#${svgElemId} path`).remove()
 
-        container
+        rootContainer
             .select(`#${svgElemId}`)
             .append('path')
             .datum(data)
@@ -80,5 +71,10 @@ export default class LinePlot extends SVGBaseVisualization {
             .attr('stroke-linejoin', 'round')
             .attr('stroke-linecap', 'round')
             .attr('d', line)
+    }
+
+    public dataUpdate(data: TwoDPointLine[], svgElemId = this.svgElemId) {
+        this.updateFn(data, svgElemId)
+        return this.updateFn
     }
 }
