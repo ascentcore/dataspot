@@ -29,6 +29,7 @@ describe('Regressions', () => {
     it('Multivariable Linear Regression - Prediction Function', async () => {
         expect(predictionMultivariable([[1, 2, 3], [4, 5, 6]], [0.1, 0.2, 0.3], 1)).toEqual([2.4, 4.1999999999999997])
         expect(predictionMultivariable([[1, 2], [2, 3]], [0.5, 1], 1)).toEqual([3.5, 5])
+        expect(predictionMultivariable([[1, 2], [2, 3]], [0.4995, 0.999], 0.9995)).toEqual([3.497, 4.9955])
     })
 
     it('Multivariable Linear Regression', async () => {

@@ -15,5 +15,9 @@ describe('Optimizers', () => {
             [0.4995, 0.999],
             0.9995
         ])
+        expect(gradientDescent([[1, 2], [2, 3]], [3, 5], [0.4995, 0.999], 0.9995, 0.001, mseCostFunction)).toEqual([
+            [0.499012, 0.9980195],
+            0.9990075
+        ])
     })
 })
