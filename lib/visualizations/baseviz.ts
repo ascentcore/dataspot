@@ -24,6 +24,7 @@ export default abstract class BaseVisualization {
      */
     abstract dataUpdate(
         data:
+            | any
             | { x: number; y: number; r?: number; color?: number }[]
             | { x: number; y: number }[]
             | { zFunc: (x: number, y: number) => number; xMin: number; xMax: number; yMin: number; yMax: number }

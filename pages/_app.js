@@ -22,6 +22,12 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/regressions' className='btn btn-link'>
                         Regressions
                     </a>
+                    <a href='/segmentation' className='btn btn-link'>
+                        Segmentation
+                    </a>
+                    <a href='/hierarchy' className='btn btn-link'>
+                        Hierarchy
+                    </a>
                 </section>
                 <section className='navbar-section'></section>
             </header>
