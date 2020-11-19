@@ -4,22 +4,20 @@ import data from '../../lib/dataset/samples/usarrests'
 // import data from '../../lib/dataset/samples/iris'
 import HierarchyPlot from '../../lib/visualizations/svg/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
-import hierarchy, { hCut, singleLinkage } from '../../lib/math/hierarchy'
+import hierarchy, { hCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
 
 const width = 1200
 const height = 500
 
 const palette = d3.scaleOrdinal(d3.schemeTableau10)
-
+const result = hierarchy(
+    data.map((row: any[]) => ({ index: row[0], points: [row.slice(1)] })),
+    singleLinkage,
+    euclideanDistance
+)
 export default function States() {
     const containerRef = useRef(null)
     const [value, setValue] = useState(null)
-
-    const result = hierarchy(
-        data.map((row: any[]) => ({ index: row[0], points: [row.slice(1)] })),
-        singleLinkage,
-        euclideanDistance
-    )
 
     useEffect(() => {
         const clusters = hCut(result, value)

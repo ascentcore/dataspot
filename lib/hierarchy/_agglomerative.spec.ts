@@ -1,5 +1,5 @@
-import { euclideanDistance } from './distances'
-import hierarchy, { hCut, HierarchyPoints, singleLinkage } from './hierarchy'
+import { euclideanDistance } from '../math/distances'
+import hierarchy, { hCut, HierarchyPoints, singleLinkage } from './agglomerative'
 import blobDataset from '../dataset/blobDataset'
 import data from '../dataset/samples/usarrests'
 

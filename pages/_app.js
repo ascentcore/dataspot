@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
                         Segmentation
                     </a>
                     <a href='/hierarchy' className='btn btn-link'>
-                        hierarchy
+                        Hierarchy
                     </a>
                 </section>
                 <section className='navbar-section'></section>

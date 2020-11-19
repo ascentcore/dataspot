@@ -1,6 +1,12 @@
 import SVGBaseVisualization from './svgbase'
 
-export type ScatterType = ScatterType
+export type ScatterType = {
+    id?: number
+    x?: number
+    y?: number
+    r?: number
+    color?: number
+}
 
 export default class Scatter extends SVGBaseVisualization {
     setup() {

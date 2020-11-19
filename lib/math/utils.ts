@@ -62,8 +62,12 @@ export function getPairsFromDistanceMatrix(distMat: number[][]): number[][] {
         let min = Infinity
         let x = -1
         let y = -1
+        let localMin = Infinity
         for (let i = 0; i < length; i++) {
             for (let j = i + 1; j < length; j++) {
+                if (distMat[i][j] < min) {
+                    localMin = distMat[i][j]
+                }
                 if (clusters[i] === Infinity && clusters[j] === Infinity && distMat[i][j] < min) {
                     min = distMat[i][j]
                     x = i
@@ -72,12 +76,19 @@ export function getPairsFromDistanceMatrix(distMat: number[][]): number[][] {
             }
         }
 
-        clusters[x] = cluster
-        clusters[y] = cluster
-        distances[x] = min
-        distances[y] = min
-        cluster++
-        paired -= 2
+        if (localMin === min) {
+            clusters[x] = cluster
+            clusters[y] = cluster
+            distances[x] = min
+            distances[y] = min
+            cluster++
+            paired -= 2
+        } else {
+            clusters[x] = cluster
+            distances[x] = 0
+            cluster++
+            paired -= 1
+        }
     }
 
     for (let i = 0; i < length; i++) {

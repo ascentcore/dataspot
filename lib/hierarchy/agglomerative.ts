@@ -1,5 +1,5 @@
-import { DistanceMeasurement } from './distances'
-import { getPairsFromDistanceMatrix } from './utils'
+import { DistanceMeasurement } from '../math/distances'
+import { getPairsFromDistanceMatrix } from '../math/utils'
 
 export type Linkage = (v1: number[][], v2: number[][], distanceFn: DistanceMeasurement) => number
 export type HierarchyPoints = {
@@ -24,6 +24,33 @@ export function singleLinkage(v1: number[][], v2: number[][], distanceFn: Distan
     }
 
     return result
+}
+
+export function completeLinkage(v1: number[][], v2: number[][], distanceFn: DistanceMeasurement): number {
+    let result: number = Infinity
+    for (let i = 0; i < v1.length; i++) {
+        for (let j = 0; j < v2.length; j++) {
+            const dist = <number>distanceFn(v1[i], v2[j]) * -1
+            if (!result || result > dist) {
+                result = dist
+            }
+        }
+    }
+
+    return result
+}
+
+export function averageLinkage(v1: number[][], v2: number[][], distanceFn: DistanceMeasurement): number {
+    let result = 0
+    for (let i = 0; i < v1.length; i++) {
+        let avg = 0
+        for (let j = 0; j < v2.length; j++) {
+            avg += <number>distanceFn(v1[i], v2[j])
+        }
+        result += avg / v2.length
+    }
+
+    return result / v1.length
 }
 
 type Hierarchy = {
@@ -65,7 +92,7 @@ export default function hierarchy(
             const { index: localIndex, points, distances: localDistances } = hPoints[i]
             clusterArr[cluster].index.push(localIndex)
             clusterArr[cluster].points.push(...points)
-            if (localDistances) {
+            if (localDistances && clusterArr[cluster] && clusterArr[cluster].distances) {
                 clusterArr[cluster].distances.push(localDistances)
             }
         }
@@ -100,7 +127,7 @@ export function hCut(tree: HierarchyPoints, cut: number) {
     let root = tree.index
 
     for (let i = 0; i < cut; i++) {
-        let nextToProcess = []
+        const nextToProcess = []
         for (let j = 0; j < root.length; j++) {
             if (Array.isArray(root[j])) {
                 nextToProcess.push(...root[j])
