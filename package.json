@@ -11,8 +11,9 @@
         "lint": "npm run lint:json && npm run lint:ts",
         "lint:json": "prettier --list-different .eslintrc *.json",
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
-        "build": "tsc",
-        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown"
+        "build": "tsc --p ./lib",
+        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown",
+        "generate-showcase": "cd showcase-generator && npm run build-prod"
     },
     "repository": {
         "type": "git",
@@ -70,6 +71,8 @@
         "react": "16.13.1",
         "rfdc": "^1.1.4",
         "seedrandom": "^3.0.5",
-        "sharp": "^0.26.2"
+        "sharp": "^0.26.2",
+        "three": "^0.122.0",
+        "three-orbit-controls": "^82.1.0"
     }
 }

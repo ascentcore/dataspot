@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "ES2017",
+        "allowJs": true,
+        "jsx": "react",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["./src/**/*"]
+}

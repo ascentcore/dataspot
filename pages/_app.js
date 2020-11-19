@@ -16,6 +16,12 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/datasets' className='btn btn-link'>
                         Datasets
                     </a>
+                    <a href='/benchmarks' className='btn btn-link'>
+                        Benchmarks
+                    </a>
+                    <a href='/regressions' className='btn btn-link'>
+                        Regressions
+                    </a>
                     <a href='/segmentation' className='btn btn-link'>
                         Segmentation
                     </a>
