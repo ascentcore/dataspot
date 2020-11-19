@@ -24,7 +24,7 @@ export default abstract class BaseVisualization {
      * @param data array of data values
      */
     abstract dataUpdate(
-        data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh,
+        data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh | any,
         svgElemId?: string
     ): ((data: TwoDPointScatter[] | TwoDPointLine[], svgElemId: string) => void) | null
 

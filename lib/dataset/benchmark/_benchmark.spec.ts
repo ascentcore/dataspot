@@ -8,13 +8,13 @@ import rosenbrock from './rosenbrock'
 describe('Optimization Functions Benchmark', () => {
     it('Rastrigin tests', async () => {
         expect(rastrigin(0, 0)).toBe(0)
-        expect(rastrigin(1, 1)).toBe(2)
-        expect(rastrigin(-1, 1)).toBe(2)
-        expect(rastrigin(1, -1)).toBe(2)
-        expect(rastrigin(-1, -1)).toBe(2)
-        expect(rastrigin(-5.12, -5.12)).toBe(57.84942745157179)
-        expect(rastrigin(-5.12, 5.12)).toBe(57.84942745157179)
-        expect(rastrigin(5.12, 5.12)).toBe(57.84942745157179)
+        expect(rastrigin(1, 1)).toBe(0.2)
+        expect(rastrigin(-1, 1)).toBe(0.2)
+        expect(rastrigin(1, -1)).toBe(0.2)
+        expect(rastrigin(-1, -1)).toBe(0.2)
+        expect(rastrigin(-5.12, -5.12)).toBe(5.7849427451571795)
+        expect(rastrigin(-5.12, 5.12)).toBe(5.7849427451571795)
+        expect(rastrigin(5.12, 5.12)).toBe(5.7849427451571795)
     })
 
     it('Weierstrass tests', async () => {

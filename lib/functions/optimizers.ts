@@ -1,40 +1,61 @@
-function mseCostFunction(input: number, target: number, weight: number, bias: number): number[] {
-    const derivate = []
-    derivate.push(-2 * input * (target - (weight * input + bias)))
-    derivate.push(-2 * (target - (weight * input + bias)))
+import { VectorUtils } from '../math-utils'
+import { predictionSinglevariable } from '../regressions/linearRegression'
+import { predictionMultivariable } from '../regressions/multivariableLinearRegression'
+
+export function mseCostFunction(input: number | number[], target: number, prediction: number): (number | number[])[] {
+    const derivate: (number | number[])[] = []
+    if (Array.isArray(input)) {
+        const weightsDeriv = []
+        for (let i = 0; i < input.length; i++) {
+            weightsDeriv.push(-2 * input[i] * (target - prediction))
+        }
+        derivate.push(weightsDeriv)
+    } else {
+        let weightDeriv = 0
+        weightDeriv = -2 * input * (target - prediction)
+        derivate.push(weightDeriv)
+    }
+
+    derivate.push(-2 * (target - prediction))
 
     return derivate
 }
 
-export default function gradientDescent(
-    input: number[],
+export function gradientDescent(
+    input: number[] | number[][],
     target: number[],
-    weight: number,
+    weight: number | number[],
     bias: number,
     learningRate: number,
     costFunction: Function
-): number[] {
-    let weightDeriv = 0
-    let biasDeriv = 0
-    let stepSizeWeight = 0
-    let stepSizeBias = 0
-    const update = []
+): (number | number[])[] {
+    const weightInit: number[] = Array(target.length).fill(0)
+    const update = Array.isArray(weight) ? [weightInit, 0] : [0, 0]
     const samples = input.length
+    const predictions = Array.isArray(weight)
+        ? predictionMultivariable(<number[][]>input, weight, bias)
+        : predictionSinglevariable(<number[]>input, weight, bias)
+    let weightDeriv = Array.isArray(weight) ? weightInit : 0
+    let biasDeriv = 0
+    let stepSizeWeight = Array.isArray(weight) ? weightInit : 0
+    let stepSizeBias = 0
 
     for (let i = 0; i < samples; i++) {
-        const [wD, bD] = costFunction(input[i], target[i], weight, bias)
+        const [wD, bD] = costFunction(input[i], target[i], predictions[i])
 
-        weightDeriv += wD
+        weightDeriv = Array.isArray(weightDeriv) ? VectorUtils.addition(weightDeriv, wD) : weightDeriv + wD
         biasDeriv += bD
     }
 
-    stepSizeWeight = (weightDeriv / samples) * learningRate
+    stepSizeWeight = Array.isArray(weightDeriv)
+        ? VectorUtils.scalarMultiplication(VectorUtils.scalarDivision(weightDeriv, samples), learningRate)
+        : (weightDeriv / samples) * learningRate
     stepSizeBias = (biasDeriv / samples) * learningRate
 
-    update.push(weight - stepSizeWeight)
-    update.push(bias - stepSizeBias)
+    update[0] = Array.isArray(weight)
+        ? VectorUtils.subtraction(weight, <number[]>stepSizeWeight)
+        : weight - <number>stepSizeWeight
+    update[1] = bias - stepSizeBias
 
     return update
 }
-
-export { gradientDescent, mseCostFunction }

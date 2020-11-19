@@ -45,17 +45,19 @@ export default class Scatter extends SVGBaseVisualization {
             .select(`#${svgElemId}`)
             .selectAll('circle')
             .data(data)
+            .attr('data-id', (d: TwoDPointScatter) => d.id || '')
             .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
             .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
-            .style('fill', (d: TwoDPointScatter) =>
+            .attr('fill', (d: TwoDPointScatter) =>
                 d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
             )
             .attr('r', (d: TwoDPointScatter) => d.r || 1)
             .enter()
             .append('circle')
+            .attr('data-id', (d: TwoDPointScatter) => d.id || '')
             .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
             .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
-            .style('fill', (d: TwoDPointScatter) =>
+            .attr('fill', (d: TwoDPointScatter) =>
                 d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
             )
             .attr('r', (d: TwoDPointScatter) => d.r || 1)

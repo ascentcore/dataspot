@@ -1,3 +1,4 @@
+/* eslint-disable prefer-spread */
 /* eslint-disable no-bitwise */
 export class MathUtils {
     private static rand = MathUtils.mulberry32(MathUtils.xmur3('apples')())
@@ -75,13 +76,82 @@ export class VectorUtils {
         return sum
     }
 
-    static sum(v1: number[], v2: number[]): number[] {
+    static sumElements(arr: number[]): number {
+        let value = 0
+        for (let i = 0; i < arr.length; i++) {
+            value += arr[i]
+        }
+
+        return value
+    }
+
+    static addition(v1: number[], v2: number[]): number[] {
         if (!v1 || !v2 || v1.length !== v2.length) {
             throw new Error(`Missing ponts data ${v1}, ${v2}`)
         }
         return v1.map((item, index) => {
             return item + v2[index]
         })
+    }
+
+    static subtraction(v1: number[], v2: number[]): number[] {
+        if (!v1 || !v2 || v1.length !== v2.length) {
+            throw new Error(`Missing ponts data ${v1}, ${v2}`)
+        }
+        return v1.map((item, index) => {
+            return item - v2[index]
+        })
+    }
+
+    static multiplication(v1: number[], v2: number[]): number[] {
+        if (!v1 || !v2 || v1.length !== v2.length) {
+            throw new Error(`Missing ponts data ${v1}, ${v2}`)
+        }
+        return v1.map((item, index) => {
+            return item * v2[index]
+        })
+    }
+
+    static division(v1: number[], v2: number[]): number[] {
+        if (!v1 || !v2 || v1.length !== v2.length) {
+            throw new Error(`Missing ponts data ${v1}, ${v2}`)
+        }
+        return v1.map((item, index) => {
+            return item / v2[index]
+        })
+    }
+
+    static scalarAddition(v1: number[], scalar: number): number[] {
+        return v1.map((item) => {
+            return item + scalar
+        })
+    }
+
+    static scalarSubtraction(v1: number[], scalar: number): number[] {
+        return v1.map((item) => {
+            return item - scalar
+        })
+    }
+
+    static scalarMultiplication(v1: number[], scalar: number): number[] {
+        return v1.map((item) => {
+            return item * scalar
+        })
+    }
+
+    static scalarDivision(v1: number[], scalar: number): number[] {
+        return v1.map((item) => {
+            return item / scalar
+        })
+    }
+
+    static averageElements(arr: number[]): number {
+        let value = 0
+        for (let i = 0; i < arr.length; i++) {
+            value += arr[i]
+        }
+
+        return value / arr.length
     }
 
     static average(arr: number[][]): number[] {
@@ -91,7 +161,7 @@ export class VectorUtils {
         const size = arr[0].length
         const zeroVector = Array(size).fill(0)
         const sum = arr.reduce((v1: number[], v2: number[]) => {
-            return VectorUtils.sum(v1, v2)
+            return VectorUtils.addition(v1, v2)
         }, zeroVector)
         return sum.map((val) => {
             return val / arr.length
@@ -105,5 +175,33 @@ export class VectorUtils {
         return v.reduce((lowest, next, index) => {
             return next < v[lowest] ? index : lowest
         }, 0)
+    }
+
+    static max(v: number[]): number {
+        return Math.max.apply(Math, v)
+    }
+
+    static min(v: number[]): number {
+        return Math.min.apply(Math, v)
+    }
+
+    static normalize(v: number[]): number[] {
+        let avg = 0
+        let range = 0
+        let resultVector = []
+
+        avg = this.averageElements(v)
+        range = this.max(v) - this.min(v)
+
+        resultVector = this.scalarSubtraction(v, avg)
+        resultVector = this.scalarDivision(resultVector, range)
+
+        return resultVector
+    }
+}
+
+export class MatrixUtils {
+    static transpose(matrix: number[][]): number[][] {
+        return matrix[0].map((r, i) => matrix.map((c) => c[i]))
     }
 }
