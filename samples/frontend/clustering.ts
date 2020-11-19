@@ -12,6 +12,8 @@ import concentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
 import fillSpaceDataset from '../../lib/dataset/fillSpaceDataset'
 import noisyWithBlobDataset from '../../lib/dataset/noisyWithBlobDataset'
 import potatoDataset from '../../lib/dataset/potatoDataset'
+import Axis from '../../lib/visualizations/svg/axis'
+import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -74,9 +76,16 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
     resetBtn.innerHTML = 'Reset'
     footer.appendChild(resetBtn)
 
-    visKMeans = new Scatter({})
+    const scatterKMeans = new Scatter({}, 'scatter-elem')
+    const axisKMeans = new Axis({}, 'axis-elem')
+
+    visKMeans = new SVGMultipleVisualization({}, 'kmeans-plot-elem', [scatterKMeans, axisKMeans])
     visKMeans.setContainer(plotKmeans)
-    vizDBScan = new Scatter({})
+
+    const scatterDBScan = new Scatter({}, 'scatter-elem')
+    const axisDBScan = new Axis({}, 'axis-elem')
+
+    vizDBScan = new SVGMultipleVisualization({}, 'dbscan-plot-elem', [scatterDBScan, axisDBScan])
     vizDBScan.setContainer(plotDBScan)
 
     const initialize = () => {
@@ -95,18 +104,18 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         resultKmeans = { points: [], centroids: [] }
         resultDBScan = { points: [], centroids: 0 }
         visKMeans.setup()
-        visKMeans.dataUpdate(
-            initialDataset.map((data) => {
-                return { x: data[0], y: data[1], r: 1.2 }
-            })
-        )
+        const mappedDataKMeans = initialDataset.map((data) => {
+            return { x: data[0], y: data[1], r: 1.2 }
+        })
+        visKMeans.dataUpdate(mappedDataKMeans, 'scatter-elem')
+        visKMeans.dataUpdate(mappedDataKMeans, 'axis-elem')
 
         vizDBScan.setup()
-        vizDBScan.dataUpdate(
-            initialDataset.map((data) => {
-                return { x: data[0], y: data[1], r: 1.2 }
-            })
-        )
+        const mappedDataDBScan = initialDataset.map((data) => {
+            return { x: data[0], y: data[1], r: 1.2 }
+        })
+        vizDBScan.dataUpdate(mappedDataDBScan, 'scatter-elem')
+        vizDBScan.dataUpdate(mappedDataDBScan, 'axis-elem')
     }
 
     const step = () => {

@@ -5,19 +5,28 @@ import generateBlobDataset from '../../lib/dataset/blobDataset'
 import generateConcentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
 
 import Scatter from '../../lib/visualizations/svg/scatter'
+import Axis from '../../lib/visualizations/svg/axis'
+import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
 
 function Representation({ data, name, width, height }) {
     const svgRef = useRef(null)
 
     useEffect(() => {
-        const plot = new Scatter({ width, height })
+        const axisElemId = 'axis-elem'
+        const scatterElemId = 'scatter-elem'
+        const datasetElemId = 'dataset-elem'
+
+        const axis = new Axis({}, axisElemId)
+        const scatter = new Scatter({}, scatterElemId)
+
+        const plot = new SVGMultipleVisualization({ width, height }, datasetElemId, [axis, scatter])
         plot.setContainer(svgRef.current)
         plot.setup()
-        plot.dataUpdate(
-            data.map((d) => {
-                return { x: d[0], y: d[1] }
-            })
-        )
+        const mappedData = data.map((d) => {
+            return { x: d[0], y: d[1] }
+        })
+        plot.dataUpdate(mappedData, axisElemId)
+        plot.dataUpdate(mappedData, scatterElemId)
     }, [svgRef])
 
     return (

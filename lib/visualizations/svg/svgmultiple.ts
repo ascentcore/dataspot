@@ -6,12 +6,22 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
 
     constructor(config: any, svgElemId: string, visualizations: SVGBaseVisualization[]) {
         super(config, svgElemId)
+        const domainConfig = [...visualizations, this].reduce((acc, curr) => {
+            return Object.assign(acc, {
+                domainX: {
+                    min: curr.config.domainX ? curr.config.domainX.min : undefined,
+                    max: curr.config.domainX ? curr.config.domainX.max : undefined
+                },
+                domainY: {
+                    min: curr.config.domainY ? curr.config.domainY.min : undefined,
+                    max: curr.config.domainY ? curr.config.domainY.max : undefined
+                }
+            })
+        }, {})
+
         visualizations.forEach((viz) => {
             this.visualizations[viz.svgElemId] = viz
-            Object.assign(this.visualizations[viz.svgElemId].config, config, {
-                domainX: { min: config.domainX.min || 0, max: config.domainX.max || 10 },
-                domainY: { min: config.domainY.min || 0, max: config.domainY.max || 10 }
-            })
+            Object.assign(viz.config, config, domainConfig)
         })
     }
 
