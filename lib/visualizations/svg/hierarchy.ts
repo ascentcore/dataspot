@@ -74,7 +74,7 @@ export default class HierarchyPlot extends SVGBaseVisualization {
         node.append('text')
             .attr('fill', '#000')
             .attr('dy', '0.31em')
-            .attr('x', (d) => (d.children || !isHorizontal ? -6 : 6))
+            .attr('x', (d: any) => (d.children || !isHorizontal ? -6 : 6))
             .attr('transform', isHorizontal ? '' : 'rotate(-90)')
             // eslint-disable-next-line no-nested-ternary
             .attr('text-anchor', (d: any) => (isHorizontal ? (d.children ? 'end' : 'start') : 'end'))

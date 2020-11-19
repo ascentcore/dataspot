@@ -38,7 +38,9 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
 
     public setContainer(containerRef: HTMLElement) {
         super.setContainer(containerRef)
-        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setContainer(this))
+        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) =>
+            viz.setContainer(this as SVGBaseVisualization)
+        )
     }
 
     dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], svgElemId: string) {
