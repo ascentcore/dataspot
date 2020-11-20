@@ -1,9 +1,8 @@
-import KMeans from '../../lib/clustering/k-means'
-import DBScan from '../../lib/clustering/db-scan'
+import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
+import DBScan, { DBScanConfig } from '../../lib/clustering/DBScan'
 import Lab from '../../lib/lab'
 import SVGVisualizationWrapper from '../../lib/visualizations/d3/svgvisualizationwrapper'
 import Scatter from '../../lib/visualizations/d3/scatter'
-const VectorUtils = require('../../lib/utils/math-utils').VectorUtils
 
 import arcDataset from '../../lib/dataset/arcDataset'
 import blobDataset from '../../lib/dataset/blobDataset'
@@ -15,12 +14,12 @@ import potatoDataset from '../../lib/dataset/potatoDataset'
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const plotClustering = async (initialDataset, datasetName) => {
-    const kmeans = KMeans.fit(initialDataset)
-    const dbscan = DBScan.fit(initialDataset, {
+    const kmeans = new KMeans(<KMeansConfig>{ clusters: 3 }).fitAsync(initialDataset)
+    const dbscan = new DBScan(<DBScanConfig>{
         epsilon: 0.05,
         minNeighbours: 8,
-        distance: VectorUtils.manhattanDistance
-    })
+        distanceFn: 'manhattanDistance'
+    }).fitAsync(initialDataset)
 
     const visKMeans = new SVGVisualizationWrapper(
         new Scatter({}),
@@ -39,19 +38,16 @@ const plotClustering = async (initialDataset, datasetName) => {
 
     let doneKmeans = false
     let doneDBScan = false
-    let resultKmeans = { points: [], centroids: [] }
-    let resultDBScan = { points: [], centroids: 0 }
+    let resultKmeans: number[] = []
+    let resultDBScan: number[] = []
     while (!doneKmeans || !doneDBScan) {
         if (!doneKmeans) {
             const kmeansValue = kmeans.next()
             doneKmeans = kmeansValue.done
             resultKmeans = kmeansValue.value
             visKMeans.dataUpdate([
-                ...resultKmeans.points.map((point) => {
-                    return { x: point.Location[0], y: point.Location[1], r: 1, color: point.Label }
-                }),
-                ...resultKmeans.centroids.map((centroid) => {
-                    return { x: centroid.Location[0], y: centroid.Location[1], r: 4, color: centroid.Label }
+                ...resultKmeans.map((label, index) => {
+                    return { x: initialDataset[index][0], y: initialDataset[index][1], r: 1, color: label }
                 })
             ])
         }
@@ -61,8 +57,8 @@ const plotClustering = async (initialDataset, datasetName) => {
             doneDBScan = dbscanValue.done
             resultDBScan = dbscanValue.value
             vizDBScan.dataUpdate([
-                ...resultDBScan.points.map((point) => {
-                    return { x: point.Location[0], y: point.Location[1], r: 1, color: point.Label }
+                ...resultDBScan.map((label, index) => {
+                    return { x: initialDataset[index][0], y: initialDataset[index][1], r: 1, color: label }
                 })
             ])
         }

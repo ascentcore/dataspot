@@ -1,10 +1,7 @@
-import KMeans from '../../lib/clustering/k-means'
-import DBScan from '../../lib/clustering/db-scan'
+import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
+import DBScan, { DBScanConfig } from '../../lib/clustering/DBScan'
 
 import Scatter from '../../lib/visualizations/d3/scatter'
-import Point from '../../lib/clustering/point'
-
-import { VectorUtils } from '../../lib/utils/math-utils'
 
 import arcDataset from '../../lib/dataset/arcDataset'
 import blobDataset from '../../lib/dataset/blobDataset'
@@ -14,14 +11,15 @@ import noisyWithBlobDataset from '../../lib/dataset/noisyWithBlobDataset'
 import potatoDataset from '../../lib/dataset/potatoDataset'
 import Axis from '../../lib/visualizations/d3/axis'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import { lab } from 'd3'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const plotClustering = async (container: HTMLElement, initialDataset: number[][], datasetName: string) => {
     let doneKmeans = false
     let doneDBScan = false
-    let resultKmeans = { points: [], centroids: [] }
-    let resultDBScan = { points: [], centroids: 0 }
+    let resultKmeans: number[] = []
+    let resultDBScan: number[] = []
     let visKMeans: any,
         vizDBScan: any,
         kmeans: any,
@@ -93,16 +91,16 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         nextBtn.disabled = false
         iterations = 0
         iterationsContainer.innerHTML = `Iterations: ${iterations} `
-        kmeans = KMeans.fit(initialDataset)
-        dbscan = DBScan.fit(initialDataset, {
+        kmeans = new KMeans(<KMeansConfig>{ clusters: 3 }).fitAsync(initialDataset)
+        dbscan = new DBScan(<DBScanConfig>{
             epsilon: 0.05,
             minNeighbours: 8,
-            distance: VectorUtils.manhattanDistance
-        })
+            distanceFn: 'manhattanDistance'
+        }).fitAsync(initialDataset)
         doneKmeans = false
         doneDBScan = false
-        resultKmeans = { points: [], centroids: [] }
-        resultDBScan = { points: [], centroids: 0 }
+        resultKmeans = []
+        resultDBScan = []
         visKMeans.setup()
         const mappedDataKMeans = initialDataset.map((data) => {
             return { x: data[0], y: data[1], r: 1.2 }
@@ -129,40 +127,38 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
             const kmeansValue = kmeans.next()
             doneKmeans = kmeansValue.done || false
             resultKmeans = kmeansValue.value
-            visKMeans.dataUpdate([
-                ...resultKmeans.points.map((point: Point) => {
-                    return {
-                        x: point.Location[0],
-                        y: point.Location[1],
-                        r: 1.2,
-                        color: point.Label
-                    }
-                }),
-                ...resultKmeans.centroids.map((centroid: Point) => {
-                    return {
-                        x: centroid.Location[0],
-                        y: centroid.Location[1],
-                        r: 5,
-                        color: centroid.Label
-                    }
-                })
-            ])
+            visKMeans.dataUpdate(
+                [
+                    resultKmeans.map((label, index) => {
+                        return {
+                            x: initialDataset[index][0],
+                            y: initialDataset[index][1],
+                            r: 1.2,
+                            color: label
+                        }
+                    })
+                ],
+                'scatter-elem'
+            )
         }
 
         if (!doneDBScan) {
             const dbscanValue = dbscan.next()
             doneDBScan = dbscanValue.done || false
             resultDBScan = dbscanValue.value
-            vizDBScan.dataUpdate([
-                ...resultDBScan.points.map((point: Point) => {
-                    return {
-                        x: point.Location[0],
-                        y: point.Location[1],
-                        r: 1.2,
-                        color: point.Label
-                    }
-                })
-            ])
+            vizDBScan.dataUpdate(
+                [
+                    resultDBScan.map((label, index) => {
+                        return {
+                            x: initialDataset[index][0],
+                            y: initialDataset[index][1],
+                            r: 1.2,
+                            color: label
+                        }
+                    })
+                ],
+                'scatter-elem'
+            )
         }
     }
 

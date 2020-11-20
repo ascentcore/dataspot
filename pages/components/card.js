@@ -1,4 +1,4 @@
-import D3Visualization from './d3visualization'
+import Visualization from './visualization'
 
 export default function Card({ dbref, db, docs }) {
     return (
@@ -6,7 +6,7 @@ export default function Card({ dbref, db, docs }) {
             <div className='card'>
                 <div className='card-header'>{dbref}</div>
                 <div className='card-body'>
-                    <D3Visualization
+                    <Visualization
                         db={db}
                         document={dbref}
                         key={docs[`${dbref}-setup`]}

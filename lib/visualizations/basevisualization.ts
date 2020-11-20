@@ -25,8 +25,8 @@ export default abstract class BaseVisualization {
      */
     abstract dataUpdate(
         data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh | any,
-        svgElemId?: string
-    ): ((data: TwoDPointScatter[] | TwoDPointLine[], svgElemId: string) => void) | null
+        elemId?: string
+    ): ((data: TwoDPointScatter[] | TwoDPointLine[], elemId: string) => void) | null
 
     public getDependency(key: string): any {
         return this.dependencies[key]
