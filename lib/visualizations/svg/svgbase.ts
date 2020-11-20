@@ -8,13 +8,13 @@ const DEFAULT_CONFIG = {
 }
 
 export default abstract class SVGBaseVisualization extends BaseVisualization {
-    constructor(config: any, svgElemId: string) {
+    constructor(config: any, elemId: string) {
         super(
             {
                 ...DEFAULT_CONFIG,
                 ...config
             },
-            svgElemId
+            elemId
         )
 
         Object.assign(this.dependencies, { d3 })
@@ -38,7 +38,7 @@ export default abstract class SVGBaseVisualization extends BaseVisualization {
             rootContainer = containerRef.getDependency('rootContainer')
         }
 
-        const container = parentContainer.append('g').attr('id', this.svgElemId)
+        const container = parentContainer.append('g').attr('id', this.elemId)
 
         Object.assign(this.dependencies, { container, rootContainer })
     }

@@ -5,7 +5,7 @@ import { TwoDPointLine, TwoDPointScatter, FunctioDefinitionMesh } from '../model
  *
  */
 export default abstract class BaseVisualization {
-    constructor(public config: any, public svgElemId: string) {}
+    constructor(public config: any, public elemId: string) {}
 
     /**
      * List of 3rd party dependencies that are are platform dependent

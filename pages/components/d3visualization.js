@@ -14,13 +14,13 @@ export default function D3Visualization({ db, document, rev }) {
                 if (!block.dependencies.rootContainer || block.dependencies.rootContainer.empty()) {
                     block.dependencies.rootContainer = d3.select(divRef.current.querySelector('svg'))
                 }
-                const { data, svgElemId, dataUpdateExpr } = doc
+                const { data, elemId, dataUpdateExpr } = doc
 
                 let dataUpdateExpression = dataUpdateExpr.replace(/this\./g, 'block.')
 
-                dataUpdateExpression = Function('block', 'data', 'svgElemId', dataUpdateExpression)
+                dataUpdateExpression = Function('block', 'data', 'elemId', dataUpdateExpression)
 
-                dataUpdateExpression(block, data, svgElemId)
+                dataUpdateExpression(block, data, elemId)
             }
         })
     }

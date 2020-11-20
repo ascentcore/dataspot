@@ -1,5 +1,6 @@
-import SVGVisualizationWrapper from './lib/visualizations/svg/svgvisualizationwrapper'
-import Scatter from './lib/visualizations/svg/scatter'
+import HTMLVisualizationWrapper from './lib/visualizations/html/htmlvisualizationwrapper'
+import Table from './lib/visualizations/html/table'
+import Lab from './lib/lab'
 
 const badFitData = [
     [0.2, 0.3855589773275536],
@@ -108,7 +109,14 @@ const badCentroids = [
     [0.38681199729328225, 0.7874221334227902]
 ]
 ;(async () => {
-    const vis1 = new SVGVisualizationWrapper(new Scatter({}), 'scatter-plot')
+    // const lab = new Lab('tables')
+    // try {
+    //     await lab.connected
+    // } catch (err) {
+    //     console.log('Unable to connect to lab...')
+    // }
+
+    const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot')
 
     const data: any[] = []
     badFitData.forEach((point: any) => data.push({ x: point[0], y: point[1], r: 2, color: '#FF0000' }))

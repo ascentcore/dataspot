@@ -2,8 +2,8 @@ import SVGBaseVisualization from './svgbase'
 import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 
 export default class Axis extends SVGBaseVisualization {
-    constructor(config: any, svgElemId = 'axis-elem') {
-        super(config, svgElemId)
+    constructor(config: any, elemId = 'axis-elem') {
+        super(config, elemId)
     }
 
     public setup() {
@@ -17,7 +17,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([margin.left, width - margin.right])
 
             rootContainer
-                .select(`#${this.svgElemId}`)
+                .select(`#${this.elemId}`)
                 .append('g')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
@@ -37,7 +37,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([height - margin.bottom, margin.top])
 
             rootContainer
-                .select(`#${this.svgElemId}`)
+                .select(`#${this.elemId}`)
                 .append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
@@ -46,7 +46,7 @@ export default class Axis extends SVGBaseVisualization {
         }
     }
 
-    private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], svgElemId: string): void {
+    private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], elemId: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
 
@@ -62,7 +62,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([margin.left, width - margin.right])
 
             rootContainer
-                .select(`#${svgElemId}`)
+                .select(`#${elemId}`)
                 .append('g')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
@@ -85,7 +85,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([height - margin.bottom, margin.top])
 
             rootContainer
-                .select(`#${svgElemId}`)
+                .select(`#${elemId}`)
                 .append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
@@ -94,8 +94,8 @@ export default class Axis extends SVGBaseVisualization {
         }
     }
 
-    public dataUpdate(data: TwoDPointLine[], svgElemId = this.svgElemId) {
-        this.updateFn(data, svgElemId)
+    public dataUpdate(data: TwoDPointLine[], elemId = this.elemId) {
+        this.updateFn(data, elemId)
         return this.updateFn
     }
 }

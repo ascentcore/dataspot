@@ -2,13 +2,13 @@ import SVGBaseVisualization from './svgbase'
 import { TwoDPointLine } from '../../models/types'
 
 export default class LinePlot extends SVGBaseVisualization {
-    constructor(config: any, svgElemId = 'line-elem') {
-        super(config, svgElemId)
+    constructor(config: any, elemId = 'line-elem') {
+        super(config, elemId)
     }
 
     public setup() {}
 
-    private updateFn(data: TwoDPointLine[], svgElemId: string): void {
+    private updateFn(data: TwoDPointLine[], elemId: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
 
@@ -44,10 +44,10 @@ export default class LinePlot extends SVGBaseVisualization {
             .x((d: TwoDPointLine) => x(d.x))
             .y((d: TwoDPointLine) => y(d.y))
 
-        rootContainer.selectAll(`#${svgElemId} path`).remove()
+        rootContainer.selectAll(`#${elemId} path`).remove()
 
         rootContainer
-            .select(`#${svgElemId}`)
+            .select(`#${elemId}`)
             .append('path')
             .datum(data)
             .attr('fill', 'none')
@@ -59,8 +59,8 @@ export default class LinePlot extends SVGBaseVisualization {
             .attr('d', line)
     }
 
-    public dataUpdate(data: TwoDPointLine[], svgElemId = this.svgElemId) {
-        this.updateFn(data, svgElemId)
+    public dataUpdate(data: TwoDPointLine[], elemId = this.elemId) {
+        this.updateFn(data, elemId)
         return this.updateFn
     }
 }

@@ -2,8 +2,8 @@ import SVGBaseVisualization from './svgbase'
 import { TwoDPointScatter } from '../../models/types'
 
 export default class Scatter extends SVGBaseVisualization {
-    constructor(config: any, svgElemId = 'scatter-elem') {
-        super(config, svgElemId)
+    constructor(config: any, elemId = 'scatter-elem') {
+        super(config, elemId)
     }
 
     public setup() {
@@ -13,7 +13,7 @@ export default class Scatter extends SVGBaseVisualization {
         Object.assign(this.dependencies, { palette })
     }
 
-    private updateFn(data: TwoDPointScatter[], svgElemId: string): void {
+    private updateFn(data: TwoDPointScatter[], elemId: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer, palette } = this.dependencies
 
@@ -42,7 +42,7 @@ export default class Scatter extends SVGBaseVisualization {
         }
 
         rootContainer
-            .select(`#${svgElemId}`)
+            .select(`#${elemId}`)
             .selectAll('circle')
             .data(data)
             .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
@@ -63,8 +63,8 @@ export default class Scatter extends SVGBaseVisualization {
             .attr('r', (d: TwoDPointScatter) => d.r || 1)
     }
 
-    dataUpdate(data: TwoDPointScatter[], svgElemId = this.svgElemId) {
-        this.updateFn(data, svgElemId)
+    dataUpdate(data: TwoDPointScatter[], elemId = this.elemId) {
+        this.updateFn(data, elemId)
         return this.updateFn
     }
 }

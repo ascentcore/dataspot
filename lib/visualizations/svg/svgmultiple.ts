@@ -4,8 +4,8 @@ import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 export default class SVGMultipleVisualization extends SVGBaseVisualization {
     private visualizations: { [name: string]: SVGBaseVisualization } = {}
 
-    constructor(config: any, svgElemId: string, visualizations: SVGBaseVisualization[]) {
-        super(config, svgElemId)
+    constructor(config: any, elemId: string, visualizations: SVGBaseVisualization[]) {
+        super(config, elemId)
         const domainConfig = [...visualizations, this].reduce((acc, curr) => {
             return Object.assign(acc, {
                 domainX: {
@@ -20,7 +20,7 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         }, {})
 
         visualizations.forEach((viz) => {
-            this.visualizations[viz.svgElemId] = viz
+            this.visualizations[viz.elemId] = viz
             Object.assign(viz.config, config, domainConfig)
         })
     }
@@ -43,10 +43,10 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         )
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], svgElemId: string) {
-        if (this.visualizations[svgElemId]) {
-            const updateFn = this.visualizations[svgElemId].dataUpdate
-            return updateFn.call(this.visualizations[svgElemId], data, svgElemId)
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemId: string) {
+        if (this.visualizations[elemId]) {
+            const updateFn = this.visualizations[elemId].dataUpdate
+            return updateFn.call(this.visualizations[elemId], data, elemId)
         }
         return null
     }

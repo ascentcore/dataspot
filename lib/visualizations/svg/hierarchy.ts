@@ -1,13 +1,13 @@
 import SVGBaseVisualization from './svgbase'
 
 export default class HierarchyPlot extends SVGBaseVisualization {
-    constructor(config: any, svgElemId = 'hierarchy-elem') {
-        super(config, svgElemId)
+    constructor(config: any, elemId = 'hierarchy-elem') {
+        super(config, elemId)
     }
 
     setup() {}
 
-    updateFn(data: any, svgElemId: string): void {
+    updateFn(data: any, elemId: string): void {
         const { margin, layout, tree, width } = this.config
         const configLayout = layout || 'horizontal'
         const { d3, rootContainer } = this.dependencies
@@ -30,7 +30,7 @@ export default class HierarchyPlot extends SVGBaseVisualization {
             .y((d: any) => (isHorizontal ? d.x : d.y))
 
         const g = rootContainer
-            .select(`#${svgElemId}`)
+            .select(`#${elemId}`)
             .append('g')
             .attr('font-family', 'sans-serif')
             .attr('font-size', 10)
@@ -83,8 +83,8 @@ export default class HierarchyPlot extends SVGBaseVisualization {
         // .attr('stroke', 'white')
     }
 
-    public dataUpdate(data: any, svgElemId = this.svgElemId) {
-        this.updateFn(data, svgElemId)
+    public dataUpdate(data: any, elemId = this.elemId) {
+        this.updateFn(data, elemId)
         return this.updateFn
     }
 }
