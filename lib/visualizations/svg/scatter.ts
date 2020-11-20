@@ -58,7 +58,7 @@ export default class Scatter extends SVGBaseVisualization {
                 .data(data)
                 .enter()
                 .append('circle')
-                .attr('data-id', (d: ScatterType) => d.id || '')
+                .attr('data-id', (d: ScatterType) => (d.id !== undefined ? d.id : ''))
                 .attr('cx', (d: ScatterType) => x(d.x) || 0)
                 .attr('cy', (d: ScatterType) => y(d.y) || 0)
                 .attr('fill', (d: ScatterType) => (d.color ? palette(d.color) : 'steelblue'))

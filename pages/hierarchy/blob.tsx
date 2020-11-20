@@ -2,21 +2,22 @@ import * as d3 from 'd3'
 import { useState, useEffect, useRef } from 'react'
 import HierarchyPlot from '../../lib/visualizations/svg/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
-import hierarchy, { hCut, singleLinkage, completeLinkage, averageLinkage } from '../../lib/hierarchy/agglomerative'
+import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
 import blobDataset from '../../lib/dataset/blobDataset'
 import Scatter from '../../lib/visualizations/svg/scatter'
-import { roundToPrecision } from '../../lib/math/utils'
 
 const width = 500
 const height = 400
 
-const blobData = blobDataset(50)
+const blobData = blobDataset(20)
 const result = hierarchy(
     // blobData.map((row: any[], i) => ({ index: row.map((i) => roundToPrecision(i, 2)).join(','), points: [row] })),
-    blobData.map((row: any[], i) => ({ index: i, points: [row] })),
-    averageLinkage,
+    blobData.map((row: any[], i) => ({ index: `${i}`, points: [row] })),
+    singleLinkage,
     euclideanDistance
 )
+
+console.log(result)
 const palette = d3.scaleOrdinal(d3.schemeTableau10)
 
 export default function Blob() {
@@ -25,12 +26,12 @@ export default function Blob() {
     const [value, setValue] = useState(null)
 
     useEffect(() => {
-        const clusters = hCut(result, value)
+        // const clusters = hCut(result, value)
+        const clusters = hValueCut(result, result.distances[0] - value)
         for (let i = 0; i < clusters.length; i++) {
             clusters[i].forEach((st) => {
-                d3.select(containerRef.current)
-                    .select(`[data-id="${st}"]`)
-                    .attr('fill', palette(i))
+                d3.selectAll(`[data-id="${st}"]`).attr('fill', palette(`${i}`))
+                d3.selectAll(`[data-id="${st}"] circle, [data-id="${st}"] text`).attr('fill', palette(i))
             })
         }
     }, [value])
@@ -44,7 +45,7 @@ export default function Blob() {
     }, [containerRef])
 
     useEffect(() => {
-        const plot = new HierarchyPlot({ width: 1500, height: 3500, layout: 'horizontal', tree: 'cluster' })
+        const plot = new HierarchyPlot({ width: 500, height: 1500, layout: 'horizontal', tree: 'cluster' })
         plot.setContainer(containerRef2.current)
         plot.setup()
         plot.dataUpdate(result.index)
@@ -52,12 +53,14 @@ export default function Blob() {
     }, [containerRef2])
 
     const handleChange = (v) => {
-        setValue(parseInt(v.target.value))
+        setValue(parseFloat(v.target.value))
     }
 
     return (
         <div>
-            <input type='range' value={value} min={0} max={3} onChange={handleChange} step={1} />
+            <input type='range' value={value} min={0} max={result.distances[0]} onChange={handleChange} step={0.001} />
+
+            <div>Cutting tree at: {result.distances[0] - value}</div>
             <div ref={containerRef}></div>
             <div ref={containerRef2}></div>
         </div>

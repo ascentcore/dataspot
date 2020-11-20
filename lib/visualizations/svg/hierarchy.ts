@@ -8,11 +8,9 @@ export default class HierarchyPlot extends SVGBaseVisualization {
         const configLayout = layout || 'horizontal'
         const { d3, svg } = this.dependencies
         const dx = 12
-        const dy = 40
         const hierarchy = d3.hierarchy(data, (d: any) => (Array.isArray(d) ? d : undefined))
         const treeType = tree === 'cluster' ? d3.cluster : d3.tree
-        const root = treeType().nodeSize([dx, dy])(hierarchy)
-        // const root = d3.cluster().nodeSize([dx, dy])(hierarchy)
+        const root = treeType().nodeSize([10, 10])(hierarchy)
 
         let x0 = Infinity
         let x1 = -x0
