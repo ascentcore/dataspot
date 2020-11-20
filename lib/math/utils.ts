@@ -51,7 +51,7 @@ export function distanceMatrix(
     return distMat
 }
 
-export function getPairsFromDistanceMatrix(distMat: number[][]): number[][] {
+export function getPairsFromDistanceMatrix(distMat: number[][], limit: number | undefined= 2): number[][] {
     const { length } = distMat
     const clusters = new Array(length).fill(0).map(() => Infinity)
     const distances = new Array(length).fill(0).map(() => Infinity)
@@ -76,7 +76,7 @@ export function getPairsFromDistanceMatrix(distMat: number[][]): number[][] {
             }
         }
 
-        if (localMin === min) {
+        if (localMin === min && (!limit || cluster < limit)) {
             clusters[x] = cluster
             clusters[y] = cluster
             distances[x] = min
