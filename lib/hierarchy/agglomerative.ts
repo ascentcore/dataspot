@@ -142,3 +142,24 @@ export function hCut(tree: HierarchyPoints, cut: number) {
 
     return next.map((item) => collapse(item))
 }
+
+export function hValueCut(tree: HierarchyPoints, cut: number) {
+    const next = []
+
+    const toProcess = [[tree.index, tree.distances]]
+
+    while (toProcess.length) {
+        const [first] = toProcess.splice(0, 1)
+        const [indexes, distances] = first
+
+        if (!distances || distances[0] < cut || distances.length === 1) {
+            next.push(indexes)
+        } else {
+            for (let i = 0; i < indexes.length; i++) {
+                toProcess.push([indexes[i], distances[i + 1]])
+            }
+        }
+    }
+
+    return next.map((item) => collapse(item))
+}

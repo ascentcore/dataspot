@@ -4,10 +4,10 @@ import data from '../../lib/dataset/samples/usarrests'
 // import data from '../../lib/dataset/samples/iris'
 import HierarchyPlot from '../../lib/visualizations/svg/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
-import hierarchy, { hCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
+import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
 
-const width = 1200
-const height = 500
+const width = 1500
+const height = 300
 
 const palette = d3.scaleOrdinal(d3.schemeTableau10)
 const result = hierarchy(
@@ -20,14 +20,14 @@ export default function States() {
     const [value, setValue] = useState(null)
 
     useEffect(() => {
-        const clusters = hCut(result, value)
+        const clusters = hValueCut(result, result.distances[0] - value)
 
         for (let i = 0; i < clusters.length; i++) {
             clusters[i].forEach((st) => {
                 d3.select(containerRef.current)
                     .select(`[data-id="${st}"]`)
                     .selectAll('text,circle')
-                    .attr('fill', palette(i))
+                    .attr('fill', palette(`${i}`))
             })
         }
     }, [value])
@@ -47,12 +47,13 @@ export default function States() {
     }, [containerRef])
 
     const handleChange = (v) => {
-        setValue(parseInt(v.target.value))
+        setValue(parseFloat(v.target.value))
     }
 
     return (
         <div>
-            <input type='range' value={value} min={0} max={3} onChange={handleChange} step={1} />
+            <input type='range' value={value} min={0} max={result.distances[0]} onChange={handleChange} step={0.001} />
+
             <div ref={containerRef}></div>
         </div>
     )
