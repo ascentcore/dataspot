@@ -17,7 +17,6 @@ const result = hierarchy(
     euclideanDistance
 )
 
-console.log(result)
 const palette = d3.scaleOrdinal(d3.schemeTableau10)
 
 export default function Blob() {
