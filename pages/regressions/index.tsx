@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { mseCostFunction } from '../../lib/functions/optimizers'
 import LinearRegression from '../../lib/regressions/linearRegression'
-import LinePlot from '../../lib/visualizations/svg/lineplot'
-import Scatter from '../../lib/visualizations/svg/scatter'
-import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
-import Axis from '../../lib/visualizations/svg/axis'
+import LinePlot from '../../lib/visualizations/d3/lineplot'
+import Scatter from '../../lib/visualizations/d3/scatter'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import Axis from '../../lib/visualizations/d3/axis'
 
 function Representation({
     data,

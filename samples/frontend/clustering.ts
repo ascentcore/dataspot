@@ -1,7 +1,7 @@
 import KMeans from '../../lib/clustering/k-means'
 import DBScan from '../../lib/clustering/db-scan'
 
-import Scatter from '../../lib/visualizations/svg/scatter'
+import Scatter from '../../lib/visualizations/d3/scatter'
 import Point from '../../lib/clustering/point'
 
 import { VectorUtils } from '../../lib/utils/math-utils'
@@ -12,8 +12,8 @@ import concentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
 import fillSpaceDataset from '../../lib/dataset/fillSpaceDataset'
 import noisyWithBlobDataset from '../../lib/dataset/noisyWithBlobDataset'
 import potatoDataset from '../../lib/dataset/potatoDataset'
-import Axis from '../../lib/visualizations/svg/axis'
-import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
+import Axis from '../../lib/visualizations/d3/axis'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 

@@ -4,9 +4,9 @@ import generateArcDataset from '../../lib/dataset/arcDataset'
 import generateBlobDataset from '../../lib/dataset/blobDataset'
 import generateConcentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
 
-import Scatter from '../../lib/visualizations/svg/scatter'
-import Axis from '../../lib/visualizations/svg/axis'
-import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
+import Scatter from '../../lib/visualizations/d3/scatter'
+import Axis from '../../lib/visualizations/d3/axis'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 
 function Representation({ data, name, width, height }) {
     const svgRef = useRef(null)

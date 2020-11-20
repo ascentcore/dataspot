@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import { relu, identity, sigmoid } from '../../lib/functions/activations'
-import LinePlot from '../../lib/visualizations/svg/lineplot'
-import Axis from '../../lib/visualizations/svg/axis'
-import SVGMultipleVisualization from '../../lib/visualizations/svg/svgmultiple'
+import LinePlot from '../../lib/visualizations/d3/lineplot'
+import Axis from '../../lib/visualizations/d3/axis'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 
 function Representation({
     data,

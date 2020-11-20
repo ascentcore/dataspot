@@ -1,10 +1,10 @@
 import * as d3 from 'd3'
 import { useState, useEffect, useRef } from 'react'
-import HierarchyPlot from '../../lib/visualizations/svg/hierarchy'
+import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
 import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
 import blobDataset from '../../lib/dataset/blobDataset'
-import Scatter from '../../lib/visualizations/svg/scatter'
+import Scatter from '../../lib/visualizations/d3/scatter'
 
 const width = 500
 const height = 400
@@ -17,7 +17,6 @@ const result = hierarchy(
     euclideanDistance
 )
 
-console.log(result)
 const palette = d3.scaleOrdinal(d3.schemeTableau10)
 
 export default function Blob() {

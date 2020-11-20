@@ -1,8 +1,8 @@
 import KMeans from '../../lib/clustering/k-means'
 import DBScan from '../../lib/clustering/db-scan'
 import Lab from '../../lib/lab'
-import SVGVisualizationWrapper from '../../lib/visualizations/svg/svgvisualizationwrapper'
-import Scatter from '../../lib/visualizations/svg/scatter'
+import SVGVisualizationWrapper from '../../lib/visualizations/d3/svgvisualizationwrapper'
+import Scatter from '../../lib/visualizations/d3/scatter'
 const VectorUtils = require('../../lib/utils/math-utils').VectorUtils
 
 import arcDataset from '../../lib/dataset/arcDataset'
