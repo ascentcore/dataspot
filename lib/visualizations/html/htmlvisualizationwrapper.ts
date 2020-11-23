@@ -1,5 +1,6 @@
 import { JSDOM } from 'jsdom'
 import nodeHtmlToImage from 'node-html-to-image'
+import fs from 'fs'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
 import getReportFolder from '../../utils/osutils'
@@ -15,6 +16,7 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
     constructor(
         private visualization: HTMLBaseVisualization,
         private name: string,
+        private asHtml: boolean,
         initialData?: TwoDPointScatter[] | TwoDPointLine[]
     ) {
         super(visualization.config, 'wrapper-elem')
@@ -57,6 +59,16 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
                 elemClass,
                 dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
             })
+        } else if (this.asHtml) {
+            fs.writeFile(
+                `${getReportFolder()}/${this.name}-output.html`,
+                `<html><body>${this.visualization.getDependency('rootContainer').outerHTML}</body></html>`,
+                (err) => {
+                    if (err) {
+                        console.log(err)
+                    }
+                }
+            )
         } else {
             nodeHtmlToImage({
                 output: `${getReportFolder()}/${this.name}-output.png`,

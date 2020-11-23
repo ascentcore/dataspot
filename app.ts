@@ -109,14 +109,14 @@ const badCentroids = [
     [0.38681199729328225, 0.7874221334227902]
 ]
 ;(async () => {
-    const lab = new Lab('tables')
-    try {
-        await lab.connected
-    } catch (err) {
-        console.log('Unable to connect to lab...')
-    }
+    // const lab = new Lab('tables')
+    // try {
+    //     await lab.connected
+    // } catch (err) {
+    //     console.log('Unable to connect to lab...')
+    // }
 
-    const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot')
+    const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot', false)
 
     const data: any[] = []
     badFitData.forEach((point: any) => data.push({ x: point[0], y: point[1], r: 2, color: '#FF0000' }))
