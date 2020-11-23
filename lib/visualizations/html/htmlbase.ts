@@ -7,18 +7,18 @@ const DEFAULT_CONFIG = {
 }
 
 export default abstract class HTMLBaseVisualization extends BaseVisualization {
-    constructor(config: any, elemId: string) {
+    constructor(config: any, elemClass: string) {
         super(
             {
                 ...DEFAULT_CONFIG,
                 ...config
             },
-            elemId
+            elemClass
         )
     }
 
-    injectDOM(dom: any) {
-        Object.assign(this.dependencies, { document: dom.window.document })
+    injectDOM(document: any) {
+        Object.assign(this.dependencies, { document })
     }
 
     public setContainer(containerRef: HTMLElement | HTMLBaseVisualization) {
@@ -36,7 +36,7 @@ export default abstract class HTMLBaseVisualization extends BaseVisualization {
         }
 
         const container = document.createElement('div')
-        container.setAttribute('id', this.elemId)
+        container.setAttribute('class', this.elemClass)
         parentContainer.appendChild(container)
 
         Object.assign(this.dependencies, { container, rootContainer })

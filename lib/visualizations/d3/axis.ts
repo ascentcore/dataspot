@@ -2,8 +2,8 @@ import SVGBaseVisualization from './svgbase'
 import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 
 export default class Axis extends SVGBaseVisualization {
-    constructor(config: any, elemId = 'axis-elem') {
-        super(config, elemId)
+    constructor(config: any, elemClass = 'axis-elem') {
+        super(config, elemClass)
     }
 
     public setup() {
@@ -17,7 +17,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([margin.left, width - margin.right])
 
             rootContainer
-                .select(`#${this.elemId}`)
+                .select(`#${this.elemClass}`)
                 .append('g')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
@@ -37,7 +37,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([height - margin.bottom, margin.top])
 
             rootContainer
-                .select(`#${this.elemId}`)
+                .select(`#${this.elemClass}`)
                 .append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
@@ -46,23 +46,25 @@ export default class Axis extends SVGBaseVisualization {
         }
     }
 
-    private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], elemId: string): void {
+    private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], elemClass: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
 
         let { x, y } = this.dependencies
+        const [xMin, xMax] = d3.extent(data, (d: TwoDPointLine) => d.x)
+        const [yMin, yMax] = d3.extent(data, (d: TwoDPointLine) => d.y)
         if (!x) {
             x = d3
                 .scaleLinear()
                 .domain([
-                    domainX && domainX.min !== undefined ? domainX.min : d3.min(data, (d: TwoDPointLine) => d.x),
-                    domainX && domainX.max !== undefined ? domainX.max : d3.max(data, (d: TwoDPointLine) => d.x)
+                    domainX && domainX.min !== undefined ? domainX.min : xMin,
+                    domainX && domainX.max !== undefined ? domainX.max : xMax
                 ])
                 .nice()
                 .range([margin.left, width - margin.right])
 
             rootContainer
-                .select(`#${elemId}`)
+                .select(`.${elemClass}`)
                 .append('g')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
@@ -78,14 +80,14 @@ export default class Axis extends SVGBaseVisualization {
             y = d3
                 .scaleLinear()
                 .domain([
-                    domainY && domainY.min !== undefined ? domainY.min : d3.min(data, (d: TwoDPointLine) => d.y),
-                    domainY && domainY.max !== undefined ? domainY.max : d3.max(data, (d: TwoDPointLine) => d.y)
+                    domainY && domainY.min !== undefined ? domainY.min : yMin,
+                    domainY && domainY.max !== undefined ? domainY.max : yMax
                 ])
                 .nice()
                 .range([height - margin.bottom, margin.top])
 
             rootContainer
-                .select(`#${elemId}`)
+                .select(`.${elemClass}`)
                 .append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
@@ -94,8 +96,8 @@ export default class Axis extends SVGBaseVisualization {
         }
     }
 
-    public dataUpdate(data: TwoDPointLine[], elemId = this.elemId) {
-        this.updateFn(data, elemId)
+    public dataUpdate(data: TwoDPointLine[], elemClass = this.elemClass) {
+        this.updateFn(data, elemClass)
         return this.updateFn
     }
 }

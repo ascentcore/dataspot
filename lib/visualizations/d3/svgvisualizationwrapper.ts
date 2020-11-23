@@ -5,6 +5,8 @@ import Lab from '../../lab'
 import getReportFolder from '../../utils/osutils'
 import SVGBaseVisualization from './svgbase'
 
+import serializeFunction from '../../utils/serialization-utils'
+
 import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 
 export default class SVGVisualizationWrapper extends SVGBaseVisualization {
@@ -38,34 +40,20 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
                 type: 'd3',
                 config: this.visualization.config,
                 node: this.visualization.getDependency('rootContainer').node().outerHTML,
-                prepareDependenciesExpr: this.visualization.setup
-                    .toString()
-                    .replace(/\/\/.*/g, '')
-                    .replace(/  +/g, '')
-                    .replace(/\n/g, ' ')
-                    .replace(/setup\([^)]*\) *{/g, '')
-                    .replace(/}$/g, '')
+                prepareDependenciesExpr: serializeFunction(this.visualization.setup, 'setup')
             })
         }
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemId = this.visualization.elemId) {
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass = this.visualization.elemClass) {
         // eslint-disable-next-line prettier/prettier
-        const dataUpdateExpr = this.visualization.dataUpdate(data, elemId)
+        const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
 
         if (this.lab) {
             this.lab.store(`${this.name}-data`, {
                 data,
-                elemId,
-                dataUpdateExpr: dataUpdateExpr
-                    ? dataUpdateExpr
-                          .toString()
-                          .replace(/\/\/.*/g, '')
-                          .replace(/  +/g, '')
-                          .replace(/\n/g, ' ')
-                          .replace(/updateFn\([^)]*\) *{/g, '')
-                          .replace(/}$/g, '')
-                    : null
+                elemClass,
+                dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
             })
         } else {
             const svgContent = this.visualization.getDependency('rootContainer').node().outerHTML

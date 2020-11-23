@@ -14,13 +14,13 @@ export default function D3Visualization({ db, docName, setup }) {
                 if (!block.dependencies.rootContainer || block.dependencies.rootContainer.empty()) {
                     block.dependencies.rootContainer = d3.select(divRef.current.querySelector('svg'))
                 }
-                const { data, elemId, dataUpdateExpr } = doc
+                const { data, elemClass, dataUpdateExpr } = doc
 
                 let dataUpdateExpression = dataUpdateExpr.replace(/this\./g, 'block.')
 
-                dataUpdateExpression = Function('block', 'data', 'elemId', dataUpdateExpression)
+                dataUpdateExpression = Function('block', 'data', 'elemClass', dataUpdateExpression)
 
-                dataUpdateExpression(block, data, elemId)
+                dataUpdateExpression(block, data, elemClass)
             }
         })
     }
@@ -28,7 +28,7 @@ export default function D3Visualization({ db, docName, setup }) {
     useEffect(() => {
         const { config, prepareDependenciesExpr, node } = setup
         const block = {
-            dependencies: { d3 }
+            dependencies: { d3, palette: d3.scaleOrdinal(d3.schemeAccent) }
         }
 
         Object.assign(block, { config })

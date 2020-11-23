@@ -4,8 +4,8 @@ import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 export default class SVGMultipleVisualization extends SVGBaseVisualization {
     private visualizations: { [name: string]: SVGBaseVisualization } = {}
 
-    constructor(config: any, elemId: string, visualizations: SVGBaseVisualization[]) {
-        super(config, elemId)
+    constructor(config: any, elemClass: string, visualizations: SVGBaseVisualization[]) {
+        super(config, elemClass)
         const domainConfig = [...visualizations, this].reduce((acc, curr) => {
             return Object.assign(acc, {
                 domainX: {
@@ -20,20 +20,13 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         }, {})
 
         visualizations.forEach((viz) => {
-            this.visualizations[viz.elemId] = viz
+            this.visualizations[viz.elemClass] = viz
             Object.assign(viz.config, config, domainConfig)
         })
     }
 
     setup() {
-        const { d3 } = this.dependencies
-
-        const palette = d3.scaleOrdinal(d3.schemeAccent)
-        Object.assign(this.dependencies, { palette })
-
-        if (this.visualizations) {
-            Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setup())
-        }
+        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.setup())
     }
 
     public setContainer(containerRef: HTMLElement) {
@@ -43,10 +36,10 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         )
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemId: string) {
-        if (this.visualizations[elemId]) {
-            const updateFn = this.visualizations[elemId].dataUpdate
-            return updateFn.call(this.visualizations[elemId], data, elemId)
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass: string) {
+        if (this.visualizations[elemClass]) {
+            const updateFn = this.visualizations[elemClass].dataUpdate
+            return updateFn.call(this.visualizations[elemClass], data, elemClass)
         }
         return null
     }

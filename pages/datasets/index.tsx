@@ -12,21 +12,21 @@ function Representation({ data, name, width, height }) {
     const svgRef = useRef(null)
 
     useEffect(() => {
-        const axisElemId = 'axis-elem'
-        const scatterElemId = 'scatter-elem'
-        const datasetElemId = 'dataset-elem'
+        const axisElemClass = 'axis-elem'
+        const scatterElemClass = 'scatter-elem'
+        const datasetElemClass = 'dataset-elem'
 
-        const axis = new Axis({}, axisElemId)
-        const scatter = new Scatter({}, scatterElemId)
+        const axis = new Axis({}, axisElemClass)
+        const scatter = new Scatter({}, scatterElemClass)
 
-        const plot = new SVGMultipleVisualization({ width, height }, datasetElemId, [axis, scatter])
+        const plot = new SVGMultipleVisualization({ width, height }, datasetElemClass, [axis, scatter])
         plot.setContainer(svgRef.current)
         plot.setup()
         const mappedData = data.map((d) => {
             return { x: d[0], y: d[1] }
         })
-        plot.dataUpdate(mappedData, axisElemId)
-        plot.dataUpdate(mappedData, scatterElemId)
+        plot.dataUpdate(mappedData, axisElemClass)
+        plot.dataUpdate(mappedData, scatterElemClass)
     }, [svgRef])
 
     return (

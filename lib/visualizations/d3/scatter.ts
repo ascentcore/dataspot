@@ -2,28 +2,25 @@ import SVGBaseVisualization from './svgbase'
 import { TwoDPointScatter } from '../../models/types'
 
 export default class Scatter extends SVGBaseVisualization {
-    constructor(config: any, elemId = 'scatter-elem') {
-        super(config, elemId)
+    constructor(config: any, elemClass = 'scatter-elem') {
+        super(config, elemClass)
     }
 
-    public setup() {
-        const { d3 } = this.dependencies
+    public setup() {}
 
-        const palette = d3.scaleOrdinal(d3.schemeAccent)
-        Object.assign(this.dependencies, { palette })
-    }
-
-    private updateFn(data: TwoDPointScatter[], elemId: string): void {
+    private updateFn(data: TwoDPointScatter[], elemClass: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer, palette } = this.dependencies
 
         let { x, y } = this.dependencies
+        const [xMin, xMax] = d3.extent(data, (d: TwoDPointScatter) => d.x)
+        const [yMin, yMax] = d3.extent(data, (d: TwoDPointScatter) => d.y)
         if (!x) {
             x = d3
                 .scaleLinear()
                 .domain([
-                    domainX && domainX.min !== undefined ? domainX.min : d3.min(data, (d: TwoDPointScatter) => d.x),
-                    domainX && domainX.max !== undefined ? domainX.max : d3.max(data, (d: TwoDPointScatter) => d.x)
+                    domainX && domainX.min !== undefined ? domainX.min : xMin,
+                    domainX && domainX.max !== undefined ? domainX.max : xMax
                 ])
                 .nice()
                 .range([margin.left, width - margin.right])
@@ -33,8 +30,8 @@ export default class Scatter extends SVGBaseVisualization {
             y = d3
                 .scaleLinear()
                 .domain([
-                    domainY && domainY.min !== undefined ? domainY.min : d3.min(data, (d: TwoDPointScatter) => d.y),
-                    domainY && domainY.max !== undefined ? domainY.max : d3.max(data, (d: TwoDPointScatter) => d.y)
+                    domainY && domainY.min !== undefined ? domainY.min : yMin,
+                    domainY && domainY.max !== undefined ? domainY.max : yMax
                 ])
                 .nice()
                 .range([height - margin.bottom, margin.top])
@@ -42,7 +39,7 @@ export default class Scatter extends SVGBaseVisualization {
         }
 
         rootContainer
-            .select(`#${elemId}`)
+            .select(`.${elemClass}`)
             .selectAll('circle')
             .data(data)
             .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
@@ -63,8 +60,8 @@ export default class Scatter extends SVGBaseVisualization {
             .attr('r', (d: TwoDPointScatter) => d.r || 1)
     }
 
-    dataUpdate(data: TwoDPointScatter[], elemId = this.elemId) {
-        this.updateFn(data, elemId)
+    dataUpdate(data: TwoDPointScatter[], elemClass = this.elemClass) {
+        this.updateFn(data, elemClass)
         return this.updateFn
     }
 }

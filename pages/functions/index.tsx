@@ -20,20 +20,20 @@ function Representation({
 
     useEffect(() => {
         if (svgRef.current) {
-            const axisElemId = 'axis-elem'
-            const lineElemId = 'line-elem'
-            const functionElemId = 'function-elem'
+            const axisElemClass = 'axis-elem'
+            const lineElemClass = 'line-elem'
+            const functionElemClass = 'function-elem'
 
-            const axis = new Axis({}, axisElemId)
-            const line = new LinePlot({}, lineElemId)
-            const plot = new SVGMultipleVisualization({ width, height }, functionElemId, [axis, line])
+            const axis = new Axis({}, axisElemClass)
+            const line = new LinePlot({}, lineElemClass)
+            const plot = new SVGMultipleVisualization({ width, height }, functionElemClass, [axis, line])
             plot.setContainer(svgRef.current)
             plot.setup()
             const mappedData = data.map((d: number[]) => {
                 return { x: d[0], y: d[1] }
             })
-            plot.dataUpdate(mappedData, axisElemId)
-            plot.dataUpdate(mappedData, lineElemId)
+            plot.dataUpdate(mappedData, axisElemClass)
+            plot.dataUpdate(mappedData, lineElemClass)
         }
     }, [svgRef])
 

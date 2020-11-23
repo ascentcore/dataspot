@@ -5,6 +5,8 @@ import Lab from '../../lab'
 import getReportFolder from '../../utils/osutils'
 import HTMLBaseVisualization from './htmlbase'
 
+import serializeFunction from '../../utils/serialization-utils'
+
 import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
 
 export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
@@ -27,7 +29,7 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
         const dom = new JSDOM(`<!DOCTYPE html><div id="root"/>`)
         this.root = dom.window.document.querySelector('#root')
 
-        this.visualization.injectDOM(dom)
+        this.visualization.injectDOM(dom.window.document)
         this.visualization.setContainer(<HTMLElement>this.root)
         this.visualization.setup()
 
@@ -40,34 +42,20 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
                 type: 'html',
                 config: this.visualization.config,
                 node: this.visualization.getDependency('rootContainer').outerHTML,
-                prepareDependenciesExpr: this.visualization.setup
-                    .toString()
-                    .replace(/\/\/.*/g, '')
-                    .replace(/  +/g, '')
-                    .replace(/\n/g, ' ')
-                    .replace(/setup\([^)]*\) *{/g, '')
-                    .replace(/}$/g, '')
+                prepareDependenciesExpr: serializeFunction(this.visualization.setup, 'setup')
             })
         }
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemId = this.visualization.elemId) {
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass = this.visualization.elemClass) {
         // eslint-disable-next-line prettier/prettier
-        const dataUpdateExpr = this.visualization.dataUpdate(data, elemId)
+        const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
 
         if (this.lab) {
             this.lab.store(`${this.name}-data`, {
                 data,
-                elemId,
-                dataUpdateExpr: dataUpdateExpr
-                    ? dataUpdateExpr
-                          .toString()
-                          .replace(/\/\/.*/g, '')
-                          .replace(/  +/g, '')
-                          .replace(/\n/g, ' ')
-                          .replace(/updateFn\([^)]*\) *{/g, '')
-                          .replace(/}$/g, '')
-                    : null
+                elemClass,
+                dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
             })
         } else {
             nodeHtmlToImage({

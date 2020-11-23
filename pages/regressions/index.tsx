@@ -22,13 +22,13 @@ function Representation({
 
     const plot = async () => {
         if (regressionRef.current) {
-            const scatterElemId = 'scatter-elem'
-            const lineElemId = 'line-elem'
-            const axisElemId = 'axis-elem'
+            const scatterElemClass = 'scatter-elem'
+            const lineElemClass = 'line-elem'
+            const axisElemClass = 'axis-elem'
 
-            const scatterRegressionPlot = new Scatter({}, scatterElemId)
-            const lineRegressionPlot = new LinePlot({}, lineElemId)
-            const axisRegression = new Axis({}, axisElemId)
+            const scatterRegressionPlot = new Scatter({}, scatterElemClass)
+            const lineRegressionPlot = new LinePlot({}, lineElemClass)
+            const axisRegression = new Axis({}, axisElemClass)
 
             const multiplePlot = new SVGMultipleVisualization(
                 {
@@ -47,7 +47,7 @@ function Representation({
             for (let i = 0; i < data[0].length; i++) {
                 mappedData.push({ x: data[0][i], y: data[1][i], r: 3 })
             }
-            multiplePlot.dataUpdate(mappedData, scatterElemId)
+            multiplePlot.dataUpdate(mappedData, scatterElemClass)
 
             const input = [1, 2, 3, 4, 5, 6, 7, 8]
             const linearRegression = LinearRegression.fit(
@@ -75,7 +75,7 @@ function Representation({
                     input.map((i: number) => {
                         return { x: i, y: i * regressionValue.updatedWeight + regressionValue.updatedBias }
                     }),
-                    lineElemId
+                    lineElemClass
                 )
 
                 // eslint-disable-next-line no-await-in-loop
@@ -83,16 +83,16 @@ function Representation({
             }
 
             let iter = 0
-            const axisCost = new Axis({}, axisElemId)
-            const lineCost = new LinePlot({}, lineElemId)
+            const axisCost = new Axis({}, axisElemClass)
+            const lineCost = new LinePlot({}, lineElemClass)
             const costPlot = new SVGMultipleVisualization({ width, height }, 'const-elem', [axisCost, lineCost])
             costPlot.setContainer(costRef.current)
             costPlot.setup()
             const mappedCostData = regressionValue.costHistory.map((cost: number) => {
                 return { x: iter++, y: cost }
             })
-            costPlot.dataUpdate(mappedCostData, axisElemId)
-            costPlot.dataUpdate(mappedCostData, lineElemId)
+            costPlot.dataUpdate(mappedCostData, axisElemClass)
+            costPlot.dataUpdate(mappedCostData, lineElemClass)
         }
     }
 

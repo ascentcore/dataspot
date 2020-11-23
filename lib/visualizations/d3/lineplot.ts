@@ -2,23 +2,25 @@ import SVGBaseVisualization from './svgbase'
 import { TwoDPointLine } from '../../models/types'
 
 export default class LinePlot extends SVGBaseVisualization {
-    constructor(config: any, elemId = 'line-elem') {
-        super(config, elemId)
+    constructor(config: any, elemClass = 'line-elem') {
+        super(config, elemClass)
     }
 
     public setup() {}
 
-    private updateFn(data: TwoDPointLine[], elemId: string): void {
+    private updateFn(data: TwoDPointLine[], elemClass: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
 
         let { x, y } = this.dependencies
+        const [xMin, xMax] = d3.extent(data, (d: TwoDPointLine) => d.x)
+        const [yMin, yMax] = d3.extent(data, (d: TwoDPointLine) => d.y)
         if (!x) {
             x = d3
                 .scaleLinear()
                 .domain([
-                    domainX && domainX.min !== undefined ? domainX.min : d3.min(data, (d: TwoDPointLine) => d.x),
-                    domainX && domainX.max !== undefined ? domainX.max : d3.max(data, (d: TwoDPointLine) => d.x)
+                    domainX && domainX.min !== undefined ? domainX.min : xMin,
+                    domainX && domainX.max !== undefined ? domainX.max : xMax
                 ])
                 .nice()
                 .range([margin.left, width - margin.right])
@@ -30,8 +32,8 @@ export default class LinePlot extends SVGBaseVisualization {
             y = d3
                 .scaleLinear()
                 .domain([
-                    domainY && domainY.min !== undefined ? domainY.min : d3.min(data, (d: TwoDPointLine) => d.y),
-                    domainY && domainY.max !== undefined ? domainY.max : d3.max(data, (d: TwoDPointLine) => d.y)
+                    domainY && domainY.min !== undefined ? domainY.min : yMin,
+                    domainY && domainY.max !== undefined ? domainY.max : yMax
                 ])
                 .nice()
                 .range([height - margin.bottom, margin.top])
@@ -44,10 +46,10 @@ export default class LinePlot extends SVGBaseVisualization {
             .x((d: TwoDPointLine) => x(d.x))
             .y((d: TwoDPointLine) => y(d.y))
 
-        rootContainer.selectAll(`#${elemId} path`).remove()
+        rootContainer.selectAll(`.${elemClass} path`).remove()
 
         rootContainer
-            .select(`#${elemId}`)
+            .select(`.${elemClass}`)
             .append('path')
             .datum(data)
             .attr('fill', 'none')
@@ -59,8 +61,8 @@ export default class LinePlot extends SVGBaseVisualization {
             .attr('d', line)
     }
 
-    public dataUpdate(data: TwoDPointLine[], elemId = this.elemId) {
-        this.updateFn(data, elemId)
+    public dataUpdate(data: TwoDPointLine[], elemClass = this.elemClass) {
+        this.updateFn(data, elemClass)
         return this.updateFn
     }
 }

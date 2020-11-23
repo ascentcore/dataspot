@@ -5,7 +5,7 @@ import { TwoDPointLine, TwoDPointScatter, FunctioDefinitionMesh } from '../model
  *
  */
 export default abstract class BaseVisualization {
-    constructor(public config: any, public elemId: string) {}
+    constructor(public config: any, public elemClass: string) {}
 
     /**
      * List of 3rd party dependencies that are are platform dependent
@@ -25,8 +25,8 @@ export default abstract class BaseVisualization {
      */
     abstract dataUpdate(
         data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh | any,
-        elemId?: string
-    ): ((data: TwoDPointScatter[] | TwoDPointLine[], elemId: string) => void) | null
+        elemClass?: string
+    ): ((data: TwoDPointScatter[] | TwoDPointLine[], elemClass: string) => void) | null
 
     public getDependency(key: string): any {
         return this.dependencies[key]
