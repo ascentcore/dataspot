@@ -128,16 +128,14 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
             doneKmeans = kmeansValue.done || false
             resultKmeans = kmeansValue.value
             visKMeans.dataUpdate(
-                [
-                    resultKmeans.map((label, index) => {
-                        return {
-                            x: initialDataset[index][0],
-                            y: initialDataset[index][1],
-                            r: 1.2,
-                            color: label
-                        }
-                    })
-                ],
+                resultKmeans.map((label, index) => {
+                    return {
+                        x: initialDataset[index][0],
+                        y: initialDataset[index][1],
+                        r: 1.2,
+                        color: label
+                    }
+                }),
                 'scatter-elem'
             )
         }
@@ -147,16 +145,14 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
             doneDBScan = dbscanValue.done || false
             resultDBScan = dbscanValue.value
             vizDBScan.dataUpdate(
-                [
-                    resultDBScan.map((label, index) => {
-                        return {
-                            x: initialDataset[index][0],
-                            y: initialDataset[index][1],
-                            r: 1.2,
-                            color: label
-                        }
-                    })
-                ],
+                resultDBScan.map((label, index) => {
+                    return {
+                        x: initialDataset[index][0],
+                        y: initialDataset[index][1],
+                        r: 1.2,
+                        color: label
+                    }
+                }),
                 'scatter-elem'
             )
         }

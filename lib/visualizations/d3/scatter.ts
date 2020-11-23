@@ -13,9 +13,8 @@ export default class Scatter extends SVGBaseVisualization {
         const { d3, rootContainer, palette } = this.dependencies
 
         let { x, y } = this.dependencies
-        const [xMin, xMax] = d3.extent(data, (d: TwoDPointScatter) => d.x)
-        const [yMin, yMax] = d3.extent(data, (d: TwoDPointScatter) => d.y)
         if (!x) {
+            const [xMin, xMax] = d3.extent(data, (d: TwoDPointScatter) => d.x)
             x = d3
                 .scaleLinear()
                 .domain([
@@ -27,6 +26,7 @@ export default class Scatter extends SVGBaseVisualization {
             Object.assign(this.dependencies, { x })
         }
         if (!y) {
+            const [yMin, yMax] = d3.extent(data, (d: TwoDPointScatter) => d.y)
             y = d3
                 .scaleLinear()
                 .domain([

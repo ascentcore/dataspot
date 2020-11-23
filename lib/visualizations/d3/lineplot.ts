@@ -13,9 +13,8 @@ export default class LinePlot extends SVGBaseVisualization {
         const { d3, rootContainer } = this.dependencies
 
         let { x, y } = this.dependencies
-        const [xMin, xMax] = d3.extent(data, (d: TwoDPointLine) => d.x)
-        const [yMin, yMax] = d3.extent(data, (d: TwoDPointLine) => d.y)
         if (!x) {
+            const [xMin, xMax] = d3.extent(data, (d: TwoDPointLine) => d.x)
             x = d3
                 .scaleLinear()
                 .domain([
@@ -29,6 +28,7 @@ export default class LinePlot extends SVGBaseVisualization {
         }
 
         if (!y) {
+            const [yMin, yMax] = d3.extent(data, (d: TwoDPointLine) => d.y)
             y = d3
                 .scaleLinear()
                 .domain([
