@@ -35,6 +35,7 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
 
         if (this.lab) {
             this.lab.store(`${this.name}-setup`, {
+                type: 'd3',
                 config: this.visualization.config,
                 node: this.visualization.getDependency('rootContainer').node().outerHTML,
                 prepareDependenciesExpr: this.visualization.setup

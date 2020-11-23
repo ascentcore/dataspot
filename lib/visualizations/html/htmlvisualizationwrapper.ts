@@ -37,8 +37,9 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
 
         if (this.lab) {
             this.lab.store(`${this.name}-setup`, {
+                type: 'html',
                 config: this.visualization.config,
-                node: this.visualization.getDependency('rootContainer'),
+                node: this.visualization.getDependency('rootContainer').outerHTML,
                 prepareDependenciesExpr: this.visualization.setup
                     .toString()
                     .replace(/\/\/.*/g, '')

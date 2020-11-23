@@ -8,7 +8,7 @@ export default function Card({ dbref, db, docs }) {
                 <div className='card-body'>
                     <Visualization
                         db={db}
-                        document={dbref}
+                        docName={dbref}
                         key={docs[`${dbref}-setup`]}
                         rev={docs[`${dbref}-data`]}
                     />

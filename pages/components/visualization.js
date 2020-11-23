@@ -1,16 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 import D3Visualization from './d3visualization'
+import HTMLVisualization from './htmlvisualization'
 
-export default function Visualization({ db, document }) {
+export default function Visualization({ db, docName }) {
     const [doc, setDoc] = useState(null)
 
     useEffect(() => {
-        db.get(`${document}-setup`).then(function(doc) {
+        db.get(`${docName}-setup`).then(function(doc) {
             setDoc(doc)
         })
     }, [])
 
     return doc !== null ? (
-        <D3Visualization db={db} document={document} setup={doc}/>
+        doc.type === 'd3' ? (
+            <D3Visualization db={db} docName={docName} setup={doc} />
+        ) : (
+            <HTMLVisualization db={db} docName={docName} setup={doc} />
+        )
     ) : null
 }
