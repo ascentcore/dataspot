@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { mseCostFunction } from '../../lib/functions/optimizers'
 import LinearRegression from '../../lib/regressions/linearRegression'
-import LinePlot from '../../lib/visualizations/svg/lineplot'
-import Scatter from '../../lib/visualizations/svg/scatter'
+import LinePlot from '../../lib/visualizations/d3/lineplot'
+import Scatter from '../../lib/visualizations/d3/scatter'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import Axis from '../../lib/visualizations/d3/axis'
 
 function Representation({
     data,
@@ -15,22 +17,37 @@ function Representation({
     width: number
     height: number
 }) {
-    const svgRef = useRef<HTMLDivElement | null>(null)
+    const regressionRef = useRef<HTMLDivElement | null>(null)
+    const costRef = useRef<HTMLDivElement | null>(null)
 
     const plot = async () => {
-        if (svgRef.current) {
-            const scatterPlot = new Scatter({ width, height })
-            scatterPlot.setContainer(svgRef.current)
-            scatterPlot.setup()
+        if (regressionRef.current) {
+            const scatterElemClass = 'scatter-elem'
+            const lineElemClass = 'line-elem'
+            const axisElemClass = 'axis-elem'
+
+            const scatterRegressionPlot = new Scatter({}, scatterElemClass)
+            const lineRegressionPlot = new LinePlot({}, lineElemClass)
+            const axisRegression = new Axis({}, axisElemClass)
+
+            const multiplePlot = new SVGMultipleVisualization(
+                {
+                    width,
+                    height,
+                    domainX: { min: 0, max: 9 },
+                    domainY: { min: 0, max: 65 }
+                },
+                'regression-elem',
+                [axisRegression, scatterRegressionPlot, lineRegressionPlot]
+            )
+            multiplePlot.setContainer(regressionRef.current)
+            multiplePlot.setup()
+
             const mappedData = []
             for (let i = 0; i < data[0].length; i++) {
                 mappedData.push({ x: data[0][i], y: data[1][i], r: 3 })
             }
-            scatterPlot.dataUpdate(mappedData)
-
-            const linePlot = new LinePlot({ width, height })
-            linePlot.setContainer(svgRef.current)
-            linePlot.setup()
+            multiplePlot.dataUpdate(mappedData, scatterElemClass)
 
             const input = [1, 2, 3, 4, 5, 6, 7, 8]
             const linearRegression = LinearRegression.fit(
@@ -52,13 +69,13 @@ function Representation({
                 regressionValue = regressionResult.value
 
                 doneRegression = regressionResult.done || false
-                console.log(regressionValue)
 
-                linePlot.dataUpdate(
+                multiplePlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func
                     input.map((i: number) => {
                         return { x: i, y: i * regressionValue.updatedWeight + regressionValue.updatedBias }
-                    })
+                    }),
+                    lineElemClass
                 )
 
                 // eslint-disable-next-line no-await-in-loop
@@ -66,25 +83,28 @@ function Representation({
             }
 
             let iter = 0
-            const costPlot = new LinePlot({ width, height })
-            costPlot.setContainer(svgRef.current)
+            const axisCost = new Axis({}, axisElemClass)
+            const lineCost = new LinePlot({}, lineElemClass)
+            const costPlot = new SVGMultipleVisualization({ width, height }, 'const-elem', [axisCost, lineCost])
+            costPlot.setContainer(costRef.current)
             costPlot.setup()
-            costPlot.dataUpdate(
-                regressionValue.costHistory.map((cost: number) => {
-                    return { x: iter++, y: cost }
-                })
-            )
+            const mappedCostData = regressionValue.costHistory.map((cost: number) => {
+                return { x: iter++, y: cost }
+            })
+            costPlot.dataUpdate(mappedCostData, axisElemClass)
+            costPlot.dataUpdate(mappedCostData, lineElemClass)
         }
     }
 
     useEffect(() => {
         plot()
-    }, [svgRef])
+    }, [regressionRef])
 
     return (
         <div>
             <h4>{name}</h4>
-            <div ref={svgRef}></div>
+            <div ref={regressionRef}></div>
+            <div ref={costRef}></div>
         </div>
     )
 }

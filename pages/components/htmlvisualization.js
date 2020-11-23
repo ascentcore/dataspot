@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import * as d3 from 'd3'
 
-export default function D3Visualization({ db, docName, setup }) {
+export default function HTMLVisualization({ db, docName, setup }) {
     const divRef = useRef(null)
     const [node, setNode] = useState(null)
     const [block, setBlock] = useState(null)
@@ -11,8 +10,8 @@ export default function D3Visualization({ db, docName, setup }) {
     function loadData() {
         db.get(`${docName}-data`).then(function(doc) {
             if (divRef && block && componentIsMounted.current) {
-                if (!block.dependencies.rootContainer || block.dependencies.rootContainer.empty()) {
-                    block.dependencies.rootContainer = d3.select(divRef.current.querySelector('svg'))
+                if (!block.dependencies.rootContainer) {
+                    block.dependencies.rootContainer = divRef.current
                 }
                 const { data, elemClass, dataUpdateExpr } = doc
 
@@ -27,14 +26,12 @@ export default function D3Visualization({ db, docName, setup }) {
 
     useEffect(() => {
         const { config, prepareDependenciesExpr, node } = setup
-        const block = {
-            dependencies: { d3, palette: d3.scaleOrdinal(d3.schemeAccent) }
-        }
+        const block = { dependencies: { document } }
 
         Object.assign(block, { config })
 
-        if (!block.dependencies.rootContainer || block.dependencies.rootContainer.empty()) {
-            block.dependencies.rootContainer = d3.select(divRef.current.querySelector('svg'))
+        if (!block.dependencies.rootContainer) {
+            block.dependencies.rootContainer = divRef.current
         }
 
         const globalsExpr = prepareDependenciesExpr.replace(/this\./g, 'block.')

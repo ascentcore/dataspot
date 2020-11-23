@@ -13,7 +13,7 @@ export default class MeshPlot extends ThreeBaseVisualization {
         xMax: number
         yMin: number
         yMax: number
-    }): void {
+    }) {
         const { three, renderer } = this.dependencies
         const { segments, width, height } = this.config
 
@@ -121,6 +121,8 @@ export default class MeshPlot extends ThreeBaseVisualization {
             controls.update()
             Object.assign(this.dependencies, { graphMesh, scene, camera, axesHelper })
         })
+
+        return null
     }
 
     destroy() {

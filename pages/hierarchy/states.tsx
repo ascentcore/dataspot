@@ -2,7 +2,7 @@ import * as d3 from 'd3'
 import { useState, useEffect, useRef } from 'react'
 import data from '../../lib/dataset/samples/usarrests'
 // import data from '../../lib/dataset/samples/iris'
-import HierarchyPlot from '../../lib/visualizations/svg/hierarchy'
+import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
 import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
 

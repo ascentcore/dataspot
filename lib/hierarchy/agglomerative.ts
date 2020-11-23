@@ -93,7 +93,7 @@ export default function hierarchy(
             clusterArr[cluster].index.push(localIndex)
             clusterArr[cluster].points.push(...points)
             if (localDistances && clusterArr[cluster] && clusterArr[cluster].distances) {
-                clusterArr[cluster].distances.push(localDistances)
+                clusterArr[cluster].distances!.push(localDistances)
             }
         }
     }

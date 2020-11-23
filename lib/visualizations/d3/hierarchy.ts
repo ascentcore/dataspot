@@ -1,12 +1,16 @@
 import SVGBaseVisualization from './svgbase'
 
 export default class HierarchyPlot extends SVGBaseVisualization {
+    constructor(config: any, elemClass = 'hierarchy-elem') {
+        super(config, elemClass)
+    }
+
     setup() {}
 
-    dataUpdate(data: any): void {
+    updateFn(data: any, elemClass: string): void {
         const { margin, layout, tree, width } = this.config
         const configLayout = layout || 'horizontal'
-        const { d3, svg } = this.dependencies
+        const { d3, rootContainer } = this.dependencies
         const dx = 12
         const hierarchy = d3.hierarchy(data, (d: any) => (Array.isArray(d) ? d : undefined))
         const treeType = tree === 'cluster' ? d3.cluster : d3.tree
@@ -25,7 +29,8 @@ export default class HierarchyPlot extends SVGBaseVisualization {
             .x((d: any) => (isHorizontal ? d.y : d.x))
             .y((d: any) => (isHorizontal ? d.x : d.y))
 
-        const g = svg
+        const g = rootContainer
+            .select(`.${elemClass}`)
             .append('g')
             .attr('font-family', 'sans-serif')
             .attr('font-size', 10)
@@ -67,7 +72,7 @@ export default class HierarchyPlot extends SVGBaseVisualization {
         node.append('text')
             .attr('fill', '#000')
             .attr('dy', '0.31em')
-            .attr('x', (d) => (d.children || !isHorizontal ? -6 : 6))
+            .attr('x', (d: any) => (d.children || !isHorizontal ? -6 : 6))
             .attr('transform', isHorizontal ? '' : 'rotate(-90)')
             // eslint-disable-next-line no-nested-ternary
             .attr('text-anchor', (d: any) => (isHorizontal ? (d.children ? 'end' : 'start') : 'end'))
@@ -76,5 +81,10 @@ export default class HierarchyPlot extends SVGBaseVisualization {
         // .clone(true)
         // .lower()
         // .attr('stroke', 'white')
+    }
+
+    public dataUpdate(data: any, elemClass = this.elemClass) {
+        this.updateFn(data, elemClass)
+        return this.updateFn
     }
 }

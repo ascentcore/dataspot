@@ -1,6 +1,6 @@
-import { VectorUtils } from '../math-utils'
 import { predictionSinglevariable } from '../regressions/linearRegression'
 import { predictionMultivariable } from '../regressions/multivariableLinearRegression'
+import { VectorUtils } from '../utils/math-utils'
 
 export function mseCostFunction(input: number | number[], target: number, prediction: number): (number | number[])[] {
     const derivate: (number | number[])[] = []

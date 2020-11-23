@@ -1,4 +1,4 @@
-import { MathUtils } from '../math-utils'
+import { MathUtils } from '../utils/math-utils'
 import { crossEntropy, hinge, meanSquaredError, l2, meanAbsoluteError, supportVectorMachine } from './losses'
 
 describe('Loss Functions', () => {
