@@ -1,5 +1,7 @@
 /* eslint-disable operator-assignment, no-param-reassign */
 import EvolutionaryAlgorithm, { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
+import Individual from './individual'
+import FitnessFunction from './fitnessFunction'
 import Random from '../math/random'
 
 export class PSOConfig extends EvolutionaryConfig {
@@ -10,36 +12,6 @@ export class PSOConfig extends EvolutionaryConfig {
     public socialWeight: number = 0.3
 
     public populationSize: number = 100
-}
-
-export class FitnessFunction {
-    public function!: Function
-
-    public dimensions!: { min: number; max: number }[]
-}
-
-export class Individual {
-    public id: number = 0
-
-    public position: number[] = []
-
-    public fitness = Infinity
-
-    public bestPosition: number[] = []
-
-    public bestFitness = Infinity
-
-    public velocity: number[] | null = null
-
-    computeFitness(fitnessFunction: FitnessFunction) {
-        this.fitness = fitnessFunction.function(...this.position)
-        if (this.fitness < this.bestFitness) {
-            for (let i = 0; i < this.position.length; i++) {
-                this.bestPosition[i] = this.position[i]
-            }
-            this.bestFitness = this.fitness
-        }
-    }
 }
 
 export default class PSO extends EvolutionaryAlgorithm<PSOConfig> {
@@ -91,19 +63,8 @@ export default class PSO extends EvolutionaryAlgorithm<PSOConfig> {
         }
     }
 
-    sortPopulation() {
+    private sortPopulation() {
         this.individuals.sort((i1, i2) => i1.fitness - i2.fitness)
-    }
-
-    step() {
-        for (let i = 0; i < this.individuals.length; i++) {
-            this.movePosition(this.individuals[i])
-        }
-        for (let i = 0; i < this.individuals.length; i++) {
-            this.individuals[i].computeFitness(this.fitnessFunction)
-        }
-        this.sortPopulation()
-        this.updateGlobalBest()
     }
 
     private updateGlobalBest(): void {
@@ -120,6 +81,17 @@ export default class PSO extends EvolutionaryAlgorithm<PSOConfig> {
                 this.bestPosition = [...this.individuals[i].bestPosition, this.individuals[i].bestFitness]
             }
         }
+    }
+
+    step() {
+        for (let i = 0; i < this.individuals.length; i++) {
+            this.movePosition(this.individuals[i])
+        }
+        for (let i = 0; i < this.individuals.length; i++) {
+            this.individuals[i].computeFitness(this.fitnessFunction)
+        }
+        this.sortPopulation()
+        this.updateGlobalBest()
     }
 
     preparePopulation(): void {

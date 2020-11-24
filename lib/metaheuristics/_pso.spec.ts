@@ -1,5 +1,6 @@
 import calculate, { DOMAIN, GLOBAL_M } from '../dataset/benchmark/ackley'
-import PSO, { PSOConfig, FitnessFunction } from './pso'
+import PSO, { PSOConfig } from './pso'
+import FitnessFunction from './fitnessFunction'
 
 const pso = new PSO(<PSOConfig>{ populationSize: 3 })
 
