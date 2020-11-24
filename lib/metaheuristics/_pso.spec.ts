@@ -5,8 +5,8 @@ import FitnessFunction from './fitnessFunction'
 const pso = new PSO(<PSOConfig>{ populationSize: 3 })
 
 describe('PSO', () => {
-    it('performs pso on ackley', async (done) => {
-        const particles = await pso.fit(
+    it('performs pso on ackley', (done) => {
+        const particles = pso.fit(
             Object.assign(new FitnessFunction(), {
                 function: calculate,
                 dimensions: [{ min: DOMAIN[0], max: DOMAIN[1] }, { min: DOMAIN[0], max: DOMAIN[1] }]

@@ -17,7 +17,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([margin.left, width - margin.right])
 
             rootContainer
-                .select(`#${this.elemClass}`)
+                .select(`.${this.elemClass}`)
                 .append('g')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
@@ -37,7 +37,7 @@ export default class Axis extends SVGBaseVisualization {
                 .range([height - margin.bottom, margin.top])
 
             rootContainer
-                .select(`#${this.elemClass}`)
+                .select(`.${this.elemClass}`)
                 .append('g')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
