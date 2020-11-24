@@ -1,5 +1,5 @@
 import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
-import DBScan, { DBScanConfig } from '../../lib/clustering/DBScan'
+import DBScan, { DBScanConfig } from '../../lib/clustering/dbScan'
 import Lab from '../../lib/lab'
 import SVGVisualizationWrapper from '../../lib/visualizations/d3/svgvisualizationwrapper'
 import Scatter from '../../lib/visualizations/d3/scatter'
