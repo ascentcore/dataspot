@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / HelperUtilsComponent
+> [Globals](../globals.md) / [HelperUtilsComponent](helperutilscomponent)
 
 # HelperUtilsComponent
 
@@ -26,48 +26,48 @@ has_children: false
 
 ### Constructors
 
-* [constructor](helperutilscomponent.md#constructor)
+* [constructor](helperutilscomponent#constructor)
 
 ### Properties
 
-* [componentName](helperutilscomponent.md#componentname)
-* [hideBreadcrumbs](helperutilscomponent.md#hidebreadcrumbs)
-* [hideProjectName](helperutilscomponent.md#hideprojectname)
-* [hideSources](helperutilscomponent.md#hidesources)
-* [namedAnchors](helperutilscomponent.md#namedanchors)
-* [project](helperutilscomponent.md#project)
-* [publicPath](helperutilscomponent.md#publicpath)
-* [reflection](helperutilscomponent.md#reflection)
-* [urlPrefix](helperutilscomponent.md#urlprefix)
+* [componentName](helperutilscomponent#componentname)
+* [hideBreadcrumbs](helperutilscomponent#hidebreadcrumbs)
+* [hideProjectName](helperutilscomponent#hideprojectname)
+* [hideSources](helperutilscomponent#hidesources)
+* [namedAnchors](helperutilscomponent#namedanchors)
+* [project](helperutilscomponent#project)
+* [publicPath](helperutilscomponent#publicpath)
+* [reflection](helperutilscomponent#reflection)
+* [urlPrefix](helperutilscomponent#urlprefix)
 
 ### Accessors
 
-* [application](helperutilscomponent.md#application)
-* [owner](helperutilscomponent.md#owner)
+* [application](helperutilscomponent#application)
+* [owner](helperutilscomponent#owner)
 
 ### Methods
 
-* [bubble](helperutilscomponent.md#bubble)
-* [getOptionDeclarations](helperutilscomponent.md#getoptiondeclarations)
-* [getRelativeUrl](helperutilscomponent.md#getrelativeurl)
-* [initialize](helperutilscomponent.md#initialize)
-* [listenTo](helperutilscomponent.md#listento)
-* [listenToOnce](helperutilscomponent.md#listentoonce)
-* [off](helperutilscomponent.md#off)
-* [on](helperutilscomponent.md#on)
-* [onBeginPage](helperutilscomponent.md#onbeginpage)
-* [onBeginRenderer](helperutilscomponent.md#onbeginrenderer)
-* [once](helperutilscomponent.md#once)
-* [stopListening](helperutilscomponent.md#stoplistening)
-* [trigger](helperutilscomponent.md#trigger)
+* [bubble](helperutilscomponent#bubble)
+* [getOptionDeclarations](helperutilscomponent#getoptiondeclarations)
+* [getRelativeUrl](helperutilscomponent#getrelativeurl)
+* [initialize](helperutilscomponent#initialize)
+* [listenTo](helperutilscomponent#listento)
+* [listenToOnce](helperutilscomponent#listentoonce)
+* [off](helperutilscomponent#off)
+* [on](helperutilscomponent#on)
+* [onBeginPage](helperutilscomponent#onbeginpage)
+* [onBeginRenderer](helperutilscomponent#onbeginrenderer)
+* [once](helperutilscomponent#once)
+* [stopListening](helperutilscomponent#stoplistening)
+* [trigger](helperutilscomponent#trigger)
 
 ## Constructors
 
 ### constructor
 
-\+ **new HelperUtilsComponent**(`owner`: Renderer \| *typeof* DUMMY\_APPLICATION\_OWNER): [HelperUtilsComponent](helperutilscomponent.md)
+\+ **new HelperUtilsComponent**(`owner`: Renderer \| *typeof* DUMMY\_APPLICATION\_OWNER): [HelperUtilsComponent](helperutilscomponent)
 
-*Inherited from [CommentsComponent](commentscomponent.md).[constructor](commentscomponent.md#constructor)*
+*Inherited from [CommentsComponent](commentscomponent).[constructor](commentscomponent#constructor)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:29*
 
@@ -77,7 +77,7 @@ Name | Type |
 ------ | ------ |
 `owner` | Renderer \| *typeof* DUMMY\_APPLICATION\_OWNER |
 
-**Returns:** [HelperUtilsComponent](helperutilscomponent.md)
+**Returns:** [HelperUtilsComponent](helperutilscomponent)
 
 ## Properties
 
@@ -85,7 +85,7 @@ Name | Type |
 
 •  **componentName**: string
 
-*Inherited from [CommentsComponent](commentscomponent.md).[componentName](commentscomponent.md#componentname)*
+*Inherited from [CommentsComponent](commentscomponent).[componentName](commentscomponent#componentname)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:28*
 
@@ -95,7 +95,7 @@ ___
 
 •  **hideBreadcrumbs**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L20)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L20)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 •  **hideProjectName**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:17](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L17)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L17)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 •  **hideSources**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:23](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L23)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:23](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L23)*
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 •  **namedAnchors**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:14](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L14)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L14)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 • `Protected` `Optional` **project**: ProjectReflection
 
-*Inherited from [CommentsComponent](commentscomponent.md).[project](commentscomponent.md#project)*
+*Inherited from [CommentsComponent](commentscomponent).[project](commentscomponent#project)*
 
 *Defined in node_modules/typedoc/dist/lib/output/components.d.ts:9*
 
@@ -137,7 +137,7 @@ ___
 
 •  **publicPath**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:11](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L11)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L11)*
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 • `Protected` `Optional` **reflection**: DeclarationReflection
 
-*Inherited from [CommentsComponent](commentscomponent.md).[reflection](commentscomponent.md#reflection)*
+*Inherited from [CommentsComponent](commentscomponent).[reflection](commentscomponent#reflection)*
 
 *Defined in node_modules/typedoc/dist/lib/output/components.d.ts:10*
 
@@ -155,7 +155,7 @@ ___
 
 • `Protected` **urlPrefix**: RegExp
 
-*Inherited from [CommentsComponent](commentscomponent.md).[urlPrefix](commentscomponent.md#urlprefix)*
+*Inherited from [CommentsComponent](commentscomponent).[urlPrefix](commentscomponent#urlprefix)*
 
 *Defined in node_modules/typedoc/dist/lib/output/components.d.ts:12*
 
@@ -165,7 +165,7 @@ ___
 
 • get **application**(): Application
 
-*Inherited from [CommentsComponent](commentscomponent.md).[application](commentscomponent.md#application)*
+*Inherited from [CommentsComponent](commentscomponent).[application](commentscomponent#application)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:34*
 
@@ -177,7 +177,7 @@ ___
 
 • get **owner**(): Renderer
 
-*Inherited from [CommentsComponent](commentscomponent.md).[owner](commentscomponent.md#owner)*
+*Inherited from [CommentsComponent](commentscomponent).[owner](commentscomponent#owner)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:35*
 
@@ -189,7 +189,7 @@ ___
 
 ▸ `Protected`**bubble**(`name`: Event \| EventMap \| string, ...`args`: any[]): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[bubble](commentscomponent.md#bubble)*
+*Inherited from [CommentsComponent](commentscomponent).[bubble](commentscomponent#bubble)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:32*
 
@@ -208,7 +208,7 @@ ___
 
 ▸ **getOptionDeclarations**(): DeclarationOption[]
 
-*Inherited from [CommentsComponent](commentscomponent.md).[getOptionDeclarations](commentscomponent.md#getoptiondeclarations)*
+*Inherited from [CommentsComponent](commentscomponent).[getOptionDeclarations](commentscomponent#getoptiondeclarations)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:33*
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **getRelativeUrl**(`absolute`: string): string
 
-*Inherited from [CommentsComponent](commentscomponent.md).[getRelativeUrl](commentscomponent.md#getrelativeurl)*
+*Inherited from [CommentsComponent](commentscomponent).[getRelativeUrl](commentscomponent#getrelativeurl)*
 
 *Defined in node_modules/typedoc/dist/lib/output/components.d.ts:14*
 
@@ -240,7 +240,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:25](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L25)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:25](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L25)*
 
 **Returns:** void
 
@@ -250,7 +250,7 @@ ___
 
 ▸ **listenTo**(`obj`: EventDispatcher, `name`: EventMap \| string, `callback?`: EventCallback, `priority?`: number): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenTo](commentscomponent.md#listento)*
+*Inherited from [CommentsComponent](commentscomponent).[listenTo](commentscomponent#listento)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:33*
 
@@ -271,7 +271,7 @@ ___
 
 ▸ **listenToOnce**(`obj`: EventDispatcher, `eventMap`: EventMap): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenToOnce](commentscomponent.md#listentoonce)*
+*Inherited from [CommentsComponent](commentscomponent).[listenToOnce](commentscomponent#listentoonce)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:34*
 
@@ -286,7 +286,7 @@ Name | Type |
 
 ▸ **listenToOnce**(`obj`: EventDispatcher, `name`: string, `callback`: EventCallback, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenToOnce](commentscomponent.md#listentoonce)*
+*Inherited from [CommentsComponent](commentscomponent).[listenToOnce](commentscomponent#listentoonce)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:35*
 
@@ -307,7 +307,7 @@ ___
 
 ▸ **off**(): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:30*
 
@@ -315,7 +315,7 @@ ___
 
 ▸ **off**(`eventMap`: EventMap \| undefined, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:31*
 
@@ -330,7 +330,7 @@ Name | Type |
 
 ▸ **off**(`name`: string \| undefined, `callback?`: EventCallback, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:32*
 
@@ -350,7 +350,7 @@ ___
 
 ▸ **on**(`eventMap`: EventMap, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:24*
 
@@ -365,7 +365,7 @@ Name | Type |
 
 ▸ **on**(`eventMap`: EventMap, `callback?`: EventCallback, `context?`: any, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:25*
 
@@ -382,7 +382,7 @@ Name | Type |
 
 ▸ **on**(`name`: string, `callback`: EventCallback, `context?`: any, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:26*
 
@@ -403,7 +403,7 @@ ___
 
 ▸ `Protected`**onBeginPage**(`page`: PageEvent): void
 
-*Inherited from [CommentsComponent](commentscomponent.md).[onBeginPage](commentscomponent.md#onbeginpage)*
+*Inherited from [CommentsComponent](commentscomponent).[onBeginPage](commentscomponent#onbeginpage)*
 
 *Defined in node_modules/typedoc/dist/lib/output/components.d.ts:16*
 
@@ -421,7 +421,7 @@ ___
 
 ▸ `Protected`**onBeginRenderer**(`event`: RendererEvent): void
 
-*Inherited from [CommentsComponent](commentscomponent.md).[onBeginRenderer](commentscomponent.md#onbeginrenderer)*
+*Inherited from [CommentsComponent](commentscomponent).[onBeginRenderer](commentscomponent#onbeginrenderer)*
 
 *Defined in node_modules/typedoc/dist/lib/output/components.d.ts:15*
 
@@ -439,7 +439,7 @@ ___
 
 ▸ **once**(`eventMap`: EventMap, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[once](commentscomponent.md#once)*
+*Inherited from [CommentsComponent](commentscomponent).[once](commentscomponent#once)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:28*
 
@@ -454,7 +454,7 @@ Name | Type |
 
 ▸ **once**(`name`: string, `callback`: EventCallback, `context?`: any, `priority?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[once](commentscomponent.md#once)*
+*Inherited from [CommentsComponent](commentscomponent).[once](commentscomponent#once)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:29*
 
@@ -475,7 +475,7 @@ ___
 
 ▸ **stopListening**(`obj?`: EventDispatcher, `name?`: EventMap \| string, `callback?`: EventCallback): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[stopListening](commentscomponent.md#stoplistening)*
+*Inherited from [CommentsComponent](commentscomponent).[stopListening](commentscomponent#stoplistening)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:36*
 
@@ -495,7 +495,7 @@ ___
 
 ▸ **trigger**(`name`: Event \| EventMap \| string, ...`args`: any[]): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[trigger](commentscomponent.md#trigger)*
+*Inherited from [CommentsComponent](commentscomponent).[trigger](commentscomponent#trigger)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:37*
 

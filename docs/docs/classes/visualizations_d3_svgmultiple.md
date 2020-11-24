@@ -8,13 +8,13 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / visualizations.d3.svgmultiple
+> [Globals](../globals.md) / [visualizations.d3.svgmultiple](visualizations_d3_svgmultiple)
 
 # svgmultiple
 
 ## Hierarchy
 
-* [visualizations.d3.svgbase](visualizations_d3_svgbase.md)
+* [visualizations.d3.svgbase](visualizations_d3_svgbase)
 
   ↳ **visualizations.d3.svgmultiple**
 
@@ -22,31 +22,31 @@ has_children: false
 
 ### Constructors
 
-* [constructor](visualizations_d3_svgmultiple.md#constructor)
+* [constructor](visualizations_d3_svgmultiple#constructor)
 
 ### Properties
 
-* [config](visualizations_d3_svgmultiple.md#config)
-* [dependencies](visualizations_d3_svgmultiple.md#dependencies)
-* [elemClass](visualizations_d3_svgmultiple.md#elemclass)
-* [visualizations](visualizations_d3_svgmultiple.md#visualizations)
+* [config](visualizations_d3_svgmultiple#config)
+* [dependencies](visualizations_d3_svgmultiple#dependencies)
+* [elemClass](visualizations_d3_svgmultiple#elemclass)
+* [visualizations](visualizations_d3_svgmultiple#visualizations)
 
 ### Methods
 
-* [dataUpdate](visualizations_d3_svgmultiple.md#dataupdate)
-* [getDependency](visualizations_d3_svgmultiple.md#getdependency)
-* [setContainer](visualizations_d3_svgmultiple.md#setcontainer)
-* [setup](visualizations_d3_svgmultiple.md#setup)
+* [dataUpdate](visualizations_d3_svgmultiple#dataupdate)
+* [getDependency](visualizations_d3_svgmultiple#getdependency)
+* [setContainer](visualizations_d3_svgmultiple#setcontainer)
+* [setup](visualizations_d3_svgmultiple#setup)
 
 ## Constructors
 
 ### constructor
 
-\+ **new SVGMultipleVisualization**(`config`: any, `elemClass`: string, `visualizations`: [visualizations.d3.svgbase](visualizations_d3_svgbase.md)[]): [visualizations.d3.svgmultiple](visualizations_d3_svgmultiple.md)
+\+ **new SVGMultipleVisualization**(`config`: any, `elemClass`: string, `visualizations`: [visualizations.d3.svgbase](visualizations_d3_svgbase)[]): [visualizations.d3.svgmultiple](visualizations_d3_svgmultiple)
 
-*Overrides [visualizations.d3.svgbase](visualizations_d3_svgbase.md).[constructor](visualizations_d3_svgbase.md#constructor)*
+*Overrides [visualizations.d3.svgbase](visualizations_d3_svgbase).[constructor](visualizations_d3_svgbase#constructor)*
 
-*Defined in [lib/visualizations/d3/svgmultiple.ts:5](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/svgmultiple.ts#L5)*
+*Defined in [lib/visualizations/d3/svgmultiple.ts:5](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/svgmultiple.ts#L5)*
 
 #### Parameters:
 
@@ -54,9 +54,9 @@ Name | Type |
 ------ | ------ |
 `config` | any |
 `elemClass` | string |
-`visualizations` | [visualizations.d3.svgbase](visualizations_d3_svgbase.md)[] |
+`visualizations` | [visualizations.d3.svgbase](visualizations_d3_svgbase)[] |
 
-**Returns:** [visualizations.d3.svgmultiple](visualizations_d3_svgmultiple.md)
+**Returns:** [visualizations.d3.svgmultiple](visualizations_d3_svgmultiple)
 
 ## Properties
 
@@ -64,9 +64,9 @@ Name | Type |
 
 •  **config**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[config](visualizations_basevisualization.md#config)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -74,9 +74,9 @@ ___
 
 • `Protected` **dependencies**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[dependencies](visualizations_basevisualization.md#dependencies)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -87,17 +87,17 @@ ___
 
 •  **elemClass**: string
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[elemClass](visualizations_basevisualization.md#elemclass)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
 ### visualizations
 
-• `Private` **visualizations**: { [name:string]: [visualizations.d3.svgbase](visualizations_d3_svgbase.md);  }
+• `Private` **visualizations**: { [name:string]: [visualizations.d3.svgbase](visualizations_d3_svgbase);  }
 
-*Defined in [lib/visualizations/d3/svgmultiple.ts:5](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/svgmultiple.ts#L5)*
+*Defined in [lib/visualizations/d3/svgmultiple.ts:5](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/svgmultiple.ts#L5)*
 
 ## Methods
 
@@ -105,9 +105,9 @@ ___
 
 ▸ **dataUpdate**(`data`: TwoDPointScatter[] \| TwoDPointLine[], `elemClass`: string): any
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[dataUpdate](visualizations_basevisualization.md#dataupdate)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/d3/svgmultiple.ts:39](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/svgmultiple.ts#L39)*
+*Defined in [lib/visualizations/d3/svgmultiple.ts:39](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/svgmultiple.ts#L39)*
 
 #### Parameters:
 
@@ -124,9 +124,9 @@ ___
 
 ▸ **getDependency**(`key`: string): any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[getDependency](visualizations_basevisualization.md#getdependency)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -142,9 +142,9 @@ ___
 
 ▸ **setContainer**(`containerRef`: HTMLElement): void
 
-*Overrides [visualizations.d3.svgbase](visualizations_d3_svgbase.md).[setContainer](visualizations_d3_svgbase.md#setcontainer)*
+*Overrides [visualizations.d3.svgbase](visualizations_d3_svgbase).[setContainer](visualizations_d3_svgbase#setcontainer)*
 
-*Defined in [lib/visualizations/d3/svgmultiple.ts:32](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/svgmultiple.ts#L32)*
+*Defined in [lib/visualizations/d3/svgmultiple.ts:32](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/svgmultiple.ts#L32)*
 
 #### Parameters:
 
@@ -160,8 +160,8 @@ ___
 
 ▸ **setup**(): void
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[setup](visualizations_basevisualization.md#setup)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/d3/svgmultiple.ts:28](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/svgmultiple.ts#L28)*
+*Defined in [lib/visualizations/d3/svgmultiple.ts:28](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/svgmultiple.ts#L28)*
 
 **Returns:** void

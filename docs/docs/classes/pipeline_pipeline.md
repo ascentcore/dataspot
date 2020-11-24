@@ -8,7 +8,7 @@ has_children: true
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / pipeline.pipeline
+> [Globals](../globals.md) / [pipeline.pipeline](pipeline_pipeline)
 
 # pipeline
 
@@ -18,7 +18,7 @@ for each step in the validation / reporting process.
 
 ## Hierarchy
 
-* [pipeline.types](pipeline_types.md)\<any, any>
+* [pipeline.types](pipeline_types)\<any, any>
 
   ↳ **pipeline.pipeline**
 
@@ -26,71 +26,71 @@ for each step in the validation / reporting process.
 
 ### Constructors
 
-* [constructor](pipeline_pipeline.md#constructor)
-* [constructor](pipeline_pipeline.md#constructor)
-* [constructor](pipeline_pipeline.md#constructor)
+* [constructor](pipeline_pipeline#constructor)
+* [constructor](pipeline_pipeline#constructor)
+* [constructor](pipeline_pipeline#constructor)
 
 ### Properties
 
-* [state](pipeline_pipeline.md#state)
-* [state](pipeline_pipeline.md#state)
-* [state](pipeline_pipeline.md#state)
-* [steps](pipeline_pipeline.md#steps)
-* [steps](pipeline_pipeline.md#steps)
-* [steps](pipeline_pipeline.md#steps)
+* [state](pipeline_pipeline#state)
+* [state](pipeline_pipeline#state)
+* [state](pipeline_pipeline#state)
+* [steps](pipeline_pipeline#steps)
+* [steps](pipeline_pipeline#steps)
+* [steps](pipeline_pipeline#steps)
 
 ### Methods
 
-* [add](pipeline_pipeline.md#add)
-* [add](pipeline_pipeline.md#add)
-* [add](pipeline_pipeline.md#add)
-* [execute](pipeline_pipeline.md#execute)
-* [execute](pipeline_pipeline.md#execute)
-* [execute](pipeline_pipeline.md#execute)
-* [getStateKey](pipeline_pipeline.md#getstatekey)
-* [getStateKey](pipeline_pipeline.md#getstatekey)
-* [getStateKey](pipeline_pipeline.md#getstatekey)
-* [setState](pipeline_pipeline.md#setstate)
-* [setState](pipeline_pipeline.md#setstate)
-* [setState](pipeline_pipeline.md#setstate)
-* [setStateKey](pipeline_pipeline.md#setstatekey)
-* [setStateKey](pipeline_pipeline.md#setstatekey)
-* [setStateKey](pipeline_pipeline.md#setstatekey)
-* [executeStep](pipeline_pipeline.md#executestep)
-* [executeStep](pipeline_pipeline.md#executestep)
-* [executeStep](pipeline_pipeline.md#executestep)
+* [add](pipeline_pipeline#add)
+* [add](pipeline_pipeline#add)
+* [add](pipeline_pipeline#add)
+* [execute](pipeline_pipeline#execute)
+* [execute](pipeline_pipeline#execute)
+* [execute](pipeline_pipeline#execute)
+* [getStateKey](pipeline_pipeline#getstatekey)
+* [getStateKey](pipeline_pipeline#getstatekey)
+* [getStateKey](pipeline_pipeline#getstatekey)
+* [setState](pipeline_pipeline#setstate)
+* [setState](pipeline_pipeline#setstate)
+* [setState](pipeline_pipeline#setstate)
+* [setStateKey](pipeline_pipeline#setstatekey)
+* [setStateKey](pipeline_pipeline#setstatekey)
+* [setStateKey](pipeline_pipeline#setstatekey)
+* [executeStep](pipeline_pipeline#executestep)
+* [executeStep](pipeline_pipeline#executestep)
+* [executeStep](pipeline_pipeline#executestep)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Pipeline**(`steps?`: [pipeline.types](pipeline_types.md)\<any, any>[]): [pipeline.pipeline](pipeline_pipeline.md)
+\+ **new Pipeline**(`steps?`: [pipeline.types](pipeline_types)\<any, any>[]): [pipeline.pipeline](pipeline_pipeline)
 
-*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L11)*
+*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L11)*
 
 #### Parameters:
 
 Name | Type | Default value |
 ------ | ------ | ------ |
-`steps` | [pipeline.types](pipeline_types.md)\<any, any>[] | [] |
+`steps` | [pipeline.types](pipeline_types)\<any, any>[] | [] |
 
-**Returns:** [pipeline.pipeline](pipeline_pipeline.md)
+**Returns:** [pipeline.pipeline](pipeline_pipeline)
 
 ___
 
 ### constructor
 
-\+ **new ParalelPipeline**(`steps?`: [pipeline.types](pipeline_types.md)\<any, any>[]): ParalelPipeline
+\+ **new ParalelPipeline**(`steps?`: [pipeline.types](pipeline_types)\<any, any>[]): ParalelPipeline
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[constructor](pipeline_pipeline.md#constructor)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[constructor](pipeline_pipeline#constructor)*
 
-*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L11)*
+*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L11)*
 
 #### Parameters:
 
 Name | Type | Default value |
 ------ | ------ | ------ |
-`steps` | [pipeline.types](pipeline_types.md)\<any, any>[] | [] |
+`steps` | [pipeline.types](pipeline_types)\<any, any>[] | [] |
 
 **Returns:** ParalelPipeline
 
@@ -98,17 +98,17 @@ ___
 
 ### constructor
 
-\+ **new WaterfallPipeline**(`steps?`: [pipeline.types](pipeline_types.md)\<any, any>[]): WaterfallPipeline
+\+ **new WaterfallPipeline**(`steps?`: [pipeline.types](pipeline_types)\<any, any>[]): WaterfallPipeline
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[constructor](pipeline_pipeline.md#constructor)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[constructor](pipeline_pipeline#constructor)*
 
-*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L11)*
+*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L11)*
 
 #### Parameters:
 
 Name | Type | Default value |
 ------ | ------ | ------ |
-`steps` | [pipeline.types](pipeline_types.md)\<any, any>[] | [] |
+`steps` | [pipeline.types](pipeline_types)\<any, any>[] | [] |
 
 **Returns:** WaterfallPipeline
 
@@ -116,23 +116,11 @@ Name | Type | Default value |
 
 ### state
 
-• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike.md)
+• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike)
 
-*Inherited from [pipeline.types](pipeline_types.md).[state](pipeline_types.md#state)*
+*Inherited from [pipeline.types](pipeline_types).[state](pipeline_types#state)*
 
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L12)*
-
-Internal pipeline state reference
-
-___
-
-### state
-
-• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike.md)
-
-*Inherited from [pipeline.types](pipeline_types.md).[state](pipeline_types.md#state)*
-
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L12)*
+*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L12)*
 
 Internal pipeline state reference
 
@@ -140,11 +128,23 @@ ___
 
 ### state
 
-• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike.md)
+• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike)
 
-*Inherited from [pipeline.types](pipeline_types.md).[state](pipeline_types.md#state)*
+*Inherited from [pipeline.types](pipeline_types).[state](pipeline_types#state)*
 
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L12)*
+*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L12)*
+
+Internal pipeline state reference
+
+___
+
+### state
+
+• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike)
+
+*Inherited from [pipeline.types](pipeline_types).[state](pipeline_types#state)*
+
+*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L12)*
 
 Internal pipeline state reference
 
@@ -152,37 +152,37 @@ ___
 
 ### steps
 
-• `Protected` **steps**: [pipeline.types](pipeline_types.md)\<any, any>[]
+• `Protected` **steps**: [pipeline.types](pipeline_types)\<any, any>[]
 
-*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L12)*
-
-___
-
-### steps
-
-• `Protected` **steps**: [pipeline.types](pipeline_types.md)\<any, any>[]
-
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[steps](pipeline_pipeline.md#steps)*
-
-*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L12)*
+*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L12)*
 
 ___
 
 ### steps
 
-• `Protected` **steps**: [pipeline.types](pipeline_types.md)\<any, any>[]
+• `Protected` **steps**: [pipeline.types](pipeline_types)\<any, any>[]
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[steps](pipeline_pipeline.md#steps)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[steps](pipeline_pipeline#steps)*
 
-*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L12)*
+*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L12)*
+
+___
+
+### steps
+
+• `Protected` **steps**: [pipeline.types](pipeline_types)\<any, any>[]
+
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[steps](pipeline_pipeline#steps)*
+
+*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L12)*
 
 ## Methods
 
 ### add
 
-▸ **add**(`step`: [pipeline.types](pipeline_types.md)\<any, any>): [pipeline.pipeline](pipeline_pipeline.md)
+▸ **add**(`step`: [pipeline.types](pipeline_types)\<any, any>): [pipeline.pipeline](pipeline_pipeline)
 
-*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L29)*
+*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L29)*
 
 Adds one step executor to the pipeline
 
@@ -190,19 +190,19 @@ Adds one step executor to the pipeline
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`step` | [pipeline.types](pipeline_types.md)\<any, any> | pipeline step  |
+`step` | [pipeline.types](pipeline_types)\<any, any> | pipeline step  |
 
-**Returns:** [pipeline.pipeline](pipeline_pipeline.md)
+**Returns:** [pipeline.pipeline](pipeline_pipeline)
 
 ___
 
 ### add
 
-▸ **add**(`step`: [pipeline.types](pipeline_types.md)\<any, any>): [pipeline.pipeline](pipeline_pipeline.md)
+▸ **add**(`step`: [pipeline.types](pipeline_types)\<any, any>): [pipeline.pipeline](pipeline_pipeline)
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[add](pipeline_pipeline.md#add)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[add](pipeline_pipeline#add)*
 
-*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L29)*
+*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L29)*
 
 Adds one step executor to the pipeline
 
@@ -210,19 +210,19 @@ Adds one step executor to the pipeline
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`step` | [pipeline.types](pipeline_types.md)\<any, any> | pipeline step  |
+`step` | [pipeline.types](pipeline_types)\<any, any> | pipeline step  |
 
-**Returns:** [pipeline.pipeline](pipeline_pipeline.md)
+**Returns:** [pipeline.pipeline](pipeline_pipeline)
 
 ___
 
 ### add
 
-▸ **add**(`step`: [pipeline.types](pipeline_types.md)\<any, any>): [pipeline.pipeline](pipeline_pipeline.md)
+▸ **add**(`step`: [pipeline.types](pipeline_types)\<any, any>): [pipeline.pipeline](pipeline_pipeline)
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[add](pipeline_pipeline.md#add)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[add](pipeline_pipeline#add)*
 
-*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L29)*
+*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L29)*
 
 Adds one step executor to the pipeline
 
@@ -230,9 +230,9 @@ Adds one step executor to the pipeline
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`step` | [pipeline.types](pipeline_types.md)\<any, any> | pipeline step  |
+`step` | [pipeline.types](pipeline_types)\<any, any> | pipeline step  |
 
-**Returns:** [pipeline.pipeline](pipeline_pipeline.md)
+**Returns:** [pipeline.pipeline](pipeline_pipeline)
 
 ___
 
@@ -240,9 +240,9 @@ ___
 
 ▸ **execute**\<T, K>(`data?`: Promise\<T>): Promise\<any>
 
-*Overrides [pipeline.types](pipeline_types.md).[execute](pipeline_types.md#execute)*
+*Overrides [pipeline.types](pipeline_types).[execute](pipeline_types#execute)*
 
-*Defined in [lib/pipeline/pipeline.ts:52](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L52)*
+*Defined in [lib/pipeline/pipeline.ts:52](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L52)*
 
 Executes steps in a synchronous mode.
 If steps can be paralelized consider using ParalelPipeline
@@ -268,9 +268,9 @@ ___
 
 ▸ **execute**\<T, K>(`inputData`: Promise\<T>): Promise\<any>
 
-*Overrides [pipeline.pipeline](pipeline_pipeline.md).[execute](pipeline_pipeline.md#execute)*
+*Overrides [pipeline.pipeline](pipeline_pipeline).[execute](pipeline_pipeline#execute)*
 
-*Defined in [lib/pipeline/pipeline.ts:73](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L73)*
+*Defined in [lib/pipeline/pipeline.ts:73](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L73)*
 
 #### Type parameters:
 
@@ -293,9 +293,9 @@ ___
 
 ▸ **execute**\<T, K>(`inputData`: Promise\<T>): Promise\<any>
 
-*Overrides [pipeline.pipeline](pipeline_pipeline.md).[execute](pipeline_pipeline.md#execute)*
+*Overrides [pipeline.pipeline](pipeline_pipeline).[execute](pipeline_pipeline#execute)*
 
-*Defined in [lib/pipeline/pipeline.ts:95](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L95)*
+*Defined in [lib/pipeline/pipeline.ts:95](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L95)*
 
 #### Type parameters:
 
@@ -318,29 +318,9 @@ ___
 
 ▸ **getStateKey**(`key`: string): any
 
-*Inherited from [pipeline.types](pipeline_types.md).[getStateKey](pipeline_types.md#getstatekey)*
+*Inherited from [pipeline.types](pipeline_types).[getStateKey](pipeline_types#getstatekey)*
 
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L35)*
-
-Return value at key from storage
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`key` | string | storage key  |
-
-**Returns:** any
-
-___
-
-### getStateKey
-
-▸ **getStateKey**(`key`: string): any
-
-*Inherited from [pipeline.types](pipeline_types.md).[getStateKey](pipeline_types.md#getstatekey)*
-
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L35)*
+*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L35)*
 
 Return value at key from storage
 
@@ -358,9 +338,29 @@ ___
 
 ▸ **getStateKey**(`key`: string): any
 
-*Inherited from [pipeline.types](pipeline_types.md).[getStateKey](pipeline_types.md#getstatekey)*
+*Inherited from [pipeline.types](pipeline_types).[getStateKey](pipeline_types#getstatekey)*
 
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L35)*
+*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L35)*
+
+Return value at key from storage
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string | storage key  |
+
+**Returns:** any
+
+___
+
+### getStateKey
+
+▸ **getStateKey**(`key`: string): any
+
+*Inherited from [pipeline.types](pipeline_types).[getStateKey](pipeline_types#getstatekey)*
+
+*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L35)*
 
 Return value at key from storage
 
@@ -376,11 +376,11 @@ ___
 
 ### setState
 
-▸ **setState**(`state`: [models.objectLike](../interfaces/models_objectlike.md)): void
+▸ **setState**(`state`: [models.objectLike](../interfaces/models_objectlike)): void
 
-*Overrides [pipeline.types](pipeline_types.md).[setState](pipeline_types.md#setstate)*
+*Overrides [pipeline.types](pipeline_types).[setState](pipeline_types#setstate)*
 
-*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L20)*
+*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L20)*
 
 Update current pipe internal state with passed object and assign to children
 
@@ -388,7 +388,7 @@ Update current pipe internal state with passed object and assign to children
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`state` | [models.objectLike](../interfaces/models_objectlike.md) | state object  |
+`state` | [models.objectLike](../interfaces/models_objectlike) | state object  |
 
 **Returns:** void
 
@@ -396,13 +396,13 @@ ___
 
 ### setState
 
-▸ **setState**(`state`: [models.objectLike](../interfaces/models_objectlike.md)): void
+▸ **setState**(`state`: [models.objectLike](../interfaces/models_objectlike)): void
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[setState](pipeline_pipeline.md#setstate)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[setState](pipeline_pipeline#setstate)*
 
-*Overrides [pipeline.types](pipeline_types.md).[setState](pipeline_types.md#setstate)*
+*Overrides [pipeline.types](pipeline_types).[setState](pipeline_types#setstate)*
 
-*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L20)*
+*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L20)*
 
 Update current pipe internal state with passed object and assign to children
 
@@ -410,7 +410,7 @@ Update current pipe internal state with passed object and assign to children
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`state` | [models.objectLike](../interfaces/models_objectlike.md) | state object  |
+`state` | [models.objectLike](../interfaces/models_objectlike) | state object  |
 
 **Returns:** void
 
@@ -418,13 +418,13 @@ ___
 
 ### setState
 
-▸ **setState**(`state`: [models.objectLike](../interfaces/models_objectlike.md)): void
+▸ **setState**(`state`: [models.objectLike](../interfaces/models_objectlike)): void
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[setState](pipeline_pipeline.md#setstate)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[setState](pipeline_pipeline#setstate)*
 
-*Overrides [pipeline.types](pipeline_types.md).[setState](pipeline_types.md#setstate)*
+*Overrides [pipeline.types](pipeline_types).[setState](pipeline_types#setstate)*
 
-*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L20)*
+*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L20)*
 
 Update current pipe internal state with passed object and assign to children
 
@@ -432,7 +432,7 @@ Update current pipe internal state with passed object and assign to children
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`state` | [models.objectLike](../interfaces/models_objectlike.md) | state object  |
+`state` | [models.objectLike](../interfaces/models_objectlike) | state object  |
 
 **Returns:** void
 
@@ -442,9 +442,9 @@ ___
 
 ▸ **setStateKey**(`key`: string, `value`: any): void
 
-*Inherited from [pipeline.types](pipeline_types.md).[setStateKey](pipeline_types.md#setstatekey)*
+*Inherited from [pipeline.types](pipeline_types).[setStateKey](pipeline_types#setstatekey)*
 
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L27)*
+*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L27)*
 
 Set state property
 
@@ -463,9 +463,9 @@ ___
 
 ▸ **setStateKey**(`key`: string, `value`: any): void
 
-*Inherited from [pipeline.types](pipeline_types.md).[setStateKey](pipeline_types.md#setstatekey)*
+*Inherited from [pipeline.types](pipeline_types).[setStateKey](pipeline_types#setstatekey)*
 
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L27)*
+*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L27)*
 
 Set state property
 
@@ -484,9 +484,9 @@ ___
 
 ▸ **setStateKey**(`key`: string, `value`: any): void
 
-*Inherited from [pipeline.types](pipeline_types.md).[setStateKey](pipeline_types.md#setstatekey)*
+*Inherited from [pipeline.types](pipeline_types).[setStateKey](pipeline_types#setstatekey)*
 
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/types.ts#L27)*
+*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L27)*
 
 Set state property
 
@@ -503,9 +503,9 @@ ___
 
 ### executeStep
 
-▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.types](pipeline_types.md)\<T, K>): Promise\<K>
+▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.types](pipeline_types)\<T, K>): Promise\<K>
 
-*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L43)*
+*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L43)*
 
 Executes one pipeline step
 
@@ -521,7 +521,7 @@ Name |
 Name | Type | Description |
 ------ | ------ | ------ |
 `input` | T | input data from the root input or from the previous element in the pipe |
-`step` | [pipeline.types](pipeline_types.md)\<T, K> | step to be executed  |
+`step` | [pipeline.types](pipeline_types)\<T, K> | step to be executed  |
 
 **Returns:** Promise\<K>
 
@@ -529,11 +529,11 @@ ___
 
 ### executeStep
 
-▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.types](pipeline_types.md)\<T, K>): Promise\<K>
+▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.types](pipeline_types)\<T, K>): Promise\<K>
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[executeStep](pipeline_pipeline.md#executestep)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[executeStep](pipeline_pipeline#executestep)*
 
-*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L43)*
+*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L43)*
 
 Executes one pipeline step
 
@@ -549,7 +549,7 @@ Name |
 Name | Type | Description |
 ------ | ------ | ------ |
 `input` | T | input data from the root input or from the previous element in the pipe |
-`step` | [pipeline.types](pipeline_types.md)\<T, K> | step to be executed  |
+`step` | [pipeline.types](pipeline_types)\<T, K> | step to be executed  |
 
 **Returns:** Promise\<K>
 
@@ -557,11 +557,11 @@ ___
 
 ### executeStep
 
-▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.types](pipeline_types.md)\<T, K>): Promise\<K>
+▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.types](pipeline_types)\<T, K>): Promise\<K>
 
-*Inherited from [pipeline.pipeline](pipeline_pipeline.md).[executeStep](pipeline_pipeline.md#executestep)*
+*Inherited from [pipeline.pipeline](pipeline_pipeline).[executeStep](pipeline_pipeline#executestep)*
 
-*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/46219f5/lib/pipeline/pipeline.ts#L43)*
+*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/pipeline.ts#L43)*
 
 Executes one pipeline step
 
@@ -577,6 +577,6 @@ Name |
 Name | Type | Description |
 ------ | ------ | ------ |
 `input` | T | input data from the root input or from the previous element in the pipe |
-`step` | [pipeline.types](pipeline_types.md)\<T, K> | step to be executed  |
+`step` | [pipeline.types](pipeline_types)\<T, K> | step to be executed  |
 
 **Returns:** Promise\<K>

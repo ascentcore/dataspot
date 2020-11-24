@@ -21,10 +21,8 @@ export function hasChildren(this: PageEvent, shouldEscape = true) {
     } else {
         let newTitle = title[1]
         const list = newTitle.split('.')
-        console.log(list)
-        console.log('########')
 
         const lastTwo = list.slice(-2)
-        return lastTwo[0] === lastTwo[1]
+        return lastTwo[0] === lastTwo[1] || lastTwo[1] === 'index'
     }
 }

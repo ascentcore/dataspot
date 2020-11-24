@@ -8,7 +8,7 @@ has_children: true
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / visualizations.index
+> [Globals](../globals.md) / [visualizations.index](visualizations_index)
 
 # visualizations
 

@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / utils.math-utils
+> [Globals](../globals.md) / [utils.math-utils](utils_math_utils)
 
 # math-utils
 
@@ -20,35 +20,35 @@ has_children: false
 
 ### Properties
 
-* [rand](utils_math_utils.md#rand)
+* [rand](utils_math_utils#rand)
 
 ### Methods
 
-* [addition](utils_math_utils.md#addition)
-* [average](utils_math_utils.md#average)
-* [averageElements](utils_math_utils.md#averageelements)
-* [division](utils_math_utils.md#division)
-* [euclideanDistance](utils_math_utils.md#euclideandistance)
-* [indexOfSmallest](utils_math_utils.md#indexofsmallest)
-* [manhattanDistance](utils_math_utils.md#manhattandistance)
-* [max](utils_math_utils.md#max)
-* [min](utils_math_utils.md#min)
-* [mulberry32](utils_math_utils.md#mulberry32)
-* [multiplication](utils_math_utils.md#multiplication)
-* [normalize](utils_math_utils.md#normalize)
-* [random](utils_math_utils.md#random)
-* [randomInt](utils_math_utils.md#randomint)
-* [roundToPrecision](utils_math_utils.md#roundtoprecision)
-* [scalarAddition](utils_math_utils.md#scalaraddition)
-* [scalarDivision](utils_math_utils.md#scalardivision)
-* [scalarMultiplication](utils_math_utils.md#scalarmultiplication)
-* [scalarSubtraction](utils_math_utils.md#scalarsubtraction)
-* [seededRandom](utils_math_utils.md#seededrandom)
-* [seededRandomInt](utils_math_utils.md#seededrandomint)
-* [subtraction](utils_math_utils.md#subtraction)
-* [sumElements](utils_math_utils.md#sumelements)
-* [transpose](utils_math_utils.md#transpose)
-* [xmur3](utils_math_utils.md#xmur3)
+* [addition](utils_math_utils#addition)
+* [average](utils_math_utils#average)
+* [averageElements](utils_math_utils#averageelements)
+* [division](utils_math_utils#division)
+* [euclideanDistance](utils_math_utils#euclideandistance)
+* [indexOfSmallest](utils_math_utils#indexofsmallest)
+* [manhattanDistance](utils_math_utils#manhattandistance)
+* [max](utils_math_utils#max)
+* [min](utils_math_utils#min)
+* [mulberry32](utils_math_utils#mulberry32)
+* [multiplication](utils_math_utils#multiplication)
+* [normalize](utils_math_utils#normalize)
+* [random](utils_math_utils#random)
+* [randomInt](utils_math_utils#randomint)
+* [roundToPrecision](utils_math_utils#roundtoprecision)
+* [scalarAddition](utils_math_utils#scalaraddition)
+* [scalarDivision](utils_math_utils#scalardivision)
+* [scalarMultiplication](utils_math_utils#scalarmultiplication)
+* [scalarSubtraction](utils_math_utils#scalarsubtraction)
+* [seededRandom](utils_math_utils#seededrandom)
+* [seededRandomInt](utils_math_utils#seededrandomint)
+* [subtraction](utils_math_utils#subtraction)
+* [sumElements](utils_math_utils#sumelements)
+* [transpose](utils_math_utils#transpose)
+* [xmur3](utils_math_utils#xmur3)
 
 ## Properties
 
@@ -56,7 +56,7 @@ has_children: false
 
 ▪ `Static` `Private` **rand**: (Anonymous function) = MathUtils.mulberry32(MathUtils.xmur3('apples')())
 
-*Defined in [lib/utils/math-utils.ts:4](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L4)*
+*Defined in [lib/utils/math-utils.ts:4](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L4)*
 
 ## Methods
 
@@ -64,7 +64,7 @@ has_children: false
 
 ▸ `Static`**addition**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L88)*
+*Defined in [lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L88)*
 
 #### Parameters:
 
@@ -81,7 +81,7 @@ ___
 
 ▸ `Static`**average**(`arr`: number[][]): number[]
 
-*Defined in [lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L157)*
+*Defined in [lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L157)*
 
 #### Parameters:
 
@@ -97,7 +97,7 @@ ___
 
 ▸ `Static`**averageElements**(`arr`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L148)*
+*Defined in [lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L148)*
 
 #### Parameters:
 
@@ -113,7 +113,7 @@ ___
 
 ▸ `Static`**division**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L115)*
+*Defined in [lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L115)*
 
 #### Parameters:
 
@@ -130,7 +130,7 @@ ___
 
 ▸ `Static`**euclideanDistance**(`v1`: number[], `v2`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L57)*
+*Defined in [lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L57)*
 
 #### Parameters:
 
@@ -147,7 +147,7 @@ ___
 
 ▸ `Static`**indexOfSmallest**(`v`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L171)*
+*Defined in [lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L171)*
 
 #### Parameters:
 
@@ -163,7 +163,7 @@ ___
 
 ▸ `Static`**manhattanDistance**(`v1`: number[], `v2`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L68)*
+*Defined in [lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L68)*
 
 #### Parameters:
 
@@ -180,7 +180,7 @@ ___
 
 ▸ `Static`**max**(`v`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L180)*
+*Defined in [lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L180)*
 
 #### Parameters:
 
@@ -196,7 +196,7 @@ ___
 
 ▸ `Static`**min**(`v`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L184)*
+*Defined in [lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L184)*
 
 #### Parameters:
 
@@ -212,7 +212,7 @@ ___
 
 ▸ `Static` `Private`**mulberry32**(`a`: number): (Anonymous function)
 
-*Defined in [lib/utils/math-utils.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L20)*
+*Defined in [lib/utils/math-utils.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L20)*
 
 #### Parameters:
 
@@ -228,7 +228,7 @@ ___
 
 ▸ `Static`**multiplication**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L106)*
+*Defined in [lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L106)*
 
 #### Parameters:
 
@@ -245,7 +245,7 @@ ___
 
 ▸ `Static`**normalize**(`v`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L188)*
+*Defined in [lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L188)*
 
 #### Parameters:
 
@@ -261,7 +261,7 @@ ___
 
 ▸ `Static`**random**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:35](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L35)*
+*Defined in [lib/utils/math-utils.ts:35](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L35)*
 
 #### Parameters:
 
@@ -278,7 +278,7 @@ ___
 
 ▸ `Static`**randomInt**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:39](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L39)*
+*Defined in [lib/utils/math-utils.ts:39](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L39)*
 
 #### Parameters:
 
@@ -295,7 +295,7 @@ ___
 
 ▸ `Static`**roundToPrecision**(`input`: number, `precision`: number): number
 
-*Defined in [lib/utils/math-utils.ts:30](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L30)*
+*Defined in [lib/utils/math-utils.ts:30](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L30)*
 
 #### Parameters:
 
@@ -312,7 +312,7 @@ ___
 
 ▸ `Static`**scalarAddition**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L124)*
+*Defined in [lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L124)*
 
 #### Parameters:
 
@@ -329,7 +329,7 @@ ___
 
 ▸ `Static`**scalarDivision**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L142)*
+*Defined in [lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L142)*
 
 #### Parameters:
 
@@ -346,7 +346,7 @@ ___
 
 ▸ `Static`**scalarMultiplication**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L136)*
+*Defined in [lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L136)*
 
 #### Parameters:
 
@@ -363,7 +363,7 @@ ___
 
 ▸ `Static`**scalarSubtraction**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L130)*
+*Defined in [lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L130)*
 
 #### Parameters:
 
@@ -380,7 +380,7 @@ ___
 
 ▸ `Static`**seededRandom**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:45](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L45)*
+*Defined in [lib/utils/math-utils.ts:45](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L45)*
 
 #### Parameters:
 
@@ -397,7 +397,7 @@ ___
 
 ▸ `Static`**seededRandomInt**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:49](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L49)*
+*Defined in [lib/utils/math-utils.ts:49](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L49)*
 
 #### Parameters:
 
@@ -414,7 +414,7 @@ ___
 
 ▸ `Static`**subtraction**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L97)*
+*Defined in [lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L97)*
 
 #### Parameters:
 
@@ -431,7 +431,7 @@ ___
 
 ▸ `Static`**sumElements**(`arr`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L79)*
+*Defined in [lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L79)*
 
 #### Parameters:
 
@@ -447,7 +447,7 @@ ___
 
 ▸ `Static`**transpose**(`matrix`: number[][]): number[][]
 
-*Defined in [lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L204)*
+*Defined in [lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L204)*
 
 #### Parameters:
 
@@ -463,7 +463,7 @@ ___
 
 ▸ `Static` `Private`**xmur3**(`str`: string): function
 
-*Defined in [lib/utils/math-utils.ts:6](https://github.com/ascentcore/dataspot/blob/46219f5/lib/utils/math-utils.ts#L6)*
+*Defined in [lib/utils/math-utils.ts:6](https://github.com/ascentcore/dataspot/blob/7114653/lib/utils/math-utils.ts#L6)*
 
 #### Parameters:
 

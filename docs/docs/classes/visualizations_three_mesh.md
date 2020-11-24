@@ -8,13 +8,13 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / visualizations.three.mesh
+> [Globals](../globals.md) / [visualizations.three.mesh](visualizations_three_mesh)
 
 # mesh
 
 ## Hierarchy
 
-* [visualizations.three.threebase](visualizations_three_threebase.md)
+* [visualizations.three.threebase](visualizations_three_threebase)
 
   ↳ **visualizations.three.mesh**
 
@@ -22,33 +22,33 @@ has_children: false
 
 ### Constructors
 
-* [constructor](visualizations_three_mesh.md#constructor)
+* [constructor](visualizations_three_mesh#constructor)
 
 ### Properties
 
-* [config](visualizations_three_mesh.md#config)
-* [dependencies](visualizations_three_mesh.md#dependencies)
-* [elemClass](visualizations_three_mesh.md#elemclass)
+* [config](visualizations_three_mesh#config)
+* [dependencies](visualizations_three_mesh#dependencies)
+* [elemClass](visualizations_three_mesh#elemclass)
 
 ### Methods
 
-* [dataUpdate](visualizations_three_mesh.md#dataupdate)
-* [destroy](visualizations_three_mesh.md#destroy)
-* [getDependency](visualizations_three_mesh.md#getdependency)
-* [setContainer](visualizations_three_mesh.md#setcontainer)
-* [setup](visualizations_three_mesh.md#setup)
+* [dataUpdate](visualizations_three_mesh#dataupdate)
+* [destroy](visualizations_three_mesh#destroy)
+* [getDependency](visualizations_three_mesh#getdependency)
+* [setContainer](visualizations_three_mesh#setcontainer)
+* [setup](visualizations_three_mesh#setup)
 
 ## Constructors
 
 ### constructor
 
-\+ **new MeshPlot**(`config`: any, `elemClass?`: string): [visualizations.three.mesh](visualizations_three_mesh.md)
+\+ **new MeshPlot**(`config`: any, `elemClass?`: string): [visualizations.three.mesh](visualizations_three_mesh)
 
-*Inherited from [visualizations.three.threebase](visualizations_three_threebase.md).[constructor](visualizations_three_threebase.md#constructor)*
+*Inherited from [visualizations.three.threebase](visualizations_three_threebase).[constructor](visualizations_three_threebase#constructor)*
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[constructor](visualizations_basevisualization.md#constructor)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[constructor](visualizations_basevisualization#constructor)*
 
-*Defined in [lib/visualizations/three/threebase.ts:11](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/three/threebase.ts#L11)*
+*Defined in [lib/visualizations/three/threebase.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/three/threebase.ts#L11)*
 
 #### Parameters:
 
@@ -57,7 +57,7 @@ Name | Type | Default value |
 `config` | any | - |
 `elemClass` | string | "mesh-elem" |
 
-**Returns:** [visualizations.three.mesh](visualizations_three_mesh.md)
+**Returns:** [visualizations.three.mesh](visualizations_three_mesh)
 
 ## Properties
 
@@ -65,9 +65,9 @@ Name | Type | Default value |
 
 •  **config**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[config](visualizations_basevisualization.md#config)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -75,9 +75,9 @@ ___
 
 • `Protected` **dependencies**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[dependencies](visualizations_basevisualization.md#dependencies)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -88,9 +88,9 @@ ___
 
 •  **elemClass**: string
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[elemClass](visualizations_basevisualization.md#elemclass)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ## Methods
 
@@ -98,9 +98,9 @@ ___
 
 ▸ **dataUpdate**(`data`: { xMax: number ; xMin: number ; yMax: number ; yMin: number ; zFunc: (x: number, y: number) => number  }): any
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[dataUpdate](visualizations_basevisualization.md#dataupdate)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/three/mesh.ts:10](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/three/mesh.ts#L10)*
+*Defined in [lib/visualizations/three/mesh.ts:10](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/three/mesh.ts#L10)*
 
 #### Parameters:
 
@@ -116,7 +116,7 @@ ___
 
 ▸ **destroy**(): void
 
-*Defined in [lib/visualizations/three/mesh.ts:128](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/three/mesh.ts#L128)*
+*Defined in [lib/visualizations/three/mesh.ts:128](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/three/mesh.ts#L128)*
 
 **Returns:** void
 
@@ -126,9 +126,9 @@ ___
 
 ▸ **getDependency**(`key`: string): any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[getDependency](visualizations_basevisualization.md#getdependency)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -144,9 +144,9 @@ ___
 
 ▸ **setContainer**(`containerRef`: HTMLElement): void
 
-*Inherited from [visualizations.three.threebase](visualizations_three_threebase.md).[setContainer](visualizations_three_threebase.md#setcontainer)*
+*Inherited from [visualizations.three.threebase](visualizations_three_threebase).[setContainer](visualizations_three_threebase#setcontainer)*
 
-*Defined in [lib/visualizations/three/threebase.ts:24](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/three/threebase.ts#L24)*
+*Defined in [lib/visualizations/three/threebase.ts:24](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/three/threebase.ts#L24)*
 
 #### Parameters:
 
@@ -162,8 +162,8 @@ ___
 
 ▸ **setup**(): void
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[setup](visualizations_basevisualization.md#setup)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/three/mesh.ts:7](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/three/mesh.ts#L7)*
+*Defined in [lib/visualizations/three/mesh.ts:7](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/three/mesh.ts#L7)*
 
 **Returns:** void

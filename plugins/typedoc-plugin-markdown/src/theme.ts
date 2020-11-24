@@ -146,7 +146,7 @@ export default class MarkdownTheme extends Theme {
       if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
         const url = this.toUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
-        reflection.url = url;
+        reflection.url = url.replace('.md', '');
         reflection.hasOwnDocument = true;
       }
       for (const child of reflection.children || []) {

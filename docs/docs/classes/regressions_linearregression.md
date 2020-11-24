@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / regressions.linearRegression
+> [Globals](../globals.md) / [regressions.linearRegression](regressions_linearregression)
 
 # linearRegression
 
@@ -20,7 +20,7 @@ has_children: false
 
 ### Methods
 
-* [fit](regressions_linearregression.md#fit)
+* [fit](regressions_linearregression#fit)
 
 ## Methods
 
@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**fit**(`input`: number[], `target`: number[], `weight`: number, `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<LinearRegressionOutputType>
 
-*Defined in [lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/regressions/linearRegression.ts#L20)*
+*Defined in [lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/regressions/linearRegression.ts#L20)*
 
 #### Parameters:
 

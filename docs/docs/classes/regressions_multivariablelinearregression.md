@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / regressions.multivariableLinearRegression
+> [Globals](../globals.md) / [regressions.multivariableLinearRegression](regressions_multivariablelinearregression)
 
 # multivariableLinearRegression
 
@@ -20,7 +20,7 @@ has_children: false
 
 ### Methods
 
-* [fit](regressions_multivariablelinearregression.md#fit)
+* [fit](regressions_multivariablelinearregression#fit)
 
 ## Methods
 
@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**fit**(`input`: number[][], `target`: number[], `weight`: number[], `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<MultivariableLinearRegressionOutputType>
 
-*Defined in [lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/46219f5/lib/regressions/multivariableLinearRegression.ts#L25)*
+*Defined in [lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/7114653/lib/regressions/multivariableLinearRegression.ts#L25)*
 
 #### Parameters:
 

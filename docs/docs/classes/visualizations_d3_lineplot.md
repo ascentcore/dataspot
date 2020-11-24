@@ -8,13 +8,13 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / visualizations.d3.lineplot
+> [Globals](../globals.md) / [visualizations.d3.lineplot](visualizations_d3_lineplot)
 
 # lineplot
 
 ## Hierarchy
 
-* [visualizations.d3.svgbase](visualizations_d3_svgbase.md)
+* [visualizations.d3.svgbase](visualizations_d3_svgbase)
 
   ↳ **visualizations.d3.lineplot**
 
@@ -22,31 +22,31 @@ has_children: false
 
 ### Constructors
 
-* [constructor](visualizations_d3_lineplot.md#constructor)
+* [constructor](visualizations_d3_lineplot#constructor)
 
 ### Properties
 
-* [config](visualizations_d3_lineplot.md#config)
-* [dependencies](visualizations_d3_lineplot.md#dependencies)
-* [elemClass](visualizations_d3_lineplot.md#elemclass)
+* [config](visualizations_d3_lineplot#config)
+* [dependencies](visualizations_d3_lineplot#dependencies)
+* [elemClass](visualizations_d3_lineplot#elemclass)
 
 ### Methods
 
-* [dataUpdate](visualizations_d3_lineplot.md#dataupdate)
-* [getDependency](visualizations_d3_lineplot.md#getdependency)
-* [setContainer](visualizations_d3_lineplot.md#setcontainer)
-* [setup](visualizations_d3_lineplot.md#setup)
-* [updateFn](visualizations_d3_lineplot.md#updatefn)
+* [dataUpdate](visualizations_d3_lineplot#dataupdate)
+* [getDependency](visualizations_d3_lineplot#getdependency)
+* [setContainer](visualizations_d3_lineplot#setcontainer)
+* [setup](visualizations_d3_lineplot#setup)
+* [updateFn](visualizations_d3_lineplot#updatefn)
 
 ## Constructors
 
 ### constructor
 
-\+ **new LinePlot**(`config`: any, `elemClass?`: string): [visualizations.d3.lineplot](visualizations_d3_lineplot.md)
+\+ **new LinePlot**(`config`: any, `elemClass?`: string): [visualizations.d3.lineplot](visualizations_d3_lineplot)
 
-*Overrides [visualizations.d3.svgbase](visualizations_d3_svgbase.md).[constructor](visualizations_d3_svgbase.md#constructor)*
+*Overrides [visualizations.d3.svgbase](visualizations_d3_svgbase).[constructor](visualizations_d3_svgbase#constructor)*
 
-*Defined in [lib/visualizations/d3/lineplot.ts:4](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/lineplot.ts#L4)*
+*Defined in [lib/visualizations/d3/lineplot.ts:4](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/lineplot.ts#L4)*
 
 #### Parameters:
 
@@ -55,7 +55,7 @@ Name | Type | Default value |
 `config` | any | - |
 `elemClass` | string | "line-elem" |
 
-**Returns:** [visualizations.d3.lineplot](visualizations_d3_lineplot.md)
+**Returns:** [visualizations.d3.lineplot](visualizations_d3_lineplot)
 
 ## Properties
 
@@ -63,9 +63,9 @@ Name | Type | Default value |
 
 •  **config**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[config](visualizations_basevisualization.md#config)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -73,9 +73,9 @@ ___
 
 • `Protected` **dependencies**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[dependencies](visualizations_basevisualization.md#dependencies)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -86,19 +86,19 @@ ___
 
 •  **elemClass**: string
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[elemClass](visualizations_basevisualization.md#elemclass)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ## Methods
 
 ### dataUpdate
 
-▸ **dataUpdate**(`data`: TwoDPointLine[], `elemClass?`: string): [updateFn](visualizations_d3_lineplot.md#updatefn)
+▸ **dataUpdate**(`data`: TwoDPointLine[], `elemClass?`: string): [updateFn](visualizations_d3_lineplot#updatefn)
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[dataUpdate](visualizations_basevisualization.md#dataupdate)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/d3/lineplot.ts:64](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/lineplot.ts#L64)*
+*Defined in [lib/visualizations/d3/lineplot.ts:64](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/lineplot.ts#L64)*
 
 #### Parameters:
 
@@ -107,7 +107,7 @@ Name | Type | Default value |
 `data` | TwoDPointLine[] | - |
 `elemClass` | string | this.elemClass |
 
-**Returns:** [updateFn](visualizations_d3_lineplot.md#updatefn)
+**Returns:** [updateFn](visualizations_d3_lineplot#updatefn)
 
 ___
 
@@ -115,9 +115,9 @@ ___
 
 ▸ **getDependency**(`key`: string): any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[getDependency](visualizations_basevisualization.md#getdependency)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -131,17 +131,17 @@ ___
 
 ### setContainer
 
-▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.d3.svgbase](visualizations_d3_svgbase.md)): void
+▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.d3.svgbase](visualizations_d3_svgbase)): void
 
-*Inherited from [visualizations.d3.svgbase](visualizations_d3_svgbase.md).[setContainer](visualizations_d3_svgbase.md#setcontainer)*
+*Inherited from [visualizations.d3.svgbase](visualizations_d3_svgbase).[setContainer](visualizations_d3_svgbase#setcontainer)*
 
-*Defined in [lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/svgbase.ts#L24)*
+*Defined in [lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/svgbase.ts#L24)*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`containerRef` | HTMLElement \| [visualizations.d3.svgbase](visualizations_d3_svgbase.md) |
+`containerRef` | HTMLElement \| [visualizations.d3.svgbase](visualizations_d3_svgbase) |
 
 **Returns:** void
 
@@ -151,9 +151,9 @@ ___
 
 ▸ **setup**(): void
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[setup](visualizations_basevisualization.md#setup)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/d3/lineplot.ts:9](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/lineplot.ts#L9)*
+*Defined in [lib/visualizations/d3/lineplot.ts:9](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/lineplot.ts#L9)*
 
 **Returns:** void
 
@@ -163,7 +163,7 @@ ___
 
 ▸ `Private`**updateFn**(`data`: TwoDPointLine[], `elemClass`: string): void
 
-*Defined in [lib/visualizations/d3/lineplot.ts:11](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/d3/lineplot.ts#L11)*
+*Defined in [lib/visualizations/d3/lineplot.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/d3/lineplot.ts#L11)*
 
 #### Parameters:
 

@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / models.objectLike
+> [Globals](../globals.md) / [models.objectLike](models_objectlike)
 
 # objectLike
 

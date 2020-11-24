@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / common.objectUtils
+> [Globals](../globals.md) / [common.objectUtils](common_objectutils)
 
 # objectUtils
 
@@ -20,7 +20,7 @@ has_children: false
 
 ### Methods
 
-* [deepClone](common_objectutils.md#deepclone)
+* [deepClone](common_objectutils#deepclone)
 
 ## Methods
 
@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**deepClone**\<T>(`obj`: T): T
 
-*Defined in [lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/46219f5/lib/common/objectUtils.ts#L6)*
+*Defined in [lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/objectUtils.ts#L6)*
 
 #### Type parameters:
 

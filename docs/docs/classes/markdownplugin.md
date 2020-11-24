@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / MarkdownPlugin
+> [Globals](../globals.md) / [MarkdownPlugin](markdownplugin)
 
 # MarkdownPlugin
 
@@ -26,44 +26,44 @@ has_children: false
 
 ### Constructors
 
-* [constructor](markdownplugin.md#constructor)
+* [constructor](markdownplugin#constructor)
 
 ### Properties
 
-* [componentName](markdownplugin.md#componentname)
-* [moduleRenames](markdownplugin.md#modulerenames)
-* [theme](markdownplugin.md#theme)
+* [componentName](markdownplugin#componentname)
+* [moduleRenames](markdownplugin#modulerenames)
+* [theme](markdownplugin#theme)
 
 ### Accessors
 
-* [application](markdownplugin.md#application)
-* [owner](markdownplugin.md#owner)
+* [application](markdownplugin#application)
+* [owner](markdownplugin#owner)
 
 ### Methods
 
-* [bubble](markdownplugin.md#bubble)
-* [getOptionDeclarations](markdownplugin.md#getoptiondeclarations)
-* [initialize](markdownplugin.md#initialize)
-* [isMarkdownTheme](markdownplugin.md#ismarkdowntheme)
-* [listenTo](markdownplugin.md#listento)
-* [listenToOnce](markdownplugin.md#listentoonce)
-* [off](markdownplugin.md#off)
-* [on](markdownplugin.md#on)
-* [onBegin](markdownplugin.md#onbegin)
-* [onDeclarationBegin](markdownplugin.md#ondeclarationbegin)
-* [onResolveBegin](markdownplugin.md#onresolvebegin)
-* [once](markdownplugin.md#once)
-* [stopListening](markdownplugin.md#stoplistening)
-* [trigger](markdownplugin.md#trigger)
-* [upgradeMessages](markdownplugin.md#upgrademessages)
+* [bubble](markdownplugin#bubble)
+* [getOptionDeclarations](markdownplugin#getoptiondeclarations)
+* [initialize](markdownplugin#initialize)
+* [isMarkdownTheme](markdownplugin#ismarkdowntheme)
+* [listenTo](markdownplugin#listento)
+* [listenToOnce](markdownplugin#listentoonce)
+* [off](markdownplugin#off)
+* [on](markdownplugin#on)
+* [onBegin](markdownplugin#onbegin)
+* [onDeclarationBegin](markdownplugin#ondeclarationbegin)
+* [onResolveBegin](markdownplugin#onresolvebegin)
+* [once](markdownplugin#once)
+* [stopListening](markdownplugin#stoplistening)
+* [trigger](markdownplugin#trigger)
+* [upgradeMessages](markdownplugin#upgrademessages)
 
 ## Constructors
 
 ### constructor
 
-\+ **new MarkdownPlugin**(`owner`: Converter \| *typeof* DUMMY\_APPLICATION\_OWNER): [MarkdownPlugin](markdownplugin.md)
+\+ **new MarkdownPlugin**(`owner`: Converter \| *typeof* DUMMY\_APPLICATION\_OWNER): [MarkdownPlugin](markdownplugin)
 
-*Inherited from [CommentsComponent](commentscomponent.md).[constructor](commentscomponent.md#constructor)*
+*Inherited from [CommentsComponent](commentscomponent).[constructor](commentscomponent#constructor)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:29*
 
@@ -73,7 +73,7 @@ Name | Type |
 ------ | ------ |
 `owner` | Converter \| *typeof* DUMMY\_APPLICATION\_OWNER |
 
-**Returns:** [MarkdownPlugin](markdownplugin.md)
+**Returns:** [MarkdownPlugin](markdownplugin)
 
 ## Properties
 
@@ -81,7 +81,7 @@ Name | Type |
 
 •  **componentName**: string
 
-*Inherited from [CommentsComponent](commentscomponent.md).[componentName](commentscomponent.md#componentname)*
+*Inherited from [CommentsComponent](commentscomponent).[componentName](commentscomponent#componentname)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:28*
 
@@ -91,7 +91,7 @@ ___
 
 •  **moduleRenames**: any[] = []
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L12)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L12)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 •  **theme**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:15](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L15)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:15](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L15)*
 
 ## Accessors
 
@@ -107,7 +107,7 @@ ___
 
 • get **application**(): Application
 
-*Inherited from [CommentsComponent](commentscomponent.md).[application](commentscomponent.md#application)*
+*Inherited from [CommentsComponent](commentscomponent).[application](commentscomponent#application)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:34*
 
@@ -119,7 +119,7 @@ ___
 
 • get **owner**(): Converter
 
-*Inherited from [CommentsComponent](commentscomponent.md).[owner](commentscomponent.md#owner)*
+*Inherited from [CommentsComponent](commentscomponent).[owner](commentscomponent#owner)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:35*
 
@@ -131,7 +131,7 @@ ___
 
 ▸ `Protected`**bubble**(`name`: Event \| EventMap \| string, ...`args`: any[]): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[bubble](commentscomponent.md#bubble)*
+*Inherited from [CommentsComponent](commentscomponent).[bubble](commentscomponent#bubble)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:32*
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **getOptionDeclarations**(): DeclarationOption[]
 
-*Inherited from [CommentsComponent](commentscomponent.md).[getOptionDeclarations](commentscomponent.md#getoptiondeclarations)*
+*Inherited from [CommentsComponent](commentscomponent).[getOptionDeclarations](commentscomponent#getoptiondeclarations)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:33*
 
@@ -162,9 +162,9 @@ ___
 
 ▸ **initialize**(): void
 
-*Overrides [MarkdownTheme](markdowntheme.md).[initialize](markdowntheme.md#initialize)*
+*Overrides [MarkdownTheme](markdowntheme).[initialize](markdowntheme#initialize)*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:17](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L17)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L17)*
 
 **Returns:** void
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **isMarkdownTheme**(`themeFileName`: string): boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:123](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L123)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:123](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L123)*
 
 Checks if the custom theme class is initiated from markdown theme
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **listenTo**(`obj`: EventDispatcher, `name`: EventMap \| string, `callback?`: EventCallback, `priority?`: number): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenTo](commentscomponent.md#listento)*
+*Inherited from [CommentsComponent](commentscomponent).[listenTo](commentscomponent#listento)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:33*
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **listenToOnce**(`obj`: EventDispatcher, `eventMap`: EventMap): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenToOnce](commentscomponent.md#listentoonce)*
+*Inherited from [CommentsComponent](commentscomponent).[listenToOnce](commentscomponent#listentoonce)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:34*
 
@@ -228,7 +228,7 @@ Name | Type |
 
 ▸ **listenToOnce**(`obj`: EventDispatcher, `name`: string, `callback`: EventCallback, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenToOnce](commentscomponent.md#listentoonce)*
+*Inherited from [CommentsComponent](commentscomponent).[listenToOnce](commentscomponent#listentoonce)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:35*
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **off**(): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:30*
 
@@ -257,7 +257,7 @@ ___
 
 ▸ **off**(`eventMap`: EventMap \| undefined, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:31*
 
@@ -272,7 +272,7 @@ Name | Type |
 
 ▸ **off**(`name`: string \| undefined, `callback?`: EventCallback, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:32*
 
@@ -292,7 +292,7 @@ ___
 
 ▸ **on**(`eventMap`: EventMap, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:24*
 
@@ -307,7 +307,7 @@ Name | Type |
 
 ▸ **on**(`eventMap`: EventMap, `callback?`: EventCallback, `context?`: any, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:25*
 
@@ -324,7 +324,7 @@ Name | Type |
 
 ▸ **on**(`name`: string, `callback`: EventCallback, `context?`: any, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:26*
 
@@ -345,7 +345,7 @@ ___
 
 ▸ **onBegin**(): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:28](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L28)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:28](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L28)*
 
 Overide default assets
 
@@ -357,7 +357,7 @@ ___
 
 ▸ `Private`**onDeclarationBegin**(`context`: Context, `reflection`: Reflection, `node?`: any): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:32](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L32)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:32](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L32)*
 
 #### Parameters:
 
@@ -375,7 +375,7 @@ ___
 
 ▸ **onResolveBegin**(`context`: Context): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:51](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L51)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:51](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L51)*
 
 Load markdown theme and perform additional checks
 
@@ -393,7 +393,7 @@ ___
 
 ▸ **once**(`eventMap`: EventMap, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[once](commentscomponent.md#once)*
+*Inherited from [CommentsComponent](commentscomponent).[once](commentscomponent#once)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:28*
 
@@ -408,7 +408,7 @@ Name | Type |
 
 ▸ **once**(`name`: string, `callback`: EventCallback, `context?`: any, `priority?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[once](commentscomponent.md#once)*
+*Inherited from [CommentsComponent](commentscomponent).[once](commentscomponent#once)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:29*
 
@@ -429,7 +429,7 @@ ___
 
 ▸ **stopListening**(`obj?`: EventDispatcher, `name?`: EventMap \| string, `callback?`: EventCallback): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[stopListening](commentscomponent.md#stoplistening)*
+*Inherited from [CommentsComponent](commentscomponent).[stopListening](commentscomponent#stoplistening)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:36*
 
@@ -449,7 +449,7 @@ ___
 
 ▸ **trigger**(`name`: Event \| EventMap \| string, ...`args`: any[]): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[trigger](commentscomponent.md#trigger)*
+*Inherited from [CommentsComponent](commentscomponent).[trigger](commentscomponent#trigger)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:37*
 
@@ -468,7 +468,7 @@ ___
 
 ▸ **upgradeMessages**(`theme`: string): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:132](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L132)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:132](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L132)*
 
 #### Parameters:
 

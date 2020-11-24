@@ -8,7 +8,7 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / MarkdownTheme
+> [Globals](../globals.md) / [MarkdownTheme](markdowntheme)
 
 # MarkdownTheme
 
@@ -30,61 +30,61 @@ The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/Typ
 
 ### Constructors
 
-* [constructor](markdowntheme.md#constructor)
+* [constructor](markdowntheme#constructor)
 
 ### Properties
 
-* [allReflectionsHaveOwnDocument](markdowntheme.md#allreflectionshaveowndocument)
-* [basePath](markdowntheme.md#basepath)
-* [componentName](markdowntheme.md#componentname)
-* [readme](markdowntheme.md#readme)
-* [resources](markdowntheme.md#resources)
-* [HANDLEBARS](markdowntheme.md#handlebars)
-* [URL\_PREFIX](markdowntheme.md#url_prefix)
+* [allReflectionsHaveOwnDocument](markdowntheme#allreflectionshaveowndocument)
+* [basePath](markdowntheme#basepath)
+* [componentName](markdowntheme#componentname)
+* [readme](markdowntheme#readme)
+* [resources](markdowntheme#resources)
+* [HANDLEBARS](markdowntheme#handlebars)
+* [URL\_PREFIX](markdowntheme#url_prefix)
 
 ### Accessors
 
-* [application](markdowntheme.md#application)
-* [entryFile](markdowntheme.md#entryfile)
-* [globalsFile](markdowntheme.md#globalsfile)
-* [hasSidebar](markdowntheme.md#hassidebar)
-* [mappings](markdowntheme.md#mappings)
-* [owner](markdowntheme.md#owner)
+* [application](markdowntheme#application)
+* [entryFile](markdowntheme#entryfile)
+* [globalsFile](markdowntheme#globalsfile)
+* [hasSidebar](markdowntheme#hassidebar)
+* [mappings](markdowntheme#mappings)
+* [owner](markdowntheme#owner)
 
 ### Methods
 
-* [allowedDirectoryListings](markdowntheme.md#alloweddirectorylistings)
-* [applyAnchorUrl](markdowntheme.md#applyanchorurl)
-* [bubble](markdowntheme.md#bubble)
-* [buildUrls](markdowntheme.md#buildurls)
-* [getEntryPoint](markdowntheme.md#getentrypoint)
-* [getNavigation](markdowntheme.md#getnavigation)
-* [getOptionDeclarations](markdowntheme.md#getoptiondeclarations)
-* [getUrl](markdowntheme.md#geturl)
-* [getUrls](markdowntheme.md#geturls)
-* [initialize](markdowntheme.md#initialize)
-* [isOutputDirectory](markdowntheme.md#isoutputdirectory)
-* [listenTo](markdowntheme.md#listento)
-* [listenToOnce](markdowntheme.md#listentoonce)
-* [off](markdowntheme.md#off)
-* [on](markdowntheme.md#on)
-* [onPageEnd](markdowntheme.md#onpageend)
-* [once](markdowntheme.md#once)
-* [stopListening](markdowntheme.md#stoplistening)
-* [toAnchorRef](markdowntheme.md#toanchorref)
-* [toUrl](markdowntheme.md#tourl)
-* [trigger](markdowntheme.md#trigger)
-* [formatContents](markdowntheme.md#formatcontents)
+* [allowedDirectoryListings](markdowntheme#alloweddirectorylistings)
+* [applyAnchorUrl](markdowntheme#applyanchorurl)
+* [bubble](markdowntheme#bubble)
+* [buildUrls](markdowntheme#buildurls)
+* [getEntryPoint](markdowntheme#getentrypoint)
+* [getNavigation](markdowntheme#getnavigation)
+* [getOptionDeclarations](markdowntheme#getoptiondeclarations)
+* [getUrl](markdowntheme#geturl)
+* [getUrls](markdowntheme#geturls)
+* [initialize](markdowntheme#initialize)
+* [isOutputDirectory](markdowntheme#isoutputdirectory)
+* [listenTo](markdowntheme#listento)
+* [listenToOnce](markdowntheme#listentoonce)
+* [off](markdowntheme#off)
+* [on](markdowntheme#on)
+* [onPageEnd](markdowntheme#onpageend)
+* [once](markdowntheme#once)
+* [stopListening](markdowntheme#stoplistening)
+* [toAnchorRef](markdowntheme#toanchorref)
+* [toUrl](markdowntheme#tourl)
+* [trigger](markdowntheme#trigger)
+* [formatContents](markdowntheme#formatcontents)
 
 ## Constructors
 
 ### constructor
 
-\+ **new MarkdownTheme**(`renderer`: Renderer, `basePath`: string): [MarkdownTheme](markdowntheme.md)
+\+ **new MarkdownTheme**(`renderer`: Renderer, `basePath`: string): [MarkdownTheme](markdowntheme)
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:47](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L47)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:47](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L47)*
 
 #### Parameters:
 
@@ -93,7 +93,7 @@ Name | Type |
 `renderer` | Renderer |
 `basePath` | string |
 
-**Returns:** [MarkdownTheme](markdowntheme.md)
+**Returns:** [MarkdownTheme](markdowntheme)
 
 ## Properties
 
@@ -101,7 +101,7 @@ Name | Type |
 
 •  **allReflectionsHaveOwnDocument**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:32](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L32)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:32](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L32)*
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 •  **basePath**: string
 
-*Inherited from [MarkdownTheme](markdowntheme.md).[basePath](markdowntheme.md#basepath)*
+*Inherited from [MarkdownTheme](markdowntheme).[basePath](markdowntheme#basepath)*
 
 *Defined in node_modules/typedoc/dist/lib/output/theme.d.ts:8*
 
@@ -119,7 +119,7 @@ ___
 
 •  **componentName**: string
 
-*Inherited from [CommentsComponent](commentscomponent.md).[componentName](commentscomponent.md#componentname)*
+*Inherited from [CommentsComponent](commentscomponent).[componentName](commentscomponent#componentname)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:28*
 
@@ -129,7 +129,7 @@ ___
 
 •  **readme**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:30](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L30)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:30](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L30)*
 
 ___
 
@@ -137,7 +137,7 @@ ___
 
 •  **resources**: Resources
 
-*Inherited from [MarkdownTheme](markdowntheme.md).[resources](markdowntheme.md#resources)*
+*Inherited from [MarkdownTheme](markdowntheme).[resources](markdowntheme#resources)*
 
 *Defined in node_modules/typedoc/dist/lib/output/theme.d.ts:9*
 
@@ -147,7 +147,7 @@ ___
 
 ▪ `Static` **HANDLEBARS**: Handlebars = Handlebars.create()
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:35](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L35)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:35](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L35)*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 ▪ `Static` **URL\_PREFIX**: RegExp = /^(http\|ftp)s?:\/\//
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:37](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L37)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:37](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L37)*
 
 ## Accessors
 
@@ -163,7 +163,7 @@ ___
 
 • get **application**(): Application
 
-*Inherited from [CommentsComponent](commentscomponent.md).[application](commentscomponent.md#application)*
+*Inherited from [CommentsComponent](commentscomponent).[application](commentscomponent#application)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:34*
 
@@ -175,7 +175,7 @@ ___
 
 • get **entryFile**(): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:395](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L395)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:395](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L395)*
 
 **Returns:** string
 
@@ -185,7 +185,7 @@ ___
 
 • get **globalsFile**(): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:400](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L400)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:400](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L400)*
 
 **Returns:** string
 
@@ -195,7 +195,7 @@ ___
 
 • get **hasSidebar**(): boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:405](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L405)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:405](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L405)*
 
 **Returns:** boolean
 
@@ -205,7 +205,7 @@ ___
 
 • get **mappings**(): { directory: string = "classes"; isLeaf: boolean = false; kind: ReflectionKind[] = [ReflectionKind.Class]; template: string = "reflection.hbs" }[]
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:337](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L337)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:337](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L337)*
 
 **Returns:** { directory: string = "classes"; isLeaf: boolean = false; kind: ReflectionKind[] = [ReflectionKind.Class]; template: string = "reflection.hbs" }[]
 
@@ -215,7 +215,7 @@ ___
 
 • get **owner**(): Renderer
 
-*Inherited from [CommentsComponent](commentscomponent.md).[owner](commentscomponent.md#owner)*
+*Inherited from [CommentsComponent](commentscomponent).[owner](commentscomponent#owner)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:35*
 
@@ -227,7 +227,7 @@ ___
 
 ▸ **allowedDirectoryListings**(): string[]
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:86](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L86)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:86](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L86)*
 
 **Returns:** string[]
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **applyAnchorUrl**(`reflection`: Reflection, `container`: Reflection): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:209](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L209)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:209](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L209)*
 
 Similar to DefaultTheme.applyAnchorUrl method with added but the anchors are computed from the reflection structure
 Generate an anchor url for the given reflection and all of its children.
@@ -257,7 +257,7 @@ ___
 
 ▸ `Protected`**bubble**(`name`: Event \| EventMap \| string, ...`args`: any[]): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[bubble](commentscomponent.md#bubble)*
+*Inherited from [CommentsComponent](commentscomponent).[bubble](commentscomponent#bubble)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:32*
 
@@ -276,7 +276,7 @@ ___
 
 ▸ **buildUrls**(`reflection`: DeclarationReflection, `urls`: UrlMapping[]): UrlMapping[]
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:137](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L137)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:137](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L137)*
 
 This is mostly a copy of the TypeDoc DefaultTheme.buildUrls method with .html ext switched to .md
 Builds the url for the the given reflection and all of its children.
@@ -298,7 +298,7 @@ ___
 
 ▸ **getEntryPoint**(`project`: ProjectReflection): ContainerReflection
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:232](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L232)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:232](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L232)*
 
 Copy of default theme DefaultTheme.getEntryPoint
 
@@ -318,7 +318,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:255](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L255)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:255](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L255)*
 
 #### Parameters:
 
@@ -334,7 +334,7 @@ ___
 
 ▸ **getOptionDeclarations**(): DeclarationOption[]
 
-*Inherited from [CommentsComponent](commentscomponent.md).[getOptionDeclarations](commentscomponent.md#getoptiondeclarations)*
+*Inherited from [CommentsComponent](commentscomponent).[getOptionDeclarations](commentscomponent#getoptiondeclarations)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:33*
 
@@ -346,7 +346,7 @@ ___
 
 ▸ **getUrl**(`reflection`: Reflection, `relative?`: Reflection, `separator?`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:183](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L183)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:183](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L183)*
 
 **`see`** DefaultTheme.getUrl
 Return a url for the given reflection.
@@ -371,7 +371,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:104](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L104)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:104](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L104)*
 
 This method is essentially a copy of the TypeDocs DefaultTheme.getUrls with extensions swapped out to .md
 Map the models of the given project to the desired output files.
@@ -393,7 +393,7 @@ ___
 
 ▸ `Protected`**initialize**(): void
 
-*Inherited from [MarkdownTheme](markdowntheme.md).[initialize](markdowntheme.md#initialize)*
+*Inherited from [MarkdownTheme](markdowntheme).[initialize](markdowntheme#initialize)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/component.d.ts:31*
 
@@ -407,7 +407,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:71](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L71)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:71](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L71)*
 
 Test if directory is output directory
 
@@ -425,7 +425,7 @@ ___
 
 ▸ **listenTo**(`obj`: EventDispatcher, `name`: EventMap \| string, `callback?`: EventCallback, `priority?`: number): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenTo](commentscomponent.md#listento)*
+*Inherited from [CommentsComponent](commentscomponent).[listenTo](commentscomponent#listento)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:33*
 
@@ -446,7 +446,7 @@ ___
 
 ▸ **listenToOnce**(`obj`: EventDispatcher, `eventMap`: EventMap): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenToOnce](commentscomponent.md#listentoonce)*
+*Inherited from [CommentsComponent](commentscomponent).[listenToOnce](commentscomponent#listentoonce)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:34*
 
@@ -461,7 +461,7 @@ Name | Type |
 
 ▸ **listenToOnce**(`obj`: EventDispatcher, `name`: string, `callback`: EventCallback, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[listenToOnce](commentscomponent.md#listentoonce)*
+*Inherited from [CommentsComponent](commentscomponent).[listenToOnce](commentscomponent#listentoonce)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:35*
 
@@ -482,7 +482,7 @@ ___
 
 ▸ **off**(): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:30*
 
@@ -490,7 +490,7 @@ ___
 
 ▸ **off**(`eventMap`: EventMap \| undefined, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:31*
 
@@ -505,7 +505,7 @@ Name | Type |
 
 ▸ **off**(`name`: string \| undefined, `callback?`: EventCallback, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[off](commentscomponent.md#off)*
+*Inherited from [CommentsComponent](commentscomponent).[off](commentscomponent#off)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:32*
 
@@ -525,7 +525,7 @@ ___
 
 ▸ **on**(`eventMap`: EventMap, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:24*
 
@@ -540,7 +540,7 @@ Name | Type |
 
 ▸ **on**(`eventMap`: EventMap, `callback?`: EventCallback, `context?`: any, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:25*
 
@@ -557,7 +557,7 @@ Name | Type |
 
 ▸ **on**(`name`: string, `callback`: EventCallback, `context?`: any, `priority?`: number): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[on](commentscomponent.md#on)*
+*Inherited from [CommentsComponent](commentscomponent).[on](commentscomponent#on)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:26*
 
@@ -578,7 +578,7 @@ ___
 
 ▸ `Private`**onPageEnd**(`page`: PageEvent): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:331](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L331)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:331](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L331)*
 
 #### Parameters:
 
@@ -594,7 +594,7 @@ ___
 
 ▸ **once**(`eventMap`: EventMap, `context?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[once](commentscomponent.md#once)*
+*Inherited from [CommentsComponent](commentscomponent).[once](commentscomponent#once)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:28*
 
@@ -609,7 +609,7 @@ Name | Type |
 
 ▸ **once**(`name`: string, `callback`: EventCallback, `context?`: any, `priority?`: any): any
 
-*Inherited from [CommentsComponent](commentscomponent.md).[once](commentscomponent.md#once)*
+*Inherited from [CommentsComponent](commentscomponent).[once](commentscomponent#once)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:29*
 
@@ -630,7 +630,7 @@ ___
 
 ▸ **stopListening**(`obj?`: EventDispatcher, `name?`: EventMap \| string, `callback?`: EventCallback): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[stopListening](commentscomponent.md#stoplistening)*
+*Inherited from [CommentsComponent](commentscomponent).[stopListening](commentscomponent#stoplistening)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:36*
 
@@ -650,7 +650,7 @@ ___
 
 ▸ **toAnchorRef**(`reflectionId`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:224](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L224)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:224](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L224)*
 
 #### Parameters:
 
@@ -666,7 +666,7 @@ ___
 
 ▸ **toUrl**(`mapping`: TemplateMapping, `reflection`: DeclarationReflection): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:170](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L170)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:170](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L170)*
 
 Returns the full url of a given mapping and reflection
 
@@ -685,7 +685,7 @@ ___
 
 ▸ **trigger**(`name`: Event \| EventMap \| string, ...`args`: any[]): this
 
-*Inherited from [CommentsComponent](commentscomponent.md).[trigger](commentscomponent.md#trigger)*
+*Inherited from [CommentsComponent](commentscomponent).[trigger](commentscomponent#trigger)*
 
 *Defined in node_modules/typedoc/dist/lib/utils/events.d.ts:37*
 
@@ -704,7 +704,7 @@ ___
 
 ▸ `Static`**formatContents**(`contents`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:40](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/theme.ts#L40)*
+*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:40](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/theme.ts#L40)*
 
 #### Parameters:
 

@@ -8,7 +8,7 @@ has_children: true
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / registry.registry
+> [Globals](../globals.md) / [registry.registry](registry_registry)
 
 # registry
 
@@ -16,31 +16,31 @@ has_children: true
 
 * **registry.registry**
 
-  ↳ [lab.index](lab_index.md)
+  ↳ [lab.index](lab_index)
 
 ## Index
 
 ### Constructors
 
-* [constructor](registry_registry.md#constructor)
+* [constructor](registry_registry#constructor)
 
 ### Properties
 
-* [name](registry_registry.md#name)
+* [name](registry_registry#name)
 
 ### Methods
 
-* [unregister](registry_registry.md#unregister)
+* [unregister](registry_registry#unregister)
 
 ## Constructors
 
 ### constructor
 
-\+ **new RegisterInstance**(): [registry.registry](registry_registry.md)
+\+ **new RegisterInstance**(): [registry.registry](registry_registry)
 
-*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/46219f5/lib/registry/registry.ts#L4)*
+*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/7114653/lib/registry/registry.ts#L4)*
 
-**Returns:** [registry.registry](registry_registry.md)
+**Returns:** [registry.registry](registry_registry)
 
 ## Properties
 
@@ -48,7 +48,7 @@ has_children: true
 
 • `Private` **name**: string
 
-*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/46219f5/lib/registry/registry.ts#L4)*
+*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/7114653/lib/registry/registry.ts#L4)*
 
 ## Methods
 
@@ -56,6 +56,6 @@ has_children: true
 
 ▸ **unregister**(): void
 
-*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/lib/registry/registry.ts#L12)*
+*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/registry/registry.ts#L12)*
 
 **Returns:** void

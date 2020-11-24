@@ -8,49 +8,49 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / visualizations.html.htmlbase
+> [Globals](../globals.md) / [visualizations.html.htmlbase](visualizations_html_htmlbase)
 
 # htmlbase
 
 ## Hierarchy
 
-* [visualizations.basevisualization](visualizations_basevisualization.md)
+* [visualizations.basevisualization](visualizations_basevisualization)
 
   ↳ **visualizations.html.htmlbase**
 
-  ↳↳ [visualizations.html.htmlvisualizationwrapper](visualizations_html_htmlvisualizationwrapper.md)
+  ↳↳ [visualizations.html.htmlvisualizationwrapper](visualizations_html_htmlvisualizationwrapper)
 
-  ↳↳ [visualizations.html.table](visualizations_html_table.md)
+  ↳↳ [visualizations.html.table](visualizations_html_table)
 
 ## Index
 
 ### Constructors
 
-* [constructor](visualizations_html_htmlbase.md#constructor)
+* [constructor](visualizations_html_htmlbase#constructor)
 
 ### Properties
 
-* [config](visualizations_html_htmlbase.md#config)
-* [dependencies](visualizations_html_htmlbase.md#dependencies)
-* [elemClass](visualizations_html_htmlbase.md#elemclass)
+* [config](visualizations_html_htmlbase#config)
+* [dependencies](visualizations_html_htmlbase#dependencies)
+* [elemClass](visualizations_html_htmlbase#elemclass)
 
 ### Methods
 
-* [dataUpdate](visualizations_html_htmlbase.md#dataupdate)
-* [getDependency](visualizations_html_htmlbase.md#getdependency)
-* [injectDOM](visualizations_html_htmlbase.md#injectdom)
-* [setContainer](visualizations_html_htmlbase.md#setcontainer)
-* [setup](visualizations_html_htmlbase.md#setup)
+* [dataUpdate](visualizations_html_htmlbase#dataupdate)
+* [getDependency](visualizations_html_htmlbase#getdependency)
+* [injectDOM](visualizations_html_htmlbase#injectdom)
+* [setContainer](visualizations_html_htmlbase#setcontainer)
+* [setup](visualizations_html_htmlbase#setup)
 
 ## Constructors
 
 ### constructor
 
-\+ **new HTMLBaseVisualization**(`config`: any, `elemClass`: string): [visualizations.html.htmlbase](visualizations_html_htmlbase.md)
+\+ **new HTMLBaseVisualization**(`config`: any, `elemClass`: string): [visualizations.html.htmlbase](visualizations_html_htmlbase)
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization.md).[constructor](visualizations_basevisualization.md#constructor)*
+*Overrides [visualizations.basevisualization](visualizations_basevisualization).[constructor](visualizations_basevisualization#constructor)*
 
-*Defined in [lib/visualizations/html/htmlbase.ts:9](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/html/htmlbase.ts#L9)*
+*Defined in [lib/visualizations/html/htmlbase.ts:9](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlbase.ts#L9)*
 
 #### Parameters:
 
@@ -59,7 +59,7 @@ Name | Type |
 `config` | any |
 `elemClass` | string |
 
-**Returns:** [visualizations.html.htmlbase](visualizations_html_htmlbase.md)
+**Returns:** [visualizations.html.htmlbase](visualizations_html_htmlbase)
 
 ## Properties
 
@@ -67,9 +67,9 @@ Name | Type |
 
 •  **config**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[config](visualizations_basevisualization.md#config)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -77,9 +77,9 @@ ___
 
 • `Protected` **dependencies**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[dependencies](visualizations_basevisualization.md#dependencies)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -90,9 +90,9 @@ ___
 
 •  **elemClass**: string
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[elemClass](visualizations_basevisualization.md#elemclass)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
 
 ## Methods
 
@@ -100,9 +100,9 @@ ___
 
 ▸ `Abstract`**dataUpdate**(`data`: TwoDPointScatter[] \| TwoDPointLine[] \| FunctioDefinitionMesh \| any, `elemClass?`: string): (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[dataUpdate](visualizations_basevisualization.md#dataupdate)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L26)*
+*Defined in [lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L26)*
 
 Isomorphic method used on every data update
 
@@ -121,9 +121,9 @@ ___
 
 ▸ **getDependency**(`key`: string): any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[getDependency](visualizations_basevisualization.md#getdependency)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **injectDOM**(`document`: any): void
 
-*Defined in [lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/html/htmlbase.ts#L20)*
+*Defined in [lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlbase.ts#L20)*
 
 #### Parameters:
 
@@ -153,15 +153,15 @@ ___
 
 ### setContainer
 
-▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.html.htmlbase](visualizations_html_htmlbase.md)): void
+▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.html.htmlbase](visualizations_html_htmlbase)): void
 
-*Defined in [lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/html/htmlbase.ts#L24)*
+*Defined in [lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlbase.ts#L24)*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`containerRef` | HTMLElement \| [visualizations.html.htmlbase](visualizations_html_htmlbase.md) |
+`containerRef` | HTMLElement \| [visualizations.html.htmlbase](visualizations_html_htmlbase) |
 
 **Returns:** void
 
@@ -171,9 +171,9 @@ ___
 
 ▸ `Abstract`**setup**(`initialData?`: any): void
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization.md).[setup](visualizations_basevisualization.md#setup)*
+*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/46219f5/lib/visualizations/basevisualization.ts#L20)*
+*Defined in [lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L20)*
 
 Isomorphic method executed once for setting up the visualization and dependencies
 that are going to be used by the data update function
