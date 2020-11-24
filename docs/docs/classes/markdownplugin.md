@@ -1,6 +1,9 @@
 ---
 layout: default
 title: MarkdownPlugin
+parent: Dataspot
+grand_parent: Dataspot
+has_children: false
 ---
 
 **[@ascentcore/dataspot](../README.md)**
@@ -28,6 +31,7 @@ title: MarkdownPlugin
 ### Properties
 
 * [componentName](markdownplugin.md#componentname)
+* [moduleRenames](markdownplugin.md#modulerenames)
 * [theme](markdownplugin.md#theme)
 
 ### Accessors
@@ -46,6 +50,7 @@ title: MarkdownPlugin
 * [off](markdownplugin.md#off)
 * [on](markdownplugin.md#on)
 * [onBegin](markdownplugin.md#onbegin)
+* [onDeclarationBegin](markdownplugin.md#ondeclarationbegin)
 * [onResolveBegin](markdownplugin.md#onresolvebegin)
 * [once](markdownplugin.md#once)
 * [stopListening](markdownplugin.md#stoplistening)
@@ -82,11 +87,19 @@ Name | Type |
 
 ___
 
+### moduleRenames
+
+•  **moduleRenames**: any[] = []
+
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:12](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L12)*
+
+___
+
 ### theme
 
 •  **theme**: string
 
-*Defined in plugins/typedoc-plugin-markdown/src/plugin.ts:16*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:15](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L15)*
 
 ## Accessors
 
@@ -151,7 +164,7 @@ ___
 
 *Overrides [MarkdownTheme](markdowntheme.md).[initialize](markdowntheme.md#initialize)*
 
-*Defined in plugins/typedoc-plugin-markdown/src/plugin.ts:18*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:17](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L17)*
 
 **Returns:** void
 
@@ -161,7 +174,7 @@ ___
 
 ▸ **isMarkdownTheme**(`themeFileName`: string): boolean
 
-*Defined in plugins/typedoc-plugin-markdown/src/plugin.ts:71*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:123](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L123)*
 
 Checks if the custom theme class is initiated from markdown theme
 
@@ -332,7 +345,7 @@ ___
 
 ▸ **onBegin**(): void
 
-*Defined in plugins/typedoc-plugin-markdown/src/plugin.ts:28*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:28](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L28)*
 
 Overide default assets
 
@@ -340,13 +353,37 @@ Overide default assets
 
 ___
 
+### onDeclarationBegin
+
+▸ `Private`**onDeclarationBegin**(`context`: Context, `reflection`: Reflection, `node?`: any): void
+
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:32](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L32)*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`context` | Context |
+`reflection` | Reflection |
+`node?` | any |
+
+**Returns:** void
+
+___
+
 ### onResolveBegin
 
-▸ **onResolveBegin**(): void
+▸ **onResolveBegin**(`context`: Context): void
 
-*Defined in plugins/typedoc-plugin-markdown/src/plugin.ts:35*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:51](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L51)*
 
 Load markdown theme and perform additional checks
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`context` | Context |
 
 **Returns:** void
 
@@ -431,7 +468,7 @@ ___
 
 ▸ **upgradeMessages**(`theme`: string): void
 
-*Defined in plugins/typedoc-plugin-markdown/src/plugin.ts:80*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:132](https://github.com/ascentcore/dataspot/blob/46219f5/plugins/typedoc-plugin-markdown/src/plugin.ts#L132)*
 
 #### Parameters:
 

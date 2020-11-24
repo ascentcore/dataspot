@@ -3,7 +3,7 @@ import { PageEvent } from 'typedoc/dist/lib/output/events'
 
 import { escape } from './escape'
 
-export function reflectionTitle(this: PageEvent, shouldEscape = true, nameOnly = false) {
+export function hasChildren(this: PageEvent, shouldEscape = true) {
     const title: string[] = []
     if (this.model.kindString) {
         title.push(`${this.model.kindString}: `)
@@ -17,17 +17,14 @@ export function reflectionTitle(this: PageEvent, shouldEscape = true, nameOnly =
     }
 
     if (title.length === 1) {
-        return 'Dataspot'
-    } else if (nameOnly) {
-        let newTitle = title[1]
-        newTitle = newTitle.replace(/\.ts$/g, '')
-        const list = newTitle.split('.')
-        let lastElement: any = list.splice(-1)[0]
-        if (lastElement === 'index') {
-            lastElement = list.splice(-1)[0]
-        }
-        return lastElement
+        return true
     } else {
-        return title.join('')
+        let newTitle = title[1]
+        const list = newTitle.split('.')
+        console.log(list)
+        console.log('########')
+
+        const lastTwo = list.slice(-2)
+        return lastTwo[0] === lastTwo[1]
     }
 }

@@ -1,10 +1,9 @@
 {
     "out": "./docs/docs",
     "includes": "./lib/**/*.ts",
-    "exclude": ["*/**/*.tsx", "node_modules", "*/**/*.spec.ts"],
+    "exclude": ["*/**/*.tsx", "node_modules", "plugins", "*/**/*.spec.ts"],
     "readme": "./README.md",
     "mode": "file",
-    "categorizeByGroup": true,
-    "excludeExternals": true,
-    "excludeNotExported": true
+    "excludeNotExported": true,
+    "stripInternal": "false"
 }

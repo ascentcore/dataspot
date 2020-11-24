@@ -1,6 +1,9 @@
 ---
 layout: default
-title: 
+title: Dataspot
+parent: 
+grand_parent: 
+has_children: true
 ---
 
 **[@ascentcore/dataspot](README.md)**
