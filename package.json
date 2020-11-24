@@ -12,8 +12,9 @@
         "lint:json": "prettier --list-different .eslintrc *.json",
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
         "build": "tsc --p ./lib",
-        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown",
-        "generate-showcase": "cd showcase-generator && npm run build-prod"
+        "generate-docs": "rimraf docs/docs && typedoc --options ./typedoc.json --plugin ./plugins/typedoc-plugin-markdown",
+        "generate-showcase": "cd showcase-generator && npm run build-prod",
+        "build-plugins": "rimraf ./plugins/typedoc-plugin-markdown/dist && tsc --p ./plugins/typedoc-plugin-markdown && copyfiles --up 3 ./plugins/typedoc-plugin-markdown/src/**/*.hbs ./plugins/typedoc-plugin-markdown/dist/"
     },
     "repository": {
         "type": "git",
@@ -34,6 +35,7 @@
     "devDependencies": {
         "@types/d3": "^5.16.3",
         "@types/jsdom": "^16.2.4",
+        "@types/node": "^14.14.9",
         "@types/node-fetch": "^2.5.7",
         "@types/pouchdb": "^6.4.0",
         "@types/react": "^16.9.55",
@@ -42,6 +44,7 @@
         "@types/sharp": "^0.26.0",
         "@typescript-eslint/eslint-plugin": "^2.2.0",
         "@typescript-eslint/parser": "^2.2.0",
+        "copyfiles": "^2.4.0",
         "eslint": "^6.1.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-config-prettier": "^6.3.0",
@@ -58,7 +61,7 @@
         "ts-node": "^9.0.0",
         "typedoc": "^0.19.1",
         "typedoc-plugin-markdown": "^2.4.2",
-        "typescript": "^3.8.0"
+        "typescript": "^4.0.5"
     },
     "dependencies": {
         "canvas": "^2.6.1",
