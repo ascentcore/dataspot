@@ -29,15 +29,14 @@ export function gradientDescent(
     learningRate: number,
     costFunction: Function
 ): (number | number[])[] {
-    const weightInit: number[] = Array(target.length).fill(0)
-    const update = Array.isArray(weight) ? [weightInit, 0] : [0, 0]
+    const update = Array.isArray(weight) ? [Array(weight.length).fill(0), 0] : [0, 0]
     const samples = input.length
     const predictions = Array.isArray(weight)
         ? predictionMultivariable(<number[][]>input, weight, bias)
         : predictionSinglevariable(<number[]>input, weight, bias)
-    let weightDeriv = Array.isArray(weight) ? weightInit : 0
+    let weightDeriv = Array.isArray(weight) ? Array(weight.length).fill(0) : 0
     let biasDeriv = 0
-    let stepSizeWeight = Array.isArray(weight) ? weightInit : 0
+    let stepSizeWeight = Array.isArray(weight) ? Array(weight.length).fill(0) : 0
     let stepSizeBias = 0
 
     for (let i = 0; i < samples; i++) {

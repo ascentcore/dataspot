@@ -2,6 +2,7 @@
 import LinearRegression from './linearRegression'
 import { mseCostFunction } from '../functions/optimizers'
 import MultivariableLinearRegression, { predictionMultivariable } from './multivariableLinearRegression'
+import PolynomialRegression from './polynomialRegression'
 
 describe('Regressions', () => {
     it('Linear Regression', async () => {
@@ -60,5 +61,36 @@ describe('Regressions', () => {
         expect(result.updatedWeight).toEqual([0.499012, 0.9980195])
         expect(result.updatedBias).toBe(0.9990075)
         expect(result.costHistory).toEqual([0.125, 0.12351462499999995])
+    })
+
+    it('Polynomial Regression', async () => {
+        const polynomialRegression = PolynomialRegression.fit(
+            [1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5],
+            [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6],
+            [0, 0],
+            1,
+            2,
+            0.1,
+            2,
+            mseCostFunction
+        )
+        let done: boolean | undefined = false
+        let result: { updatedWeight: number[]; updatedBias: number; costHistory: number[] } = {
+            updatedWeight: [],
+            updatedBias: 0,
+            costHistory: []
+        }
+        while (!done) {
+            const polynomialRegressionValue = polynomialRegression.next()
+            done = polynomialRegressionValue.done
+            if (done) {
+                result = <{ updatedWeight: number[]; updatedBias: number; costHistory: number[] }>(
+                    polynomialRegressionValue.value
+                )
+            }
+        }
+        expect(result.updatedWeight).toEqual([0.1971503401876964, 0.22960465368315208])
+        expect(result.updatedBias).toBe(1.353076923076923)
+        expect(result.costHistory).toEqual([4.533653846153846, 3.9528296681157027])
     })
 })
