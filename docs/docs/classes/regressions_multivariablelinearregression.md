@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**fit**(`input`: number[][], `target`: number[], `weight`: number[], `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<MultivariableLinearRegressionOutputType>
 
-*Defined in [lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/regressions/multivariableLinearRegression.ts#L25)*
+*Defined in [lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/regressions/multivariableLinearRegression.ts#L25)*
 
 #### Parameters:
 

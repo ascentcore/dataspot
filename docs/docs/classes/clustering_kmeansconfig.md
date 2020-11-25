@@ -40,7 +40,7 @@ has_children: false
 
 *Inherited from [clustering.CentroidConfig](clustering_centroidconfig).[centroids](clustering_centroidconfig#centroids)*
 
-*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L6)*
+*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/centroidClustering.ts#L6)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 •  **clusters**: number = 8
 
-*Defined in [lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/kMeans.ts#L9)*
+*Defined in [lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/kMeans.ts#L9)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 •  **convergenceIterations**: number = -1
 
-*Defined in [lib/clustering/kMeans.ts:14](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/kMeans.ts#L14)*
+*Defined in [lib/clustering/kMeans.ts:14](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/kMeans.ts#L14)*
 
 Kmeans initial convergence iterations
 
@@ -68,7 +68,7 @@ ___
 
 *Inherited from [clustering.CentroidConfig](clustering_centroidconfig).[distanceFn](clustering_centroidconfig#distancefn)*
 
-*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L8)*
+*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/centroidClustering.ts#L8)*
 
 ___
 
@@ -78,4 +78,4 @@ ___
 
 *Overrides [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
 
-*Defined in [lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/kMeans.ts#L11)*
+*Defined in [lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/kMeans.ts#L11)*

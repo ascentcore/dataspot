@@ -17,5 +17,7 @@ export function hasChildren(this: PageEvent, shouldEscape = true) {
         title.push(`${(shouldEscape ? '\\<' : '<') + typeParameters}>`)
     }
 
+    console.log(title)
+
     return title[0] === '@ascentcore/dataspot' || (title && title.length > 1 && title[1].endsWith('_index'))
 }

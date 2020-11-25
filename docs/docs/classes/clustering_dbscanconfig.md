@@ -37,7 +37,7 @@ has_children: false
 
 •  **distanceFn**: string = "euclideanDistance"
 
-*Defined in [lib/clustering/dbScan.ts:10](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/dbScan.ts#L10)*
+*Defined in [lib/clustering/dbScan.ts:10](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/dbScan.ts#L10)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 •  **epsilon**: number = 0.1
 
-*Defined in [lib/clustering/dbScan.ts:6](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/dbScan.ts#L6)*
+*Defined in [lib/clustering/dbScan.ts:6](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/dbScan.ts#L6)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 *Inherited from [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L4)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/common/evolutionaryAlgorithm.ts#L4)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 •  **minNeighbours**: number = 5
 
-*Defined in [lib/clustering/dbScan.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/dbScan.ts#L8)*
+*Defined in [lib/clustering/dbScan.ts:8](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/clustering/dbScan.ts#L8)*

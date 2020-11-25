@@ -42,18 +42,30 @@ export class MarkdownPlugin extends ConverterComponent {
         return tags !== undefined && !!tags
     }
 
-    private convertCommentTagText(tagText: string): string {
+    private convertCommentTagText(tagName: string, tagText: string): string {
+        console.log(' >>> ', tagName)
         const texts = tagText.split('\n')
         const fileName = `./dist/${texts[0]}.js`
         const data = fs.readFileSync(fileName, 'utf8')
-        return `
+
+        const script = `
+
+<span data-ref="${texts[0]}"></span>
+
+<script title="${texts[0]}">${data}</script>
+
+`
+
+        return tagName === 'sample_only'
+            ? script
+            : `
 \`\`\`ts
 ${fs.readFileSync(`./samples/${texts[0]}.ts`, 'utf8')}
 \`\`\`
 
-<span data-ref="${texts[0]}"></span>
+${script}
 
-<script title="${texts[0]}">${data}</script>`
+`
     }
 
     private onDeclarationBegin(context: Context, reflection: Reflection, node?: any) {
@@ -67,13 +79,13 @@ ${fs.readFileSync(`./samples/${texts[0]}.ts`, 'utf8')}
             .map((comment: any) => comment.tags) // get CommentTags from Comment
             .filter(this.filterCommentTags) // filter only CommentTags exist
             .reduce((a, b) => a.concat(b), []) // merge all CommentTags
-            .filter((tag: any) => tag.tagName === 'sample')
+            .filter((tag: any) => tag.tagName === 'sample' || tag.tagName === 'sample_only')
 
         if (vals.length) {
             vals.forEach((t: any) => {
                 if (!t.done) {
                     t.done = true
-                    t.text = this.convertCommentTagText(t.text)
+                    t.text = this.convertCommentTagText(t.tagName, t.text)
                 }
             })
         }

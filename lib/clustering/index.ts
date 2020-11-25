@@ -8,5 +8,7 @@ export * from './test'
 
 /**
  * Clustering module documentation
+ *
+ * @sample_only documentation/sample
  */
 export default class ClusteringModuleDocumentation {}

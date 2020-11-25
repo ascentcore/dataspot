@@ -49,7 +49,7 @@ The same logic will be used isomorphically on node and web platforms
 
 \+ **new BaseVisualization**(`config`: any, `elemClass`: string): [visualizations.BaseVisualization](visualizations_basevisualization)
 
-*Defined in [lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L7)*
+*Defined in [lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L7)*
 
 #### Parameters:
 
@@ -66,7 +66,7 @@ Name | Type |
 
 •  **config**: any
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • `Protected` **dependencies**: any
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -85,7 +85,7 @@ ___
 
 •  **elemClass**: string
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L8)*
 
 ## Methods
 
@@ -93,7 +93,7 @@ ___
 
 ▸ `Abstract`**dataUpdate**(`data`: TwoDPointScatter[] \| TwoDPointLine[] \| FunctioDefinitionMesh \| any, `elemClass?`: string): (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
 
-*Defined in [lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L26)*
+*Defined in [lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L26)*
 
 Isomorphic method used on every data update
 
@@ -112,7 +112,7 @@ ___
 
 ▸ **getDependency**(`key`: string): any
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -128,7 +128,7 @@ ___
 
 ▸ `Abstract`**setup**(`initialData?`: any): void
 
-*Defined in [lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L20)*
+*Defined in [lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/visualizations/basevisualization.ts#L20)*
 
 Isomorphic method executed once for setting up the visualization and dependencies
 that are going to be used by the data update function

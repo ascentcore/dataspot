@@ -38,7 +38,7 @@ has_children: false
 
 \+ **new RegisterInstance**(): [registry.RegisterInstance](registry_registerinstance)
 
-*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/registry/registry.ts#L4)*
+*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/registry/registry.ts#L4)*
 
 **Returns:** [registry.RegisterInstance](registry_registerinstance)
 
@@ -48,7 +48,7 @@ has_children: false
 
 • `Private` **name**: string
 
-*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/registry/registry.ts#L4)*
+*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/registry/registry.ts#L4)*
 
 ## Methods
 
@@ -56,6 +56,6 @@ has_children: false
 
 ▸ **unregister**(): void
 
-*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/registry/registry.ts#L12)*
+*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/registry/registry.ts#L12)*
 
 **Returns:** void

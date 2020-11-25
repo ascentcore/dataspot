@@ -1,7 +1,7 @@
 {
     "out": "./docs/docs",
-    "includes": "./lib/**/*.ts",
-    "exclude": ["*/**/*.tsx", "node_modules", "plugins", "*/**/*.spec.ts"],
+    "includes": "./lib",
+    "exclude": ["*/**/*.tsx", "node_modules", "./tools/**/*.ts", "*/**/*.spec.ts"],
     "readme": "./README.md",
     "mode": "file",
     "excludeNotExported": true,

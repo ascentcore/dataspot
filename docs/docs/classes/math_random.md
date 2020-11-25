@@ -39,7 +39,7 @@ has_children: false
 
 ▪ `Static` `Private` **rand**: (Anonymous function) = Random.mulberry32(Random.xmur3('apples')())
 
-*Defined in [lib/math/random.ts:3](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L3)*
+*Defined in [lib/math/random.ts:3](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L3)*
 
 ## Methods
 
@@ -47,7 +47,7 @@ has_children: false
 
 ▸ `Static` `Private`**mulberry32**(`a`: number): (Anonymous function)
 
-*Defined in [lib/math/random.ts:19](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L19)*
+*Defined in [lib/math/random.ts:19](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L19)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ ___
 
 ▸ `Static`**random**(`min`: number, `max`: number): number
 
-*Defined in [lib/math/random.ts:34](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L34)*
+*Defined in [lib/math/random.ts:34](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L34)*
 
 #### Parameters:
 
@@ -80,7 +80,7 @@ ___
 
 ▸ `Static`**randomChoice**\<T>(`arr`: T[]): T
 
-*Defined in [lib/math/random.ts:54](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L54)*
+*Defined in [lib/math/random.ts:54](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L54)*
 
 #### Type parameters:
 
@@ -102,7 +102,7 @@ ___
 
 ▸ `Static`**randomInt**(`min`: number, `max`: number): number
 
-*Defined in [lib/math/random.ts:38](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L38)*
+*Defined in [lib/math/random.ts:38](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L38)*
 
 #### Parameters:
 
@@ -119,7 +119,7 @@ ___
 
 ▸ `Static`**roundToPrecision**(`input`: number, `precision`: number): number
 
-*Defined in [lib/math/random.ts:29](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L29)*
+*Defined in [lib/math/random.ts:29](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L29)*
 
 #### Parameters:
 
@@ -136,7 +136,7 @@ ___
 
 ▸ `Static`**seededRandom**(`min`: number, `max`: number): number
 
-*Defined in [lib/math/random.ts:44](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L44)*
+*Defined in [lib/math/random.ts:44](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L44)*
 
 #### Parameters:
 
@@ -153,7 +153,7 @@ ___
 
 ▸ `Static`**seededRandomInt**(`min`: number, `max`: number): number
 
-*Defined in [lib/math/random.ts:48](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L48)*
+*Defined in [lib/math/random.ts:48](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L48)*
 
 #### Parameters:
 
@@ -170,7 +170,7 @@ ___
 
 ▸ `Static` `Private`**xmur3**(`str`: string): function
 
-*Defined in [lib/math/random.ts:5](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/math/random.ts#L5)*
+*Defined in [lib/math/random.ts:5](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/math/random.ts#L5)*
 
 #### Parameters:
 

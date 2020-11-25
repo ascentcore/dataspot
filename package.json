@@ -13,8 +13,8 @@
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
         "build": "tsc --p ./lib",
         "build:samples": "webpack --mode production",
-        "build:plugins": "rimraf ./tools/typedoc-plugin-markdown/dist && tsc --p ./tools/typedoc-plugin-markdown && copyfiles --up 3 ./plugins/typedoc-plugin-markdown/src/**/*.hbs ./plugins/typedoc-plugin-markdown/dist/",
-        "build:docs": "npm run build:samples && rimraf docs/docs && typedoc --options ./typedoc.json --plugin ./tools/typedoc-plugin-markdown",
+        "build:plugins": "rimraf ./tools/typedoc-plugin-markdown/dist && tsc --p ./tools/typedoc-plugin-markdown && copyfiles --up 3 ./tools/typedoc-plugin-markdown/src/**/*.hbs ./tools/typedoc-plugin-markdown/dist/",
+        "build:docs": "npm run build:samples && rimraf docs/docs && typedoc --options ./typedoc.json --plugin ./tools/typedoc-plugin-markdown && rimraf docs/docs/globals.md",
         "generate-showcase": "cd showcase-generator && npm run build-prod"
     },
     "repository": {
