@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
 import * as fs from 'fs'
 import * as path from 'path'
@@ -5,7 +6,7 @@ import * as path from 'path'
 import { BindOption, ContainerReflection, Reflection, Renderer } from 'typedoc'
 import { Context, Converter } from 'typedoc/dist/lib/converter'
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components'
-
+import { CommentTag } from 'typedoc/dist/lib/models'
 import MarkdownTheme from './theme'
 
 @Component({ name: 'markdown' })
@@ -30,22 +31,56 @@ export class MarkdownPlugin extends ConverterComponent {
         Renderer.getDefaultTheme = () => path.join(__dirname, 'resources')
     }
 
+    private filterComment(comment: undefined | Comment): comment is Comment {
+        return comment !== undefined && !!comment
+    }
+
+    /**
+     * filter logic for CommentTags exist
+     */
+    private filterCommentTags(tags: CommentTag[] | undefined): tags is CommentTag[] {
+        return tags !== undefined && !!tags
+    }
+
+    private convertCommentTagText(tagText: string): string {
+        const texts = tagText.split('\n')
+        const fileName = `./dist/${texts[0]}.js`
+        const data = fs.readFileSync(fileName, 'utf8')
+        return `
+\`\`\`ts
+${fs.readFileSync(`./samples/${texts[0]}.ts`, 'utf8')}
+\`\`\`
+
+<span data-ref="${texts[0]}"></span>
+
+<script title="${texts[0]}">${data}</script>`
+    }
+
     private onDeclarationBegin(context: Context, reflection: Reflection, node?: any) {
         if (!node) return
         const { fileName } = node.parent
         const match = new RegExp('.*/lib/(.*)').exec(fileName)
+
+        const vals = Object.values(context.project.reflections) // get reflection from context
+            .map((r: any) => r.comment) // get Comment from Reflection
+            .filter(this.filterComment) // filter only comment exist
+            .map((comment: any) => comment.tags) // get CommentTags from Comment
+            .filter(this.filterCommentTags) // filter only CommentTags exist
+            .reduce((a, b) => a.concat(b), []) // merge all CommentTags
+            .filter((tag: any) => tag.tagName === 'sample')
+
+        if (vals.length) {
+            vals.forEach((t: any) => {
+                if (!t.done) {
+                    t.done = true
+                    t.text = this.convertCommentTagText(t.text)
+                }
+            })
+        }
+
         /*
          */
         if (match != null) {
-            console.log(
-                ' Mapping ',
-                fileName,
-                ' ==> ',
-                match[1]
-                    .replace(/\.ts$/g, '')
-                    .split('/')
-                    .join('.')
-            )
             this.moduleRenames.push({
                 renameTo: match[1]
                     .replace(/\.ts$/g, '')

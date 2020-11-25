@@ -84,7 +84,7 @@ The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/Typ
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:47](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L47)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:46*
 
 #### Parameters:
 
@@ -101,7 +101,7 @@ Name | Type |
 
 •  **allReflectionsHaveOwnDocument**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:32](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L32)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:33*
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 •  **readme**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:30](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L30)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:30*
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 ▪ `Static` **HANDLEBARS**: Handlebars = Handlebars.create()
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:35](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L35)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:36*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 ▪ `Static` **URL\_PREFIX**: RegExp = /^(http\|ftp)s?:\/\//
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:37](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L37)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:38*
 
 ## Accessors
 
@@ -175,7 +175,7 @@ ___
 
 • get **entryFile**(): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:395](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L395)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:359*
 
 **Returns:** string
 
@@ -185,7 +185,7 @@ ___
 
 • get **globalsFile**(): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:400](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L400)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:364*
 
 **Returns:** string
 
@@ -195,7 +195,7 @@ ___
 
 • get **hasSidebar**(): boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:405](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L405)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:369*
 
 **Returns:** boolean
 
@@ -205,7 +205,7 @@ ___
 
 • get **mappings**(): { directory: string = "classes"; isLeaf: boolean = false; kind: ReflectionKind[] = [ReflectionKind.Class]; template: string = "reflection.hbs" }[]
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:337](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L337)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:301*
 
 **Returns:** { directory: string = "classes"; isLeaf: boolean = false; kind: ReflectionKind[] = [ReflectionKind.Class]; template: string = "reflection.hbs" }[]
 
@@ -227,7 +227,7 @@ ___
 
 ▸ **allowedDirectoryListings**(): string[]
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:86](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L86)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:84*
 
 **Returns:** string[]
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **applyAnchorUrl**(`reflection`: Reflection, `container`: Reflection): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:209](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L209)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:191*
 
 Similar to DefaultTheme.applyAnchorUrl method with added but the anchors are computed from the reflection structure
 Generate an anchor url for the given reflection and all of its children.
@@ -276,7 +276,7 @@ ___
 
 ▸ **buildUrls**(`reflection`: DeclarationReflection, `urls`: UrlMapping[]): UrlMapping[]
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:137](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L137)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:133*
 
 This is mostly a copy of the TypeDoc DefaultTheme.buildUrls method with .html ext switched to .md
 Builds the url for the the given reflection and all of its children.
@@ -298,7 +298,7 @@ ___
 
 ▸ **getEntryPoint**(`project`: ProjectReflection): ContainerReflection
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:232](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L232)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:214*
 
 Copy of default theme DefaultTheme.getEntryPoint
 
@@ -318,7 +318,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:255](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L255)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:231*
 
 #### Parameters:
 
@@ -346,7 +346,7 @@ ___
 
 ▸ **getUrl**(`reflection`: Reflection, `relative?`: Reflection, `separator?`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:183](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L183)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:174*
 
 **`see`** DefaultTheme.getUrl
 Return a url for the given reflection.
@@ -371,7 +371,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:104](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L104)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:102*
 
 This method is essentially a copy of the TypeDocs DefaultTheme.getUrls with extensions swapped out to .md
 Map the models of the given project to the desired output files.
@@ -407,7 +407,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:71](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L71)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:70*
 
 Test if directory is output directory
 
@@ -578,7 +578,7 @@ ___
 
 ▸ `Private`**onPageEnd**(`page`: PageEvent): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:331](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L331)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:297*
 
 #### Parameters:
 
@@ -650,7 +650,7 @@ ___
 
 ▸ **toAnchorRef**(`reflectionId`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:224](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L224)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:206*
 
 #### Parameters:
 
@@ -666,7 +666,7 @@ ___
 
 ▸ **toUrl**(`mapping`: TemplateMapping, `reflection`: DeclarationReflection): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:170](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L170)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:161*
 
 Returns the full url of a given mapping and reflection
 
@@ -704,7 +704,7 @@ ___
 
 ▸ `Static`**formatContents**(`contents`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/theme.ts:40](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/theme.ts#L40)*
+*Defined in tools/typedoc-plugin-markdown/src/theme.ts:41*
 
 #### Parameters:
 

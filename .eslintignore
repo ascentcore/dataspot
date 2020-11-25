@@ -1,4 +1,3 @@
 dist/
 node_modules/
-samples/
 next-env.d.ts

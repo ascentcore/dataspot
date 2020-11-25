@@ -42,7 +42,7 @@ has_children: false
 
 •  **centroids**: number[][] = []
 
-*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L6)*
+*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L6)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 •  **distanceFn**: string = "euclideanDistance"
 
-*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L8)*
+*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L8)*
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 *Inherited from [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L4)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L4)*

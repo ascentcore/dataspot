@@ -43,7 +43,7 @@ has_children: true
 
 *Overrides [registry.RegisterInstance](registry_registerinstance).[constructor](registry_registerinstance#constructor)*
 
-*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L7)*
+*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/lab/index.ts#L7)*
 
 #### Parameters:
 
@@ -60,7 +60,7 @@ Name | Type | Default value |
 
 •  **connected**: Promise\<boolean>
 
-*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L7)*
+*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/lab/index.ts#L7)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • `Private` **db**: any
 
-*Defined in [lib/lab/index.ts:5](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L5)*
+*Defined in [lib/lab/index.ts:5](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/lab/index.ts#L5)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • `Private` **project**: string
 
-*Defined in [lib/lab/index.ts:9](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L9)*
+*Defined in [lib/lab/index.ts:9](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/lab/index.ts#L9)*
 
 ## Methods
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **store**(`key`: string, `data`: any): Promise\<any>
 
-*Defined in [lib/lab/index.ts:53](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L53)*
+*Defined in [lib/lab/index.ts:53](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/lab/index.ts#L53)*
 
 #### Parameters:
 
@@ -103,6 +103,6 @@ ___
 
 *Inherited from [registry.RegisterInstance](registry_registerinstance).[unregister](registry_registerinstance#unregister)*
 
-*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/registry/registry.ts#L12)*
+*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/registry/registry.ts#L12)*
 
 **Returns:** void

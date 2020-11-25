@@ -47,7 +47,7 @@ has_children: false
 
 *Overrides [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[constructor](visualizations_html_htmlbasevisualization#constructor)*
 
-*Defined in [lib/visualizations/html/table.ts:4](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/table.ts#L4)*
+*Defined in [lib/visualizations/html/table.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/html/table.ts#L4)*
 
 #### Parameters:
 
@@ -66,7 +66,7 @@ Name | Type | Default value |
 
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -89,7 +89,7 @@ ___
 
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L8)*
 
 ## Methods
 
@@ -99,7 +99,7 @@ ___
 
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/html/table.ts:49](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/table.ts#L49)*
+*Defined in [lib/visualizations/html/table.ts:49](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/html/table.ts#L49)*
 
 #### Parameters:
 
@@ -118,7 +118,7 @@ ___
 
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -136,7 +136,7 @@ ___
 
 *Inherited from [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[injectDOM](visualizations_html_htmlbasevisualization#injectdom)*
 
-*Defined in [lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlbase.ts#L20)*
+*Defined in [lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/html/htmlbase.ts#L20)*
 
 #### Parameters:
 
@@ -154,7 +154,7 @@ ___
 
 *Inherited from [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[setContainer](visualizations_html_htmlbasevisualization#setcontainer)*
 
-*Defined in [lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlbase.ts#L24)*
+*Defined in [lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/html/htmlbase.ts#L24)*
 
 #### Parameters:
 
@@ -172,7 +172,7 @@ ___
 
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/html/table.ts:9](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/table.ts#L9)*
+*Defined in [lib/visualizations/html/table.ts:9](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/html/table.ts#L9)*
 
 **Returns:** void
 
@@ -182,7 +182,7 @@ ___
 
 ▸ `Private`**updateFn**(`data`: TwoDPointLine[] \| TwoDPointScatter[], `elemClass`: string): void
 
-*Defined in [lib/visualizations/html/table.ts:11](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/table.ts#L11)*
+*Defined in [lib/visualizations/html/table.ts:11](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/visualizations/html/table.ts#L11)*
 
 #### Parameters:
 

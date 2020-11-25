@@ -39,7 +39,7 @@ has_children: false
 
 •  **bandwidth**: number = 0.1
 
-*Defined in [lib/clustering/meanShift.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/meanShift.ts#L7)*
+*Defined in [lib/clustering/meanShift.ts:7](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/meanShift.ts#L7)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 *Inherited from [clustering.CentroidConfig](clustering_centroidconfig).[centroids](clustering_centroidconfig#centroids)*
 
-*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L6)*
+*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L6)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 •  **clusterThreshold**: number = 0.1
 
-*Defined in [lib/clustering/meanShift.ts:9](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/meanShift.ts#L9)*
+*Defined in [lib/clustering/meanShift.ts:9](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/meanShift.ts#L9)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 *Inherited from [clustering.CentroidConfig](clustering_centroidconfig).[distanceFn](clustering_centroidconfig#distancefn)*
 
-*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L8)*
+*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L8)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 *Inherited from [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L4)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L4)*
 
 ___
 
@@ -85,4 +85,4 @@ ___
 
 •  **stopThreshold**: number = 0.0001
 
-*Defined in [lib/clustering/meanShift.ts:11](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/meanShift.ts#L11)*
+*Defined in [lib/clustering/meanShift.ts:11](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/meanShift.ts#L11)*

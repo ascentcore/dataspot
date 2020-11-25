@@ -42,6 +42,9 @@ has_children: false
 ### Methods
 
 * [bubble](markdownplugin#bubble)
+* [convertCommentTagText](markdownplugin#convertcommenttagtext)
+* [filterComment](markdownplugin#filtercomment)
+* [filterCommentTags](markdownplugin#filtercommenttags)
 * [getOptionDeclarations](markdownplugin#getoptiondeclarations)
 * [initialize](markdownplugin#initialize)
 * [isMarkdownTheme](markdownplugin#ismarkdowntheme)
@@ -91,7 +94,7 @@ ___
 
 •  **moduleRenames**: any[] = []
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:13](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L13)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:14*
 
 ___
 
@@ -99,7 +102,7 @@ ___
 
 •  **theme**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:16](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L16)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:17*
 
 ## Accessors
 
@@ -146,6 +149,56 @@ Name | Type |
 
 ___
 
+### convertCommentTagText
+
+▸ `Private`**convertCommentTagText**(`tagText`: string): string
+
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:45*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`tagText` | string |
+
+**Returns:** string
+
+___
+
+### filterComment
+
+▸ `Private`**filterComment**(`comment`: undefined \| Comment): comment is Comment
+
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:34*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`comment` | undefined \| Comment |
+
+**Returns:** comment is Comment
+
+___
+
+### filterCommentTags
+
+▸ `Private`**filterCommentTags**(`tags`: CommentTag[] \| undefined): tags is CommentTag[]
+
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:41*
+
+filter logic for CommentTags exist
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`tags` | CommentTag[] \| undefined |
+
+**Returns:** tags is CommentTag[]
+
+___
+
 ### getOptionDeclarations
 
 ▸ **getOptionDeclarations**(): DeclarationOption[]
@@ -164,7 +217,7 @@ ___
 
 *Overrides [MarkdownTheme](markdowntheme).[initialize](markdowntheme#initialize)*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:18](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L18)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:19*
 
 **Returns:** void
 
@@ -174,7 +227,7 @@ ___
 
 ▸ **isMarkdownTheme**(`themeFileName`: string): boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:152](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L152)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:187*
 
 Checks if the custom theme class is initiated from markdown theme
 
@@ -345,7 +398,7 @@ ___
 
 ▸ **onBegin**(): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:29](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L29)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:30*
 
 Overide default assets
 
@@ -357,7 +410,7 @@ ___
 
 ▸ `Private`**onDeclarationBegin**(`context`: Context, `reflection`: Reflection, `node?`: any): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:33](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L33)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:59*
 
 #### Parameters:
 
@@ -375,7 +428,7 @@ ___
 
 ▸ **onResolveBegin**(`context`: Context): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:62](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L62)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:97*
 
 Load markdown theme and perform additional checks
 
@@ -468,7 +521,7 @@ ___
 
 ▸ **upgradeMessages**(`theme`: string): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:161](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L161)*
+*Defined in tools/typedoc-plugin-markdown/src/plugin.ts:196*
 
 #### Parameters:
 

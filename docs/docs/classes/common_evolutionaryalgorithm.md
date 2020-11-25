@@ -52,7 +52,7 @@ Name | Type |
 
 *Inherited from [common.Serializable](common_serializable).[constructor](common_serializable#constructor)*
 
-*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L7)*
+*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/serializable.ts#L7)*
 
 #### Parameters:
 
@@ -70,7 +70,7 @@ Name | Type |
 
 *Inherited from [common.Serializable](common_serializable).[config](common_serializable#config)*
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L8)*
+*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/serializable.ts#L8)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • `Protected` **iteration**: number = 0
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L8)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L8)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 *Inherited from [common.Serializable](common_serializable).[loadState](common_serializable#loadstate)*
 
-*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L14)*
+*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/serializable.ts#L14)*
 
 #### Parameters:
 
@@ -106,7 +106,7 @@ ___
 
 *Inherited from [common.Serializable](common_serializable).[serialize](common_serializable#serialize)*
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L10)*
+*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/serializable.ts#L10)*
 
 **Returns:** string
 
@@ -116,7 +116,7 @@ ___
 
 ▸ **shouldStop**(): boolean
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L10)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L10)*
 
 **Returns:** boolean
 
@@ -126,6 +126,6 @@ ___
 
 ▸ `Abstract`**step**(): any
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L14)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L14)*
 
 **Returns:** any

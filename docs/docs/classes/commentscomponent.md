@@ -96,7 +96,7 @@ Name | Type |
 
 • `Private` **brackets**: RegExp = /\[\[([^\]]+)\]\]/g
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:42](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L42)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:42*
 
 Regular expression for detecting bracket links.
 
@@ -116,7 +116,7 @@ ___
 
 • `Private` **includePattern**: RegExp = /\[\[include:([^\]]+?)\]\]/g
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:32](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L32)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:32*
 
 The pattern used to find references in markdown.
 
@@ -126,7 +126,7 @@ ___
 
 •  **includes**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:21](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L21)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:21*
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 • `Private` **inlineTag**: RegExp = /(?:\[(.+?)\])?\{@(link\|linkcode\|linkplain)\s+((?:.\|\n)+?)\}/gi
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:47](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L47)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:47*
 
 Regular expression for detecting inline tags like {@link ...}.
 
@@ -144,7 +144,7 @@ ___
 
 •  **listInvalidSymbolLinks**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:27](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L27)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:27*
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 •  **mediaDirectory**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:24](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L24)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:24*
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 • `Private` **mediaPattern**: RegExp = /media:\/\/([^ "\)\]\}]+)/g
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:37](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L37)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:37*
 
 The pattern used to find media links.
 
@@ -200,7 +200,7 @@ ___
 
 • `Private` **warnings**: string[] = []
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:49](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L49)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:49*
 
 ## Accessors
 
@@ -251,7 +251,7 @@ ___
 
 ▸ `Private`**buildLink**(`original`: string, `target`: string, `caption`: string, `monospace?`: boolean): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:178](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L178)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:178*
 
 Format a link with the given text and target.
 
@@ -306,7 +306,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:51](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L51)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:51*
 
 **Returns:** void
 
@@ -505,7 +505,7 @@ ___
 
 ▸ **onEndRenderer**(`event`: RendererEvent): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:215](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L215)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:215*
 
 Triggered when [[Renderer]] is finished
 
@@ -559,7 +559,7 @@ ___
 
 ▸ **parseComments**(`text`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:77](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L77)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:77*
 
 Parse the given comemnts string and return the resulting html.
 
@@ -579,7 +579,7 @@ ___
 
 ▸ `Private`**replaceBrackets**(`text`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:134](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L134)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:134*
 
 Find all references to symbols within the given text and transform them into a link.
 
@@ -604,7 +604,7 @@ ___
 
 ▸ `Private`**replaceInlineTags**(`text`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/comments.component.ts:150](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/comments.component.ts#L150)*
+*Defined in tools/typedoc-plugin-markdown/src/components/comments.component.ts:150*
 
 Find symbol {@link ...} strings in text and turn into html links
 

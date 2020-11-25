@@ -12,9 +12,10 @@
         "lint:json": "prettier --list-different .eslintrc *.json",
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
         "build": "tsc --p ./lib",
-        "generate-docs": "rimraf docs/docs && typedoc --options ./typedoc.json --plugin ./plugins/typedoc-plugin-markdown",
-        "generate-showcase": "cd showcase-generator && npm run build-prod",
-        "build-plugins": "rimraf ./plugins/typedoc-plugin-markdown/dist && tsc --p ./plugins/typedoc-plugin-markdown && copyfiles --up 3 ./plugins/typedoc-plugin-markdown/src/**/*.hbs ./plugins/typedoc-plugin-markdown/dist/"
+        "build:samples": "webpack --mode production",
+        "build:plugins": "rimraf ./tools/typedoc-plugin-markdown/dist && tsc --p ./tools/typedoc-plugin-markdown && copyfiles --up 3 ./plugins/typedoc-plugin-markdown/src/**/*.hbs ./plugins/typedoc-plugin-markdown/dist/",
+        "build:docs": "npm run build:samples && rimraf docs/docs && typedoc --options ./typedoc.json --plugin ./tools/typedoc-plugin-markdown",
+        "generate-showcase": "cd showcase-generator && npm run build-prod"
     },
     "repository": {
         "type": "git",
@@ -61,7 +62,15 @@
         "ts-node": "^9.0.0",
         "typedoc": "^0.19.1",
         "typedoc-plugin-markdown": "^2.4.2",
-        "typescript": "^4.0.5"
+        "typescript": "^4.0.5",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^5.0.1",
+        "ts-loader": "^8.0.9",
+        "webpack": "^5.4.0",
+        "webpack-bundle-analyzer": "^4.1.0",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0",
+        "html-webpack-plugin": "^4.5.0"
     },
     "dependencies": {
         "canvas": "^2.6.1",

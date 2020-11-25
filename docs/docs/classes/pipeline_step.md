@@ -46,7 +46,7 @@ Name |
 
 • `Protected` **state**: [models.ObjectLike](../interfaces/models_objectlike)
 
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L12)*
+*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L12)*
 
 Internal pipeline state reference
 
@@ -56,7 +56,7 @@ Internal pipeline state reference
 
 ▸ `Abstract`**execute**(`data`: T): Promise\<K>
 
-*Defined in [lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L43)*
+*Defined in [lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L43)*
 
 Execute a step in the pipeline and return a promise to the next element in pipe
 
@@ -74,7 +74,7 @@ ___
 
 ▸ **getStateKey**(`key`: string): any
 
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L35)*
+*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L35)*
 
 Return value at key from storage
 
@@ -92,7 +92,7 @@ ___
 
 ▸ **setState**(`value`: [models.ObjectLike](../interfaces/models_objectlike)): void
 
-*Defined in [lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L18)*
+*Defined in [lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L18)*
 
 Set state reference
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **setStateKey**(`key`: string, `value`: any): void
 
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L27)*
+*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L27)*
 
 Set state property
 

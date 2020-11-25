@@ -52,7 +52,7 @@ for each step in the validation / reporting process.
 
 \+ **new Pipeline**(`steps?`: [pipeline.Step](pipeline_step)\<any, any>[]): [pipeline.Pipeline](pipeline_pipeline)
 
-*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/pipeline.ts#L11)*
+*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/pipeline.ts#L11)*
 
 #### Parameters:
 
@@ -70,7 +70,7 @@ Name | Type | Default value |
 
 *Inherited from [pipeline.Step](pipeline_step).[state](pipeline_step#state)*
 
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L12)*
+*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L12)*
 
 Internal pipeline state reference
 
@@ -80,7 +80,7 @@ ___
 
 • `Protected` **steps**: [pipeline.Step](pipeline_step)\<any, any>[]
 
-*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/pipeline.ts#L12)*
+*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/pipeline.ts#L12)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **add**(`step`: [pipeline.Step](pipeline_step)\<any, any>): [pipeline.Pipeline](pipeline_pipeline)
 
-*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/pipeline.ts#L29)*
+*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/pipeline.ts#L29)*
 
 Adds one step executor to the pipeline
 
@@ -108,7 +108,7 @@ ___
 
 *Overrides [pipeline.Step](pipeline_step).[execute](pipeline_step#execute)*
 
-*Defined in [lib/pipeline/pipeline.ts:52](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/pipeline.ts#L52)*
+*Defined in [lib/pipeline/pipeline.ts:52](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/pipeline.ts#L52)*
 
 Executes steps in a synchronous mode.
 If steps can be paralelized consider using ParalelPipeline
@@ -136,7 +136,7 @@ ___
 
 *Inherited from [pipeline.Step](pipeline_step).[getStateKey](pipeline_step#getstatekey)*
 
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L35)*
+*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L35)*
 
 Return value at key from storage
 
@@ -156,7 +156,7 @@ ___
 
 *Overrides [pipeline.Step](pipeline_step).[setState](pipeline_step#setstate)*
 
-*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/pipeline.ts#L20)*
+*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/pipeline.ts#L20)*
 
 Update current pipe internal state with passed object and assign to children
 
@@ -176,7 +176,7 @@ ___
 
 *Inherited from [pipeline.Step](pipeline_step).[setStateKey](pipeline_step#setstatekey)*
 
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L27)*
+*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/types.ts#L27)*
 
 Set state property
 
@@ -195,7 +195,7 @@ ___
 
 ▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.Step](pipeline_step)\<T, K>): Promise\<K>
 
-*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/pipeline.ts#L43)*
+*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/pipeline/pipeline.ts#L43)*
 
 Executes one pipeline step
 

@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**transpose**(`matrix`: number[][]): number[][]
 
-*Defined in [lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/aa42404/lib/utils/math-utils.ts#L204)*
+*Defined in [lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/utils/math-utils.ts#L204)*
 
 #### Parameters:
 

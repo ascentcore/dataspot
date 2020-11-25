@@ -55,7 +55,7 @@ has_children: false
 
 *Overrides [clustering.CentroidClustering](clustering_centroidclustering).[constructor](clustering_centroidclustering#constructor)*
 
-*Defined in [lib/clustering/birch.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/birch.ts#L14)*
+*Defined in [lib/clustering/birch.ts:14](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/birch.ts#L14)*
 
 #### Parameters:
 
@@ -74,7 +74,7 @@ Name | Type |
 
 *Inherited from [common.Serializable](common_serializable).[config](common_serializable#config)*
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L8)*
+*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/serializable.ts#L8)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 *Inherited from [clustering.CentroidClustering](clustering_centroidclustering).[distanceFunc](clustering_centroidclustering#distancefunc)*
 
-*Defined in [lib/clustering/centroidClustering.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L12)*
+*Defined in [lib/clustering/centroidClustering.ts:12](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L12)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fitData](clustering_clusteringalgorithm#fitdata)*
 
-*Defined in [lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L4)*
+*Defined in [lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L4)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[initialized](clustering_clusteringalgorithm#initialized)*
 
-*Defined in [lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L8)*
+*Defined in [lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L8)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 *Inherited from [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[iteration](common_evolutionaryalgorithm#iteration)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L8)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L8)*
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[labels](clustering_clusteringalgorithm#labels)*
 
-*Defined in [lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L6)*
+*Defined in [lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L6)*
 
 ## Methods
 
@@ -134,7 +134,7 @@ ___
 
 *Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[canStop](clustering_clusteringalgorithm#canstop)*
 
-*Defined in [lib/clustering/birch.ts:25](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/birch.ts#L25)*
+*Defined in [lib/clustering/birch.ts:25](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/birch.ts#L25)*
 
 **Returns:** boolean
 
@@ -146,7 +146,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fit](clustering_clusteringalgorithm#fit)*
 
-*Defined in [lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L30)*
+*Defined in [lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L30)*
 
 #### Parameters:
 
@@ -164,7 +164,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fitAsync](clustering_clusteringalgorithm#fitasync)*
 
-*Defined in [lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L19)*
+*Defined in [lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L19)*
 
 #### Parameters:
 
@@ -182,7 +182,7 @@ ___
 
 *Inherited from [clustering.CentroidClustering](clustering_centroidclustering).[initializeDependencies](clustering_centroidclustering#initializedependencies)*
 
-*Defined in [lib/clustering/centroidClustering.ts:55](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L55)*
+*Defined in [lib/clustering/centroidClustering.ts:55](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L55)*
 
 #### Parameters:
 
@@ -202,7 +202,7 @@ ___
 
 *Overrides [common.Serializable](common_serializable).[loadState](common_serializable#loadstate)*
 
-*Defined in [lib/clustering/centroidClustering.ts:49](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L49)*
+*Defined in [lib/clustering/centroidClustering.ts:49](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L49)*
 
 #### Parameters:
 
@@ -220,7 +220,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[onEndFit](clustering_clusteringalgorithm#onendfit)*
 
-*Defined in [lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L41)*
+*Defined in [lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L41)*
 
 **Returns:** void
 
@@ -234,7 +234,7 @@ ___
 
 *Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[predict](clustering_clusteringalgorithm#predict)*
 
-*Defined in [lib/clustering/centroidClustering.ts:19](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L19)*
+*Defined in [lib/clustering/centroidClustering.ts:19](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/centroidClustering.ts#L19)*
 
 #### Parameters:
 
@@ -252,7 +252,7 @@ ___
 
 *Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[prepareDataset](clustering_clusteringalgorithm#preparedataset)*
 
-*Defined in [lib/clustering/clusteringBase.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L10)*
+*Defined in [lib/clustering/clusteringBase.ts:10](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/clusteringBase.ts#L10)*
 
 #### Parameters:
 
@@ -270,7 +270,7 @@ ___
 
 *Inherited from [common.Serializable](common_serializable).[serialize](common_serializable#serialize)*
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L10)*
+*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/serializable.ts#L10)*
 
 **Returns:** string
 
@@ -282,7 +282,7 @@ ___
 
 *Inherited from [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[shouldStop](common_evolutionaryalgorithm#shouldstop)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L10)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/common/evolutionaryAlgorithm.ts#L10)*
 
 **Returns:** boolean
 
@@ -294,6 +294,6 @@ ___
 
 *Overrides [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[step](common_evolutionaryalgorithm#step)*
 
-*Defined in [lib/clustering/birch.ts:20](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/birch.ts#L20)*
+*Defined in [lib/clustering/birch.ts:20](https://github.com/ascentcore/dataspot/blob/0dd3d5b/lib/clustering/birch.ts#L20)*
 
 **Returns:** void
