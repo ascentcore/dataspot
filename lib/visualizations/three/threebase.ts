@@ -30,13 +30,22 @@ export default abstract class ThreeBaseVisualization extends BaseVisualization {
             renderer.setSize(width, height)
             containerRef.appendChild(renderer.domElement)
             const scene = new three.Scene()
-            Object.assign(this.dependencies, { renderer, containerRef, scene })
+            Object.assign(this.dependencies, { renderer, containerRef, scene, isRoot: true })
         } else {
             Object.assign(this.dependencies, {
                 renderer: containerRef.getDependency('renderer'),
                 containerRef: containerRef.getDependency('containerRef'),
-                scene: containerRef.getDependency('scene')
+                scene: containerRef.getDependency('scene'),
+                isRoot: false
             })
+        }
+    }
+
+    public destroy() {
+        const { renderer, containerRef, isRoot } = this.dependencies
+        if (isRoot) {
+            renderer.renderLists.dispose()
+            containerRef.removeChild(renderer.domElement)
         }
     }
 }

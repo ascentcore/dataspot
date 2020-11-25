@@ -39,8 +39,9 @@ function Representation({
     globalM: number[]
 }) {
     const containerRef = useRef<HTMLDivElement | null>(null)
+    const [plot, setPlot] = useState(null)
 
-    const twoDParticleEvolution = async (plot: SVGMultipleVisualization, scatterElemClass: string) => {
+    const twoDParticleEvolution = async (twoDPlot: SVGMultipleVisualization, scatterElemClass: string) => {
         let doneMetaheuristic = false
         let metaheuristicValue = []
 
@@ -57,9 +58,8 @@ function Representation({
         while (!doneMetaheuristic) {
             const regressionResult = psoGenerator.next()
             metaheuristicValue = regressionResult.value
-
             doneMetaheuristic = regressionResult.done || false
-            plot.dataUpdate(
+            twoDPlot.dataUpdate(
                 // eslint-disable-next-line no-loop-func
                 metaheuristicValue.map((position) => {
                     return { x: position[0], y: ff(position[0]), r: 3 }
@@ -82,7 +82,7 @@ function Representation({
         const axis = new Axis({}, axisElemClass)
         const line = new LinePlot({}, lineElemClass)
         const scatter = new Scatter({}, scatterElemClass)
-        const plot = new SVGMultipleVisualization(
+        const twoDPlot = new SVGMultipleVisualization(
             {
                 width,
                 height,
@@ -92,17 +92,18 @@ function Representation({
             metaheuristicElemClass,
             [axis, line, scatter]
         )
-        plot.setContainer(containerRef.current)
-        plot.setup()
+        twoDPlot.setContainer(containerRef.current)
+        twoDPlot.setup()
         const mappedData = functionAprox.map((d: number[]) => {
             return { x: d[0], y: d[1] }
         })
-        plot.dataUpdate(mappedData, lineElemClass)
+        twoDPlot.dataUpdate(mappedData, lineElemClass)
 
-        twoDParticleEvolution(plot, scatterElemClass)
+        twoDParticleEvolution(twoDPlot, scatterElemClass)
+        setPlot(twoDPlot)
     }
 
-    const threeDParticleEvolution = async (plot: ThreeMultipleVisualization, spheresElemClass: string) => {
+    const threeDParticleEvolution = async (threeDPlot: ThreeMultipleVisualization, spheresElemClass: string) => {
         let doneMetaheuristic = false
         let metaheuristicValue = []
 
@@ -121,7 +122,7 @@ function Representation({
             metaheuristicValue = regressionResult.value
 
             doneMetaheuristic = regressionResult.done || false
-            plot.dataUpdate(
+            threeDPlot.dataUpdate(
                 // eslint-disable-next-line no-loop-func
                 metaheuristicValue.map((position) => {
                     return { x: position[0], y: position[1], z: ff(position[0], position[1]), r: 1 }
@@ -141,7 +142,7 @@ function Representation({
 
         const mesh = new MeshPlot({}, meshElemClass)
         const spheres = new Sphere({}, spheresElemClass)
-        const plot = new ThreeMultipleVisualization(
+        const threeDPlot = new ThreeMultipleVisualization(
             {
                 width,
                 height
@@ -149,9 +150,9 @@ function Representation({
             metaheuristicElemClass,
             [mesh, spheres]
         )
-        plot.setContainer(containerRef.current)
-        plot.setup()
-        plot.dataUpdate(
+        threeDPlot.setContainer(containerRef.current)
+        threeDPlot.setup()
+        threeDPlot.dataUpdate(
             {
                 zFunc: (x: number, y: number) => ff(x, y),
                 xMin: domain[0],
@@ -161,10 +162,14 @@ function Representation({
             },
             meshElemClass
         )
-        threeDParticleEvolution(plot, spheresElemClass)
+        threeDParticleEvolution(threeDPlot, spheresElemClass)
+        setPlot(threeDPlot)
     }
 
     useEffect(() => {
+        if (containerRef.current && plot) {
+            plot.destroy()
+        }
         if (containerRef.current && type === '2D') {
             twoDFunctionRepresentation()
         } else {

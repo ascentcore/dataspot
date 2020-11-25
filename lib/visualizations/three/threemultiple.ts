@@ -31,4 +31,9 @@ export default class ThreeMultipleVisualization extends ThreeBaseVisualization {
         }
         return null
     }
+
+    destroy() {
+        Object.values(this.visualizations).forEach((viz: ThreeBaseVisualization) => viz.destroy())
+        super.destroy()
+    }
 }

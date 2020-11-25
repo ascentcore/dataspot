@@ -120,13 +120,12 @@ export default class MeshPlot extends ThreeBaseVisualization {
     }
 
     destroy() {
-        const { graphMesh, scene, renderer, camera, axesHelper, containerRef } = this.dependencies
+        const { graphMesh, scene, camera, axesHelper } = this.dependencies
         graphMesh.material.dispose()
         graphMesh.geometry.dispose()
         scene.remove(graphMesh)
         scene.remove(camera)
         scene.remove(axesHelper)
-        renderer.renderLists.dispose()
-        containerRef.removeChild(renderer.domElement)
+        super.destroy()
     }
 }

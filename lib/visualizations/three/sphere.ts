@@ -37,5 +37,6 @@ export default class Sphere extends ThreeBaseVisualization {
             mesh.geometry.dispose()
             scene.remove(mesh)
         })
+        super.destroy()
     }
 }
