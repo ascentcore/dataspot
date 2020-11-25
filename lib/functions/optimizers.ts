@@ -21,6 +21,15 @@ export function mseCostFunction(input: number | number[], target: number, predic
     return derivate
 }
 
+export function crossEntropyCostFunction(input: number[], target: number, prediction: number): number[] {
+    const weightsDeriv = []
+    for (let i = 0; i < input.length; i++) {
+        weightsDeriv.push(input[i] * (prediction - target))
+    }
+
+    return weightsDeriv
+}
+
 export function gradientDescent(
     input: number[] | number[][],
     target: number[],
