@@ -17,8 +17,12 @@ function Representation({
     height: number
 }) {
     const svgRef = useRef<HTMLDivElement | null>(null)
+    const [plotRef, setPlotRef] = useState(null)
 
     useEffect(() => {
+        if (plotRef) {
+            plotRef.destroy()
+        }
         if (svgRef.current) {
             const axisElemClass = 'axis-elem'
             const lineElemClass = 'line-elem'
@@ -26,14 +30,15 @@ function Representation({
 
             const axis = new Axis({}, axisElemClass)
             const line = new LinePlot({}, lineElemClass)
-            const plot = new SVGMultipleVisualization({ width, height }, functionElemClass, [axis, line])
-            plot.setContainer(svgRef.current)
-            plot.setup()
+            const functionPlot = new SVGMultipleVisualization({ width, height }, functionElemClass, [axis, line])
+            functionPlot.setContainer(svgRef.current)
+            functionPlot.setup()
             const mappedData = data.map((d: number[]) => {
                 return { x: d[0], y: d[1] }
             })
-            plot.dataUpdate(mappedData, axisElemClass)
-            plot.dataUpdate(mappedData, lineElemClass)
+            functionPlot.dataUpdate(mappedData, axisElemClass)
+            functionPlot.dataUpdate(mappedData, lineElemClass)
+            setPlotRef(functionPlot)
         }
     }, [svgRef])
 
@@ -64,7 +69,6 @@ export default function Activations() {
     // const reluData = getData(relu)
 
     const [vis] = useState(reps)
-
     return (
         <div>
             <h3>Activation Functions</h3>

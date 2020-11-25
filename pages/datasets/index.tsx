@@ -10,8 +10,12 @@ import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 
 function Representation({ data, name, width, height }) {
     const svgRef = useRef(null)
+    const [plotRef, setPlotRef] = useState(null)
 
     useEffect(() => {
+        if (plotRef) {
+            plotRef.destroy()
+        }
         const axisElemClass = 'axis-elem'
         const scatterElemClass = 'scatter-elem'
         const datasetElemClass = 'dataset-elem'
@@ -19,14 +23,15 @@ function Representation({ data, name, width, height }) {
         const axis = new Axis({}, axisElemClass)
         const scatter = new Scatter({}, scatterElemClass)
 
-        const plot = new SVGMultipleVisualization({ width, height }, datasetElemClass, [axis, scatter])
-        plot.setContainer(svgRef.current)
-        plot.setup()
+        const datasetPlot = new SVGMultipleVisualization({ width, height }, datasetElemClass, [axis, scatter])
+        datasetPlot.setContainer(svgRef.current)
+        datasetPlot.setup()
         const mappedData = data.map((d) => {
             return { x: d[0], y: d[1] }
         })
-        plot.dataUpdate(mappedData, axisElemClass)
-        plot.dataUpdate(mappedData, scatterElemClass)
+        datasetPlot.dataUpdate(mappedData, axisElemClass)
+        datasetPlot.dataUpdate(mappedData, scatterElemClass)
+        setPlotRef(datasetPlot)
     }, [svgRef])
 
     return (

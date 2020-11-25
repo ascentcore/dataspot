@@ -23,6 +23,8 @@ export default function Blob() {
     const containerRef = useRef(null)
     const containerRef2 = useRef(null)
     const [value, setValue] = useState(null)
+    const [scatterPlotRef, setScatterPlotRef] = useState(null)
+    const [hierarchyPlotRef, setHierarchyPlotRef] = useState(null)
 
     useEffect(() => {
         // const clusters = hCut(result, value)
@@ -36,18 +38,26 @@ export default function Blob() {
     }, [value])
 
     useEffect(() => {
-        const plot = new Scatter({ width, height })
-        plot.setContainer(containerRef.current)
-        plot.setup()
-        plot.dataUpdate(blobData.map((row, i) => ({ id: i, x: row[0], y: row[1], r: 5 })))
+        if (scatterPlotRef) {
+            scatterPlotRef.destroy()
+        }
+        const scatterPlot = new Scatter({ width, height })
+        scatterPlot.setContainer(containerRef.current)
+        scatterPlot.setup()
+        setScatterPlotRef(scatterPlot)
+        scatterPlot.dataUpdate(blobData.map((row, i) => ({ id: i, x: row[0], y: row[1], r: 5 })))
         setValue(0)
     }, [containerRef])
 
     useEffect(() => {
-        const plot = new HierarchyPlot({ width: 500, height: 1500, layout: 'horizontal', tree: 'cluster' })
-        plot.setContainer(containerRef2.current)
-        plot.setup()
-        plot.dataUpdate(result.index)
+        if (hierarchyPlotRef) {
+            hierarchyPlotRef.destroy()
+        }
+        const hierarchyPlot = new HierarchyPlot({ width: 500, height: 1500, layout: 'horizontal', tree: 'cluster' })
+        hierarchyPlot.setContainer(containerRef2.current)
+        hierarchyPlot.setup()
+        setHierarchyPlotRef(hierarchyPlot)
+        hierarchyPlot.dataUpdate(result.index)
         setValue(0)
     }, [containerRef2])
 
