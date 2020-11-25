@@ -10,9 +10,14 @@ export class KMeansConfig extends CentroidConfig {
 
     public iterations: number = 300
 
+    /** Kmeans initial convergence iterations */
     public convergenceIterations: number = -1
 }
 
+/**
+ * KMeans documentation
+ * 
+ */
 export default class KMeans extends CentroidClustering<KMeansConfig> {
     private convergence!: Convergence
 
@@ -21,6 +26,9 @@ export default class KMeans extends CentroidClustering<KMeansConfig> {
         this.initializeDependencies(distanceFunction)
     }
 
+    /**
+     * Test kmeans step documentation
+     */
     step(): void {
         const { fitData, config } = this
         const { centroids, clusters } = config
@@ -56,6 +64,9 @@ export default class KMeans extends CentroidClustering<KMeansConfig> {
         }
     }
 
+    /**
+     * test kmeans stop documentation
+     */
     canStop(): boolean {
         return this.convergence && this.convergence.hadConverged()
     }

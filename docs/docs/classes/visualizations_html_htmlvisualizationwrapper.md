@@ -1,6 +1,6 @@
 ---
 layout: default
-title: htmlvisualizationwrapper
+title: HTMLVisualizationWrapper
 parent: html
 grand_parent: visualizations
 has_children: false
@@ -8,15 +8,15 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [visualizations.html.htmlvisualizationwrapper](visualizations_html_htmlvisualizationwrapper)
+> [Globals](../globals.md) / [visualizations.html.HTMLVisualizationWrapper](visualizations_html_htmlvisualizationwrapper)
 
-# htmlvisualizationwrapper
+# HTMLVisualizationWrapper
 
 ## Hierarchy
 
-* [visualizations.html.htmlbase](visualizations_html_htmlbase)
+* [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization)
 
-  ↳ **visualizations.html.htmlvisualizationwrapper**
+  ↳ **visualizations.html.HTMLVisualizationWrapper**
 
 ## Index
 
@@ -50,22 +50,22 @@ has_children: false
 
 ### constructor
 
-\+ **new HTMLVisualizationWrapper**(`visualization`: [visualizations.html.htmlbase](visualizations_html_htmlbase), `name`: string, `asHtml`: boolean, `initialData?`: TwoDPointScatter[] \| TwoDPointLine[]): [visualizations.html.htmlvisualizationwrapper](visualizations_html_htmlvisualizationwrapper)
+\+ **new HTMLVisualizationWrapper**(`visualization`: [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization), `name`: string, `asHtml`: boolean, `initialData?`: TwoDPointScatter[] \| TwoDPointLine[]): [visualizations.html.HTMLVisualizationWrapper](visualizations_html_htmlvisualizationwrapper)
 
-*Overrides [visualizations.html.htmlbase](visualizations_html_htmlbase).[constructor](visualizations_html_htmlbase#constructor)*
+*Overrides [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[constructor](visualizations_html_htmlbasevisualization#constructor)*
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L14)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L14)*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`visualization` | [visualizations.html.htmlbase](visualizations_html_htmlbase) |
+`visualization` | [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization) |
 `name` | string |
 `asHtml` | boolean |
 `initialData?` | TwoDPointScatter[] \| TwoDPointLine[] |
 
-**Returns:** [visualizations.html.htmlvisualizationwrapper](visualizations_html_htmlvisualizationwrapper)
+**Returns:** [visualizations.html.HTMLVisualizationWrapper](visualizations_html_htmlvisualizationwrapper)
 
 ## Properties
 
@@ -73,7 +73,7 @@ Name | Type |
 
 • `Private` **asHtml**: boolean
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:19](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L19)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:19](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L19)*
 
 ___
 
@@ -81,9 +81,9 @@ ___
 
 •  **config**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
+*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -91,9 +91,9 @@ ___
 
 • `Protected` **dependencies**: any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
+*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L14)*
+*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L14)*
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -104,9 +104,9 @@ ___
 
 •  **elemClass**: string
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
+*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L8)*
+*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L8)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • `Private` **name**: string
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:18](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L18)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:18](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L18)*
 
 ___
 
@@ -122,25 +122,25 @@ ___
 
 • `Private` **root**: Element \| null
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L14)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L14)*
 
 ___
 
 ### visualization
 
-• `Private` **visualization**: [visualizations.html.htmlbase](visualizations_html_htmlbase)
+• `Private` **visualization**: [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization)
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)*
 
 ## Accessors
 
 ### lab
 
-• get **lab**(): [lab.index](lab_index)
+• get **lab**(): [lab\_index](lab_index)
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:26](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L26)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:26](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L26)*
 
-**Returns:** [lab.index](lab_index)
+**Returns:** [lab\_index](lab_index)
 
 ## Methods
 
@@ -148,9 +148,9 @@ ___
 
 ▸ **dataUpdate**(`data`: TwoDPointScatter[] \| TwoDPointLine[], `elemClass?`: string): function
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
+*Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:52](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L52)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:52](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L52)*
 
 #### Parameters:
 
@@ -167,9 +167,9 @@ ___
 
 ▸ **getDependency**(`key`: string): any
 
-*Inherited from [visualizations.basevisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
+*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/basevisualization.ts#L31)*
+*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/basevisualization.ts#L31)*
 
 #### Parameters:
 
@@ -185,9 +185,9 @@ ___
 
 ▸ **injectDOM**(`document`: any): void
 
-*Inherited from [visualizations.html.htmlbase](visualizations_html_htmlbase).[injectDOM](visualizations_html_htmlbase#injectdom)*
+*Inherited from [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[injectDOM](visualizations_html_htmlbasevisualization#injectdom)*
 
-*Defined in [lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlbase.ts#L20)*
+*Defined in [lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlbase.ts#L20)*
 
 #### Parameters:
 
@@ -201,17 +201,17 @@ ___
 
 ### setContainer
 
-▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.html.htmlbase](visualizations_html_htmlbase)): void
+▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization)): void
 
-*Inherited from [visualizations.html.htmlbase](visualizations_html_htmlbase).[setContainer](visualizations_html_htmlbase#setcontainer)*
+*Inherited from [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[setContainer](visualizations_html_htmlbasevisualization#setcontainer)*
 
-*Defined in [lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlbase.ts#L24)*
+*Defined in [lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlbase.ts#L24)*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`containerRef` | HTMLElement \| [visualizations.html.htmlbase](visualizations_html_htmlbase) |
+`containerRef` | HTMLElement \| [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization) |
 
 **Returns:** void
 
@@ -221,9 +221,9 @@ ___
 
 ▸ **setup**(`initialData?`: any): void
 
-*Overrides [visualizations.basevisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
+*Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:30](https://github.com/ascentcore/dataspot/blob/7114653/lib/visualizations/html/htmlvisualizationwrapper.ts#L30)*
+*Defined in [lib/visualizations/html/htmlvisualizationwrapper.ts:30](https://github.com/ascentcore/dataspot/blob/aa42404/lib/visualizations/html/htmlvisualizationwrapper.ts#L30)*
 
 #### Parameters:
 

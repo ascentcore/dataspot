@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { ParameterReflection } from 'typedoc'
 import { PageEvent } from 'typedoc/dist/lib/output/events'
 
@@ -13,16 +14,8 @@ export function hasChildren(this: PageEvent, shouldEscape = true) {
         const typeParameters = this.model.typeParameters
             .map((typeParameter: ParameterReflection) => typeParameter.name)
             .join(', ')
-        title.push((shouldEscape ? '\\<' : '<') + typeParameters + '>')
+        title.push(`${(shouldEscape ? '\\<' : '<') + typeParameters}>`)
     }
 
-    if (title.length === 1) {
-        return true
-    } else {
-        let newTitle = title[1]
-        const list = newTitle.split('.')
-
-        const lastTwo = list.slice(-2)
-        return lastTwo[0] === lastTwo[1] || lastTwo[1] === 'index'
-    }
+    return title[0] === '@ascentcore/dataspot' || (title && title.length > 1 && title[1].endsWith('_index'))
 }

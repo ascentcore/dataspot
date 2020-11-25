@@ -2,21 +2,21 @@
 layout: default
 title: lab
 parent: Dataspot
-grand_parent: 
+grand_parent: Dataspot
 has_children: true
 ---
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [lab.index](lab_index)
+> [Globals](../globals.md) / [lab\_index](lab_index)
 
 # lab
 
 ## Hierarchy
 
-* [registry.registry](registry_registry)
+* [registry.RegisterInstance](registry_registerinstance)
 
-  ↳ **lab.index**
+  ↳ **lab_index**
 
 ## Index
 
@@ -39,11 +39,11 @@ has_children: true
 
 ### constructor
 
-\+ **new Lab**(`project`: string, `url?`: string): [lab.index](lab_index)
+\+ **new Lab**(`project`: string, `url?`: string): [lab\_index](lab_index)
 
-*Overrides [registry.registry](registry_registry).[constructor](registry_registry#constructor)*
+*Overrides [registry.RegisterInstance](registry_registerinstance).[constructor](registry_registerinstance#constructor)*
 
-*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/7114653/lib/lab/index.ts#L7)*
+*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L7)*
 
 #### Parameters:
 
@@ -52,7 +52,7 @@ Name | Type | Default value |
 `project` | string | - |
 `url` | string | "http://localhost:3000/db" |
 
-**Returns:** [lab.index](lab_index)
+**Returns:** [lab\_index](lab_index)
 
 ## Properties
 
@@ -60,7 +60,7 @@ Name | Type | Default value |
 
 •  **connected**: Promise\<boolean>
 
-*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/7114653/lib/lab/index.ts#L7)*
+*Defined in [lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L7)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • `Private` **db**: any
 
-*Defined in [lib/lab/index.ts:5](https://github.com/ascentcore/dataspot/blob/7114653/lib/lab/index.ts#L5)*
+*Defined in [lib/lab/index.ts:5](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L5)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • `Private` **project**: string
 
-*Defined in [lib/lab/index.ts:9](https://github.com/ascentcore/dataspot/blob/7114653/lib/lab/index.ts#L9)*
+*Defined in [lib/lab/index.ts:9](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L9)*
 
 ## Methods
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **store**(`key`: string, `data`: any): Promise\<any>
 
-*Defined in [lib/lab/index.ts:53](https://github.com/ascentcore/dataspot/blob/7114653/lib/lab/index.ts#L53)*
+*Defined in [lib/lab/index.ts:53](https://github.com/ascentcore/dataspot/blob/aa42404/lib/lab/index.ts#L53)*
 
 #### Parameters:
 
@@ -101,8 +101,8 @@ ___
 
 ▸ **unregister**(): void
 
-*Inherited from [registry.registry](registry_registry).[unregister](registry_registry#unregister)*
+*Inherited from [registry.RegisterInstance](registry_registerinstance).[unregister](registry_registerinstance#unregister)*
 
-*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/registry/registry.ts#L12)*
+*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/registry/registry.ts#L12)*
 
 **Returns:** void

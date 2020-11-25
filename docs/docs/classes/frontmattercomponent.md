@@ -170,7 +170,7 @@ ___
 
 ▸ **escapeYAMLString**(`str`: string): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:62](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L62)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:62](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L62)*
 
 #### Parameters:
 
@@ -186,7 +186,7 @@ ___
 
 ▸ **getDefaultValues**(`page`: PageEvent): object
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:46](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L46)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:46](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L46)*
 
 #### Parameters:
 
@@ -207,7 +207,7 @@ ___
 
 ▸ **getId**(`page`: PageEvent): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:53](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L53)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:53](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L53)*
 
 #### Parameters:
 
@@ -253,7 +253,7 @@ ___
 
 ▸ **getTitle**(`page`: PageEvent): any
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:57](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L57)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:57](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L57)*
 
 #### Parameters:
 
@@ -269,7 +269,7 @@ ___
 
 ▸ **getYamlItems**(`page`: PageEvent): object
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:42](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L42)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:42](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L42)*
 
 #### Parameters:
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **getYamlString**(`yamlItems`: { [key:string]: string \| number \| boolean;  }): string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:28](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L28)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:28](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L28)*
 
 #### Parameters:
 
@@ -308,7 +308,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:13](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L13)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:13](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L13)*
 
 **Returns:** void
 
@@ -507,7 +507,7 @@ ___
 
 ▸ **onPageEnd**(`page`: PageEvent): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L20)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts:20](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/front-matter.component.ts#L20)*
 
 #### Parameters:
 

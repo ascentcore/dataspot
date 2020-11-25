@@ -42,7 +42,7 @@ export function parent(this: PageEvent, grandParent = false) {
     if (res[0] === 'globals.md') {
         return ''
     } else {
-        let newTitle = res[1]
+        const newTitle = res[1]
         const list = newTitle.split('.')
 
         if (list.length === 1) {
@@ -50,7 +50,7 @@ export function parent(this: PageEvent, grandParent = false) {
         } else {
             const lastTwo = list.slice(-2)
             const areSimilar = lastTwo[0] === lastTwo[1] || lastTwo[1] === 'index'
-            list.splice( areSimilar ? -2 : -1)
+            list.splice(areSimilar ? -2 : -1)
 
             if (!grandParent) {
                 if (list.length === 0) {
@@ -58,12 +58,10 @@ export function parent(this: PageEvent, grandParent = false) {
                 } else {
                     return list.slice(-1)[0]
                 }
+            } else if (list.length === 1) {
+                return 'Dataspot'
             } else {
-                if (list.length === 1) {
-                    return 'Dataspot'
-                } else {
-                    return list.slice(-2)[0]
-                }
+                return list.slice(-2)[0]
             }
         }
     }

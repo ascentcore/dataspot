@@ -6,4 +6,7 @@ export * from './clusteringBase'
 export * from './centroidClustering'
 export * from './test'
 
-export default class Documenation {}
+/**
+ * Clustering module documentation
+ */
+export default class ClusteringModuleDocumentation {}

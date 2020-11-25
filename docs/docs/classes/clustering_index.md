@@ -2,16 +2,18 @@
 layout: default
 title: clustering
 parent: Dataspot
-grand_parent: 
+grand_parent: Dataspot
 has_children: true
 ---
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [clustering.index](clustering_index)
+> [Globals](../globals.md) / [clustering\_index](clustering_index)
 
 # clustering
 
+Clustering module documentation
+
 ## Hierarchy
 
-* **clustering.index**
+* **clustering_index**

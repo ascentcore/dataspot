@@ -1,6 +1,6 @@
 ---
 layout: default
-title: kMeans
+title: KMeans
 parent: clustering
 grand_parent: Dataspot
 has_children: false
@@ -8,19 +8,17 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [clustering.kMeans](clustering_kmeans)
+> [Globals](../globals.md) / [clustering.KMeans](clustering_kmeans)
 
-# kMeans
+# KMeans
+
+KMeans documentation
 
 ## Hierarchy
 
-* [clustering.centroidClustering](clustering_centroidclustering)
+* [clustering.CentroidClustering](clustering_centroidclustering)\<[clustering.KMeansConfig](clustering_kmeansconfig)>
 
-  ↳ **clustering.kMeans**
-
-## Indexable
-
-▪ [key: string]: SerializableType
+  ↳ **clustering.KMeans**
 
 ## Index
 
@@ -30,17 +28,12 @@ has_children: false
 
 ### Properties
 
-* [centroids](clustering_kmeans#centroids)
-* [clusters](clustering_kmeans#clusters)
 * [config](clustering_kmeans#config)
 * [convergence](clustering_kmeans#convergence)
-* [convergenceIterations](clustering_kmeans#convergenceiterations)
-* [distanceFn](clustering_kmeans#distancefn)
 * [distanceFunc](clustering_kmeans#distancefunc)
 * [fitData](clustering_kmeans#fitdata)
 * [initialized](clustering_kmeans#initialized)
 * [iteration](clustering_kmeans#iteration)
-* [iterations](clustering_kmeans#iterations)
 * [labels](clustering_kmeans#labels)
 
 ### Methods
@@ -61,74 +54,38 @@ has_children: false
 
 ### constructor
 
-\+ **new KMeans**(`config?`: [clustering.kMeans](clustering_kmeans) \| undefined, `distanceFunction?`: DistanceMeasurement \| undefined): KMeans
+\+ **new KMeans**(`config?`: [clustering.KMeansConfig](clustering_kmeansconfig) \| undefined, `distanceFunction?`: DistanceMeasurement \| undefined): [clustering.KMeans](clustering_kmeans)
 
-*Overrides [clustering.centroidClustering](clustering_centroidclustering).[constructor](clustering_centroidclustering#constructor)*
+*Overrides [clustering.CentroidClustering](clustering_centroidclustering).[constructor](clustering_centroidclustering#constructor)*
 
-*Defined in [lib/clustering/kMeans.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L17)*
+*Defined in [lib/clustering/kMeans.ts:22](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/kMeans.ts#L22)*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`config?` | [clustering.kMeans](clustering_kmeans) \| undefined |
+`config?` | [clustering.KMeansConfig](clustering_kmeansconfig) \| undefined |
 `distanceFunction?` | DistanceMeasurement \| undefined |
 
-**Returns:** KMeans
+**Returns:** [clustering.KMeans](clustering_kmeans)
 
 ## Properties
 
-### centroids
-
-•  **centroids**: number[][] = []
-
-*Inherited from [clustering.centroidClustering](clustering_centroidclustering).[centroids](clustering_centroidclustering#centroids)*
-
-*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/centroidClustering.ts#L6)*
-
-___
-
-### clusters
-
-•  **clusters**: number = 8
-
-*Defined in [lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L9)*
-
-___
-
 ### config
 
-•  **config**: [clustering.kMeans](clustering_kmeans)
+•  **config**: [clustering.KMeansConfig](clustering_kmeansconfig)
 
-*Inherited from [common.serializable](common_serializable).[config](common_serializable#config)*
+*Inherited from [common.Serializable](common_serializable).[config](common_serializable#config)*
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L8)*
+*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L8)*
 
 ___
 
 ### convergence
 
-• `Private` **convergence**: [common.convergence](common_convergence)
+• `Private` **convergence**: [common.Convergence](common_convergence)
 
-*Defined in [lib/clustering/kMeans.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L17)*
-
-___
-
-### convergenceIterations
-
-•  **convergenceIterations**: number = -1
-
-*Defined in [lib/clustering/kMeans.ts:13](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L13)*
-
-___
-
-### distanceFn
-
-•  **distanceFn**: string = "euclideanDistance"
-
-*Inherited from [clustering.centroidClustering](clustering_centroidclustering).[distanceFn](clustering_centroidclustering#distancefn)*
-
-*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/centroidClustering.ts#L8)*
+*Defined in [lib/clustering/kMeans.ts:22](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/kMeans.ts#L22)*
 
 ___
 
@@ -136,9 +93,9 @@ ___
 
 • `Protected` **distanceFunc**: Function
 
-*Inherited from [clustering.centroidClustering](clustering_centroidclustering).[distanceFunc](clustering_centroidclustering#distancefunc)*
+*Inherited from [clustering.CentroidClustering](clustering_centroidclustering).[distanceFunc](clustering_centroidclustering#distancefunc)*
 
-*Defined in [lib/clustering/centroidClustering.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/centroidClustering.ts#L12)*
+*Defined in [lib/clustering/centroidClustering.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L12)*
 
 ___
 
@@ -146,9 +103,9 @@ ___
 
 • `Protected` **fitData**: number[][]
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[fitData](clustering_clusteringbase#fitdata)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fitData](clustering_clusteringalgorithm#fitdata)*
 
-*Defined in lib/clustering/clusteringBase.ts:4*
+*Defined in [lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L4)*
 
 ___
 
@@ -156,9 +113,9 @@ ___
 
 • `Protected` **initialized**: boolean = false
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[initialized](clustering_clusteringbase#initialized)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[initialized](clustering_clusteringalgorithm#initialized)*
 
-*Defined in lib/clustering/clusteringBase.ts:8*
+*Defined in [lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L8)*
 
 ___
 
@@ -166,19 +123,9 @@ ___
 
 • `Protected` **iteration**: number = 0
 
-*Inherited from [common.evolutionaryAlgorithm](common_evolutionaryalgorithm).[iteration](common_evolutionaryalgorithm#iteration)*
+*Inherited from [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[iteration](common_evolutionaryalgorithm#iteration)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/evolutionaryAlgorithm.ts#L8)*
-
-___
-
-### iterations
-
-•  **iterations**: number = 300
-
-*Overrides [common.evolutionaryAlgorithm](common_evolutionaryalgorithm).[iterations](common_evolutionaryalgorithm#iterations)*
-
-*Defined in [lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L11)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L8)*
 
 ___
 
@@ -186,9 +133,9 @@ ___
 
 • `Protected` **labels**: number[]
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[labels](clustering_clusteringbase#labels)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[labels](clustering_clusteringalgorithm#labels)*
 
-*Defined in lib/clustering/clusteringBase.ts:6*
+*Defined in [lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L6)*
 
 ## Methods
 
@@ -196,9 +143,11 @@ ___
 
 ▸ **canStop**(): boolean
 
-*Overrides [clustering.clusteringBase](clustering_clusteringbase).[canStop](clustering_clusteringbase#canstop)*
+*Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[canStop](clustering_clusteringalgorithm#canstop)*
 
-*Defined in [lib/clustering/kMeans.ts:59](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L59)*
+*Defined in [lib/clustering/kMeans.ts:70](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/kMeans.ts#L70)*
+
+test kmeans stop documentation
 
 **Returns:** boolean
 
@@ -208,9 +157,9 @@ ___
 
 ▸ **fit**(`data`: number[][]): number[]
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[fit](clustering_clusteringbase#fit)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fit](clustering_clusteringalgorithm#fit)*
 
-*Defined in lib/clustering/clusteringBase.ts:30*
+*Defined in [lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L30)*
 
 #### Parameters:
 
@@ -226,9 +175,9 @@ ___
 
 ▸ **fitAsync**(`data`: number[][]): Generator
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[fitAsync](clustering_clusteringbase#fitasync)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fitAsync](clustering_clusteringalgorithm#fitasync)*
 
-*Defined in lib/clustering/clusteringBase.ts:19*
+*Defined in [lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L19)*
 
 #### Parameters:
 
@@ -244,9 +193,9 @@ ___
 
 ▸ **initializeDependencies**(`distanceFunction?`: DistanceMeasurement): void
 
-*Inherited from [clustering.centroidClustering](clustering_centroidclustering).[initializeDependencies](clustering_centroidclustering#initializedependencies)*
+*Inherited from [clustering.CentroidClustering](clustering_centroidclustering).[initializeDependencies](clustering_centroidclustering#initializedependencies)*
 
-*Defined in [lib/clustering/centroidClustering.ts:55](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/centroidClustering.ts#L55)*
+*Defined in [lib/clustering/centroidClustering.ts:55](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L55)*
 
 #### Parameters:
 
@@ -262,11 +211,11 @@ ___
 
 ▸ **loadState**(`config`: string): void
 
-*Inherited from [clustering.centroidClustering](clustering_centroidclustering).[loadState](clustering_centroidclustering#loadstate)*
+*Inherited from [clustering.CentroidClustering](clustering_centroidclustering).[loadState](clustering_centroidclustering#loadstate)*
 
-*Overrides [common.serializable](common_serializable).[loadState](common_serializable#loadstate)*
+*Overrides [common.Serializable](common_serializable).[loadState](common_serializable#loadstate)*
 
-*Defined in [lib/clustering/centroidClustering.ts:49](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/centroidClustering.ts#L49)*
+*Defined in [lib/clustering/centroidClustering.ts:49](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L49)*
 
 #### Parameters:
 
@@ -282,9 +231,9 @@ ___
 
 ▸ **onEndFit**(): void
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[onEndFit](clustering_clusteringbase#onendfit)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[onEndFit](clustering_clusteringalgorithm#onendfit)*
 
-*Defined in lib/clustering/clusteringBase.ts:41*
+*Defined in [lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L41)*
 
 **Returns:** void
 
@@ -294,11 +243,11 @@ ___
 
 ▸ **predict**(`data`: number[][]): number[]
 
-*Inherited from [clustering.centroidClustering](clustering_centroidclustering).[predict](clustering_centroidclustering#predict)*
+*Inherited from [clustering.CentroidClustering](clustering_centroidclustering).[predict](clustering_centroidclustering#predict)*
 
-*Overrides [clustering.clusteringBase](clustering_clusteringbase).[predict](clustering_clusteringbase#predict)*
+*Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[predict](clustering_clusteringalgorithm#predict)*
 
-*Defined in [lib/clustering/centroidClustering.ts:19](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/centroidClustering.ts#L19)*
+*Defined in [lib/clustering/centroidClustering.ts:19](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/centroidClustering.ts#L19)*
 
 #### Parameters:
 
@@ -314,9 +263,9 @@ ___
 
 ▸ `Protected`**prepareDataset**(`data`: number[][]): void
 
-*Inherited from [clustering.clusteringBase](clustering_clusteringbase).[prepareDataset](clustering_clusteringbase#preparedataset)*
+*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[prepareDataset](clustering_clusteringalgorithm#preparedataset)*
 
-*Defined in lib/clustering/clusteringBase.ts:10*
+*Defined in [lib/clustering/clusteringBase.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/clusteringBase.ts#L10)*
 
 #### Parameters:
 
@@ -332,9 +281,9 @@ ___
 
 ▸ **serialize**(): string
 
-*Inherited from [common.serializable](common_serializable).[serialize](common_serializable#serialize)*
+*Inherited from [common.Serializable](common_serializable).[serialize](common_serializable#serialize)*
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L10)*
+*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L10)*
 
 **Returns:** string
 
@@ -344,9 +293,9 @@ ___
 
 ▸ **shouldStop**(): boolean
 
-*Inherited from [common.evolutionaryAlgorithm](common_evolutionaryalgorithm).[shouldStop](common_evolutionaryalgorithm#shouldstop)*
+*Inherited from [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[shouldStop](common_evolutionaryalgorithm#shouldstop)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/evolutionaryAlgorithm.ts#L10)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L10)*
 
 **Returns:** boolean
 
@@ -356,8 +305,10 @@ ___
 
 ▸ **step**(): void
 
-*Overrides [common.evolutionaryAlgorithm](common_evolutionaryalgorithm).[step](common_evolutionaryalgorithm#step)*
+*Overrides [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[step](common_evolutionaryalgorithm#step)*
 
-*Defined in [lib/clustering/kMeans.ts:24](https://github.com/ascentcore/dataspot/blob/7114653/lib/clustering/kMeans.ts#L24)*
+*Defined in [lib/clustering/kMeans.ts:32](https://github.com/ascentcore/dataspot/blob/aa42404/lib/clustering/kMeans.ts#L32)*
+
+Test kmeans step documentation
 
 **Returns:** void

@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -32,14 +33,24 @@ export class MarkdownPlugin extends ConverterComponent {
     private onDeclarationBegin(context: Context, reflection: Reflection, node?: any) {
         if (!node) return
         const { fileName } = node.parent
-        let match = new RegExp('.*/lib/(.*)').exec(fileName)
-
+        const match = new RegExp('.*/lib/(.*)').exec(fileName)
         /*
          */
-        if (null != match) {
-            console.log(' Mapping ', fileName, ' ==> ', match[1].replace(/\.ts$/g, '').split('/').join('.'))
+        if (match != null) {
+            console.log(
+                ' Mapping ',
+                fileName,
+                ' ==> ',
+                match[1]
+                    .replace(/\.ts$/g, '')
+                    .split('/')
+                    .join('.')
+            )
             this.moduleRenames.push({
-                renameTo: match[1].replace(/\.ts$/g, '').split('/').join('.'),
+                renameTo: match[1]
+                    .replace(/\.ts$/g, '')
+                    .split('/')
+                    .join('.'),
                 reflection: <ContainerReflection>reflection
             })
         }
@@ -74,47 +85,65 @@ export class MarkdownPlugin extends ConverterComponent {
         // Set the default markdown theme
         this.application.options.setValue('theme', path.join(__dirname))
 
-        let projRefs: any = context.project.reflections
-        let refsArray: Reflection[] = Object.keys(projRefs).reduce((m: any, k) => {
-            m.push(projRefs[k])
-            return m
-        }, [])
+        this.moduleRenames.forEach((item) => {
+            const renaming = <ContainerReflection>item.reflection
+            if (item.reflection.parent) {
+                const list = item.renameTo.split('.')
+                const last = list.splice(-1)[0]
+                if (last === 'index') {
+                    const val = `${list.join('.')}_index`
+                    renaming.name = val
+                } else {
+                    renaming.name = `${list.join('.')}${list.length ? '.' : ''}${item.reflection.originalName}`
+                }
+            }
+
+            // context.project.removeReflection(renaming, true)
+        })
+
+        // const projRefs: any = context.project.reflections
+        // const refsArray: Reflection[] = Object.keys(projRefs).reduce((m: any, k) => {
+        //     m.push(projRefs[k])
+        //     return m
+        // }, [])
 
         // Process each rename
-        this.moduleRenames.forEach((item) => {
-            let renaming = <ContainerReflection>item.reflection
+        // this.moduleRenames.forEach((item) => {
+        //     const renaming = <ContainerReflection>item.reflection
 
-            // Find an existing module that already has the "rename to" name.  Use it as the merge target.
-            let mergeTarget = <ContainerReflection>(
-                refsArray.filter((ref) => ref.kind === renaming.kind && ref.name === item.renameTo)[0]
-            )
+        //     // Find an existing module that already has the "rename to" name.  Use it as the merge target.
+        //     const mergeTarget = <ContainerReflection[]>refsArray.filter((ref) => {
+        //         return ref.kind === renaming.kind && ref.name === item.renameTo
+        //     })
 
-            // If there wasn't a merge target, just change the name of the current module and exit.
-            if (!mergeTarget) {
-                renaming.name = item.renameTo
-                return
-            }
+        //     console.log('...', item.renameTo, renaming.name, mergeTarget.length)
 
-            if (!mergeTarget.children) {
-                mergeTarget.children = []
-            }
+        //     // If there wasn't a merge target, just change the name of the current module and exit.
+        //     if (!mergeTarget[0]) {
+        //         renaming.name = `${item.renameTo}.${renaming.name}`
+        //         return
+        //     }
 
-            // Since there is a merge target, relocate all the renaming module's children to the mergeTarget.
-            let childrenOfRenamed = refsArray.filter((ref) => ref.parent === renaming)
-            childrenOfRenamed.forEach((ref: Reflection) => {
-                // update links in both directions
+        //     // if (!mergeTarget.children) {
+        //     //     mergeTarget.children = []
+        //     // }
 
-                //console.log(' merging ', mergeTarget, ref);
-                ref.parent = mergeTarget
-                mergeTarget?.children?.push(<any>ref)
-            })
+        //     // // Since there is a merge target, relocate all the renaming module's children to the mergeTarget.
+        //     // let childrenOfRenamed = refsArray.filter((ref) => ref.parent === renaming)
+        //     // childrenOfRenamed.forEach((ref: Reflection) => {
+        //     //     // update links in both directions
 
-            // Now that all the children have been relocated to the mergeTarget, delete the empty module
-            // Make sure the module being renamed doesn't have children, or they will be deleted
-            if (renaming.children) renaming.children.length = 0
+        //     //     //console.log(' merging ', mergeTarget, ref);
+        //     //     ref.parent = mergeTarget
+        //     //     mergeTarget?.children?.push(<any>ref)
+        //     // })
 
-            context.project.removeReflection(renaming, true)
-        })
+        //     // // Now that all the children have been relocated to the mergeTarget, delete the empty module
+        //     // // Make sure the module being renamed doesn't have children, or they will be deleted
+        //     // if (renaming.children) renaming.children.length = 0
+
+        //     context.project.removeReflection(renaming, true)
+        // })
     }
 
     /**

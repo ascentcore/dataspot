@@ -8,10 +8,12 @@ has_children: true
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [visualizations.d3.index](visualizations_d3_index)
+> [Globals](../globals.md) / [visualizations.d3\_index](visualizations_d3_index)
 
 # d3
 
+D3 Visualization Documentation
+
 ## Hierarchy
 
-* **visualizations.d3.index**
+* **visualizations.d3_index**

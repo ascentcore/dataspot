@@ -21,6 +21,7 @@ export function reflectionTitle(this: PageEvent, shouldEscape = true, nameOnly =
     } else if (nameOnly) {
         let newTitle = title[1]
         newTitle = newTitle.replace(/\.ts$/g, '')
+        newTitle = newTitle.replace('\\_index', '')
         const list = newTitle.split('.')
         let lastElement: any = list.splice(-1)[0]
         if (lastElement === 'index') {

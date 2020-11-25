@@ -1,6 +1,6 @@
 ---
 layout: default
-title: serializable
+title: Serializable
 parent: common
 grand_parent: Dataspot
 has_children: false
@@ -8,19 +8,25 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [common.serializable](common_serializable)
+> [Globals](../globals.md) / [common.Serializable](common_serializable)
 
-# serializable
+# Serializable
+
+## Type parameters
+
+Name | Type |
+------ | ------ |
+`T` | [common.SerializableConfig](common_serializableconfig) |
 
 ## Hierarchy
 
-* **common.serializable**
+* **common.Serializable**
 
-  ↳ [common.evolutionaryAlgorithm](common_evolutionaryalgorithm)
+  ↳ [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm)
 
 ## Indexable
 
-▪ [key: string]: SerializableType
+▪ [key: string]: string \| number \| boolean \| string[] \| number[] \| boolean[]
 
 ## Index
 
@@ -41,9 +47,9 @@ has_children: false
 
 ### constructor
 
-\+ **new Serializable**(`config`: T): Serializable
+\+ **new Serializable**(`config`: T): [common.Serializable](common_serializable)
 
-*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L7)*
+*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L7)*
 
 #### Parameters:
 
@@ -51,7 +57,7 @@ Name | Type |
 ------ | ------ |
 `config` | T |
 
-**Returns:** Serializable
+**Returns:** [common.Serializable](common_serializable)
 
 ## Properties
 
@@ -59,7 +65,7 @@ Name | Type |
 
 •  **config**: T
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L8)*
+*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L8)*
 
 ## Methods
 
@@ -67,7 +73,7 @@ Name | Type |
 
 ▸ **loadState**(`from`: string): void
 
-*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L14)*
+*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L14)*
 
 #### Parameters:
 
@@ -83,6 +89,6 @@ ___
 
 ▸ **serialize**(): string
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L10)*
+*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L10)*
 
 **Returns:** string

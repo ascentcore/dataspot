@@ -1,6 +1,6 @@
 ---
 layout: default
-title: objectLike
+title: ObjectLike
 parent: models
 grand_parent: Dataspot
 has_children: false
@@ -8,15 +8,15 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [models.objectLike](models_objectlike)
+> [Globals](../globals.md) / [models.ObjectLike](models_objectlike)
 
-# objectLike
+# ObjectLike
 
 Defines any kind of object with key - value pairs
 
 ## Hierarchy
 
-* **models.objectLike**
+* **models.ObjectLike**
 
 ## Indexable
 

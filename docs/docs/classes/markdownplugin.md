@@ -91,7 +91,7 @@ ___
 
 •  **moduleRenames**: any[] = []
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L12)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:13](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L13)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 •  **theme**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:15](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L15)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:16](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L16)*
 
 ## Accessors
 
@@ -164,7 +164,7 @@ ___
 
 *Overrides [MarkdownTheme](markdowntheme).[initialize](markdowntheme#initialize)*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L17)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:18](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L18)*
 
 **Returns:** void
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **isMarkdownTheme**(`themeFileName`: string): boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:123](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L123)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:152](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L152)*
 
 Checks if the custom theme class is initiated from markdown theme
 
@@ -345,7 +345,7 @@ ___
 
 ▸ **onBegin**(): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:28](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L28)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:29](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L29)*
 
 Overide default assets
 
@@ -357,7 +357,7 @@ ___
 
 ▸ `Private`**onDeclarationBegin**(`context`: Context, `reflection`: Reflection, `node?`: any): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:32](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L32)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:33](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L33)*
 
 #### Parameters:
 
@@ -375,7 +375,7 @@ ___
 
 ▸ **onResolveBegin**(`context`: Context): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:51](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L51)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:62](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L62)*
 
 Load markdown theme and perform additional checks
 
@@ -468,7 +468,7 @@ ___
 
 ▸ **upgradeMessages**(`theme`: string): void
 
-*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:132](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/plugin.ts#L132)*
+*Defined in [plugins/typedoc-plugin-markdown/src/plugin.ts:161](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/plugin.ts#L161)*
 
 #### Parameters:
 

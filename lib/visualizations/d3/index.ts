@@ -6,4 +6,7 @@ export * from './svgbase'
 export * from './svgmultiple'
 export * from './svgvisualizationwrapper'
 
-export default class Documentation {}
+/**
+ * D3 Visualization Documentation
+ */
+export default class D3VizModuleDocumentation {}

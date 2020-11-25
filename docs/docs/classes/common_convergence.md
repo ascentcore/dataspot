@@ -1,6 +1,6 @@
 ---
 layout: default
-title: convergence
+title: Convergence
 parent: common
 grand_parent: Dataspot
 has_children: false
@@ -8,13 +8,13 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [common.convergence](common_convergence)
+> [Globals](../globals.md) / [common.Convergence](common_convergence)
 
-# convergence
+# Convergence
 
 ## Hierarchy
 
-* **common.convergence**
+* **common.Convergence**
 
 ## Index
 
@@ -36,9 +36,9 @@ has_children: false
 
 ### constructor
 
-\+ **new Convergence**(`historySize?`: number): [common.convergence](common_convergence)
+\+ **new Convergence**(`historySize?`: number): [common.Convergence](common_convergence)
 
-*Defined in [lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/convergence.ts#L2)*
+*Defined in [lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/convergence.ts#L2)*
 
 #### Parameters:
 
@@ -46,7 +46,7 @@ Name | Type | Default value |
 ------ | ------ | ------ |
 `historySize` | number | 2 |
 
-**Returns:** [common.convergence](common_convergence)
+**Returns:** [common.Convergence](common_convergence)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Name | Type | Default value |
 
 •  **history**: Array\<string> = []
 
-*Defined in [lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/convergence.ts#L2)*
+*Defined in [lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/convergence.ts#L2)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • `Private` **historySize**: number
 
-*Defined in [lib/common/convergence.ts:4](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/convergence.ts#L4)*
+*Defined in [lib/common/convergence.ts:4](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/convergence.ts#L4)*
 
 ## Methods
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **addValue**(`newRow`: any): void
 
-*Defined in [lib/common/convergence.ts:6](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/convergence.ts#L6)*
+*Defined in [lib/common/convergence.ts:6](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/convergence.ts#L6)*
 
 #### Parameters:
 
@@ -86,6 +86,6 @@ ___
 
 ▸ **hadConverged**(): boolean
 
-*Defined in [lib/common/convergence.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/convergence.ts#L14)*
+*Defined in [lib/common/convergence.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/convergence.ts#L14)*
 
 **Returns:** boolean

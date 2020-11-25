@@ -1,6 +1,6 @@
 ---
 layout: default
-title: evolutionaryAlgorithm
+title: EvolutionaryAlgorithm
 parent: common
 grand_parent: Dataspot
 has_children: false
@@ -8,25 +8,23 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [common.evolutionaryAlgorithm](common_evolutionaryalgorithm)
+> [Globals](../globals.md) / [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm)
 
-# evolutionaryAlgorithm
+# EvolutionaryAlgorithm
+
+## Type parameters
+
+Name | Type |
+------ | ------ |
+`T` | [common.EvolutionaryConfig](common_evolutionaryconfig) |
 
 ## Hierarchy
 
-* [common.serializable](common_serializable)
+* [common.Serializable](common_serializable)\<T>
 
-  ↳ **common.evolutionaryAlgorithm**
+  ↳ **common.EvolutionaryAlgorithm**
 
-  ↳↳ [clustering.centroidClustering](clustering_centroidclustering)
-
-  ↳↳ [clustering.dbScan](clustering_dbscan)
-
-  ↳↳ [clustering.agglomerativeClustering](clustering_agglomerativeclustering)
-
-## Indexable
-
-▪ [key: string]: SerializableType
+  ↳↳ [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm)
 
 ## Index
 
@@ -38,7 +36,6 @@ has_children: false
 
 * [config](common_evolutionaryalgorithm#config)
 * [iteration](common_evolutionaryalgorithm#iteration)
-* [iterations](common_evolutionaryalgorithm#iterations)
 
 ### Methods
 
@@ -51,11 +48,11 @@ has_children: false
 
 ### constructor
 
-\+ **new EvolutionaryAlgorithm**(`config`: T): EvolutionaryAlgorithm
+\+ **new EvolutionaryAlgorithm**(`config`: T): [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm)
 
-*Inherited from [common.serializable](common_serializable).[constructor](common_serializable#constructor)*
+*Inherited from [common.Serializable](common_serializable).[constructor](common_serializable#constructor)*
 
-*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L7)*
+*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L7)*
 
 #### Parameters:
 
@@ -63,7 +60,7 @@ Name | Type |
 ------ | ------ |
 `config` | T |
 
-**Returns:** EvolutionaryAlgorithm
+**Returns:** [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm)
 
 ## Properties
 
@@ -71,9 +68,9 @@ Name | Type |
 
 •  **config**: T
 
-*Inherited from [common.serializable](common_serializable).[config](common_serializable#config)*
+*Inherited from [common.Serializable](common_serializable).[config](common_serializable#config)*
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L8)*
+*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L8)*
 
 ___
 
@@ -81,15 +78,7 @@ ___
 
 • `Protected` **iteration**: number = 0
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/evolutionaryAlgorithm.ts#L8)*
-
-___
-
-### iterations
-
-•  **iterations**: number = 100
-
-*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/evolutionaryAlgorithm.ts#L4)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L8)*
 
 ## Methods
 
@@ -97,9 +86,9 @@ ___
 
 ▸ **loadState**(`from`: string): void
 
-*Inherited from [common.serializable](common_serializable).[loadState](common_serializable#loadstate)*
+*Inherited from [common.Serializable](common_serializable).[loadState](common_serializable#loadstate)*
 
-*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L14)*
+*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L14)*
 
 #### Parameters:
 
@@ -115,9 +104,9 @@ ___
 
 ▸ **serialize**(): string
 
-*Inherited from [common.serializable](common_serializable).[serialize](common_serializable#serialize)*
+*Inherited from [common.Serializable](common_serializable).[serialize](common_serializable#serialize)*
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/serializable.ts#L10)*
+*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/serializable.ts#L10)*
 
 **Returns:** string
 
@@ -127,7 +116,7 @@ ___
 
 ▸ **shouldStop**(): boolean
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/evolutionaryAlgorithm.ts#L10)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L10)*
 
 **Returns:** boolean
 
@@ -137,6 +126,6 @@ ___
 
 ▸ `Abstract`**step**(): any
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/lib/common/evolutionaryAlgorithm.ts#L14)*
+*Defined in [lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/lib/common/evolutionaryAlgorithm.ts#L14)*
 
 **Returns:** any

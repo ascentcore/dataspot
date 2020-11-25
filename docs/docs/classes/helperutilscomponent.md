@@ -95,7 +95,7 @@ ___
 
 •  **hideBreadcrumbs**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:20](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L20)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:20](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L20)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 •  **hideProjectName**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:17](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L17)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:17](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L17)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 •  **hideSources**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:23](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L23)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:23](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L23)*
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 •  **namedAnchors**: boolean
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:14](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L14)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:14](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L14)*
 
 ___
 
@@ -137,7 +137,7 @@ ___
 
 •  **publicPath**: string
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:11](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L11)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:11](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L11)*
 
 ___
 
@@ -240,7 +240,7 @@ ___
 
 *Overrides void*
 
-*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:25](https://github.com/ascentcore/dataspot/blob/7114653/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L25)*
+*Defined in [plugins/typedoc-plugin-markdown/src/components/utils.component.ts:25](https://github.com/ascentcore/dataspot/blob/aa42404/plugins/typedoc-plugin-markdown/src/components/utils.component.ts#L25)*
 
 **Returns:** void
 

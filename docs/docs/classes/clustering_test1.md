@@ -1,6 +1,6 @@
 ---
 layout: default
-title: test
+title: Test1
 parent: clustering
 grand_parent: Dataspot
 has_children: false
@@ -8,10 +8,12 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [clustering.test](clustering_test)
+> [Globals](../globals.md) / [clustering.Test1](clustering_test1)
 
-# test
+# Test1
+
+Test with documentation
 
 ## Hierarchy
 
-* **clustering.test**
+* **clustering.Test1**

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: types
+title: Step
 parent: pipeline
 grand_parent: Dataspot
 has_children: false
@@ -8,9 +8,9 @@ has_children: false
 
 **[@ascentcore/dataspot](../README.md)**
 
-> [Globals](../globals.md) / [pipeline.types](pipeline_types)
+> [Globals](../globals.md) / [pipeline.Step](pipeline_step)
 
-# types
+# Step
 
 Pipeline step interface
 
@@ -23,30 +23,30 @@ Name |
 
 ## Hierarchy
 
-* **pipeline.types**
+* **pipeline.Step**
 
-  ↳ [pipeline.pipeline](pipeline_pipeline)
+  ↳ [pipeline.Pipeline](pipeline_pipeline)
 
 ## Index
 
 ### Properties
 
-* [state](pipeline_types#state)
+* [state](pipeline_step#state)
 
 ### Methods
 
-* [execute](pipeline_types#execute)
-* [getStateKey](pipeline_types#getstatekey)
-* [setState](pipeline_types#setstate)
-* [setStateKey](pipeline_types#setstatekey)
+* [execute](pipeline_step#execute)
+* [getStateKey](pipeline_step#getstatekey)
+* [setState](pipeline_step#setstate)
+* [setStateKey](pipeline_step#setstatekey)
 
 ## Properties
 
 ### state
 
-• `Protected` **state**: [models.objectLike](../interfaces/models_objectlike)
+• `Protected` **state**: [models.ObjectLike](../interfaces/models_objectlike)
 
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L12)*
+*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L12)*
 
 Internal pipeline state reference
 
@@ -56,7 +56,7 @@ Internal pipeline state reference
 
 ▸ `Abstract`**execute**(`data`: T): Promise\<K>
 
-*Defined in [lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L43)*
+*Defined in [lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L43)*
 
 Execute a step in the pipeline and return a promise to the next element in pipe
 
@@ -74,7 +74,7 @@ ___
 
 ▸ **getStateKey**(`key`: string): any
 
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L35)*
+*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L35)*
 
 Return value at key from storage
 
@@ -90,9 +90,9 @@ ___
 
 ### setState
 
-▸ **setState**(`value`: [models.objectLike](../interfaces/models_objectlike)): void
+▸ **setState**(`value`: [models.ObjectLike](../interfaces/models_objectlike)): void
 
-*Defined in [lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L18)*
+*Defined in [lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L18)*
 
 Set state reference
 
@@ -100,7 +100,7 @@ Set state reference
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`value` | [models.objectLike](../interfaces/models_objectlike) | pipeline state reference  |
+`value` | [models.ObjectLike](../interfaces/models_objectlike) | pipeline state reference  |
 
 **Returns:** void
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **setStateKey**(`key`: string, `value`: any): void
 
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/7114653/lib/pipeline/types.ts#L27)*
+*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/aa42404/lib/pipeline/types.ts#L27)*
 
 Set state property
 
