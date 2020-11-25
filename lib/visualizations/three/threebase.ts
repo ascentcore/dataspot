@@ -21,12 +21,22 @@ export default abstract class ThreeBaseVisualization extends BaseVisualization {
         Object.assign(this.dependencies, { three: THREE })
     }
 
-    public setContainer(containerRef: HTMLElement) {
+    public setContainer(containerRef: HTMLElement | ThreeBaseVisualization) {
         const { width, height } = this.config
+        const { three } = this.dependencies
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true })
-        renderer.setSize(width, height)
-        containerRef.appendChild(renderer.domElement)
-        Object.assign(this.dependencies, { renderer, containerRef })
+        if (containerRef instanceof HTMLElement) {
+            const renderer = new THREE.WebGLRenderer({ antialias: true })
+            renderer.setSize(width, height)
+            containerRef.appendChild(renderer.domElement)
+            const scene = new three.Scene()
+            Object.assign(this.dependencies, { renderer, containerRef, scene })
+        } else {
+            Object.assign(this.dependencies, {
+                renderer: containerRef.getDependency('renderer'),
+                containerRef: containerRef.getDependency('containerRef'),
+                scene: containerRef.getDependency('scene')
+            })
+        }
     }
 }

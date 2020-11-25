@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import ThreeBaseVisualization from './threebase'
+import { FunctioDefinitionMesh } from '../../models/types'
 
 const OrbitControls = require('three-orbit-controls')(THREE)
 
@@ -7,18 +8,11 @@ export default class MeshPlot extends ThreeBaseVisualization {
     setup() {}
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    dataUpdate(data: {
-        zFunc: (x: number, y: number) => number
-        xMin: number
-        xMax: number
-        yMin: number
-        yMax: number
-    }) {
-        const { three, renderer } = this.dependencies
+    dataUpdate(data: FunctioDefinitionMesh) {
+        const { three, renderer, scene } = this.dependencies
         const { segments, width, height } = this.config
 
         let frameId: number
-        const scene = new three.Scene()
         scene.background = new three.Color(0xffffff)
 
         const camera = new three.PerspectiveCamera(50, width / height, 0.1, 100000)
