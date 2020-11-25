@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import Ackley, { DOMAIN as ACKLEY_DOMAIN, GLOBAL_M as ACKLEY_GLOBAL_M } from '../../lib/dataset/benchmark/ackley'
+import Schwefel, {
+    DOMAIN as SCHWEFEL_DOMAIN,
+    GLOBAL_M as SCHWEFEL_GLOBAL_M
+} from '../../lib/dataset/benchmark/schwefel'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import Axis from '../../lib/visualizations/d3/axis'
 import Scatter from '../../lib/visualizations/d3/scatter'
@@ -28,7 +32,10 @@ function Representation({
     width,
     height,
     domain,
-    globalM
+    globalM,
+    radius,
+    resultMin,
+    resultMax
 }: {
     ff: (...input: number[]) => number
     type: string
@@ -37,6 +44,9 @@ function Representation({
     height: number
     domain: number[]
     globalM: number[]
+    radius: number
+    resultMin: number
+    resultMax: number
 }) {
     const containerRef = useRef<HTMLDivElement | null>(null)
     const [plot, setPlot] = useState(null)
@@ -62,7 +72,7 @@ function Representation({
             twoDPlot.dataUpdate(
                 // eslint-disable-next-line no-loop-func
                 metaheuristicValue.map((position) => {
-                    return { x: position[0], y: ff(position[0]), r: 3 }
+                    return { x: position[0], y: ff(position[0]), r: radius }
                 }),
                 scatterElemClass
             )
@@ -87,7 +97,7 @@ function Representation({
                 width,
                 height,
                 domainX: { min: domain[0], max: domain[1] },
-                domainY: { min: 0, max: 25 }
+                domainY: { min: resultMin, max: resultMax }
             },
             metaheuristicElemClass,
             [axis, line, scatter]
@@ -125,7 +135,7 @@ function Representation({
             threeDPlot.dataUpdate(
                 // eslint-disable-next-line no-loop-func
                 metaheuristicValue.map((position) => {
-                    return { x: position[0], y: position[1], z: ff(position[0], position[1]), r: 1 }
+                    return { x: position[0], y: position[1], z: ff(position[0], position[1]), r: radius }
                 }),
                 spheresElemClass
             )
@@ -192,14 +202,36 @@ const reps = [
         type: '2D',
         ff: Ackley,
         domain: ACKLEY_DOMAIN,
-        globalM: ACKLEY_GLOBAL_M
+        globalM: ACKLEY_GLOBAL_M,
+        radius: 3,
+        resultMin: 0,
+        resultMax: 25
     },
     {
         name: 'Particle Swarm Optimisation - Ackley 3D',
         type: '3D',
         ff: Ackley,
         domain: ACKLEY_DOMAIN,
-        globalM: ACKLEY_GLOBAL_M
+        globalM: ACKLEY_GLOBAL_M,
+        radius: 1
+    },
+    {
+        name: 'Particle Swarm Optimisation - Schwefel 2D',
+        type: '2D',
+        ff: Schwefel,
+        domain: SCHWEFEL_DOMAIN,
+        globalM: SCHWEFEL_GLOBAL_M,
+        radius: 3,
+        resultMin: 0,
+        resultMax: 420
+    },
+    {
+        name: 'Particle Swarm Optimisation - Schwefel 3D',
+        type: '3D',
+        ff: Schwefel,
+        domain: SCHWEFEL_DOMAIN,
+        globalM: SCHWEFEL_GLOBAL_M,
+        radius: 15
     }
 ]
 
@@ -217,10 +249,13 @@ export default function Metaheuristics() {
                     ff={val.ff}
                     type={val.type}
                     domain={val.domain}
+                    radius={val.radius}
                     globalM={val.globalM}
                     name={val.name}
                     width={700}
                     height={350}
+                    resultMin={val.resultMin}
+                    resultMax={val.resultMax}
                 />
             ))}
         </div>
