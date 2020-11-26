@@ -1,78 +1,39 @@
 import { meanSquaredError } from '../functions/losses'
 import { gradientDescent } from '../functions/optimizers'
-import { VectorUtils, MatrixUtils } from '../math-utils'
-import { predictionMultivariable } from './multivariableLinearRegression'
-
-export function transformInput(input: number[], degree: number): number[][] {
-    const polynomialInput: number[][] = []
-    let transposePolynomialInput: number[][] = []
-    let normalizePolynomialInput: number[][] = []
-
-    for (let i = 0; i < input.length; i++) {
-        const power = []
-        for (let j = 1; j <= degree; j++) {
-            power.push(input[i] ** j)
-        }
-        polynomialInput.push(power)
-    }
-
-    transposePolynomialInput = MatrixUtils.transpose(polynomialInput)
-
-    for (let i = 0; i < degree; i++) {
-        normalizePolynomialInput.push(VectorUtils.normalize(transposePolynomialInput[i]))
-    }
-
-    normalizePolynomialInput = MatrixUtils.transpose(normalizePolynomialInput)
-
-    return normalizePolynomialInput
-}
-
-export type PolynomialRegressionOutputType = {
-    updatedWeight: number[]
-    updatedBias: number
-    costHistory: number[]
-}
+import {
+    predictMultivariable,
+    RegressionOutputType,
+    transformToPolynomialInput,
+    transposeAndNormalize
+} from './utilities'
 
 export default class PolynomialRegression {
     static *fit(
         input: number[],
         target: number[],
-        weight: number[],
-        bias: number,
         degree: number,
         learningRate: number,
         epochs: number,
         costFunction: Function
-    ): Generator<PolynomialRegressionOutputType> {
+    ): Generator<RegressionOutputType> {
         const costHistory: number[] = []
-        let updatedWeight = weight
-        let updatedBias = bias
+        const transformedInput = transposeAndNormalize(transformToPolynomialInput(input, degree))
+        let biasAndWeights = Array(degree + 1).fill(0)
         let currentEpoch = 0
-
-        const transformedInput = transformInput(input, degree)
-
-        let updatedPrediction = predictionMultivariable(transformedInput, weight, bias)
+        let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
 
         while (true) {
             let updated = true
 
-            const [w, b] = gradientDescent(
-                transformedInput,
-                target,
-                updatedWeight,
-                updatedBias,
-                learningRate,
-                costFunction
-            )
+            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
 
-            updatedWeight = <number[]>w
-            updatedBias = <number>b
+            biasAndWeights = bw
 
             // Calculate cost for auditing purposes
             const cost = meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
-            updatedPrediction = predictionMultivariable(transformedInput, updatedWeight, updatedBias)
+            updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
 
             currentEpoch += 1
 
@@ -89,15 +50,13 @@ export default class PolynomialRegression {
             }
 
             yield {
-                updatedWeight,
-                updatedBias,
+                biasAndWeights,
                 costHistory
             }
         }
 
         return {
-            updatedWeight,
-            updatedBias,
+            biasAndWeights,
             costHistory
         }
     }

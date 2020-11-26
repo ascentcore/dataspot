@@ -1,4 +1,4 @@
-import { MathUtils } from '../math-utils'
+import { MathUtils } from '../utils/math-utils'
 import { crossEntropy, hinge, meanSquaredError, l2, meanAbsoluteError, supportVectorMachine } from './losses'
 
 describe('Loss Functions', () => {
@@ -14,7 +14,7 @@ describe('Loss Functions', () => {
     })
 
     it('Mean Squared Error', async () => {
-        expect(MathUtils.roundToPrecision(meanSquaredError([1.2, 2.3, 3.5], [1, 2, 3]), 4)).toBe(0.1267)
+        expect(MathUtils.roundToPrecision(meanSquaredError([1.2, 2.3, 3.5], [1, 2, 3]), 4)).toBe(0.0633)
         expect(meanSquaredError([1, 2, 3], [1, 2, 3])).toBe(0)
     })
 

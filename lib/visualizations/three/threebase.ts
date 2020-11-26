@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import BaseVisualization from '../baseviz'
+import BaseVisualization from '../basevisualization'
 
 const DEFAULT_CONFIG = {
     width: 400,
@@ -9,11 +9,14 @@ const DEFAULT_CONFIG = {
 }
 
 export default abstract class ThreeBaseVisualization extends BaseVisualization {
-    constructor(config: any) {
-        super({
-            ...DEFAULT_CONFIG,
-            ...config
-        })
+    constructor(config: any, elemClass = 'mesh-elem') {
+        super(
+            {
+                ...DEFAULT_CONFIG,
+                ...config
+            },
+            elemClass
+        )
 
         Object.assign(this.dependencies, { three: THREE })
     }
