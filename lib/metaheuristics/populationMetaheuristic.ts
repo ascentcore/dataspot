@@ -94,7 +94,7 @@ export default abstract class PopulationMetaheuristic<
             this.iteration++
         }
         this.onEndFit()
-        return this.individuals.map((individual: Individual) => individual.position)
+        return this.individuals.map((individual: Individual) => individual.bestPosition)
     }
 
     fit(fitessFunction: FitnessFunction): number[][] {
@@ -106,7 +106,7 @@ export default abstract class PopulationMetaheuristic<
         }
         this.onEndFit()
 
-        return this.individuals.map((individual: Individual) => individual.position)
+        return this.individuals.map((individual: Individual) => individual.bestPosition)
     }
 
     onEndFit(): void {}

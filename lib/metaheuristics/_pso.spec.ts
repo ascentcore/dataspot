@@ -14,14 +14,15 @@ describe('PSO', () => {
         )
         let psoResult = generator.next()
         let donePSO = psoResult.done
-        const initialBest = calculate(...psoResult.value[0])
+        const initialBest = Math.min(...psoResult.value.map((position: number[]) => calculate(...position)))
 
         while (!donePSO) {
             psoResult = generator.next()
             donePSO = psoResult.done
         }
-        const finalBest = calculate(...psoResult.value[0])
+        const finalBest = Math.min(...psoResult.value.map((position: number[]) => calculate(...position)))
 
+        console.log(initialBest, finalBest)
         expect(initialBest).toBeGreaterThanOrEqual(finalBest)
         done()
     })
