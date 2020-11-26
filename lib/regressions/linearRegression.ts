@@ -12,15 +12,15 @@ export default class LinearRegression {
         costFunction: Function
     ): Generator<RegressionOutputType> {
         const costHistory = []
-        const normalizedInput = VectorUtils.normalize(input)
+        const transformedInput = VectorUtils.normalize(input)
         let biasAndWeights: number[] = [0, 0]
-        let updatedPrediction = predictSinglevariable(normalizedInput, biasAndWeights)
+        let updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)
         let currentEpoch = 0
 
         while (true) {
             let updated = true
 
-            const bw = gradientDescent(normalizedInput, target, biasAndWeights, learningRate, costFunction)
+            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
 
             biasAndWeights = bw
 
@@ -28,7 +28,7 @@ export default class LinearRegression {
             const cost = meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
-            updatedPrediction = predictSinglevariable(normalizedInput, biasAndWeights)
+            updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)
 
             currentEpoch += 1
 

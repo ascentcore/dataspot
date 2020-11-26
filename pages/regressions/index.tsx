@@ -59,8 +59,8 @@ function Representation({
 
             const regression =
                 name === 'Linear Regression'
-                    ? LinearRegression.fit(data[0], data[1], 0.01, 10000, mseCostFunction)
-                    : PolynomialRegression.fit(data[0], data[1], 2, 0.01, 10000, mseCostFunction)
+                    ? LinearRegression.fit(data[0], data[1], 0.1, 10000, mseCostFunction)
+                    : PolynomialRegression.fit(data[0], data[1], 2, 0.1, 10000, mseCostFunction)
             let doneRegression = false
             let regressionValue = { biasAndWeights: [], costHistory: [] }
 

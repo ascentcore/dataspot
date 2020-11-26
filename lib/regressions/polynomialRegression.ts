@@ -17,16 +17,15 @@ export default class PolynomialRegression {
         costFunction: Function
     ): Generator<RegressionOutputType> {
         const costHistory: number[] = []
-        const transformedInput = transformToPolynomialInput(input, degree)
-        const normalizedInput = transposeAndNormalize(transformedInput)
+        const transformedInput = transposeAndNormalize(transformToPolynomialInput(input, degree))
         let biasAndWeights = Array(degree + 1).fill(0)
         let currentEpoch = 0
-        let updatedPrediction = predictMultivariable(normalizedInput, biasAndWeights)
+        let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
 
         while (true) {
             let updated = true
 
-            const bw = gradientDescent(normalizedInput, target, biasAndWeights, learningRate, costFunction)
+            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
 
             biasAndWeights = bw
 
@@ -34,7 +33,7 @@ export default class PolynomialRegression {
             const cost = meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
-            updatedPrediction = predictMultivariable(normalizedInput, biasAndWeights)
+            updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
 
             currentEpoch += 1
 

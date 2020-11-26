@@ -27,7 +27,7 @@ export default class MultivariableLinearRegression {
             const cost = meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
-            updatedPrediction = predictMultivariable(input, biasAndWeights)
+            updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
 
             currentEpoch += 1
 

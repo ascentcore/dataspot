@@ -46,7 +46,7 @@ describe('Regressions', () => {
         }
 
         expect(result.biasAndWeights).toEqual([0.007996, 0.0019979999999999998, 0.0019979999999999998])
-        expect(result.costHistory).toEqual([8.5, 8.46353925])
+        expect(result.costHistory).toEqual([8.5, 8.48201])
     })
 
     it('Polynomial Regression', async () => {
