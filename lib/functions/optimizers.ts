@@ -1,5 +1,5 @@
-import { VectorUtils } from '../math-utils'
 import predictSinglevariable, { predictMultivariable } from '../regressions/utilities'
+import { VectorUtils } from '../utils/math-utils'
 
 export function mseCostFunction(input: number | number[], target: number, prediction: number): (number | number[])[] {
     const biasAndWeightsDeriv: number[] = []

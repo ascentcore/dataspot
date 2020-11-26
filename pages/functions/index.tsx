@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import { relu, identity, sigmoid } from '../../lib/functions/activations'
-import LinePlot from '../../lib/visualizations/svg/lineplot'
+import LinePlot from '../../lib/visualizations/d3/lineplot'
+import Axis from '../../lib/visualizations/d3/axis'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 
 function Representation({
     data,
@@ -18,14 +20,20 @@ function Representation({
 
     useEffect(() => {
         if (svgRef.current) {
-            const plot = new LinePlot({ width, height })
+            const axisElemClass = 'axis-elem'
+            const lineElemClass = 'line-elem'
+            const functionElemClass = 'function-elem'
+
+            const axis = new Axis({}, axisElemClass)
+            const line = new LinePlot({}, lineElemClass)
+            const plot = new SVGMultipleVisualization({ width, height }, functionElemClass, [axis, line])
             plot.setContainer(svgRef.current)
             plot.setup()
-            plot.dataUpdate(
-                data.map((d: number[]) => {
-                    return { x: d[0], y: d[1] }
-                })
-            )
+            const mappedData = data.map((d: number[]) => {
+                return { x: d[0], y: d[1] }
+            })
+            plot.dataUpdate(mappedData, axisElemClass)
+            plot.dataUpdate(mappedData, lineElemClass)
         }
     }, [svgRef])
 

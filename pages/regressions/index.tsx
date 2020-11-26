@@ -1,9 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { mseCostFunction } from '../../lib/functions/optimizers'
+// import { predictMultivariable, transformToPolynomialInput } from '../../lib/regressions/utilities'
+import LinearRegression from '../../lib/regressions/linearRegression'
+import LinePlot from '../../lib/visualizations/d3/lineplot'
+import Scatter from '../../lib/visualizations/d3/scatter'
+import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import Axis from '../../lib/visualizations/d3/axis'
+import { VectorUtils } from '../../lib/utils/math-utils'
 import PolynomialRegression from '../../lib/regressions/polynomialRegression'
-import { predictMultivariable, transformToPolynomialInput } from '../../lib/regressions/utilities'
-import LinePlot from '../../lib/visualizations/svg/lineplot'
-import Scatter from '../../lib/visualizations/svg/scatter'
+import predictionSinglevariable, {
+    predictMultivariable,
+    transformToPolynomialInput,
+    transposeAndNormalize
+} from '../../lib/regressions/utilities'
 
 function Representation({
     data,
@@ -16,44 +25,51 @@ function Representation({
     width: number
     height: number
 }) {
-    const svgRef = useRef<HTMLDivElement | null>(null)
+    const regressionRef = useRef<HTMLDivElement | null>(null)
+    const costRef = useRef<HTMLDivElement | null>(null)
 
     const plot = async () => {
-        if (svgRef.current) {
-            const scatterPlot = new Scatter({ width, height })
-            scatterPlot.setContainer(svgRef.current)
-            scatterPlot.setup()
+        if (regressionRef.current) {
+            const scatterElemClass = 'scatter-elem'
+            const lineElemClass = 'line-elem'
+            const axisElemClass = 'axis-elem'
+
+            const scatterRegressionPlot = new Scatter({}, scatterElemClass)
+            const lineRegressionPlot = new LinePlot({}, lineElemClass)
+            const axisRegression = new Axis({}, axisElemClass)
+
+            const multiplePlot = new SVGMultipleVisualization(
+                {
+                    width,
+                    height,
+                    domainX: { min: 0, max: VectorUtils.max(data[0]) },
+                    domainY: { min: 0, max: VectorUtils.max(data[1]) }
+                },
+                'regression-elem',
+                [axisRegression, scatterRegressionPlot, lineRegressionPlot]
+            )
+            multiplePlot.setContainer(regressionRef.current)
+            multiplePlot.setup()
+
             const mappedData = []
             for (let i = 0; i < data[0].length; i++) {
                 mappedData.push({ x: data[0][i], y: data[1][i], r: 3 })
             }
-            scatterPlot.dataUpdate(mappedData)
+            multiplePlot.dataUpdate(mappedData, scatterElemClass)
 
-            const linePlot = new LinePlot({ width, height })
-            linePlot.setContainer(svgRef.current)
-            linePlot.setup()
-
-            // const input = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-            // const input = [1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5]
-            // const input = [1, 1.2, 1.4, 1.6, 1.8, 2, 3, 4, 4.2, 4.4, 4.6, 4.8, 5]
-            const input = [0, 0.5, 0.9, 1.2, 1.8, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-            const regression = PolynomialRegression.fit(
-                input,
-                // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                // [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6],
-                // [6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6],
-                [0, 0.5, 1, 1.3, 1.75, 2.2, 2.5, 2.8, 3, 3, 3, 3.25, 3.5, 4, 4.75],
-                3,
-                0.1,
-                5000,
-                mseCostFunction
-            )
+            const regression =
+                name === 'Linear Regression'
+                    ? LinearRegression.fit(data[0], data[1], 0.01, 5000, mseCostFunction)
+                    : PolynomialRegression.fit(data[0], data[1], 2, 0.01, 5000, mseCostFunction)
             let doneRegression = false
-            let regressionValue = { weights: [], costHistory: [] }
+            let regressionValue = { biasAndWeights: [], costHistory: [] }
 
             const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-            const transformedInput = transformToPolynomialInput(input, 3)
+            const transformedInput: number[] | number[][] =
+                name === 'Linear Regression'
+                    ? VectorUtils.normalize(data[0])
+                    : transposeAndNormalize(transformToPolynomialInput(data[0], 2))
 
             while (!doneRegression) {
                 const regressionResult = regression.next()
@@ -61,17 +77,20 @@ function Representation({
 
                 doneRegression = regressionResult.done || false
                 console.log(regressionValue)
-                const updatedPrediction = predictMultivariable(transformedInput, regressionValue.weights)
-                const iterator = Array.from(Array(input.length).keys())
+                const updatedPrediction = Array.isArray(transformedInput[0])
+                    ? predictMultivariable(transformedInput, regressionValue.biasAndWeights)
+                    : predictionSinglevariable(transformedInput, regressionValue.biasAndWeights)
+                const iterator = Array.from(Array(data[0].length).keys())
 
-                linePlot.dataUpdate(
+                multiplePlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func
                     iterator.map((i: number) => {
                         return {
-                            x: input[i],
+                            x: data[0][i],
                             y: updatedPrediction[i]
                         }
-                    })
+                    }),
+                    lineElemClass
                 )
 
                 // eslint-disable-next-line no-await-in-loop
@@ -79,31 +98,34 @@ function Representation({
             }
 
             let iter = 0
-            const costPlot = new LinePlot({ width, height })
-            costPlot.setContainer(svgRef.current)
+            const axisCost = new Axis({}, axisElemClass)
+            const lineCost = new LinePlot({}, lineElemClass)
+            const costPlot = new SVGMultipleVisualization({ width, height }, 'const-elem', [axisCost, lineCost])
+            costPlot.setContainer(costRef.current)
             costPlot.setup()
-            costPlot.dataUpdate(
-                regressionValue.costHistory.map((cost: number) => {
-                    return { x: iter++, y: cost }
-                })
-            )
+            const mappedCostData = regressionValue.costHistory.map((cost: number) => {
+                return { x: iter++, y: cost }
+            })
+            costPlot.dataUpdate(mappedCostData, axisElemClass)
+            costPlot.dataUpdate(mappedCostData, lineElemClass)
         }
     }
 
     useEffect(() => {
         plot()
-    }, [svgRef])
+    }, [regressionRef])
 
     return (
         <div>
             <h4>{name}</h4>
-            <div ref={svgRef}></div>
+            <div ref={regressionRef}></div>
+            <div ref={costRef}></div>
         </div>
     )
 }
 
 const reps = [
-    { name: 'Linear Regression', data: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]] },
+    { name: 'Linear Regression', data: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]] },
     {
         name: 'Polynomial Regression',
         data: [[1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5], [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]]

@@ -1,4 +1,4 @@
-import { MatrixUtils, VectorUtils } from '../math-utils'
+import { MatrixUtils, VectorUtils } from '../utils/math-utils'
 
 export type RegressionOutputType = {
     biasAndWeights: number[]

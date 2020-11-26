@@ -2,18 +2,22 @@ import { JSDOM } from 'jsdom'
 import Sharp from 'sharp'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
-import getReportFolder from '../../osutils'
+import getReportFolder from '../../utils/osutils'
 import SVGBaseVisualization from './svgbase'
 
+import serializeFunction from '../../utils/serialization-utils'
+
+import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
+
 export default class SVGVisualizationWrapper extends SVGBaseVisualization {
-    private container!: Element | null
+    private root!: Element | null
 
     constructor(
         private visualization: SVGBaseVisualization,
         private name: string,
-        initialData?: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]
+        initialData?: TwoDPointScatter[] | TwoDPointLine[]
     ) {
-        super(visualization.config)
+        super(visualization.config, 'wrapper-elem')
         this.setup(initialData)
     }
 
@@ -23,8 +27,8 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
 
     setup(initialData?: any): void {
         const dom = new JSDOM(`<!DOCTYPE html><div id="wrapper"/>`)
-        this.container = dom.window.document.querySelector('#wrapper')
-        this.visualization.setContainer(<HTMLElement>this.container)
+        this.root = dom.window.document.querySelector('#wrapper')
+        this.visualization.setContainer(<HTMLElement>this.root)
         this.visualization.setup()
 
         if (initialData) {
@@ -33,20 +37,26 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
 
         if (this.lab) {
             this.lab.store(`${this.name}-setup`, {
+                type: 'd3',
                 config: this.visualization.config,
-                node: this.visualization.getDependency('svg').node().outerHTML,
-                prepareDependenciesExpr: this.visualization.setup.toString(),
-                dataUpdateExpr: this.visualization.dataUpdate.toString()
+                node: this.visualization.getDependency('rootContainer').node().outerHTML,
+                prepareDependenciesExpr: serializeFunction(this.visualization.setup, 'setup')
             })
         }
     }
 
-    dataUpdate(data: { x: number; y: number; r?: number; color?: number }[] | { x: number; y: number }[]): void {
-        this.visualization.dataUpdate(data)
+    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass = this.visualization.elemClass) {
+        // eslint-disable-next-line prettier/prettier
+        const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
+
         if (this.lab) {
-            this.lab.store(`${this.name}-data`, { data })
+            this.lab.store(`${this.name}-data`, {
+                data,
+                elemClass,
+                dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
+            })
         } else {
-            const svgContent = this.visualization.getDependency('svg').node().outerHTML
+            const svgContent = this.visualization.getDependency('rootContainer').node().outerHTML
             const buf = Buffer.from(svgContent)
             try {
                 Sharp(buf)
@@ -58,5 +68,6 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
                 console.log(err)
             }
         }
+        return dataUpdateExpr
     }
 }

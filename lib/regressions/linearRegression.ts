@@ -1,6 +1,6 @@
 import { meanSquaredError } from '../functions/losses'
 import { gradientDescent } from '../functions/optimizers'
-import { VectorUtils } from '../math-utils'
+import { VectorUtils } from '../utils/math-utils'
 import predictSinglevariable, { RegressionOutputType } from './utilities'
 
 export default class LinearRegression {
