@@ -3,12 +3,13 @@ import LinearRegression from './linearRegression'
 import { mseCostFunction } from '../functions/optimizers'
 import MultivariableLinearRegression from './multivariableLinearRegression'
 import PolynomialRegression from './polynomialRegression'
+import { RegressionOutputType } from './utilities'
 
 describe('Regressions', () => {
     it('Linear Regression', async () => {
         const linearRegression = LinearRegression.fit([3, 4, 5], [9, 16, 25], 0.001, 2, mseCostFunction)
         let done: boolean | undefined = false
-        let result: { biasAndWeights: number[]; costHistory: number[] } = {
+        let result: RegressionOutputType = {
             biasAndWeights: [0, 0],
             costHistory: []
         }
@@ -16,7 +17,7 @@ describe('Regressions', () => {
             const linearRegressionValue = linearRegression.next()
             done = linearRegressionValue.done
             if (done) {
-                result = <{ biasAndWeights: number[]; costHistory: number[] }>linearRegressionValue.value
+                result = <RegressionOutputType>linearRegressionValue.value
             }
         }
         expect(result.biasAndWeights).toEqual([0.03331666666666667, 0.013057413322196192])
@@ -32,7 +33,7 @@ describe('Regressions', () => {
             mseCostFunction
         )
         let done: boolean | undefined = false
-        let result: { biasAndWeights: number[]; costHistory: number[] } = {
+        let result: RegressionOutputType = {
             biasAndWeights: [],
             costHistory: []
         }
@@ -40,7 +41,7 @@ describe('Regressions', () => {
             const multivariableLinearRegressionValue = multivariableLinearRegression.next()
             done = multivariableLinearRegressionValue.done
             if (done) {
-                result = <{ biasAndWeights: number[]; costHistory: number[] }>multivariableLinearRegressionValue.value
+                result = <RegressionOutputType>multivariableLinearRegressionValue.value
             }
         }
 
@@ -58,7 +59,7 @@ describe('Regressions', () => {
             mseCostFunction
         )
         let done: boolean | undefined = false
-        let result: { biasAndWeights: number[]; costHistory: number[] } = {
+        let result: RegressionOutputType = {
             biasAndWeights: [],
             costHistory: []
         }
@@ -66,7 +67,7 @@ describe('Regressions', () => {
             const polynomialRegressionValue = polynomialRegression.next()
             done = polynomialRegressionValue.done
             if (done) {
-                result = <{ biasAndWeights: number[]; costHistory: number[] }>polynomialRegressionValue.value
+                result = <RegressionOutputType>polynomialRegressionValue.value
             }
         }
         expect(result.biasAndWeights).toEqual([0.3763461538461539, 0.2637018197663789, 0.30354392103052863])

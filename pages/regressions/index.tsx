@@ -59,8 +59,8 @@ function Representation({
 
             const regression =
                 name === 'Linear Regression'
-                    ? LinearRegression.fit(data[0], data[1], 0.01, 5000, mseCostFunction)
-                    : PolynomialRegression.fit(data[0], data[1], 2, 0.01, 5000, mseCostFunction)
+                    ? LinearRegression.fit(data[0], data[1], 0.01, 10000, mseCostFunction)
+                    : PolynomialRegression.fit(data[0], data[1], 2, 0.01, 10000, mseCostFunction)
             let doneRegression = false
             let regressionValue = { biasAndWeights: [], costHistory: [] }
 
@@ -81,7 +81,7 @@ function Representation({
                     ? predictMultivariable(transformedInput, regressionValue.biasAndWeights)
                     : predictionSinglevariable(transformedInput, regressionValue.biasAndWeights)
                 const iterator = Array.from(Array(data[0].length).keys())
-
+                console.log('updatedPrediction', updatedPrediction)
                 multiplePlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func
                     iterator.map((i: number) => {
