@@ -38,7 +38,7 @@ has_children: false
 
 ▪ `Static` `Private` **rand**: (Anonymous function) = MathUtils.mulberry32(MathUtils.xmur3('apples')())
 
-*Defined in [lib/utils/math-utils.ts:4](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L4)*
+*Defined in [lib/utils/math-utils.ts:4](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L4)*
 
 ## Methods
 
@@ -46,7 +46,7 @@ has_children: false
 
 ▸ `Static` `Private`**mulberry32**(`a`: number): (Anonymous function)
 
-*Defined in [lib/utils/math-utils.ts:20](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L20)*
+*Defined in [lib/utils/math-utils.ts:20](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L20)*
 
 #### Parameters:
 
@@ -62,7 +62,7 @@ ___
 
 ▸ `Static`**random**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:35](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L35)*
+*Defined in [lib/utils/math-utils.ts:35](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L35)*
 
 #### Parameters:
 
@@ -79,7 +79,7 @@ ___
 
 ▸ `Static`**randomInt**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:39](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L39)*
+*Defined in [lib/utils/math-utils.ts:39](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L39)*
 
 #### Parameters:
 
@@ -96,7 +96,7 @@ ___
 
 ▸ `Static`**roundToPrecision**(`input`: number, `precision`: number): number
 
-*Defined in [lib/utils/math-utils.ts:30](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L30)*
+*Defined in [lib/utils/math-utils.ts:30](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L30)*
 
 #### Parameters:
 
@@ -113,7 +113,7 @@ ___
 
 ▸ `Static`**seededRandom**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:45](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L45)*
+*Defined in [lib/utils/math-utils.ts:45](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L45)*
 
 #### Parameters:
 
@@ -130,7 +130,7 @@ ___
 
 ▸ `Static`**seededRandomInt**(`min`: number, `max`: number): number
 
-*Defined in [lib/utils/math-utils.ts:49](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L49)*
+*Defined in [lib/utils/math-utils.ts:49](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L49)*
 
 #### Parameters:
 
@@ -147,7 +147,7 @@ ___
 
 ▸ `Static` `Private`**xmur3**(`str`: string): function
 
-*Defined in [lib/utils/math-utils.ts:6](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/utils/math-utils.ts#L6)*
+*Defined in [lib/utils/math-utils.ts:6](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L6)*
 
 #### Parameters:
 

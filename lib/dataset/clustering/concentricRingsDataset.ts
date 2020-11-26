@@ -1,4 +1,4 @@
-import Random from '../math/random'
+import Random from '../../math/random'
 
 export default function generate(count: number = 100): number[][] {
     const dataset = []

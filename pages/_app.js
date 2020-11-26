@@ -27,6 +27,7 @@ export default function MyApp({ Component, pageProps }) {
                     </a>
                     <a href='/hierarchy' className='btn btn-link'>
                         Hierarchy
+                    </a>
                     <a href='/clustering' className='btn btn-link'>
                         Clustering
                     </a>

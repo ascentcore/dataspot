@@ -3,12 +3,12 @@ import DBScan, { DBScanConfig } from '../../lib/clustering/dbScan'
 
 import Scatter from '../../lib/visualizations/d3/scatter'
 
-import arcDataset from '../../lib/dataset/arcDataset'
-import blobDataset from '../../lib/dataset/blobDataset'
-import concentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
-import fillSpaceDataset from '../../lib/dataset/fillSpaceDataset'
-import noisyWithBlobDataset from '../../lib/dataset/noisyWithBlobDataset'
-import potatoDataset from '../../lib/dataset/potatoDataset'
+import arcDataset from '../../lib/dataset/clustering/arcDataset'
+import blobDataset from '../../lib/dataset/clustering/blobDataset'
+import concentricRingsDataset from '../../lib/dataset/clustering/concentricRingsDataset'
+import fillSpaceDataset from '../../lib/dataset/clustering/fillSpaceDataset'
+import noisyWithBlobDataset from '../../lib/dataset/clustering/noisyWithBlobDataset'
+import potatoDataset from '../../lib/dataset/clustering/potatoDataset'
 import Axis from '../../lib/visualizations/d3/axis'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 

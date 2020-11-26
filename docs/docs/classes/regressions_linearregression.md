@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**fit**(`input`: number[], `target`: number[], `weight`: number, `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<LinearRegressionOutputType>
 
-*Defined in [lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/regressions/linearRegression.ts#L20)*
+*Defined in [lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/regressions/linearRegression.ts#L20)*
 
 #### Parameters:
 

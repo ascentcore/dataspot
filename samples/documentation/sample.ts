@@ -1,5 +1,5 @@
 import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
-import arcDataset from '../../lib/dataset/arcDataset'
+import arcDataset from '../../lib/dataset/clustering/arcDataset'
 import Axis from '../../lib/visualizations/d3/axis'
 import Scatter from '../../lib/visualizations/d3/scatter'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'

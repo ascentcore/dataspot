@@ -49,7 +49,7 @@ Name | Type |
 
 \+ **new Serializable**(`config`: T): [common.Serializable](common_serializable)
 
-*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/common/serializable.ts#L7)*
+*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L7)*
 
 #### Parameters:
 
@@ -65,7 +65,7 @@ Name | Type |
 
 •  **config**: T
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/common/serializable.ts#L8)*
+*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L8)*
 
 ## Methods
 
@@ -73,7 +73,7 @@ Name | Type |
 
 ▸ **loadState**(`from`: string): void
 
-*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/common/serializable.ts#L14)*
+*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L14)*
 
 #### Parameters:
 
@@ -89,6 +89,6 @@ ___
 
 ▸ **serialize**(): string
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/common/serializable.ts#L10)*
+*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L10)*
 
 **Returns:** string

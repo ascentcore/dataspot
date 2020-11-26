@@ -28,7 +28,7 @@ has_children: false
 
 ▸ `Static`**deepClone**\<T>(`obj`: T): T
 
-*Defined in [lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/a358cc9/lib/common/objectUtils.ts#L6)*
+*Defined in [lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/objectUtils.ts#L6)*
 
 #### Type parameters:
 
