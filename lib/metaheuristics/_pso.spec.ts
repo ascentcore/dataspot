@@ -1,18 +1,28 @@
-import calculate, { DOMAIN, GLOBAL_M } from '../dataset/benchmark/ackley'
+import calculate, { DOMAIN } from '../dataset/benchmark/ackley'
 import PSO, { PSOConfig } from './pso'
 import FitnessFunction from './fitnessFunction'
 
-const pso = new PSO(<PSOConfig>{ populationSize: 3 })
+const pso = new PSO(<PSOConfig>{ populationSize: 3, iterations: 20 })
 
 describe('PSO', () => {
     it('performs pso on ackley', (done) => {
-        const particles = pso.fit(
+        const generator = pso.fitAsync(
             Object.assign(new FitnessFunction(), {
-                function: calculate,
+                calculate,
                 dimensions: [{ min: DOMAIN[0], max: DOMAIN[1] }, { min: DOMAIN[0], max: DOMAIN[1] }]
             })
         )
-        console.log(particles, GLOBAL_M)
+        let psoResult = generator.next()
+        let donePSO = psoResult.done
+        const initialBest = calculate(...psoResult.value[0])
+
+        while (!donePSO) {
+            psoResult = generator.next()
+            donePSO = psoResult.done
+        }
+        const finalBest = calculate(...psoResult.value[0])
+
+        expect(initialBest).toBeGreaterThanOrEqual(finalBest)
         done()
     })
 })
