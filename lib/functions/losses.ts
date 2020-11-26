@@ -16,7 +16,7 @@ function meanSquaredError(prediction: number[], target: number[]): number {
         value += (prediction[i] - target[i]) ** 2
     }
 
-    return value / target.length
+    return value / (2 * target.length)
 }
 
 function l2(prediction: number[], target: number[]): number {

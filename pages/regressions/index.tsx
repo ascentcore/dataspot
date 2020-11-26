@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { predictionMultivariable } from '../../dist/regressions/multivariableLinearRegression'
 import { mseCostFunction } from '../../lib/functions/optimizers'
-import PolynomialRegression, { transformInput } from '../../lib/regressions/polynomialRegression'
+import PolynomialRegression from '../../lib/regressions/polynomialRegression'
+import { predictMultivariable, transformToPolynomialInput } from '../../lib/regressions/utilities'
 import LinePlot from '../../lib/visualizations/svg/lineplot'
 import Scatter from '../../lib/visualizations/svg/scatter'
 
@@ -43,19 +43,17 @@ function Representation({
                 // [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6],
                 // [6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6],
                 [0, 0.5, 1, 1.3, 1.75, 2.2, 2.5, 2.8, 3, 3, 3, 3.25, 3.5, 4, 4.75],
-                [0, 0, 0],
-                1,
                 3,
                 0.1,
-                10000,
+                5000,
                 mseCostFunction
             )
             let doneRegression = false
-            let regressionValue = { updatedWeight: [], updatedBias: 0, costHistory: [] }
+            let regressionValue = { weights: [], costHistory: [] }
 
             const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-            const transformedInput = transformInput(input, 3)
+            const transformedInput = transformToPolynomialInput(input, 3)
 
             while (!doneRegression) {
                 const regressionResult = regression.next()
@@ -63,11 +61,7 @@ function Representation({
 
                 doneRegression = regressionResult.done || false
                 console.log(regressionValue)
-                const updatedPrediction = predictionMultivariable(
-                    transformedInput,
-                    regressionValue.updatedWeight,
-                    regressionValue.updatedBias
-                )
+                const updatedPrediction = predictMultivariable(transformedInput, regressionValue.weights)
                 const iterator = Array.from(Array(input.length).keys())
 
                 linePlot.dataUpdate(
@@ -109,14 +103,10 @@ function Representation({
 }
 
 const reps = [
+    { name: 'Linear Regression', data: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]] },
     {
         name: 'Polynomial Regression',
-        // data: [[1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5], [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]]
-        // data: [[1, 1.2, 1.4, 1.6, 1.8, 2, 3, 4, 4.2, 4.4, 4.6, 4.8, 5], [6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]]
-        data: [
-            [0, 0.5, 0.9, 1.2, 1.8, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-            [0, 0.5, 1, 1.3, 1.75, 2.2, 2.5, 2.8, 3, 3, 3, 3.25, 3.5, 4, 4.75]
-        ]
+        data: [[1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5], [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]]
     }
 ]
 

@@ -1,50 +1,34 @@
 import { meanSquaredError } from '../functions/losses'
 import { gradientDescent } from '../functions/optimizers'
-
-export type LinearRegressionOutputType = {
-    updatedWeight: number
-    updatedBias: number
-    costHistory: number[]
-}
-
-export function predictionSinglevariable(input: number[], weight: number, bias: number): number[] {
-    const value = []
-    for (let i = 0; i < input.length; i++) {
-        value.push(weight * input[i] + bias)
-    }
-
-    return value
-}
+import { VectorUtils } from '../math-utils'
+import predictSinglevariable, { RegressionOutputType } from './utilities'
 
 export default class LinearRegression {
     static *fit(
         input: number[],
         target: number[],
-        weight: number,
-        bias: number,
         learningRate: number,
         epochs: number,
         costFunction: Function
-    ): Generator<LinearRegressionOutputType> {
+    ): Generator<RegressionOutputType> {
         const costHistory = []
-        let updatedWeight = weight
-        let updatedBias = bias
-        let updatedPrediction = predictionSinglevariable(input, weight, bias)
+        const normalizedInput = VectorUtils.normalize(input)
+        let biasAndWeights: number[] = [0, 0]
+        let updatedPrediction = predictSinglevariable(normalizedInput, biasAndWeights)
         let currentEpoch = 0
 
         while (true) {
             let updated = true
 
-            const [w, b] = gradientDescent(input, target, updatedWeight, updatedBias, learningRate, costFunction)
+            const bw = gradientDescent(normalizedInput, target, biasAndWeights, learningRate, costFunction)
 
-            updatedWeight = <number>w
-            updatedBias = <number>b
+            biasAndWeights = bw
 
             // Calculate cost for auditing purposes
             const cost = meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
-            updatedPrediction = predictionSinglevariable(input, updatedWeight, updatedBias)
+            updatedPrediction = predictSinglevariable(normalizedInput, biasAndWeights)
 
             currentEpoch += 1
 
@@ -61,15 +45,13 @@ export default class LinearRegression {
             }
 
             yield {
-                updatedWeight,
-                updatedBias,
+                biasAndWeights,
                 costHistory
             }
         }
 
         return {
-            updatedWeight,
-            updatedBias,
+            biasAndWeights,
             costHistory
         }
     }
