@@ -1,89 +1,35 @@
 import { crossEntropy } from '../functions/losses'
 import { gradientDescent } from '../functions/optimizers'
 import { sigmoid } from '../functions/activations'
-import { MatrixUtils, VectorUtils } from '../math-utils'
-
-function transformInput(input: number[][]): number[][] {
-    const inputWithBias: number[][] = []
-    let transposeInput: number[][] = []
-    let normalizeInput: number[][] = []
-
-    for (let i = 0; i < input.length; i++) {
-        inputWithBias.push([1].concat(input[i]))
-    }
-
-    transposeInput = MatrixUtils.transpose(inputWithBias)
-
-    for (let i = 0; i < transposeInput[0].length; i++) {
-        normalizeInput.push(VectorUtils.normalize(transposeInput[i]))
-    }
-
-    normalizeInput = MatrixUtils.transpose(normalizeInput)
-
-    return normalizeInput
-}
-
-function predict(input: number[][], weight: number[]): number[] {
-    const value: number[] = []
-
-    input.forEach((feature) => {
-        let pred = 0
-        for (let i = 0; i < input[0].length; i++) {
-            pred += feature[i] * weight[i]
-        }
-        value.push(sigmoid(pred))
-    })
-
-    return value
-}
-
-// Convert probabilities to classes
-function decisionBoundary(probabilities: number[]): number[] {
-    const value = []
-    for (let i = 0; i < probabilities.length; i++) {
-        value.push(probabilities[i] >= 0.5 ? 1 : 0)
-    }
-
-    return value
-}
-
-export type LogisticRegressionOutputType = {
-    updatedWeight: number[]
-    costHistory: number[]
-}
+import { decisionBoundary, predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
 
 export default class LogisticRegression {
     static *fit(
         input: number[][],
         target: number[],
-        weight: number[],
         learningRate: number,
         epochs: number,
         costFunction: Function
-    ): Generator<LogisticRegressionOutputType> {
+    ): Generator<RegressionOutputType> {
         const costHistory: number[] = []
-        let updatedWeight = weight
+        const transformedInput = transposeAndNormalize(input)
+        let biasAndWeights = Array(input[0].length + 1).fill(0)
         let currentEpoch = 0
-
-        const transformedInput = transformInput(input)
-
-        let updatedPrediction = predict(transformedInput, weight)
-
+        let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights).map((pred) => sigmoid(pred))
         let probabilitiesToClasses = decisionBoundary(updatedPrediction)
 
         while (true) {
             let updated = true
 
-            const [w] = gradientDescent(input, target, updatedWeight, 1, learningRate, costFunction)
+            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
 
-            updatedWeight = <number[]>w
+            biasAndWeights = bw
 
             // Calculate cost for auditing purposes
             const cost = crossEntropy(probabilitiesToClasses, target)
             costHistory.push(cost)
 
-            updatedPrediction = predict(transformedInput, updatedWeight)
-
+            updatedPrediction = predictMultivariable(transformedInput, biasAndWeights).map((pred) => sigmoid(pred))
             probabilitiesToClasses = decisionBoundary(updatedPrediction)
 
             currentEpoch += 1
@@ -101,13 +47,13 @@ export default class LogisticRegression {
             }
 
             yield {
-                updatedWeight,
+                biasAndWeights,
                 costHistory
             }
         }
 
         return {
-            updatedWeight,
+            biasAndWeights,
             costHistory
         }
     }

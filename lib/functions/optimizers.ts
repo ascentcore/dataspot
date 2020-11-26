@@ -3,30 +3,25 @@ import { VectorUtils } from '../utils/math-utils'
 
 export function mseCostFunction(input: number | number[], target: number, prediction: number): (number | number[])[] {
     const biasAndWeightsDeriv: number[] = []
-    let derivate: number[] = []
     if (Array.isArray(input)) {
         for (let i = 0; i < input.length; i++) {
             biasAndWeightsDeriv.push(-1 * input[i] * (target - prediction))
         }
-        // derivate[0] - bias; derivate[1-n] - weights;
-        derivate = biasAndWeightsDeriv
     } else {
         biasAndWeightsDeriv.push(-1 * (target - prediction))
         biasAndWeightsDeriv.push(-1 * input * (target - prediction))
-        // derivate[0] - bias; derivate[1] - weights;
-        derivate = biasAndWeightsDeriv
     }
 
-    return derivate
+    return biasAndWeightsDeriv
 }
 
 export function crossEntropyCostFunction(input: number[], target: number, prediction: number): number[] {
-    const weightsDeriv = []
+    const biasAndWeightsDeriv = []
     for (let i = 0; i < input.length; i++) {
-        weightsDeriv.push(input[i] * (prediction - target))
+        biasAndWeightsDeriv.push(input[i] * (prediction - target))
     }
 
-    return weightsDeriv
+    return biasAndWeightsDeriv
 }
 
 export function gradientDescent(
