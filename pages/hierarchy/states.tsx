@@ -18,6 +18,7 @@ const result = hierarchy(
 export default function States() {
     const containerRef = useRef(null)
     const [value, setValue] = useState(null)
+    const [hierarchyPlotRef, setHierarchyPlotRef] = useState(null)
 
     useEffect(() => {
         const clusters = hValueCut(result, result.distances[0] - value)
@@ -38,11 +39,15 @@ export default function States() {
         //     singleLinkage,
         //     euclideanDistance
         // )
+        if (hierarchyPlotRef) {
+            hierarchyPlotRef.destroy()
+        }
 
-        const plot = new HierarchyPlot({ width, height, layout: 'vertical', tree: 'cluster' })
-        plot.setContainer(containerRef.current)
-        plot.setup()
-        plot.dataUpdate(result.index)
+        const hierarchyPlot = new HierarchyPlot({ width, height, layout: 'vertical', tree: 'cluster' })
+        hierarchyPlot.setContainer(containerRef.current)
+        hierarchyPlot.setup()
+        setHierarchyPlotRef(hierarchyPlot)
+        hierarchyPlot.dataUpdate(result.index)
         setValue(0)
     }, [containerRef])
 

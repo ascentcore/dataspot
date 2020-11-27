@@ -43,4 +43,9 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         }
         return null
     }
+
+    destroy() {
+        Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) => viz.destroy())
+        super.destroy()
+    }
 }

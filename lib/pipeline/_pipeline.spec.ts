@@ -49,7 +49,7 @@ describe('Pipeline Unit Tests', () => {
             return new Promise((res) =>
                 setTimeout(() => {
                     seq.push(1)
-                    res()
+                    res({})
                 }, 10)
             )
         })
@@ -57,7 +57,7 @@ describe('Pipeline Unit Tests', () => {
             return new Promise((res) =>
                 setTimeout(() => {
                     seq.push(2)
-                    res()
+                    res({})
                 }, 5)
             )
         })
@@ -77,7 +77,7 @@ describe('Pipeline Unit Tests', () => {
             return new Promise((res) =>
                 setTimeout(() => {
                     seq.push(1)
-                    res()
+                    res({})
                 }, 10)
             )
         })
@@ -85,7 +85,7 @@ describe('Pipeline Unit Tests', () => {
             return new Promise((res) =>
                 setTimeout(() => {
                     seq.push(2)
-                    res()
+                    res({})
                 }, 5)
             )
         })
@@ -105,7 +105,7 @@ describe('Pipeline Unit Tests', () => {
             return new Promise((res) =>
                 setTimeout(() => {
                     seq.push(1)
-                    res()
+                    res({})
                 }, 10)
             )
         })
@@ -113,7 +113,7 @@ describe('Pipeline Unit Tests', () => {
             return new Promise((res) =>
                 setTimeout(() => {
                     seq.push(2)
-                    res()
+                    res({})
                 }, 5)
             )
         })

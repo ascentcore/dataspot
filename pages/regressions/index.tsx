@@ -30,7 +30,16 @@ function Representation({
     const regressionRef = useRef<HTMLDivElement | null>(null)
     const costRef = useRef<HTMLDivElement | null>(null)
 
+    const [regressionPlotRef] = useState(null)
+    const [costPlotRef] = useState(null)
+
     const plot = async () => {
+        if (regressionPlotRef) {
+            regressionPlotRef.destroy()
+        }
+        if (costPlotRef) {
+            costPlotRef.destroy()
+        }
         if (regressionRef.current) {
             if (name === 'Logistic Regression') {
                 const axisElemClass = 'axis-elem'

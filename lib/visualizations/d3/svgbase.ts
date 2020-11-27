@@ -34,13 +34,22 @@ export default abstract class SVGBaseVisualization extends BaseVisualization {
                 .attr('width', width)
                 .attr('height', height)
             rootContainer = parentContainer
+            Object.assign(this.dependencies, { isRoot: true })
         } else {
             parentContainer = containerRef.getDependency('container')
             rootContainer = containerRef.getDependency('rootContainer')
+            Object.assign(this.dependencies, { isRoot: false })
         }
 
         const container = parentContainer.append('g').attr('class', this.elemClass)
 
         Object.assign(this.dependencies, { container, rootContainer })
+    }
+
+    destroy() {
+        const { isRoot, rootContainer } = this.dependencies
+        if (isRoot) {
+            rootContainer.remove()
+        }
     }
 }
