@@ -39,7 +39,7 @@ export function parent(this: PageEvent, grandParent = false) {
 
     const res = pp(this, this.model, breadcrumbs)
 
-    if (res[0] === '/docs/classes/globals.md') {
+    if (res[0] === '../globals.md') {
         return ''
     } else {
         const newTitle = res[1]

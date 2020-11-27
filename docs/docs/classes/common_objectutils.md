@@ -24,7 +24,7 @@ has_children: false
 ▸ `Static`**deepClone**\<T>(`obj`: T): T
 
 {:.url-source-ref}
-[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/objectUtils.ts#L6)
+[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/0893946/lib/common/objectUtils.ts#L6)
 
 #### Type parameters:
 

@@ -10,7 +10,7 @@ has_children: false
 
 ## Hierarchy
 
-* [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig)
+* [clustering.CentroidConfig](../clustering_centroidconfig)
 
   ↳ **clustering.KMeansConfig**
 
@@ -32,24 +32,24 @@ has_children: false
 
 •  **centroids**: number[][] = []
 
-*Inherited from [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig).[centroids](/docs/classes/clustering_centroidconfig#centroids)*
+*Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[centroids](../clustering_centroidconfig#centroids)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/centroidClustering.ts#L6)
+[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/0893946/lib/clustering/centroidClustering.ts#L6)
 
 ___
 
 •  **clusters**: number = 8
 
 {:.url-source-ref}
-[lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/kMeans.ts#L9)
+[lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/0893946/lib/clustering/kMeans.ts#L9)
 
 ___
 
 •  **convergenceIterations**: number = -1
 
 {:.url-source-ref}
-[lib/clustering/kMeans.ts:14](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/kMeans.ts#L14)
+[lib/clustering/kMeans.ts:14](https://github.com/ascentcore/dataspot/blob/0893946/lib/clustering/kMeans.ts#L14)
 
 Kmeans initial convergence iterations
 
@@ -57,16 +57,16 @@ ___
 
 •  **distanceFn**: string = "euclideanDistance"
 
-*Inherited from [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig).[distanceFn](/docs/classes/clustering_centroidconfig#distancefn)*
+*Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[distanceFn](../clustering_centroidconfig#distancefn)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/centroidClustering.ts#L8)
+[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/0893946/lib/clustering/centroidClustering.ts#L8)
 
 ___
 
 •  **iterations**: number = 300
 
-*Overrides [common.EvolutionaryConfig](/docs/classes/common_evolutionaryconfig).[iterations](/docs/classes/common_evolutionaryconfig#iterations)*
+*Overrides [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/kMeans.ts#L11)
+[lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/0893946/lib/clustering/kMeans.ts#L11)
