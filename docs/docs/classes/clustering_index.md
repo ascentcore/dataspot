@@ -14,7 +14,7 @@ Clustering module documentation
 
 <div class="running-sample">
     <span class="running-sample-container" data-ref="documentation/sample"></span>
-    <script src='/samples/sample.js' title="documentation/sample"></script>
+    <script src='/dataspot/samples/sample.js' title="documentation/sample"></script>
 </div>
 
 ## Hierarchy

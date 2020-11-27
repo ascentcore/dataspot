@@ -10,7 +10,7 @@ has_children: false
 
 ## Hierarchy
 
-* [common.EvolutionaryConfig](/docs/classes/common_evolutionaryconfig)
+* [common.EvolutionaryConfig](../common_evolutionaryconfig)
 
   ↳ **clustering.AglomerativeClusteringConfig**
 
@@ -30,13 +30,13 @@ has_children: false
 •  **distanceFn**: string = "euclideanDistance"
 
 {:.url-source-ref}
-[lib/clustering/agglomerativeClustering.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L6)
+[lib/clustering/agglomerativeClustering.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/agglomerativeClustering.ts#L6)
 
 ___
 
 •  **iterations**: number = 100
 
-*Inherited from [common.EvolutionaryConfig](/docs/classes/common_evolutionaryconfig).[iterations](/docs/classes/common_evolutionaryconfig#iterations)*
+*Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)

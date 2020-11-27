@@ -44,7 +44,7 @@ export class MarkdownPlugin extends ConverterComponent {
 
     private convertCommentTagText(tagName: string, tagText: string): string {
         const texts = tagText.split('\n')
-        const fileName = `/samples${texts[0].substr(texts[0].lastIndexOf('/'))}.js`
+        const fileName = `/dataspot/samples${texts[0].substr(texts[0].lastIndexOf('/'))}.js`
         // const data = fs.readFileSync(fileName, 'utf8')
 
         const script = `
