@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist",
+      "declaration": true,
+      "experimentalDecorators": true,
+      "lib": ["es2016", "dom"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noImplicitAny": false,
+      "noUnusedLocals": true,
+      "removeComments": true,
+      "sourceMap": false,
+      "strictNullChecks": true,
+      "target": "es2017"
+    },
+    "include": ["./src/**/*.ts"],
+}

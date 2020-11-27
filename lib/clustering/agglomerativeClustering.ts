@@ -1,6 +1,6 @@
 import { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
 import distances, { DistanceMeasurement } from '../math/distances'
-import ClusteringAlgorithm from './clustering'
+import ClusteringAlgorithm from './clusteringBase'
 
 export class AglomerativeClusteringConfig extends EvolutionaryConfig {
     public distanceFn: string = 'euclideanDistance'

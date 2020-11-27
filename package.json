@@ -12,7 +12,9 @@
         "lint:json": "prettier --list-different .eslintrc *.json",
         "lint:ts": "eslint --ext .js,.ts --ignore-path .eslintignore .",
         "build": "tsc --p ./lib",
-        "generate-docs": "rimraf docs && typedoc --options ./typedoc.json . --plugin typedoc-plugin-markdown",
+        "build:samples": "rimraf docs/samples && webpack -c ./samples.webpack.config.js --mode production",
+        "build:plugins": "rimraf ./tools/typedoc-plugin-markdown/dist && tsc --p ./tools/typedoc-plugin-markdown && copyfiles --up 3 ./tools/typedoc-plugin-markdown/src/**/*.hbs ./tools/typedoc-plugin-markdown/dist/",
+        "build:docs": "npm run build:samples && rimraf docs/docs && typedoc --options ./typedoc.json --plugin ./tools/typedoc-plugin-markdown && rimraf docs/docs/globals.md",
         "generate-showcase": "cd showcase-generator && npm run build-prod"
     },
     "repository": {
@@ -34,6 +36,7 @@
     "devDependencies": {
         "@types/d3": "^5.16.3",
         "@types/jsdom": "^16.2.4",
+        "@types/node": "^14.14.9",
         "@types/node-fetch": "^2.5.7",
         "@types/pouchdb": "^6.4.0",
         "@types/react": "^16.9.55",
@@ -42,11 +45,15 @@
         "@types/sharp": "^0.26.0",
         "@typescript-eslint/eslint-plugin": "^2.2.0",
         "@typescript-eslint/parser": "^2.2.0",
+        "babel-loader": "^8.1.0",
+        "copyfiles": "^2.4.0",
+        "css-loader": "^5.0.1",
         "eslint": "^6.1.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-config-prettier": "^6.3.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-prettier": "^3.1.0",
+        "html-webpack-plugin": "^4.5.0",
         "jest": "^26.4.2",
         "node-fetch": "^2.6.1",
         "nodemon": "^2.0.4",
@@ -55,10 +62,13 @@
         "react-dom": "16.13.1",
         "rimraf": "^3.0.2",
         "ts-jest": "^26.3.0",
+        "ts-loader": "^8.0.9",
         "ts-node": "^9.0.0",
         "typedoc": "^0.19.1",
         "typedoc-plugin-markdown": "^2.4.2",
-        "typescript": "^3.8.0"
+        "typescript": "^4.0.5",
+        "webpack": "4.44.1",
+        "webpack-cli": "^4.2.0"
     },
     "dependencies": {
         "canvas": "^2.6.1",
@@ -66,7 +76,7 @@
         "express": "^4.17.1",
         "express-pouchdb": "^4.2.0",
         "jsdom": "^16.4.0",
-        "next": "9.5.3",
+        "next": "10.0.3",
         "node-html-to-image": "^3.1.0",
         "pouchdb": "^7.2.2",
         "react": "16.13.1",

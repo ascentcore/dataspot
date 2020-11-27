@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 
-import generateArcDataset from '../../lib/dataset/arcDataset'
-import generateBlobDataset from '../../lib/dataset/blobDataset'
-import generateConcentricRingsDataset from '../../lib/dataset/concentricRingsDataset'
+import generateArcDataset from '../../lib/dataset/clustering/arcDataset'
+import generateBlobDataset from '../../lib/dataset/clustering/blobDataset'
+import generateConcentricRingsDataset from '../../lib/dataset/clustering/concentricRingsDataset'
 
 import Scatter from '../../lib/visualizations/d3/scatter'
 import Axis from '../../lib/visualizations/d3/axis'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import '../../samples/documentation/datasets/clustering'
 
 function Representation({ data, name, width, height }) {
     const svgRef = useRef(null)
