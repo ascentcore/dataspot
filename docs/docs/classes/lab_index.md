@@ -39,7 +39,7 @@ has_children: true
 *Overrides [registry.RegisterInstance](registry_registerinstance).[constructor](registry_registerinstance#constructor)*
 
 {:.url-source-ref}
-[lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/lab/index.ts#L7)
+[lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/40beee3/lib/lab/index.ts#L7)
 
 **Returns:** [lab\_index](lab_index)
 
@@ -48,21 +48,21 @@ has_children: true
 •  **connected**: Promise\<boolean>
 
 {:.url-source-ref}
-[lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/lab/index.ts#L7)
+[lib/lab/index.ts:7](https://github.com/ascentcore/dataspot/blob/40beee3/lib/lab/index.ts#L7)
 
 ___
 
 • `Private` **db**: any
 
 {:.url-source-ref}
-[lib/lab/index.ts:5](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/lab/index.ts#L5)
+[lib/lab/index.ts:5](https://github.com/ascentcore/dataspot/blob/40beee3/lib/lab/index.ts#L5)
 
 ___
 
 • `Private` **project**: string
 
 {:.url-source-ref}
-[lib/lab/index.ts:9](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/lab/index.ts#L9)
+[lib/lab/index.ts:9](https://github.com/ascentcore/dataspot/blob/40beee3/lib/lab/index.ts#L9)
 
 ## Methods
 
@@ -70,7 +70,7 @@ ___
 ▸ **store**(`key`: string, `data`: any): Promise\<any>
 
 {:.url-source-ref}
-[lib/lab/index.ts:53](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/lab/index.ts#L53)
+[lib/lab/index.ts:53](https://github.com/ascentcore/dataspot/blob/40beee3/lib/lab/index.ts#L53)
 
 **Returns:** Promise\<any>
 
@@ -82,6 +82,6 @@ ___
 *Inherited from [registry.RegisterInstance](registry_registerinstance).[unregister](registry_registerinstance#unregister)*
 
 {:.url-source-ref}
-[lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/registry/registry.ts#L12)
+[lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/40beee3/lib/registry/registry.ts#L12)
 
 **Returns:** void

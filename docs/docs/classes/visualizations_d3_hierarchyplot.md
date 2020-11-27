@@ -42,7 +42,7 @@ has_children: false
 *Overrides [visualizations.d3.SVGBaseVisualization](visualizations_d3_svgbasevisualization).[constructor](visualizations_d3_svgbasevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/hierarchy.ts:3](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/hierarchy.ts#L3)
+[lib/visualizations/d3/hierarchy.ts:3](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/hierarchy.ts#L3)
 
 **Returns:** [visualizations.d3.HierarchyPlot](visualizations_d3_hierarchyplot)
 
@@ -53,7 +53,7 @@ has_children: false
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L14)
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -74,7 +74,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
@@ -84,7 +84,7 @@ ___
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/hierarchy.ts:86](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/hierarchy.ts#L86)
+[lib/visualizations/d3/hierarchy.ts:86](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/hierarchy.ts#L86)
 
 **Returns:** [updateFn](visualizations_d3_hierarchyplot#updatefn)
 
@@ -96,7 +96,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L31)
+[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L31)
 
 **Returns:** any
 
@@ -108,7 +108,7 @@ ___
 *Inherited from [visualizations.d3.SVGBaseVisualization](visualizations_d3_svgbasevisualization).[setContainer](visualizations_d3_svgbasevisualization#setcontainer)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/svgbase.ts#L24)
+[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/svgbase.ts#L24)
 
 **Returns:** void
 
@@ -120,7 +120,7 @@ ___
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/hierarchy.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/hierarchy.ts#L8)
+[lib/visualizations/d3/hierarchy.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/hierarchy.ts#L8)
 
 **Returns:** void
 
@@ -130,6 +130,6 @@ ___
 ▸ **updateFn**(`data`: any, `elemClass`: string): void
 
 {:.url-source-ref}
-[lib/visualizations/d3/hierarchy.ts:10](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/hierarchy.ts#L10)
+[lib/visualizations/d3/hierarchy.ts:10](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/hierarchy.ts#L10)
 
 **Returns:** void

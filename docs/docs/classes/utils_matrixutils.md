@@ -24,6 +24,6 @@ has_children: false
 ▸ `Static`**transpose**(`matrix`: number[][]): number[][]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/utils/math-utils.ts#L204)
+[lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/40beee3/lib/utils/math-utils.ts#L204)
 
 **Returns:** number[][]

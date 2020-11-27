@@ -43,7 +43,7 @@ has_children: false
 *Overrides [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[constructor](visualizations_html_htmlbasevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:4](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/html/table.ts#L4)
+[lib/visualizations/html/table.ts:4](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/html/table.ts#L4)
 
 **Returns:** [visualizations.html.Table](visualizations_html_table)
 
@@ -54,7 +54,7 @@ has_children: false
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L14)
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -75,7 +75,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
@@ -85,7 +85,7 @@ ___
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:49](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/html/table.ts#L49)
+[lib/visualizations/html/table.ts:49](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/html/table.ts#L49)
 
 **Returns:** [updateFn](visualizations_html_table#updatefn)
 
@@ -97,7 +97,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L31)
+[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L31)
 
 **Returns:** any
 
@@ -109,7 +109,7 @@ ___
 *Inherited from [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[injectDOM](visualizations_html_htmlbasevisualization#injectdom)*
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/html/htmlbase.ts#L20)
+[lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/html/htmlbase.ts#L20)
 
 **Returns:** void
 
@@ -121,7 +121,7 @@ ___
 *Inherited from [visualizations.html.HTMLBaseVisualization](visualizations_html_htmlbasevisualization).[setContainer](visualizations_html_htmlbasevisualization#setcontainer)*
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/html/htmlbase.ts#L24)
+[lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/html/htmlbase.ts#L24)
 
 **Returns:** void
 
@@ -133,7 +133,7 @@ ___
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:9](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/html/table.ts#L9)
+[lib/visualizations/html/table.ts:9](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/html/table.ts#L9)
 
 **Returns:** void
 
@@ -143,6 +143,6 @@ ___
 ▸ `Private`**updateFn**(`data`: TwoDPointLine[] \| TwoDPointScatter[], `elemClass`: string): void
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:11](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/html/table.ts#L11)
+[lib/visualizations/html/table.ts:11](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/html/table.ts#L11)
 
 **Returns:** void

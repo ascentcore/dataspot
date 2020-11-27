@@ -53,7 +53,7 @@ has_children: false
 *Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[constructor](visualizations_basevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:10](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/svgbase.ts#L10)
+[lib/visualizations/d3/svgbase.ts:10](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/svgbase.ts#L10)
 
 **Returns:** [visualizations.d3.SVGBaseVisualization](visualizations_d3_svgbasevisualization)
 
@@ -64,7 +64,7 @@ has_children: false
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L14)
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -85,7 +85,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
@@ -97,7 +97,7 @@ Isomorphic method used on every data update
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L26)
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L26)
 
 **Returns:** (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
 
@@ -109,7 +109,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L31)
+[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L31)
 
 **Returns:** any
 
@@ -119,7 +119,7 @@ ___
 ▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.d3.SVGBaseVisualization](visualizations_d3_svgbasevisualization)): void
 
 {:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/d3/svgbase.ts#L24)
+[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/d3/svgbase.ts#L24)
 
 **Returns:** void
 
@@ -134,6 +134,6 @@ that are going to be used by the data update function
 *Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/visualizations/basevisualization.ts#L20)
+[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/40beee3/lib/visualizations/basevisualization.ts#L20)
 
 **Returns:** void

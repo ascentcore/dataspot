@@ -45,7 +45,7 @@ has to be executed one after the other and the results collected in a single obj
 *Inherited from [pipeline.Pipeline](pipeline_pipeline).[constructor](pipeline_pipeline#constructor)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/pipeline.ts#L11)
+[lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/pipeline.ts#L11)
 
 **Returns:** [pipeline.WaterfallPipeline](pipeline_waterfallpipeline)
 
@@ -56,7 +56,7 @@ has to be executed one after the other and the results collected in a single obj
 *Inherited from [pipeline.Step](pipeline_step).[state](pipeline_step#state)*
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L12)
+[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L12)
 
 Internal pipeline state reference
 
@@ -67,7 +67,7 @@ ___
 *Inherited from [pipeline.Pipeline](pipeline_pipeline).[steps](pipeline_pipeline#steps)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/pipeline.ts#L12)
+[lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/pipeline.ts#L12)
 
 ## Methods
 
@@ -79,7 +79,7 @@ Adds one step executor to the pipeline
 *Inherited from [pipeline.Pipeline](pipeline_pipeline).[add](pipeline_pipeline#add)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/pipeline.ts#L29)
+[lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/pipeline.ts#L29)
 
 **Returns:** [pipeline.Pipeline](pipeline_pipeline)
 
@@ -91,7 +91,7 @@ ___
 *Overrides [pipeline.Pipeline](pipeline_pipeline).[execute](pipeline_pipeline#execute)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:95](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/pipeline.ts#L95)
+[lib/pipeline/pipeline.ts:95](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/pipeline.ts#L95)
 
 #### Type parameters:
 
@@ -112,7 +112,7 @@ Return value at key from storage
 *Inherited from [pipeline.Step](pipeline_step).[getStateKey](pipeline_step#getstatekey)*
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L35)
+[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L35)
 
 **Returns:** any
 
@@ -128,7 +128,7 @@ Update current pipe internal state with passed object and assign to children
 *Overrides [pipeline.Step](pipeline_step).[setState](pipeline_step#setstate)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/pipeline.ts#L20)
+[lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/pipeline.ts#L20)
 
 **Returns:** void
 
@@ -142,7 +142,7 @@ Set state property
 *Inherited from [pipeline.Step](pipeline_step).[setStateKey](pipeline_step#setstatekey)*
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L27)
+[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L27)
 
 **Returns:** void
 
@@ -156,7 +156,7 @@ Executes one pipeline step
 *Inherited from [pipeline.Pipeline](pipeline_pipeline).[executeStep](pipeline_pipeline#executestep)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/pipeline.ts#L43)
+[lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/pipeline.ts#L43)
 
 #### Type parameters:
 

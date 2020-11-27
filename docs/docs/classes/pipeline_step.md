@@ -41,7 +41,7 @@ Name |
 • `Protected` **state**: [models.ObjectLike](../interfaces/models_objectlike)
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L12)
+[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L12)
 
 Internal pipeline state reference
 
@@ -53,7 +53,7 @@ Internal pipeline state reference
 Execute a step in the pipeline and return a promise to the next element in pipe
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L43)
+[lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L43)
 
 **Returns:** Promise\<K>
 
@@ -65,7 +65,7 @@ ___
 Return value at key from storage
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L35)
+[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L35)
 
 **Returns:** any
 
@@ -77,7 +77,7 @@ ___
 Set state reference
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L18)
+[lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L18)
 
 **Returns:** void
 
@@ -89,6 +89,6 @@ ___
 Set state property
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/pipeline/types.ts#L27)
+[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/40beee3/lib/pipeline/types.ts#L27)
 
 **Returns:** void
