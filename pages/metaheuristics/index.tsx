@@ -58,7 +58,7 @@ function Representation({
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
         const psoGenerator = pso.fitAsync(
             Object.assign(new FitnessFunction(), {
-                function: ff,
+                calculate: ff,
                 dimensions: [{ min: domain[0], max: domain[1] }]
             })
         )
@@ -120,7 +120,7 @@ function Representation({
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
         const psoGenerator = pso.fitAsync(
             Object.assign(new FitnessFunction(), {
-                function: ff,
+                calculate: ff,
                 dimensions: [{ min: domain[0], max: domain[1] }, { min: domain[0], max: domain[1] }]
             })
         )
