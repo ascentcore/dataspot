@@ -39,7 +39,7 @@ export default abstract class PopulationMetaheuristic<
         return false
     }
 
-    protected abstract movePosition(particle: Individual): void
+    protected abstract movePosition(...particles: Individual[]): void
 
     protected sortPopulation() {
         this.individuals.sort((i1, i2) => i1.fitness - i2.fitness)
@@ -70,9 +70,7 @@ export default abstract class PopulationMetaheuristic<
         }
     }
 
-    public abstract step(): void
-
-    preparePopulation(): void {
+    protected preparePopulation(): void {
         const { populationSize } = this.config
         this.iteration = 0
         this.individuals = []
@@ -91,7 +89,9 @@ export default abstract class PopulationMetaheuristic<
         this.updateGlobalBest()
     }
 
-    *fitAsync(fitessFunction: FitnessFunction): Generator {
+    public abstract step(): void
+
+    public *fitAsync(fitessFunction: FitnessFunction): Generator {
         this.fitnessFunction = fitessFunction
         this.preparePopulation()
         while (!this.shouldStop() && !this.canStop()) {
@@ -103,7 +103,7 @@ export default abstract class PopulationMetaheuristic<
         return this.individuals.map((individual: Individual) => individual.bestPosition)
     }
 
-    fit(fitessFunction: FitnessFunction): number[][] {
+    public fit(fitessFunction: FitnessFunction): number[][] {
         this.fitnessFunction = fitessFunction
         this.preparePopulation()
         while (!this.shouldStop() && !this.canStop()) {
@@ -115,5 +115,5 @@ export default abstract class PopulationMetaheuristic<
         return this.individuals.map((individual: Individual) => individual.bestPosition)
     }
 
-    onEndFit(): void {}
+    protected onEndFit(): void {}
 }
