@@ -18,15 +18,12 @@ export class Individual {
 
     public bestPosition: number[] = []
 
-    public bestFitness = Infinity
-
     public velocity: number[] | null = null
 
     computeFitness(fitnessFunction: FitnessFunction) {
         this.fitness = fitnessFunction.calculate(...this.position)
-        if (this.fitness < this.bestFitness) {
+        if (this.fitness < fitnessFunction.calculate(...this.bestPosition)) {
             this.bestPosition = [...this.position]
-            this.bestFitness = this.fitness
         }
     }
 }
@@ -59,7 +56,7 @@ export default abstract class PopulationMetaheuristic<
         let newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
 
         for (let i = 1; i < this.individuals.length; i++) {
-            if (this.individuals[i].bestFitness < newBestFitness) {
+            if (this.fitnessFunction.calculate(this.individuals[i].bestPosition) < newBestFitness) {
                 newBestPosition = [...this.individuals[i].bestPosition]
                 newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
             }

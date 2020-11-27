@@ -31,8 +31,10 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/metaheuristics' className='btn btn-link'>
                         Metaheuristics
                     </a>
+                    <a href='/clustering' className='btn btn-link'>
+                        Clustering
+                    </a>
                 </section>
-                <section className='navbar-section'></section>
             </header>
             <div className='container'>
                 <Component {...pageProps} />

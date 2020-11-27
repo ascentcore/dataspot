@@ -19,8 +19,6 @@ describe('Hierarchy', () => {
         //     euclideanDistance
         // )
 
-        delete result.points
-
         console.log(hCut(result, 1))
 
         console.log(JSON.stringify(result, null, 2))

@@ -1,4 +1,4 @@
 dist/
+tools/typedoc-plugin-markdown
 node_modules/
-samples/
 next-env.d.ts

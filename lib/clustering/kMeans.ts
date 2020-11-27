@@ -10,9 +10,26 @@ export class KMeansConfig extends CentroidConfig {
 
     public iterations: number = 300
 
+    /** Kmeans initial convergence iterations */
     public convergenceIterations: number = -1
 }
 
+/**
+ * The KMeans algorithm clusters data by trying to separate samples in n groups of equal variance, minimizing a criterion known as the inertia or
+ * within-cluster sum-of-squares (see below). This algorithm requires the number of clusters to be specified.
+ * It scales well to large number of samples and has been used across a large range of application areas in many different fields.
+ * The k-means algorithm divides a set of  samples  into  disjoint clusters , each described by the mean of the samples in the cluster.
+ * The means are commonly called the cluster “centroids”; note that they are not, in general, points from , although they live in the same space.
+ * The K-means algorithm aims to choose centroids that minimise the inertia, or within-cluster sum-of-squares criterion:
+ *  - Inertia can be recognized as a measure of how internally coherent clusters are. It suffers from various drawbacks:
+ *  - Inertia makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes.
+ *  - Inertia is not a normalized metric: we just know that lower values are better and zero is optimal.
+ * But in very high-dimensional spaces, Euclidean distances tend to become inflated (this is an instance of the so-called “curse of dimensionality”).
+ * Running a dimensionality reduction algorithm such as Principal component analysis (PCA) prior to k-means clustering can alleviate this problem and speed up the computations.
+ *
+ * @sample documentation/sample
+ *
+ */
 export default class KMeans extends CentroidClustering<KMeansConfig> {
     private convergence!: Convergence
 
@@ -21,6 +38,9 @@ export default class KMeans extends CentroidClustering<KMeansConfig> {
         this.initializeDependencies(distanceFunction)
     }
 
+    /**
+     * Test kmeans step documentation
+     */
     step(): void {
         const { fitData, config } = this
         const { centroids, clusters } = config
@@ -56,6 +76,9 @@ export default class KMeans extends CentroidClustering<KMeansConfig> {
         }
     }
 
+    /**
+     * test kmeans stop documentation
+     */
     canStop(): boolean {
         return this.convergence && this.convergence.hadConverged()
     }

@@ -1,6 +1,6 @@
 import distances, { DistanceMeasurement } from '../math/distances'
 import CentroidClustering, { CentroidConfig } from './centroidClustering'
-import ClusteringAlgorithm from './clustering'
+import ClusteringAlgorithm from './clusteringBase'
 
 export class BirchConfig extends CentroidConfig {
     public clusters: number = 3

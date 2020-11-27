@@ -1,6 +1,6 @@
 import { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
 import distances, { DistanceMeasurement } from '../math/distances'
-import ClusteringAlgorithm from './clustering'
+import ClusteringAlgorithm from './clusteringBase'
 
 export class DBScanConfig extends EvolutionaryConfig {
     public epsilon: number = 0.1

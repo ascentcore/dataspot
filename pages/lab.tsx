@@ -40,7 +40,6 @@ export default function Lab() {
                 changes.cancel()
             }
         }
-
         return () => {}
     }, [db])
 
