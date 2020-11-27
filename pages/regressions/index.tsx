@@ -1,10 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { mseCostFunction } from '../../lib/functions/optimizers'
+// import { predictMultivariable, transformToPolynomialInput } from '../../lib/regressions/utilities'
 import LinearRegression from '../../lib/regressions/linearRegression'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import Scatter from '../../lib/visualizations/d3/scatter'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 import Axis from '../../lib/visualizations/d3/axis'
+import { VectorUtils } from '../../lib/utils/math-utils'
+import PolynomialRegression from '../../lib/regressions/polynomialRegression'
+import predictionSinglevariable, {
+    predictMultivariable,
+    transformToPolynomialInput,
+    transposeAndNormalize
+} from '../../lib/regressions/utilities'
 
 function Representation({
     data,
@@ -34,8 +42,8 @@ function Representation({
                 {
                     width,
                     height,
-                    domainX: { min: 0, max: 9 },
-                    domainY: { min: 0, max: 65 }
+                    domainX: { min: 0, max: VectorUtils.max(data[0]) },
+                    domainY: { min: 0, max: VectorUtils.max(data[1]) }
                 },
                 'regression-elem',
                 [axisRegression, scatterRegressionPlot, lineRegressionPlot]
@@ -49,31 +57,38 @@ function Representation({
             }
             multiplePlot.dataUpdate(mappedData, scatterElemClass)
 
-            const input = [1, 2, 3, 4, 5, 6, 7, 8]
-            const linearRegression = LinearRegression.fit(
-                input,
-                [1, 4, 9, 16, 25, 36, 49, 64],
-                2,
-                1,
-                0.001,
-                10,
-                mseCostFunction
-            )
+            const regression =
+                name === 'Linear Regression'
+                    ? LinearRegression.fit(data[0], data[1], 0.1, 10000, mseCostFunction)
+                    : PolynomialRegression.fit(data[0], data[1], 2, 0.1, 10000, mseCostFunction)
             let doneRegression = false
-            let regressionValue = { updatedWeight: 0, updatedBias: 0, costHistory: [] }
+            let regressionValue = { biasAndWeights: [], costHistory: [] }
 
             const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
+            const transformedInput: number[] | number[][] =
+                name === 'Linear Regression'
+                    ? VectorUtils.normalize(data[0])
+                    : transposeAndNormalize(transformToPolynomialInput(data[0], 2))
+
             while (!doneRegression) {
-                const regressionResult = linearRegression.next()
+                const regressionResult = regression.next()
                 regressionValue = regressionResult.value
 
                 doneRegression = regressionResult.done || false
-
+                console.log(regressionValue)
+                const updatedPrediction = Array.isArray(transformedInput[0])
+                    ? predictMultivariable(transformedInput, regressionValue.biasAndWeights)
+                    : predictionSinglevariable(transformedInput, regressionValue.biasAndWeights)
+                const iterator = Array.from(Array(data[0].length).keys())
+                console.log('updatedPrediction', updatedPrediction)
                 multiplePlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func
-                    input.map((i: number) => {
-                        return { x: i, y: i * regressionValue.updatedWeight + regressionValue.updatedBias }
+                    iterator.map((i: number) => {
+                        return {
+                            x: data[0][i],
+                            y: updatedPrediction[i]
+                        }
                     }),
                     lineElemClass
                 )
@@ -109,7 +124,13 @@ function Representation({
     )
 }
 
-const reps = [{ name: 'Linear Regression', data: [[1, 2, 3, 4, 5, 6, 7, 8], [1, 4, 9, 16, 25, 36, 49, 64]] }]
+const reps = [
+    { name: 'Linear Regression', data: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]] },
+    {
+        name: 'Polynomial Regression',
+        data: [[1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5], [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]]
+    }
+]
 
 export default function Regressions() {
     const [vis] = useState(reps)

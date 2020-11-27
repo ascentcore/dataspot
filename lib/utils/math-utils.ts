@@ -185,16 +185,33 @@ export class VectorUtils {
         return Math.min.apply(Math, v)
     }
 
+    static standardDevision(v: number[]): number {
+        const avg = this.averageElements(v)
+
+        const squareDiffs = v.map((value) => {
+            const diff = value - avg
+            const sqrDiff = diff * diff
+
+            return sqrDiff
+        })
+
+        const avgSquareDiff = this.averageElements(squareDiffs)
+
+        const stdDev = Math.sqrt(avgSquareDiff)
+
+        return stdDev
+    }
+
     static normalize(v: number[]): number[] {
         let avg = 0
-        let range = 0
+        let std = 0
         let resultVector = []
 
         avg = this.averageElements(v)
-        range = this.max(v) - this.min(v)
+        std = this.standardDevision(v)
 
         resultVector = this.scalarSubtraction(v, avg)
-        resultVector = this.scalarDivision(resultVector, range)
+        resultVector = this.scalarDivision(resultVector, std)
 
         return resultVector
     }
