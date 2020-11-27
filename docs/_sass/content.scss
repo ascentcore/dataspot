@@ -229,3 +229,29 @@
     }
   }
 }
+
+.method-highlight {
+  border-left: 2px solid $purple-100;
+  background-color: $grey-lt-000;
+  padding: $sp-3;
+}
+
+.url-source-ref {
+  &:before {
+    content: "github";
+    display: inline-block;
+    background-color: $grey-lt-200;
+    border: 1px solid $grey-lt-300;
+    border-radius: 2px;
+    font-size: $font-size-1;
+    padding: 1px;
+    vertical-align: middle;
+    margin: $sp-2;
+  }
+
+}
+
+.page-title {
+  display: block;
+  text-align: center;
+}

@@ -1,6 +1,6 @@
 import MarkdownTheme from '../../theme'
 
-export function relativeURL(url: string) {
-    const result = MarkdownTheme.HANDLEBARS.helpers.relativeURL(url)
-    return result.replace('.md#', '#')
+export function relativeURL(url: string, stripPath = false) {
+    const result = MarkdownTheme.HANDLEBARS.helpers.relativeURL(url).replace('.md#', '#')
+    return stripPath ? result.substr(result.lastIndexOf('#')) : result
 }

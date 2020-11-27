@@ -4,6 +4,7 @@ import { ArrayType, ReferenceType } from 'typedoc/dist/lib/models/types';
 import MarkdownTheme from '../../theme';
 
 export function typeAndParent(this: ArrayType | ReferenceType) {
+  
   if (this instanceof ReferenceType && this.reflection) {
     const md: string[] = [];
     const parentReflection = this.reflection.parent;

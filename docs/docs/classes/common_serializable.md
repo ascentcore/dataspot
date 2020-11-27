@@ -6,23 +6,19 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [common.Serializable](common_serializable)
-
 # Serializable
 
 ## Type parameters
 
 Name | Type |
 ------ | ------ |
-`T` | [common.SerializableConfig](common_serializableconfig) |
+`T` | [common.SerializableConfig](/docs/classes/common_serializableconfig) |
 
 ## Hierarchy
 
 * **common.Serializable**
 
-  ↳ [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm)
+  ↳ [common.EvolutionaryAlgorithm](/docs/classes/common_evolutionaryalgorithm)
 
 ## Indexable
 
@@ -30,65 +26,52 @@ Name | Type |
 
 ## Index
 
-### Constructors
+| Constructors |
+|-----------|
+| [constructor](#constructor) |
 
-* [constructor](common_serializable#constructor)
+| Properties |
+|-----------|
+| [config](#config) |
 
-### Properties
-
-* [config](common_serializable#config)
-
-### Methods
-
-* [loadState](common_serializable#loadstate)
-* [serialize](common_serializable#serialize)
+| Methods |
+|-----------|
+| [loadState](#loadstate) |
+| [serialize](#serialize) |
 
 ## Constructors
 
-### constructor
+{:.method-highlight}
+\+ **new Serializable**(`config`: T): [common.Serializable](/docs/classes/common_serializable)
 
-\+ **new Serializable**(`config`: T): [common.Serializable](common_serializable)
+{:.url-source-ref}
+[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L7)
 
-*Defined in [lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L7)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`config` | T |
-
-**Returns:** [common.Serializable](common_serializable)
+**Returns:** [common.Serializable](/docs/classes/common_serializable)
 
 ## Properties
 
-### config
-
 •  **config**: T
 
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L8)*
+{:.url-source-ref}
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L8)
 
 ## Methods
 
-### loadState
-
+{:.method-highlight}
 ▸ **loadState**(`from`: string): void
 
-*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L14)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`from` | string |
+{:.url-source-ref}
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L14)
 
 **Returns:** void
 
 ___
 
-### serialize
-
+{:.method-highlight}
 ▸ **serialize**(): string
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L10)*
+{:.url-source-ref}
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L10)
 
 **Returns:** string

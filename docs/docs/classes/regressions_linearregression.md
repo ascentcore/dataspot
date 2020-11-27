@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [regressions.LinearRegression](regressions_linearregression)
-
 # LinearRegression
 
 ## Hierarchy
@@ -18,28 +14,16 @@ has_children: false
 
 ## Index
 
-### Methods
-
-* [fit](regressions_linearregression#fit)
+| Methods |
+|-----------|
+| [fit](#fit) |
 
 ## Methods
 
-### fit
-
+{:.method-highlight}
 ▸ `Static`**fit**(`input`: number[], `target`: number[], `weight`: number, `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<LinearRegressionOutputType>
 
-*Defined in [lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/regressions/linearRegression.ts#L20)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`input` | number[] |
-`target` | number[] |
-`weight` | number |
-`bias` | number |
-`learningRate` | number |
-`epochs` | number |
-`costFunction` | Function |
+{:.url-source-ref}
+[lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/b02167c/lib/regressions/linearRegression.ts#L20)
 
 **Returns:** Generator\<LinearRegressionOutputType>

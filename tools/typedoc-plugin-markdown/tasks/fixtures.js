@@ -24,11 +24,6 @@ inputFiles.forEach((file) => {
     `${fixturesDir}/${path.basename(file)}.json`,
     JSON.stringify(result, replacer),
   );
-  console.log(
-    `[typedoc-plugin-markdown(task:fixtures)] writing ${path.basename(
-      file,
-    )}.json fixture`,
-  );
 });
 
 function replacer(key, value) {

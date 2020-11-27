@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [pipeline.Pipeline](pipeline_pipeline)
-
 # Pipeline
 
 Synchronous pipeline implementation - the pipeline is used
@@ -18,100 +14,86 @@ for each step in the validation / reporting process.
 
 ## Hierarchy
 
-* [pipeline.Step](pipeline_step)\<any, any>
+* [pipeline.Step](/docs/classes/pipeline_step)\<any, any>
 
   ↳ **pipeline.Pipeline**
 
-  ↳↳ [pipeline.ParalelPipeline](pipeline_paralelpipeline)
+  ↳↳ [pipeline.ParalelPipeline](/docs/classes/pipeline_paralelpipeline)
 
-  ↳↳ [pipeline.WaterfallPipeline](pipeline_waterfallpipeline)
+  ↳↳ [pipeline.WaterfallPipeline](/docs/classes/pipeline_waterfallpipeline)
 
 ## Index
 
-### Constructors
+| Constructors |
+|-----------|
+| [constructor](#constructor) |
 
-* [constructor](pipeline_pipeline#constructor)
+| Properties |
+|-----------|
+| [state](#state) |
+| [steps](#steps) |
 
-### Properties
-
-* [state](pipeline_pipeline#state)
-* [steps](pipeline_pipeline#steps)
-
-### Methods
-
-* [add](pipeline_pipeline#add)
-* [execute](pipeline_pipeline#execute)
-* [getStateKey](pipeline_pipeline#getstatekey)
-* [setState](pipeline_pipeline#setstate)
-* [setStateKey](pipeline_pipeline#setstatekey)
-* [executeStep](pipeline_pipeline#executestep)
+| Methods |
+|-----------|
+| [add](#add) |
+| [execute](#execute) |
+| [getStateKey](#getstatekey) |
+| [setState](#setstate) |
+| [setStateKey](#setstatekey) |
+| [executeStep](#executestep) |
 
 ## Constructors
 
-### constructor
+{:.method-highlight}
+\+ **new Pipeline**(`steps?`: [pipeline.Step](/docs/classes/pipeline_step)\<any, any>[]): [pipeline.Pipeline](/docs/classes/pipeline_pipeline)
 
-\+ **new Pipeline**(`steps?`: [pipeline.Step](pipeline_step)\<any, any>[]): [pipeline.Pipeline](pipeline_pipeline)
+{:.url-source-ref}
+[lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/pipeline.ts#L11)
 
-*Defined in [lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/pipeline.ts#L11)*
-
-#### Parameters:
-
-Name | Type | Default value |
------- | ------ | ------ |
-`steps` | [pipeline.Step](pipeline_step)\<any, any>[] | [] |
-
-**Returns:** [pipeline.Pipeline](pipeline_pipeline)
+**Returns:** [pipeline.Pipeline](/docs/classes/pipeline_pipeline)
 
 ## Properties
 
-### state
+• `Protected` **state**: [models.ObjectLike](/docs/classes/../interfaces/models_objectlike)
 
-• `Protected` **state**: [models.ObjectLike](../interfaces/models_objectlike)
+*Inherited from [pipeline.Step](/docs/classes/pipeline_step).[state](/docs/classes/pipeline_step#state)*
 
-*Inherited from [pipeline.Step](pipeline_step).[state](pipeline_step#state)*
-
-*Defined in [lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/types.ts#L12)*
+{:.url-source-ref}
+[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/types.ts#L12)
 
 Internal pipeline state reference
 
 ___
 
-### steps
+• `Protected` **steps**: [pipeline.Step](/docs/classes/pipeline_step)\<any, any>[]
 
-• `Protected` **steps**: [pipeline.Step](pipeline_step)\<any, any>[]
-
-*Defined in [lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/pipeline.ts#L12)*
+{:.url-source-ref}
+[lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/pipeline.ts#L12)
 
 ## Methods
 
-### add
-
-▸ **add**(`step`: [pipeline.Step](pipeline_step)\<any, any>): [pipeline.Pipeline](pipeline_pipeline)
-
-*Defined in [lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/pipeline.ts#L29)*
+{:.method-highlight}
+▸ **add**(`step`: [pipeline.Step](/docs/classes/pipeline_step)\<any, any>): [pipeline.Pipeline](/docs/classes/pipeline_pipeline)
 
 Adds one step executor to the pipeline
 
-#### Parameters:
+{:.url-source-ref}
+[lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/pipeline.ts#L29)
 
-Name | Type | Description |
------- | ------ | ------ |
-`step` | [pipeline.Step](pipeline_step)\<any, any> | pipeline step  |
-
-**Returns:** [pipeline.Pipeline](pipeline_pipeline)
+**Returns:** [pipeline.Pipeline](/docs/classes/pipeline_pipeline)
 
 ___
 
-### execute
-
+{:.method-highlight}
 ▸ **execute**\<T, K>(`data?`: Promise\<T>): Promise\<any>
-
-*Overrides [pipeline.Step](pipeline_step).[execute](pipeline_step#execute)*
-
-*Defined in [lib/pipeline/pipeline.ts:52](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/pipeline.ts#L52)*
 
 Executes steps in a synchronous mode.
 If steps can be paralelized consider using ParalelPipeline
+
+*Overrides [pipeline.Step](/docs/classes/pipeline_step).[execute](/docs/classes/pipeline_step#execute)*
+
+{:.url-source-ref}
+[lib/pipeline/pipeline.ts:52](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/pipeline.ts#L52)
 
 #### Type parameters:
 
@@ -119,85 +101,60 @@ Name |
 ------ |
 `T` |
 `K` |
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`data?` | Promise\<T> | root data to be used as input  |
 
 **Returns:** Promise\<any>
 
 ___
 
-### getStateKey
-
+{:.method-highlight}
 ▸ **getStateKey**(`key`: string): any
-
-*Inherited from [pipeline.Step](pipeline_step).[getStateKey](pipeline_step#getstatekey)*
-
-*Defined in [lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/types.ts#L35)*
 
 Return value at key from storage
 
-#### Parameters:
+*Inherited from [pipeline.Step](/docs/classes/pipeline_step).[getStateKey](/docs/classes/pipeline_step#getstatekey)*
 
-Name | Type | Description |
------- | ------ | ------ |
-`key` | string | storage key  |
+{:.url-source-ref}
+[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/types.ts#L35)
 
 **Returns:** any
 
 ___
 
-### setState
-
-▸ **setState**(`state`: [models.ObjectLike](../interfaces/models_objectlike)): void
-
-*Overrides [pipeline.Step](pipeline_step).[setState](pipeline_step#setstate)*
-
-*Defined in [lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/pipeline.ts#L20)*
+{:.method-highlight}
+▸ **setState**(`state`: [models.ObjectLike](/docs/classes/../interfaces/models_objectlike)): void
 
 Update current pipe internal state with passed object and assign to children
 
-#### Parameters:
+*Overrides [pipeline.Step](/docs/classes/pipeline_step).[setState](/docs/classes/pipeline_step#setstate)*
 
-Name | Type | Description |
------- | ------ | ------ |
-`state` | [models.ObjectLike](../interfaces/models_objectlike) | state object  |
+{:.url-source-ref}
+[lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/pipeline.ts#L20)
 
 **Returns:** void
 
 ___
 
-### setStateKey
-
+{:.method-highlight}
 ▸ **setStateKey**(`key`: string, `value`: any): void
-
-*Inherited from [pipeline.Step](pipeline_step).[setStateKey](pipeline_step#setstatekey)*
-
-*Defined in [lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/types.ts#L27)*
 
 Set state property
 
-#### Parameters:
+*Inherited from [pipeline.Step](/docs/classes/pipeline_step).[setStateKey](/docs/classes/pipeline_step#setstatekey)*
 
-Name | Type | Description |
------- | ------ | ------ |
-`key` | string | state property key storage name |
-`value` | any | value to store at key  |
+{:.url-source-ref}
+[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/types.ts#L27)
 
 **Returns:** void
 
 ___
 
-### executeStep
-
-▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.Step](pipeline_step)\<T, K>): Promise\<K>
-
-*Defined in [lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/pipeline/pipeline.ts#L43)*
+{:.method-highlight}
+▸ `Static`**executeStep**\<T, K>(`input`: T, `step`: [pipeline.Step](/docs/classes/pipeline_step)\<T, K>): Promise\<K>
 
 Executes one pipeline step
+
+{:.url-source-ref}
+[lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/b02167c/lib/pipeline/pipeline.ts#L43)
 
 #### Type parameters:
 
@@ -205,12 +162,5 @@ Name |
 ------ |
 `T` |
 `K` |
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`input` | T | input data from the root input or from the previous element in the pipe |
-`step` | [pipeline.Step](pipeline_step)\<T, K> | step to be executed  |
 
 **Returns:** Promise\<K>

@@ -48,5 +48,5 @@ export function signatureTitle(this: SignatureReflection) {
   if (this.type) {
     md.push(`: ${type.call(this.type, true)}`);
   }
-  return md.join('') + '\n';
+  return '{:.method-highlight}\n'+(md.join('') + '\n');
 }

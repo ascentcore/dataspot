@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [regressions.MultivariableLinearRegression](regressions_multivariablelinearregression)
-
 # MultivariableLinearRegression
 
 ## Hierarchy
@@ -18,28 +14,16 @@ has_children: false
 
 ## Index
 
-### Methods
-
-* [fit](regressions_multivariablelinearregression#fit)
+| Methods |
+|-----------|
+| [fit](#fit) |
 
 ## Methods
 
-### fit
-
+{:.method-highlight}
 ▸ `Static`**fit**(`input`: number[][], `target`: number[], `weight`: number[], `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<MultivariableLinearRegressionOutputType>
 
-*Defined in [lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/regressions/multivariableLinearRegression.ts#L25)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`input` | number[][] |
-`target` | number[] |
-`weight` | number[] |
-`bias` | number |
-`learningRate` | number |
-`epochs` | number |
-`costFunction` | Function |
+{:.url-source-ref}
+[lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/b02167c/lib/regressions/multivariableLinearRegression.ts#L25)
 
 **Returns:** Generator\<MultivariableLinearRegressionOutputType>

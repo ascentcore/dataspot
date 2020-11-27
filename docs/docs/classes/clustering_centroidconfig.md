@@ -6,23 +6,19 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [clustering.CentroidConfig](clustering_centroidconfig)
-
 # CentroidConfig
 
 ## Hierarchy
 
-* [common.EvolutionaryConfig](common_evolutionaryconfig)
+* [common.EvolutionaryConfig](/docs/classes/common_evolutionaryconfig)
 
   ↳ **clustering.CentroidConfig**
 
-  ↳↳ [clustering.KMeansConfig](clustering_kmeansconfig)
+  ↳↳ [clustering.KMeansConfig](/docs/classes/clustering_kmeansconfig)
 
-  ↳↳ [clustering.MeanShiftConfig](clustering_meanshiftconfig)
+  ↳↳ [clustering.MeanShiftConfig](/docs/classes/clustering_meanshiftconfig)
 
-  ↳↳ [clustering.BirchConfig](clustering_birchconfig)
+  ↳↳ [clustering.BirchConfig](/docs/classes/clustering_birchconfig)
 
 ## Indexable
 
@@ -30,34 +26,31 @@ has_children: false
 
 ## Index
 
-### Properties
-
-* [centroids](clustering_centroidconfig#centroids)
-* [distanceFn](clustering_centroidconfig#distancefn)
-* [iterations](clustering_centroidconfig#iterations)
+| Properties |
+|-----------|
+| [centroids](#centroids) |
+| [distanceFn](#distancefn) |
+| [iterations](#iterations) |
 
 ## Properties
 
-### centroids
-
 •  **centroids**: number[][] = []
 
-*Defined in [lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/centroidClustering.ts#L6)*
+{:.url-source-ref}
+[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/centroidClustering.ts#L6)
 
 ___
-
-### distanceFn
 
 •  **distanceFn**: string = "euclideanDistance"
 
-*Defined in [lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/centroidClustering.ts#L8)*
+{:.url-source-ref}
+[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/centroidClustering.ts#L8)
 
 ___
 
-### iterations
-
 •  **iterations**: number = 100
 
-*Inherited from [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
+*Inherited from [common.EvolutionaryConfig](/docs/classes/common_evolutionaryconfig).[iterations](/docs/classes/common_evolutionaryconfig#iterations)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/evolutionaryAlgorithm.ts#L4)*
+{:.url-source-ref}
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/evolutionaryAlgorithm.ts#L4)

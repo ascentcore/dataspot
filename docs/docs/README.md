@@ -6,10 +6,6 @@ grand_parent:
 has_children: true
 ---
 
-**[@ascentcore/dataspot](README.md)**
-
-> [Globals](globals.md)
-
 # Dataspot
 
 Ascentcore Isomorphic Javascript Data Science Library

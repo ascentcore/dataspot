@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [utils.VectorUtils](utils_vectorutils)
-
 # VectorUtils
 
 ## Hierarchy
@@ -18,304 +14,192 @@ has_children: false
 
 ## Index
 
-### Methods
-
-* [addition](utils_vectorutils#addition)
-* [average](utils_vectorutils#average)
-* [averageElements](utils_vectorutils#averageelements)
-* [division](utils_vectorutils#division)
-* [euclideanDistance](utils_vectorutils#euclideandistance)
-* [indexOfSmallest](utils_vectorutils#indexofsmallest)
-* [manhattanDistance](utils_vectorutils#manhattandistance)
-* [max](utils_vectorutils#max)
-* [min](utils_vectorutils#min)
-* [multiplication](utils_vectorutils#multiplication)
-* [normalize](utils_vectorutils#normalize)
-* [scalarAddition](utils_vectorutils#scalaraddition)
-* [scalarDivision](utils_vectorutils#scalardivision)
-* [scalarMultiplication](utils_vectorutils#scalarmultiplication)
-* [scalarSubtraction](utils_vectorutils#scalarsubtraction)
-* [subtraction](utils_vectorutils#subtraction)
-* [sumElements](utils_vectorutils#sumelements)
+| Methods |
+|-----------|
+| [addition](#addition) |
+| [average](#average) |
+| [averageElements](#averageelements) |
+| [division](#division) |
+| [euclideanDistance](#euclideandistance) |
+| [indexOfSmallest](#indexofsmallest) |
+| [manhattanDistance](#manhattandistance) |
+| [max](#max) |
+| [min](#min) |
+| [multiplication](#multiplication) |
+| [normalize](#normalize) |
+| [scalarAddition](#scalaraddition) |
+| [scalarDivision](#scalardivision) |
+| [scalarMultiplication](#scalarmultiplication) |
+| [scalarSubtraction](#scalarsubtraction) |
+| [subtraction](#subtraction) |
+| [sumElements](#sumelements) |
 
 ## Methods
 
-### addition
-
+{:.method-highlight}
 ▸ `Static`**addition**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L88)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L88)
 
 **Returns:** number[]
 
 ___
 
-### average
-
+{:.method-highlight}
 ▸ `Static`**average**(`arr`: number[][]): number[]
 
-*Defined in [lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L157)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`arr` | number[][] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L157)
 
 **Returns:** number[]
 
 ___
 
-### averageElements
-
+{:.method-highlight}
 ▸ `Static`**averageElements**(`arr`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L148)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`arr` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L148)
 
 **Returns:** number
 
 ___
 
-### division
-
+{:.method-highlight}
 ▸ `Static`**division**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L115)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L115)
 
 **Returns:** number[]
 
 ___
 
-### euclideanDistance
-
+{:.method-highlight}
 ▸ `Static`**euclideanDistance**(`v1`: number[], `v2`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L57)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L57)
 
 **Returns:** number
 
 ___
 
-### indexOfSmallest
-
+{:.method-highlight}
 ▸ `Static`**indexOfSmallest**(`v`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L171)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L171)
 
 **Returns:** number
 
 ___
 
-### manhattanDistance
-
+{:.method-highlight}
 ▸ `Static`**manhattanDistance**(`v1`: number[], `v2`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L68)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L68)
 
 **Returns:** number
 
 ___
 
-### max
-
+{:.method-highlight}
 ▸ `Static`**max**(`v`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L180)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L180)
 
 **Returns:** number
 
 ___
 
-### min
-
+{:.method-highlight}
 ▸ `Static`**min**(`v`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L184)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L184)
 
 **Returns:** number
 
 ___
 
-### multiplication
-
+{:.method-highlight}
 ▸ `Static`**multiplication**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L106)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L106)
 
 **Returns:** number[]
 
 ___
 
-### normalize
-
+{:.method-highlight}
 ▸ `Static`**normalize**(`v`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L188)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L188)
 
 **Returns:** number[]
 
 ___
 
-### scalarAddition
-
+{:.method-highlight}
 ▸ `Static`**scalarAddition**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L124)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L124)
 
 **Returns:** number[]
 
 ___
 
-### scalarDivision
-
+{:.method-highlight}
 ▸ `Static`**scalarDivision**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L142)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L142)
 
 **Returns:** number[]
 
 ___
 
-### scalarMultiplication
-
+{:.method-highlight}
 ▸ `Static`**scalarMultiplication**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L136)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L136)
 
 **Returns:** number[]
 
 ___
 
-### scalarSubtraction
-
+{:.method-highlight}
 ▸ `Static`**scalarSubtraction**(`v1`: number[], `scalar`: number): number[]
 
-*Defined in [lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L130)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L130)
 
 **Returns:** number[]
 
 ___
 
-### subtraction
-
+{:.method-highlight}
 ▸ `Static`**subtraction**(`v1`: number[], `v2`: number[]): number[]
 
-*Defined in [lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L97)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L97)
 
 **Returns:** number[]
 
 ___
 
-### sumElements
-
+{:.method-highlight}
 ▸ `Static`**sumElements**(`arr`: number[]): number
 
-*Defined in [lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L79)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`arr` | number[] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L79)
 
 **Returns:** number

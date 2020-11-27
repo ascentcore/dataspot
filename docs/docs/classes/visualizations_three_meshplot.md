@@ -6,164 +6,132 @@ grand_parent: visualizations
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [visualizations.three.MeshPlot](visualizations_three_meshplot)
-
 # MeshPlot
 
 ## Hierarchy
 
-* [visualizations.three.ThreeBaseVisualization](visualizations_three_threebasevisualization)
+* [visualizations.three.ThreeBaseVisualization](/docs/classes/visualizations_three_threebasevisualization)
 
   ↳ **visualizations.three.MeshPlot**
 
 ## Index
 
-### Constructors
+| Constructors |
+|-----------|
+| [constructor](#constructor) |
 
-* [constructor](visualizations_three_meshplot#constructor)
+| Properties |
+|-----------|
+| [config](#config) |
+| [dependencies](#dependencies) |
+| [elemClass](#elemclass) |
 
-### Properties
-
-* [config](visualizations_three_meshplot#config)
-* [dependencies](visualizations_three_meshplot#dependencies)
-* [elemClass](visualizations_three_meshplot#elemclass)
-
-### Methods
-
-* [dataUpdate](visualizations_three_meshplot#dataupdate)
-* [destroy](visualizations_three_meshplot#destroy)
-* [getDependency](visualizations_three_meshplot#getdependency)
-* [setContainer](visualizations_three_meshplot#setcontainer)
-* [setup](visualizations_three_meshplot#setup)
+| Methods |
+|-----------|
+| [dataUpdate](#dataupdate) |
+| [destroy](#destroy) |
+| [getDependency](#getdependency) |
+| [setContainer](#setcontainer) |
+| [setup](#setup) |
 
 ## Constructors
 
-### constructor
+{:.method-highlight}
+\+ **new MeshPlot**(`config`: any, `elemClass?`: string): [visualizations.three.MeshPlot](/docs/classes/visualizations_three_meshplot)
 
-\+ **new MeshPlot**(`config`: any, `elemClass?`: string): [visualizations.three.MeshPlot](visualizations_three_meshplot)
+*Inherited from [visualizations.three.ThreeBaseVisualization](/docs/classes/visualizations_three_threebasevisualization).[constructor](/docs/classes/visualizations_three_threebasevisualization#constructor)*
 
-*Inherited from [visualizations.three.ThreeBaseVisualization](visualizations_three_threebasevisualization).[constructor](visualizations_three_threebasevisualization#constructor)*
+*Overrides [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[constructor](/docs/classes/visualizations_basevisualization#constructor)*
 
-*Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[constructor](visualizations_basevisualization#constructor)*
+{:.url-source-ref}
+[lib/visualizations/three/threebase.ts:11](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/three/threebase.ts#L11)
 
-*Defined in [lib/visualizations/three/threebase.ts:11](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/three/threebase.ts#L11)*
-
-#### Parameters:
-
-Name | Type | Default value |
------- | ------ | ------ |
-`config` | any | - |
-`elemClass` | string | "mesh-elem" |
-
-**Returns:** [visualizations.three.MeshPlot](visualizations_three_meshplot)
+**Returns:** [visualizations.three.MeshPlot](/docs/classes/visualizations_three_meshplot)
 
 ## Properties
 
-### config
-
 •  **config**: any
 
-*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[config](visualizations_basevisualization#config)*
+*Inherited from [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[config](/docs/classes/visualizations_basevisualization#config)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/basevisualization.ts#L8)*
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
-### dependencies
-
 • `Protected` **dependencies**: any
 
-*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[dependencies](visualizations_basevisualization#dependencies)*
+*Inherited from [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[dependencies](/docs/classes/visualizations_basevisualization#dependencies)*
 
-*Defined in [lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/basevisualization.ts#L14)*
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
 
 ___
 
-### elemClass
-
 •  **elemClass**: string
 
-*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[elemClass](visualizations_basevisualization#elemclass)*
+*Inherited from [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[elemClass](/docs/classes/visualizations_basevisualization#elemclass)*
 
-*Defined in [lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/basevisualization.ts#L8)*
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
-### dataUpdate
-
+{:.method-highlight}
 ▸ **dataUpdate**(`data`: { xMax: number ; xMin: number ; yMax: number ; yMin: number ; zFunc: (x: number, y: number) => number  }): any
 
-*Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[dataUpdate](visualizations_basevisualization#dataupdate)*
+*Overrides [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[dataUpdate](/docs/classes/visualizations_basevisualization#dataupdate)*
 
-*Defined in [lib/visualizations/three/mesh.ts:10](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/three/mesh.ts#L10)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`data` | { xMax: number ; xMin: number ; yMax: number ; yMin: number ; zFunc: (x: number, y: number) => number  } |
+{:.url-source-ref}
+[lib/visualizations/three/mesh.ts:10](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/three/mesh.ts#L10)
 
 **Returns:** any
 
 ___
 
-### destroy
-
+{:.method-highlight}
 ▸ **destroy**(): void
 
-*Defined in [lib/visualizations/three/mesh.ts:128](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/three/mesh.ts#L128)*
+{:.url-source-ref}
+[lib/visualizations/three/mesh.ts:128](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/three/mesh.ts#L128)
 
 **Returns:** void
 
 ___
 
-### getDependency
-
+{:.method-highlight}
 ▸ **getDependency**(`key`: string): any
 
-*Inherited from [visualizations.BaseVisualization](visualizations_basevisualization).[getDependency](visualizations_basevisualization#getdependency)*
+*Inherited from [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[getDependency](/docs/classes/visualizations_basevisualization#getdependency)*
 
-*Defined in [lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/basevisualization.ts#L31)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`key` | string |
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/basevisualization.ts#L31)
 
 **Returns:** any
 
 ___
 
-### setContainer
-
+{:.method-highlight}
 ▸ **setContainer**(`containerRef`: HTMLElement): void
 
-*Inherited from [visualizations.three.ThreeBaseVisualization](visualizations_three_threebasevisualization).[setContainer](visualizations_three_threebasevisualization#setcontainer)*
+*Inherited from [visualizations.three.ThreeBaseVisualization](/docs/classes/visualizations_three_threebasevisualization).[setContainer](/docs/classes/visualizations_three_threebasevisualization#setcontainer)*
 
-*Defined in [lib/visualizations/three/threebase.ts:24](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/three/threebase.ts#L24)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`containerRef` | HTMLElement |
+{:.url-source-ref}
+[lib/visualizations/three/threebase.ts:24](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/three/threebase.ts#L24)
 
 **Returns:** void
 
 ___
 
-### setup
-
+{:.method-highlight}
 ▸ **setup**(): void
 
-*Overrides [visualizations.BaseVisualization](visualizations_basevisualization).[setup](visualizations_basevisualization#setup)*
+*Overrides [visualizations.BaseVisualization](/docs/classes/visualizations_basevisualization).[setup](/docs/classes/visualizations_basevisualization#setup)*
 
-*Defined in [lib/visualizations/three/mesh.ts:7](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/visualizations/three/mesh.ts#L7)*
+{:.url-source-ref}
+[lib/visualizations/three/mesh.ts:7](https://github.com/ascentcore/dataspot/blob/b02167c/lib/visualizations/three/mesh.ts#L7)
 
 **Returns:** void

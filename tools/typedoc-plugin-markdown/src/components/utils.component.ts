@@ -1,66 +1,48 @@
-import { BindOption } from 'typedoc';
-import {
-  Component,
-  ContextAwareRendererComponent,
-} from 'typedoc/dist/lib/output/components';
-import MarkdownTheme from '../theme';
+import { BindOption } from 'typedoc'
+import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components'
+import MarkdownTheme from '../theme'
 
 @Component({ name: 'utils' })
 export class HelperUtilsComponent extends ContextAwareRendererComponent {
-  @BindOption('publicPath')
-  publicPath!: string;
+    @BindOption('publicPath')
+    publicPath!: string
 
-  @BindOption('namedAnchors')
-  namedAnchors!: boolean;
+    @BindOption('namedAnchors')
+    namedAnchors!: boolean
 
-  @BindOption('hideProjectName')
-  hideProjectName!: boolean;
+    @BindOption('hideProjectName')
+    hideProjectName!: boolean
 
-  @BindOption('hideBreadcrumbs')
-  hideBreadcrumbs!: boolean;
+    @BindOption('hideBreadcrumbs')
+    hideBreadcrumbs!: boolean
 
-  @BindOption('hideSources')
-  hideSources!: boolean;
+    @BindOption('hideSources')
+    hideSources!: boolean
 
-  initialize() {
-    super.initialize();
+    initialize() {
+        super.initialize()
 
-    const component = this;
+        const component = this
 
-    MarkdownTheme.HANDLEBARS.registerHelper('relativeURL', (url: string) => {
-      return url
-        ? this.publicPath
-          ? this.publicPath + url
-          : this.getRelativeUrl(url)
-        : url;
-    });
+        MarkdownTheme.HANDLEBARS.registerHelper('relativeURL', (url: string) => {
+            const result = '/docs/classes/' + (url ? (this.publicPath ? this.publicPath + url : this.getRelativeUrl(url)) : url)
+            return result
+        })
 
-    MarkdownTheme.HANDLEBARS.registerHelper('ifShowNamedAnchors', function (
-      options,
-    ) {
-      return component.namedAnchors ? options.fn(this) : options.inverse(this);
-    });
+        MarkdownTheme.HANDLEBARS.registerHelper('ifShowNamedAnchors', function(options) {
+            return component.namedAnchors ? options.fn(this) : options.inverse(this)
+        })
 
-    MarkdownTheme.HANDLEBARS.registerHelper('ifShowBreadcrumbs', function (
-      options,
-    ) {
-      return component.hideBreadcrumbs
-        ? options.inverse(this)
-        : options.fn(this);
-    });
+        MarkdownTheme.HANDLEBARS.registerHelper('ifShowBreadcrumbs', function(options) {
+            return component.hideBreadcrumbs ? options.inverse(this) : options.fn(this)
+        })
 
-    MarkdownTheme.HANDLEBARS.registerHelper('ifShowSources', function (
-      options,
-    ) {
-      return component.hideSources ? options.inverse(this) : options.fn(this);
-    });
+        MarkdownTheme.HANDLEBARS.registerHelper('ifShowSources', function(options) {
+            return component.hideSources ? options.inverse(this) : options.fn(this)
+        })
 
-    MarkdownTheme.HANDLEBARS.registerHelper('ifShowProjectName', function (
-      options,
-    ) {
-      return component.hideProjectName
-        ? options.inverse(this)
-        : options.fn(this);
-    });
-  }
+        MarkdownTheme.HANDLEBARS.registerHelper('ifShowProjectName', function(options) {
+            return component.hideProjectName ? options.inverse(this) : options.fn(this)
+        })
+    }
 }

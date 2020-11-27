@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: true
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [visualizations.d3\_index](visualizations_d3_index)
-
 # d3
 
 D3 Visualization Documentation

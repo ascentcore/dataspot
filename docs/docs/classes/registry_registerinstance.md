@@ -6,56 +6,51 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [registry.RegisterInstance](registry_registerinstance)
-
 # RegisterInstance
 
 ## Hierarchy
 
 * **registry.RegisterInstance**
 
-  ↳ [lab\_index](lab_index)
+  ↳ [lab\_index](/docs/classes/lab_index)
 
 ## Index
 
-### Constructors
+| Constructors |
+|-----------|
+| [constructor](#constructor) |
 
-* [constructor](registry_registerinstance#constructor)
+| Properties |
+|-----------|
+| [name](#name) |
 
-### Properties
-
-* [name](registry_registerinstance#name)
-
-### Methods
-
-* [unregister](registry_registerinstance#unregister)
+| Methods |
+|-----------|
+| [unregister](#unregister) |
 
 ## Constructors
 
-### constructor
+{:.method-highlight}
+\+ **new RegisterInstance**(): [registry.RegisterInstance](/docs/classes/registry_registerinstance)
 
-\+ **new RegisterInstance**(): [registry.RegisterInstance](registry_registerinstance)
+{:.url-source-ref}
+[lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/registry/registry.ts#L4)
 
-*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/registry/registry.ts#L4)*
-
-**Returns:** [registry.RegisterInstance](registry_registerinstance)
+**Returns:** [registry.RegisterInstance](/docs/classes/registry_registerinstance)
 
 ## Properties
 
-### name
-
 • `Private` **name**: string
 
-*Defined in [lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/registry/registry.ts#L4)*
+{:.url-source-ref}
+[lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/registry/registry.ts#L4)
 
 ## Methods
 
-### unregister
-
+{:.method-highlight}
 ▸ **unregister**(): void
 
-*Defined in [lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/registry/registry.ts#L12)*
+{:.url-source-ref}
+[lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/b02167c/lib/registry/registry.ts#L12)
 
 **Returns:** void

@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [utils.MatrixUtils](utils_matrixutils)
-
 # MatrixUtils
 
 ## Hierarchy
@@ -18,22 +14,16 @@ has_children: false
 
 ## Index
 
-### Methods
-
-* [transpose](utils_matrixutils#transpose)
+| Methods |
+|-----------|
+| [transpose](#transpose) |
 
 ## Methods
 
-### transpose
-
+{:.method-highlight}
 ▸ `Static`**transpose**(`matrix`: number[][]): number[][]
 
-*Defined in [lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/utils/math-utils.ts#L204)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`matrix` | number[][] |
+{:.url-source-ref}
+[lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/b02167c/lib/utils/math-utils.ts#L204)
 
 **Returns:** number[][]

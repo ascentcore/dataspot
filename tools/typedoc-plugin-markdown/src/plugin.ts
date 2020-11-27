@@ -43,16 +43,16 @@ export class MarkdownPlugin extends ConverterComponent {
     }
 
     private convertCommentTagText(tagName: string, tagText: string): string {
-        console.log(' >>> ', tagName)
         const texts = tagText.split('\n')
-        const fileName = `./dist/${texts[0]}.js`
-        const data = fs.readFileSync(fileName, 'utf8')
+        const fileName = `/samples${texts[0].substr(texts[0].lastIndexOf('/'))}.js`
+        // const data = fs.readFileSync(fileName, 'utf8')
 
         const script = `
 
-<span data-ref="${texts[0]}"></span>
-
-<script title="${texts[0]}">${data}</script>
+<div class="running-sample">
+    <span class="running-sample-container" data-ref="${texts[0]}"></span>
+    <script src='${fileName}' title="${texts[0]}"></script>
+</div>
 
 `
 

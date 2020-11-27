@@ -6,10 +6,6 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [common.ObjectUtils](common_objectutils)
-
 # ObjectUtils
 
 ## Hierarchy
@@ -18,28 +14,22 @@ has_children: false
 
 ## Index
 
-### Methods
-
-* [deepClone](common_objectutils#deepclone)
+| Methods |
+|-----------|
+| [deepClone](#deepclone) |
 
 ## Methods
 
-### deepClone
-
+{:.method-highlight}
 ▸ `Static`**deepClone**\<T>(`obj`: T): T
 
-*Defined in [lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/objectUtils.ts#L6)*
+{:.url-source-ref}
+[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/objectUtils.ts#L6)
 
 #### Type parameters:
 
 Name |
 ------ |
 `T` |
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`obj` | T |
 
 **Returns:** T

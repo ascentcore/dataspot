@@ -10,7 +10,7 @@ const config = {
     },
     plugins,
     output: {
-        path: path.resolve(__dirname, 'dist/documentation'),
+        path: path.resolve(__dirname, 'docs/samples'),
         filename: '[name].js'
     },
     module: {

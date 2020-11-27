@@ -6,295 +6,241 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [clustering.AgglomerativeClustering](clustering_agglomerativeclustering)
-
 # AgglomerativeClustering
 
 ## Hierarchy
 
-* [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm)\<[clustering.AglomerativeClusteringConfig](clustering_aglomerativeclusteringconfig)>
+* [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm)\<[clustering.AglomerativeClusteringConfig](/docs/classes/clustering_aglomerativeclusteringconfig)>
 
   ↳ **clustering.AgglomerativeClustering**
 
 ## Index
 
-### Constructors
+| Constructors |
+|-----------|
+| [constructor](#constructor) |
 
-* [constructor](clustering_agglomerativeclustering#constructor)
+| Properties |
+|-----------|
+| [config](#config) |
+| [distanceFunc](#distancefunc) |
+| [fitData](#fitdata) |
+| [initialized](#initialized) |
+| [iteration](#iteration) |
+| [labels](#labels) |
+| [numLeaves](#numleaves) |
 
-### Properties
-
-* [config](clustering_agglomerativeclustering#config)
-* [distanceFunc](clustering_agglomerativeclustering#distancefunc)
-* [fitData](clustering_agglomerativeclustering#fitdata)
-* [initialized](clustering_agglomerativeclustering#initialized)
-* [iteration](clustering_agglomerativeclustering#iteration)
-* [labels](clustering_agglomerativeclustering#labels)
-* [numLeaves](clustering_agglomerativeclustering#numleaves)
-
-### Methods
-
-* [canStop](clustering_agglomerativeclustering#canstop)
-* [fit](clustering_agglomerativeclustering#fit)
-* [fitAsync](clustering_agglomerativeclustering#fitasync)
-* [initializeDependencies](clustering_agglomerativeclustering#initializedependencies)
-* [loadState](clustering_agglomerativeclustering#loadstate)
-* [onEndFit](clustering_agglomerativeclustering#onendfit)
-* [predict](clustering_agglomerativeclustering#predict)
-* [prepareDataset](clustering_agglomerativeclustering#preparedataset)
-* [serialize](clustering_agglomerativeclustering#serialize)
-* [shouldStop](clustering_agglomerativeclustering#shouldstop)
-* [step](clustering_agglomerativeclustering#step)
+| Methods |
+|-----------|
+| [canStop](#canstop) |
+| [fit](#fit) |
+| [fitAsync](#fitasync) |
+| [initializeDependencies](#initializedependencies) |
+| [loadState](#loadstate) |
+| [onEndFit](#onendfit) |
+| [predict](#predict) |
+| [prepareDataset](#preparedataset) |
+| [serialize](#serialize) |
+| [shouldStop](#shouldstop) |
+| [step](#step) |
 
 ## Constructors
 
-### constructor
+{:.method-highlight}
+\+ **new AgglomerativeClustering**(`config?`: [clustering.AglomerativeClusteringConfig](/docs/classes/clustering_aglomerativeclusteringconfig) \| undefined, `distanceFunction?`: DistanceMeasurement \| undefined): [clustering.AgglomerativeClustering](/docs/classes/clustering_agglomerativeclustering)
 
-\+ **new AgglomerativeClustering**(`config?`: [clustering.AglomerativeClusteringConfig](clustering_aglomerativeclusteringconfig) \| undefined, `distanceFunction?`: DistanceMeasurement \| undefined): [clustering.AgglomerativeClustering](clustering_agglomerativeclustering)
+*Overrides [common.Serializable](/docs/classes/common_serializable).[constructor](/docs/classes/common_serializable#constructor)*
 
-*Overrides [common.Serializable](common_serializable).[constructor](common_serializable#constructor)*
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:12](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L12)
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:12](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L12)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`config?` | [clustering.AglomerativeClusteringConfig](clustering_aglomerativeclusteringconfig) \| undefined |
-`distanceFunction?` | DistanceMeasurement \| undefined |
-
-**Returns:** [clustering.AgglomerativeClustering](clustering_agglomerativeclustering)
+**Returns:** [clustering.AgglomerativeClustering](/docs/classes/clustering_agglomerativeclustering)
 
 ## Properties
 
-### config
+•  **config**: [clustering.AglomerativeClusteringConfig](/docs/classes/clustering_aglomerativeclusteringconfig)
 
-•  **config**: [clustering.AglomerativeClusteringConfig](clustering_aglomerativeclusteringconfig)
+*Inherited from [common.Serializable](/docs/classes/common_serializable).[config](/docs/classes/common_serializable#config)*
 
-*Inherited from [common.Serializable](common_serializable).[config](common_serializable#config)*
-
-*Defined in [lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L8)*
+{:.url-source-ref}
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L8)
 
 ___
-
-### distanceFunc
 
 • `Protected` **distanceFunc**: Function
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:10](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L10)*
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:10](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L10)
 
 ___
-
-### fitData
 
 • `Protected` **fitData**: number[][]
 
-*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fitData](clustering_clusteringalgorithm#fitdata)*
+*Inherited from [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[fitData](/docs/classes/clustering_clusteringalgorithm#fitdata)*
 
-*Defined in [lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/clusteringBase.ts#L4)*
+{:.url-source-ref}
+[lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/clusteringBase.ts#L4)
 
 ___
-
-### initialized
 
 • `Protected` **initialized**: boolean = false
 
-*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[initialized](clustering_clusteringalgorithm#initialized)*
+*Inherited from [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[initialized](/docs/classes/clustering_clusteringalgorithm#initialized)*
 
-*Defined in [lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/clusteringBase.ts#L8)*
+{:.url-source-ref}
+[lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/clusteringBase.ts#L8)
 
 ___
-
-### iteration
 
 • `Protected` **iteration**: number = 0
 
-*Inherited from [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[iteration](common_evolutionaryalgorithm#iteration)*
+*Inherited from [common.EvolutionaryAlgorithm](/docs/classes/common_evolutionaryalgorithm).[iteration](/docs/classes/common_evolutionaryalgorithm#iteration)*
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/evolutionaryAlgorithm.ts#L8)*
+{:.url-source-ref}
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ___
-
-### labels
 
 • `Protected` **labels**: number[]
 
-*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[labels](clustering_clusteringalgorithm#labels)*
+*Inherited from [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[labels](/docs/classes/clustering_clusteringalgorithm#labels)*
 
-*Defined in [lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/clusteringBase.ts#L6)*
+{:.url-source-ref}
+[lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/clusteringBase.ts#L6)
 
 ___
 
-### numLeaves
-
 • `Private` **numLeaves**: number
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:12](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L12)*
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:12](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L12)
 
 ## Methods
 
-### canStop
-
+{:.method-highlight}
 ▸ **canStop**(): boolean
 
-*Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[canStop](clustering_clusteringalgorithm#canstop)*
+*Overrides [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[canStop](/docs/classes/clustering_clusteringalgorithm#canstop)*
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:23](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L23)*
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:23](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L23)
 
 **Returns:** boolean
 
 ___
 
-### fit
-
+{:.method-highlight}
 ▸ **fit**(`data`: number[][]): number[]
 
-*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fit](clustering_clusteringalgorithm#fit)*
+*Inherited from [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[fit](/docs/classes/clustering_clusteringalgorithm#fit)*
 
-*Defined in [lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/clusteringBase.ts#L30)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`data` | number[][] |
+{:.url-source-ref}
+[lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/clusteringBase.ts#L30)
 
 **Returns:** number[]
 
 ___
 
-### fitAsync
-
+{:.method-highlight}
 ▸ **fitAsync**(`data`: number[][]): Generator
 
-*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[fitAsync](clustering_clusteringalgorithm#fitasync)*
+*Inherited from [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[fitAsync](/docs/classes/clustering_clusteringalgorithm#fitasync)*
 
-*Defined in [lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/clusteringBase.ts#L19)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`data` | number[][] |
+{:.url-source-ref}
+[lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/clusteringBase.ts#L19)
 
 **Returns:** Generator
 
 ___
 
-### initializeDependencies
-
+{:.method-highlight}
 ▸ **initializeDependencies**(`distanceFunction?`: DistanceMeasurement): void
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:38](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L38)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`distanceFunction?` | DistanceMeasurement |
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:38](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L38)
 
 **Returns:** void
 
 ___
 
-### loadState
-
+{:.method-highlight}
 ▸ **loadState**(`from`: string): void
 
-*Inherited from [common.Serializable](common_serializable).[loadState](common_serializable#loadstate)*
+*Inherited from [common.Serializable](/docs/classes/common_serializable).[loadState](/docs/classes/common_serializable#loadstate)*
 
-*Defined in [lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L14)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`from` | string |
+{:.url-source-ref}
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L14)
 
 **Returns:** void
 
 ___
 
-### onEndFit
-
+{:.method-highlight}
 ▸ **onEndFit**(): void
 
-*Inherited from [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[onEndFit](clustering_clusteringalgorithm#onendfit)*
+*Inherited from [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[onEndFit](/docs/classes/clustering_clusteringalgorithm#onendfit)*
 
-*Defined in [lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/clusteringBase.ts#L41)*
+{:.url-source-ref}
+[lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/clusteringBase.ts#L41)
 
 **Returns:** void
 
 ___
 
-### predict
-
+{:.method-highlight}
 ▸ **predict**(`data`: number[][]): number[]
 
-*Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[predict](clustering_clusteringalgorithm#predict)*
+*Overrides [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[predict](/docs/classes/clustering_clusteringalgorithm#predict)*
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:47](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L47)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`data` | number[][] |
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:47](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L47)
 
 **Returns:** number[]
 
 ___
 
-### prepareDataset
-
+{:.method-highlight}
 ▸ **prepareDataset**(`data`: number[][]): void
 
-*Overrides [clustering.ClusteringAlgorithm](clustering_clusteringalgorithm).[prepareDataset](clustering_clusteringalgorithm#preparedataset)*
+*Overrides [clustering.ClusteringAlgorithm](/docs/classes/clustering_clusteringalgorithm).[prepareDataset](/docs/classes/clustering_clusteringalgorithm#preparedataset)*
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:31](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L31)*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`data` | number[][] |
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:31](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L31)
 
 **Returns:** void
 
 ___
 
-### serialize
-
+{:.method-highlight}
 ▸ **serialize**(): string
 
-*Inherited from [common.Serializable](common_serializable).[serialize](common_serializable#serialize)*
+*Inherited from [common.Serializable](/docs/classes/common_serializable).[serialize](/docs/classes/common_serializable#serialize)*
 
-*Defined in [lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/serializable.ts#L10)*
+{:.url-source-ref}
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/serializable.ts#L10)
 
 **Returns:** string
 
 ___
 
-### shouldStop
-
+{:.method-highlight}
 ▸ **shouldStop**(): boolean
 
-*Overrides [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[shouldStop](common_evolutionaryalgorithm#shouldstop)*
+*Overrides [common.EvolutionaryAlgorithm](/docs/classes/common_evolutionaryalgorithm).[shouldStop](/docs/classes/common_evolutionaryalgorithm#shouldstop)*
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:27](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L27)*
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:27](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L27)
 
 **Returns:** boolean
 
 ___
 
-### step
-
+{:.method-highlight}
 ▸ **step**(): void
 
-*Overrides [common.EvolutionaryAlgorithm](common_evolutionaryalgorithm).[step](common_evolutionaryalgorithm#step)*
+*Overrides [common.EvolutionaryAlgorithm](/docs/classes/common_evolutionaryalgorithm).[step](/docs/classes/common_evolutionaryalgorithm#step)*
 
-*Defined in [lib/clustering/agglomerativeClustering.ts:19](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/clustering/agglomerativeClustering.ts#L19)*
+{:.url-source-ref}
+[lib/clustering/agglomerativeClustering.ts:19](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/agglomerativeClustering.ts#L19)
 
 **Returns:** void

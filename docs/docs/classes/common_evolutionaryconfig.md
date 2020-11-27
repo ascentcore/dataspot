@@ -6,23 +6,19 @@ grand_parent: Dataspot
 has_children: false
 ---
 
-**[@ascentcore/dataspot](../README.md)**
-
-> [Globals](../globals.md) / [common.EvolutionaryConfig](common_evolutionaryconfig)
-
 # EvolutionaryConfig
 
 ## Hierarchy
 
-* [common.SerializableConfig](common_serializableconfig)
+* [common.SerializableConfig](/docs/classes/common_serializableconfig)
 
   ↳ **common.EvolutionaryConfig**
 
-  ↳↳ [clustering.CentroidConfig](clustering_centroidconfig)
+  ↳↳ [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig)
 
-  ↳↳ [clustering.DBScanConfig](clustering_dbscanconfig)
+  ↳↳ [clustering.DBScanConfig](/docs/classes/clustering_dbscanconfig)
 
-  ↳↳ [clustering.AglomerativeClusteringConfig](clustering_aglomerativeclusteringconfig)
+  ↳↳ [clustering.AglomerativeClusteringConfig](/docs/classes/clustering_aglomerativeclusteringconfig)
 
 ## Indexable
 
@@ -30,14 +26,13 @@ has_children: false
 
 ## Index
 
-### Properties
-
-* [iterations](common_evolutionaryconfig#iterations)
+| Properties |
+|-----------|
+| [iterations](#iterations) |
 
 ## Properties
 
-### iterations
-
 •  **iterations**: number = 100
 
-*Defined in [lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/5151dd9/lib/common/evolutionaryAlgorithm.ts#L4)*
+{:.url-source-ref}
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/evolutionaryAlgorithm.ts#L4)

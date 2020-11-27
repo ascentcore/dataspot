@@ -24,11 +24,13 @@
 
 {{#if url}}
 
-*Defined in [{{fileName}}:{{line}}]({{url}})*
+{:.url-source-ref}
+[{{fileName}}:{{line}}]({{url}})
 
 {{else}}
 
-*Defined in {{fileName}}:{{line}}*
+{:.source-ref}
+{{fileName}}:{{line}}
 
 {{/if}}
 
