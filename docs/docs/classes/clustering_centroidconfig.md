@@ -10,15 +10,15 @@ has_children: false
 
 ## Hierarchy
 
-* [common.EvolutionaryConfig](common_evolutionaryconfig)
+* [common.EvolutionaryConfig](../common_evolutionaryconfig)
 
   ↳ **clustering.CentroidConfig**
 
-  ↳↳ [clustering.KMeansConfig](clustering_kmeansconfig)
+  ↳↳ [clustering.KMeansConfig](../clustering_kmeansconfig)
 
-  ↳↳ [clustering.MeanShiftConfig](clustering_meanshiftconfig)
+  ↳↳ [clustering.MeanShiftConfig](../clustering_meanshiftconfig)
 
-  ↳↳ [clustering.BirchConfig](clustering_birchconfig)
+  ↳↳ [clustering.BirchConfig](../clustering_birchconfig)
 
 ## Indexable
 
@@ -37,20 +37,20 @@ has_children: false
 •  **centroids**: number[][] = []
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/centroidClustering.ts#L6)
+[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L6)
 
 ___
 
 •  **distanceFn**: string = "euclideanDistance"
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/centroidClustering.ts#L8)
+[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L8)
 
 ___
 
 •  **iterations**: number = 100
 
-*Inherited from [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
+*Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/40beee3/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)

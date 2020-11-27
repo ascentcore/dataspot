@@ -12,7 +12,7 @@ has_children: false
 
 * **common.SerializableConfig**
 
-  ↳ [common.EvolutionaryConfig](common_evolutionaryconfig)
+  ↳ [common.EvolutionaryConfig](../common_evolutionaryconfig)
 
 ## Indexable
 

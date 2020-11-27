@@ -10,7 +10,7 @@ has_children: false
 
 ## Hierarchy
 
-* [clustering.CentroidConfig](clustering_centroidconfig)
+* [clustering.CentroidConfig](../clustering_centroidconfig)
 
   ↳ **clustering.MeanShiftConfig**
 
@@ -34,45 +34,45 @@ has_children: false
 •  **bandwidth**: number = 0.1
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:7](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/meanShift.ts#L7)
+[lib/clustering/meanShift.ts:7](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L7)
 
 ___
 
 •  **centroids**: number[][] = []
 
-*Inherited from [clustering.CentroidConfig](clustering_centroidconfig).[centroids](clustering_centroidconfig#centroids)*
+*Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[centroids](../clustering_centroidconfig#centroids)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/centroidClustering.ts#L6)
+[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L6)
 
 ___
 
 •  **clusterThreshold**: number = 0.1
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:9](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/meanShift.ts#L9)
+[lib/clustering/meanShift.ts:9](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L9)
 
 ___
 
 •  **distanceFn**: string = "euclideanDistance"
 
-*Inherited from [clustering.CentroidConfig](clustering_centroidconfig).[distanceFn](clustering_centroidconfig#distancefn)*
+*Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[distanceFn](../clustering_centroidconfig#distancefn)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/centroidClustering.ts#L8)
+[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L8)
 
 ___
 
 •  **iterations**: number = 100
 
-*Inherited from [common.EvolutionaryConfig](common_evolutionaryconfig).[iterations](common_evolutionaryconfig#iterations)*
+*Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/40beee3/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)
 
 ___
 
 •  **stopThreshold**: number = 0.0001
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:11](https://github.com/ascentcore/dataspot/blob/40beee3/lib/clustering/meanShift.ts#L11)
+[lib/clustering/meanShift.ts:11](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L11)
