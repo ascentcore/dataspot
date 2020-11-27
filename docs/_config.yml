@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: DataSpot
 description: Isomorphic Data Science Library
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/dataspot" # the subpath of your site, e.g. /blog
 url: "https://www.ascentcore.com/dataspot/" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
