@@ -31,26 +31,26 @@ has_children: false
 ## Constructors
 
 {:.method-highlight}
-\+ **new Convergence**(`historySize?`: number): [common.Convergence](../common_convergence)
+\+ **new Convergence**(`historySize?`: number): [common.Convergence](common_convergence)
 
 {:.url-source-ref}
-[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/0893946/lib/common/convergence.ts#L2)
+[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/common/convergence.ts#L2)
 
-**Returns:** [common.Convergence](../common_convergence)
+**Returns:** [common.Convergence](common_convergence)
 
 ## Properties
 
 •  **history**: Array\<string> = []
 
 {:.url-source-ref}
-[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/0893946/lib/common/convergence.ts#L2)
+[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/common/convergence.ts#L2)
 
 ___
 
 • `Private` **historySize**: number
 
 {:.url-source-ref}
-[lib/common/convergence.ts:4](https://github.com/ascentcore/dataspot/blob/0893946/lib/common/convergence.ts#L4)
+[lib/common/convergence.ts:4](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/common/convergence.ts#L4)
 
 ## Methods
 
@@ -58,7 +58,7 @@ ___
 ▸ **addValue**(`newRow`: any): void
 
 {:.url-source-ref}
-[lib/common/convergence.ts:6](https://github.com/ascentcore/dataspot/blob/0893946/lib/common/convergence.ts#L6)
+[lib/common/convergence.ts:6](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/common/convergence.ts#L6)
 
 **Returns:** void
 
@@ -68,6 +68,6 @@ ___
 ▸ **hadConverged**(): boolean
 
 {:.url-source-ref}
-[lib/common/convergence.ts:14](https://github.com/ascentcore/dataspot/blob/0893946/lib/common/convergence.ts#L14)
+[lib/common/convergence.ts:14](https://github.com/ascentcore/dataspot/blob/ab10b2a/lib/common/convergence.ts#L14)
 
 **Returns:** boolean

@@ -25,7 +25,7 @@ export class HelperUtilsComponent extends ContextAwareRendererComponent {
         const component = this
 
         MarkdownTheme.HANDLEBARS.registerHelper('relativeURL', (url: string) => {
-            const result = '../' + (url ? (this.publicPath ? this.publicPath + url : this.getRelativeUrl(url)) : url)
+            const result = url ? (this.publicPath ? this.publicPath + url : this.getRelativeUrl(url)) : url
             return result
         })
 
