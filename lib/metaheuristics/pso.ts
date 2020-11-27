@@ -24,7 +24,7 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
 
     protected movePosition(particle: Individual) {
         const { dimensions } = this.fitnessFunction
-        const { inertiaWeight, cognitiveWeight, socialWeight } = this.config
+        const { inertiaWeight, cognitiveWeight, socialWeight, bestPosition } = this.config
 
         if (!particle.velocity) {
             particle.velocity = []
@@ -39,7 +39,7 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
             const d1 = particle.bestPosition[i] - particle.position[i]
             const vCognitive = cognitiveWeight * Random.random(0, 1) * d1
 
-            const d2 = this.bestPosition[i] - particle.position[i]
+            const d2 = bestPosition[i] - particle.position[i]
             const vSocial = socialWeight * Random.random(0, 1) * d2
 
             particle.velocity[i] = vMomentum + vCognitive + vSocial
@@ -55,6 +55,7 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
     }
 
     public step() {
+        const { bestPosition } = this.config
         if (!this.convergence && this.config.convergenceIterations > 0) {
             this.convergence = new Convergence(this.config.convergenceIterations)
         }
@@ -70,7 +71,7 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
         if (this.convergence) {
             const { convergenceDecimalsAccuracy } = this.config
             this.convergence.addValue(
-                this.fitnessFunction.calculate(this.bestPosition).toFixed(convergenceDecimalsAccuracy)
+                this.fitnessFunction.calculate(bestPosition).toFixed(convergenceDecimalsAccuracy)
             )
         }
     }

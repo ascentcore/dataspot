@@ -5,6 +5,8 @@ import Random from '../math/random'
 
 export class PopulationMetaheuristicConfig extends EvolutionaryConfig {
     public populationSize: number = 100
+
+    public bestPosition: number[] = []
 }
 
 export class Individual {
@@ -34,8 +36,6 @@ export default abstract class PopulationMetaheuristic<
 > extends EvolutionaryAlgorithm<T> {
     protected individuals!: Individual[]
 
-    protected bestPosition!: number[]
-
     protected fitnessFunction!: FitnessFunction
 
     canStop(): boolean {
@@ -55,12 +55,21 @@ export default abstract class PopulationMetaheuristic<
             )
         }
 
-        this.bestPosition = [...this.individuals[0].bestPosition, this.individuals[0].bestFitness]
+        let newBestPosition = [...this.individuals[0].bestPosition]
+        let newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
 
         for (let i = 1; i < this.individuals.length; i++) {
-            if (this.individuals[i].bestFitness < this.bestPosition.slice(-1)[0]) {
-                this.bestPosition = [...this.individuals[i].bestPosition, this.individuals[i].bestFitness]
+            if (this.individuals[i].bestFitness < newBestFitness) {
+                newBestPosition = [...this.individuals[i].bestPosition]
+                newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
             }
+        }
+
+        if (
+            this.config.bestPosition.length === 0 ||
+            this.fitnessFunction.calculate(...this.config.bestPosition) >= newBestFitness
+        ) {
+            this.config.bestPosition = newBestPosition
         }
     }
 
