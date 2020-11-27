@@ -28,6 +28,9 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/hierarchy' className='btn btn-link'>
                         Hierarchy
                     </a>
+                    <a href='/metaheuristics' className='btn btn-link'>
+                        Metaheuristics
+                    </a>
                     <a href='/clustering' className='btn btn-link'>
                         Clustering
                     </a>

@@ -28,7 +28,16 @@ function Representation({
     const regressionRef = useRef<HTMLDivElement | null>(null)
     const costRef = useRef<HTMLDivElement | null>(null)
 
+    const [regressionPlotRef, setRegressionPlotRef] = useState(null)
+    const [costPlotRef, setCostPlotRef] = useState(null)
+
     const plot = async () => {
+        if (regressionPlotRef) {
+            regressionPlotRef.destroy()
+        }
+        if (costPlotRef) {
+            costPlotRef.destroy()
+        }
         if (regressionRef.current) {
             const scatterElemClass = 'scatter-elem'
             const lineElemClass = 'line-elem'
@@ -38,7 +47,7 @@ function Representation({
             const lineRegressionPlot = new LinePlot({}, lineElemClass)
             const axisRegression = new Axis({}, axisElemClass)
 
-            const multiplePlot = new SVGMultipleVisualization(
+            const regressionPlot = new SVGMultipleVisualization(
                 {
                     width,
                     height,
@@ -48,14 +57,15 @@ function Representation({
                 'regression-elem',
                 [axisRegression, scatterRegressionPlot, lineRegressionPlot]
             )
-            multiplePlot.setContainer(regressionRef.current)
-            multiplePlot.setup()
+            regressionPlot.setContainer(regressionRef.current)
+            regressionPlot.setup()
+            setRegressionPlotRef(regressionPlot)
 
             const mappedData = []
             for (let i = 0; i < data[0].length; i++) {
                 mappedData.push({ x: data[0][i], y: data[1][i], r: 3 })
             }
-            multiplePlot.dataUpdate(mappedData, scatterElemClass)
+            regressionPlot.dataUpdate(mappedData, scatterElemClass)
 
             const regression =
                 name === 'Linear Regression'
@@ -76,13 +86,11 @@ function Representation({
                 regressionValue = regressionResult.value
 
                 doneRegression = regressionResult.done || false
-                console.log(regressionValue)
                 const updatedPrediction = Array.isArray(transformedInput[0])
                     ? predictMultivariable(transformedInput, regressionValue.biasAndWeights)
                     : predictionSinglevariable(transformedInput, regressionValue.biasAndWeights)
                 const iterator = Array.from(Array(data[0].length).keys())
-                console.log('updatedPrediction', updatedPrediction)
-                multiplePlot.dataUpdate(
+                regressionPlot.dataUpdate(
                     // eslint-disable-next-line no-loop-func
                     iterator.map((i: number) => {
                         return {
@@ -103,6 +111,8 @@ function Representation({
             const costPlot = new SVGMultipleVisualization({ width, height }, 'const-elem', [axisCost, lineCost])
             costPlot.setContainer(costRef.current)
             costPlot.setup()
+            setCostPlotRef(costPlot)
+
             const mappedCostData = regressionValue.costHistory.map((cost: number) => {
                 return { x: iter++, y: cost }
             })
