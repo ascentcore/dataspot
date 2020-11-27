@@ -10,7 +10,7 @@ has_children: false
 
 ## Hierarchy
 
-* [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig)
+* [clustering.CentroidConfig](../clustering_centroidconfig)
 
   ↳ **clustering.BirchConfig**
 
@@ -34,45 +34,45 @@ has_children: false
 •  **branchingFactor**: number = 50
 
 {:.url-source-ref}
-[lib/clustering/birch.ts:10](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/birch.ts#L10)
+[lib/clustering/birch.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/birch.ts#L10)
 
 ___
 
 •  **centroids**: number[][] = []
 
-*Inherited from [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig).[centroids](/docs/classes/clustering_centroidconfig#centroids)*
+*Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[centroids](../clustering_centroidconfig#centroids)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/centroidClustering.ts#L6)
+[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L6)
 
 ___
 
 •  **clusters**: number = 3
 
 {:.url-source-ref}
-[lib/clustering/birch.ts:6](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/birch.ts#L6)
+[lib/clustering/birch.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/birch.ts#L6)
 
 ___
 
 •  **distanceFn**: string = "euclideanDistance"
 
-*Inherited from [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig).[distanceFn](/docs/classes/clustering_centroidconfig#distancefn)*
+*Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[distanceFn](../clustering_centroidconfig#distancefn)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/centroidClustering.ts#L8)
+[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L8)
 
 ___
 
 •  **iterations**: number = 100
 
-*Inherited from [common.EvolutionaryConfig](/docs/classes/common_evolutionaryconfig).[iterations](/docs/classes/common_evolutionaryconfig#iterations)*
+*Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)
 
 ___
 
 •  **threshold**: number = 0.5
 
 {:.url-source-ref}
-[lib/clustering/birch.ts:8](https://github.com/ascentcore/dataspot/blob/b02167c/lib/clustering/birch.ts#L8)
+[lib/clustering/birch.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/birch.ts#L8)

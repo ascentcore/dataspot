@@ -10,15 +10,15 @@ has_children: false
 
 ## Hierarchy
 
-* [common.SerializableConfig](/docs/classes/common_serializableconfig)
+* [common.SerializableConfig](../common_serializableconfig)
 
   ↳ **common.EvolutionaryConfig**
 
-  ↳↳ [clustering.CentroidConfig](/docs/classes/clustering_centroidconfig)
+  ↳↳ [clustering.CentroidConfig](../clustering_centroidconfig)
 
-  ↳↳ [clustering.DBScanConfig](/docs/classes/clustering_dbscanconfig)
+  ↳↳ [clustering.DBScanConfig](../clustering_dbscanconfig)
 
-  ↳↳ [clustering.AglomerativeClusteringConfig](/docs/classes/clustering_aglomerativeclusteringconfig)
+  ↳↳ [clustering.AglomerativeClusteringConfig](../clustering_aglomerativeclusteringconfig)
 
 ## Indexable
 
@@ -35,4 +35,4 @@ has_children: false
 •  **iterations**: number = 100
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/b02167c/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)

@@ -1,18 +1,24 @@
 import { meanSquaredError } from '../functions/losses'
 import { gradientDescent } from '../functions/optimizers'
-import { predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
+import {
+    predictMultivariable,
+    RegressionOutputType,
+    transformToPolynomialInput,
+    transposeAndNormalize
+} from './utilities'
 
-export default class MultivariableLinearRegression {
+export default class PolynomialRegression {
     static *fit(
-        input: number[][],
+        input: number[],
         target: number[],
+        degree: number,
         learningRate: number,
         epochs: number,
         costFunction: Function
     ): Generator<RegressionOutputType> {
-        const costHistory = []
-        const transformedInput = transposeAndNormalize(input)
-        let biasAndWeights = Array(input[0].length + 1).fill(0)
+        const costHistory: number[] = []
+        const transformedInput = transposeAndNormalize(transformToPolynomialInput(input, degree))
+        let biasAndWeights = Array(degree + 1).fill(0)
         let currentEpoch = 0
         let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
 
