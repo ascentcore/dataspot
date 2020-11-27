@@ -70,13 +70,11 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
 
         if (this.convergence) {
             const { convergenceDecimalsAccuracy } = this.config
-            this.convergence.addValue(
-                this.fitnessFunction.calculate(bestPosition).toFixed(convergenceDecimalsAccuracy)
-            )
+            this.convergence.addValue(this.fitnessFunction.calculate(bestPosition).toFixed(convergenceDecimalsAccuracy))
         }
     }
 
-    canStop(): boolean {
+    public canStop(): boolean {
         return this.convergence && this.convergence.hadConverged()
     }
 }
