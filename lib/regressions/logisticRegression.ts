@@ -1,7 +1,7 @@
 import { crossEntropy } from '../functions/losses'
 import { gradientDescent } from '../functions/optimizers'
 import { sigmoid } from '../functions/activations'
-import { decisionBoundary, predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
+import { predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
 
 export default class LogisticRegression {
     static *fit(
@@ -16,21 +16,17 @@ export default class LogisticRegression {
         let biasAndWeights = Array(input[0].length + 1).fill(0)
         let currentEpoch = 0
         let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights).map((pred) => sigmoid(pred))
-        let probabilitiesToClasses = decisionBoundary(updatedPrediction)
-
         while (true) {
             let updated = true
-
             const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
 
             biasAndWeights = bw
 
             // Calculate cost for auditing purposes
-            const cost = crossEntropy(probabilitiesToClasses, target)
+            const cost = crossEntropy(updatedPrediction, target)
             costHistory.push(cost)
 
             updatedPrediction = predictMultivariable(transformedInput, biasAndWeights).map((pred) => sigmoid(pred))
-            probabilitiesToClasses = decisionBoundary(updatedPrediction)
 
             currentEpoch += 1
 

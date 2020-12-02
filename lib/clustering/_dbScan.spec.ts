@@ -1,4 +1,4 @@
-import blobDataset from '../dataset/blobDataset'
+import blobDataset from '../dataset/clustering/blobDataset'
 import DBScan from './dbScan'
 
 const fitData = blobDataset(100)

@@ -1,5 +1,5 @@
-import blobDataset from '../dataset/blobDataset'
-import MeanShift, { MeanShiftConfig } from './meanShift'
+import blobDataset from '../dataset/clustering/blobDataset'
+import MeanShift from './meanShift'
 
 const fitData = blobDataset(40)
 const testData = blobDataset(2)

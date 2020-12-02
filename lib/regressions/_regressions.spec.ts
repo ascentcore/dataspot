@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import LinearRegression from './linearRegression'
 import { crossEntropyCostFunction, mseCostFunction } from '../functions/optimizers'
 import MultivariableLinearRegression from './multivariableLinearRegression'
@@ -95,7 +94,7 @@ describe('Regressions', () => {
                 result = <RegressionOutputType>logisticRegressionValue.value
             }
         }
-        expect(result.biasAndWeights).toEqual([0.11083333333333334, 0.0771962328984659, 0.048192676032183523])
-        expect(result.costHistory).toEqual([-0, -0])
+        expect(result.biasAndWeights).toEqual([0.016458490179848392, 0.08119041916613032, 0.05157735232305538])
+        expect(result.costHistory).toEqual([0.6931471805599453, 0.6689158503950066])
     })
 })

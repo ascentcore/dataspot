@@ -1,9 +1,9 @@
 import { euclideanDistance } from '../math/distances'
 import hierarchy, { hCut, HierarchyPoints, singleLinkage } from './agglomerative'
-import blobDataset from '../dataset/blobDataset'
+// import blobDataset from '../dataset/clustering/blobDataset'
 import data from '../dataset/samples/usarrests'
 
-const blobData = blobDataset(3)
+// const blobData = blobDataset(3)
 
 describe('Hierarchy', () => {
     it('Process Hierarchy', () => {

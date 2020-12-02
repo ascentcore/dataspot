@@ -41,13 +41,13 @@ function Representation({
             costPlotRef.destroy()
         }
         if (regressionRef.current) {
+            const axisElemClass = 'axis-elem'
+            const scatterElemClass = 'scatter-elem'
+
+            const scatterRegressionPlot = new Scatter({}, scatterElemClass)
+            const axisRegression = new Axis({}, axisElemClass)
+
             if (name === 'Logistic Regression') {
-                const axisElemClass = 'axis-elem'
-                const scatterElemClass = 'scatter-elem'
-
-                const axis = new Axis({}, axisElemClass)
-                const scatter = new Scatter({}, scatterElemClass)
-
                 const multiplePlot = new SVGMultipleVisualization(
                     {
                         width,
@@ -56,7 +56,7 @@ function Representation({
                         domainY: { min: 0, max: 6 }
                     },
                     'regression-elem',
-                    [axis, scatter]
+                    [axisRegression, scatterRegressionPlot]
                 )
                 multiplePlot.setContainer(regressionRef.current)
                 multiplePlot.setup()
@@ -66,7 +66,7 @@ function Representation({
                 multiplePlot.dataUpdate(mappedData, axisElemClass)
                 multiplePlot.dataUpdate(mappedData, scatterElemClass)
 
-                const regression = LogisticRegression.fit(data[0], data[1], 0.1, 10, crossEntropyCostFunction)
+                const regression = LogisticRegression.fit(data[0], data[1], 0.1, 2, crossEntropyCostFunction)
                 let doneRegression = false
                 let regressionValue = { biasAndWeights: [], costHistory: [] }
 
@@ -84,6 +84,8 @@ function Representation({
                             sigmoid(pred)
                         )
                     )
+                    console.log('BW', regressionValue.biasAndWeights)
+                    console.log('CostH', regressionValue.costHistory)
                     const iterator = Array.from(Array(data[0].length).keys())
                     multiplePlot.dataUpdate(
                         // eslint-disable-next-line no-loop-func
@@ -102,13 +104,8 @@ function Representation({
                     await snooze(500)
                 }
             } else {
-                const scatterElemClass = 'scatter-elem'
                 const lineElemClass = 'line-elem'
-                const axisElemClass = 'axis-elem'
-
-                const scatterRegressionPlot = new Scatter({}, scatterElemClass)
                 const lineRegressionPlot = new LinePlot({}, lineElemClass)
-                const axisRegression = new Axis({}, axisElemClass)
 
                 const multiplePlot = new SVGMultipleVisualization(
                     {
