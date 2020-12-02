@@ -9,7 +9,3 @@ has_children: false
 # ModuleDocumentation
 
 Visualizations module documentation
-
-## Hierarchy
-
-* **visualizations.ModuleDocumentation**

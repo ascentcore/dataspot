@@ -1,9 +1,6 @@
 import { euclideanDistance } from '../math/distances'
 import hierarchy, { hCut, HierarchyPoints, singleLinkage } from './agglomerative'
-// import blobDataset from '../dataset/clustering/blobDataset'
-import data from '../dataset/samples/usarrests'
-
-// const blobData = blobDataset(3)
+import data from '../datasets/samples/usarrests'
 
 describe('Hierarchy', () => {
     it('Process Hierarchy', () => {
@@ -13,14 +10,6 @@ describe('Hierarchy', () => {
             euclideanDistance
         )
 
-        // const result = hierarchy(
-        //     blobData.map((row: any[], i) => <HierarchyPoints>{ index: i, points: [row] }),
-        //     singleLinkage,
-        //     euclideanDistance
-        // )
-
         console.log(hCut(result, 1))
-
-        console.log(JSON.stringify(result, null, 2))
     })
 })

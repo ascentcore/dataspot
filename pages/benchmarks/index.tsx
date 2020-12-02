@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import * as ackley from '../../lib/dataset/benchmark/ackley'
-import * as easom from '../../lib/dataset/benchmark/easom'
-import * as griewank from '../../lib/dataset/benchmark/griewank'
-import * as rastrigin from '../../lib/dataset/benchmark/rastrigin'
-import * as rosenbrock from '../../lib/dataset/benchmark/rosenbrock'
-import * as schwefel from '../../lib/dataset/benchmark/schwefel'
-import * as sphere from '../../lib/dataset/benchmark/sphere'
+import Ackley from '../../lib/datasets/benchmark/ackley'
+import Easom from '../../lib/datasets/benchmark/easom'
+import Griewank from '../../lib/datasets/benchmark/griewank'
+import Rastrigin from '../../lib/datasets/benchmark/rastrigin'
+import Rosenbrock from '../../lib/datasets/benchmark/rosenbrock'
+import Schwefel from '../../lib/datasets/benchmark/schwefel'
+import Sphere from '../../lib/datasets/benchmark/sphere'
 
 import MeshPlot from '../../lib/visualizations/three/mesh'
 
@@ -57,59 +57,59 @@ function Representation({
 const reps = [
     {
         name: 'Ackley',
-        zFunc: ackley.default,
-        xMin: ackley.DOMAIN[0],
-        xMax: ackley.DOMAIN[1],
-        yMin: ackley.DOMAIN[0],
-        yMax: ackley.DOMAIN[1]
+        zFunc: Ackley.calculate,
+        xMin: Ackley.DOMAIN[0],
+        xMax: Ackley.DOMAIN[1],
+        yMin: Ackley.DOMAIN[0],
+        yMax: Ackley.DOMAIN[1]
     },
     {
         name: 'Easom',
-        zFunc: easom.default,
-        xMin: easom.DOMAIN[0],
-        xMax: easom.DOMAIN[1],
-        yMin: easom.DOMAIN[0],
-        yMax: easom.DOMAIN[1]
+        zFunc: Easom.calculate,
+        xMin: Easom.DOMAIN[0],
+        xMax: Easom.DOMAIN[1],
+        yMin: Easom.DOMAIN[0],
+        yMax: Easom.DOMAIN[1]
     },
     {
         name: 'Griewank',
-        zFunc: griewank.default,
-        xMin: griewank.DOMAIN[0],
-        xMax: griewank.DOMAIN[1],
-        yMin: griewank.DOMAIN[0],
-        yMax: griewank.DOMAIN[1]
+        zFunc: Griewank.calculate,
+        xMin: Griewank.DOMAIN[0],
+        xMax: Griewank.DOMAIN[1],
+        yMin: Griewank.DOMAIN[0],
+        yMax: Griewank.DOMAIN[1]
     },
     {
         name: 'Rastrigin',
-        zFunc: rastrigin.default,
-        xMin: rastrigin.DOMAIN[0],
-        xMax: rastrigin.DOMAIN[1],
-        yMin: rastrigin.DOMAIN[0],
-        yMax: rastrigin.DOMAIN[1]
+        zFunc: Rastrigin.calculate,
+        xMin: Rastrigin.DOMAIN[0],
+        xMax: Rastrigin.DOMAIN[1],
+        yMin: Rastrigin.DOMAIN[0],
+        yMax: Rastrigin.DOMAIN[1]
     },
     {
         name: 'Rosenbrock',
-        zFunc: rosenbrock.default,
-        xMin: rosenbrock.DOMAIN[0],
-        xMax: rosenbrock.DOMAIN[1],
-        yMin: rosenbrock.DOMAIN[0],
-        yMax: rosenbrock.DOMAIN[1]
+        zFunc: Rosenbrock.calculate,
+        xMin: Rosenbrock.DOMAIN[0],
+        xMax: Rosenbrock.DOMAIN[1],
+        yMin: Rosenbrock.DOMAIN[0],
+        yMax: Rosenbrock.DOMAIN[1]
     },
     {
         name: 'Schwefel',
-        zFunc: schwefel.default,
-        xMin: schwefel.DOMAIN[0],
-        xMax: schwefel.DOMAIN[1],
-        yMin: schwefel.DOMAIN[0],
-        yMax: schwefel.DOMAIN[1]
+        zFunc: Schwefel.calculate,
+        xMin: Schwefel.DOMAIN[0],
+        xMax: Schwefel.DOMAIN[1],
+        yMin: Schwefel.DOMAIN[0],
+        yMax: Schwefel.DOMAIN[1]
     },
     {
         name: 'Sphere',
-        zFunc: sphere.default,
-        xMin: sphere.DOMAIN[0],
-        xMax: sphere.DOMAIN[1],
-        yMin: sphere.DOMAIN[0],
-        yMax: sphere.DOMAIN[1]
+        zFunc: Sphere.calculate,
+        xMin: Sphere.DOMAIN[0],
+        xMax: Sphere.DOMAIN[1],
+        yMin: Sphere.DOMAIN[0],
+        yMax: Sphere.DOMAIN[1]
     }
 ]
 

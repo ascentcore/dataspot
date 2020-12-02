@@ -2,8 +2,6 @@
 
 {{> comment}}
 
-{{> member.sources}}
-
 {{#if typeParameters}}
 
 #### Type parameters:
@@ -15,7 +13,7 @@
 {{/with}}
 
 {{/if}}
-{{!-- 
+
 {{#if parameters}}
 
 #### Parameters:
@@ -26,7 +24,7 @@
 
 {{/with}}
 
-{{/if}} --}}
+{{/if}}
 
 {{#if type}}
 
@@ -43,3 +41,5 @@
 {{/if}}
 
 {{/if}}
+
+{{> member.sources}}

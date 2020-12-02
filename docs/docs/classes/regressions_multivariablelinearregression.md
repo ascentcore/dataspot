@@ -8,10 +8,6 @@ has_children: false
 
 # MultivariableLinearRegression
 
-## Hierarchy
-
-* **regressions.MultivariableLinearRegression**
-
 ## Index
 
 | Methods |
@@ -21,9 +17,19 @@ has_children: false
 ## Methods
 
 {:.method-highlight}
-▸ `Static`**fit**(`input`: number[][], `target`: number[], `weight`: number[], `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<MultivariableLinearRegressionOutputType>
+▸ `Static`**fit**(`input`: number[][], `target`: number[], `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<RegressionOutputType>
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`input` | number[][] |
+`target` | number[] |
+`learningRate` | number |
+`epochs` | number |
+`costFunction` | Function |
+
+**Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/multivariableLinearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/ef89391/lib/regressions/multivariableLinearRegression.ts#L25)
-
-**Returns:** Generator\<MultivariableLinearRegressionOutputType>
+[lib/regressions/multivariableLinearRegression.ts:6](https://github.com/ascentcore/dataspot/blob/12500c0/lib/regressions/multivariableLinearRegression.ts#L6)

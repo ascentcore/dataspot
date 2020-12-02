@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import Ackley, { DOMAIN as ACKLEY_DOMAIN, GLOBAL_M as ACKLEY_GLOBAL_M } from '../../lib/dataset/benchmark/ackley'
+import Ackley, { DOMAIN as ACKLEY_DOMAIN, GLOBAL_M as ACKLEY_GLOBAL_M } from '../../lib/datasets/benchmark/ackley'
 import Schwefel, {
     DOMAIN as SCHWEFEL_DOMAIN,
     GLOBAL_M as SCHWEFEL_GLOBAL_M
-} from '../../lib/dataset/benchmark/schwefel'
+} from '../../lib/datasets/benchmark/schwefel'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import Axis from '../../lib/visualizations/d3/axis'
 import Scatter from '../../lib/visualizations/d3/scatter'

@@ -8,18 +8,6 @@ has_children: false
 
 # EvolutionaryConfig
 
-## Hierarchy
-
-* [common.SerializableConfig](../common_serializableconfig)
-
-  ↳ **common.EvolutionaryConfig**
-
-  ↳↳ [clustering.CentroidConfig](../clustering_centroidconfig)
-
-  ↳↳ [clustering.DBScanConfig](../clustering_dbscanconfig)
-
-  ↳↳ [clustering.AglomerativeClusteringConfig](../clustering_aglomerativeclusteringconfig)
-
 ## Indexable
 
 ▪ [key: string]: SerializableType
@@ -35,4 +23,4 @@ has_children: false
 •  **iterations**: number = 100
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/evolutionaryAlgorithm.ts#L4)

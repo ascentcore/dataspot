@@ -10,13 +10,9 @@ has_children: true
 
 Clustering module documentation
 
-**`sample_only`** 
+**`sample_only`** documentation/sample
 
 <div class="running-sample">
     <span class="running-sample-container" data-ref="documentation/sample"></span>
     <script src='/dataspot/samples/sample.js' title="documentation/sample"></script>
 </div>
-
-## Hierarchy
-
-* **clustering_index**

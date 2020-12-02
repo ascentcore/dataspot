@@ -3,14 +3,9 @@ import DBScan, { DBScanConfig } from '../../lib/clustering/dbScan'
 
 import Scatter from '../../lib/visualizations/d3/scatter'
 
-import arcDataset from '../../lib/dataset/clustering/arcDataset'
-import blobDataset from '../../lib/dataset/clustering/blobDataset'
-import concentricRingsDataset from '../../lib/dataset/clustering/concentricRingsDataset'
-import fillSpaceDataset from '../../lib/dataset/clustering/fillSpaceDataset'
-import noisyWithBlobDataset from '../../lib/dataset/clustering/noisyWithBlobDataset'
-import potatoDataset from '../../lib/dataset/clustering/potatoDataset'
 import Axis from '../../lib/visualizations/d3/axis'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import ClusteringDataset from '../../lib/datasets/clustering'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -174,12 +169,12 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
 }
 
 export default function plot(container: HTMLElement): void {
-    const initialArcDataset = arcDataset()
-    const initialBlobDataset = blobDataset()
-    const initialConcentricRingsDataset = concentricRingsDataset()
-    const initialFillSpaceDataset = fillSpaceDataset()
-    const initialNoisyWithBlobDataset = noisyWithBlobDataset()
-    const initialPotatoDataset = potatoDataset()
+    const initialArcDataset = ClusteringDataset.arc()
+    const initialBlobDataset = ClusteringDataset.blob()
+    const initialConcentricRingsDataset = ClusteringDataset.concentricRings()
+    const initialFillSpaceDataset = ClusteringDataset.fillSpace()
+    const initialNoisyWithBlobDataset = ClusteringDataset.noisyWithBlob()
+    const initialPotatoDataset = ClusteringDataset.potato()
 
     const title = document.createElement('h1')
     title.setAttribute('style', 'text-align: center; margin-bottom: 50px;')

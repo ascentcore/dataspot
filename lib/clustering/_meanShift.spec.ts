@@ -1,8 +1,8 @@
-import blobDataset from '../dataset/clustering/blobDataset'
+import ClusteringDataset from '../datasets/clustering'
 import MeanShift from './meanShift'
 
-const fitData = blobDataset(40)
-const testData = blobDataset(2)
+const fitData = ClusteringDataset.blob(40)
+const testData = ClusteringDataset.blob(2)
 let serializedConfig1: any
 
 describe('K-means', () => {

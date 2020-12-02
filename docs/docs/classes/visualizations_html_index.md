@@ -9,7 +9,3 @@ has_children: true
 # html
 
 D3 Visualization Documentation
-
-## Hierarchy
-
-* **visualizations.html_index**
