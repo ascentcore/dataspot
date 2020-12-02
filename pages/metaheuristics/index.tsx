@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import Ackley, { DOMAIN as ACKLEY_DOMAIN, GLOBAL_M as ACKLEY_GLOBAL_M } from '../../lib/datasets/benchmark/ackley'
-import Schwefel, {
-    DOMAIN as SCHWEFEL_DOMAIN,
-    GLOBAL_M as SCHWEFEL_GLOBAL_M
-} from '../../lib/datasets/benchmark/schwefel'
+import Ackley from '../../lib/datasets/benchmark/ackley'
+import Schwefel from '../../lib/datasets/benchmark/schwefel'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import Axis from '../../lib/visualizations/d3/axis'
 import Scatter from '../../lib/visualizations/d3/scatter'
@@ -200,9 +197,9 @@ const reps = [
     {
         name: 'Particle Swarm Optimisation - Ackley 2D',
         type: '2D',
-        ff: Ackley,
-        domain: ACKLEY_DOMAIN,
-        globalM: ACKLEY_GLOBAL_M,
+        ff: Ackley.calculate,
+        domain: Ackley.DOMAIN,
+        globalM: Ackley.GLOBAL_M,
         radius: 3,
         resultMin: 0,
         resultMax: 25
@@ -210,17 +207,17 @@ const reps = [
     {
         name: 'Particle Swarm Optimisation - Ackley 3D',
         type: '3D',
-        ff: Ackley,
-        domain: ACKLEY_DOMAIN,
-        globalM: ACKLEY_GLOBAL_M,
+        ff: Ackley.calculate,
+        domain: Ackley.DOMAIN,
+        globalM: Ackley.GLOBAL_M,
         radius: 1
     },
     {
         name: 'Particle Swarm Optimisation - Schwefel 2D',
         type: '2D',
-        ff: Schwefel,
-        domain: SCHWEFEL_DOMAIN,
-        globalM: SCHWEFEL_GLOBAL_M,
+        ff: Schwefel.calculate,
+        domain: Schwefel.DOMAIN,
+        globalM: Schwefel.GLOBAL_M,
         radius: 3,
         resultMin: 0,
         resultMax: 420
@@ -228,9 +225,9 @@ const reps = [
     {
         name: 'Particle Swarm Optimisation - Schwefel 3D',
         type: '3D',
-        ff: Schwefel,
-        domain: SCHWEFEL_DOMAIN,
-        globalM: SCHWEFEL_GLOBAL_M,
+        ff: Schwefel.calculate,
+        domain: Schwefel.DOMAIN,
+        globalM: Schwefel.GLOBAL_M,
         radius: 15
     }
 ]
