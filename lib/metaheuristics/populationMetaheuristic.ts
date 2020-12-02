@@ -54,7 +54,6 @@ export default abstract class PopulationMetaheuristic<
 
         let newBestPosition = [...this.individuals[0].bestPosition]
         let newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
-
         for (let i = 1; i < this.individuals.length; i++) {
             if (this.fitnessFunction.calculate(...this.individuals[i].bestPosition) < newBestFitness) {
                 newBestPosition = [...this.individuals[i].bestPosition]
@@ -114,5 +113,9 @@ export default abstract class PopulationMetaheuristic<
         return this.individuals.map((individual: Individual) => individual.bestPosition)
     }
 
-    protected onEndFit(): void {}
+    onEndFit(): void {}
+
+    public getBest(): number[] {
+        return this.config.bestPosition
+    }
 }

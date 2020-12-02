@@ -1,8 +1,8 @@
-import blobDataset from '../dataset/blobDataset'
+import ClusteringDataset from '../datasets/clustering'
 import KMeans, { KMeansConfig } from './kMeans'
 
-const fitData = blobDataset(1500)
-const testData = blobDataset(2)
+const fitData = ClusteringDataset.blob(1500)
+const testData = ClusteringDataset.blob(2)
 let serializedConfig1: any
 let serializedConfig2: any
 
@@ -43,7 +43,7 @@ describe('K-means', () => {
         expect(predictions[2]).not.toEqual(predictions[5])
     })
     it('able to load a state', () => {
-        const localTestData = blobDataset(2)
+        const localTestData = ClusteringDataset.blob(2)
         const kMeansFromSerialized1 = new KMeans()
         kMeansFromSerialized1.loadState(serializedConfig1)
         let predictions: number[] = kMeansFromSerialized1.predict(localTestData)

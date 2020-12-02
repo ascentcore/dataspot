@@ -10,10 +10,6 @@ has_children: false
 
 Defines any kind of object with key - value pairs
 
-## Hierarchy
-
-* **models.ObjectLike**
-
 ## Indexable
 
 ▪ [k: string]: unknown

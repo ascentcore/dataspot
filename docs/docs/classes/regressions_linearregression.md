@@ -8,10 +8,6 @@ has_children: false
 
 # LinearRegression
 
-## Hierarchy
-
-* **regressions.LinearRegression**
-
 ## Index
 
 | Methods |
@@ -21,9 +17,19 @@ has_children: false
 ## Methods
 
 {:.method-highlight}
-▸ `Static`**fit**(`input`: number[], `target`: number[], `weight`: number, `bias`: number, `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<LinearRegressionOutputType>
+▸ `Static`**fit**(`input`: number[], `target`: number[], `learningRate`: number, `epochs`: number, `costFunction`: Function): Generator\<RegressionOutputType>
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`input` | number[] |
+`target` | number[] |
+`learningRate` | number |
+`epochs` | number |
+`costFunction` | Function |
+
+**Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:20](https://github.com/ascentcore/dataspot/blob/ef89391/lib/regressions/linearRegression.ts#L20)
-
-**Returns:** Generator\<LinearRegressionOutputType>
+[lib/regressions/linearRegression.ts:7](https://github.com/ascentcore/dataspot/blob/12500c0/lib/regressions/linearRegression.ts#L7)

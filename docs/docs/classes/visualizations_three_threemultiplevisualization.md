@@ -1,0 +1,166 @@
+---
+layout: default
+title: ThreeMultipleVisualization
+parent: three
+grand_parent: visualizations
+has_children: false
+---
+
+# ThreeMultipleVisualization
+
+## Index
+
+| Constructors |
+|-----------|
+| [constructor](#constructor) |
+
+| Properties |
+|-----------|
+| [config](#config) |
+| [dependencies](#dependencies) |
+| [elemClass](#elemclass) |
+| [visualizations](#visualizations) |
+
+| Methods |
+|-----------|
+| [dataUpdate](#dataupdate) |
+| [destroy](#destroy) |
+| [getDependency](#getdependency) |
+| [setContainer](#setcontainer) |
+| [setup](#setup) |
+
+## Constructors
+
+{:.method-highlight}
+\+ **new ThreeMultipleVisualization**(`config`: any, `elemClass`: string, `visualizations`: [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization)[]): [visualizations.three.ThreeMultipleVisualization](../visualizations_three_threemultiplevisualization)
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`config` | any |
+`elemClass` | string |
+`visualizations` | [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization)[] |
+
+**Returns:** [visualizations.three.ThreeMultipleVisualization](../visualizations_three_threemultiplevisualization)
+
+*Overrides [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization).[constructor](../visualizations_three_threebasevisualization#constructor)*
+
+{:.url-source-ref}
+[lib/visualizations/three/threemultiple.ts:5](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/three/threemultiple.ts#L5)
+
+## Properties
+
+•  **config**: any
+
+*Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L8)
+
+___
+
+• `Protected` **dependencies**: any
+
+*Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L14)
+
+List of 3rd party dependencies that are are platform dependent
+E.g. D3 implementation, HTML Element refs
+
+___
+
+•  **elemClass**: string
+
+*Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L8)
+
+___
+
+• `Private` **visualizations**: { [name:string]: [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization);  }
+
+{:.url-source-ref}
+[lib/visualizations/three/threemultiple.ts:5](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/three/threemultiple.ts#L5)
+
+## Methods
+
+{:.method-highlight}
+▸ **dataUpdate**(`data`: ThreeDPointScatter[] \| FunctioDefinitionMesh, `elemClass`: string): any
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`data` | ThreeDPointScatter[] \| FunctioDefinitionMesh |
+`elemClass` | string |
+
+**Returns:** any
+
+*Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
+
+{:.url-source-ref}
+[lib/visualizations/three/threemultiple.ts:27](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/three/threemultiple.ts#L27)
+
+___
+
+{:.method-highlight}
+▸ **destroy**(): void
+
+**Returns:** void
+
+*Overrides [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization).[destroy](../visualizations_three_threebasevisualization#destroy)*
+
+{:.url-source-ref}
+[lib/visualizations/three/threemultiple.ts:35](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/three/threemultiple.ts#L35)
+
+___
+
+{:.method-highlight}
+▸ **getDependency**(`key`: string): any
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`key` | string |
+
+**Returns:** any
+
+*Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:28](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L28)
+
+___
+
+{:.method-highlight}
+▸ **setContainer**(`containerRef`: HTMLElement): void
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`containerRef` | HTMLElement |
+
+**Returns:** void
+
+*Overrides [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization).[setContainer](../visualizations_three_threebasevisualization#setcontainer)*
+
+{:.url-source-ref}
+[lib/visualizations/three/threemultiple.ts:20](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/three/threemultiple.ts#L20)
+
+___
+
+{:.method-highlight}
+▸ **setup**(): void
+
+**Returns:** void
+
+*Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
+
+{:.url-source-ref}
+[lib/visualizations/three/threemultiple.ts:16](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/three/threemultiple.ts#L16)

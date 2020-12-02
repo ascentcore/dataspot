@@ -9,7 +9,3 @@ has_children: true
 # math
 
 Math module documentation
-
-## Hierarchy
-
-* **math_index**

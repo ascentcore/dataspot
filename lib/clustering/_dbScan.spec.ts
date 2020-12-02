@@ -1,7 +1,7 @@
-import blobDataset from '../dataset/blobDataset'
+import ClusteringDataset from '../datasets/clustering'
 import DBScan from './dbScan'
 
-const fitData = blobDataset(100)
+const fitData = ClusteringDataset.blob(100)
 
 describe('DBScan', () => {
     it('performs clustering with dbscan', () => {

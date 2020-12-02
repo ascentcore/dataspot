@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
 import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
-import blobDataset from '../../lib/dataset/blobDataset'
+import blobDataset from '../../lib/datasets/blobDataset'
 import Scatter from '../../lib/visualizations/d3/scatter'
 
 const width = 500

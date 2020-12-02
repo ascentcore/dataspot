@@ -1,4 +1,4 @@
-import calculate, { DOMAIN } from '../dataset/benchmark/ackley'
+import Ackley from '../datasets/benchmark/ackley'
 import GA, { GAConfig } from './ga'
 import FitnessFunction from './fitnessFunction'
 
@@ -9,19 +9,22 @@ describe('GA', () => {
     it('performs fitting on ackley', (done) => {
         const generator = ga.fitAsync(
             Object.assign(new FitnessFunction(), {
-                calculate,
-                dimensions: [{ min: DOMAIN[0], max: DOMAIN[1] }, { min: DOMAIN[0], max: DOMAIN[1] }]
+                calculate: Ackley.calculate,
+                dimensions: [
+                    { min: Ackley.DOMAIN[0], max: Ackley.DOMAIN[1] },
+                    { min: Ackley.DOMAIN[0], max: Ackley.DOMAIN[1] }
+                ]
             })
         )
         let gaResult = generator.next()
         let doneGA = gaResult.done
-        const initialBest = Math.min(...gaResult.value.map((position: number[]) => calculate(...position)))
+        const initialBest = Math.min(...gaResult.value.map((position: number[]) => Ackley.calculate(...position)))
 
         while (!doneGA) {
             gaResult = generator.next()
             doneGA = gaResult.done
         }
-        const finalBest = Math.min(...gaResult.value.map((position: number[]) => calculate(...position)))
+        const finalBest = Math.min(...gaResult.value.map((position: number[]) => Ackley.calculate(...position)))
         serializedConfig = ga.serialize()
         expect(initialBest).toBeGreaterThanOrEqual(finalBest)
         done()
@@ -30,11 +33,14 @@ describe('GA', () => {
     it('loads state from serialized config', (done) => {
         ga = new GA()
         ga.loadState(serializedConfig)
-        const latestBest = calculate(...JSON.parse(serializedConfig).bestPosition)
+        const latestBest = Ackley.calculate(...JSON.parse(serializedConfig).bestPosition)
         const generator = ga.fitAsync(
             Object.assign(new FitnessFunction(), {
-                calculate,
-                dimensions: [{ min: DOMAIN[0], max: DOMAIN[1] }, { min: DOMAIN[0], max: DOMAIN[1] }]
+                calculate: Ackley.calculate,
+                dimensions: [
+                    { min: Ackley.DOMAIN[0], max: Ackley.DOMAIN[1] },
+                    { min: Ackley.DOMAIN[0], max: Ackley.DOMAIN[1] }
+                ]
             })
         )
         let doneGA = false
@@ -44,7 +50,7 @@ describe('GA', () => {
             gaResult = generator.next()
             doneGA = gaResult.done
         }
-        const nextBest = Math.min(...gaResult.value.map((position: number[]) => calculate(...position)))
+        const nextBest = Math.min(...gaResult.value.map((position: number[]) => Ackley.calculate(...position)))
         expect(latestBest).toBeGreaterThanOrEqual(nextBest)
         done()
     })

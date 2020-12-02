@@ -1,27 +1,40 @@
 import Axis from '../../../lib/visualizations/d3/axis'
 import Scatter from '../../../lib/visualizations/d3/scatter'
-import ClusteringDataset from '../../../lib/dataset/clusteringDataset'
+import Title from '../../../lib/visualizations/d3/title'
+import ClusteringDataset from '../../../lib/datasets/clustering'
 import SVGMultipleVisualization from '../../../lib/visualizations/d3/svgmultiple'
 
 export default (async () => {
-    const functions = Object.values(ClusteringDataset)
-    console.log('Executed!')
+    const keys = ['Arc', 'Blob', 'Concentric Rings', 'Fill Space', 'Noisy With Blob', 'Potato']
+    const functions = [
+        ClusteringDataset.arc,
+        ClusteringDataset.blob,
+        ClusteringDataset.concentricRings,
+        ClusteringDataset.fillSpace,
+        ClusteringDataset.noisyWithBlob,
+        ClusteringDataset.potato
+    ]
 
     const root = document.createElement('div')
     const ref = document.querySelector(`[data-ref="documentation/clusteringDataset"]`) || document.body
     ref.appendChild(root)
 
-    functions.forEach((fn: Function) => {
+    functions.forEach((fn: Function, index: number) => {
         const blobDataset = fn().map((data: any[]) => {
             return { x: data[0], y: data[1], r: 1.2 }
         })
 
-        console.log('EXEC!!!!', fn)
-
         const scatter = new Scatter({})
         const axis = new Axis({})
-        const visKMeans = new SVGMultipleVisualization({}, 'kmeans-plot-elem', [scatter, axis])
+        const title = new Title({ text: `${keys[index]}` })
+
+        const visKMeans = new SVGMultipleVisualization({ width: 220, height: 220 }, 'kmeans-plot-elem', [
+            scatter,
+            axis,
+            title
+        ])
         visKMeans.setContainer(root)
+        visKMeans.setup()
 
         visKMeans.dataUpdate(blobDataset, 'scatter-elem')
         visKMeans.dataUpdate(blobDataset, 'axis-elem')
