@@ -2,11 +2,11 @@ import calculate, { DOMAIN } from '../dataset/benchmark/ackley'
 import PSO, { PSOConfig } from './pso'
 import FitnessFunction from './fitnessFunction'
 
-const pso = new PSO(<PSOConfig>{ populationSize: 3, iterations: 20 })
+let pso = new PSO(<PSOConfig>{ populationSize: 3, iterations: 20 })
 let serializedConfig: any
 
 describe('PSO', () => {
-    it('performs pso on ackley', (done) => {
+    it('performs fitting on ackley', (done) => {
         const generator = pso.fitAsync(
             Object.assign(new FitnessFunction(), {
                 calculate,
@@ -27,8 +27,8 @@ describe('PSO', () => {
         done()
     })
 
-    it('loads state from serialized config for pso', (done) => {
-        const pso = new PSO()
+    it('loads state from serialized config', (done) => {
+        pso = new PSO()
         pso.loadState(serializedConfig)
         const latestBest = calculate(...JSON.parse(serializedConfig).bestPosition)
         const generator = pso.fitAsync(
@@ -47,6 +47,5 @@ describe('PSO', () => {
         const nextBest = Math.min(...psoResult.value.map((position: number[]) => calculate(...position)))
         expect(latestBest).toBeGreaterThanOrEqual(nextBest)
         done()
-
     })
 })

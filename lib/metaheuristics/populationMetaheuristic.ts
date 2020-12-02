@@ -61,7 +61,6 @@ export default abstract class PopulationMetaheuristic<
                 newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
             }
         }
-
         this.config.bestPosition = newBestPosition
     }
 
@@ -83,7 +82,8 @@ export default abstract class PopulationMetaheuristic<
         }
         // if population reinitialized but best position exists, add the best position history to one of the particles
         if (this.config.bestPosition.length !== 0 && populationSize) {
-            this.individuals[0].bestPosition = this.config.bestPosition
+            this.individuals[0].position = [...this.config.bestPosition]
+            this.individuals[0].bestPosition = [...this.config.bestPosition]
         }
         this.updateGlobalBest()
     }
