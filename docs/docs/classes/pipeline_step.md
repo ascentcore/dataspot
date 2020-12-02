@@ -17,12 +17,6 @@ Name |
 `T` |
 `K` |
 
-## Hierarchy
-
-* **pipeline.Step**
-
-  ↳ [pipeline.Pipeline](../pipeline_pipeline)
-
 ## Index
 
 | Properties |
@@ -41,7 +35,7 @@ Name |
 • `Protected` **state**: [models.ObjectLike](../../interfaces/models_objectlike)
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/ef89391/lib/pipeline/types.ts#L12)
+[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L12)
 
 Internal pipeline state reference
 
@@ -52,10 +46,16 @@ Internal pipeline state reference
 
 Execute a step in the pipeline and return a promise to the next element in pipe
 
-{:.url-source-ref}
-[lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/ef89391/lib/pipeline/types.ts#L43)
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`data` | T | data promise for the next step in pipe  |
 
 **Returns:** Promise\<K>
+
+{:.url-source-ref}
+[lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L43)
 
 ___
 
@@ -64,10 +64,16 @@ ___
 
 Return value at key from storage
 
-{:.url-source-ref}
-[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/ef89391/lib/pipeline/types.ts#L35)
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string | storage key  |
 
 **Returns:** any
+
+{:.url-source-ref}
+[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L35)
 
 ___
 
@@ -76,10 +82,16 @@ ___
 
 Set state reference
 
-{:.url-source-ref}
-[lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/ef89391/lib/pipeline/types.ts#L18)
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`value` | [models.ObjectLike](../../interfaces/models_objectlike) | pipeline state reference  |
 
 **Returns:** void
+
+{:.url-source-ref}
+[lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L18)
 
 ___
 
@@ -88,7 +100,14 @@ ___
 
 Set state property
 
-{:.url-source-ref}
-[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/ef89391/lib/pipeline/types.ts#L27)
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string | state property key storage name |
+`value` | any | value to store at key  |
 
 **Returns:** void
+
+{:.url-source-ref}
+[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L27)

@@ -11,16 +11,6 @@ has_children: false
 Base visualization abstract class.
 The same logic will be used isomorphically on node and web platforms
 
-## Hierarchy
-
-* **visualizations.BaseVisualization**
-
-  ↳ [visualizations.html.HTMLBaseVisualization](../visualizations_html_htmlbasevisualization)
-
-  ↳ [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization)
-
-  ↳ [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization)
-
 ## Index
 
 | Constructors |
@@ -44,24 +34,31 @@ The same logic will be used isomorphically on node and web platforms
 {:.method-highlight}
 \+ **new BaseVisualization**(`config`: any, `elemClass`: string): [visualizations.BaseVisualization](../visualizations_basevisualization)
 
-{:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L7)
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`config` | any |
+`elemClass` | string |
 
 **Returns:** [visualizations.BaseVisualization](../visualizations_basevisualization)
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L7)
 
 ## Properties
 
 •  **config**: any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
 • `Protected` **dependencies**: any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L14)
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -71,29 +68,42 @@ ___
 •  **elemClass**: string
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
 {:.method-highlight}
-▸ `Abstract`**dataUpdate**(`data`: TwoDPointScatter[] \| TwoDPointLine[] \| FunctioDefinitionMesh \| any, `elemClass?`: string): (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
+▸ `Abstract`**dataUpdate**(`data`: any, `elemClass?`: string): (data: any, elemClass: string) => void \| null
 
 Isomorphic method used on every data update
 
-{:.url-source-ref}
-[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L26)
+#### Parameters:
 
-**Returns:** (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
+Name | Type | Description |
+------ | ------ | ------ |
+`data` | any | array of data values  |
+`elemClass?` | string | - |
+
+**Returns:** (data: any, elemClass: string) => void \| null
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L26)
 
 ___
 
 {:.method-highlight}
 ▸ **getDependency**(`key`: string): any
 
-{:.url-source-ref}
-[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L31)
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`key` | string |
 
 **Returns:** any
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:28](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L28)
 
 ___
 
@@ -103,7 +113,13 @@ ___
 Isomorphic method executed once for setting up the visualization and dependencies
 that are going to be used by the data update function
 
-{:.url-source-ref}
-[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L20)
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`initialData?` | any |
 
 **Returns:** void
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L20)

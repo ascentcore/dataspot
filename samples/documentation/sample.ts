@@ -1,10 +1,10 @@
 import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
-import arcDataset from '../../lib/dataset/clustering/arcDataset'
+import ClusteringDataset from '../../lib/datasets/clustering'
 import Axis from '../../lib/visualizations/d3/axis'
 import Scatter from '../../lib/visualizations/d3/scatter'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 
-const initialArcDataset = arcDataset()
+const initialArcDataset = ClusteringDataset.arc()
 
 const mappedDataKMeans = initialArcDataset.map((data) => {
     return { x: data[0], y: data[1], r: 1.2 }

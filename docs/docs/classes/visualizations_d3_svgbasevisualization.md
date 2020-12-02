@@ -8,24 +8,6 @@ has_children: false
 
 # SVGBaseVisualization
 
-## Hierarchy
-
-* [visualizations.BaseVisualization](../visualizations_basevisualization)
-
-  ↳ **visualizations.d3.SVGBaseVisualization**
-
-  ↳↳ [visualizations.d3.Axis](../visualizations_d3_axis)
-
-  ↳↳ [visualizations.d3.HierarchyPlot](../visualizations_d3_hierarchyplot)
-
-  ↳↳ [visualizations.d3.LinePlot](../visualizations_d3_lineplot)
-
-  ↳↳ [visualizations.d3.Scatter](../visualizations_d3_scatter)
-
-  ↳↳ [visualizations.d3.SVGMultipleVisualization](../visualizations_d3_svgmultiplevisualization)
-
-  ↳↳ [visualizations.d3.SVGVisualizationWrapper](../visualizations_d3_svgvisualizationwrapper)
-
 ## Index
 
 | Constructors |
@@ -41,6 +23,7 @@ has_children: false
 | Methods |
 |-----------|
 | [dataUpdate](#dataupdate) |
+| [destroy](#destroy) |
 | [getDependency](#getdependency) |
 | [setContainer](#setcontainer) |
 | [setup](#setup) |
@@ -50,12 +33,19 @@ has_children: false
 {:.method-highlight}
 \+ **new SVGBaseVisualization**(`config`: any, `elemClass`: string): [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization)
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`config` | any |
+`elemClass` | string |
+
+**Returns:** [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization)
+
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[constructor](../visualizations_basevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/d3/svgbase.ts#L10)
-
-**Returns:** [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization)
+[lib/visualizations/d3/svgbase.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/d3/svgbase.ts#L10)
 
 ## Properties
 
@@ -64,7 +54,7 @@ has_children: false
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
@@ -73,7 +63,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L14)
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -85,43 +75,72 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
 {:.method-highlight}
-▸ `Abstract`**dataUpdate**(`data`: TwoDPointScatter[] \| TwoDPointLine[] \| FunctioDefinitionMesh \| any, `elemClass?`: string): (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
+▸ `Abstract`**dataUpdate**(`data`: any, `elemClass?`: string): (data: any, elemClass: string) => void \| null
 
 Isomorphic method used on every data update
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`data` | any | array of data values  |
+`elemClass?` | string | - |
+
+**Returns:** (data: any, elemClass: string) => void \| null
 
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L26)
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L26)
 
-**Returns:** (data: TwoDPointScatter[] \| TwoDPointLine[], elemClass: string) => void \| null
+___
+
+{:.method-highlight}
+▸ **destroy**(): void
+
+**Returns:** void
+
+{:.url-source-ref}
+[lib/visualizations/d3/svgbase.ts:49](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/d3/svgbase.ts#L49)
 
 ___
 
 {:.method-highlight}
 ▸ **getDependency**(`key`: string): any
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`key` | string |
+
+**Returns:** any
+
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:31](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L31)
-
-**Returns:** any
+[lib/visualizations/basevisualization.ts:28](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L28)
 
 ___
 
 {:.method-highlight}
 ▸ **setContainer**(`containerRef`: HTMLElement \| [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization)): void
 
-{:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/d3/svgbase.ts#L24)
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`containerRef` | HTMLElement \| [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization) |
 
 **Returns:** void
+
+{:.url-source-ref}
+[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/d3/svgbase.ts#L24)
 
 ___
 
@@ -131,9 +150,15 @@ ___
 Isomorphic method executed once for setting up the visualization and dependencies
 that are going to be used by the data update function
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`initialData?` | any |
+
+**Returns:** void
+
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/ef89391/lib/visualizations/basevisualization.ts#L20)
-
-**Returns:** void
+[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L20)

@@ -14,14 +14,6 @@ Name | Type |
 ------ | ------ |
 `T` | [common.EvolutionaryConfig](../common_evolutionaryconfig) |
 
-## Hierarchy
-
-* [common.Serializable](../common_serializable)\<T>
-
-  ↳ **common.EvolutionaryAlgorithm**
-
-  ↳↳ [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm)
-
 ## Index
 
 | Constructors |
@@ -45,12 +37,18 @@ Name | Type |
 {:.method-highlight}
 \+ **new EvolutionaryAlgorithm**(`config`: T): [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm)
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`config` | T |
+
+**Returns:** [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm)
+
 *Inherited from [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/serializable.ts#L7)
-
-**Returns:** [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm)
+[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L7)
 
 ## Properties
 
@@ -59,55 +57,61 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L8)
 
 ___
 
 • `Protected` **iteration**: number = 0
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ## Methods
 
 {:.method-highlight}
 ▸ **loadState**(`from`: string): void
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`from` | string |
+
+**Returns:** void
+
 *Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/serializable.ts#L14)
-
-**Returns:** void
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L14)
 
 ___
 
 {:.method-highlight}
 ▸ **serialize**(): string
 
+**Returns:** string
+
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/serializable.ts#L10)
-
-**Returns:** string
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L10)
 
 ___
 
 {:.method-highlight}
 ▸ **shouldStop**(): boolean
 
-{:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L10)
-
 **Returns:** boolean
+
+{:.url-source-ref}
+[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L10)
 
 ___
 
 {:.method-highlight}
 ▸ `Abstract`**step**(): any
 
-{:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L14)
-
 **Returns:** any
+
+{:.url-source-ref}
+[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L14)

@@ -8,10 +8,6 @@ has_children: false
 
 # ObjectUtils
 
-## Hierarchy
-
-* **common.ObjectUtils**
-
 ## Index
 
 | Methods |
@@ -23,13 +19,19 @@ has_children: false
 {:.method-highlight}
 ▸ `Static`**deepClone**\<T>(`obj`: T): T
 
-{:.url-source-ref}
-[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/objectUtils.ts#L6)
-
 #### Type parameters:
 
 Name |
 ------ |
 `T` |
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`obj` | T |
+
 **Returns:** T
+
+{:.url-source-ref}
+[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/objectUtils.ts#L6)

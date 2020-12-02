@@ -23,10 +23,7 @@ export default abstract class BaseVisualization {
      * Isomorphic method used on every data update
      * @param data array of data values
      */
-    abstract dataUpdate(
-        data: TwoDPointScatter[] | TwoDPointLine[] | FunctioDefinitionMesh | any,
-        elemClass?: string
-    ): ((data: TwoDPointScatter[] | TwoDPointLine[], elemClass: string) => void) | null
+    abstract dataUpdate(data: any, elemClass?: string): ((data: any, elemClass: string) => void) | null
 
     public getDependency(key: string): any {
         return this.dependencies[key]

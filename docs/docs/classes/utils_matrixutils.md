@@ -8,10 +8,6 @@ has_children: false
 
 # MatrixUtils
 
-## Hierarchy
-
-* **utils.MatrixUtils**
-
 ## Index
 
 | Methods |
@@ -23,7 +19,13 @@ has_children: false
 {:.method-highlight}
 ▸ `Static`**transpose**(`matrix`: number[][]): number[][]
 
-{:.url-source-ref}
-[lib/utils/math-utils.ts:204](https://github.com/ascentcore/dataspot/blob/ef89391/lib/utils/math-utils.ts#L204)
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`matrix` | number[][] |
 
 **Returns:** number[][]
+
+{:.url-source-ref}
+[lib/utils/math-utils.ts:221](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/utils/math-utils.ts#L221)

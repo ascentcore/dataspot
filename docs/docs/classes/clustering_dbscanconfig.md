@@ -8,12 +8,6 @@ has_children: false
 
 # DBScanConfig
 
-## Hierarchy
-
-* [common.EvolutionaryConfig](../common_evolutionaryconfig)
-
-  ↳ **clustering.DBScanConfig**
-
 ## Indexable
 
 ▪ [key: string]: SerializableType
@@ -32,14 +26,14 @@ has_children: false
 •  **distanceFn**: string = "euclideanDistance"
 
 {:.url-source-ref}
-[lib/clustering/dbScan.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/dbScan.ts#L10)
+[lib/clustering/dbScan.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/dbScan.ts#L10)
 
 ___
 
 •  **epsilon**: number = 0.1
 
 {:.url-source-ref}
-[lib/clustering/dbScan.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/dbScan.ts#L6)
+[lib/clustering/dbScan.ts:6](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/dbScan.ts#L6)
 
 ___
 
@@ -48,11 +42,11 @@ ___
 *Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L4)
 
 ___
 
 •  **minNeighbours**: number = 5
 
 {:.url-source-ref}
-[lib/clustering/dbScan.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/dbScan.ts#L8)
+[lib/clustering/dbScan.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/dbScan.ts#L8)

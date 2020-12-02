@@ -8,12 +8,6 @@ has_children: false
 
 # SerializableConfig
 
-## Hierarchy
-
-* **common.SerializableConfig**
-
-  ↳ [common.EvolutionaryConfig](../common_evolutionaryconfig)
-
 ## Indexable
 
 ▪ [key: string]: SerializableType

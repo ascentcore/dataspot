@@ -1,5 +1,5 @@
 import MeshPlot from '../../lib/visualizations/three/mesh'
-import * as schwefel from '../../lib/dataset/benchmark/schwefel'
+import * as schwefel from '../../lib/datasets/benchmark/schwefel'
 
 export default function plot(container: HTMLElement): void {
     const mesh = new MeshPlot({ height: 1200, width: 2000 })

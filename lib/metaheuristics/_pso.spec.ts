@@ -1,4 +1,4 @@
-import calculate, { DOMAIN } from '../dataset/benchmark/ackley'
+import calculate, { DOMAIN } from '../datasets/benchmark/ackley'
 import PSO, { PSOConfig } from './pso'
 import FitnessFunction from './fitnessFunction'
 

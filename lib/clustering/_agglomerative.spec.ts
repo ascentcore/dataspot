@@ -1,8 +1,7 @@
-import blobDataset from '../dataset/blobDataset'
+import ClusteringDataset from '../datasets/clustering'
 import AgglomerativeClustering, { AglomerativeClusteringConfig } from './agglomerativeClustering'
 
-const fitData = blobDataset(40)
-const testData = blobDataset(2)
+const fitData = ClusteringDataset.blob(40)
 
 describe('Agglomerative Clustering', () => {
     it('performs clustering with agglomerative clustering', () => {

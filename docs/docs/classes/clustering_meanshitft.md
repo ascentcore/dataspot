@@ -8,12 +8,6 @@ has_children: false
 
 # MeanShitft
 
-## Hierarchy
-
-* [clustering.CentroidClustering](../clustering_centroidclustering)\<[clustering.MeanShiftConfig](../clustering_meanshiftconfig)>
-
-  ↳ **clustering.MeanShitft**
-
 ## Index
 
 | Constructors |
@@ -51,12 +45,19 @@ has_children: false
 {:.method-highlight}
 \+ **new MeanShitft**(`config?`: [clustering.MeanShiftConfig](../clustering_meanshiftconfig) \| undefined, `distanceFunction?`: DistanceMeasurement \| undefined): [clustering.MeanShitft](../clustering_meanshitft)
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`config?` | [clustering.MeanShiftConfig](../clustering_meanshiftconfig) \| undefined |
+`distanceFunction?` | DistanceMeasurement \| undefined |
+
+**Returns:** [clustering.MeanShitft](../clustering_meanshitft)
+
 *Overrides [clustering.CentroidClustering](../clustering_centroidclustering).[constructor](../clustering_centroidclustering#constructor)*
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:17](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L17)
-
-**Returns:** [clustering.MeanShitft](../clustering_meanshitft)
+[lib/clustering/meanShift.ts:17](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L17)
 
 ## Properties
 
@@ -65,7 +66,7 @@ has_children: false
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L8)
 
 ___
 
@@ -74,7 +75,7 @@ ___
 *Inherited from [clustering.CentroidClustering](../clustering_centroidclustering).[distanceFunc](../clustering_centroidclustering#distancefunc)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:12](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L12)
+[lib/clustering/centroidClustering.ts:12](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/centroidClustering.ts#L12)
 
 ___
 
@@ -83,7 +84,7 @@ ___
 *Inherited from [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[fitData](../clustering_clusteringalgorithm#fitdata)*
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/clusteringBase.ts#L4)
+[lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L4)
 
 ___
 
@@ -92,7 +93,7 @@ ___
 *Inherited from [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[initialized](../clustering_clusteringalgorithm#initialized)*
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/clusteringBase.ts#L8)
+[lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L8)
 
 ___
 
@@ -101,7 +102,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[iteration](../common_evolutionaryalgorithm#iteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ___
 
@@ -110,164 +111,208 @@ ___
 *Inherited from [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[labels](../clustering_clusteringalgorithm#labels)*
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/clusteringBase.ts#L6)
+[lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L6)
 
 ___
 
 • `Private` **shifting**: boolean[]
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:17](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L17)
+[lib/clustering/meanShift.ts:17](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L17)
 
 ___
 
 • `Private` **shiftingPoints**: number[][]
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:15](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L15)
+[lib/clustering/meanShift.ts:15](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L15)
 
 ## Methods
 
 {:.method-highlight}
 ▸ **canStop**(): boolean
 
+**Returns:** boolean
+
 *Overrides [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[canStop](../clustering_clusteringalgorithm#canstop)*
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:70](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L70)
-
-**Returns:** boolean
+[lib/clustering/meanShift.ts:70](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L70)
 
 ___
 
 {:.method-highlight}
 ▸ **fit**(`data`: number[][]): number[]
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`data` | number[][] |
+
+**Returns:** number[]
+
 *Inherited from [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[fit](../clustering_clusteringalgorithm#fit)*
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/clusteringBase.ts#L30)
-
-**Returns:** number[]
+[lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L30)
 
 ___
 
 {:.method-highlight}
 ▸ **fitAsync**(`data`: number[][]): Generator
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`data` | number[][] |
+
+**Returns:** Generator
+
 *Inherited from [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[fitAsync](../clustering_clusteringalgorithm#fitasync)*
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/clusteringBase.ts#L19)
-
-**Returns:** Generator
+[lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L19)
 
 ___
 
 {:.method-highlight}
 ▸ **initializeDependencies**(`distanceFunction?`: DistanceMeasurement): void
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`distanceFunction?` | DistanceMeasurement |
+
+**Returns:** void
+
 *Inherited from [clustering.CentroidClustering](../clustering_centroidclustering).[initializeDependencies](../clustering_centroidclustering#initializedependencies)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:55](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L55)
-
-**Returns:** void
+[lib/clustering/centroidClustering.ts:55](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/centroidClustering.ts#L55)
 
 ___
 
 {:.method-highlight}
 ▸ **loadState**(`config`: string): void
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`config` | string |
+
+**Returns:** void
+
 *Inherited from [clustering.CentroidClustering](../clustering_centroidclustering).[loadState](../clustering_centroidclustering#loadstate)*
 
 *Overrides [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:49](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L49)
-
-**Returns:** void
+[lib/clustering/centroidClustering.ts:49](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/centroidClustering.ts#L49)
 
 ___
 
 {:.method-highlight}
 ▸ **onEndFit**(): void
 
+**Returns:** void
+
 *Overrides [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[onEndFit](../clustering_clusteringalgorithm#onendfit)*
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:40](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L40)
-
-**Returns:** void
+[lib/clustering/meanShift.ts:40](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L40)
 
 ___
 
 {:.method-highlight}
 ▸ **predict**(`data`: number[][]): number[]
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`data` | number[][] |
+
+**Returns:** number[]
+
 *Inherited from [clustering.CentroidClustering](../clustering_centroidclustering).[predict](../clustering_centroidclustering#predict)*
 
 *Overrides [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[predict](../clustering_clusteringalgorithm#predict)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:19](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/centroidClustering.ts#L19)
-
-**Returns:** number[]
+[lib/clustering/centroidClustering.ts:19](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/centroidClustering.ts#L19)
 
 ___
 
 {:.method-highlight}
 ▸ **prepareDataset**(`data`: number[][]): void
 
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`data` | number[][] |
+
+**Returns:** void
+
 *Overrides [clustering.ClusteringAlgorithm](../clustering_clusteringalgorithm).[prepareDataset](../clustering_clusteringalgorithm#preparedataset)*
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:74](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L74)
-
-**Returns:** void
+[lib/clustering/meanShift.ts:74](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L74)
 
 ___
 
 {:.method-highlight}
 ▸ **serialize**(): string
 
+**Returns:** string
+
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/serializable.ts#L10)
-
-**Returns:** string
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L10)
 
 ___
 
 {:.method-highlight}
 ▸ `Private`**shiftPoint**(`point`: number[], `points`: number[][], `kernelBandwidth`: number): number[]
 
-{:.url-source-ref}
-[lib/clustering/meanShift.ts:81](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L81)
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`point` | number[] |
+`points` | number[][] |
+`kernelBandwidth` | number |
 
 **Returns:** number[]
+
+{:.url-source-ref}
+[lib/clustering/meanShift.ts:81](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L81)
 
 ___
 
 {:.method-highlight}
 ▸ **shouldStop**(): boolean
 
+**Returns:** boolean
+
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[shouldStop](../common_evolutionaryalgorithm#shouldstop)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/ef89391/lib/common/evolutionaryAlgorithm.ts#L10)
-
-**Returns:** boolean
+[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L10)
 
 ___
 
 {:.method-highlight}
 ▸ **step**(): void
 
+**Returns:** void
+
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[step](../common_evolutionaryalgorithm#step)*
 
 {:.url-source-ref}
-[lib/clustering/meanShift.ts:24](https://github.com/ascentcore/dataspot/blob/ef89391/lib/clustering/meanShift.ts#L24)
-
-**Returns:** void
+[lib/clustering/meanShift.ts:24](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/meanShift.ts#L24)
