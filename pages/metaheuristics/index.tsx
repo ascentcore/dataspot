@@ -11,7 +11,6 @@ import Sphere from '../../lib/visualizations/three/sphere'
 import ThreeMultipleVisualization from '../../lib/visualizations/three/threemultiple'
 
 import PSO, { PSOConfig } from '../../lib/metaheuristics/pso'
-import FitnessFunction from '../../lib/metaheuristics/fitnessFunction'
 
 function getData(ff: (x: number) => number, min = -1, max = 1, step = 0.01) {
     const data = []
@@ -53,12 +52,7 @@ function Representation({
         let metaheuristicValue = []
 
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
-        const psoGenerator = pso.fitAsync(
-            Object.assign(new FitnessFunction(), {
-                calculate: ff,
-                dimensions: [{ min: domain[0], max: domain[1] }]
-            })
-        )
+        const psoGenerator = pso.fitAsync(ff, [{ min: domain[0], max: domain[1] }])
 
         const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -115,12 +109,7 @@ function Representation({
         let metaheuristicValue = []
 
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
-        const psoGenerator = pso.fitAsync(
-            Object.assign(new FitnessFunction(), {
-                calculate: ff,
-                dimensions: [{ min: domain[0], max: domain[1] }, { min: domain[0], max: domain[1] }]
-            })
-        )
+        const psoGenerator = pso.fitAsync(ff, [{ min: domain[0], max: domain[1] }, { min: domain[0], max: domain[1] }])
 
         const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 

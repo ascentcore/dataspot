@@ -27,7 +27,7 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     private crossover(individual: Individual, parent1: Individual, parent2: Individual) {
-        for (let j = 0; j < this.fitnessFunction.dimensions.length; j++) {
+        for (let j = 0; j < this.dimensions.length; j++) {
             let rand = Random.random(0, 1)
             if (rand < 0.5) {
                 individual.position[j] = parent1.position[j]
@@ -45,21 +45,21 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     private mutation(individual: Individual) {
-        for (let j = 0; j < this.fitnessFunction.dimensions.length; j++) {
+        for (let j = 0; j < this.dimensions.length; j++) {
             let rand = Random.random(0, 1)
             if (rand < 0.1) {
-                const interval = this.fitnessFunction.dimensions[j].max - this.fitnessFunction.dimensions[j].min
+                const interval = this.dimensions[j].max - this.dimensions[j].min
                 rand = Random.random(0, 1)
                 if (rand < 0.5) {
                     individual.position[j] += Random.random(0, interval * 0.005)
                 } else {
                     individual.position[j] -= Random.random(0, interval * 0.005)
                 }
-                if (individual.position[j] > this.fitnessFunction.dimensions[j].max) {
-                    individual.position[j] = this.fitnessFunction.dimensions[j].max
+                if (individual.position[j] > this.dimensions[j].max) {
+                    individual.position[j] = this.dimensions[j].max
                 }
-                if (individual.position[j] < this.fitnessFunction.dimensions[j].min) {
-                    individual.position[j] = this.fitnessFunction.dimensions[j].min
+                if (individual.position[j] < this.dimensions[j].min) {
+                    individual.position[j] = this.dimensions[j].min
                 }
             }
         }
