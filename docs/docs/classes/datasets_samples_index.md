@@ -21,8 +21,8 @@ Basic list of samples to be used for benchmarking algorithms
 
 ▪ `Static` **irisData**: any[] = irisData
 
-{:.source-ref}
-lib/datasets/samples/index.ts:21
+{:.url-source-ref}
+[lib/datasets/samples/index.ts:21](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/samples/index.ts#L21)
 
 The Iris flower data set or Fisher's Iris data set is a multivariate data set introduced by the British statistician,
 eugenicist, and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as
@@ -40,8 +40,8 @@ ___
 
 ▪ `Static` **usArrests**: any[] = usArrests
 
-{:.source-ref}
-lib/datasets/samples/index.ts:34
+{:.url-source-ref}
+[lib/datasets/samples/index.ts:34](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/samples/index.ts#L34)
 
 This data set contains statistics, in arrests per 100,000 residents for assault, murder, and rape in each of
 the 50 US states in 1973. Also given is the percent of the population living in urban areas. [Kaggle](https://www.kaggle.com/deepakg/usarrests)

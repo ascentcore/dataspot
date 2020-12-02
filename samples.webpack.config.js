@@ -6,7 +6,8 @@ const plugins = []
 const config = {
     entry: {
         sample: './samples/documentation/sample.ts',
-        clusteringDataset: './samples/documentation/datasets/clustering.ts'
+        clusteringDataset: './samples/documentation/datasets/clustering.ts',
+        benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts'
     },
     plugins,
     output: {

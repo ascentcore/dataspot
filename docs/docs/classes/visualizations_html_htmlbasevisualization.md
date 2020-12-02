@@ -45,7 +45,7 @@ Name | Type |
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[constructor](../visualizations_basevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:9](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/html/htmlbase.ts#L9)
+[lib/visualizations/html/htmlbase.ts:9](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/html/htmlbase.ts#L9)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L8)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L14)
+[lib/visualizations/basevisualization.ts:14](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L14)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -75,7 +75,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L8)
+[lib/visualizations/basevisualization.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L8)
 
 ## Methods
 
@@ -96,7 +96,7 @@ Name | Type | Description |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L26)
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L26)
 
 ___
 
@@ -114,7 +114,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:28](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L28)
+[lib/visualizations/basevisualization.ts:28](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L28)
 
 ___
 
@@ -130,7 +130,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/html/htmlbase.ts#L20)
+[lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/html/htmlbase.ts#L20)
 
 ___
 
@@ -146,7 +146,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/html/htmlbase.ts#L24)
+[lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/html/htmlbase.ts#L24)
 
 ___
 
@@ -167,4 +167,4 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/visualizations/basevisualization.ts#L20)
+[lib/visualizations/basevisualization.ts:20](https://github.com/ascentcore/dataspot/blob/12500c0/lib/visualizations/basevisualization.ts#L20)

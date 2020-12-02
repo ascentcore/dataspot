@@ -7,29 +7,29 @@ import rosenbrock from './rosenbrock'
 
 describe('Optimization Functions Benchmark', () => {
     it('Rastrigin tests', async () => {
-        expect(rastrigin(0, 0)).toBe(0)
-        expect(rastrigin(1, 1)).toBe(0.2)
-        expect(rastrigin(-1, 1)).toBe(0.2)
-        expect(rastrigin(1, -1)).toBe(0.2)
-        expect(rastrigin(-1, -1)).toBe(0.2)
-        expect(rastrigin(-5.12, -5.12)).toBe(5.7849427451571795)
-        expect(rastrigin(-5.12, 5.12)).toBe(5.7849427451571795)
-        expect(rastrigin(5.12, 5.12)).toBe(5.7849427451571795)
+        expect(rastrigin.calculate(0, 0)).toBe(0)
+        expect(rastrigin.calculate(1, 1)).toBe(0.2)
+        expect(rastrigin.calculate(-1, 1)).toBe(0.2)
+        expect(rastrigin.calculate(1, -1)).toBe(0.2)
+        expect(rastrigin.calculate(-1, -1)).toBe(0.2)
+        expect(rastrigin.calculate(-5.12, -5.12)).toBe(5.7849427451571795)
+        expect(rastrigin.calculate(-5.12, 5.12)).toBe(5.7849427451571795)
+        expect(rastrigin.calculate(5.12, 5.12)).toBe(5.7849427451571795)
     })
 
     it('Weierstrass tests', async () => {
-        expect(Math.abs(MathUtils.roundToPrecision(schwefel(420.9687, 420.9687), 4))).toBe(0)
+        expect(Math.abs(MathUtils.roundToPrecision(schwefel.calculate(420.9687, 420.9687), 4))).toBe(0)
     })
 
     it('Ackley tests', async () => {
-        expect(Math.abs(MathUtils.roundToPrecision(ackley(0, 0), 4))).toBe(0)
+        expect(Math.abs(MathUtils.roundToPrecision(ackley.calculate(0, 0), 4))).toBe(0)
     })
 
     it('Griewank tests', async () => {
-        expect(Math.abs(MathUtils.roundToPrecision(griewank(0, 0), 4))).toBe(0)
+        expect(Math.abs(MathUtils.roundToPrecision(griewank.calculate(0, 0), 4))).toBe(0)
     })
 
     it('Rosenbrock tests', async () => {
-        expect(Math.abs(MathUtils.roundToPrecision(rosenbrock(1, 1), 4))).toBe(0)
+        expect(Math.abs(MathUtils.roundToPrecision(rosenbrock.calculate(1, 1), 4))).toBe(0)
     })
 })

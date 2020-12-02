@@ -57,7 +57,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L7)
+[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/serializable.ts#L7)
 
 ## Properties
 
@@ -66,21 +66,21 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/serializable.ts#L8)
 
 ___
 
 • `Protected` **fitData**: number[][]
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L4)
+[lib/clustering/clusteringBase.ts:4](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L4)
 
 ___
 
 • `Protected` **initialized**: boolean = false
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L8)
+[lib/clustering/clusteringBase.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L8)
 
 ___
 
@@ -89,14 +89,14 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[iteration](../common_evolutionaryalgorithm#iteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ___
 
 • `Protected` **labels**: number[]
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L6)
+[lib/clustering/clusteringBase.ts:6](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L6)
 
 ## Methods
 
@@ -106,7 +106,7 @@ ___
 **Returns:** boolean
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:43](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L43)
+[lib/clustering/clusteringBase.ts:43](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L43)
 
 ___
 
@@ -122,7 +122,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L30)
+[lib/clustering/clusteringBase.ts:30](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L30)
 
 ___
 
@@ -138,7 +138,7 @@ Name | Type |
 **Returns:** Generator
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L19)
+[lib/clustering/clusteringBase.ts:19](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L19)
 
 ___
 
@@ -156,7 +156,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L14)
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/serializable.ts#L14)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L41)
+[lib/clustering/clusteringBase.ts:41](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L41)
 
 ___
 
@@ -182,7 +182,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:45](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L45)
+[lib/clustering/clusteringBase.ts:45](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L45)
 
 ___
 
@@ -198,7 +198,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/clustering/clusteringBase.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/clustering/clusteringBase.ts#L10)
+[lib/clustering/clusteringBase.ts:10](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/clusteringBase.ts#L10)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/serializable.ts#L10)
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/serializable.ts#L10)
 
 ___
 
@@ -222,7 +222,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[shouldStop](../common_evolutionaryalgorithm#shouldstop)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L10)
+[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/evolutionaryAlgorithm.ts#L10)
 
 ___
 
@@ -234,4 +234,4 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[step](../common_evolutionaryalgorithm#step)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L14)
+[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/evolutionaryAlgorithm.ts#L14)

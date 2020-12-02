@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
-import generateArcDataset from '../../lib/dataset/clustering/arcDataset'
-import generateBlobDataset from '../../lib/dataset/clustering/blobDataset'
-import generateConcentricRingsDataset from '../../lib/dataset/clustering/concentricRingsDataset'
+import generateArcDataset from '../../lib/datasets/clustering/arcDataset'
+import generateBlobDataset from '../../lib/datasets/clustering/blobDataset'
+import generateConcentricRingsDataset from '../../lib/datasets/clustering/concentricRingsDataset'
 
 import Scatter from '../../lib/visualizations/d3/scatter'
 import Axis from '../../lib/visualizations/d3/axis'

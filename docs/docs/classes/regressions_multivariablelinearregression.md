@@ -32,4 +32,4 @@ Name | Type |
 **Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/multivariableLinearRegression.ts:6](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/regressions/multivariableLinearRegression.ts#L6)
+[lib/regressions/multivariableLinearRegression.ts:6](https://github.com/ascentcore/dataspot/blob/12500c0/lib/regressions/multivariableLinearRegression.ts#L6)

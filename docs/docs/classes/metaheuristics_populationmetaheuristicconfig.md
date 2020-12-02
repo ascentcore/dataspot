@@ -25,7 +25,7 @@ has_children: false
 •  **bestPosition**: number[] = []
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:9](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/metaheuristics/populationMetaheuristic.ts#L9)
+[lib/metaheuristics/populationMetaheuristic.ts:9](https://github.com/ascentcore/dataspot/blob/12500c0/lib/metaheuristics/populationMetaheuristic.ts#L9)
 
 ___
 
@@ -34,11 +34,11 @@ ___
 *Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/evolutionaryAlgorithm.ts#L4)
 
 ___
 
 •  **populationSize**: number = 100
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:7](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/metaheuristics/populationMetaheuristic.ts#L7)
+[lib/metaheuristics/populationMetaheuristic.ts:7](https://github.com/ascentcore/dataspot/blob/12500c0/lib/metaheuristics/populationMetaheuristic.ts#L7)

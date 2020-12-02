@@ -57,64 +57,67 @@ export default class MeshPlot extends ThreeBaseVisualization {
             }
         }
 
-        new three.TextureLoader().load('texture.png', (wireTexture: any) => {
-            // eslint-disable-next-line no-multi-assign, no-param-reassign
-            wireTexture.wrapS = wireTexture.wrapT = three.RepeatWrapping
-            wireTexture.repeat.set(40, 40)
+        new three.TextureLoader().load(
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAVElEQVRo3u3RAREAMAwCMTr/nlsd3PIKyJGUN0l2t3X9zGt/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgB0B9B1PXA3yVG5HyAAAAAElFTkSuQmCC',
+            (wireTexture: any) => {
+                // eslint-disable-next-line no-multi-assign, no-param-reassign
+                wireTexture.wrapS = wireTexture.wrapT = three.RepeatWrapping
+                wireTexture.repeat.set(40, 40)
 
-            const material = new three.MeshBasicMaterial({
-                map: wireTexture,
-                vertexColors: true,
-                side: three.DoubleSide,
-                transparent: true,
-                opacity: 0.4,
-                color: 0xffffff
-            })
-            material.map.repeat.set(segments, segments)
+                const material = new three.MeshBasicMaterial({
+                    map: wireTexture,
+                    vertexColors: true,
+                    side: three.DoubleSide,
+                    transparent: true,
+                    opacity: 0.4,
+                    color: 0xffffff
+                })
+                material.map.repeat.set(segments, segments)
 
-            const graphMesh = new three.Mesh(graphGeometry, material)
-            scene.add(graphMesh)
+                const graphMesh = new three.Mesh(graphGeometry, material)
+                scene.add(graphMesh)
 
-            const size = new three.Vector3()
-            graphGeometry.boundingBox!.getSize(size)
-            const maxDim = Math.max(size.x, size.y, size.z)
+                const size = new three.Vector3()
+                graphGeometry.boundingBox!.getSize(size)
+                const maxDim = Math.max(size.x, size.y, size.z)
 
-            const fov = camera.fov * (Math.PI / 180)
-            let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2))
-            cameraZ *= 1.3
+                const fov = camera.fov * (Math.PI / 180)
+                let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2))
+                cameraZ *= 1.3
 
-            // eslint-disable-next-line no-param-reassign
-            camera.position.z = cameraZ
+                // eslint-disable-next-line no-param-reassign
+                camera.position.z = cameraZ
 
-            // add axes
-            const axesHelper = new three.AxesHelper(maxDim)
+                // add axes
+                const axesHelper = new three.AxesHelper(maxDim)
 
-            const colors = (axesHelper as any).geometry.attributes.color
-            colors.setXYZ(0, 0, 0, 0)
-            colors.setXYZ(1, 0, 0, 0)
-            colors.setXYZ(2, 0, 0, 0)
-            colors.setXYZ(3, 0, 0, 0)
-            colors.setXYZ(4, 0, 0, 0)
-            colors.setXYZ(5, 0, 0, 0)
+                const colors = (axesHelper as any).geometry.attributes.color
+                colors.setXYZ(0, 0, 0, 0)
+                colors.setXYZ(1, 0, 0, 0)
+                colors.setXYZ(2, 0, 0, 0)
+                colors.setXYZ(3, 0, 0, 0)
+                colors.setXYZ(4, 0, 0, 0)
+                colors.setXYZ(5, 0, 0, 0)
 
-            scene.add(axesHelper)
+                scene.add(axesHelper)
 
-            const animate = () => {
-                renderer.render(scene, camera)
+                const animate = () => {
+                    renderer.render(scene, camera)
 
-                frameId = window.requestAnimationFrame(animate)
-            }
-
-            const start = () => {
-                if (!frameId) {
-                    frameId = requestAnimationFrame(animate)
+                    frameId = window.requestAnimationFrame(animate)
                 }
-            }
 
-            start()
-            controls.update()
-            Object.assign(this.dependencies, { graphMesh, scene, camera, axesHelper })
-        })
+                const start = () => {
+                    if (!frameId) {
+                        frameId = requestAnimationFrame(animate)
+                    }
+                }
+
+                start()
+                controls.update()
+                Object.assign(this.dependencies, { graphMesh, scene, camera, axesHelper })
+            }
+        )
 
         return null
     }

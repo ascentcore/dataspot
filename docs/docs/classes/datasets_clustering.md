@@ -49,8 +49,8 @@ Name | Type | Default value | Description |
 
 **Returns:** number[][]
 
-{:.source-ref}
-lib/datasets/clustering.ts:19
+{:.url-source-ref}
+[lib/datasets/clustering.ts:19](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/clustering.ts#L19)
 
 ___
 
@@ -68,8 +68,8 @@ Name | Type | Default value | Description |
 
 **Returns:** number[][]
 
-{:.source-ref}
-lib/datasets/clustering.ts:43
+{:.url-source-ref}
+[lib/datasets/clustering.ts:43](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/clustering.ts#L43)
 
 ___
 
@@ -88,8 +88,8 @@ Name | Type | Default value | Description |
 
 **Returns:** number[][]
 
-{:.source-ref}
-lib/datasets/clustering.ts:69
+{:.url-source-ref}
+[lib/datasets/clustering.ts:69](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/clustering.ts#L69)
 
 ___
 
@@ -107,8 +107,8 @@ Name | Type | Default value | Description |
 
 **Returns:** number[][]
 
-{:.source-ref}
-lib/datasets/clustering.ts:89
+{:.url-source-ref}
+[lib/datasets/clustering.ts:89](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/clustering.ts#L89)
 
 ___
 
@@ -126,8 +126,8 @@ Name | Type | Default value | Description |
 
 **Returns:** number[][]
 
-{:.source-ref}
-lib/datasets/clustering.ts:105
+{:.url-source-ref}
+[lib/datasets/clustering.ts:105](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/clustering.ts#L105)
 
 ___
 
@@ -139,5 +139,5 @@ See "Potato" representation from the running page sample
 
 **Returns:** number[][]
 
-{:.source-ref}
-lib/datasets/clustering.ts:127
+{:.url-source-ref}
+[lib/datasets/clustering.ts:127](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/clustering.ts#L127)

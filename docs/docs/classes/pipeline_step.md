@@ -35,7 +35,7 @@ Name |
 • `Protected` **state**: [models.ObjectLike](../../interfaces/models_objectlike)
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L12)
+[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/12500c0/lib/pipeline/types.ts#L12)
 
 Internal pipeline state reference
 
@@ -55,7 +55,7 @@ Name | Type | Description |
 **Returns:** Promise\<K>
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L43)
+[lib/pipeline/types.ts:43](https://github.com/ascentcore/dataspot/blob/12500c0/lib/pipeline/types.ts#L43)
 
 ___
 
@@ -73,7 +73,7 @@ Name | Type | Description |
 **Returns:** any
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L35)
+[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/12500c0/lib/pipeline/types.ts#L35)
 
 ___
 
@@ -91,7 +91,7 @@ Name | Type | Description |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L18)
+[lib/pipeline/types.ts:18](https://github.com/ascentcore/dataspot/blob/12500c0/lib/pipeline/types.ts#L18)
 
 ___
 
@@ -110,4 +110,4 @@ Name | Type | Description |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/e1f4e78/lib/pipeline/types.ts#L27)
+[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/12500c0/lib/pipeline/types.ts#L27)
