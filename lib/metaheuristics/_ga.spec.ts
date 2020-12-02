@@ -2,7 +2,7 @@ import calculate, { DOMAIN } from '../dataset/benchmark/ackley'
 import GA, { GAConfig } from './ga'
 import FitnessFunction from './fitnessFunction'
 
-const ga = new GA(<GAConfig>{ populationSize: 10, selectionSize: 2, iterations: 20 })
+const ga = new GA(<GAConfig>{ populationSize: 10, selectionSize: 4, iterations: 20 })
 
 describe('GA', () => {
     it('performs fitting on ackley', (done) => {

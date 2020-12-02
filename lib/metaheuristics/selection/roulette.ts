@@ -22,7 +22,7 @@ export default class Roulette {
         const weights = this.ranking(individuals)
 
         for (let i = 0; i < this.numSelected; i++) {
-            let rand = Random.seededRandom(0, 1)
+            let rand = Random.random(0, 1)
             let index = 0
             individual = individuals[index]
             while (rand > 0 && index < individuals.length) {

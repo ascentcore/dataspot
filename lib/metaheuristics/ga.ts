@@ -16,13 +16,19 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     private selection!: selectionFunctionMappings.Roulette | selectionFunctionMappings.Tournament
 
     constructor(config?: GAConfig | undefined) {
+        if (config && config.selectionSize % 2 === 1) {
+            config.selectionSize++
+        }
+        if (config && config.selectionSize > config.populationSize) {
+            throw new Error('Selection size has to be smaller than population size')
+        }
         super(Object.assign(new GAConfig(), config))
         this.initializeDependencies()
     }
 
     private crossover(individual: Individual, parent1: Individual, parent2: Individual) {
         for (let j = 0; j < this.fitnessFunction.dimensions.length; j++) {
-            let rand = Random.seededRandom(0, 1)
+            let rand = Random.random(0, 1)
             if (rand < 0.5) {
                 individual.position[j] = parent1.position[j]
                 individual.bestPosition[j] = parent1.position[j]
@@ -30,7 +36,7 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
                 individual.position[j] = parent2.position[j]
                 individual.bestPosition[j] = parent2.position[j]
             }
-            rand = Random.seededRandom(0, 1)
+            rand = Random.random(0, 1)
             if (rand < 0.2) {
                 individual.position[j] = (parent1.position[j] + parent2.position[j]) / 2
                 individual.bestPosition[j] = (parent1.position[j] + parent2.position[j]) / 2
@@ -40,14 +46,14 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
 
     private mutation(individual: Individual) {
         for (let j = 0; j < this.fitnessFunction.dimensions.length; j++) {
-            let rand = Random.seededRandom(0, 1)
+            let rand = Random.random(0, 1)
             if (rand < 0.1) {
                 const interval = this.fitnessFunction.dimensions[j].max - this.fitnessFunction.dimensions[j].min
-                rand = Random.seededRandom(0, 1)
+                rand = Random.random(0, 1)
                 if (rand < 0.5) {
-                    individual.position[j] += Random.seededRandom(0, interval * 0.005)
+                    individual.position[j] += Random.random(0, interval * 0.005)
                 } else {
-                    individual.position[j] -= Random.seededRandom(0, interval * 0.005)
+                    individual.position[j] -= Random.random(0, interval * 0.005)
                 }
                 if (individual.position[j] > this.fitnessFunction.dimensions[j].max) {
                     individual.position[j] = this.fitnessFunction.dimensions[j].max
@@ -66,19 +72,21 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
 
     public step() {
         const selected = this.selection.execute(this.individuals)
-        for (let i = 0; i < selected.length; i += 2) {
+        const halfSelection = selected.length / 2
+        for (let i = 0; i < halfSelection; i++) {
             const parent1: Individual = selected[i]
-            const parent2: Individual = selected[i + 1]
+            const parent2: Individual = selected[i + halfSelection]
 
-            // individual to replace
-            const index = this.individuals.length - i / 2 - 1
-            const child = this.individuals[index]
+            const child = new Individual()
+            this.individuals.push(child)
             this.movePosition(child, parent1, parent2)
         }
         for (let i = 0; i < this.individuals.length; i++) {
             this.individuals[i].computeFitness(this.fitnessFunction)
         }
+        this.sortPopulation()
         this.updateGlobalBest()
+        this.individuals.splice(this.config.populationSize)
     }
 
     public canStop(): boolean {

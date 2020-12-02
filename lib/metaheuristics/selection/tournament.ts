@@ -12,7 +12,7 @@ export default class Tournament {
             // tournament round
             let best: Individual | undefined
             for (let j = 0; j < numParticipants; j++) {
-                const index = Random.seededRandomInt(0, individuals.length - 1)
+                const index = Random.randomInt(0, individuals.length - 1)
                 const ind = individuals[index]
                 if (best === undefined || ind.fitness < best.fitness) {
                     best = ind
