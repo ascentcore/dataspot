@@ -26,7 +26,10 @@ describe('Regressions', () => {
 
     it('Multivariable Linear Regression', async () => {
         const multivariableLinearRegression = MultivariableLinearRegression.fit(
-            [[1, 2], [2, 3]],
+            [
+                [1, 2],
+                [2, 3]
+            ],
             [3, 5],
             0.001,
             2,
