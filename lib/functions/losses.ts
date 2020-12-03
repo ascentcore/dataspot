@@ -1,18 +1,21 @@
-import { VectorUtils } from "../utils/math-utils"
+import { VectorUtils } from '../utils/math-utils'
 
 function crossEntropy(prediction: number[], target: number[]): number {
     const logClass1Pred: number[] = []
     const logClass2Pred: number[] = []
+    const samples = prediction.length
     let class1Cost: number[] = []
     let class2Cost: number[] = []
     let cost: number[] = []
-    let samples = prediction.length
     for (let i = 0; i < samples; i++) {
         logClass1Pred.push(Math.log(prediction[i]))
         logClass2Pred.push(Math.log(1 - prediction[i]))
     }
     class1Cost = VectorUtils.scalarMultiplication(VectorUtils.multiplication(logClass1Pred, target), -1)
-    class2Cost = VectorUtils.scalarMultiplication(VectorUtils.multiplication(logClass2Pred, VectorUtils.scalarSubtraction(target, 1)), -1)
+    class2Cost = VectorUtils.scalarMultiplication(
+        VectorUtils.multiplication(logClass2Pred, VectorUtils.scalarSubtraction(target, 1)),
+        -1
+    )
 
     cost = VectorUtils.subtraction(class1Cost, class2Cost)
 

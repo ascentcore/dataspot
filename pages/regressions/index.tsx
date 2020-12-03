@@ -43,9 +43,15 @@ function Representation({
         if (regressionRef.current) {
             const axisElemClass = 'axis-elem'
             const scatterElemClass = 'scatter-elem'
+            const lineElemClass = 'line-elem'
 
             const scatterRegressionPlot = new Scatter({}, scatterElemClass)
             const axisRegression = new Axis({}, axisElemClass)
+            const lineRegressionPlot = new LinePlot({}, lineElemClass)
+            const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+            const iterator = Array.from(Array(data[0].length).keys())
+
+            let regressionValue = { biasAndWeights: [], costHistory: [] }
 
             if (name === 'Logistic Regression') {
                 const multiplePlot = new SVGMultipleVisualization(
@@ -68,9 +74,6 @@ function Representation({
 
                 const regression = LogisticRegression.fit(data[0], data[1], 0.1, 2, crossEntropyCostFunction)
                 let doneRegression = false
-                let regressionValue = { biasAndWeights: [], costHistory: [] }
-
-                const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
                 const transformedInput: number[][] = transposeAndNormalize(data[0])
 
@@ -84,9 +87,6 @@ function Representation({
                             sigmoid(pred)
                         )
                     )
-                    console.log('BW', regressionValue.biasAndWeights)
-                    console.log('CostH', regressionValue.costHistory)
-                    const iterator = Array.from(Array(data[0].length).keys())
                     multiplePlot.dataUpdate(
                         // eslint-disable-next-line no-loop-func
                         iterator.map((i: number) => {
@@ -104,9 +104,6 @@ function Representation({
                     await snooze(500)
                 }
             } else {
-                const lineElemClass = 'line-elem'
-                const lineRegressionPlot = new LinePlot({}, lineElemClass)
-
                 const multiplePlot = new SVGMultipleVisualization(
                     {
                         width,
@@ -128,12 +125,9 @@ function Representation({
 
                 const regression =
                     name === 'Linear Regression'
-                        ? LinearRegression.fit(data[0], data[1], 0.1, 2, mseCostFunction)
-                        : PolynomialRegression.fit(data[0], data[1], 2, 0.1, 2, mseCostFunction)
+                        ? LinearRegression.fit(data[0], data[1], 0.1, 10, mseCostFunction)
+                        : PolynomialRegression.fit(data[0], data[1], 2, 0.1, 10, mseCostFunction)
                 let doneRegression = false
-                let regressionValue = { biasAndWeights: [], costHistory: [] }
-
-                const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
                 const transformedInput: number[] | number[][] =
                     name === 'Linear Regression'
@@ -148,7 +142,6 @@ function Representation({
                     const updatedPrediction = Array.isArray(transformedInput[0])
                         ? predictMultivariable(transformedInput, regressionValue.biasAndWeights)
                         : predictionSinglevariable(transformedInput, regressionValue.biasAndWeights)
-                    const iterator = Array.from(Array(data[0].length).keys())
                     multiplePlot.dataUpdate(
                         // eslint-disable-next-line no-loop-func
                         iterator.map((i: number) => {
@@ -163,19 +156,18 @@ function Representation({
                     // eslint-disable-next-line no-await-in-loop
                     await snooze(500)
                 }
-
-                let iter = 0
-                const axisCost = new Axis({}, axisElemClass)
-                const lineCost = new LinePlot({}, lineElemClass)
-                const costPlot = new SVGMultipleVisualization({ width, height }, 'const-elem', [axisCost, lineCost])
-                costPlot.setContainer(costRef.current)
-                costPlot.setup()
-                const mappedCostData = regressionValue.costHistory.map((cost: number) => {
-                    return { x: iter++, y: cost }
-                })
-                costPlot.dataUpdate(mappedCostData, axisElemClass)
-                costPlot.dataUpdate(mappedCostData, lineElemClass)
             }
+            let iter = 0
+            const axisCost = new Axis({}, axisElemClass)
+            const lineCost = new LinePlot({}, lineElemClass)
+            const costPlot = new SVGMultipleVisualization({ width, height }, 'const-elem', [axisCost, lineCost])
+            costPlot.setContainer(costRef.current)
+            costPlot.setup()
+            const mappedCostData = regressionValue.costHistory.map((cost: number) => {
+                return { x: iter++, y: cost }
+            })
+            costPlot.dataUpdate(mappedCostData, axisElemClass)
+            costPlot.dataUpdate(mappedCostData, lineElemClass)
         }
     }
 
@@ -193,15 +185,37 @@ function Representation({
 }
 
 const reps = [
-    { name: 'Linear Regression', data: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]] },
+    {
+        name: 'Linear Regression',
+        data: [
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        ]
+    },
     {
         name: 'Polynomial Regression',
-        data: [[1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5], [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]]
+        data: [
+            [1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5],
+            [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]
+        ]
     },
     {
         name: 'Logistic Regression',
         data: [
-            [[1, 1], [1.5, 1], [3, 1], [4, 2], [6, 2], [1.5, 3], [3, 3], [2, 4], [3.5, 4], [4.5, 4], [4.5, 5], [5, 6]],
+            [
+                [1, 1],
+                [1.5, 1],
+                [3, 1],
+                [4, 2],
+                [6, 2],
+                [1.5, 3],
+                [3, 3],
+                [2, 4],
+                [3.5, 4],
+                [4.5, 4],
+                [4.5, 5],
+                [5, 6]
+            ],
             [0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1]
         ]
     }
