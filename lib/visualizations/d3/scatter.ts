@@ -13,7 +13,7 @@ export default class Scatter extends SVGBaseVisualization {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer, palette } = this.dependencies
 
-        let { x, y } = this.dependencies
+        let { x, y, rx } = this.dependencies
         if (!x) {
             const [xMin, xMax] = d3.extent(data, (d: TwoDPointScatter) => d.x)
             x = d3
@@ -24,6 +24,19 @@ export default class Scatter extends SVGBaseVisualization {
                 ])
                 .nice()
                 .range([margin.left, width - margin.right])
+            Object.assign(this.dependencies, { x })
+        }
+        if (!rx) {
+            const [xMin, xMax] = d3.extent(data, (d: TwoDPointScatter) => d.x)
+            rx = d3
+                .scaleLinear()
+                .domain([
+                    0,
+                    (domainX && domainX.max !== undefined ? domainX.max : xMax) -
+                        (domainX && domainX.min !== undefined ? domainX.min : xMin)
+                ])
+                .nice()
+                .range([0, width])
             Object.assign(this.dependencies, { x })
         }
         if (!y) {
@@ -54,7 +67,7 @@ export default class Scatter extends SVGBaseVisualization {
                     : 'black'
             )
             .attr('stroke', '#000')
-            .attr('r', (d: TwoDPointScatter) => x(d.r) || 2)
+            .attr('r', (d: TwoDPointScatter) => rx(d.r) || 1)
             .enter()
             .append('circle')
             .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
@@ -68,7 +81,7 @@ export default class Scatter extends SVGBaseVisualization {
                     : 'black'
             )
             .attr('stroke', '#000')
-            .attr('r', (d: TwoDPointScatter) => x(d.r) || 2)
+            .attr('r', (d: TwoDPointScatter) => rx(d.r) || 1)
     }
 
     dataUpdate(data: TwoDPointScatter[], elemClass = this.elemClass) {

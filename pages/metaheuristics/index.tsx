@@ -190,7 +190,8 @@ const reps = [
         domain: Ackley.DOMAIN,
         globalM: Ackley.GLOBAL_M,
         resultMin: 0,
-        resultMax: 25
+        resultMax: 25,
+        radius: 0.3
     },
     {
         name: 'Particle Swarm Optimisation - Ackley 3D',
@@ -207,7 +208,8 @@ const reps = [
         domain: Schwefel.DOMAIN,
         globalM: Schwefel.GLOBAL_M,
         resultMin: 0,
-        resultMax: 420
+        resultMax: 420,
+        radius: 5
     },
     {
         name: 'Particle Swarm Optimisation - Schwefel 3D',

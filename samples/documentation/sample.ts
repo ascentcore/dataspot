@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
 import ClusteringDataset from '../../lib/datasets/clustering'
 import Axis from '../../lib/visualizations/d3/axis'

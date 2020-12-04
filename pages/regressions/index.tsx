@@ -63,7 +63,7 @@ function Representation({
 
             const mappedData = []
             for (let i = 0; i < data[0].length; i++) {
-                mappedData.push({ x: data[0][i], y: data[1][i] })
+                mappedData.push({ x: data[0][i], y: data[1][i], r: 0.1 })
             }
             regressionPlot.dataUpdate(mappedData, scatterElemClass)
 
