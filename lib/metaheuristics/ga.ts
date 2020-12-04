@@ -28,7 +28,7 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
 
     private crossover(individual: Individual, parent1: Individual, parent2: Individual) {
         for (let j = 0; j < this.dimensions.length; j++) {
-            let rand = Random.random(0, 1)
+            const rand = Random.random(0, 1)
             if (rand < 0.5) {
                 individual.position[j] = parent1.position[j]
                 individual.bestPosition[j] = parent1.position[j]
@@ -36,25 +36,16 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
                 individual.position[j] = parent2.position[j]
                 individual.bestPosition[j] = parent2.position[j]
             }
-            rand = Random.random(0, 1)
-            if (rand < 0.2) {
-                individual.position[j] = (parent1.position[j] + parent2.position[j]) / 2
-                individual.bestPosition[j] = (parent1.position[j] + parent2.position[j]) / 2
-            }
         }
     }
 
     private mutation(individual: Individual) {
         for (let j = 0; j < this.dimensions.length; j++) {
             let rand = Random.random(0, 1)
-            if (rand < 0.1) {
-                const interval = this.dimensions[j].max - this.dimensions[j].min
+            if (rand < 0.2) {
                 rand = Random.random(0, 1)
-                if (rand < 0.5) {
-                    individual.position[j] += Random.random(0, interval * 0.005)
-                } else {
-                    individual.position[j] -= Random.random(0, interval * 0.005)
-                }
+                individual.position[j] = Random.random(this.dimensions[j].min, this.dimensions[j].max)
+
                 if (individual.position[j] > this.dimensions[j].max) {
                     individual.position[j] = this.dimensions[j].max
                 }

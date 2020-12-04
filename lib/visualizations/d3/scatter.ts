@@ -36,7 +36,7 @@ export default class Scatter extends SVGBaseVisualization {
                         (domainX && domainX.min !== undefined ? domainX.min : xMin)
                 ])
                 .nice()
-                .range([0, width])
+                .range([0, width - margin.left - margin.right])
             Object.assign(this.dependencies, { x })
         }
         if (!y) {
