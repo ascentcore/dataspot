@@ -189,7 +189,6 @@ const reps = [
         ff: Ackley.calculate,
         domain: Ackley.DOMAIN,
         globalM: Ackley.GLOBAL_M,
-        radius: 3,
         resultMin: 0,
         resultMax: 25
     },
@@ -207,7 +206,6 @@ const reps = [
         ff: Schwefel.calculate,
         domain: Schwefel.DOMAIN,
         globalM: Schwefel.GLOBAL_M,
-        radius: 3,
         resultMin: 0,
         resultMax: 420
     },

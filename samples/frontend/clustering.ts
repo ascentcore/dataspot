@@ -95,14 +95,14 @@ const plotClustering = async (container: HTMLElement, initialDataset: number[][]
         resultDBScan = []
         visKMeans.setup()
         const mappedDataKMeans = initialDataset.map((data) => {
-            return { x: data[0], y: data[1], r: 1.2 }
+            return { x: data[0], y: data[1] }
         })
         visKMeans.dataUpdate(mappedDataKMeans, 'scatter-elem')
         visKMeans.dataUpdate(mappedDataKMeans, 'axis-elem')
 
         vizDBScan.setup()
         const mappedDataDBScan = initialDataset.map((data) => {
-            return { x: data[0], y: data[1], r: 1.2 }
+            return { x: data[0], y: data[1] }
         })
         vizDBScan.dataUpdate(mappedDataDBScan, 'scatter-elem')
         vizDBScan.dataUpdate(mappedDataDBScan, 'axis-elem')

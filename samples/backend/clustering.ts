@@ -19,14 +19,14 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
         new Scatter({}),
         `kmeans-${datasetName}`,
         initialDataset.map((data: any[]) => {
-            return { x: data[0], y: data[1], r: 1 }
+            return { x: data[0], y: data[1] }
         })
     )
     const vizDBScan = new SVGVisualizationWrapper(
         new Scatter({}),
         `dbscan-${datasetName}`,
         initialDataset.map((data: any[]) => {
-            return { x: data[0], y: data[1], r: 1 }
+            return { x: data[0], y: data[1] }
         })
     )
 
@@ -41,7 +41,7 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             resultKmeans = kmeansValue.value
             visKMeans.dataUpdate([
                 ...resultKmeans.map((label, index) => {
-                    return { x: initialDataset[index][0], y: initialDataset[index][1], r: 1, color: label }
+                    return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
                 })
             ])
         }
@@ -52,7 +52,7 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             resultDBScan = dbscanValue.value
             vizDBScan.dataUpdate([
                 ...resultDBScan.map((label, index) => {
-                    return { x: initialDataset[index][0], y: initialDataset[index][1], r: 1, color: label }
+                    return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
                 })
             ])
         }

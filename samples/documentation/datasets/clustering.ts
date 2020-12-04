@@ -21,14 +21,14 @@ export default (async () => {
 
     functions.forEach((fn: Function, index: number) => {
         const blobDataset = fn().map((data: any[]) => {
-            return { x: data[0], y: data[1], r: 1.2 }
+            return { x: data[0], y: data[1] }
         })
 
         const scatter = new Scatter({})
         const axis = new Axis({})
         const title = new Title({ text: `${keys[index]}` })
 
-        const visKMeans = new SVGMultipleVisualization({ width: 220, height: 220 }, 'kmeans-plot-elem', [
+        const visKMeans = new SVGMultipleVisualization({ width: 280, height: 220 }, 'kmeans-plot-elem', [
             scatter,
             axis,
             title

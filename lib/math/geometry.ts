@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { euclideanDistance } from './distances'
-import { sign } from '../functions/activations'
 
 export type Point = {
     x: number
@@ -120,7 +119,7 @@ function calculateSegmentArea(circleSegmentHeight: number, radius: number): numb
  * @param rightTop - coordinates for the right top corner of the rectangle
  * returns the area of the circle segments
  */
-export function segmentRectangleIncidence(circle: Circle, leftBottom: Point, rightTop: Point): number {
+export function circleRectangleOutsideBoundaries(circle: Circle, leftBottom: Point, rightTop: Point): number {
     if (circle.x < leftBottom.x || circle.x > rightTop.x || circle.y < leftBottom.y || circle.y > rightTop.y) {
         throw new Error('Center of circle must be inside the rectangle')
     }

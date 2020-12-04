@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import SVGBaseVisualization from './svgbase'
 import { TwoDPointScatter } from '../../models/types'
 
@@ -46,18 +47,28 @@ export default class Scatter extends SVGBaseVisualization {
             .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
             .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
             .attr('fill', (d: TwoDPointScatter) =>
-                d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
+                d.color !== undefined && d.color !== null
+                    ? typeof d.color === 'string'
+                        ? d.color
+                        : palette(d.color)
+                    : 'black'
             )
-            .attr('r', (d: TwoDPointScatter) => d.r || 1)
+            .attr('stroke', '#000')
+            .attr('r', (d: TwoDPointScatter) => x(d.r) || 2)
             .enter()
             .append('circle')
             .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
             .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
             .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
             .attr('fill', (d: TwoDPointScatter) =>
-                d.color !== undefined && d.color !== null ? palette(d.color) : 'black'
+                d.color !== undefined && d.color !== null
+                    ? typeof d.color === 'string'
+                        ? d.color
+                        : palette(d.color)
+                    : 'black'
             )
-            .attr('r', (d: TwoDPointScatter) => d.r || 1)
+            .attr('stroke', '#000')
+            .attr('r', (d: TwoDPointScatter) => x(d.r) || 2)
     }
 
     dataUpdate(data: TwoDPointScatter[], elemClass = this.elemClass) {
