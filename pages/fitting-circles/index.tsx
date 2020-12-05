@@ -1,21 +1,26 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { circlesIntersection, circleRectangleOutsideBoundaries } from '../../lib/math/geometry'
 import Scatter from '../../lib/visualizations/d3/scatter'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 import GA, { GAConfig } from '../../lib/metaheuristics/ga'
+import Axis from '../../lib/visualizations/d3/axis'
 
 export default function FittingCircles() {
     const containerRef = useRef(null)
+    const fitnessContainerRef = useRef(null)
+    const [globalBest, setBest] = useState(0)
 
     useEffect(() => {
+        let done = false
+        let iteration = 0
         if (containerRef) {
-            const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+            let fitnesses = []
 
             const ff = (...inputs: number[]) => {
                 const circles = []
                 for (let i = 0; i < inputs.length; i += 3) {
-                    circles.push({ x: inputs[0], y: inputs[1], r: inputs[2] })
+                    circles.push({ x: inputs[i], y: inputs[i + 1], r: inputs[i + 2] })
                 }
                 const rightTop = { x: 1, y: 1 }
                 const leftBottom = { x: 0, y: 0 }
@@ -31,10 +36,22 @@ export default function FittingCircles() {
                 circles.forEach((circle) => {
                     outsideBoundariesArea += circleRectangleOutsideBoundaries(circle, leftBottom, rightTop)
                 })
-
-                return rectangleArea - circleAreas + 1000 * overlappingArea + 1000 * outsideBoundariesArea
+                return rectangleArea - circleAreas + 10 * overlappingArea + 100 * outsideBoundariesArea
             }
             ;(async () => {
+                const axisElemClass = 'axis-elem'
+                const lineElemClass = 'line-elem'
+                const functionElemClass = 'function-elem'
+
+                const axis = new Axis({ autoscaleX: true, autoscaleY: true }, axisElemClass)
+                const line = new LinePlot({ autoscaleX: true, autoscaleY: true }, lineElemClass)
+                const functionPlot = new SVGMultipleVisualization({ width: 300, height: 200 }, functionElemClass, [
+                    axis,
+                    line
+                ])
+                functionPlot.setContainer(fitnessContainerRef.current)
+                functionPlot.setup()
+
                 const scatter = new Scatter({}, 'scatter-elem')
                 const rightLine = new LinePlot({}, 'right-line-elem')
                 const bottomLine = new LinePlot({}, 'bottom-line-elem')
@@ -55,23 +72,59 @@ export default function FittingCircles() {
                 multipleViz.setContainer(containerRef.current)
                 multipleViz.setup()
 
-                multipleViz.dataUpdate([{ x: 1, y: 0 }, { x: 1, y: 1 }], 'right-line-elem')
-                multipleViz.dataUpdate([{ x: 0, y: 0 }, { x: 1, y: 0 }], 'bottom-line-elem')
-                multipleViz.dataUpdate([{ x: 0, y: 0 }, { x: 0, y: 1 }], 'left-line-elem')
-                multipleViz.dataUpdate([{ x: 0, y: 1 }, { x: 1, y: 1 }], 'top-line-elem')
+                multipleViz.dataUpdate(
+                    [
+                        { x: 1, y: 0 },
+                        { x: 1, y: 1 }
+                    ],
+                    'right-line-elem'
+                )
+                multipleViz.dataUpdate(
+                    [
+                        { x: 0, y: 0 },
+                        { x: 1, y: 0 }
+                    ],
+                    'bottom-line-elem'
+                )
+                multipleViz.dataUpdate(
+                    [
+                        { x: 0, y: 0 },
+                        { x: 0, y: 1 }
+                    ],
+                    'left-line-elem'
+                )
+                multipleViz.dataUpdate(
+                    [
+                        { x: 0, y: 1 },
+                        { x: 1, y: 1 }
+                    ],
+                    'top-line-elem'
+                )
 
-                const ga = new GA({ populationSize: 100, iterations: 10000 } as GAConfig)
+                const ga = new GA({
+                    populationSize: 100,
+                    iterations: 10000,
+                    selectionSize: 50,
+                    mutationType: 'all'
+                } as GAConfig)
                 const domains = []
-                const circles = 2
+                const circles = 20
                 for (let i = 0; i < circles; i++) {
-                    domains.push({ min: 0, max: 1 }, { min: 0, max: 1 }, { min: 0, max: 0.5 })
+                    domains.push({ min: 0, max: 1 }, { min: 0, max: 1 }, { min: 0, max: 1 })
                 }
                 const iterator = ga.fitAsync(ff, domains)
-                let done = false
-                while (!done) {
+
+                const doStep = () => {
+                    if (done) {
+                        return
+                    }
                     const result = iterator.next()
                     done = !!result.done
                     const best = ga.getBest()
+                    const bestVal = ff(...best)
+                    fitnesses.push({ x: iteration, y: bestVal })
+                    fitnesses = fitnesses.slice(-50)
+                    setBest(bestVal)
                     const updatedData = []
                     for (let i = 0; i < circles; i++) {
                         updatedData.push({
@@ -82,16 +135,28 @@ export default function FittingCircles() {
                         })
                     }
                     multipleViz.dataUpdate(updatedData, 'scatter-elem')
-                    // eslint-disable-next-line no-await-in-loop
-                    await snooze(100)
+                    window.requestAnimationFrame(() => doStep())
+                    functionPlot.dataUpdate(fitnesses, axisElemClass)
+                    functionPlot.dataUpdate(fitnesses, lineElemClass)
+                    iteration++
                 }
+
+                doStep()
+
+                // eslint-disable-next-line no-await-in-loop
             })()
+        }
+
+        return () => {
+            done = true
         }
     }, [containerRef])
     return (
         <div>
             <h3>Fitting Circles</h3>
+            <div>{globalBest}</div>
             <div ref={containerRef}></div>
+            <div ref={fitnessContainerRef}></div>
         </div>
     )
 }

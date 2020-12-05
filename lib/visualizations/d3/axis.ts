@@ -51,7 +51,7 @@ export default class Axis extends SVGBaseVisualization {
         const { d3, rootContainer } = this.dependencies
 
         let { x, y } = this.dependencies
-        if (!x) {
+        if (!x || this.config.autoscaleX) {
             const [xMin, xMax] = d3.extent(data, (d: TwoDPointLine) => d.x)
             x = d3
                 .scaleLinear()
@@ -61,10 +61,11 @@ export default class Axis extends SVGBaseVisualization {
                 ])
                 .nice()
                 .range([margin.left, width - margin.right])
-
+            rootContainer.select(`.${elemClass} .xAxis`).remove()
             rootContainer
                 .select(`.${elemClass}`)
                 .append('g')
+                .attr('class', 'xAxis')
                 .attr('transform', `translate(0,${height - margin.bottom})`)
                 .call(
                     d3
@@ -75,7 +76,7 @@ export default class Axis extends SVGBaseVisualization {
             Object.assign(this.dependencies, { x })
         }
 
-        if (!y) {
+        if (!y || this.config.autoscaleX) {
             const [yMin, yMax] = d3.extent(data, (d: TwoDPointLine) => d.y)
             y = d3
                 .scaleLinear()
@@ -86,9 +87,11 @@ export default class Axis extends SVGBaseVisualization {
                 .nice()
                 .range([height - margin.bottom, margin.top])
 
+            rootContainer.select(`.${elemClass} .yAxis`).remove()
             rootContainer
                 .select(`.${elemClass}`)
                 .append('g')
+                .attr('class', 'yAxis')
                 .attr('transform', `translate(${margin.left},0)`)
                 .call(d3.axisLeft(y))
 

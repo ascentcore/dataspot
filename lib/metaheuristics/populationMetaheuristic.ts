@@ -70,6 +70,7 @@ export default abstract class PopulationMetaheuristic<
         this.individuals = []
         for (let i = 0; i < populationSize; i++) {
             const p = new Individual()
+            p.id = i
             for (let j = 0; j < this.dimensions.length; j++) {
                 const randomNumber = Random.random(this.dimensions[j].min, this.dimensions[j].max)
                 p.position.push(randomNumber)

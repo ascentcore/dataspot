@@ -7,6 +7,12 @@ import * as selectionFunctionMappings from './selection/selection-functions'
 export class GAConfig extends PopulationMetaheuristicConfig {
     public selectionSize = 10
 
+    public mutationType: 'all' | 'single' = 'all'
+
+    public mutationProbability: number = 0.01
+
+    public crossoverType: 'randomPick' | 'singleSplit' = 'singleSplit'
+
     public selectionFn: 'Roulette' | 'Tournament' = 'Roulette'
 }
 
@@ -27,9 +33,12 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     private crossover(individual: Individual, parent1: Individual, parent2: Individual) {
+        const splitLocation = Random.randomInt(0, this.dimensions.length)
         for (let j = 0; j < this.dimensions.length; j++) {
-            const rand = Random.random(0, 1)
-            if (rand < 0.5) {
+            if (
+                (this.config.crossoverType === 'singleSplit' && splitLocation < j) ||
+                (this.config.crossoverType === 'randomPick' && Random.random(0, 1) < 0.5)
+            ) {
                 individual.position[j] = parent1.position[j]
                 individual.bestPosition[j] = parent1.position[j]
             } else {
@@ -40,17 +49,24 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     private mutation(individual: Individual) {
-        for (let j = 0; j < this.dimensions.length; j++) {
-            let rand = Random.random(0, 1)
-            if (rand < 0.2) {
-                rand = Random.random(0, 1)
-                individual.position[j] = Random.random(this.dimensions[j].min, this.dimensions[j].max)
+        const mutate = (pos: number) => {
+            individual.position[pos] = Random.random(this.dimensions[pos].min, this.dimensions[pos].max)
 
-                if (individual.position[j] > this.dimensions[j].max) {
-                    individual.position[j] = this.dimensions[j].max
-                }
-                if (individual.position[j] < this.dimensions[j].min) {
-                    individual.position[j] = this.dimensions[j].min
+            if (individual.position[pos] > this.dimensions[pos].max) {
+                individual.position[pos] = this.dimensions[pos].max
+            }
+            if (individual.position[pos] < this.dimensions[pos].min) {
+                individual.position[pos] = this.dimensions[pos].min
+            }
+        }
+
+        if (this.config.mutationType === 'single') {
+            mutate(Random.seededRandomInt(0, this.dimensions.length))
+        } else {
+            for (let j = 0; j < this.dimensions.length; j++) {
+                const rand = Random.random(0, 1)
+                if (rand < this.config.mutationProbability) {
+                    mutate(j)
                 }
             }
         }
@@ -62,22 +78,29 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     public step() {
+        // refactor
+        this.computeFitness()
         const selected = this.selection.execute(this.individuals)
-        const halfSelection = selected.length / 2
-        for (let i = 0; i < halfSelection; i++) {
+        for (let i = 0; i < selected.length; i += 2) {
             const parent1: Individual = selected[i]
-            const parent2: Individual = selected[i + halfSelection]
+            const parent2: Individual = selected[i + 1]
 
             const child = new Individual()
             this.individuals.push(child)
             this.movePosition(child, parent1, parent2)
         }
-        for (let i = 0; i < this.individuals.length; i++) {
-            this.individuals[i].computeFitness(this.fitnessFunction)
-        }
+        this.computeFitness()
         this.sortPopulation()
         this.updateGlobalBest()
         this.individuals.splice(this.config.populationSize)
+    }
+
+    public computeFitness() {
+        for (let i = 0; i < this.individuals.length; i++) {
+            if (this.individuals[i].fitness === Infinity) {
+                this.individuals[i].computeFitness(this.fitnessFunction)
+            }
+        }
     }
 
     public canStop(): boolean {

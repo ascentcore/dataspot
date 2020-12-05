@@ -11,9 +11,8 @@ export default class LinePlot extends SVGBaseVisualization {
     private updateFn(data: TwoDPointLine[], elemClass: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
-
         let { x, y } = this.dependencies
-        if (!x) {
+        if (!x || this.config.autoscaleX) {
             const [xMin, xMax] = d3.extent(data, (d: TwoDPointLine) => d.x)
             x = d3
                 .scaleLinear()
@@ -27,7 +26,7 @@ export default class LinePlot extends SVGBaseVisualization {
             Object.assign(this.dependencies, { x })
         }
 
-        if (!y) {
+        if (!y || this.config.autoscaleY) {
             const [yMin, yMax] = d3.extent(data, (d: TwoDPointLine) => d.y)
             y = d3
                 .scaleLinear()
@@ -45,7 +44,6 @@ export default class LinePlot extends SVGBaseVisualization {
             .line()
             .x((d: TwoDPointLine) => x(d.x))
             .y((d: TwoDPointLine) => y(d.y))
-
         rootContainer.selectAll(`.${elemClass} path`).remove()
 
         rootContainer
