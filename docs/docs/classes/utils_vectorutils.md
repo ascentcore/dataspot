@@ -46,7 +46,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L88)
+[lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L88)
 
 ___
 
@@ -62,7 +62,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L157)
+[lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L157)
 
 ___
 
@@ -78,7 +78,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L148)
+[lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L148)
 
 ___
 
@@ -95,7 +95,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L115)
+[lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L115)
 
 ___
 
@@ -112,7 +112,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L57)
+[lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L57)
 
 ___
 
@@ -128,7 +128,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L171)
+[lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L171)
 
 ___
 
@@ -145,7 +145,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L68)
+[lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L68)
 
 ___
 
@@ -161,7 +161,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L180)
+[lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L180)
 
 ___
 
@@ -177,7 +177,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L184)
+[lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L184)
 
 ___
 
@@ -194,7 +194,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L106)
+[lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L106)
 
 ___
 
@@ -210,7 +210,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:205](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L205)
+[lib/utils/math-utils.ts:205](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L205)
 
 ___
 
@@ -227,7 +227,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L124)
+[lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L124)
 
 ___
 
@@ -244,7 +244,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L142)
+[lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L142)
 
 ___
 
@@ -261,7 +261,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L136)
+[lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L136)
 
 ___
 
@@ -278,7 +278,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L130)
+[lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L130)
 
 ___
 
@@ -294,7 +294,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L188)
+[lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L188)
 
 ___
 
@@ -311,7 +311,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L97)
+[lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L97)
 
 ___
 
@@ -327,4 +327,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/12500c0/lib/utils/math-utils.ts#L79)
+[lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/utils/math-utils.ts#L79)

@@ -1,15 +1,15 @@
 import * as d3 from 'd3'
 import { useState, useEffect, useRef } from 'react'
+import ClusteringDatasets from '@ascentcore/dataspot/datasets/clustering'
 import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
 import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
-import blobDataset from '../../lib/datasets/blobDataset'
 import Scatter from '../../lib/visualizations/d3/scatter'
 
 const width = 500
 const height = 400
 
-const blobData = blobDataset(20)
+const blobData = ClusteringDatasets.blob(20)
 const result = hierarchy(
     // blobData.map((row: any[], i) => ({ index: row.map((i) => roundToPrecision(i, 2)).join(','), points: [row] })),
     blobData.map((row: any[], i) => ({ index: `${i}`, points: [row] })),

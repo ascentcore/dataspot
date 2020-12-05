@@ -1,8 +1,8 @@
-import Axis from '../../../lib/visualizations/d3/axis'
-import Scatter from '../../../lib/visualizations/d3/scatter'
-import Title from '../../../lib/visualizations/d3/title'
-import ClusteringDataset from '../../../lib/datasets/clustering'
-import SVGMultipleVisualization from '../../../lib/visualizations/d3/svgmultiple'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import Title from '@ascentcore/dataspot/visualizations/d3/title'
+import ClusteringDataset from '@ascentcore/dataspot/datasets/clustering'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
 
 export default (async () => {
     const keys = ['Arc', 'Blob', 'Concentric Rings', 'Fill Space', 'Noisy With Blob', 'Potato']

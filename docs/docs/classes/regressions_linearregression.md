@@ -32,4 +32,4 @@ Name | Type |
 **Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:7](https://github.com/ascentcore/dataspot/blob/12500c0/lib/regressions/linearRegression.ts#L7)
+[lib/regressions/linearRegression.ts:7](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/regressions/linearRegression.ts#L7)

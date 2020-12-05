@@ -20,11 +20,11 @@ has_children: false
 •  **calculate**: Function
 
 {:.url-source-ref}
-[lib/metaheuristics/fitnessFunction.ts:2](https://github.com/ascentcore/dataspot/blob/12500c0/lib/metaheuristics/fitnessFunction.ts#L2)
+[lib/metaheuristics/fitnessFunction.ts:2](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/fitnessFunction.ts#L2)
 
 ___
 
 •  **dimensions**: { max: number ; min: number  }[]
 
 {:.url-source-ref}
-[lib/metaheuristics/fitnessFunction.ts:4](https://github.com/ascentcore/dataspot/blob/12500c0/lib/metaheuristics/fitnessFunction.ts#L4)
+[lib/metaheuristics/fitnessFunction.ts:4](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/fitnessFunction.ts#L4)

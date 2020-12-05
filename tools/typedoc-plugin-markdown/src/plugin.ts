@@ -59,7 +59,7 @@ export class MarkdownPlugin extends ConverterComponent {
             ? script
             : `
 \`\`\`ts
-${fs.readFileSync(`./samples/${texts[0]}.ts`, 'utf8')}
+${fs.readFileSync(`../samples/${texts[0]}.ts`, 'utf8')}
 \`\`\`
 
 ${script}

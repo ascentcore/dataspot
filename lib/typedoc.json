@@ -1,5 +1,5 @@
 {
-    "out": "./docs/docs",
+    "out": "../docs/docs",
     "includes": "./lib",
     "exclude": ["*/**/*.tsx", "node_modules", "./tools/**/*.ts", "*/**/*.spec.ts"],
     "readme": "./README.md",
