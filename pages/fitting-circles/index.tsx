@@ -27,7 +27,11 @@ export default function FittingCircles() {
                 const rectangleArea = (rightTop.x - leftBottom.x) * (rightTop.y - leftBottom.y)
                 const circleAreas = circles.reduce((sum, circle) => sum + Math.PI * circle.r ** 2, 0)
                 let overlappingArea = 0
+                let rminConstraint = 0
                 for (let i = 0; i < circles.length; i++) {
+                    if (circles[i].r < 0.05) {
+                        rminConstraint += 1
+                    }
                     for (let j = i + 1; j < circles.length; j++) {
                         overlappingArea += circlesIntersection(circles[i], circles[j])
                     }
@@ -36,7 +40,7 @@ export default function FittingCircles() {
                 circles.forEach((circle) => {
                     outsideBoundariesArea += circleRectangleOutsideBoundaries(circle, leftBottom, rightTop)
                 })
-                return rectangleArea - circleAreas + 10 * overlappingArea + 100 * outsideBoundariesArea
+                return rectangleArea - circleAreas + 10 * overlappingArea + 100 * outsideBoundariesArea + rminConstraint
             }
             ;(async () => {
                 const axisElemClass = 'axis-elem'
@@ -102,15 +106,16 @@ export default function FittingCircles() {
                 )
 
                 const ga = new GA({
-                    populationSize: 100,
+                    populationSize: 200,
                     iterations: 10000,
-                    selectionSize: 50,
-                    mutationType: 'all'
+                    selectionSize: 200,
+                    mutationType: 'all',
+                    mutationProbability: 0.05
                 } as GAConfig)
                 const domains = []
-                const circles = 20
+                const circles = 10
                 for (let i = 0; i < circles; i++) {
-                    domains.push({ min: 0, max: 1 }, { min: 0, max: 1 }, { min: 0, max: 1 })
+                    domains.push({ min: 0, max: 1 }, { min: 0, max: 1 }, { min: 0, max: 0.5 })
                 }
                 const iterator = ga.fitAsync(ff, domains)
 
@@ -123,7 +128,7 @@ export default function FittingCircles() {
                     const best = ga.getBest()
                     const bestVal = ff(...best)
                     fitnesses.push({ x: iteration, y: bestVal })
-                    fitnesses = fitnesses.slice(-50)
+                    fitnesses = fitnesses.slice(-100)
                     setBest(bestVal)
                     const updatedData = []
                     for (let i = 0; i < circles; i++) {
