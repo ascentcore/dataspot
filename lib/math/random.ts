@@ -2,6 +2,11 @@
 export default class Random {
     private static rand = Random.mulberry32(Random.xmur3('apples')())
 
+    public static seed(str: string) {
+        this.rand = Random.mulberry32(Random.xmur3(str)())
+        Math.random = Random.rand
+    }
+
     private static xmur3(str: string): () => number {
         let h = 1779033703 ^ str.length
         for (let i = 0; i < str.length; i++) {

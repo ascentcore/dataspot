@@ -1,5 +1,6 @@
-import { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
-import distances, { DistanceMeasurement } from '../math/distances'
+import hierarchy, { HierarchyPoints, singleLinkage, hCut } from '@/hierarchy/agglomerative'
+import { EvolutionaryConfig } from '@/common/evolutionaryAlgorithm'
+import distances, { DistanceMeasurement, euclideanDistance } from '@/math/distances'
 import ClusteringAlgorithm from './clusteringBase'
 
 export class AglomerativeClusteringConfig extends EvolutionaryConfig {
@@ -9,7 +10,7 @@ export class AglomerativeClusteringConfig extends EvolutionaryConfig {
 export default class AgglomerativeClustering extends ClusteringAlgorithm<AglomerativeClusteringConfig> {
     protected distanceFunc!: Function
 
-    private numLeaves!: number
+    private hierarchyFitData: HierarchyPoints[] = []
 
     constructor(config?: AglomerativeClusteringConfig | undefined, distanceFunction?: DistanceMeasurement | undefined) {
         super(Object.assign(new AglomerativeClusteringConfig(), config))
@@ -17,7 +18,9 @@ export default class AgglomerativeClustering extends ClusteringAlgorithm<Aglomer
     }
 
     step(): void {
-        this.numLeaves--
+        const result = hierarchy(this.hierarchyFitData, singleLinkage, euclideanDistance)
+        // console.log(result)
+        console.log(hCut(result, 1))
     }
 
     canStop(): boolean {
@@ -25,14 +28,12 @@ export default class AgglomerativeClustering extends ClusteringAlgorithm<Aglomer
     }
 
     shouldStop(): boolean {
-        return this.numLeaves === 0
+        return this.iteration > 0
     }
 
     prepareDataset(data: number[][]): void {
         super.prepareDataset(data)
-        const { length } = data
-        this.numLeaves = length
-        this.labels = new Array(length).fill(0).map((_, index) => index)
+        this.hierarchyFitData = data.map((row: any[], i) => ({ index: `${i}`, points: [row] }))
     }
 
     initializeDependencies(distanceFunction?: DistanceMeasurement): void {

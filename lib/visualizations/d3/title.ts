@@ -7,12 +7,12 @@ export default class Title extends SVGBaseVisualization {
     }
 
     public setup() {
-        const { margin, width, height, text } = this.config
+        const { margin, width, height, text, yLoc } = this.config
         const { d3, rootContainer } = this.dependencies
         rootContainer
             .selectAll(`.${this.elemClass}`)
             .append('text')
-            .attr('transform', `translate(${margin.left + (width - margin.right - margin.left) / 2}, ${margin.top})`)
+            .attr('transform', `translate(${margin.left + (width - margin.right - margin.left) / 2},${yLoc || 15})`)
             .style('text-anchor', 'middle')
             .text(text || 'Text Undefined')
     }

@@ -10,7 +10,7 @@ function srcPaths(src) {
 const config = {
     entry: {
         sample: './samples/documentation/sample.ts',
-        clusteringDataset: './samples/documentation/datasets/clustering.ts',
+        clusteringComparison: './samples/documentation/clustering/comparison.ts',
         benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts'
     },
     plugins,

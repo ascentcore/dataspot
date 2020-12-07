@@ -11,7 +11,7 @@ export class MeanShiftConfig extends CentroidConfig {
     public stopThreshold: number = 1e-4
 }
 
-export default class MeanShitft extends CentroidClustering<MeanShiftConfig> {
+export default class MeanShift extends CentroidClustering<MeanShiftConfig> {
     private shiftingPoints!: number[][]
 
     private shifting!: boolean[]

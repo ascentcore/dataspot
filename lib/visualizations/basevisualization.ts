@@ -1,4 +1,3 @@
-import { TwoDPointLine, TwoDPointScatter, FunctioDefinitionMesh } from '../models/types'
 /**
  * Base visualization abstract class.
  * The same logic will be used isomorphically on node and web platforms
