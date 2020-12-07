@@ -5,7 +5,7 @@ import Convergence from '../common/convergence'
 import * as selectionFunctionMappings from './selection/selection-functions'
 
 export class GAConfig extends PopulationMetaheuristicConfig {
-    public selectionSize = 10
+    public numOffsprings = 10
 
     public mutationType: 'all' | 'single' = 'all'
 
@@ -22,10 +22,10 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     private selection!: selectionFunctionMappings.Roulette | selectionFunctionMappings.Tournament
 
     constructor(config?: GAConfig | undefined) {
-        if (config && config.selectionSize % 2 === 1) {
-            config.selectionSize++
+        if (config && config.numOffsprings % 2 === 1) {
+            config.numOffsprings++
         }
-        if (config && config.selectionSize > config.populationSize) {
+        if (config && config.numOffsprings > config.populationSize) {
             throw new Error('Selection size has to be smaller than population size')
         }
         super(Object.assign(new GAConfig(), config))
@@ -78,8 +78,6 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     public step() {
-        // refactor
-        this.computeFitness()
         const selected = this.selection.execute(this.individuals)
         for (let i = 0; i < selected.length; i += 2) {
             const parent1: Individual = selected[i]
@@ -108,8 +106,8 @@ export default class GA extends PopulationMetaheuristic<GAConfig> {
     }
 
     public initializeDependencies(): void {
-        const { selectionFn, selectionSize } = this.config
-        this.selection = new selectionFunctionMappings[selectionFn](selectionSize)
+        const { selectionFn, numOffsprings } = this.config
+        this.selection = new selectionFunctionMappings[selectionFn](numOffsprings)
     }
 
     public loadState(config: string): void {

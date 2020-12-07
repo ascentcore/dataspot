@@ -53,6 +53,12 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
         }
     }
 
+    public computeFitness() {
+        for (let i = 0; i < this.individuals.length; i++) {
+            this.individuals[i].computeFitness(this.fitnessFunction)
+        }
+    }
+
     public step() {
         const { bestPosition } = this.config
         if (!this.convergence && this.config.convergenceIterations > 0) {
@@ -61,9 +67,7 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
         for (let i = 0; i < this.individuals.length; i++) {
             this.movePosition(this.individuals[i])
         }
-        for (let i = 0; i < this.individuals.length; i++) {
-            this.individuals[i].computeFitness(this.fitnessFunction)
-        }
+        this.computeFitness()
         this.sortPopulation()
         this.updateGlobalBest()
 

@@ -1,7 +1,7 @@
 import Ackley from '../datasets/benchmark/ackley'
 import GA, { GAConfig } from './ga'
 
-let ga = new GA(<GAConfig>{ populationSize: 10, selectionSize: 4, iterations: 20 })
+let ga = new GA(<GAConfig>{ populationSize: 10, numOffsprings: 4, iterations: 20 })
 let serializedConfig: any
 
 describe('GA', () => {

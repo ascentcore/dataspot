@@ -76,39 +76,15 @@ export default function FittingCircles() {
                 multipleViz.setContainer(containerRef.current)
                 multipleViz.setup()
 
-                multipleViz.dataUpdate(
-                    [
-                        { x: 1, y: 0 },
-                        { x: 1, y: 1 }
-                    ],
-                    'right-line-elem'
-                )
-                multipleViz.dataUpdate(
-                    [
-                        { x: 0, y: 0 },
-                        { x: 1, y: 0 }
-                    ],
-                    'bottom-line-elem'
-                )
-                multipleViz.dataUpdate(
-                    [
-                        { x: 0, y: 0 },
-                        { x: 0, y: 1 }
-                    ],
-                    'left-line-elem'
-                )
-                multipleViz.dataUpdate(
-                    [
-                        { x: 0, y: 1 },
-                        { x: 1, y: 1 }
-                    ],
-                    'top-line-elem'
-                )
+                multipleViz.dataUpdate([{ x: 1, y: 0 }, { x: 1, y: 1 }], 'right-line-elem')
+                multipleViz.dataUpdate([{ x: 0, y: 0 }, { x: 1, y: 0 }], 'bottom-line-elem')
+                multipleViz.dataUpdate([{ x: 0, y: 0 }, { x: 0, y: 1 }], 'left-line-elem')
+                multipleViz.dataUpdate([{ x: 0, y: 1 }, { x: 1, y: 1 }], 'top-line-elem')
 
                 const ga = new GA({
                     populationSize: 200,
                     iterations: 10000,
-                    selectionSize: 200,
+                    numOffsprings: 200,
                     mutationType: 'all',
                     mutationProbability: 0.05
                 } as GAConfig)
