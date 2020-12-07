@@ -123,8 +123,6 @@ export default function FittingCircles() {
                 }
 
                 doStep()
-
-                // eslint-disable-next-line no-await-in-loop
             })()
         }
 
