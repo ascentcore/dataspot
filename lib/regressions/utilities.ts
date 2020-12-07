@@ -66,3 +66,13 @@ export function transformToPolynomialInput(input: number[], degree: number): num
 
     return polynomialInput
 }
+
+// Convert probabilities to classes
+export function decisionBoundary(probabilities: number[]): number[] {
+    const value = []
+    for (let i = 0; i < probabilities.length; i++) {
+        value.push(probabilities[i] >= 0.5 ? 1 : 0)
+    }
+
+    return value
+}

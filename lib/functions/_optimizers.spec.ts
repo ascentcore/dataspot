@@ -14,13 +14,29 @@ describe('Optimizers', () => {
         expect(gradientDescent([1.5, 2.5], [3, 5], [1.2, 1.1], 0.001, mseCostFunction)).toEqual([1.2006, 1.101425])
         expect(gradientDescent([1.5, 2.5], [3, 5], [1.2, 1.1], 0.0001, mseCostFunction)).toEqual([1.20006, 1.1001425])
 
-        expect(gradientDescent([[1, 1, 2], [1, 2, 3]], [3, 5], [1, 0.5, 1], 0.001, mseCostFunction)).toEqual([
-            0.99975,
-            0.49975,
-            0.9995
-        ])
         expect(
-            gradientDescent([[1, 1, 2], [1, 2, 3]], [3, 5], [0.9995, 0.4995, 0.999], 0.001, mseCostFunction)
+            gradientDescent(
+                [
+                    [1, 1, 2],
+                    [1, 2, 3]
+                ],
+                [3, 5],
+                [1, 0.5, 1],
+                0.001,
+                mseCostFunction
+            )
+        ).toEqual([0.99975, 0.49975, 0.9995])
+        expect(
+            gradientDescent(
+                [
+                    [1, 1, 2],
+                    [1, 2, 3]
+                ],
+                [3, 5],
+                [0.9995, 0.4995, 0.999],
+                0.001,
+                mseCostFunction
+            )
         ).toEqual([0.99925375, 0.499256, 0.99850975])
     })
 })

@@ -1,0 +1,16 @@
+tools
+pages
+public
+docs
+samples
+coverage
+dbs
+log.txt
+samples.webpack.config.js
+server.js
+typedoc.json
+jest.config.js
+app.ts
+next-env.d.ts
+reports
+conventions.md
