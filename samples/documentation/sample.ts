@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
 import ClusteringDataset from '../../lib/datasets/clustering'
 import Axis from '../../lib/visualizations/d3/axis'
@@ -7,7 +8,7 @@ import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 const initialArcDataset = ClusteringDataset.arc()
 
 const mappedDataKMeans = initialArcDataset.map((data) => {
-    return { x: data[0], y: data[1], r: 1.2 }
+    return { x: data[0], y: data[1] }
 })
 
 const plotKmeans = document.createElement('div')

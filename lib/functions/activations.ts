@@ -17,3 +17,7 @@ export function tanh(x: number): number {
 export function sigmoid(x: number): number {
     return 1 / (1 + Math.E ** -x)
 }
+
+export function sign(x: number): number {
+    return x < 0 ? -1 : 1
+}

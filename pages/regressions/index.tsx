@@ -67,7 +67,7 @@ function Representation({
                 multiplePlot.setContainer(regressionRef.current)
                 multiplePlot.setup()
                 const mappedData = data[0].map((d) => {
-                    return { x: d[0], y: d[1], r: 3 }
+                    return { x: d[0], y: d[1], r: 0.1 }
                 })
                 multiplePlot.dataUpdate(mappedData, axisElemClass)
                 multiplePlot.dataUpdate(mappedData, scatterElemClass)
@@ -93,7 +93,7 @@ function Representation({
                             return {
                                 x: data[0][i][0],
                                 y: data[0][i][1],
-                                r: 3,
+                                r: 0.1,
                                 color: updatedPrediction[i] === 0 ? 1 : 2
                             }
                         }),
@@ -119,7 +119,7 @@ function Representation({
 
                 const mappedData = []
                 for (let i = 0; i < data[0].length; i++) {
-                    mappedData.push({ x: data[0][i], y: data[1][i], r: 3 })
+                    mappedData.push({ x: data[0][i], y: data[1][i], r: 0.1 })
                 }
                 multiplePlot.dataUpdate(mappedData, scatterElemClass)
 
@@ -187,35 +187,16 @@ function Representation({
 const reps = [
     {
         name: 'Linear Regression',
-        data: [
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-        ]
+        data: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]]
     },
     {
         name: 'Polynomial Regression',
-        data: [
-            [1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5],
-            [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]
-        ]
+        data: [[1, 1.5, 2, 2.5, 3, 4, 5, 5.9, 7, 8, 8.5, 9, 9.5], [2, 1.25, 0.75, 0.25, 0, 0, 0.5, 1, 2, 3, 4, 5, 6]]
     },
     {
         name: 'Logistic Regression',
         data: [
-            [
-                [1, 1],
-                [1.5, 1],
-                [3, 1],
-                [4, 2],
-                [6, 2],
-                [1.5, 3],
-                [3, 3],
-                [2, 4],
-                [3.5, 4],
-                [4.5, 4],
-                [4.5, 5],
-                [5, 6]
-            ],
+            [[1, 1], [1.5, 1], [3, 1], [4, 2], [6, 2], [1.5, 3], [3, 3], [2, 4], [3.5, 4], [4.5, 4], [4.5, 5], [5, 6]],
             [0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1]
         ]
     }

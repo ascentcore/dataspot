@@ -119,9 +119,9 @@ const badCentroids = [
     const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot', false)
 
     const data: any[] = []
-    badFitData.forEach((point: any) => data.push({ x: point[0], y: point[1], r: 2, color: '#FF0000' }))
-    badCentroids.forEach((point: any) => data.push({ x: point[0], y: point[1], r: 5, color: '#00FF00' }))
-    badTestData.forEach((point: any) => data.push({ x: point[0], y: point[1], r: 2, color: '#0000FF' }))
+    badFitData.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#FF0000' }))
+    badCentroids.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#00FF00' }))
+    badTestData.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#0000FF' }))
 
     vis1.dataUpdate(data)
 })()

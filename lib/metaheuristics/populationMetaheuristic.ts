@@ -1,6 +1,5 @@
 /* eslint-disable operator-assignment, no-param-reassign */
 import EvolutionaryAlgorithm, { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
-import FitnessFunction from './fitnessFunction'
 import Random from '../math/random'
 
 export class PopulationMetaheuristicConfig extends EvolutionaryConfig {
@@ -20,9 +19,9 @@ export class Individual {
 
     public velocity: number[] | null = null
 
-    computeFitness(fitnessFunction: FitnessFunction) {
-        this.fitness = fitnessFunction.calculate(...this.position)
-        if (this.fitness < fitnessFunction.calculate(...this.bestPosition)) {
+    computeFitness(fitnessFunction: Function) {
+        this.fitness = fitnessFunction(...this.position)
+        if (this.fitness < fitnessFunction(...this.bestPosition)) {
             this.bestPosition = [...this.position]
         }
     }
@@ -33,13 +32,15 @@ export default abstract class PopulationMetaheuristic<
 > extends EvolutionaryAlgorithm<T> {
     protected individuals!: Individual[]
 
-    protected fitnessFunction!: FitnessFunction
+    protected fitnessFunction!: Function
+
+    protected dimensions!: { min: number; max: number }[]
 
     canStop(): boolean {
         return false
     }
 
-    protected abstract movePosition(particle: Individual): void
+    protected abstract movePosition(...particles: Individual[]): void
 
     protected sortPopulation() {
         this.individuals.sort((i1, i2) => i1.fitness - i2.fitness)
@@ -53,45 +54,43 @@ export default abstract class PopulationMetaheuristic<
         }
 
         let newBestPosition = [...this.individuals[0].bestPosition]
-        let newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
+        let newBestFitness = this.fitnessFunction(...newBestPosition)
         for (let i = 1; i < this.individuals.length; i++) {
-            if (this.fitnessFunction.calculate(...this.individuals[i].bestPosition) < newBestFitness) {
+            if (this.fitnessFunction(...this.individuals[i].bestPosition) < newBestFitness) {
                 newBestPosition = [...this.individuals[i].bestPosition]
-                newBestFitness = this.fitnessFunction.calculate(...newBestPosition)
+                newBestFitness = this.fitnessFunction(...newBestPosition)
             }
         }
-
-        if (
-            this.config.bestPosition.length === 0 ||
-            this.fitnessFunction.calculate(...this.config.bestPosition) >= newBestFitness
-        ) {
-            this.config.bestPosition = newBestPosition
-        }
+        this.config.bestPosition = newBestPosition
     }
 
-    public abstract step(): void
-
-    preparePopulation(): void {
+    protected preparePopulation(): void {
         const { populationSize } = this.config
         this.iteration = 0
         this.individuals = []
         for (let i = 0; i < populationSize; i++) {
             const p = new Individual()
-            for (let j = 0; j < this.fitnessFunction.dimensions.length; j++) {
-                const randomNumber = Random.random(
-                    this.fitnessFunction.dimensions[j].min,
-                    this.fitnessFunction.dimensions[j].max
-                )
+            p.id = i
+            for (let j = 0; j < this.dimensions.length; j++) {
+                const randomNumber = Random.random(this.dimensions[j].min, this.dimensions[j].max)
                 p.position.push(randomNumber)
                 p.bestPosition.push(randomNumber)
             }
             this.individuals.push(p)
         }
+        // if population reinitialized but best position exists, add the best position history to one of the particles
+        if (this.config.bestPosition.length !== 0 && populationSize) {
+            this.individuals[0].position = [...this.config.bestPosition]
+            this.individuals[0].bestPosition = [...this.config.bestPosition]
+        }
         this.updateGlobalBest()
     }
 
-    *fitAsync(fitessFunction: FitnessFunction): Generator {
+    public abstract step(): void
+
+    public *fitAsync(fitessFunction: Function, dimensions: { min: number; max: number }[]): Generator {
         this.fitnessFunction = fitessFunction
+        this.dimensions = dimensions
         this.preparePopulation()
         while (!this.shouldStop() && !this.canStop()) {
             this.step()
@@ -102,8 +101,9 @@ export default abstract class PopulationMetaheuristic<
         return this.individuals.map((individual: Individual) => individual.bestPosition)
     }
 
-    fit(fitessFunction: FitnessFunction): number[][] {
+    public fit(fitessFunction: Function, dimensions: { min: number; max: number }[]): number[][] {
         this.fitnessFunction = fitessFunction
+        this.dimensions = dimensions
         this.preparePopulation()
         while (!this.shouldStop() && !this.canStop()) {
             this.step()

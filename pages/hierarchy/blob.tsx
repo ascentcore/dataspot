@@ -3,13 +3,14 @@ import { useState, useEffect, useRef } from 'react'
 import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
 import { euclideanDistance } from '../../lib/math/distances'
 import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
-import blobDataset from '../../lib/datasets/blobDataset'
+import ClusteringDataset from '../../lib/datasets/clustering'
 import Scatter from '../../lib/visualizations/d3/scatter'
+import { TwoDPointScatter } from '../../lib/models/types'
 
 const width = 500
 const height = 400
 
-const blobData = blobDataset(20)
+const blobData = ClusteringDataset.blob(20)
 const result = hierarchy(
     // blobData.map((row: any[], i) => ({ index: row.map((i) => roundToPrecision(i, 2)).join(','), points: [row] })),
     blobData.map((row: any[], i) => ({ index: `${i}`, points: [row] })),
@@ -32,7 +33,7 @@ export default function Blob() {
         for (let i = 0; i < clusters.length; i++) {
             clusters[i].forEach((st) => {
                 d3.selectAll(`[data-id="${st}"]`).attr('fill', palette(`${i}`))
-                d3.selectAll(`[data-id="${st}"] circle, [data-id="${st}"] text`).attr('fill', palette(i))
+                d3.selectAll(`[data-id="${st}"] circle, [data-id="${st}"] text`).attr('fill', palette(`${i}`))
             })
         }
     }, [value])
@@ -45,7 +46,9 @@ export default function Blob() {
         scatterPlot.setContainer(containerRef.current)
         scatterPlot.setup()
         setScatterPlotRef(scatterPlot)
-        scatterPlot.dataUpdate(blobData.map((row, i) => ({ id: i, x: row[0], y: row[1], r: 5 })))
+        scatterPlot.dataUpdate(
+            blobData.map((row, i) => ({ id: i, x: row[0], y: row[1], r: 0.005 } as TwoDPointScatter))
+        )
         setValue(0)
     }, [containerRef])
 

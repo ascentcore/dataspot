@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import Ackley, { DOMAIN as ACKLEY_DOMAIN, GLOBAL_M as ACKLEY_GLOBAL_M } from '../../lib/datasets/benchmark/ackley'
-import Schwefel, {
-    DOMAIN as SCHWEFEL_DOMAIN,
-    GLOBAL_M as SCHWEFEL_GLOBAL_M
-} from '../../lib/datasets/benchmark/schwefel'
+import Ackley from '../../lib/datasets/benchmark/ackley'
+import Schwefel from '../../lib/datasets/benchmark/schwefel'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import Axis from '../../lib/visualizations/d3/axis'
 import Scatter from '../../lib/visualizations/d3/scatter'
@@ -14,7 +11,6 @@ import Sphere from '../../lib/visualizations/three/sphere'
 import ThreeMultipleVisualization from '../../lib/visualizations/three/threemultiple'
 
 import PSO, { PSOConfig } from '../../lib/metaheuristics/pso'
-import FitnessFunction from '../../lib/metaheuristics/fitnessFunction'
 
 function getData(ff: (x: number) => number, min = -1, max = 1, step = 0.01) {
     const data = []
@@ -56,12 +52,7 @@ function Representation({
         let metaheuristicValue = []
 
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
-        const psoGenerator = pso.fitAsync(
-            Object.assign(new FitnessFunction(), {
-                calculate: ff,
-                dimensions: [{ min: domain[0], max: domain[1] }]
-            })
-        )
+        const psoGenerator = pso.fitAsync(ff, [{ min: domain[0], max: domain[1] }])
 
         const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -118,12 +109,7 @@ function Representation({
         let metaheuristicValue = []
 
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
-        const psoGenerator = pso.fitAsync(
-            Object.assign(new FitnessFunction(), {
-                calculate: ff,
-                dimensions: [{ min: domain[0], max: domain[1] }, { min: domain[0], max: domain[1] }]
-            })
-        )
+        const psoGenerator = pso.fitAsync(ff, [{ min: domain[0], max: domain[1] }, { min: domain[0], max: domain[1] }])
 
         const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -200,37 +186,37 @@ const reps = [
     {
         name: 'Particle Swarm Optimisation - Ackley 2D',
         type: '2D',
-        ff: Ackley,
-        domain: ACKLEY_DOMAIN,
-        globalM: ACKLEY_GLOBAL_M,
-        radius: 3,
+        ff: Ackley.calculate,
+        domain: Ackley.DOMAIN,
+        globalM: Ackley.GLOBAL_M,
         resultMin: 0,
-        resultMax: 25
+        resultMax: 25,
+        radius: 0.3
     },
     {
         name: 'Particle Swarm Optimisation - Ackley 3D',
         type: '3D',
-        ff: Ackley,
-        domain: ACKLEY_DOMAIN,
-        globalM: ACKLEY_GLOBAL_M,
+        ff: Ackley.calculate,
+        domain: Ackley.DOMAIN,
+        globalM: Ackley.GLOBAL_M,
         radius: 1
     },
     {
         name: 'Particle Swarm Optimisation - Schwefel 2D',
         type: '2D',
-        ff: Schwefel,
-        domain: SCHWEFEL_DOMAIN,
-        globalM: SCHWEFEL_GLOBAL_M,
-        radius: 3,
+        ff: Schwefel.calculate,
+        domain: Schwefel.DOMAIN,
+        globalM: Schwefel.GLOBAL_M,
         resultMin: 0,
-        resultMax: 420
+        resultMax: 420,
+        radius: 5
     },
     {
         name: 'Particle Swarm Optimisation - Schwefel 3D',
         type: '3D',
-        ff: Schwefel,
-        domain: SCHWEFEL_DOMAIN,
-        globalM: SCHWEFEL_GLOBAL_M,
+        ff: Schwefel.calculate,
+        domain: Schwefel.DOMAIN,
+        globalM: Schwefel.GLOBAL_M,
         radius: 15
     }
 ]
