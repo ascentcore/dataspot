@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { JSDOM } from 'jsdom'
 import Sharp from 'sharp'
 import { getInstance } from '../../registry/registry'
@@ -19,14 +20,17 @@ export default class SVGVisualizationWrapper {
         return getInstance(Lab)
     }
 
-    async setup(initialData?: any): Promise<void> {
+    async setup(initialData?: { data: any; elemClass: string }[]): Promise<void> {
         const dom = new JSDOM(`<!DOCTYPE html><div id="wrapper"/>`)
         this.root = dom.window.document.querySelector('#wrapper')
         this.visualization.setContainer(<HTMLElement>this.root)
         this.visualization.setup()
 
         if (initialData) {
-            this.dataUpdate(initialData)
+            // eslint-disable-next-line no-restricted-syntax
+            for (const elem of initialData) {
+                await this.dataUpdate(elem.data, elem.elemClass)
+            }
         }
 
         if (this.lab) {

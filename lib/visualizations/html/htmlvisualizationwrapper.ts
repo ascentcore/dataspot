@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { JSDOM } from 'jsdom'
 import nodeHtmlToImage from 'node-html-to-image'
 import fs from 'fs'
@@ -19,7 +20,7 @@ export default class HTMLVisualizationWrapper {
         return getInstance(Lab)
     }
 
-    async setup(initialData?: any): Promise<void> {
+    async setup(initialData?: { data: any; elemClass: string }[]): Promise<void> {
         const dom = new JSDOM(`<!DOCTYPE html><div id="root"/>`)
         this.root = dom.window.document.querySelector('#root')
 
@@ -28,7 +29,10 @@ export default class HTMLVisualizationWrapper {
         this.visualization.setup()
 
         if (initialData) {
-            this.dataUpdate(initialData)
+            // eslint-disable-next-line no-restricted-syntax
+            for (const elem of initialData) {
+                await this.dataUpdate(elem.data, elem.elemClass)
+            }
         }
 
         if (this.lab) {

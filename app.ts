@@ -1,5 +1,6 @@
 import HTMLVisualizationWrapper from './lib/visualizations/html/htmlvisualizationwrapper'
 import Table from './lib/visualizations/html/table'
+import Lab from './lib/lab'
 
 const badFitData = [
     [0.2, 0.3855589773275536],
@@ -108,12 +109,12 @@ const badCentroids = [
     [0.38681199729328225, 0.7874221334227902]
 ]
 ;(async () => {
-    // const lab = new Lab('tables')
-    // try {
-    //     await lab.connected
-    // } catch (err) {
-    //     console.log('Unable to connect to lab...')
-    // }
+    const lab = new Lab('tables')
+    try {
+        await lab.connected
+    } catch (err) {
+        console.log('Unable to connect to lab...')
+    }
 
     const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot', false)
     await vis1.setup()

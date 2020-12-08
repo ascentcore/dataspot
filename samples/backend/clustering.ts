@@ -16,19 +16,25 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
         distanceFn: 'manhattanDistance'
     }).fitAsync(initialDataset)
 
-    const visKMeans = new SVGVisualizationWrapper(new Scatter({}), `kmeans-${datasetName}`)
+    const visKMeans = new SVGVisualizationWrapper(new Scatter({}, 'scatter-elem'), `kmeans-${datasetName}`)
 
-    await visKMeans.setup(
-        initialDataset.map((data: any[]) => {
-            return { x: data[0], y: data[1] }
-        })
-    )
-    const vizDBScan = new SVGVisualizationWrapper(new Scatter({}), `dbscan-${datasetName}`)
-    await vizDBScan.setup(
-        initialDataset.map((data: any[]) => {
-            return { x: data[0], y: data[1] }
-        })
-    )
+    await visKMeans.setup([
+        {
+            data: initialDataset.map((data: any[]) => {
+                return { x: data[0], y: data[1] }
+            }),
+            elemClass: 'scatter-elem'
+        }
+    ])
+    const vizDBScan = new SVGVisualizationWrapper(new Scatter({}, 'scatter-elem'), `dbscan-${datasetName}`)
+    await vizDBScan.setup([
+        {
+            data: initialDataset.map((data: any[]) => {
+                return { x: data[0], y: data[1] }
+            }),
+            elemClass: 'scatter-elem'
+        }
+    ])
 
     let doneKmeans = false
     let doneDBScan = false

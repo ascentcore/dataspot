@@ -59,11 +59,12 @@ const ff = (...inputs: number[]) => {
     )
 
     const viz = new SVGVisualizationWrapper(multipleViz, `circles-ga`)
-    await viz.setup()
-    await viz.dataUpdate([{ x: 1, y: 0 }, { x: 1, y: 1 }], 'right-line-elem')
-    await viz.dataUpdate([{ x: 0, y: 0 }, { x: 1, y: 0 }], 'bottom-line-elem')
-    await viz.dataUpdate([{ x: 0, y: 0 }, { x: 0, y: 1 }], 'left-line-elem')
-    await viz.dataUpdate([{ x: 0, y: 1 }, { x: 1, y: 1 }], 'top-line-elem')
+    await viz.setup([
+        { data: [{ x: 1, y: 0 }, { x: 1, y: 1 }], elemClass: 'right-line-elem' },
+        { data: [{ x: 0, y: 0 }, { x: 1, y: 0 }], elemClass: 'bottom-line-elem' },
+        { data: [{ x: 0, y: 0 }, { x: 0, y: 1 }], elemClass: 'left-line-elem' },
+        { data: [{ x: 0, y: 1 }, { x: 1, y: 1 }], elemClass: 'top-line-elem' }
+    ])
 
     const ga = new GA({
         populationSize: 200,
