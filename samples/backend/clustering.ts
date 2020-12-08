@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
 import DBScan, { DBScanConfig } from '../../lib/clustering/dbScan'
 import Lab from '../../lib/lab'
@@ -15,16 +16,15 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
         distanceFn: 'manhattanDistance'
     }).fitAsync(initialDataset)
 
-    const visKMeans = new SVGVisualizationWrapper(
-        new Scatter({}),
-        `kmeans-${datasetName}`,
+    const visKMeans = new SVGVisualizationWrapper(new Scatter({}), `kmeans-${datasetName}`)
+
+    await visKMeans.setup(
         initialDataset.map((data: any[]) => {
             return { x: data[0], y: data[1] }
         })
     )
-    const vizDBScan = new SVGVisualizationWrapper(
-        new Scatter({}),
-        `dbscan-${datasetName}`,
+    const vizDBScan = new SVGVisualizationWrapper(new Scatter({}), `dbscan-${datasetName}`)
+    await vizDBScan.setup(
         initialDataset.map((data: any[]) => {
             return { x: data[0], y: data[1] }
         })
@@ -39,7 +39,7 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             const kmeansValue = kmeans.next()
             doneKmeans = kmeansValue.done === true
             resultKmeans = kmeansValue.value
-            visKMeans.dataUpdate([
+            await visKMeans.dataUpdate([
                 ...resultKmeans.map((label, index) => {
                     return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
                 })
@@ -50,7 +50,7 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             const dbscanValue = dbscan.next()
             doneDBScan = dbscanValue.done === true
             resultDBScan = dbscanValue.value
-            vizDBScan.dataUpdate([
+            await vizDBScan.dataUpdate([
                 ...resultDBScan.map((label, index) => {
                     return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
                 })

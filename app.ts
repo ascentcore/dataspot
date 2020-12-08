@@ -1,6 +1,5 @@
 import HTMLVisualizationWrapper from './lib/visualizations/html/htmlvisualizationwrapper'
 import Table from './lib/visualizations/html/table'
-import Lab from './lib/lab'
 
 const badFitData = [
     [0.2, 0.3855589773275536],
@@ -117,11 +116,12 @@ const badCentroids = [
     // }
 
     const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot', false)
+    await vis1.setup()
 
     const data: any[] = []
     badFitData.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#FF0000' }))
     badCentroids.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#00FF00' }))
     badTestData.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#0000FF' }))
 
-    vis1.dataUpdate(data)
+    await vis1.dataUpdate(data)
 })()

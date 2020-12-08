@@ -10,23 +10,16 @@ import serializeFunction from '../../utils/serialization-utils'
 import { TwoDPointLine, TwoDPointScatter, ThreeDPointScatter } from '../../models/types'
 import SVGMultipleVisualization from './svgmultiple'
 
-export default class SVGVisualizationWrapper extends SVGBaseVisualization {
+export default class SVGVisualizationWrapper {
     private root!: Element | null
 
-    constructor(
-        private visualization: SVGBaseVisualization,
-        private name: string,
-        initialData?: TwoDPointScatter[] | TwoDPointLine[]
-    ) {
-        super(visualization.config, 'wrapper-elem')
-        this.setup(initialData)
-    }
+    constructor(private visualization: SVGBaseVisualization, private name: string) {}
 
     get lab(): Lab {
         return getInstance(Lab)
     }
 
-    setup(initialData?: any): void {
+    async setup(initialData?: any): Promise<void> {
         const dom = new JSDOM(`<!DOCTYPE html><div id="wrapper"/>`)
         this.root = dom.window.document.querySelector('#wrapper')
         this.visualization.setContainer(<HTMLElement>this.root)
@@ -38,7 +31,8 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
 
         if (this.lab) {
             const isMultipleViz = this.visualization instanceof SVGMultipleVisualization
-            this.lab.store(`${this.name}-setup`, {
+
+            await this.lab.store(`${this.name}-setup`, {
                 type: 'd3',
                 config: this.visualization.config,
                 node: this.visualization.getDependency('rootContainer').node().outerHTML,
@@ -47,15 +41,15 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         }
     }
 
-    dataUpdate(
+    async dataUpdate(
         data: TwoDPointScatter[] | TwoDPointLine[] | ThreeDPointScatter[],
         elemClass = this.visualization.elemClass
-    ) {
+    ): Promise<void> {
         // eslint-disable-next-line prettier/prettier
         const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
 
         if (this.lab) {
-            this.lab.store(`${this.name}-data`, {
+            await this.lab.store(`${this.name}-data`, {
                 data,
                 elemClass,
                 dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
@@ -73,6 +67,5 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
                 console.log(err)
             }
         }
-        return dataUpdateExpr
     }
 }
