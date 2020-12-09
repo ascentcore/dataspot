@@ -27,48 +27,48 @@ has_children: false
 •  **bestPosition**: number[] = []
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:19](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/populationMetaheuristic.ts#L19)
+[lib/metaheuristics/populationMetaheuristic.ts:18](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/populationMetaheuristic.ts#L18)
 
 ___
 
 •  **fitness**: number = Infinity
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:17](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/populationMetaheuristic.ts#L17)
+[lib/metaheuristics/populationMetaheuristic.ts:16](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/populationMetaheuristic.ts#L16)
 
 ___
 
 •  **id**: number = 0
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:13](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/populationMetaheuristic.ts#L13)
+[lib/metaheuristics/populationMetaheuristic.ts:12](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/populationMetaheuristic.ts#L12)
 
 ___
 
 •  **position**: number[] = []
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:15](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/populationMetaheuristic.ts#L15)
+[lib/metaheuristics/populationMetaheuristic.ts:14](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/populationMetaheuristic.ts#L14)
 
 ___
 
 •  **velocity**: number[] \| null = null
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:21](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/populationMetaheuristic.ts#L21)
+[lib/metaheuristics/populationMetaheuristic.ts:20](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/populationMetaheuristic.ts#L20)
 
 ## Methods
 
 {:.method-highlight}
-▸ **computeFitness**(`fitnessFunction`: [metaheuristics.FitnessFunction](../metaheuristics_fitnessfunction)): void
+▸ **computeFitness**(`fitnessFunction`: Function): void
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`fitnessFunction` | [metaheuristics.FitnessFunction](../metaheuristics_fitnessfunction) |
+`fitnessFunction` | Function |
 
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:23](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/metaheuristics/populationMetaheuristic.ts#L23)
+[lib/metaheuristics/populationMetaheuristic.ts:22](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/populationMetaheuristic.ts#L22)

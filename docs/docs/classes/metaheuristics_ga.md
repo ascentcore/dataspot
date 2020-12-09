@@ -1,12 +1,12 @@
 ---
 layout: default
-title: PSO
+title: GA
 parent: metaheuristics
 grand_parent: Dataspot
 has_children: false
 ---
 
-# PSO
+# GA
 
 ## Index
 
@@ -22,16 +22,20 @@ has_children: false
 | [fitnessFunction](#fitnessfunction) |
 | [individuals](#individuals) |
 | [iteration](#iteration) |
+| [selection](#selection) |
 
 | Methods |
 |-----------|
 | [canStop](#canstop) |
 | [computeFitness](#computefitness) |
+| [crossover](#crossover) |
 | [fit](#fit) |
 | [fitAsync](#fitasync) |
 | [getBest](#getbest) |
+| [initializeDependencies](#initializedependencies) |
 | [loadState](#loadstate) |
 | [movePosition](#moveposition) |
+| [mutation](#mutation) |
 | [onEndFit](#onendfit) |
 | [preparePopulation](#preparepopulation) |
 | [serialize](#serialize) |
@@ -43,24 +47,24 @@ has_children: false
 ## Constructors
 
 {:.method-highlight}
-\+ **new PSO**(`config?`: [metaheuristics.PSOConfig](../metaheuristics_psoconfig) \| undefined): [metaheuristics.PSO](../metaheuristics_pso)
+\+ **new GA**(`config?`: [metaheuristics.GAConfig](../metaheuristics_gaconfig) \| undefined): [metaheuristics.GA](../metaheuristics_ga)
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`config?` | [metaheuristics.PSOConfig](../metaheuristics_psoconfig) \| undefined |
+`config?` | [metaheuristics.GAConfig](../metaheuristics_gaconfig) \| undefined |
 
-**Returns:** [metaheuristics.PSO](../metaheuristics_pso)
+**Returns:** [metaheuristics.GA](../metaheuristics_ga)
 
 *Overrides [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/metaheuristics/pso.ts:19](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/pso.ts#L19)
+[lib/metaheuristics/ga.ts:22](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L22)
 
 ## Properties
 
-•  **config**: [metaheuristics.PSOConfig](../metaheuristics_psoconfig)
+•  **config**: [metaheuristics.GAConfig](../metaheuristics_gaconfig)
 
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
@@ -72,7 +76,7 @@ ___
 • `Private` **convergence**: [common.Convergence](../common_convergence)
 
 {:.url-source-ref}
-[lib/metaheuristics/pso.ts:19](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/pso.ts#L19)
+[lib/metaheuristics/ga.ts:20](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L20)
 
 ___
 
@@ -110,6 +114,13 @@ ___
 {:.url-source-ref}
 [lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/evolutionaryAlgorithm.ts#L8)
 
+___
+
+• `Private` **selection**: [metaheuristics.selection.Roulette](../metaheuristics_selection_roulette) \| [metaheuristics.selection.Tournament](../metaheuristics_selection_tournament)
+
+{:.url-source-ref}
+[lib/metaheuristics/ga.ts:22](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L22)
+
 ## Methods
 
 {:.method-highlight}
@@ -120,7 +131,7 @@ ___
 *Overrides [metaheuristics.PopulationMetaheuristic](../metaheuristics_populationmetaheuristic).[canStop](../metaheuristics_populationmetaheuristic#canstop)*
 
 {:.url-source-ref}
-[lib/metaheuristics/pso.ts:80](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/pso.ts#L80)
+[lib/metaheuristics/ga.ts:104](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L104)
 
 ___
 
@@ -130,7 +141,25 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/pso.ts:56](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/pso.ts#L56)
+[lib/metaheuristics/ga.ts:96](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L96)
+
+___
+
+{:.method-highlight}
+▸ `Private`**crossover**(`individual`: [metaheuristics.Individual](../metaheuristics_individual), `parent1`: [metaheuristics.Individual](../metaheuristics_individual), `parent2`: [metaheuristics.Individual](../metaheuristics_individual)): void
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`individual` | [metaheuristics.Individual](../metaheuristics_individual) |
+`parent1` | [metaheuristics.Individual](../metaheuristics_individual) |
+`parent2` | [metaheuristics.Individual](../metaheuristics_individual) |
+
+**Returns:** void
+
+{:.url-source-ref}
+[lib/metaheuristics/ga.ts:35](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L35)
 
 ___
 
@@ -185,38 +214,66 @@ ___
 ___
 
 {:.method-highlight}
-▸ **loadState**(`from`: string): void
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`from` | string |
+▸ **initializeDependencies**(): void
 
 **Returns:** void
 
-*Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
-
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/serializable.ts#L14)
+[lib/metaheuristics/ga.ts:108](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L108)
 
 ___
 
 {:.method-highlight}
-▸ `Protected`**movePosition**(`particle`: [metaheuristics.Individual](../metaheuristics_individual)): void
+▸ **loadState**(`config`: string): void
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`particle` | [metaheuristics.Individual](../metaheuristics_individual) |
+`config` | string |
+
+**Returns:** void
+
+*Overrides [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
+
+{:.url-source-ref}
+[lib/metaheuristics/ga.ts:113](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L113)
+
+___
+
+{:.method-highlight}
+▸ `Protected`**movePosition**(`individual`: [metaheuristics.Individual](../metaheuristics_individual), `parent1`: [metaheuristics.Individual](../metaheuristics_individual), `parent2`: [metaheuristics.Individual](../metaheuristics_individual)): void
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`individual` | [metaheuristics.Individual](../metaheuristics_individual) |
+`parent1` | [metaheuristics.Individual](../metaheuristics_individual) |
+`parent2` | [metaheuristics.Individual](../metaheuristics_individual) |
 
 **Returns:** void
 
 *Overrides [metaheuristics.PopulationMetaheuristic](../metaheuristics_populationmetaheuristic).[movePosition](../metaheuristics_populationmetaheuristic#moveposition)*
 
 {:.url-source-ref}
-[lib/metaheuristics/pso.ts:25](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/pso.ts#L25)
+[lib/metaheuristics/ga.ts:75](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L75)
+
+___
+
+{:.method-highlight}
+▸ `Private`**mutation**(`individual`: [metaheuristics.Individual](../metaheuristics_individual)): void
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`individual` | [metaheuristics.Individual](../metaheuristics_individual) |
+
+**Returns:** void
+
+{:.url-source-ref}
+[lib/metaheuristics/ga.ts:51](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L51)
 
 ___
 
@@ -288,7 +345,7 @@ ___
 *Overrides [metaheuristics.PopulationMetaheuristic](../metaheuristics_populationmetaheuristic).[step](../metaheuristics_populationmetaheuristic#step)*
 
 {:.url-source-ref}
-[lib/metaheuristics/pso.ts:62](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/pso.ts#L62)
+[lib/metaheuristics/ga.ts:80](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/ga.ts#L80)
 
 ___
 

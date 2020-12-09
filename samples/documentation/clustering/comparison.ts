@@ -35,7 +35,7 @@ export default (async () => {
             const labels = algorithm.fit(ds)
             const currentSet: any[] = []
             ds.forEach((data: number[], i: number) => {
-                currentSet.push({ x: data[0], y: data[1], r: 2, color: labels[i] })
+                currentSet.push({ x: data[0], y: data[1], fixedRadius: 2, stroke: 'rgba(0,0,0,.3)', color: labels[i] })
             })
 
             datasets[algIdx].push(currentSet)
@@ -46,7 +46,7 @@ export default (async () => {
         const dSet = datasets[index]
         dSet.forEach((ds: any[], dsIndex: number) => {
             const scatter = new Scatter({})
-            const title = new Title({ text: `${algorithmList[dsIndex]} - ${keys[dsIndex]}` })
+            const title = new Title({ text: `${algorithmList[index]} - ${keys[dsIndex]}` })
 
             const visKMeans = new SVGMultipleVisualization(
                 { margin: { top: 30, left: 15, right: 15, bottom: 0 }, width: 200, height: 200 },

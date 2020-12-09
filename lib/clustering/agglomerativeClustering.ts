@@ -1,6 +1,6 @@
-import hierarchy, { HierarchyPoints, singleLinkage, hCut } from '@/hierarchy/agglomerative'
-import { EvolutionaryConfig } from '@/common/evolutionaryAlgorithm'
-import distances, { DistanceMeasurement, euclideanDistance } from '@/math/distances'
+import hierarchy, { HierarchyPoints, singleLinkage, hCut } from '@ascentcore/dataspot/hierarchy/agglomerative'
+import { EvolutionaryConfig } from '@ascentcore/dataspot/common/evolutionaryAlgorithm'
+import distances, { DistanceMeasurement, euclideanDistance } from '@ascentcore/dataspot/math/distances'
 import ClusteringAlgorithm from './clusteringBase'
 
 export class AglomerativeClusteringConfig extends EvolutionaryConfig {

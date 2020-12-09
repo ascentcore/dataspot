@@ -15,11 +15,11 @@ of clustering algorithms
 
 Running sample for the current set of clustering datasets:
 
-**`sample_only`** documentation/clusteringDataset
+**`sample_only`** documentation/clusteringComparison
 
 <div class="running-sample">
-    <span class="running-sample-container" data-ref="documentation/clusteringDataset"></span>
-    <script src='/dataspot/samples/clusteringDataset.js' title="documentation/clusteringDataset"></script>
+    <span class="running-sample-container" data-ref="documentation/clusteringComparison"></span>
+    <script src='/dataspot/samples/clusteringComparison.js' title="documentation/clusteringComparison"></script>
 </div>
 
 ## Index
@@ -50,7 +50,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:19](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/datasets/clustering.ts#L19)
+[lib/datasets/clustering.ts:18](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/datasets/clustering.ts#L18)
 
 ___
 
@@ -64,12 +64,12 @@ See "blob" representation from the running page sample
 
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
-`pointsPerCluster` | number | 200 | number of points to be generated / cluster  |
+`pointsPerCluster` | number | 100 | number of points to be generated / cluster  |
 
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:43](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/datasets/clustering.ts#L43)
+[lib/datasets/clustering.ts:46](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/datasets/clustering.ts#L46)
 
 ___
 
@@ -89,7 +89,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:69](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/datasets/clustering.ts#L69)
+[lib/datasets/clustering.ts:71](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/datasets/clustering.ts#L71)
 
 ___
 
@@ -103,12 +103,12 @@ See "Concentric Rings" representation from the running page sample
 
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
-`count` | number | 30 | number of points / row and number of rows to generate  |
+`count` | number | 50 | number of points / row and number of rows to generate  |
 
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:89](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/datasets/clustering.ts#L89)
+[lib/datasets/clustering.ts:91](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/datasets/clustering.ts#L91)
 
 ___
 
@@ -127,7 +127,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:105](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/datasets/clustering.ts#L105)
+[lib/datasets/clustering.ts:107](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/datasets/clustering.ts#L107)
 
 ___
 
@@ -140,4 +140,4 @@ See "Potato" representation from the running page sample
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:127](https://github.com/ascentcore/dataspot/blob/dbc9f09/lib/datasets/clustering.ts#L127)
+[lib/datasets/clustering.ts:129](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/datasets/clustering.ts#L129)

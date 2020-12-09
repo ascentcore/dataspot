@@ -1,12 +1,12 @@
 ---
 layout: default
-title: MultivariableLinearRegression
+title: LogisticRegression
 parent: regressions
 grand_parent: Dataspot
 has_children: false
 ---
 
-# MultivariableLinearRegression
+# LogisticRegression
 
 ## Index
 
@@ -32,4 +32,4 @@ Name | Type |
 **Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/multivariableLinearRegression.ts:6](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/regressions/multivariableLinearRegression.ts#L6)
+[lib/regressions/logisticRegression.ts:7](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/regressions/logisticRegression.ts#L7)

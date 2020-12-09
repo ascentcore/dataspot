@@ -1,4 +1,4 @@
-import EvolutionaryAlgorithm, { EvolutionaryConfig } from '@/common/evolutionaryAlgorithm'
+import EvolutionaryAlgorithm, { EvolutionaryConfig } from '@ascentcore/dataspot/common/evolutionaryAlgorithm'
 
 /**
  * Base class for any clustering algorithms.
