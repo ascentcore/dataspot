@@ -5,10 +5,11 @@ import { FunctioDefinitionMesh } from '../../models/types'
 const OrbitControls = require('three-orbit-controls')(THREE)
 
 export default class MeshPlot extends ThreeBaseVisualization {
-    setup() {}
+    constructor(config: any, elemClass = 'mesh-elem') {
+        super(config, elemClass)
+    }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    dataUpdate(data: FunctioDefinitionMesh) {
+    private updateFn(data: FunctioDefinitionMesh) {
         const { three, renderer, scene } = this.dependencies
         const { segments, width, height } = this.config
 
@@ -118,11 +119,24 @@ export default class MeshPlot extends ThreeBaseVisualization {
                 Object.assign(this.dependencies, { graphMesh, scene, camera, axesHelper })
             }
         )
-
-        return null
     }
 
-    destroy() {
+    public setup(initialData?: FunctioDefinitionMesh) {
+        if (initialData) {
+            this.updateFn(initialData)
+        }
+    }
+
+    public getDataUpdateFn() {
+        return this.updateFn
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    public dataUpdate(data: FunctioDefinitionMesh) {
+        this.updateFn(data)
+    }
+
+    public destroy() {
         const { graphMesh, scene, camera, axesHelper } = this.dependencies
         graphMesh.material.dispose()
         graphMesh.geometry.dispose()

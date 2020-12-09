@@ -27,10 +27,9 @@ export default function Visualization({ db, docName, rev }) {
 
     useEffect(() => {
         db.get(`${docName}-setup`).then(function(setup) {
-            console.log('setup')
-            const { config, prepareDependenciesExpr, node, type } = setup
+            const { config, node, type } = setup
 
-            const newBlock = {
+            const block = {
                 dependencies: {
                     d3,
                     palette: d3.scaleOrdinal(d3.schemeAccent),
@@ -41,13 +40,9 @@ export default function Visualization({ db, docName, rev }) {
                 type
             }
 
-            const globalsExpr = prepareDependenciesExpr.replace(/this\./g, 'block.')
-
             // eslint-disable-next-line no-new-func
-            const prepareDependencies = Function('block', globalsExpr)
-            prepareDependencies(newBlock)
 
-            setBlock(newBlock)
+            setBlock(block)
             setNode(node)
         })
     }, [])

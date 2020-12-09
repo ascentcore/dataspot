@@ -20,45 +20,40 @@ export default class SVGVisualizationWrapper {
         return getInstance(Lab)
     }
 
-    async setup(initialData?: { data: any; elemClass: string }[]): Promise<void> {
+    async setup(initialData: { data: any; elemClass: string }[] = []): Promise<void> {
         const dom = new JSDOM(`<!DOCTYPE html><div id="wrapper"/>`)
         this.root = dom.window.document.querySelector('#wrapper')
         this.visualization.setContainer(<HTMLElement>this.root)
-        this.visualization.setup()
-
-        if (initialData) {
-            // eslint-disable-next-line no-restricted-syntax
-            for (const elem of initialData) {
-                await this.dataUpdate(elem.data, elem.elemClass)
-            }
+        if (this.visualization instanceof SVGMultipleVisualization) {
+            this.visualization.setup(initialData)
+        } else {
+            this.visualization.setup(
+                (initialData.find((elem) => elem.elemClass === this.visualization.elemClass) || {}).data
+            )
         }
 
         if (this.lab) {
-            const isMultipleViz = this.visualization instanceof SVGMultipleVisualization
-
             await this.lab.store(`${this.name}-setup`, {
                 type: 'd3',
                 config: this.visualization.config,
-                node: this.visualization.getDependency('rootContainer').node().outerHTML,
-                prepareDependenciesExpr: isMultipleViz ? '' : serializeFunction(this.visualization.setup, 'setup')
+                node: this.visualization.getDependency('rootContainer').node().outerHTML
             })
         }
     }
 
     async dataUpdate(
         data: TwoDPointScatter[] | TwoDPointLine[] | ThreeDPointScatter[],
-        elemClass = this.visualization.elemClass
+        elemClass: string
     ): Promise<void> {
-        // eslint-disable-next-line prettier/prettier
-        const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
-
         if (this.lab) {
             await this.lab.store(`${this.name}-data`, {
                 data,
                 elemClass,
-                dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
+                dataUpdateExpr: serializeFunction(this.visualization.getDataUpdateFn(elemClass), 'updateFn')
             })
         } else {
+            // eslint-disable-next-line prettier/prettier
+            this.visualization.dataUpdate(data, elemClass)
             const svgContent = this.visualization.getDependency('rootContainer').node().outerHTML
             const buf = Buffer.from(svgContent)
             try {

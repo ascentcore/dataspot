@@ -4,9 +4,11 @@ import ThreeBaseVisualization from './threebase'
 import { ThreeDPointScatter } from '../../models/types'
 
 export default class Sphere extends ThreeBaseVisualization {
-    setup() {}
+    constructor(config: any, elemClass = 'sphere-elem') {
+        super(config, elemClass)
+    }
 
-    dataUpdate(data: ThreeDPointScatter[]) {
+    private updateFn(data: ThreeDPointScatter[]) {
         const { scene } = this.dependencies
         let { spheres } = this.dependencies
         if (!spheres) {
@@ -27,10 +29,23 @@ export default class Sphere extends ThreeBaseVisualization {
                 mesh.position.z = data[index].z
             })
         }
-        return null
     }
 
-    destroy() {
+    public setup(initialData?: ThreeDPointScatter[]) {
+        if (initialData) {
+            this.updateFn(initialData)
+        }
+    }
+
+    public getDataUpdateFn() {
+        return this.updateFn
+    }
+
+    public dataUpdate(data: ThreeDPointScatter[]) {
+        this.updateFn(data)
+    }
+
+    public destroy() {
         const { scene, spheres } = this.dependencies
         spheres.forEach((mesh: any) => {
             mesh.material.dispose()

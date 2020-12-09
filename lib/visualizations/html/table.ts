@@ -6,8 +6,6 @@ export default class Table extends HTMLBaseVisualization {
         super(config, elemClass)
     }
 
-    public setup() {}
-
     private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], elemClass: string): void {
         const { width, border, borderCollapse } = this.config
         const { document, rootContainer } = this.dependencies
@@ -46,8 +44,17 @@ export default class Table extends HTMLBaseVisualization {
         rootContainer.querySelector(`.${elemClass}`).appendChild(table)
     }
 
-    public dataUpdate(data: TwoDPointLine[] | TwoDPointScatter[], elemClass = this.elemClass) {
-        this.updateFn(data, elemClass)
+    public setup(initialData?: TwoDPointLine[] | TwoDPointScatter[]) {
+        if (initialData) {
+            this.updateFn(initialData, this.elemClass)
+        }
+    }
+
+    public getDataUpdateFn() {
         return this.updateFn
+    }
+
+    public dataUpdate(data: TwoDPointLine[] | TwoDPointScatter[]) {
+        this.updateFn(data, this.elemClass)
     }
 }

@@ -6,46 +6,6 @@ export default class Axis extends SVGBaseVisualization {
         super(config, elemClass)
     }
 
-    public setup() {
-        const { margin, width, height, domainX, domainY } = this.config
-        const { d3, rootContainer } = this.dependencies
-        if (domainX && domainX.min !== undefined && domainX.max !== undefined) {
-            const x = d3
-                .scaleLinear()
-                .domain([domainX.min, domainX.max])
-                .nice()
-                .range([margin.left, width - margin.right])
-
-            rootContainer
-                .select(`.${this.elemClass}`)
-                .append('g')
-                .attr('transform', `translate(0,${height - margin.bottom})`)
-                .call(
-                    d3
-                        .axisBottom(x)
-                        .ticks(width / 80)
-                        .tickSizeOuter(0)
-                )
-            Object.assign(this.dependencies, { x })
-        }
-
-        if (domainY && domainY.min !== undefined && domainY.max !== undefined) {
-            const y = d3
-                .scaleLinear()
-                .domain([domainY.min, domainY.max])
-                .nice()
-                .range([height - margin.bottom, margin.top])
-
-            rootContainer
-                .select(`.${this.elemClass}`)
-                .append('g')
-                .attr('transform', `translate(${margin.left},0)`)
-                .call(d3.axisLeft(y))
-
-            Object.assign(this.dependencies, { y })
-        }
-    }
-
     private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], elemClass: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
@@ -99,8 +59,55 @@ export default class Axis extends SVGBaseVisualization {
         }
     }
 
-    public dataUpdate(data: TwoDPointLine[], elemClass = this.elemClass) {
-        this.updateFn(data, elemClass)
+    public setup(initialData?: TwoDPointLine[] | TwoDPointScatter[]) {
+        const { margin, width, height, domainX, domainY } = this.config
+        const { d3, rootContainer } = this.dependencies
+        if (domainX && domainX.min !== undefined && domainX.max !== undefined) {
+            const x = d3
+                .scaleLinear()
+                .domain([domainX.min, domainX.max])
+                .nice()
+                .range([margin.left, width - margin.right])
+
+            rootContainer
+                .select(`.${this.elemClass}`)
+                .append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(
+                    d3
+                        .axisBottom(x)
+                        .ticks(width / 80)
+                        .tickSizeOuter(0)
+                )
+            Object.assign(this.dependencies, { x })
+        }
+
+        if (domainY && domainY.min !== undefined && domainY.max !== undefined) {
+            const y = d3
+                .scaleLinear()
+                .domain([domainY.min, domainY.max])
+                .nice()
+                .range([height - margin.bottom, margin.top])
+
+            rootContainer
+                .select(`.${this.elemClass}`)
+                .append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+
+            Object.assign(this.dependencies, { y })
+        }
+
+        if (initialData) {
+            this.updateFn(initialData, this.elemClass)
+        }
+    }
+
+    public getDataUpdateFn() {
         return this.updateFn
+    }
+
+    public dataUpdate(data: TwoDPointLine[] | TwoDPointScatter[]) {
+        this.updateFn(data, this.elemClass)
     }
 }

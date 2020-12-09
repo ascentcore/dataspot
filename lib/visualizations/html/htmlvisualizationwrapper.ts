@@ -20,45 +20,32 @@ export default class HTMLVisualizationWrapper {
         return getInstance(Lab)
     }
 
-    async setup(initialData?: { data: any; elemClass: string }[]): Promise<void> {
+    async setup(initialData?: TwoDPointLine | TwoDPointScatter): Promise<void> {
         const dom = new JSDOM(`<!DOCTYPE html><div id="root"/>`)
         this.root = dom.window.document.querySelector('#root')
 
         this.visualization.injectDOM(dom.window.document)
         this.visualization.setContainer(<HTMLElement>this.root)
-        this.visualization.setup()
-
-        if (initialData) {
-            // eslint-disable-next-line no-restricted-syntax
-            for (const elem of initialData) {
-                await this.dataUpdate(elem.data, elem.elemClass)
-            }
-        }
+        this.visualization.setup(initialData)
 
         if (this.lab) {
             await this.lab.store(`${this.name}-setup`, {
                 type: 'html',
                 config: this.visualization.config,
-                node: this.visualization.getDependency('rootContainer').outerHTML,
-                prepareDependenciesExpr: serializeFunction(this.visualization.setup, 'setup')
+                node: this.visualization.getDependency('rootContainer').outerHTML
             })
         }
     }
 
-    async dataUpdate(
-        data: TwoDPointScatter[] | TwoDPointLine[],
-        elemClass = this.visualization.elemClass
-    ): Promise<void> {
-        // eslint-disable-next-line prettier/prettier
-        const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
-
+    async dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass: string): Promise<void> {
         if (this.lab) {
             await this.lab.store(`${this.name}-data`, {
                 data,
                 elemClass,
-                dataUpdateExpr: dataUpdateExpr ? serializeFunction(dataUpdateExpr, 'updateFn') : null
+                dataUpdateExpr: serializeFunction(this.visualization.getDataUpdateFn(), 'updateFn')
             })
         } else if (this.asHtml) {
+            this.visualization.dataUpdate(data, elemClass)
             fs.writeFile(
                 `${getReportFolder()}/${this.name}-output.html`,
                 `<html><body>${this.visualization.getDependency('rootContainer').outerHTML}</body></html>`,
@@ -69,6 +56,7 @@ export default class HTMLVisualizationWrapper {
                 }
             )
         } else {
+            this.visualization.dataUpdate(data, elemClass)
             nodeHtmlToImage({
                 output: `${getReportFolder()}/${this.name}-output.png`,
                 html: `<html><body>${this.visualization.getDependency('rootContainer').outerHTML}</body></html>`

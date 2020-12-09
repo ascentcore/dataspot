@@ -16,7 +16,10 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
         distanceFn: 'manhattanDistance'
     }).fitAsync(initialDataset)
 
-    const visKMeans = new SVGVisualizationWrapper(new Scatter({}, 'scatter-elem'), `kmeans-${datasetName}`)
+    const visKMeans = new SVGVisualizationWrapper(
+        new Scatter({ stroke: false }, 'scatter-elem'),
+        `kmeans-${datasetName}`
+    )
 
     await visKMeans.setup([
         {
@@ -26,7 +29,10 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             elemClass: 'scatter-elem'
         }
     ])
-    const vizDBScan = new SVGVisualizationWrapper(new Scatter({}, 'scatter-elem'), `dbscan-${datasetName}`)
+    const vizDBScan = new SVGVisualizationWrapper(
+        new Scatter({ stroke: false }, 'scatter-elem'),
+        `dbscan-${datasetName}`
+    )
     await vizDBScan.setup([
         {
             data: initialDataset.map((data: any[]) => {
@@ -45,22 +51,28 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             const kmeansValue = kmeans.next()
             doneKmeans = kmeansValue.done === true
             resultKmeans = kmeansValue.value
-            await visKMeans.dataUpdate([
-                ...resultKmeans.map((label, index) => {
-                    return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
-                })
-            ])
+            await visKMeans.dataUpdate(
+                [
+                    ...resultKmeans.map((label, index) => {
+                        return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
+                    })
+                ],
+                'scatter-elem'
+            )
         }
 
         if (!doneDBScan) {
             const dbscanValue = dbscan.next()
             doneDBScan = dbscanValue.done === true
             resultDBScan = dbscanValue.value
-            await vizDBScan.dataUpdate([
-                ...resultDBScan.map((label, index) => {
-                    return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
-                })
-            ])
+            await vizDBScan.dataUpdate(
+                [
+                    ...resultDBScan.map((label, index) => {
+                        return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
+                    })
+                ],
+                'scatter-elem'
+            )
         }
 
         // eslint-disable-next-line no-await-in-loop

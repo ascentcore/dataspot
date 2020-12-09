@@ -116,7 +116,7 @@ const badCentroids = [
         console.log('Unable to connect to lab...')
     }
 
-    const vis1 = new HTMLVisualizationWrapper(new Table({}), 'table-plot', false)
+    const vis1 = new HTMLVisualizationWrapper(new Table({}, 'table-elem'), 'table-plot', false)
     await vis1.setup()
 
     const data: any[] = []
@@ -124,5 +124,5 @@ const badCentroids = [
     badCentroids.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#00FF00' }))
     badTestData.forEach((point: any) => data.push({ x: point[0], y: point[1], color: '#0000FF' }))
 
-    await vis1.dataUpdate(data)
+    await vis1.dataUpdate(data, 'table-elem')
 })()
