@@ -34,6 +34,9 @@ export default function MyApp({ Component, pageProps }) {
                     <a href='/clustering' className='btn btn-link'>
                         Clustering
                     </a>
+                    <a href='/fitting-circles' className='btn btn-link'>
+                        Fitting Circles
+                    </a>
                 </section>
             </header>
             <div className='container'>

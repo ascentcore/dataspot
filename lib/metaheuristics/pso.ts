@@ -23,17 +23,16 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
     }
 
     protected movePosition(particle: Individual) {
-        const { dimensions } = this.fitnessFunction
         const { inertiaWeight, cognitiveWeight, socialWeight, bestPosition } = this.config
 
         if (!particle.velocity) {
             particle.velocity = []
-            for (let i = 0; i < dimensions.length; i++) {
-                const d = dimensions[i].max - dimensions[i].min
+            for (let i = 0; i < this.dimensions.length; i++) {
+                const d = this.dimensions[i].max - this.dimensions[i].min
                 particle.velocity.push(Random.random(-d, d))
             }
         }
-        for (let i = 0; i < dimensions.length; i++) {
+        for (let i = 0; i < this.dimensions.length; i++) {
             const vMomentum = inertiaWeight * particle.velocity[i]
 
             const d1 = particle.bestPosition[i] - particle.position[i]
@@ -45,12 +44,18 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
             particle.velocity[i] = vMomentum + vCognitive + vSocial
             particle.position[i] = particle.position[i] + particle.velocity[i]
 
-            if (particle.position[i] > dimensions[i].max) {
-                particle.position[i] = dimensions[i].max
+            if (particle.position[i] > this.dimensions[i].max) {
+                particle.position[i] = this.dimensions[i].max
             }
-            if (particle.position[i] < dimensions[i].min) {
-                particle.position[i] = dimensions[i].min
+            if (particle.position[i] < this.dimensions[i].min) {
+                particle.position[i] = this.dimensions[i].min
             }
+        }
+    }
+
+    public computeFitness() {
+        for (let i = 0; i < this.individuals.length; i++) {
+            this.individuals[i].computeFitness(this.fitnessFunction)
         }
     }
 
@@ -62,21 +67,17 @@ export default class PSO extends PopulationMetaheuristic<PSOConfig> {
         for (let i = 0; i < this.individuals.length; i++) {
             this.movePosition(this.individuals[i])
         }
-        for (let i = 0; i < this.individuals.length; i++) {
-            this.individuals[i].computeFitness(this.fitnessFunction)
-        }
+        this.computeFitness()
         this.sortPopulation()
         this.updateGlobalBest()
 
         if (this.convergence) {
             const { convergenceDecimalsAccuracy } = this.config
-            this.convergence.addValue(
-                this.fitnessFunction.calculate(bestPosition).toFixed(convergenceDecimalsAccuracy)
-            )
+            this.convergence.addValue(this.fitnessFunction(bestPosition).toFixed(convergenceDecimalsAccuracy))
         }
     }
 
-    canStop(): boolean {
+    public canStop(): boolean {
         return this.convergence && this.convergence.hadConverged()
     }
 }

@@ -11,7 +11,6 @@ import Sphere from '../../lib/visualizations/three/sphere'
 import ThreeMultipleVisualization from '../../lib/visualizations/three/threemultiple'
 
 import PSO, { PSOConfig } from '../../lib/metaheuristics/pso'
-import FitnessFunction from '../../lib/metaheuristics/fitnessFunction'
 
 function getData(ff: (x: number) => number, min = -1, max = 1, step = 0.01) {
     const data = []
@@ -53,12 +52,7 @@ function Representation({
         let metaheuristicValue = []
 
         const pso = new PSO({ populationSize: 3 } as PSOConfig)
-        const psoGenerator = pso.fitAsync(
-            Object.assign(new FitnessFunction(), {
-                calculate: ff,
-                dimensions: [{ min: domain[0], max: domain[1] }]
-            })
-        )
+        const psoGenerator = pso.fitAsync(ff, [{ min: domain[0], max: domain[1] }])
 
         const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -114,16 +108,11 @@ function Representation({
         let doneMetaheuristic = false
         let metaheuristicValue = []
 
-        const pso = new PSO({ populationSize: 50 } as PSOConfig)
-        const psoGenerator = pso.fitAsync(
-            Object.assign(new FitnessFunction(), {
-                calculate: ff,
-                dimensions: [
-                    { min: domain[0], max: domain[1] },
-                    { min: domain[0], max: domain[1] }
-                ]
-            })
-        )
+        const pso = new PSO({ populationSize: 3 } as PSOConfig)
+        const psoGenerator = pso.fitAsync(ff, [
+            { min: domain[0], max: domain[1] },
+            { min: domain[0], max: domain[1] }
+        ])
 
         const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -203,9 +192,9 @@ const reps = [
         ff: Ackley.calculate,
         domain: Ackley.DOMAIN,
         globalM: Ackley.GLOBAL_M,
-        radius: 3,
         resultMin: 0,
-        resultMax: 25
+        resultMax: 25,
+        radius: 0.3
     },
     {
         name: 'Particle Swarm Optimisation - Ackley 3D',
@@ -221,9 +210,9 @@ const reps = [
         ff: Schwefel.calculate,
         domain: Schwefel.DOMAIN,
         globalM: Schwefel.GLOBAL_M,
-        radius: 3,
         resultMin: 0,
-        resultMax: 420
+        resultMax: 420,
+        radius: 5
     },
     {
         name: 'Particle Swarm Optimisation - Schwefel 3D',

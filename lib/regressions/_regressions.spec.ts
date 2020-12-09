@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import LinearRegression from './linearRegression'
-import { mseCostFunction } from '../functions/optimizers'
+import { crossEntropyCostFunction, mseCostFunction } from '../functions/optimizers'
 import MultivariableLinearRegression from './multivariableLinearRegression'
 import PolynomialRegression from './polynomialRegression'
 import { RegressionOutputType } from './utilities'
+import LogisticRegression from './logisticRegression'
 
 describe('Regressions', () => {
     it('Linear Regression', async () => {
@@ -26,7 +26,10 @@ describe('Regressions', () => {
 
     it('Multivariable Linear Regression', async () => {
         const multivariableLinearRegression = MultivariableLinearRegression.fit(
-            [[1, 2], [2, 3]],
+            [
+                [1, 2],
+                [2, 3]
+            ],
             [3, 5],
             0.001,
             2,
@@ -72,5 +75,42 @@ describe('Regressions', () => {
         }
         expect(result.biasAndWeights).toEqual([0.3763461538461539, 0.2637018197663789, 0.30354392103052863])
         expect(result.costHistory).toEqual([3.7475961538461537, 2.9264552670781123])
+    })
+
+    it('Logistic Regression', async () => {
+        const logisticRegression = LogisticRegression.fit(
+            [
+                [1, 1],
+                [1.5, 1],
+                [3, 1],
+                [4, 2],
+                [6, 2],
+                [1.5, 3],
+                [3, 3],
+                [2, 4],
+                [3.5, 4],
+                [4.5, 4],
+                [4.5, 5],
+                [5, 6]
+            ],
+            [0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1],
+            0.1,
+            2,
+            crossEntropyCostFunction
+        )
+        let done: boolean | undefined = false
+        let result: RegressionOutputType = {
+            biasAndWeights: [],
+            costHistory: []
+        }
+        while (!done) {
+            const logisticRegressionValue = logisticRegression.next()
+            done = logisticRegressionValue.done
+            if (done) {
+                result = <RegressionOutputType>logisticRegressionValue.value
+            }
+        }
+        expect(result.biasAndWeights).toEqual([0.016458490179848392, 0.08119041916613032, 0.05157735232305538])
+        expect(result.costHistory).toEqual([0.6931471805599453, 0.6689158503950066])
     })
 })

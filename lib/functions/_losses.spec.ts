@@ -3,9 +3,8 @@ import { crossEntropy, hinge, meanSquaredError, l2, meanAbsoluteError, supportVe
 
 describe('Loss Functions', () => {
     it('Cross-Entropy', async () => {
-        expect(MathUtils.roundToPrecision(crossEntropy([0.6, 0.3, 0.1], [1, 0, 0]), 4)).toBe(0.5108)
-        expect(MathUtils.roundToPrecision(crossEntropy([0.6, 0.4, 0.0], [0, 1, 0]), 4)).toBe(0.9163)
-        expect(MathUtils.roundToPrecision(crossEntropy([0.9, 0.0, 0.1], [0, 1, 0]), 4)).toBe(Infinity)
+        expect(MathUtils.roundToPrecision(crossEntropy([0.6, 0.3, 0.1], [1, 0, 0]), 4)).toBe(0.3243)
+        expect(MathUtils.roundToPrecision(crossEntropy([0.9, 0.4, 0.1], [1, 1, 0]), 4)).toBe(0.3757)
     })
 
     it('Hinge', async () => {

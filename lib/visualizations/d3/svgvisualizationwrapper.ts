@@ -7,7 +7,8 @@ import SVGBaseVisualization from './svgbase'
 
 import serializeFunction from '../../utils/serialization-utils'
 
-import { TwoDPointLine, TwoDPointScatter } from '../../models/types'
+import { TwoDPointLine, TwoDPointScatter, ThreeDPointScatter } from '../../models/types'
+import SVGMultipleVisualization from './svgmultiple'
 
 export default class SVGVisualizationWrapper extends SVGBaseVisualization {
     private root!: Element | null
@@ -36,16 +37,20 @@ export default class SVGVisualizationWrapper extends SVGBaseVisualization {
         }
 
         if (this.lab) {
+            const isMultipleViz = this.visualization instanceof SVGMultipleVisualization
             this.lab.store(`${this.name}-setup`, {
                 type: 'd3',
                 config: this.visualization.config,
                 node: this.visualization.getDependency('rootContainer').node().outerHTML,
-                prepareDependenciesExpr: serializeFunction(this.visualization.setup, 'setup')
+                prepareDependenciesExpr: isMultipleViz ? '' : serializeFunction(this.visualization.setup, 'setup')
             })
         }
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass = this.visualization.elemClass) {
+    dataUpdate(
+        data: TwoDPointScatter[] | TwoDPointLine[] | ThreeDPointScatter[],
+        elemClass = this.visualization.elemClass
+    ) {
         // eslint-disable-next-line prettier/prettier
         const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
 
