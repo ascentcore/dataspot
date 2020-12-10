@@ -51,10 +51,31 @@ export class MathUtils {
         const intMax = Math.floor(max)
         return Math.floor(MathUtils.rand() * (intMax - intMin)) + intMin
     }
+
+    static getGaussRandomGenerator(): (mu: number, std: number) => number {
+        const generatedRadoms: number[] = []
+        // returns 0 mean unit standard deviation random number
+        const zeroMeanUnitStandardGaussRandom = (): number => {
+            if (!generatedRadoms.length) {
+                const u = 2 * Math.random() - 1
+                const v = 2 * Math.random() - 1
+                const r = u * u + v * v
+                if (r === 0 || r > 1) return zeroMeanUnitStandardGaussRandom()
+                const c = Math.sqrt((-2 * Math.log(r)) / r)
+                generatedRadoms.push(u * c, v * c)
+            }
+            return generatedRadoms.shift() || 0.0
+        }
+        // returns random number with gauss distribution
+        const gaussRandom = (mu: number, std: number) => {
+            return mu + zeroMeanUnitStandardGaussRandom() * std
+        }
+        return gaussRandom
+    }
 }
 
 export class VectorUtils {
-    static euclideanDistance(v1: number[], v2: number[]): number {
+    static l2Distance(v1: number[], v2: number[]): number {
         if (!v1 || !v2 || v1.length !== v2.length) {
             throw new Error(`Missing ponts data ${v1}, ${v2}`)
         }
@@ -62,7 +83,11 @@ export class VectorUtils {
         for (let i = 0; i < v1.length; i++) {
             sum += (v1[i] - v2[i]) ** 2
         }
-        return Math.sqrt(sum)
+        return sum
+    }
+
+    static euclideanDistance(v1: number[], v2: number[]): number {
+        return Math.sqrt(this.l2Distance(v1, v2))
     }
 
     static manhattanDistance(v1: number[], v2: number[]): number {
