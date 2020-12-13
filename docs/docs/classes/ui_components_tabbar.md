@@ -47,15 +47,15 @@ Name | Type | Default value |
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[constructor](../ui_common_basecomponent#constructor)*
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:10
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:10](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L10)
 
 ## Properties
 
 • `Private` **activeTabIndex**: number \| undefined
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:10
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:10](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L10)
 
 ___
 
@@ -63,15 +63,15 @@ ___
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[container](../ui_common_basecomponent#container)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:4
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
 •  **containers**: HTMLElement[] = []
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:8
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:8](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L8)
 
 ___
 
@@ -79,22 +79,22 @@ ___
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[root](../ui_common_basecomponent#root)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:2
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L2)
 
 ___
 
 •  **tabs**: HTMLElement[] = []
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:4
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L4)
 
 ___
 
 •  **titles**: HTMLElement[] = []
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:6
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L6)
 
 ## Methods
 
@@ -105,8 +105,8 @@ lib/ui/components/tabBar.ts:6
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[destroy](../ui_common_basecomponent#destroy)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:31
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -126,8 +126,8 @@ Name | Type |
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[getElement](../ui_common_basecomponent#getelement)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:6
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L6)
 
 ___
 
@@ -142,8 +142,8 @@ Name | Type |
 
 **Returns:** void
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:37
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:37](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L37)
 
 ___
 
@@ -159,5 +159,5 @@ Name | Type |
 
 **Returns:** void
 
-{:.source-ref}
-lib/ui/components/tabBar.ts:33
+{:.url-source-ref}
+[lib/ui/components/tabBar.ts:33](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/components/tabBar.ts#L33)

@@ -34,8 +34,8 @@ Name | Type |
 
 **Returns:** number
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:12
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:12](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L12)
 
 ___
 
@@ -44,8 +44,8 @@ ___
 
 **Returns:** DomainDefinition[]
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:11
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:11](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L11)
 
 ___
 
@@ -60,8 +60,8 @@ Name | Type |
 
 **Returns:** void
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:13
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:13](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L13)
 
 ___
 
@@ -77,5 +77,5 @@ Name | Type |
 
 **Returns:** void
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:14
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:14](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L14)

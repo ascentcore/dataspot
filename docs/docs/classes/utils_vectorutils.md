@@ -8,6 +8,8 @@ has_children: false
 
 # VectorUtils
 
+Vector Utils
+
 ## Index
 
 | Methods |
@@ -27,7 +29,7 @@ has_children: false
 | [scalarDivision](#scalardivision) |
 | [scalarMultiplication](#scalarmultiplication) |
 | [scalarSubtraction](#scalarsubtraction) |
-| [standardDevision](#standarddevision) |
+| [standardDeviation](#standarddeviation) |
 | [subtraction](#subtraction) |
 | [sumElements](#sumelements) |
 
@@ -36,116 +38,131 @@ has_children: false
 {:.method-highlight}
 ▸ `Static`**addition**(`v1`: number[], `v2`: number[]): number[]
 
+Returns the sum of elements in two vectors at each index
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | input vector 1 |
+`v2` | number[] | input vector 2  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:88](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L88)
+[lib/utils/vectorUtils.ts:53](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L53)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**average**(`arr`: number[][]): number[]
 
+Returns the average (per dimension) of elements in a multidimensional space
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`arr` | number[][] |
+Name | Type | Description |
+------ | ------ | ------ |
+`arr` | number[][] | input vector  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:157](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L157)
+[lib/utils/vectorUtils.ts:162](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L162)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**averageElements**(`arr`: number[]): number
 
+Returns the average of elements in an array
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`arr` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`arr` | number[] | input array  |
 
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:148](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L148)
+[lib/utils/vectorUtils.ts:154](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L154)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**division**(`v1`: number[], `v2`: number[]): number[]
 
+Returns the division of elements in two vectors at each index
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | input vector 1 |
+`v2` | number[] | input vector 2  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:115](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L115)
+[lib/utils/vectorUtils.ts:97](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L97)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**euclideanDistance**(`v1`: number[], `v2`: number[]): number
 
+Euclidean distance between two points in Euclidean space is the length of a line segment between the two points.
+It can be calculated from the Cartesian coordinates of the points using the Pythagorean theorem,therefore occasionally being called the Pythagorean distance.
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | input vector 1 |
+`v2` | number[] | input vector 2  |
 
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:57](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L57)
+[lib/utils/vectorUtils.ts:12](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L12)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**indexOfSmallest**(`v`: number[]): number
 
+Returns the index of the smallest value in an array
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v` | number[] | input array  |
 
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:171](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L171)
+[lib/utils/vectorUtils.ts:180](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L180)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**manhattanDistance**(`v1`: number[], `v2`: number[]): number
 
+The Manhattan distance between two vectors (city blocks) is equal to the one-norm of the distance between the vectors. The distance function (also called a “metric”) involved is also called the “taxi cab” metric.
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | input vector 1 |
+`v2` | number[] | input vector 2  |
 
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:68](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L68)
+[lib/utils/vectorUtils.ts:29](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L29)
 
 ___
 
@@ -161,7 +178,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:180](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L180)
+[lib/utils/vectorUtils.ts:189](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L189)
 
 ___
 
@@ -177,154 +194,172 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:184](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L184)
+[lib/utils/vectorUtils.ts:193](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L193)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**multiplication**(`v1`: number[], `v2`: number[]): number[]
 
+Returns the multiplication of elements in two vectors at each index
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | input vector 1 |
+`v2` | number[] | input vector 2  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:106](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L106)
+[lib/utils/vectorUtils.ts:82](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L82)
 
 ___
 
 {:.method-highlight}
-▸ `Static`**normalize**(`v`: number[]): number[]
+▸ `Static`**normalize**(`arr`: number[]): number[]
+
+Normalize elements in an array
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`arr` | number[] | input array  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:205](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L205)
+[lib/utils/vectorUtils.ts:222](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L222)
 
 ___
 
 {:.method-highlight}
-▸ `Static`**scalarAddition**(`v1`: number[], `scalar`: number): number[]
+▸ `Static`**scalarAddition**(`vec`: number[], `scalar`: number): number[]
+
+Returns the adition of each element in an array with a scalar
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+Name | Type | Description |
+------ | ------ | ------ |
+`vec` | number[] | input array |
+`scalar` | number | value to be added to each element  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:124](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L124)
+[lib/utils/vectorUtils.ts:111](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L111)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**scalarDivision**(`v1`: number[], `scalar`: number): number[]
 
+Returns the division of each element in an array with a scalar
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | - |
+`scalar` | number | value to be added to each element  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:142](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L142)
+[lib/utils/vectorUtils.ts:144](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L144)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**scalarMultiplication**(`v1`: number[], `scalar`: number): number[]
 
+Returns the multiplication of each element in an array with a scalar
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | - |
+`scalar` | number | value to be added to each element  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:136](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L136)
+[lib/utils/vectorUtils.ts:133](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L133)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**scalarSubtraction**(`v1`: number[], `scalar`: number): number[]
 
+Returns the subtraction of each element in an array with a scalar
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`scalar` | number |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | - |
+`scalar` | number | value to be added to each element  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:130](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L130)
+[lib/utils/vectorUtils.ts:122](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L122)
 
 ___
 
 {:.method-highlight}
-▸ `Static`**standardDevision**(`v`: number[]): number
+▸ `Static`**standardDeviation**(`arr`: number[]): number
+
+Computes the standard deviation of elements in an array
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`arr` | number[] | input arr  |
 
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:188](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L188)
+[lib/utils/vectorUtils.ts:201](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L201)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**subtraction**(`v1`: number[], `v2`: number[]): number[]
 
+Returns the subtraction of elements in two vectors at each index
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`v1` | number[] |
-`v2` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`v1` | number[] | input vector 1 |
+`v2` | number[] | input vector 2  |
 
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:97](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L97)
+[lib/utils/vectorUtils.ts:67](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L67)
 
 ___
 
 {:.method-highlight}
 ▸ `Static`**sumElements**(`arr`: number[]): number
 
+Returns sum of elements in an array
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`arr` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`arr` | number[] | input array  |
 
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:79](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L79)
+[lib/utils/vectorUtils.ts:44](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/vectorUtils.ts#L44)

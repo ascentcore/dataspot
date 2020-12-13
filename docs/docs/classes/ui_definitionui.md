@@ -44,8 +44,8 @@ Name | Type |
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[constructor](../ui_common_basecomponent#constructor)*
 
-{:.source-ref}
-lib/ui/definitionUI.ts:12
+{:.url-source-ref}
+[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/definitionUI.ts#L12)
 
 ## Properties
 
@@ -53,22 +53,22 @@ lib/ui/definitionUI.ts:12
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[container](../ui_common_basecomponent#container)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:4
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
 • `Private` **currentConfig**: any
 
-{:.source-ref}
-lib/ui/definitionUI.ts:10
+{:.url-source-ref}
+[lib/ui/definitionUI.ts:10](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/definitionUI.ts#L10)
 
 ___
 
 • `Private` **inputFields**: [ui.forms.FormField](../ui_forms_formfield)[] = []
 
-{:.source-ref}
-lib/ui/definitionUI.ts:12
+{:.url-source-ref}
+[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/definitionUI.ts#L12)
 
 ___
 
@@ -76,8 +76,8 @@ ___
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[root](../ui_common_basecomponent#root)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:2
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L2)
 
 ## Methods
 
@@ -88,8 +88,8 @@ lib/ui/common/baseComponent.ts:2
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[destroy](../ui_common_basecomponent#destroy)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:31
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -98,8 +98,8 @@ ___
 
 **Returns:** [common.SerializableConfig](../common_serializableconfig)
 
-{:.source-ref}
-lib/ui/definitionUI.ts:45
+{:.url-source-ref}
+[lib/ui/definitionUI.ts:45](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/definitionUI.ts#L45)
 
 ___
 
@@ -119,5 +119,5 @@ Name | Type |
 
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[getElement](../ui_common_basecomponent#getelement)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:6
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L6)

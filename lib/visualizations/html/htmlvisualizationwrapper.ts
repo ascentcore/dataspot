@@ -1,9 +1,9 @@
 import { JSDOM } from 'jsdom'
 import nodeHtmlToImage from 'node-html-to-image'
 import fs from 'fs'
+import OSUtils from '@ascentcore/dataspot/utils/osUtils'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
-import getReportFolder from '../../utils/osutils'
 import HTMLBaseVisualization from './htmlbase'
 
 import serializeFunction from '../../utils/serialization-utils'
@@ -61,7 +61,7 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
             })
         } else if (this.asHtml) {
             fs.writeFile(
-                `${getReportFolder()}/${this.name}-output.html`,
+                `${OSUtils.getReportFolder()}/${this.name}-output.html`,
                 `<html><body>${this.visualization.getDependency('rootContainer').outerHTML}</body></html>`,
                 (err) => {
                     if (err) {
@@ -71,7 +71,7 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
             )
         } else {
             nodeHtmlToImage({
-                output: `${getReportFolder()}/${this.name}-output.png`,
+                output: `${OSUtils.getReportFolder()}/${this.name}-output.png`,
                 html: `<html><body>${this.visualization.getDependency('rootContainer').outerHTML}</body></html>`
             }).catch((err) => console.log(err))
         }

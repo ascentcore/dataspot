@@ -23,4 +23,4 @@ has_children: false
 •  **iterations**: number = 100
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/common/evolutionaryAlgorithm.ts#L4)

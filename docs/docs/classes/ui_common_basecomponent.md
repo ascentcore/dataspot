@@ -37,22 +37,22 @@ Name | Type |
 
 **Returns:** [ui.common.BaseComponent](../ui_common_basecomponent)
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:2
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L2)
 
 ## Properties
 
 • `Readonly` **container**: HTMLElement
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:4
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
 •  **root**: HTMLElement \| undefined
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:2
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L2)
 
 ## Methods
 
@@ -61,8 +61,8 @@ lib/ui/common/baseComponent.ts:2
 
 **Returns:** void
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:31
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -80,5 +80,5 @@ Name | Type |
 
 **Returns:** HTMLElement
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:6
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L6)

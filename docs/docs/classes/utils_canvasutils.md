@@ -33,8 +33,8 @@ Name | Type |
 
 **Returns:** any[][]
 
-{:.source-ref}
-lib/utils/canvasUtils.ts:4
+{:.url-source-ref}
+[lib/utils/canvasUtils.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/canvasUtils.ts#L4)
 
 ___
 
@@ -51,8 +51,8 @@ Name | Type |
 
 **Returns:** void
 
-{:.source-ref}
-lib/utils/canvasUtils.ts:15
+{:.url-source-ref}
+[lib/utils/canvasUtils.ts:15](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/canvasUtils.ts#L15)
 
 ___
 
@@ -70,5 +70,5 @@ Name | Type |
 
 **Returns:** number[]
 
-{:.source-ref}
-lib/utils/canvasUtils.ts:25
+{:.url-source-ref}
+[lib/utils/canvasUtils.ts:25](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/utils/canvasUtils.ts#L25)

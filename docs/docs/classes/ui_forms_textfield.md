@@ -47,8 +47,8 @@ Name | Type |
 
 *Overrides [ui.forms.FormField](../ui_forms_formfield).[constructor](../ui_forms_formfield#constructor)*
 
-{:.source-ref}
-lib/ui/forms/selectionField.ts:3
+{:.url-source-ref}
+[lib/ui/forms/selectionField.ts:3](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/forms/selectionField.ts#L3)
 
 ## Properties
 
@@ -58,8 +58,8 @@ lib/ui/forms/selectionField.ts:3
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[container](../ui_common_basecomponent#container)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:4
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
@@ -69,8 +69,8 @@ ___
 
 *Overrides [ui.forms.FormField](../ui_forms_formfield).[inputField](../ui_forms_formfield#inputfield)*
 
-{:.source-ref}
-lib/ui/forms/formField.ts:4
+{:.url-source-ref}
+[lib/ui/forms/formField.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/forms/formField.ts#L4)
 
 ___
 
@@ -80,8 +80,8 @@ ___
 
 *Overrides [ui.forms.FormField](../ui_forms_formfield).[key](../ui_forms_formfield#key)*
 
-{:.source-ref}
-lib/ui/forms/formField.ts:6
+{:.url-source-ref}
+[lib/ui/forms/formField.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/forms/formField.ts#L6)
 
 ___
 
@@ -91,8 +91,8 @@ ___
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[root](../ui_common_basecomponent#root)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:2
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L2)
 
 ## Methods
 
@@ -105,8 +105,8 @@ lib/ui/common/baseComponent.ts:2
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[destroy](../ui_common_basecomponent#destroy)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:31
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -128,8 +128,8 @@ Name | Type |
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[getElement](../ui_common_basecomponent#getelement)*
 
-{:.source-ref}
-lib/ui/common/baseComponent.ts:6
+{:.url-source-ref}
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/common/baseComponent.ts#L6)
 
 ___
 
@@ -142,8 +142,8 @@ ___
 
 *Overrides [ui.forms.FormField](../ui_forms_formfield).[getValue](../ui_forms_formfield#getvalue)*
 
-{:.source-ref}
-lib/ui/forms/formField.ts:19
+{:.url-source-ref}
+[lib/ui/forms/formField.ts:19](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/forms/formField.ts#L19)
 
 ___
 
@@ -162,5 +162,5 @@ Name | Type |
 
 *Overrides [ui.forms.FormField](../ui_forms_formfield).[setValue](../ui_forms_formfield#setvalue)*
 
-{:.source-ref}
-lib/ui/forms/formField.ts:13
+{:.url-source-ref}
+[lib/ui/forms/formField.ts:13](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/ui/forms/formField.ts#L13)

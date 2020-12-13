@@ -43,22 +43,22 @@ Name | Type | Default value |
 
 **Returns:** [datasets.problems.BoxedCircles](../datasets_problems_boxedcircles)
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:18
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:18](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L18)
 
 ## Properties
 
 • `Private` **multipleViz**: [visualizations.d3.SVGMultipleVisualization](../visualizations_d3_svgmultiplevisualization)
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:18
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:18](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L18)
 
 ___
 
 • `Private` **numberOfCircles**: number
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:20
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:20](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L20)
 
 ## Methods
 
@@ -75,8 +75,8 @@ Name | Type |
 
 *Implementation of [datasets.problems.MetaheuristicProblem](../../interfaces/datasets_problems_metaheuristicproblem)*
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:63
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:63](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L63)
 
 ___
 
@@ -87,8 +87,8 @@ ___
 
 *Implementation of [datasets.problems.MetaheuristicProblem](../../interfaces/datasets_problems_metaheuristicproblem)*
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:53
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:53](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L53)
 
 ___
 
@@ -105,8 +105,8 @@ Name | Type |
 
 *Implementation of [datasets.problems.MetaheuristicProblem](../../interfaces/datasets_problems_metaheuristicproblem)*
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:35
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:35](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L35)
 
 ___
 
@@ -121,5 +121,5 @@ Name | Type |
 
 **Returns:** void
 
-{:.source-ref}
-lib/datasets/problems/boxedCircles.ts:40
+{:.url-source-ref}
+[lib/datasets/problems/boxedCircles.ts:40](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/problems/boxedCircles.ts#L40)
