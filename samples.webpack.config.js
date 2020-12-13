@@ -13,7 +13,8 @@ const config = {
         clusteringComparison: './samples/documentation/clustering/comparison.ts',
         benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts',
         meanShiftSegmentation: './samples/documentation/meanShiftSegmentation.ts',
-        circleFit: './samples/documentation/problems/circleFit.ts'
+        circleFit: './samples/documentation/problems/circleFit.ts',
+        activationFunctions: './samples/documentation/functions/activation.ts'
     },
     plugins,
     output: {

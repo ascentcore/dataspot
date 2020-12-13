@@ -1,6 +1,6 @@
-import ObjectUtils from '../common/objectUtils'
-import { DistanceMeasurement } from '../math/distances'
-import { gaussianKernel } from '../math/utils'
+import ObjectUtils from '@ascentcore/dataspot/common/objectUtils'
+import { DistanceMeasurement } from '@ascentcore/dataspot/math/distances'
+import { gaussianKernel } from '@ascentcore/dataspot/math/utils'
 import CentroidClustering, { CentroidConfig } from './centroidClustering'
 
 export class MeanShiftConfig extends CentroidConfig {

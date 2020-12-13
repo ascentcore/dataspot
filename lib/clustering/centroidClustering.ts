@@ -1,5 +1,5 @@
-import { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
-import distances, { DistanceMeasurement } from '../math/distances'
+import { EvolutionaryConfig } from '@ascentcore/dataspot/common/evolutionaryAlgorithm'
+import distances, { DistanceMeasurement } from '@ascentcore/dataspot/math/distances'
 import ClusteringAlgorithm from './clusteringBase'
 
 export class CentroidConfig extends EvolutionaryConfig {

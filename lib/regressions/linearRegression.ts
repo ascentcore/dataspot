@@ -1,6 +1,6 @@
-import { meanSquaredError } from '../functions/losses'
-import { gradientDescent } from '../functions/optimizers'
-import { VectorUtils } from '../utils/math-utils'
+import Losses from '@ascentcore/dataspot/functions/losses'
+import { gradientDescent } from '@ascentcore/dataspot/functions/optimizers'
+import { VectorUtils } from '@ascentcore/dataspot/utils/math-utils'
 import predictSinglevariable, { RegressionOutputType } from './utilities'
 
 export default class LinearRegression {
@@ -25,7 +25,7 @@ export default class LinearRegression {
             biasAndWeights = bw
 
             // Calculate cost for auditing purposes
-            const cost = meanSquaredError(updatedPrediction, target)
+            const cost = Losses.meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
             updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)

@@ -1,6 +1,6 @@
 import predictSinglevariable, { predictMultivariable } from '../regressions/utilities'
 import { VectorUtils } from '../utils/math-utils'
-import { sigmoid } from './activations'
+import ActivationFunction from './activations'
 
 export function mseCostFunction(input: number | number[], target: number, prediction: number): (number | number[])[] {
     const biasAndWeightsDeriv: number[] = []
@@ -19,7 +19,7 @@ export function mseCostFunction(input: number | number[], target: number, predic
 export function crossEntropyCostFunction(input: number[], target: number, prediction: number): number[] {
     const biasAndWeightsDeriv = []
     for (let i = 0; i < input.length; i++) {
-        biasAndWeightsDeriv.push(input[i] * (sigmoid(prediction) - target))
+        biasAndWeightsDeriv.push(input[i] * (ActivationFunction.sigmoid(prediction) - target))
     }
 
     return biasAndWeightsDeriv

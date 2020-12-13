@@ -1,5 +1,5 @@
-import { meanSquaredError } from '../functions/losses'
-import { gradientDescent } from '../functions/optimizers'
+import Losses from '@ascentcore/dataspot/functions/losses'
+import { gradientDescent } from '@ascentcore/dataspot/functions/optimizers'
 import { predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
 
 export default class MultivariableLinearRegression {
@@ -24,7 +24,7 @@ export default class MultivariableLinearRegression {
             biasAndWeights = bw
 
             // Calculate cost for auditing purposes
-            const cost = meanSquaredError(updatedPrediction, target)
+            const cost = Losses.meanSquaredError(updatedPrediction, target)
             costHistory.push(cost)
 
             updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
