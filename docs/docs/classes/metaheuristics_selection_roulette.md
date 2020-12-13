@@ -37,14 +37,14 @@ Name | Type |
 **Returns:** [metaheuristics.selection.Roulette](../metaheuristics_selection_roulette)
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/roulette.ts:4](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/selection/roulette.ts#L4)
+[lib/metaheuristics/selection/roulette.ts:4](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/metaheuristics/selection/roulette.ts#L4)
 
 ## Properties
 
 • `Private` **numSelected**: number
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/roulette.ts:5](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/selection/roulette.ts#L5)
+[lib/metaheuristics/selection/roulette.ts:5](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/metaheuristics/selection/roulette.ts#L5)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Name | Type |
 **Returns:** [metaheuristics.Individual](../metaheuristics_individual)[]
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/roulette.ts:18](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/selection/roulette.ts#L18)
+[lib/metaheuristics/selection/roulette.ts:18](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/metaheuristics/selection/roulette.ts#L18)
 
 ___
 
@@ -76,4 +76,4 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/roulette.ts:7](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/metaheuristics/selection/roulette.ts#L7)
+[lib/metaheuristics/selection/roulette.ts:7](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/metaheuristics/selection/roulette.ts#L7)

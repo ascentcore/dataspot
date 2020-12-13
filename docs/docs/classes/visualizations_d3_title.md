@@ -45,7 +45,7 @@ Name | Type | Default value |
 *Overrides [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization).[constructor](../visualizations_d3_svgbasevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/title.ts:4](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/d3/title.ts#L4)
+[lib/visualizations/d3/title.ts:4](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/d3/title.ts#L4)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Name | Type | Default value |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/basevisualization.ts#L13)
+[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/basevisualization.ts#L13)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -75,7 +75,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/basevisualization.ts#L7)
 
 ## Methods
 
@@ -94,7 +94,7 @@ Name | Type |
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/title.ts:20](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/d3/title.ts#L20)
+[lib/visualizations/d3/title.ts:20](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/d3/title.ts#L20)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 *Inherited from [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization).[destroy](../visualizations_d3_svgbasevisualization#destroy)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:49](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/d3/svgbase.ts#L49)
+[lib/visualizations/d3/svgbase.ts:49](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/d3/svgbase.ts#L49)
 
 ___
 
@@ -124,7 +124,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:27](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/basevisualization.ts#L27)
+[lib/visualizations/basevisualization.ts:27](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/basevisualization.ts#L27)
 
 ___
 
@@ -142,7 +142,7 @@ Name | Type |
 *Inherited from [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization).[setContainer](../visualizations_d3_svgbasevisualization#setcontainer)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/d3/svgbase.ts#L24)
+[lib/visualizations/d3/svgbase.ts:24](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/d3/svgbase.ts#L24)
 
 ___
 
@@ -154,4 +154,4 @@ ___
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/d3/title.ts:9](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/visualizations/d3/title.ts#L9)
+[lib/visualizations/d3/title.ts:9](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/visualizations/d3/title.ts#L9)

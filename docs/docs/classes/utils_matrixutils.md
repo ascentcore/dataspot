@@ -28,4 +28,4 @@ Name | Type |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/utils/math-utils.ts:221](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/utils/math-utils.ts#L221)
+[lib/utils/math-utils.ts:221](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/utils/math-utils.ts#L221)

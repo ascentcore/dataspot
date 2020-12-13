@@ -27,6 +27,7 @@ Name | Type |
 
 | Methods |
 |-----------|
+| [getIteration](#getiteration) |
 | [loadState](#loadstate) |
 | [serialize](#serialize) |
 | [shouldStop](#shouldstop) |
@@ -48,7 +49,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/serializable.ts#L7)
+[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/serializable.ts#L7)
 
 ## Properties
 
@@ -57,32 +58,42 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/serializable.ts#L8)
 
 ___
 
 • `Protected` **iteration**: number = 0
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ## Methods
 
 {:.method-highlight}
-▸ **loadState**(`from`: string): void
+▸ **getIteration**(): number
+
+**Returns:** number
+
+{:.url-source-ref}
+[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/evolutionaryAlgorithm.ts#L14)
+
+___
+
+{:.method-highlight}
+▸ **loadState**(`from`: string \| T): void
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`from` | string |
+`from` | string \| T |
 
 **Returns:** void
 
 *Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/serializable.ts#L14)
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/serializable.ts#L14)
 
 ___
 
@@ -94,7 +105,7 @@ ___
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/serializable.ts#L10)
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/serializable.ts#L10)
 
 ___
 
@@ -104,7 +115,7 @@ ___
 **Returns:** boolean
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/evolutionaryAlgorithm.ts#L10)
+[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/evolutionaryAlgorithm.ts#L10)
 
 ___
 
@@ -114,4 +125,4 @@ ___
 **Returns:** any
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/evolutionaryAlgorithm.ts#L14)
+[lib/common/evolutionaryAlgorithm.ts:18](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/evolutionaryAlgorithm.ts#L18)

@@ -24,7 +24,7 @@ has_children: false
 •  **distanceFn**: string = "euclideanDistance"
 
 {:.url-source-ref}
-[lib/clustering/agglomerativeClustering.ts:7](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/clustering/agglomerativeClustering.ts#L7)
+[lib/clustering/agglomerativeClustering.ts:7](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/clustering/agglomerativeClustering.ts#L7)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 *Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/common/evolutionaryAlgorithm.ts#L4)

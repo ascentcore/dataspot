@@ -33,4 +33,4 @@ Name | Type |
 **Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:11](https://github.com/ascentcore/dataspot/blob/f1c4a34/lib/regressions/polynomialRegression.ts#L11)
+[lib/regressions/polynomialRegression.ts:11](https://github.com/ascentcore/dataspot/blob/2fb173c/lib/regressions/polynomialRegression.ts#L11)
