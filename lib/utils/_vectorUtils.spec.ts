@@ -1,34 +1,4 @@
-import { MathUtils, VectorUtils } from './math-utils'
-
-describe('MathUtils', () => {
-    it('rounds to precision', () => {
-        const number = 1.23456787654
-        expect(MathUtils.roundToPrecision(number, 3)).toEqual(1.235)
-    })
-
-    it('random in interval', () => {
-        const random = MathUtils.random(0, 3)
-        expect(random).toBeLessThan(3)
-        expect(random).toBeGreaterThanOrEqual(0)
-    })
-
-    it('random integer in interval', () => {
-        const random = MathUtils.randomInt(0, 3)
-        expect(random).toBeLessThan(3)
-        expect(random).toBeGreaterThanOrEqual(0)
-        expect(`${random}`).toMatch(/\d{1,}/)
-    })
-
-    it('seeded random in interval', () => {
-        const random = MathUtils.seededRandom(0, 3)
-        expect(random).toEqual(0.3084481351543218)
-    })
-
-    it('seeded random integer in interval', () => {
-        const random = MathUtils.seededRandomInt(0, 100)
-        expect(random).toEqual(31)
-    })
-})
+import VectorUtils from './vectorUtils'
 
 describe('VectorUtils', () => {
     it('Euclidean distance', () => {
@@ -93,7 +63,7 @@ describe('VectorUtils', () => {
     })
 
     it('standard deviation', () => {
-        expect(VectorUtils.standardDevision([0, 0.5, 0.9, 1.2, 1.8, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11])).toBe(
+        expect(VectorUtils.standardDeviation([0, 0.5, 0.9, 1.2, 1.8, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11])).toBe(
             3.5332327029695247
         )
     })

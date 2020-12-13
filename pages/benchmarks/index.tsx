@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import Ackley from '../../lib/datasets/benchmark/ackley'
-import Easom from '../../lib/datasets/benchmark/easom'
-import Griewank from '../../lib/datasets/benchmark/griewank'
-import Rastrigin from '../../lib/datasets/benchmark/rastrigin'
-import Rosenbrock from '../../lib/datasets/benchmark/rosenbrock'
-import Schwefel from '../../lib/datasets/benchmark/schwefel'
-import Sphere from '../../lib/datasets/benchmark/sphere'
+import Ackley from '@ascentcore/dataspot/datasets/benchmark/ackley'
+import Easom from '@ascentcore/dataspot/datasets/benchmark/easom'
+import Griewank from '@ascentcore/dataspot/datasets/benchmark/griewank'
+import Rastrigin from '@ascentcore/dataspot/datasets/benchmark/rastrigin'
+import Rosenbrock from '@ascentcore/dataspot/datasets/benchmark/rosenbrock'
+import Schwefel from '@ascentcore/dataspot/datasets/benchmark/schwefel'
+import Sphere from '@ascentcore/dataspot/datasets/benchmark/sphere'
 
-import MeshPlot from '../../lib/visualizations/three/mesh'
+import MeshPlot from '@ascentcore/dataspot/visualizations/three/mesh'
 
 function Representation({
     zFunc,

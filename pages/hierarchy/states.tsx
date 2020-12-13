@@ -1,10 +1,10 @@
 import * as d3 from 'd3'
 import { useState, useEffect, useRef } from 'react'
-import data from '../../lib/datasets/samples/usarrests'
-// import data from '../../lib/datasets/samples/iris'
-import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
-import { euclideanDistance } from '../../lib/math/distances'
-import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
+import data from '@ascentcore/dataspot/datasets/samples/usarrests'
+// import data from '@ascentcore/dataspot/datasets/samples/iris'
+import HierarchyPlot from '@ascentcore/dataspot/visualizations/d3/hierarchy'
+import { euclideanDistance } from '@ascentcore/dataspot/math/distances'
+import hierarchy, { hValueCut, singleLinkage } from '@ascentcore/dataspot/hierarchy/agglomerative'
 
 const width = 1500
 const height = 300

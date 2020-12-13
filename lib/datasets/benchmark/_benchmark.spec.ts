@@ -1,4 +1,4 @@
-import { MathUtils } from '../../utils/math-utils'
+import MathUtils from '../../utils/mathUtils'
 import rastrigin from './rastrigin'
 import schwefel from './schwefel'
 import ackley from './ackley'

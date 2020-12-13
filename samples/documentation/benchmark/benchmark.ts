@@ -1,12 +1,12 @@
-import MeshPlot from '../../../lib/visualizations/three/mesh'
-import Ackley from '../../../lib/datasets/benchmark/ackley'
-import Easom from '../../../lib/datasets/benchmark/easom'
+import MeshPlot from '../@ascentcore/dataspot/visualizations/three/mesh'
+import Ackley from '../@ascentcore/dataspot/datasets/benchmark/ackley'
+import Easom from '../@ascentcore/dataspot/datasets/benchmark/easom'
 
-import Griewank from '../../../lib/datasets/benchmark/griewank'
-import Rastrigin from '../../../lib/datasets/benchmark/rastrigin'
-import Rosenbrock from '../../../lib/datasets/benchmark/rosenbrock'
-import Schwefel from '../../../lib/datasets/benchmark/schwefel'
-import Sphere from '../../../lib/datasets/benchmark/sphere'
+import Griewank from '../@ascentcore/dataspot/datasets/benchmark/griewank'
+import Rastrigin from '../@ascentcore/dataspot/datasets/benchmark/rastrigin'
+import Rosenbrock from '../@ascentcore/dataspot/datasets/benchmark/rosenbrock'
+import Schwefel from '../@ascentcore/dataspot/datasets/benchmark/schwefel'
+import Sphere from '../@ascentcore/dataspot/datasets/benchmark/sphere'
 
 export default (async () => {
     const funcs: any[] = [Ackley, Easom, Griewank, Rastrigin, Rosenbrock, Schwefel, Sphere]

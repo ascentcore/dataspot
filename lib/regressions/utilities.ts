@@ -1,4 +1,5 @@
-import { MatrixUtils, VectorUtils } from '../utils/math-utils'
+import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
+import MatrixUtils from '@ascentcore/dataspot/utils/matrixUtils'
 
 export type RegressionOutputType = {
     biasAndWeights: number[]

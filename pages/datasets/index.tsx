@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
-import generateArcDataset from '../../lib/datasets/clustering/arcDataset'
-import generateBlobDataset from '../../lib/datasets/clustering/blobDataset'
-import generateConcentricRingsDataset from '../../lib/datasets/clustering/concentricRingsDataset'
+import generateArcDataset from '@ascentcore/dataspot/datasets/clustering/arcDataset'
+import generateBlobDataset from '@ascentcore/dataspot/datasets/clustering/blobDataset'
+import generateConcentricRingsDataset from '@ascentcore/dataspot/datasets/clustering/concentricRingsDataset'
 
-import Scatter from '../../lib/visualizations/d3/scatter'
-import Axis from '../../lib/visualizations/d3/axis'
-import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
 import '../../samples/documentation/datasets/clustering'
 
 // function Representation({ data, name, width, height }) {

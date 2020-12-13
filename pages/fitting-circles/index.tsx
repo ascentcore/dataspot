@@ -5,12 +5,12 @@ export default function() {
 }
 /*
 import { useEffect, useState, useRef } from 'react'
-import { circlesIntersection, circleRectangleOutsideBoundaries } from '../../lib/math/geometry'
-import Scatter from '../../lib/visualizations/d3/scatter'
-import LinePlot from '../../lib/visualizations/d3/lineplot'
-import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
-import GA, { GAConfig } from '../../lib/metaheuristics/ga'
-import Axis from '../../lib/visualizations/d3/axis'
+import { circlesIntersection, circleRectangleOutsideBoundaries } from '@ascentcore/dataspot/math/geometry'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
+import GA, { GAConfig } from '@ascentcore/dataspot/metaheuristics/ga'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
 
 
 export default function FittingCircles() {

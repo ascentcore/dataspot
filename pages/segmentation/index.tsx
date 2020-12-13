@@ -5,7 +5,7 @@ export default function() {
 }
 
 // import { useEffect, useRef, useState } from 'react'
-// import MeanShift, { MeanShiftConfig } from '../../lib/clustering/meanShift'
+// import MeanShift, { MeanShiftConfig } from '@ascentcore/dataspot/clustering/meanShift'
 
 // const width = 60
 // const height = Math.floor(width * 0.8)

@@ -5,10 +5,10 @@ export default function() {
 }
 // import React, { useEffect, useRef, useState } from 'react'
 
-// import { relu, identity, sigmoid } from '../../lib/functions/activations'
-// import LinePlot from '../../lib/visualizations/d3/lineplot'
-// import Axis from '../../lib/visualizations/d3/axis'
-// import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+// import { relu, identity, sigmoid } from '@ascentcore/dataspot/functions/activations'
+// import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
+// import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+// import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
 
 // function Representation({
 //     data,

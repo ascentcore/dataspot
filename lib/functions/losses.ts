@@ -1,4 +1,4 @@
-import { VectorUtils } from '../utils/math-utils'
+import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
 
 /**
  * Losses documentation

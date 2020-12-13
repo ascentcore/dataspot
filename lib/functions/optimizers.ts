@@ -1,5 +1,5 @@
-import predictSinglevariable, { predictMultivariable } from '../regressions/utilities'
-import { VectorUtils } from '../utils/math-utils'
+import predictSinglevariable, { predictMultivariable } from '@ascentcore/dataspot/regressions/utilities'
+import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
 import ActivationFunction from './activations'
 
 export function mseCostFunction(input: number | number[], target: number, prediction: number): (number | number[])[] {

@@ -1,20 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { crossEntropyCostFunction, mseCostFunction } from '../../lib/functions/optimizers'
-import LinearRegression from '../../lib/regressions/linearRegression'
-import LinePlot from '../../lib/visualizations/d3/lineplot'
-import Scatter from '../../lib/visualizations/d3/scatter'
-import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
-import Axis from '../../lib/visualizations/d3/axis'
-import { VectorUtils } from '../../lib/utils/math-utils'
-import PolynomialRegression from '../../lib/regressions/polynomialRegression'
+import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
+import Activations from '@ascentcore/dataspot/functions/activations'
+import { crossEntropyCostFunction, mseCostFunction } from '@ascentcore/dataspot/functions/optimizers'
+import LinearRegression from '@ascentcore/dataspot/regressions/linearRegression'
+import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+import PolynomialRegression from '@ascentcore/dataspot/regressions/polynomialRegression'
 import predictionSinglevariable, {
     decisionBoundary,
     predictMultivariable,
     transformToPolynomialInput,
     transposeAndNormalize
-} from '../../lib/regressions/utilities'
-import LogisticRegression from '../../lib/regressions/logisticRegression'
-import Activations from '@ascentcore/dataspot/functions/activations'
+} from '@ascentcore/dataspot/regressions/utilities'
+import LogisticRegression from '@ascentcore/dataspot/regressions/logisticRegression'
 
 function Representation({
     data,

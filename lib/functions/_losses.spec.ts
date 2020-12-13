@@ -1,4 +1,4 @@
-import { MathUtils } from '../utils/math-utils'
+import MathUtils from '../utils/mathUtils'
 import Losses from './losses'
 
 describe('Loss Functions', () => {

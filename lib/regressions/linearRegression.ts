@@ -1,6 +1,6 @@
 import Losses from '@ascentcore/dataspot/functions/losses'
 import { gradientDescent } from '@ascentcore/dataspot/functions/optimizers'
-import { VectorUtils } from '@ascentcore/dataspot/utils/math-utils'
+import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
 import predictSinglevariable, { RegressionOutputType } from './utilities'
 
 export default class LinearRegression {

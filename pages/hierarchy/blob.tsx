@@ -1,11 +1,11 @@
 import * as d3 from 'd3'
 import { useState, useEffect, useRef } from 'react'
 import ClusteringDatasets from '@ascentcore/dataspot/datasets/clustering'
-import HierarchyPlot from '../../lib/visualizations/d3/hierarchy'
-import { euclideanDistance } from '../../lib/math/distances'
-import hierarchy, { hValueCut, singleLinkage } from '../../lib/hierarchy/agglomerative'
-import Scatter from '../../lib/visualizations/d3/scatter'
-import { TwoDPointScatter } from '../../lib/models/types'
+import HierarchyPlot from '@ascentcore/dataspot/visualizations/d3/hierarchy'
+import { euclideanDistance } from '@ascentcore/dataspot/math/distances'
+import hierarchy, { hValueCut, singleLinkage } from '@ascentcore/dataspot/hierarchy/agglomerative'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import { TwoDPointScatter } from '@ascentcore/dataspot/models/types'
 
 const width = 500
 const height = 400

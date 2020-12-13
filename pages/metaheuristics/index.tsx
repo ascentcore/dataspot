@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import Ackley from '../../lib/datasets/benchmark/ackley'
-import Schwefel from '../../lib/datasets/benchmark/schwefel'
-import LinePlot from '../../lib/visualizations/d3/lineplot'
-import Axis from '../../lib/visualizations/d3/axis'
-import Scatter from '../../lib/visualizations/d3/scatter'
-import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
-import MeshPlot from '../../lib/visualizations/three/mesh'
-import Sphere from '../../lib/visualizations/three/sphere'
-import ThreeMultipleVisualization from '../../lib/visualizations/three/threemultiple'
+import Ackley from '@ascentcore/dataspot/datasets/benchmark/ackley'
+import Schwefel from '@ascentcore/dataspot/datasets/benchmark/schwefel'
+import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
+import MeshPlot from '@ascentcore/dataspot/visualizations/three/mesh'
+import Sphere from '@ascentcore/dataspot/visualizations/three/sphere'
+import ThreeMultipleVisualization from '@ascentcore/dataspot/visualizations/three/threemultiple'
 
-import PSO, { PSOConfig } from '../../lib/metaheuristics/pso'
+import PSO, { PSOConfig } from '@ascentcore/dataspot/metaheuristics/pso'
 
 function getData(ff: (x: number) => number, min = -1, max = 1, step = 0.01) {
     const data = []

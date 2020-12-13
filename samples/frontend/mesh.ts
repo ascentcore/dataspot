@@ -1,5 +1,5 @@
-import Schwefel from '../../lib/datasets/benchmark/schwefel'
-import MeshPlot from '../../lib/visualizations/three/mesh'
+import Schwefel from '@ascentcore/dataspot/datasets/benchmark/schwefel'
+import MeshPlot from '@ascentcore/dataspot/visualizations/three/mesh'
 
 export default function plot(container: HTMLElement): void {
     const mesh = new MeshPlot({ height: 1200, width: 2000 })
