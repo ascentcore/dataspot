@@ -3,6 +3,7 @@ const express = require('express')
 const PouchDB = require('pouchdb').defaults({ prefix: 'dbs/' })
 const expressPouch = require('express-pouchdb')
 const next = require('next')
+const path = require('path')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
@@ -17,9 +18,13 @@ app.prepare()
         const server = express()
 
         server.use('/db', expressPouch(PouchDB))
-
+        server.use('/dataspot/assets', express.static(path.join(__dirname, 'docs/assets')))
         server.get('*', (req, res) => {
-            if (req.url === '/db') return next()
+            if (req.url.indexOf('/dataspot/assets') === 0) {
+                console.log(req.url, path.join(__dirname, 'docs/assets'))
+            }
+            if (req.url === '/db' || req.url.indexOf('/dataspot/assets') === 0) return next()
+
             return handle(req, res)
         })
 

@@ -11,5 +11,9 @@ export default abstract class EvolutionaryAlgorithm<T extends EvolutionaryConfig
         return this.iteration === this.config.iterations
     }
 
+    getIteration(): number {
+        return this.iteration
+    }
+
     abstract step(): any
 }

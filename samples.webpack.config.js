@@ -11,7 +11,9 @@ const config = {
     entry: {
         sample: './samples/documentation/sample.ts',
         clusteringComparison: './samples/documentation/clustering/comparison.ts',
-        benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts'
+        benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts',
+        meanShiftSegmentation: './samples/documentation/meanShiftSegmentation.ts',
+        circleFit: './samples/documentation/problems/circleFit.ts'
     },
     plugins,
     output: {

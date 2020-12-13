@@ -1,3 +1,9 @@
+import '../../samples/documentation/problems/circleFit'
+
+export default function() {
+    return null
+}
+/*
 import { useEffect, useState, useRef } from 'react'
 import { circlesIntersection, circleRectangleOutsideBoundaries } from '../../lib/math/geometry'
 import Scatter from '../../lib/visualizations/d3/scatter'
@@ -5,6 +11,7 @@ import LinePlot from '../../lib/visualizations/d3/lineplot'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
 import GA, { GAConfig } from '../../lib/metaheuristics/ga'
 import Axis from '../../lib/visualizations/d3/axis'
+
 
 export default function FittingCircles() {
     const containerRef = useRef(null)
@@ -82,9 +89,9 @@ export default function FittingCircles() {
                 multipleViz.dataUpdate([{ x: 0, y: 1 }, { x: 1, y: 1 }], 'top-line-elem')
 
                 const ga = new GA({
-                    populationSize: 200,
+                    populationSize: 2000,
                     iterations: 10000,
-                    numOffsprings: 200,
+                    numOffsprings: 2000,
                     mutationType: 'all',
                     mutationProbability: 0.05
                 } as GAConfig)
@@ -139,3 +146,4 @@ export default function FittingCircles() {
         </div>
     )
 }
+*/

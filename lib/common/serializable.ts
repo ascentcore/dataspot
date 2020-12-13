@@ -11,7 +11,11 @@ export default class Serializable<T extends SerializableConfig> {
         return JSON.stringify(this.config)
     }
 
-    loadState(from: string): void {
-        this.config = JSON.parse(from)
+    loadState(from: string | T): void {
+        if (typeof from === 'string') {
+            this.config = JSON.parse(from)
+        } else {
+            this.config = from
+        }
     }
 }

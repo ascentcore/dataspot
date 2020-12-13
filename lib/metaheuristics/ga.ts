@@ -4,6 +4,18 @@ import Random from '../math/random'
 import Convergence from '../common/convergence'
 import * as selectionFunctionMappings from './selection/selection-functions'
 
+export type FieldDefinition = {
+    label: string
+    min: number
+    max: number
+    step: number
+    options: string[]
+}
+
+export type FieldsDefinition = {
+    [key: string]: FieldDefinition
+}
+
 export class GAConfig extends PopulationMetaheuristicConfig {
     public numOffsprings = 10
 
@@ -14,6 +26,15 @@ export class GAConfig extends PopulationMetaheuristicConfig {
     public crossoverType: 'randomPick' | 'singleSplit' = 'singleSplit'
 
     public selectionFn: 'Roulette' | 'Tournament' = 'Roulette'
+
+    static definitions = {
+        ...PopulationMetaheuristicConfig.definitions,
+        numOffsprings: { label: 'Number of offsprings', min: 2, default: 90 },
+        crossoverType: { label: 'Crossover type', options: ['randomPick', 'singleSplit'], default: 'singleSplit' },
+        mutationType: { label: 'Mutation type', options: ['all', 'single'], default: 'all' },
+        mutationProbability: { label: 'Mutation probability', min: 0, max: 1, default: 0.01, step: 0.05 },
+        selectionFn: { label: 'Selection Function', options: ['Roulette', 'Tournament'], default: 'Roulette' }
+    }
 }
 
 export default class GA extends PopulationMetaheuristic<GAConfig> {

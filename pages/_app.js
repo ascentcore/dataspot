@@ -1,4 +1,5 @@
 import './assets/spectre.min.css'
+import './assets/spectre-icons.min.css'
 import './assets/styles.css'
 
 // This default export is required in a new `pages/_app.js` file.
