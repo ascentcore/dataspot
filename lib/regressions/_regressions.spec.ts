@@ -1,6 +1,6 @@
-import LinearRegression from './linearRegression'
+import LinearRegression from './_linearRegression'
 import { crossEntropyCostFunction, mseCostFunction } from '../functions/optimizers'
-import MultivariableLinearRegression from './multivariableLinearRegression'
+import MultivariableLinearRegression from './_multivariableLinearRegression'
 import PolynomialRegression from './polynomialRegression'
 import { RegressionOutputType } from './utilities'
 import LogisticRegression from './logisticRegression'

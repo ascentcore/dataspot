@@ -1,5 +1,4 @@
 import HTMLBaseVisualization from './htmlbase'
-import { TwoDPointScatter, TwoDPointLine } from '../../models/types'
 
 export default class Table extends HTMLBaseVisualization {
     constructor(config: any, elemClass = 'table-elem') {
@@ -8,10 +7,9 @@ export default class Table extends HTMLBaseVisualization {
 
     public setup() {}
 
-    private updateFn(data: TwoDPointLine[] | TwoDPointScatter[], elemClass: string): void {
+    private updateFn(data: any[], elemClass: string): void {
         const { width, border, borderCollapse } = this.config
         const { document, rootContainer } = this.dependencies
-
         const table = document.createElement('table')
         table.border = border
         table.width = width
@@ -46,7 +44,7 @@ export default class Table extends HTMLBaseVisualization {
         rootContainer.querySelector(`.${elemClass}`).appendChild(table)
     }
 
-    public dataUpdate(data: TwoDPointLine[] | TwoDPointScatter[], elemClass = this.elemClass) {
+    public dataUpdate(data: any[], elemClass = this.elemClass) {
         this.updateFn(data, elemClass)
         return this.updateFn
     }

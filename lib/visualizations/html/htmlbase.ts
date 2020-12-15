@@ -28,8 +28,8 @@ export default abstract class HTMLBaseVisualization extends BaseVisualization {
         let rootContainer: any
 
         if (!(containerRef instanceof HTMLBaseVisualization)) {
-            parentContainer = document.querySelector('#root')
-            rootContainer = parentContainer
+            parentContainer = containerRef
+            rootContainer = containerRef
         } else {
             parentContainer = containerRef.getDependency('container')
             rootContainer = containerRef.getDependency('rootContainer')

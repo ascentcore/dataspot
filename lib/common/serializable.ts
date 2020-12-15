@@ -1,7 +1,7 @@
 export type SerializableType = string | number | boolean | string[] | number[] | boolean[] | number[][]
 
 export class SerializableConfig {
-    [key: string]: SerializableType
+    [key: string]: SerializableType | Function
 }
 
 export default class Serializable<T extends SerializableConfig> {

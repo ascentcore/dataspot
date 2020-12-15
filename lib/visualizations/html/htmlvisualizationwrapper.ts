@@ -49,7 +49,7 @@ export default class HTMLVisualizationWrapper extends HTMLBaseVisualization {
         }
     }
 
-    dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass = this.visualization.elemClass) {
+    dataUpdate(data: any[], elemClass = this.visualization.elemClass) {
         // eslint-disable-next-line prettier/prettier
         const dataUpdateExpr = this.visualization.dataUpdate(data, elemClass)
 

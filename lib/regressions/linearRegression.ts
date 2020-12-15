@@ -1,58 +1,42 @@
-import Losses from '@ascentcore/dataspot/functions/losses'
-import { gradientDescent } from '@ascentcore/dataspot/functions/optimizers'
+import Optimizers from '@ascentcore/dataspot/functions/optimizers'
 import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
-import predictSinglevariable, { RegressionOutputType } from './utilities'
+import Regression, { RegressionConfig } from './regression'
+import predictSinglevariable from './utilities'
 
-export default class LinearRegression {
-    static *fit(
-        input: number[],
-        target: number[],
-        learningRate: number,
-        epochs: number,
-        costFunction: Function
-    ): Generator<RegressionOutputType> {
-        const costHistory = []
-        const transformedInput = VectorUtils.normalize(input)
-        let biasAndWeights: number[] = [0, 0]
-        let updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)
-        let currentEpoch = 0
+export class LinearRegressionConfig extends RegressionConfig {
+    learningRate: number = 0.001
+}
 
-        while (true) {
-            let updated = true
+export class LinearRegression extends Regression<LinearRegressionConfig> {
+    private transformedInput: number[] | undefined
 
-            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
+    private currentPrediction: number[] | undefined
 
-            biasAndWeights = bw
+    prepareDataset(input: number[]): void {
+        this.transformedInput = VectorUtils.normalize(input)
+        this.config.biasAndWeights = [0, 0]
+        this.currentPrediction = predictSinglevariable(this.transformedInput, this.config.biasAndWeights)
+    }
 
-            // Calculate cost for auditing purposes
-            const cost = Losses.meanSquaredError(updatedPrediction, target)
-            costHistory.push(cost)
+    predict(data: number[]): number[] {
+        return predictSinglevariable(VectorUtils.normalize(data), this.config.biasAndWeights)
+    }
 
-            updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)
-
-            currentEpoch += 1
-
-            if (
-                costHistory.length >= 3 &&
-                costHistory[costHistory.length - 1] === costHistory[costHistory.length - 2] &&
-                costHistory[costHistory.length - 2] === costHistory[costHistory.length - 3]
-            ) {
-                updated = false
-            }
-
-            if (!updated || currentEpoch === epochs) {
-                break
-            }
-
-            yield {
-                biasAndWeights,
-                costHistory
-            }
-        }
-
-        return {
+    step() {
+        const { biasAndWeights, learningRate } = this.config
+        this.config.biasAndWeights = Optimizers.gradientDescent(
+            this.transformedInput as number[],
+            this.target as number[],
             biasAndWeights,
-            costHistory
-        }
+            learningRate,
+            this.costFunction
+        )
+
+        this.currentPrediction = predictSinglevariable(this.transformedInput as number[], this.config.biasAndWeights)
+        const loss: number = this.lossFunction(this.currentPrediction, this.target)
+        this.config.lossHistory.push(loss)
+        this.convergence.addValue(loss)
+
+        this.iteration++
     }
 }

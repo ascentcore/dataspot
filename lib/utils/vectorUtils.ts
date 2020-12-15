@@ -228,7 +228,9 @@ export default class VectorUtils {
         std = VectorUtils.standardDeviation(arr)
 
         resultVector = VectorUtils.scalarSubtraction(arr, avg)
-        resultVector = VectorUtils.scalarDivision(resultVector, std)
+        if (std > 0) {
+            resultVector = VectorUtils.scalarDivision(resultVector, std)
+        }
 
         return resultVector
     }
