@@ -38,6 +38,7 @@ export default (async () => {
 
     const config = new MultivariableLinearRegressionConfig()
     config.learningRate = 0.05
+    config.convergenceRoundingPrecision = 5
     config.convergenceHistorySize = 5
     config.iterations = 10000
     const regressor = new MultivariableLinearRegression(config)

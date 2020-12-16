@@ -1,4 +1,5 @@
 import Optimizers from '@ascentcore/dataspot/functions/optimizers'
+import { roundToPrecision } from '../math'
 import { LinearRegressionConfig } from './linearRegression'
 import Regression from './regression'
 import { addBias, predictMultivariable } from './utilities'
@@ -32,8 +33,9 @@ export class MultivariableLinearRegression extends Regression<MultivariableLinea
 
         this.currentPrediction = predictMultivariable(this.transformedInput as number[][], this.config.biasAndWeights)
         const loss: number = this.lossFunction(this.currentPrediction, this.target)
-        this.config.lossHistory.push(loss)
-        this.convergence.addValue(loss)
+        const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
+        this.config.lossHistory.push(lossValue)
+        this.convergence.addValue(lossValue)
 
         this.iteration++
     }

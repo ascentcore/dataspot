@@ -6,6 +6,8 @@ import Optimizers from '@ascentcore/dataspot/functions/optimizers'
 export class RegressionConfig extends EvolutionaryConfig {
     convergenceHistorySize = 2
 
+    convergenceRoundingPrecision = 5
+
     biasAndWeights: number[] = []
 
     lossHistory: number[] = []

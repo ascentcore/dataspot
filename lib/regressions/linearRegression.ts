@@ -1,5 +1,6 @@
 import Optimizers from '@ascentcore/dataspot/functions/optimizers'
 import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
+import { roundToPrecision } from '../math'
 import Regression, { RegressionConfig } from './regression'
 import predictSinglevariable from './utilities'
 
@@ -37,8 +38,9 @@ export class LinearRegression extends Regression<LinearRegressionConfig> {
 
         this.currentPrediction = predictSinglevariable(this.transformedInput as number[], this.config.biasAndWeights)
         const loss: number = this.lossFunction(this.currentPrediction, this.transformedTarget)
-        this.config.lossHistory.push(loss)
-        this.convergence.addValue(loss)
+        const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
+        this.config.lossHistory.push(lossValue)
+        this.convergence.addValue(lossValue)
 
         this.iteration++
     }

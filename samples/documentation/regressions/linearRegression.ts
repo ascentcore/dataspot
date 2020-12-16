@@ -47,7 +47,7 @@ export default (async () => {
     regressionVis.dataUpdate(ds, 'axis-elem')
 
     const config = new LinearRegressionConfig()
-    config.learningRate = 0.1
+    config.learningRate = 0.5
     config.convergenceHistorySize = 5
     config.iterations = 10000
     const linReg = new LinearRegression(config)
