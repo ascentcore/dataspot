@@ -38,20 +38,21 @@ export function addBias(input: number[][]): number[][] {
     return value
 }
 
+export function transpose(input: number[][]): number[][] {
+    const inputWithBias = addBias(input)
+
+    return inputWithBias
+}
+
 export function transposeAndNormalize(input: number[][]): number[][] {
     let transposedInput: number[][] = []
     let normalizedInput: number[][] = []
 
     transposedInput = MatrixUtils.transpose(input)
-    console.log('$$$$')
-    console.log(transposedInput)
 
     for (let i = 0; i < transposedInput.length; i++) {
         normalizedInput.push(VectorUtils.normalize(transposedInput[i]))
     }
-
-    console.log('####')
-    console.log(normalizedInput)
 
     normalizedInput = MatrixUtils.transpose(normalizedInput)
 

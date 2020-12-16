@@ -1,7 +1,7 @@
 import Optimizers from '@ascentcore/dataspot/functions/optimizers'
 import { LinearRegressionConfig } from './linearRegression'
 import Regression from './regression'
-import { transposeAndNormalize, predictMultivariable } from './utilities'
+import { addBias, predictMultivariable } from './utilities'
 
 export class MultivariableLinearRegressionConfig extends LinearRegressionConfig {}
 
@@ -11,15 +11,13 @@ export class MultivariableLinearRegression extends Regression<MultivariableLinea
     private currentPrediction: number[] | undefined
 
     prepareDataset(input: number[][]): void {
-        this.transformedInput = transposeAndNormalize(input)
+        this.transformedInput = addBias(input)
         this.config.biasAndWeights = Array(input[0].length + 1).fill(0)
         this.currentPrediction = predictMultivariable(this.transformedInput, this.config.biasAndWeights)
     }
 
     predict(input: number[][]): number[] {
-        this.transformedInput = transposeAndNormalize(input)
-        console.log(input, this.transformedInput)
-        return predictMultivariable(this.transformedInput, this.config.biasAndWeights)
+        return predictMultivariable(addBias(input), this.config.biasAndWeights)
     }
 
     step() {

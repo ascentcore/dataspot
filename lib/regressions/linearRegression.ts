@@ -10,30 +10,33 @@ export class LinearRegressionConfig extends RegressionConfig {
 export class LinearRegression extends Regression<LinearRegressionConfig> {
     private transformedInput: number[] | undefined
 
+    private transformedTarget: number[] | undefined
+
     private currentPrediction: number[] | undefined
 
-    prepareDataset(input: number[]): void {
-        this.transformedInput = VectorUtils.normalize(input)
+    prepareDataset(input: number[], output: number[]): void {
+        this.transformedInput = input
+        this.transformedTarget = output
         this.config.biasAndWeights = [0, 0]
         this.currentPrediction = predictSinglevariable(this.transformedInput, this.config.biasAndWeights)
     }
 
     predict(data: number[]): number[] {
-        return predictSinglevariable(VectorUtils.normalize(data), this.config.biasAndWeights)
+        return predictSinglevariable(data, this.config.biasAndWeights)
     }
 
     step() {
         const { biasAndWeights, learningRate } = this.config
         this.config.biasAndWeights = Optimizers.gradientDescent(
             this.transformedInput as number[],
-            this.target as number[],
+            this.transformedTarget as number[],
             biasAndWeights,
             learningRate,
             this.costFunction
         )
 
         this.currentPrediction = predictSinglevariable(this.transformedInput as number[], this.config.biasAndWeights)
-        const loss: number = this.lossFunction(this.currentPrediction, this.target)
+        const loss: number = this.lossFunction(this.currentPrediction, this.transformedTarget)
         this.config.lossHistory.push(loss)
         this.convergence.addValue(loss)
 

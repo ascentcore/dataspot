@@ -53,9 +53,21 @@ export default abstract class Regression<T extends RegressionConfig> extends Evo
     fit(input: number[] | number[][], target: number[]): number[] {
         this.input = input
         this.target = target
-        this.prepareDataset(input)
+        this.prepareDataset(input, target)
         while (!this.shouldStop()) {
             this.step()
+        }
+
+        return this.config.biasAndWeights
+    }
+
+    *fitAsync(input: number[] | number[][], target: number[]): Generator<number[]> {
+        this.input = input
+        this.target = target
+        this.prepareDataset(input, target)
+        while (!this.shouldStop()) {
+            this.step()
+            yield this.config.biasAndWeights
         }
 
         return this.config.biasAndWeights
@@ -65,7 +77,7 @@ export default abstract class Regression<T extends RegressionConfig> extends Evo
         return this.iteration === this.config.iterations || this.convergence.hadConverged()
     }
 
-    abstract prepareDataset(input: number[] | number[][]): void
+    abstract prepareDataset(input: number[] | number[][], output: number[]): void
 
     /**
      * Predict new data based on the fitted data

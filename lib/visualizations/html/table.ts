@@ -41,6 +41,7 @@ export default class Table extends HTMLBaseVisualization {
                 tr.appendChild(td)
             })
         }
+        rootContainer.querySelector(`.${elemClass}`).innerHTML = ''
         rootContainer.querySelector(`.${elemClass}`).appendChild(table)
     }
 

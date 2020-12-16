@@ -44,7 +44,6 @@ export default class Optimizers {
 
         for (let i = 0; i < samples; i++) {
             const bwD = costFunction(input[i], target[i], predictions[i])
-
             biasAndWeightsDeriv = VectorUtils.addition(biasAndWeightsDeriv, bwD)
         }
 
