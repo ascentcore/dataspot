@@ -1,63 +1,49 @@
-import Losses from '@ascentcore/dataspot/functions/losses'
-import { gradientDescent } from '@ascentcore/dataspot/functions/optimizers'
-import {
-    predictMultivariable,
-    RegressionOutputType,
-    transformToPolynomialInput,
-    transposeAndNormalize
-} from './utilities'
+import Optimizers from '@ascentcore/dataspot/functions/optimizers'
+import { roundToPrecision } from '../math'
+import Regression, { RegressionConfig } from './regression'
+import { predictMultivariable, transformToPolynomialInput, transpose } from './utilities'
 
-export default class PolynomialRegression {
-    static *fit(
-        input: number[],
-        target: number[],
-        degree: number,
-        learningRate: number,
-        epochs: number,
-        costFunction: Function
-    ): Generator<RegressionOutputType> {
-        const costHistory: number[] = []
-        const transformedInput = transposeAndNormalize(transformToPolynomialInput(input, degree))
-        let biasAndWeights = Array(degree + 1).fill(0)
-        let currentEpoch = 0
-        let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
+export class PolynomialRegressionConfig extends RegressionConfig {
+    learningRate: number = 0.001
 
-        while (true) {
-            let updated = true
+    degree: number = 2
+}
 
-            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
+export class PolynomialRegression extends Regression<PolynomialRegressionConfig> {
+    private transformedInput: number[][] | undefined
 
-            biasAndWeights = bw
+    private transformedTarget: number[] | undefined
 
-            // Calculate cost for auditing purposes
-            const cost = Losses.meanSquaredError(updatedPrediction, target)
-            costHistory.push(cost)
+    private currentPrediction: number[] | undefined
 
-            updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
+    prepareDataset(input: number[], output: number[]): void {
+        this.transformedInput = transpose(transformToPolynomialInput(input, this.config.degree))
+        this.config.biasAndWeights = Array(this.config.degree + 1).fill(0)
+        this.transformedTarget = output
+        this.currentPrediction = predictMultivariable(this.transformedInput, this.config.biasAndWeights)
+    }
 
-            currentEpoch += 1
+    predict(data: number[]): number[] {
+        const polyInput = transformToPolynomialInput(data, this.config.degree)
+        const transformedInput = transpose(polyInput)
+        return predictMultivariable(transformedInput, this.config.biasAndWeights)
+    }
 
-            if (
-                costHistory.length >= 3 &&
-                costHistory[costHistory.length - 1] === costHistory[costHistory.length - 2] &&
-                costHistory[costHistory.length - 2] === costHistory[costHistory.length - 3]
-            ) {
-                updated = false
-            }
-
-            if (!updated || currentEpoch === epochs) {
-                break
-            }
-
-            yield {
-                biasAndWeights,
-                costHistory
-            }
-        }
-
-        return {
+    step() {
+        const { biasAndWeights, learningRate } = this.config
+        this.config.biasAndWeights = Optimizers.gradientDescent(
+            this.transformedInput as number[][],
+            this.transformedTarget as number[],
             biasAndWeights,
-            costHistory
-        }
+            learningRate,
+            this.costFunction
+        )
+
+        const loss: number = this.lossFunction(this.currentPrediction, this.transformedTarget)
+        const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
+        this.config.lossHistory.push(lossValue)
+
+        this.currentPrediction = predictMultivariable(this.transformedInput as number[][], this.config.biasAndWeights)
+        this.convergence.addValue(lossValue)
     }
 }

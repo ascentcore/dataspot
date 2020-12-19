@@ -58,6 +58,7 @@ export default abstract class Regression<T extends RegressionConfig> extends Evo
         this.prepareDataset(input, target)
         while (!this.shouldStop()) {
             this.step()
+            this.iteration++
         }
 
         return this.config.biasAndWeights
@@ -69,6 +70,7 @@ export default abstract class Regression<T extends RegressionConfig> extends Evo
         this.prepareDataset(input, target)
         while (!this.shouldStop()) {
             this.step()
+            this.iteration++
             yield this.config.biasAndWeights
         }
 

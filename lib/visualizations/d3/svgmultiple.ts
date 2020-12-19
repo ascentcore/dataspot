@@ -34,6 +34,7 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) =>
             viz.setContainer(this as SVGBaseVisualization)
         )
+        this.setup()
     }
 
     dataUpdate(data: TwoDPointScatter[] | TwoDPointLine[], elemClass: string) {

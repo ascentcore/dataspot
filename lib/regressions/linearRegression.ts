@@ -41,7 +41,5 @@ export class LinearRegression extends Regression<LinearRegressionConfig> {
         const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
         this.config.lossHistory.push(lossValue)
         this.convergence.addValue(lossValue)
-
-        this.iteration++
     }
 }

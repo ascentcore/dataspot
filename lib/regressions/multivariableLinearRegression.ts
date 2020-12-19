@@ -36,7 +36,5 @@ export class MultivariableLinearRegression extends Regression<MultivariableLinea
         const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
         this.config.lossHistory.push(lossValue)
         this.convergence.addValue(lossValue)
-
-        this.iteration++
     }
 }

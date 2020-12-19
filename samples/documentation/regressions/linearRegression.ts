@@ -1,12 +1,9 @@
 /* eslint-disable no-new */
 import Random from '@ascentcore/dataspot/math/random'
 import { LinearRegressionConfig, LinearRegression } from '@ascentcore/dataspot/regressions/linearRegression'
-import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
 import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
-import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
-import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
-import Title from '@ascentcore/dataspot/visualizations/d3/title'
 import LineGraph from '@ascentcore/dataspot/ui/visualization/lineGraph'
+import ScatterPlot from '@ascentcore/dataspot/ui/visualization/scatterPlot'
 
 export default (async () => {
     Random.seed('regressionsample')
@@ -16,24 +13,10 @@ export default (async () => {
         ref = document.createElement('div')
         document.body.appendChild(ref)
     }
-    const scatter = new Scatter({}, 'scatter-elem')
-    const axis = new Axis({}, 'axis-elem')
-    const title = new Title({ text: `Linear Regression` })
-    const lineRegressionPlot = new LinePlot({}, 'line-elem')
 
-    const regressionVis = new SVGMultipleVisualization(
-        {
-            domainX: { min: 0, max: 1 },
-            domainY: { min: 0, max: 1 },
-            margin: { top: 30, left: 15, right: 15, bottom: 20 },
-            width: 200,
-            height: 200
-        },
-        'plotElement',
-        [scatter, title, axis, lineRegressionPlot]
-    )
-    regressionVis.setContainer(ref)
-    regressionVis.setup()
+    const plotConfig = { width: 300, height: 300, domainX: { min: 0, max: 1 }, domainY: { min: 0, max: 1 } }
+    const lineRegressionPlot = new LinePlot(plotConfig, 'line-elem')
+    const plot = new ScatterPlot(ref, plotConfig, [lineRegressionPlot])
 
     const input = new Array(100).fill(1).map((val, index) => (index > 0.3 && index < 0.6 ? index : Math.random()))
     const output = input.map((i) => Math.max(i, 0.2) - 0.2 + Math.random() * 0.4)
@@ -43,8 +26,7 @@ export default (async () => {
         return memo
     }, [])
 
-    regressionVis.dataUpdate(ds, 'scatter-elem')
-    regressionVis.dataUpdate(ds, 'axis-elem')
+    plot.dataUpdate(ds)
 
     const config = new LinearRegressionConfig()
     config.learningRate = 0.5
@@ -56,7 +38,7 @@ export default (async () => {
     function step() {
         const res = gen.next()
         const lineData = linReg.predict([0, 1])
-        regressionVis.dataUpdate(
+        lineRegressionPlot.dataUpdate(
             [
                 { x: 0, y: lineData[0] },
                 { x: 1, y: lineData[1] }
