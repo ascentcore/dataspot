@@ -10,9 +10,21 @@ export class PolynomialRegressionConfig extends RegressionConfig {
 }
 
 /**
- * Polynomial Regression
- * 
- * @sample_only documentation/polynomialRegression
+ * In statistics, polynomial regression is a form of regression analysis in which the relationship
+ * between the independent variable x and the dependent variable y is modelled as an nth degree polynomial in x.
+ *
+ * Polynomial regression fits a nonlinear relationship between the value of x and the corresponding conditional mean of y,
+ * denoted E(y |x). Although polynomial regression fits a nonlinear model to the data,
+ * as a statistical estimation problem it is linear, in the sense that the regression function E(y | x)
+ * is linear in the unknown parameters that are estimated from the data. For this reason, polynomial regression
+ * is considered to be a special case of multiple linear regression. [Wikipedia](https://en.wikipedia.org/wiki/Polynomial_regression)
+ *
+ * [Towards Data Science Article](https://towardsdatascience.com/polynomial-regression-bbe8b9d97491)
+ *
+ * @sample documentation/polynomialRegression
+ *
+ * Sample usage
+ * @code samples/backend/regressions/bePolyReg.ts
  */
 export class PolynomialRegression extends Regression<PolynomialRegressionConfig> {
     private transformedInput: number[][] | undefined

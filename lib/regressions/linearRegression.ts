@@ -12,9 +12,10 @@ export class LinearRegressionConfig extends RegressionConfig {
  * One is predictor or independent variable and other is response or dependent variable.
  * Relationship between two variables is said to be deterministic if one variable can be accurately expressed by the other.
  *
- * @sample_only documentation/linearRegression
- * 
- * 
+ * @sample documentation/linearRegression
+ *
+ * Example:
+ * @code samples/backend/regressions/beLinReg.ts
  */
 export class LinearRegression extends Regression<LinearRegressionConfig> {
     private transformedInput: number[] | undefined

@@ -27,8 +27,6 @@ export class KMeansConfig extends CentroidConfig {
  * But in very high-dimensional spaces, Euclidean distances tend to become inflated (this is an instance of the so-called “curse of dimensionality”).
  * Running a dimensionality reduction algorithm such as Principal component analysis (PCA) prior to k-means clustering can alleviate this problem and speed up the computations.
  *
- * @sample documentation/sample
- *
  */
 export default class KMeans extends CentroidClustering<KMeansConfig> {
     private convergence!: Convergence

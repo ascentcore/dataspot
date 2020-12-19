@@ -55,16 +55,18 @@ export class MarkdownPlugin extends ConverterComponent {
 
 `
 
-        return tagName === 'sample_only'
-            ? script
-            : `
+        if (tagName === 'sample') {
+            return script
+        } else if (tagName === 'code') {
+            const content = fs.readFileSync(`../${texts[0]}`, 'utf8')
+            return `
 \`\`\`ts
-${fs.readFileSync(`../samples/${texts[0]}.ts`, 'utf8')}
+${content}
 \`\`\`
-
-${script}
-
 `
+        } else {
+            return ''
+        }
     }
 
     private onDeclarationBegin(context: Context, reflection: Reflection, node?: any) {
@@ -78,7 +80,7 @@ ${script}
             .map((comment: any) => comment.tags) // get CommentTags from Comment
             .filter(this.filterCommentTags) // filter only CommentTags exist
             .reduce((a, b) => a.concat(b), []) // merge all CommentTags
-            .filter((tag: any) => tag.tagName === 'sample' || tag.tagName === 'sample_only')
+            .filter((tag: any) => tag.tagName === 'sample' || tag.tagName === 'code')
 
         if (vals.length) {
             vals.forEach((t: any) => {

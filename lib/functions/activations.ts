@@ -11,7 +11,7 @@
  * ```
  *
  * Representation for all activation functions supported by dataspot:
- * @sample_only documentation/activationFunctions
+ * @sample documentation/activationFunctions
  */
 export default class ActivationFunctions {
     static identity(x: number): number {

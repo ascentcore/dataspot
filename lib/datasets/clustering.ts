@@ -7,7 +7,7 @@ import Random from '../math/random'
  * of clustering algorithms
  *
  * Running sample for the current set of clustering datasets:
- * @sample_only documentation/clusteringComparison
+ * @sample documentation/clusteringComparison
  */
 export default class clustering {
     /**

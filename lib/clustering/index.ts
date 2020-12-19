@@ -16,6 +16,6 @@ export * from './centroidClustering'
  * particular statistical distributions. Clustering can therefore be formulated as
  * a multi-objective optimization problem.
  *
- * @sample_only documentation/clusteringComparison
+ * @sample documentation/clusteringComparison
  */
 export default class ClusteringModuleDocumentation {}

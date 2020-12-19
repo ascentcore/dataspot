@@ -3,20 +3,35 @@ import EvolutionaryAlgorithm, { EvolutionaryConfig } from '@ascentcore/dataspot/
 import Losses from '@ascentcore/dataspot/functions/losses'
 import Optimizers from '@ascentcore/dataspot/functions/optimizers'
 
+/**
+ * Base configuration class for regression algorithms
+ */
 export class RegressionConfig extends EvolutionaryConfig {
+    /** Maximum number of iterations to be executed for data fit */
+    iterations: number = 1000
+
+    /** Number of occurrences of the same value in loss history before stopping fit execution */
     convergenceHistorySize = 2
 
+    /** Number of decimals used by the convergence evaluator */
     convergenceRoundingPrecision = 5
 
+    /** Bias and weights list */
     biasAndWeights: number[] = []
 
+    /** Loss history */
     lossHistory: number[] = []
 
+    /** Cost function */
     costFunction: string | Function = 'meanSquaredError'
 
+    /** Lost function */
     lossFunction: string | Function = 'meanSquaredError'
 }
 
+/**
+ * Base class for regression algorithms
+ */
 export default abstract class Regression<T extends RegressionConfig> extends EvolutionaryAlgorithm<T> {
     protected convergence: Convergence
 
@@ -81,6 +96,11 @@ export default abstract class Regression<T extends RegressionConfig> extends Evo
         return this.iteration === this.config.iterations || this.convergence.hadConverged()
     }
 
+    /**
+     * Prepares input / output datasets for performing fitting
+     * @param input input dataset
+     * @param output output dataset
+     */
     abstract prepareDataset(input: number[] | number[][], output: number[]): void
 
     /**

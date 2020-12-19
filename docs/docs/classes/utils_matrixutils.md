@@ -28,4 +28,4 @@ Name | Type |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/utils/matrixUtils.ts:2](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/matrixUtils.ts#L2)
+[lib/utils/matrixUtils.ts:2](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/matrixUtils.ts#L2)

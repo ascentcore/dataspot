@@ -27,14 +27,14 @@ In mathematical optimization, the Rastrigin function is a non-convex function us
 ▪ `Static` **DOMAIN**: number[] = [-5.12, 5.12]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/rastrigin.ts:6](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/benchmark/rastrigin.ts#L6)
+[lib/datasets/benchmark/rastrigin.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/rastrigin.ts#L6)
 
 ___
 
 ▪ `Static` **GLOBAL\_M**: number[] = [0]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/rastrigin.ts:8](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/benchmark/rastrigin.ts#L8)
+[lib/datasets/benchmark/rastrigin.ts:8](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/rastrigin.ts#L8)
 
 ## Methods
 
@@ -50,4 +50,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/datasets/benchmark/rastrigin.ts:10](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/benchmark/rastrigin.ts#L10)
+[lib/datasets/benchmark/rastrigin.ts:10](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/rastrigin.ts#L10)

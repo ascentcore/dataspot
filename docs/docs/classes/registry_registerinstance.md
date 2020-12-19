@@ -30,14 +30,14 @@ has_children: false
 **Returns:** [registry.RegisterInstance](../registry_registerinstance)
 
 {:.url-source-ref}
-[lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/registry/registry.ts#L4)
+[lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/registry/registry.ts#L4)
 
 ## Properties
 
 • `Private` **name**: string
 
 {:.url-source-ref}
-[lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/registry/registry.ts#L4)
+[lib/registry/registry.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/registry/registry.ts#L4)
 
 ## Methods
 
@@ -47,4 +47,4 @@ has_children: false
 **Returns:** void
 
 {:.url-source-ref}
-[lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/registry/registry.ts#L12)
+[lib/registry/registry.ts:12](https://github.com/ascentcore/dataspot/blob/3098228/lib/registry/registry.ts#L12)

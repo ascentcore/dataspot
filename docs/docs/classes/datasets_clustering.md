@@ -15,7 +15,7 @@ of clustering algorithms
 
 Running sample for the current set of clustering datasets:
 
-**`sample_only`** documentation/clusteringComparison
+**`sample`** documentation/clusteringComparison
 
 <div class="running-sample">
     <span class="running-sample-container" data-ref="documentation/clusteringComparison"></span>
@@ -50,7 +50,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:18](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/clustering.ts#L18)
+[lib/datasets/clustering.ts:18](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/clustering.ts#L18)
 
 ___
 
@@ -69,7 +69,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:46](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/clustering.ts#L46)
+[lib/datasets/clustering.ts:46](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/clustering.ts#L46)
 
 ___
 
@@ -89,7 +89,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:71](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/clustering.ts#L71)
+[lib/datasets/clustering.ts:71](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/clustering.ts#L71)
 
 ___
 
@@ -108,7 +108,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:91](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/clustering.ts#L91)
+[lib/datasets/clustering.ts:91](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/clustering.ts#L91)
 
 ___
 
@@ -127,7 +127,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:107](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/clustering.ts#L107)
+[lib/datasets/clustering.ts:107](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/clustering.ts#L107)
 
 ___
 
@@ -140,4 +140,4 @@ See "Potato" representation from the running page sample
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:129](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/clustering.ts#L129)
+[lib/datasets/clustering.ts:129](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/clustering.ts#L129)

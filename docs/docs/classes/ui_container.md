@@ -27,5 +27,5 @@ Name | Type |
 
 **Returns:** HTMLElement
 
-{:.source-ref}
-lib/ui/container.ts:2
+{:.url-source-ref}
+[lib/ui/container.ts:2](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/container.ts#L2)

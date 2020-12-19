@@ -8,14 +8,45 @@ has_children: false
 
 # PolynomialRegression
 
-Polynomial Regression
+In statistics, polynomial regression is a form of regression analysis in which the relationship
+between the independent variable x and the dependent variable y is modelled as an nth degree polynomial in x.
 
-**`sample_only`** documentation/polynomialRegression
+Polynomial regression fits a nonlinear relationship between the value of x and the corresponding conditional mean of y,
+denoted E(y |x). Although polynomial regression fits a nonlinear model to the data,
+as a statistical estimation problem it is linear, in the sense that the regression function E(y | x)
+is linear in the unknown parameters that are estimated from the data. For this reason, polynomial regression
+is considered to be a special case of multiple linear regression. [Wikipedia](https://en.wikipedia.org/wiki/Polynomial_regression)
+
+[Towards Data Science Article](https://towardsdatascience.com/polynomial-regression-bbe8b9d97491)
+
+**`sample`** documentation/polynomialRegression
+
+Sample usage
 
 <div class="running-sample">
     <span class="running-sample-container" data-ref="documentation/polynomialRegression"></span>
     <script src='/dataspot/samples/polynomialRegression.js' title="documentation/polynomialRegression"></script>
 </div>
+
+**`code`** samples/backend/regressions/bePolyReg.ts
+
+```ts
+import { PolynomialRegression, PolynomialRegressionConfig } from '@ascentcore/dataspot/regressions/polynomialRegression'
+
+const input = [[0.1], [0.2], [0.3], [0.4], [0.5], [0.6], [0.7], [0.8], [0.9]]
+const output = [0.8, 0.6, 0.5, 0.45, 0.4, 0.45, 0.5, 0.6, 0.8]
+
+const config = new PolynomialRegressionConfig()
+config.degree = 3
+config.iterations = 10000
+config.convergenceHistorySize = 5
+const polynomialRegression = new PolynomialRegression(config)
+polynomialRegression.fit(input, output)
+
+console.log(polynomialRegression.predict([0.15, 0.56]))
+/** Output: [ 0.4127125100370872, 0.5230331576583737 ] */
+
+```
 
 ## Index
 
@@ -66,7 +97,7 @@ Name | Type |
 *Overrides [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:29](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L29)
+[lib/regressions/regression.ts:44](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L44)
 
 ## Properties
 
@@ -75,7 +106,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/3098228/lib/common/serializable.ts#L8)
 
 ___
 
@@ -84,7 +115,7 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[convergence](../regressions_regression#convergence)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:21](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L21)
+[lib/regressions/regression.ts:36](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L36)
 
 ___
 
@@ -93,14 +124,14 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[costFunction](../regressions_regression#costfunction)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:27](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L27)
+[lib/regressions/regression.ts:42](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L42)
 
 ___
 
 • `Private` **currentPrediction**: number[] \| undefined
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:22](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/polynomialRegression.ts#L22)
+[lib/regressions/polynomialRegression.ts:34](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/polynomialRegression.ts#L34)
 
 ___
 
@@ -109,7 +140,7 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[input](../regressions_regression#input)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:23](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L23)
+[lib/regressions/regression.ts:38](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L38)
 
 ___
 
@@ -118,7 +149,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[iteration](../common_evolutionaryalgorithm#iteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/3098228/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ___
 
@@ -127,7 +158,7 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[lossFunction](../regressions_regression#lossfunction)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:29](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L29)
+[lib/regressions/regression.ts:44](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L44)
 
 ___
 
@@ -136,21 +167,21 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[target](../regressions_regression#target)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:25](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L25)
+[lib/regressions/regression.ts:40](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L40)
 
 ___
 
 • `Private` **transformedInput**: number[][] \| undefined
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:18](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/polynomialRegression.ts#L18)
+[lib/regressions/polynomialRegression.ts:30](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/polynomialRegression.ts#L30)
 
 ___
 
 • `Private` **transformedTarget**: number[] \| undefined
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:20](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/polynomialRegression.ts#L20)
+[lib/regressions/polynomialRegression.ts:32](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/polynomialRegression.ts#L32)
 
 ## Methods
 
@@ -169,7 +200,7 @@ Name | Type |
 *Inherited from [regressions.Regression](../regressions_regression).[fit](../regressions_regression#fit)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:55](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L55)
+[lib/regressions/regression.ts:70](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L70)
 
 ___
 
@@ -188,7 +219,7 @@ Name | Type |
 *Inherited from [regressions.Regression](../regressions_regression).[fitAsync](../regressions_regression#fitasync)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:67](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L67)
+[lib/regressions/regression.ts:82](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L82)
 
 ___
 
@@ -200,7 +231,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[getIteration](../common_evolutionaryalgorithm#getiteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/common/evolutionaryAlgorithm.ts#L14)
+[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/3098228/lib/common/evolutionaryAlgorithm.ts#L14)
 
 ___
 
@@ -218,7 +249,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/common/serializable.ts#L14)
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/3098228/lib/common/serializable.ts#L14)
 
 ___
 
@@ -236,7 +267,7 @@ Name | Type |
 *Overrides [regressions.Regression](../regressions_regression).[predict](../regressions_regression#predict)*
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:31](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/polynomialRegression.ts#L31)
+[lib/regressions/polynomialRegression.ts:43](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/polynomialRegression.ts#L43)
 
 ___
 
@@ -255,7 +286,7 @@ Name | Type |
 *Overrides [regressions.Regression](../regressions_regression).[prepareDataset](../regressions_regression#preparedataset)*
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:24](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/polynomialRegression.ts#L24)
+[lib/regressions/polynomialRegression.ts:36](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/polynomialRegression.ts#L36)
 
 ___
 
@@ -267,7 +298,7 @@ ___
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/common/serializable.ts#L10)
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/3098228/lib/common/serializable.ts#L10)
 
 ___
 
@@ -281,7 +312,7 @@ ___
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[shouldStop](../common_evolutionaryalgorithm#shouldstop)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:80](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/regression.ts#L80)
+[lib/regressions/regression.ts:95](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/regression.ts#L95)
 
 ___
 
@@ -293,4 +324,4 @@ ___
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[step](../common_evolutionaryalgorithm#step)*
 
 {:.url-source-ref}
-[lib/regressions/polynomialRegression.ts:37](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/regressions/polynomialRegression.ts#L37)
+[lib/regressions/polynomialRegression.ts:49](https://github.com/ascentcore/dataspot/blob/3098228/lib/regressions/polynomialRegression.ts#L49)

@@ -16,6 +16,5 @@ export * from './sphere'
  * References: [Wikipedia](https://en.wikipedia.org/wiki/Test_functions_for_optimization) and [Virtual Library of Simulation Experiments](https://www.sfu.ca/~ssurjano/optimization.html)
  *
  * Running sample for the current set of clustering datasets:
- * @sample_only documentation/benchmarkFunctions
  */
 export default class benchmark {}

@@ -1,4 +1,1 @@
-// import './samples/backend/regressions/beLinReg'
-
-
-console.log('test!')
+import './samples/backend/regressions/bePolyReg'

@@ -29,7 +29,7 @@ has_children: false
 ▪ `Static` `Private` **rand**: (Anonymous function) = MathUtils.mulberry32(MathUtils.xmur3('apples')())
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:4](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L4)
+[lib/utils/mathUtils.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L4)
 
 ## Methods
 
@@ -45,7 +45,7 @@ Name | Type |
 **Returns:** (Anonymous function)
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:20](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L20)
+[lib/utils/mathUtils.ts:20](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L20)
 
 ___
 
@@ -62,7 +62,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:35](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L35)
+[lib/utils/mathUtils.ts:35](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L35)
 
 ___
 
@@ -79,7 +79,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:39](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L39)
+[lib/utils/mathUtils.ts:39](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L39)
 
 ___
 
@@ -96,7 +96,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:30](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L30)
+[lib/utils/mathUtils.ts:30](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L30)
 
 ___
 
@@ -113,7 +113,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:45](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L45)
+[lib/utils/mathUtils.ts:45](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L45)
 
 ___
 
@@ -130,7 +130,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:49](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L49)
+[lib/utils/mathUtils.ts:49](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L49)
 
 ___
 
@@ -146,4 +146,4 @@ Name | Type |
 **Returns:** function
 
 {:.url-source-ref}
-[lib/utils/mathUtils.ts:6](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/utils/mathUtils.ts#L6)
+[lib/utils/mathUtils.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/utils/mathUtils.ts#L6)

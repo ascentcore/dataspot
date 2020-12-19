@@ -34,4 +34,4 @@ Name | Type |
 *Implementation of [preprocessing.ValueEncoder](../../interfaces/preprocessing_valueencoder)*
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:13](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/preprocessing/labelEncoder.ts#L13)
+[lib/preprocessing/labelEncoder.ts:13](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L13)

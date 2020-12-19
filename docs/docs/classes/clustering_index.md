@@ -18,7 +18,7 @@ groups with small distances between cluster members, dense areas of the data spa
 particular statistical distributions. Clustering can therefore be formulated as
 a multi-objective optimization problem.
 
-**`sample_only`** documentation/clusteringComparison
+**`sample`** documentation/clusteringComparison
 
 <div class="running-sample">
     <span class="running-sample-container" data-ref="documentation/clusteringComparison"></span>
