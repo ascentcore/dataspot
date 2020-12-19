@@ -56,7 +56,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:25](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L25)
+[lib/functions/activations.ts:25](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L25)
 
 ___
 
@@ -72,7 +72,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:17](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L17)
+[lib/functions/activations.ts:17](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L17)
 
 ___
 
@@ -88,7 +88,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:33](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L33)
+[lib/functions/activations.ts:33](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L33)
 
 ___
 
@@ -104,7 +104,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:29](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L29)
+[lib/functions/activations.ts:29](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L29)
 
 ___
 
@@ -120,7 +120,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:41](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L41)
+[lib/functions/activations.ts:41](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L41)
 
 ___
 
@@ -136,7 +136,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:21](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L21)
+[lib/functions/activations.ts:21](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L21)
 
 ___
 
@@ -152,7 +152,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:49](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L49)
+[lib/functions/activations.ts:49](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L49)
 
 ___
 
@@ -168,7 +168,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:37](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L37)
+[lib/functions/activations.ts:37](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L37)
 
 ___
 
@@ -184,4 +184,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/activations.ts:45](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/functions/activations.ts#L45)
+[lib/functions/activations.ts:45](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/functions/activations.ts#L45)

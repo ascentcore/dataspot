@@ -2,46 +2,86 @@ import './assets/spectre.min.css'
 import './assets/spectre-icons.min.css'
 import './assets/styles.css'
 
+const margin = 200
+
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
     return (
-        <div>
-            <header className='navbar' style={{ padding: 10, marginBottom: 20, borderBottom: '1px solid #FAFAFA' }}>
-                <section className='navbar-section'>
-                    <a href='/' className='navbar-brand mr-2'>
-                        Dataspot
-                    </a>
-                    <a href='/functions' className='btn btn-link'>
-                        Functions
-                    </a>
-                    <a href='/datasets' className='btn btn-link'>
-                        Datasets
-                    </a>
-                    <a href='/benchmarks' className='btn btn-link'>
-                        Benchmarks
-                    </a>
-                    <a href='/regressions' className='btn btn-link'>
-                        Regressions
-                    </a>
-                    <a href='/segmentation' className='btn btn-link'>
-                        Segmentation
-                    </a>
-                    <a href='/hierarchy' className='btn btn-link'>
-                        Hierarchy
-                    </a>
-                    <a href='/metaheuristics' className='btn btn-link'>
-                        Metaheuristics
-                    </a>
-                    <a href='/clustering' className='btn btn-link'>
-                        Clustering
-                    </a>
-                    <a href='/fitting-circles' className='btn btn-link'>
-                        Fitting Circles
-                    </a>
-                </section>
-            </header>
-            <div className='container'>
-                <Component {...pageProps} />
+        <div style={{ marginLeft: margin }} id='labEnvironment'>
+            <div
+                style={{
+                    backgroundColor: 'rgba(0,0,0,0.05)',
+                    width: margin,
+                    position: 'fixed',
+                    left: 0,
+                    bottom: 0,
+                    top: 0,
+                    overflow: 'auto'
+                }}
+            >
+                <ul className='nav'>
+                    <li className='nav-item'>
+                        <a href='/'>Lab</a>
+                    </li>
+                    <li className='nav-item'>
+                        <a href='#'>Heuristics</a>
+                        <ul className='nav'>
+                            <li className='nav-item'>
+                                <a href='/samples/heuristics/benchmark'>Banchmark</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/heuristics/circleFit'>Circle Fit Problem</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className='nav-item'>
+                        <a href='#'>Regressions</a>
+                        <ul className='nav'>
+                            <li className='nav-item'>
+                                <a href='/samples/regressions/linearRegression'>Linear Regression</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/regressions/multivariateLinearRegression'>
+                                    Multivariate Linear Regression
+                                </a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/regressions/polynomialRegression'>Polynomial Regression</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className='nav-item'>
+                        <a href='#'>Clustering</a>
+                        <ul className='nav'>
+                            <li className='nav-item'>
+                                <a href='/samples/clustering/datasets'>Datasets</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/clustering/comparison'>Comparison</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/clustering/segmentation'>Image Segmentation</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/clustering/hierarchy'>Hierarchical Clustering</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className='nav-item'>
+                        <a href='#'>Functions</a>
+                        <ul className='nav'>
+                            <li className='nav-item'>
+                                <a href='/samples/functions/activation'>Activation Functions</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/functions/benchmark'>Benchmark Functions</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div style={{ padding: 10 }}>
+                <Component {...pageProps}></Component>
             </div>
         </div>
     )

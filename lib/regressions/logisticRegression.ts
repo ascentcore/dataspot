@@ -1,5 +1,6 @@
-import Losses from '../functions/losses'
-import { gradientDescent } from '../functions/optimizers'
+import Optimizers from '@ascentcore/dataspot/functions/optimizers'
+import Losses from '@ascentcore/dataspot/functions/losses'
+// import { gradientDescent } from '../functions/optimizers'
 import ActivationFunctions from '../functions/activations'
 import { predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
 
@@ -20,7 +21,7 @@ export default class LogisticRegression {
         )
         while (true) {
             let updated = true
-            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
+            const bw = Optimizers.gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
 
             biasAndWeights = bw
 

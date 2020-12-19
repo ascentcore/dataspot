@@ -27,14 +27,14 @@ In mathematical optimization, the Ackley function is a non-convex function used 
 ▪ `Static` **DOMAIN**: number[] = [-32, 32]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/ackley.ts:6](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/benchmark/ackley.ts#L6)
+[lib/datasets/benchmark/ackley.ts:6](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/benchmark/ackley.ts#L6)
 
 ___
 
 ▪ `Static` **GLOBAL\_M**: number[] = [0]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/ackley.ts:8](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/benchmark/ackley.ts#L8)
+[lib/datasets/benchmark/ackley.ts:8](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/benchmark/ackley.ts#L8)
 
 ## Methods
 
@@ -50,4 +50,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/datasets/benchmark/ackley.ts:10](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/datasets/benchmark/ackley.ts#L10)
+[lib/datasets/benchmark/ackley.ts:10](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/datasets/benchmark/ackley.ts#L10)

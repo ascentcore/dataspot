@@ -1,5 +1,4 @@
 import Optimizers from '@ascentcore/dataspot/functions/optimizers'
-import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
 import { roundToPrecision } from '../math'
 import Regression, { RegressionConfig } from './regression'
 import predictSinglevariable from './utilities'
@@ -8,6 +7,15 @@ export class LinearRegressionConfig extends RegressionConfig {
     learningRate: number = 0.001
 }
 
+/**
+ * Simple linear regression is useful for finding relationship between two continuous variables.
+ * One is predictor or independent variable and other is response or dependent variable.
+ * Relationship between two variables is said to be deterministic if one variable can be accurately expressed by the other.
+ *
+ * @sample_only documentation/linearRegression
+ * 
+ * 
+ */
 export class LinearRegression extends Regression<LinearRegressionConfig> {
     private transformedInput: number[] | undefined
 

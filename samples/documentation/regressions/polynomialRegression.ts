@@ -3,17 +3,13 @@ import Random from '@ascentcore/dataspot/math/random'
 import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
 import ScatterPlot from '@ascentcore/dataspot/ui/visualization/scatterPlot'
 import LineGraph from '@ascentcore/dataspot/ui/visualization/lineGraph'
-
+import Container from '@ascentcore/dataspot/ui/container'
 import { PolynomialRegressionConfig, PolynomialRegression } from '@ascentcore/dataspot/regressions/polynomialRegression'
 
 export default (async () => {
     Random.seed('polynomialRegression')
 
-    let ref: HTMLElement = document.querySelector(`[data-ref="documentation/linearRegression"]`)
-    if (!ref) {
-        ref = document.createElement('div')
-        document.body.appendChild(ref)
-    }
+    const ref: HTMLElement = Container.getRootContainer(`[data-ref="documentation/polynomialRegression"]`)
 
     const plotConfig = { width: 300, height: 300, domainX: { min: 0, max: 1 }, domainY: { min: 0, max: 1 } }
     const lineRegressionPlot = new LinePlot(plotConfig, 'line-elem')

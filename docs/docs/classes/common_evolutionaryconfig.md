@@ -10,7 +10,7 @@ has_children: false
 
 ## Indexable
 
-▪ [key: string]: SerializableType
+▪ [key: string]: SerializableType \| Function
 
 ## Index
 
@@ -23,4 +23,4 @@ has_children: false
 •  **iterations**: number = 100
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/91cc0ab/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/eafb62e/lib/common/evolutionaryAlgorithm.ts#L4)

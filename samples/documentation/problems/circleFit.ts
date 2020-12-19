@@ -3,6 +3,7 @@ import BoxedCircles from '@ascentcore/dataspot/datasets/problems/boxedCircles'
 import Random from '@ascentcore/dataspot/math/random'
 import MetaheuristicWrapper from '@ascentcore/dataspot/wrappers/metaheuristicWrapper'
 import GA, { GAConfig } from '@ascentcore/dataspot/metaheuristics/ga'
+import Container from '@ascentcore/dataspot/ui/container'
 
 export default (async () => {
     Random.seed('circlefit')
@@ -11,7 +12,7 @@ export default (async () => {
     const circles = 8
 
     // DOM Reference to be used for injecting the code
-    const ref = document.querySelector(`[data-ref="documentation/circleFit"]`) || document.body
+    const ref = Container.getRootContainer('[data-ref="documentation/circleFit"]')
 
     // Instantiate optimization function
     const boxedCircles = new BoxedCircles(circles)

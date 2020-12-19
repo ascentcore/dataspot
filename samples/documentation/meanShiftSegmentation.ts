@@ -1,6 +1,7 @@
 import MeanShift, { MeanShiftConfig } from '@ascentcore/dataspot/clustering/meanShift'
 import Random from '@ascentcore/dataspot/math/random'
 import CanvasUtils from '@ascentcore/dataspot/utils/canvasUtils'
+import Container from '@ascentcore/dataspot/ui/container'
 
 export default (async () => {
     Random.seed('segmentation')
@@ -8,7 +9,7 @@ export default (async () => {
     let clusterThreshold = 127
 
     const root = document.createElement('div')
-    const ref = document.querySelector(`[data-ref="documentation/meanShiftSegmentation"]`) || document.body
+    const ref = Container.getRootContainer(`[data-ref="documentation/meanShiftSegmentation"]`)
     ref.appendChild(root)
 
     const inputCanvas = document.createElement('canvas')

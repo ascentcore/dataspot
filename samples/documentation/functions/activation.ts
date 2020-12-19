@@ -4,10 +4,11 @@ import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
 import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
 import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
 import Title from '@ascentcore/dataspot/visualizations/d3/title'
+import Container from '@ascentcore/dataspot/ui/container'
 
 export default (async () => {
     // DOM Reference to be used for injecting the code
-    const ref: HTMLElement = document.querySelector(`[data-ref="documentation/activationFunctions"]`) || document.body
+    const ref: HTMLElement = Container.getRootContainer(`[data-ref="documentation/activationFunctions"]`)
     console.log(ActivationFunctions)
     console.log(Object.getOwnPropertyNames(ActivationFunctions))
     Object.getOwnPropertyNames(ActivationFunctions).forEach((functionName: string) => {

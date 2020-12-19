@@ -8,6 +8,7 @@ import {
 } from '@ascentcore/dataspot/regressions/multivariableLinearRegression'
 import Table from '@ascentcore/dataspot/visualizations/html/table'
 import LineGraph from '@ascentcore/dataspot/ui/visualization/lineGraph'
+import Container from '@ascentcore/dataspot/ui/container'
 
 export default (async () => {
     const input: number[][] = []
@@ -43,9 +44,7 @@ export default (async () => {
     config.iterations = 10000
     const regressor = new MultivariableLinearRegression(config)
 
-    const ref: HTMLElement = document.querySelector(`[data-ref="documentation/linearRegression"]`) || document.body
-    // ref.innerHTML += `<hr><h4>Multivariate Linear Regression - Predicting Iris Sepal Length</h4>`
-    ref.appendChild(document.createElement('hr'))
+    const ref: HTMLElement = Container.getRootContainer(`[data-ref="documentation/multivariateLinearRegression"]`)
     const title = document.createElement('h4')
     title.innerText = 'Multivariate Linear Regression - Predicting Iris Sepal Length'
     ref.appendChild(title)

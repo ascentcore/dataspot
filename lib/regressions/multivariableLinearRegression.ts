@@ -6,6 +6,11 @@ import { addBias, predictMultivariable } from './utilities'
 
 export class MultivariableLinearRegressionConfig extends LinearRegressionConfig {}
 
+/**
+ * Multivariable Linear Regression
+ *
+ * @sample_only documentation/multivariateLinearRegression
+ */
 export class MultivariableLinearRegression extends Regression<MultivariableLinearRegressionConfig> {
     private transformedInput: number[][] | undefined
 

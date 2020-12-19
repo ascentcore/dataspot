@@ -1,4 +1,7 @@
-import { mseCostFunction, gradientDescent } from './optimizers'
+import Optimizers from './optimizers'
+
+const mseCostFunction = Optimizers.meanSquaredError
+const { gradientDescent } = Optimizers
 
 describe('Optimizers', () => {
     it('Gradient Descent', async () => {

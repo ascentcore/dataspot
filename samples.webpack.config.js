@@ -14,7 +14,10 @@ const config = {
         benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts',
         meanShiftSegmentation: './samples/documentation/meanShiftSegmentation.ts',
         circleFit: './samples/documentation/problems/circleFit.ts',
-        activationFunctions: './samples/documentation/functions/activation.ts'
+        activationFunctions: './samples/documentation/functions/activation.ts',
+        linearRegression: './samples/documentation/regressions/linearRegression',
+        multivariateLinearRegression: './samples/documentation/regressions/multivariateLinearRegression',
+        polynomialRegression: './samples/documentation/regressions/polynomialRegression'
     },
     plugins,
     output: {

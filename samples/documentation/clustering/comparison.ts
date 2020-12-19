@@ -7,6 +7,7 @@ import KMeans, { KMeansConfig } from '@ascentcore/dataspot/clustering/kMeans'
 import MeanShift, { MeanShiftConfig } from '@ascentcore/dataspot/clustering/meanShift'
 import DBScan from '@ascentcore/dataspot/clustering/dbScan'
 import Random from '@ascentcore/dataspot/math/random'
+import Container from '@ascentcore/dataspot/ui/container'
 
 export default (async () => {
     Random.seed('Datasets')
@@ -14,7 +15,7 @@ export default (async () => {
     const functions = [ClusteringDataset.arc, ClusteringDataset.blob, ClusteringDataset.concentricRings]
 
     const root = document.createElement('div')
-    const ref = document.querySelector(`[data-ref="documentation/clusteringComparison"]`) || document.body
+    const ref = Container.getRootContainer(`[data-ref="documentation/clusteringComparison"]`)
     ref.appendChild(root)
 
     const algorithms: ClusteringAlgorithm<any>[] = []

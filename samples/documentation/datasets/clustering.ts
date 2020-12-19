@@ -3,6 +3,7 @@ import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
 import Title from '@ascentcore/dataspot/visualizations/d3/title'
 import ClusteringDataset from '@ascentcore/dataspot/datasets/clustering'
 import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
+import Container from '@ascentcore/dataspot/ui/container'
 
 export default (async () => {
     const keys = ['Arc', 'Blob', 'Concentric Rings', 'Fill Space', 'Noisy With Blob', 'Potato']
@@ -16,7 +17,7 @@ export default (async () => {
     ]
 
     const root = document.createElement('div')
-    const ref = document.querySelector(`[data-ref="documentation/clusteringDataset"]`) || document.body
+    const ref = Container.getRootContainer(`[data-ref="documentation/clusteringDataset"]`)
     ref.appendChild(root)
 
     functions.forEach((fn: Function, index: number) => {

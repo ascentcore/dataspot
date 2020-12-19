@@ -9,6 +9,11 @@ export class PolynomialRegressionConfig extends RegressionConfig {
     degree: number = 2
 }
 
+/**
+ * Polynomial Regression
+ * 
+ * @sample_only documentation/polynomialRegression
+ */
 export class PolynomialRegression extends Regression<PolynomialRegressionConfig> {
     private transformedInput: number[][] | undefined
 

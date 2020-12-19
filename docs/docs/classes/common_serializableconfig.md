@@ -10,4 +10,4 @@ has_children: false
 
 ## Indexable
 
-▪ [key: string]: SerializableType
+▪ [key: string]: SerializableType \| Function
