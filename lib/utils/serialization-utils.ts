@@ -1,7 +1,5 @@
 export default function serializeFunction(functionDefinition: (...args: any) => void, functionName: string): string {
-    // eslint-disable-next-line no-useless-escape
-    const regexFunctionName = new RegExp(`${functionName}\\([^\\)]*\\) *{`, 'g')
-    const normalizedFunctionBody = functionDefinition
+    let normalizedFunctionBody = functionDefinition
         .toString()
         // remove comments from function body
         .replace(/\/\/.*/g, '')
@@ -10,7 +8,8 @@ export default function serializeFunction(functionDefinition: (...args: any) => 
         // remove new lines from function body
         .replace(/\n/g, ' ')
         // extract function body from function definition (remove function name, parameters and curly brakets)
-        .replace(regexFunctionName, '')
         .replace(/}$/g, '')
+
+    normalizedFunctionBody = normalizedFunctionBody.substr(normalizedFunctionBody.indexOf('{') + 1)
     return normalizedFunctionBody
 }

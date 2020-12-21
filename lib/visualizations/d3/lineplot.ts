@@ -6,8 +6,6 @@ export default class LinePlot extends SVGBaseVisualization {
         super(config, elemClass)
     }
 
-    public setup() {}
-
     private updateFn(data: TwoDPointLine[], elemClass: string): void {
         const { margin, width, height, domainX, domainY } = this.config
         const { d3, rootContainer } = this.dependencies
@@ -59,8 +57,17 @@ export default class LinePlot extends SVGBaseVisualization {
             .attr('d', line)
     }
 
-    public dataUpdate(data: TwoDPointLine[], elemClass = this.elemClass) {
-        this.updateFn(data, elemClass)
+    public setup(initialData?: TwoDPointLine[]) {
+        if (initialData) {
+            this.updateFn(initialData, this.elemClass)
+        }
+    }
+
+    public getDataUpdateFn() {
         return this.updateFn
+    }
+
+    public dataUpdate(data: TwoDPointLine[]) {
+        this.updateFn(data, this.elemClass)
     }
 }

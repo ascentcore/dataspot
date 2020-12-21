@@ -5,8 +5,6 @@ export default class Table extends HTMLBaseVisualization {
         super(config, elemClass)
     }
 
-    public setup() {}
-
     private updateFn(data: any[], elemClass: string): void {
         const { width, border, borderCollapse } = this.config
         const { document, rootContainer } = this.dependencies
@@ -45,8 +43,17 @@ export default class Table extends HTMLBaseVisualization {
         rootContainer.querySelector(`.${elemClass}`).appendChild(table)
     }
 
-    public dataUpdate(data: any[], elemClass = this.elemClass) {
-        this.updateFn(data, elemClass)
+    public setup(initialData?: any[]) {
+        if (initialData) {
+            this.updateFn(initialData, this.elemClass)
+        }
+    }
+
+    public getDataUpdateFn() {
         return this.updateFn
+    }
+
+    public dataUpdate(data: any[]) {
+        this.updateFn(data, this.elemClass)
     }
 }

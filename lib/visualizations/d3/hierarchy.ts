@@ -5,9 +5,7 @@ export default class HierarchyPlot extends SVGBaseVisualization {
         super(config, elemClass)
     }
 
-    setup() {}
-
-    updateFn(data: any, elemClass: string): void {
+    private updateFn(data: any, elemClass: string): void {
         const { margin, layout, tree, width } = this.config
         const configLayout = layout || 'horizontal'
         const { d3, rootContainer } = this.dependencies
@@ -77,14 +75,19 @@ export default class HierarchyPlot extends SVGBaseVisualization {
             // eslint-disable-next-line no-nested-ternary
             .attr('text-anchor', (d: any) => (isHorizontal ? (d.children ? 'end' : 'start') : 'end'))
             .text((d: any) => (typeof d.data === 'string' ? d.data : ''))
-
-        // .clone(true)
-        // .lower()
-        // .attr('stroke', 'white')
     }
 
-    public dataUpdate(data: any, elemClass = this.elemClass) {
-        this.updateFn(data, elemClass)
+    public setup(initialData?: any) {
+        if (initialData) {
+            this.updateFn(initialData, this.elemClass)
+        }
+    }
+
+    public getDataUpdateFn() {
         return this.updateFn
+    }
+
+    public dataUpdate(data: any) {
+        this.updateFn(data, this.elemClass)
     }
 }

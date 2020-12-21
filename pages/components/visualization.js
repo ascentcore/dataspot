@@ -1,21 +1,55 @@
 import { useEffect, useRef, useState } from 'react'
-import D3Visualization from './d3visualization'
-import HTMLVisualization from './htmlvisualization'
+import * as d3 from 'd3'
 
-export default function Visualization({ db, docName }) {
-    const [doc, setDoc] = useState(null)
+export default function Visualization({ db, docName, rev }) {
+    const divRef = useRef(null)
+    const [node, setNode] = useState(null)
+    const [block, setBlock] = useState(null)
+
+    const getData = () => {
+        db.get(`${docName}-data`).then(function(doc) {
+            if (
+                !block.dependencies.rootContainer ||
+                (block.dependencies.rootContainer instanceof d3.selection && block.dependencies.rootContainer.empty())
+            ) {
+                block.dependencies.rootContainer =
+                    block.type === 'd3' ? d3.select(divRef.current.querySelector('svg')) : divRef.current
+            }
+            const { data, elemClass, dataUpdateExpr } = doc
+            let dataUpdateExpression = dataUpdateExpr.replace(/this\./g, 'block.')
+            dataUpdateExpression = Function('block', 'data', 'elemClass', dataUpdateExpression)
+
+            dataUpdateExpression(block, data, elemClass)
+        })
+    }
 
     useEffect(() => {
-        db.get(`${docName}-setup`).then(function(doc) {
-            setDoc(doc)
+        db.get(`${docName}-setup`).then(function(setup) {
+            const { config, node, type } = setup
+
+            const block = {
+                dependencies: {
+                    d3,
+                    palette: d3.scaleOrdinal(d3.schemeAccent),
+                    document,
+                    rootContainer: type === 'd3' ? d3.select(divRef.current.querySelector('svg')) : divRef.current
+                },
+                config,
+                type
+            }
+
+            // eslint-disable-next-line no-new-func
+
+            setBlock(block)
+            setNode(node)
         })
     }, [])
 
-    return doc !== null ? (
-        doc.type === 'd3' ? (
-            <D3Visualization db={db} docName={docName} setup={doc} />
-        ) : (
-            <HTMLVisualization db={db} docName={docName} setup={doc} />
-        )
-    ) : null
+    useEffect(() => {
+        if (block) {
+            getData()
+        }
+    }, [block, rev])
+
+    return <div ref={divRef} style={{ border: '1px solid #808080' }} dangerouslySetInnerHTML={{ __html: node }}></div>
 }

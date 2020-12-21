@@ -7,10 +7,8 @@ export default class Scatter extends SVGBaseVisualization {
         super(config, elemClass)
     }
 
-    public setup() {}
-
     private updateFn(data: TwoDPointScatter[], elemClass: string): void {
-        const { margin, width, height, domainX, domainY } = this.config
+        const { margin, width, height, domainX, domainY, stroke } = this.config
         const { d3, rootContainer, palette } = this.dependencies
 
         let { x, y, rx } = this.dependencies
@@ -66,7 +64,7 @@ export default class Scatter extends SVGBaseVisualization {
                         : palette(d.color)
                     : 'black'
             )
-            .attr('stroke', '#000')
+            .attr('stroke', stroke === false ? undefined : '#000')
             .attr('r', (d: TwoDPointScatter) => rx(d.r) || 1)
             .enter()
             .append('circle')
@@ -84,8 +82,17 @@ export default class Scatter extends SVGBaseVisualization {
             .attr('r', (d: TwoDPointScatter) => d.fixedRadius || rx(d.r) || 1)
     }
 
-    dataUpdate(data: TwoDPointScatter[], elemClass = this.elemClass) {
-        this.updateFn(data, elemClass)
+    public setup(initialData?: TwoDPointScatter[]) {
+        if (initialData) {
+            this.updateFn(initialData, this.elemClass)
+        }
+    }
+
+    public getDataUpdateFn() {
         return this.updateFn
+    }
+
+    dataUpdate(data: TwoDPointScatter[]) {
+        this.updateFn(data, this.elemClass)
     }
 }

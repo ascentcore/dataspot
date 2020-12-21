@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import KMeans, { KMeansConfig } from '@ascentcore/dataspot/clustering/kMeans'
 import DBScan, { DBScanConfig } from '@ascentcore/dataspot/clustering/dbScan'
 import Lab from '@ascentcore/dataspot/lab'
@@ -16,19 +17,30 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
     }).fitAsync(initialDataset)
 
     const visKMeans = new SVGVisualizationWrapper(
-        new Scatter({}),
-        `kmeans-${datasetName}`,
-        initialDataset.map((data: any[]) => {
-            return { x: data[0], y: data[1] }
-        })
+        new Scatter({ stroke: false }, 'scatter-elem'),
+        `kmeans-${datasetName}`
     )
+
+    await visKMeans.setup([
+        {
+            data: initialDataset.map((data: any[]) => {
+                return { x: data[0], y: data[1] }
+            }),
+            elemClass: 'scatter-elem'
+        }
+    ])
     const vizDBScan = new SVGVisualizationWrapper(
-        new Scatter({}),
-        `dbscan-${datasetName}`,
-        initialDataset.map((data: any[]) => {
-            return { x: data[0], y: data[1] }
-        })
+        new Scatter({ stroke: false }, 'scatter-elem'),
+        `dbscan-${datasetName}`
     )
+    await vizDBScan.setup([
+        {
+            data: initialDataset.map((data: any[]) => {
+                return { x: data[0], y: data[1] }
+            }),
+            elemClass: 'scatter-elem'
+        }
+    ])
 
     let doneKmeans = false
     let doneDBScan = false
@@ -39,22 +51,28 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
             const kmeansValue = kmeans.next()
             doneKmeans = kmeansValue.done === true
             resultKmeans = kmeansValue.value
-            visKMeans.dataUpdate([
-                ...resultKmeans.map((label, index) => {
-                    return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
-                })
-            ])
+            await visKMeans.dataUpdate(
+                [
+                    ...resultKmeans.map((label, index) => {
+                        return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
+                    })
+                ],
+                'scatter-elem'
+            )
         }
 
         if (!doneDBScan) {
             const dbscanValue = dbscan.next()
             doneDBScan = dbscanValue.done === true
             resultDBScan = dbscanValue.value
-            vizDBScan.dataUpdate([
-                ...resultDBScan.map((label, index) => {
-                    return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
-                })
-            ])
+            await vizDBScan.dataUpdate(
+                [
+                    ...resultDBScan.map((label, index) => {
+                        return { x: initialDataset[index][0], y: initialDataset[index][1], color: label }
+                    })
+                ],
+                'scatter-elem'
+            )
         }
 
         // eslint-disable-next-line no-await-in-loop

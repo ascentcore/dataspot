@@ -6,9 +6,11 @@ export default class Title extends SVGBaseVisualization {
         super(config, elemClass)
     }
 
+    private updateFn() {}
+
     public setup() {
-        const { margin, width, height, text, yLoc } = this.config
-        const { d3, rootContainer } = this.dependencies
+        const { margin, width, text, yLoc } = this.config
+        const { rootContainer } = this.dependencies
         rootContainer
             .selectAll(`.${this.elemClass}`)
             .append('text')
@@ -17,7 +19,9 @@ export default class Title extends SVGBaseVisualization {
             .text(text || 'Text Undefined')
     }
 
-    dataUpdate(_data: any, _elemClass?: string): ((data: any, elemClass: string) => void) | null {
-        return null
+    public getDataUpdateFn() {
+        return this.updateFn
     }
+
+    public dataUpdate(_data: any, _elemClass?: string) {}
 }
