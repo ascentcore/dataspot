@@ -16,9 +16,7 @@ export default function Visualization({ db, docName, rev }) {
                     block.type === 'd3' ? d3.select(divRef.current.querySelector('svg')) : divRef.current
             }
             const { data, elemClass, dataUpdateExpr } = doc
-
             let dataUpdateExpression = dataUpdateExpr.replace(/this\./g, 'block.')
-
             dataUpdateExpression = Function('block', 'data', 'elemClass', dataUpdateExpression)
 
             dataUpdateExpression(block, data, elemClass)

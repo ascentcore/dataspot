@@ -1,37 +1,11 @@
 /* eslint-disable no-await-in-loop */
 import GA, { GAConfig } from '../../lib/metaheuristics/ga'
-import { circlesIntersection, circleRectangleOutsideBoundaries } from '../../lib/math/geometry'
 import SVGVisualizationWrapper from '../../lib/visualizations/d3/svgvisualizationwrapper'
 import Scatter from '../../lib/visualizations/d3/scatter'
 import Lab from '../../lib/lab'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
-
-const ff = (...inputs: number[]) => {
-    const circles = []
-    for (let i = 0; i < inputs.length; i += 3) {
-        circles.push({ x: inputs[i], y: inputs[i + 1], r: inputs[i + 2] })
-    }
-    const rightTop = { x: 1, y: 1 }
-    const leftBottom = { x: 0, y: 0 }
-    const rectangleArea = (rightTop.x - leftBottom.x) * (rightTop.y - leftBottom.y)
-    const circleAreas = circles.reduce((sum, circle) => sum + Math.PI * circle.r ** 2, 0)
-    let overlappingArea = 0
-    let rminConstraint = 0
-    for (let i = 0; i < circles.length; i++) {
-        if (circles[i].r < 0.05) {
-            rminConstraint += 1
-        }
-        for (let j = i + 1; j < circles.length; j++) {
-            overlappingArea += circlesIntersection(circles[i], circles[j])
-        }
-    }
-    let outsideBoundariesArea = 0
-    circles.forEach((circle) => {
-        outsideBoundariesArea += circleRectangleOutsideBoundaries(circle, leftBottom, rightTop)
-    })
-    return rectangleArea - circleAreas + 10 * overlappingArea + 100 * outsideBoundariesArea + rminConstraint
-}
+import BoxedCircles from '@ascentcore/dataspot/datasets/problems/boxedCircles'
 ;(async () => {
     const lab = new Lab('metaheuristics')
     try {
@@ -60,26 +34,53 @@ const ff = (...inputs: number[]) => {
 
     const viz = new SVGVisualizationWrapper(multipleViz, `circles-ga`)
     await viz.setup([
-        { data: [{ x: 1, y: 0 }, { x: 1, y: 1 }], elemClass: 'right-line-elem' },
-        { data: [{ x: 0, y: 0 }, { x: 1, y: 0 }], elemClass: 'bottom-line-elem' },
-        { data: [{ x: 0, y: 0 }, { x: 0, y: 1 }], elemClass: 'left-line-elem' },
-        { data: [{ x: 0, y: 1 }, { x: 1, y: 1 }], elemClass: 'top-line-elem' }
+        {
+            data: [
+                { x: 1, y: 0 },
+                { x: 1, y: 1 }
+            ],
+            elemClass: 'right-line-elem'
+        },
+        {
+            data: [
+                { x: 0, y: 0 },
+                { x: 1, y: 0 }
+            ],
+            elemClass: 'bottom-line-elem'
+        },
+        {
+            data: [
+                { x: 0, y: 0 },
+                { x: 0, y: 1 }
+            ],
+            elemClass: 'left-line-elem'
+        },
+        {
+            data: [
+                { x: 0, y: 1 },
+                { x: 1, y: 1 }
+            ],
+            elemClass: 'top-line-elem'
+        }
     ])
+
+    const circles = 10
+    const boxedCircles = new BoxedCircles(circles)
 
     const ga = new GA({
         populationSize: 200,
         iterations: 10000,
-        numOffsprings: 200,
+        numOffsprings: 190,
         mutationType: 'all',
         mutationProbability: 0.05
     } as GAConfig)
     let done = false
     const domains = []
-    const circles = 10
+
     for (let i = 0; i < circles; i++) {
         domains.push({ min: 0, max: 1 }, { min: 0, max: 1 }, { min: 0, max: 0.5 })
     }
-    const iterator = ga.fitAsync(ff, domains)
+    const iterator = ga.fitAsync(boxedCircles.calculate, domains)
 
     while (!done) {
         const result = iterator.next()
