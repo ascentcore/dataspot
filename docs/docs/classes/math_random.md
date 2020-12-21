@@ -21,8 +21,10 @@ has_children: false
 | [randomChoice](#randomchoice) |
 | [randomInt](#randomint) |
 | [roundToPrecision](#roundtoprecision) |
+| [seed](#seed) |
 | [seededRandom](#seededrandom) |
 | [seededRandomInt](#seededrandomint) |
+| [shuffleArray](#shufflearray) |
 | [xmur3](#xmur3) |
 
 ## Properties
@@ -30,7 +32,7 @@ has_children: false
 ▪ `Static` `Private` **rand**: (Anonymous function) = Random.mulberry32(Random.xmur3('apples')())
 
 {:.url-source-ref}
-[lib/math/random.ts:3](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L3)
+[lib/math/random.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L4)
 
 ## Methods
 
@@ -46,7 +48,7 @@ Name | Type |
 **Returns:** (Anonymous function)
 
 {:.url-source-ref}
-[lib/math/random.ts:19](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L19)
+[lib/math/random.ts:25](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L25)
 
 ___
 
@@ -63,7 +65,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/math/random.ts:34](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L34)
+[lib/math/random.ts:40](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L40)
 
 ___
 
@@ -85,7 +87,7 @@ Name | Type |
 **Returns:** T
 
 {:.url-source-ref}
-[lib/math/random.ts:54](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L54)
+[lib/math/random.ts:60](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L60)
 
 ___
 
@@ -102,7 +104,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/math/random.ts:38](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L38)
+[lib/math/random.ts:44](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L44)
 
 ___
 
@@ -119,7 +121,23 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/math/random.ts:29](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L29)
+[lib/math/random.ts:35](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L35)
+
+___
+
+{:.method-highlight}
+▸ `Static`**seed**(`str`: string): void
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`str` | string |
+
+**Returns:** void
+
+{:.url-source-ref}
+[lib/math/random.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L6)
 
 ___
 
@@ -136,7 +154,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/math/random.ts:44](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L44)
+[lib/math/random.ts:50](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L50)
 
 ___
 
@@ -153,7 +171,23 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/math/random.ts:48](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L48)
+[lib/math/random.ts:54](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L54)
+
+___
+
+{:.method-highlight}
+▸ `Static`**shuffleArray**(`array`: any[]): any[]
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`array` | any[] |
+
+**Returns:** any[]
+
+{:.url-source-ref}
+[lib/math/random.ts:64](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L64)
 
 ___
 
@@ -169,4 +203,4 @@ Name | Type |
 **Returns:** function
 
 {:.url-source-ref}
-[lib/math/random.ts:5](https://github.com/ascentcore/dataspot/blob/12500c0/lib/math/random.ts#L5)
+[lib/math/random.ts:11](https://github.com/ascentcore/dataspot/blob/3098228/lib/math/random.ts#L11)

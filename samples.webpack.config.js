@@ -3,11 +3,21 @@ const path = require('path')
 
 const plugins = []
 
+function srcPaths(src) {
+    return path.join(__dirname, src)
+}
+
 const config = {
     entry: {
         sample: './samples/documentation/sample.ts',
-        clusteringDataset: './samples/documentation/datasets/clustering.ts',
-        benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts'
+        clusteringComparison: './samples/documentation/clustering/comparison.ts',
+        benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts',
+        meanShiftSegmentation: './samples/documentation/meanShiftSegmentation.ts',
+        circleFit: './samples/documentation/problems/circleFit.ts',
+        activationFunctions: './samples/documentation/functions/activation.ts',
+        linearRegression: './samples/documentation/regressions/linearRegression',
+        multivariateLinearRegression: './samples/documentation/regressions/multivariateLinearRegression',
+        polynomialRegression: './samples/documentation/regressions/polynomialRegression'
     },
     plugins,
     output: {
@@ -33,7 +43,10 @@ const config = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.tsx', '.ts']
+        extensions: ['.js', '.jsx', '.tsx', '.ts'],
+        alias: {
+            '@ascentcore/dataspot': srcPaths('lib')
+        }
     },
     devServer: {
         contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'assets', 'images')],

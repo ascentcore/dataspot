@@ -27,14 +27,14 @@ The Griewank function has many widespread local minima, which are regularly dist
 ▪ `Static` **DOMAIN**: number[] = [-512, 512]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/griewank.ts:6](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/benchmark/griewank.ts#L6)
+[lib/datasets/benchmark/griewank.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/griewank.ts#L6)
 
 ___
 
 ▪ `Static` **GLOBAL\_M**: number[] = [0]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/griewank.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/benchmark/griewank.ts#L8)
+[lib/datasets/benchmark/griewank.ts:8](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/griewank.ts#L8)
 
 ## Methods
 
@@ -50,4 +50,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/datasets/benchmark/griewank.ts:10](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/benchmark/griewank.ts#L10)
+[lib/datasets/benchmark/griewank.ts:10](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/griewank.ts#L10)

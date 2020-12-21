@@ -10,7 +10,7 @@ has_children: false
 
 ## Indexable
 
-▪ [key: string]: SerializableType
+▪ [key: string]: SerializableType \| Function
 
 ## Index
 
@@ -24,7 +24,7 @@ has_children: false
 •  **distanceFn**: string = "euclideanDistance"
 
 {:.url-source-ref}
-[lib/clustering/agglomerativeClustering.ts:6](https://github.com/ascentcore/dataspot/blob/12500c0/lib/clustering/agglomerativeClustering.ts#L6)
+[lib/clustering/agglomerativeClustering.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/clustering/agglomerativeClustering.ts#L7)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 *Inherited from [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/12500c0/lib/common/evolutionaryAlgorithm.ts#L4)
+[lib/common/evolutionaryAlgorithm.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/common/evolutionaryAlgorithm.ts#L4)

@@ -6,6 +6,10 @@ export class PopulationMetaheuristicConfig extends EvolutionaryConfig {
     public populationSize: number = 100
 
     public bestPosition: number[] = []
+
+    static definitions = {
+        populationSize: { label: 'Population Size', min: 10, default: 100 }
+    }
 }
 
 export class Individual {
@@ -17,11 +21,13 @@ export class Individual {
 
     public bestPosition: number[] = []
 
+    public bestFitnessValue = Infinity
+
     public velocity: number[] | null = null
 
     computeFitness(fitnessFunction: Function) {
-        this.fitness = fitnessFunction(...this.position)
-        if (this.fitness < fitnessFunction(...this.bestPosition)) {
+        this.fitness = fitnessFunction(this.position)
+        if (this.fitness < this.bestFitnessValue) {
             this.bestPosition = [...this.position]
         }
     }
@@ -54,17 +60,17 @@ export default abstract class PopulationMetaheuristic<
         }
 
         let newBestPosition = [...this.individuals[0].bestPosition]
-        let newBestFitness = this.fitnessFunction(...newBestPosition)
+        let newBestFitness = this.individuals[0].bestFitnessValue
         for (let i = 1; i < this.individuals.length; i++) {
-            if (this.fitnessFunction(...this.individuals[i].bestPosition) < newBestFitness) {
+            if (this.individuals[i].bestFitnessValue < newBestFitness) {
                 newBestPosition = [...this.individuals[i].bestPosition]
-                newBestFitness = this.fitnessFunction(...newBestPosition)
+                newBestFitness = this.individuals[i].bestFitnessValue
             }
         }
         this.config.bestPosition = newBestPosition
     }
 
-    protected preparePopulation(): void {
+    public resetPopulation(): void {
         const { populationSize } = this.config
         this.iteration = 0
         this.individuals = []
@@ -72,18 +78,19 @@ export default abstract class PopulationMetaheuristic<
             const p = new Individual()
             p.id = i
             for (let j = 0; j < this.dimensions.length; j++) {
-                const randomNumber = Random.random(this.dimensions[j].min, this.dimensions[j].max)
-                p.position.push(randomNumber)
-                p.bestPosition.push(randomNumber)
+                const domainValue = Random.random(this.dimensions[j].min, this.dimensions[j].max)
+                p.position.push(domainValue)
+                p.bestPosition.push(domainValue)
             }
             this.individuals.push(p)
         }
         // if population reinitialized but best position exists, add the best position history to one of the particles
-        if (this.config.bestPosition.length !== 0 && populationSize) {
+        if (this.config.bestPosition && this.config.bestPosition.length !== 0 && populationSize) {
             this.individuals[0].position = [...this.config.bestPosition]
             this.individuals[0].bestPosition = [...this.config.bestPosition]
         }
-        this.updateGlobalBest()
+
+        this.config.bestPosition = [...this.individuals[0].position]
     }
 
     public abstract step(): void
@@ -91,7 +98,7 @@ export default abstract class PopulationMetaheuristic<
     public *fitAsync(fitessFunction: Function, dimensions: { min: number; max: number }[]): Generator {
         this.fitnessFunction = fitessFunction
         this.dimensions = dimensions
-        this.preparePopulation()
+        this.resetPopulation()
         while (!this.shouldStop() && !this.canStop()) {
             this.step()
             yield this.individuals.map((individual: Individual) => individual.position)
@@ -104,7 +111,7 @@ export default abstract class PopulationMetaheuristic<
     public fit(fitessFunction: Function, dimensions: { min: number; max: number }[]): number[][] {
         this.fitnessFunction = fitessFunction
         this.dimensions = dimensions
-        this.preparePopulation()
+        this.resetPopulation()
         while (!this.shouldStop() && !this.canStop()) {
             this.step()
             this.iteration++

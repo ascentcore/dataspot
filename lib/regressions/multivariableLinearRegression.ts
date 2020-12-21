@@ -1,57 +1,45 @@
-import { meanSquaredError } from '../functions/losses'
-import { gradientDescent } from '../functions/optimizers'
-import { predictMultivariable, RegressionOutputType, transposeAndNormalize } from './utilities'
+import Optimizers from '@ascentcore/dataspot/functions/optimizers'
+import { roundToPrecision } from '../math'
+import { LinearRegressionConfig } from './linearRegression'
+import Regression from './regression'
+import { addBias, predictMultivariable } from './utilities'
 
-export default class MultivariableLinearRegression {
-    static *fit(
-        input: number[][],
-        target: number[],
-        learningRate: number,
-        epochs: number,
-        costFunction: Function
-    ): Generator<RegressionOutputType> {
-        const costHistory = []
-        const transformedInput = transposeAndNormalize(input)
-        let biasAndWeights = Array(input[0].length + 1).fill(0)
-        let currentEpoch = 0
-        let updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
+export class MultivariableLinearRegressionConfig extends LinearRegressionConfig {}
 
-        while (true) {
-            let updated = true
+/**
+ * Multivariable Linear Regression
+ *
+ * @sample documentation/multivariateLinearRegression
+ */
+export class MultivariableLinearRegression extends Regression<MultivariableLinearRegressionConfig> {
+    private transformedInput: number[][] | undefined
 
-            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
+    private currentPrediction: number[] | undefined
 
-            biasAndWeights = bw
+    prepareDataset(input: number[][]): void {
+        this.transformedInput = addBias(input)
+        this.config.biasAndWeights = Array(input[0].length + 1).fill(0)
+        this.currentPrediction = predictMultivariable(this.transformedInput, this.config.biasAndWeights)
+    }
 
-            // Calculate cost for auditing purposes
-            const cost = meanSquaredError(updatedPrediction, target)
-            costHistory.push(cost)
+    predict(input: number[][]): number[] {
+        return predictMultivariable(addBias(input), this.config.biasAndWeights)
+    }
 
-            updatedPrediction = predictMultivariable(transformedInput, biasAndWeights)
-
-            currentEpoch += 1
-
-            if (
-                costHistory.length >= 3 &&
-                costHistory[costHistory.length - 1] === costHistory[costHistory.length - 2] &&
-                costHistory[costHistory.length - 2] === costHistory[costHistory.length - 3]
-            ) {
-                updated = false
-            }
-
-            if (!updated || currentEpoch === epochs) {
-                break
-            }
-
-            yield {
-                biasAndWeights,
-                costHistory
-            }
-        }
-
-        return {
+    step() {
+        const { biasAndWeights, learningRate } = this.config
+        this.config.biasAndWeights = Optimizers.gradientDescent(
+            this.transformedInput as number[][],
+            this.target as number[],
             biasAndWeights,
-            costHistory
-        }
+            learningRate,
+            this.costFunction
+        )
+
+        this.currentPrediction = predictMultivariable(this.transformedInput as number[][], this.config.biasAndWeights)
+        const loss: number = this.lossFunction(this.currentPrediction, this.target)
+        const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
+        this.config.lossHistory.push(lossValue)
+        this.convergence.addValue(lossValue)
     }
 }

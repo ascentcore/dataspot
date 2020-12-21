@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
-import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
-import ClusteringDataset from '../../lib/datasets/clustering'
-import Axis from '../../lib/visualizations/d3/axis'
-import Scatter from '../../lib/visualizations/d3/scatter'
-import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
+import KMeans, { KMeansConfig } from '@ascentcore/dataspot/clustering/kMeans'
+import ClusteringDataset from '@ascentcore/dataspot/datasets/clustering'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
 
 const initialArcDataset = ClusteringDataset.arc()
 

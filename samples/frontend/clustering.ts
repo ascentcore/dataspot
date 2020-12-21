@@ -1,11 +1,11 @@
-import KMeans, { KMeansConfig } from '../../lib/clustering/kMeans'
-import DBScan, { DBScanConfig } from '../../lib/clustering/dbScan'
+import KMeans, { KMeansConfig } from '@ascentcore/dataspot/clustering/kMeans'
+import DBScan, { DBScanConfig } from '@ascentcore/dataspot/clustering/dbScan'
 
-import Scatter from '../../lib/visualizations/d3/scatter'
+import Scatter from '@ascentcore/dataspot/visualizations/d3/scatter'
 
-import Axis from '../../lib/visualizations/d3/axis'
-import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
-import ClusteringDataset from '../../lib/datasets/clustering'
+import Axis from '@ascentcore/dataspot/visualizations/d3/axis'
+import SVGMultipleVisualization from '@ascentcore/dataspot/visualizations/d3/svgmultiple'
+import ClusteringDataset from '@ascentcore/dataspot/datasets/clustering'
 
 const snooze = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 

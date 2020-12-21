@@ -1,6 +1,12 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-bitwise */
 export default class Random {
     private static rand = Random.mulberry32(Random.xmur3('apples')())
+
+    public static seed(str: string) {
+        this.rand = Random.mulberry32(Random.xmur3(str)())
+        Math.random = Random.rand
+    }
 
     private static xmur3(str: string): () => number {
         let h = 1779033703 ^ str.length
@@ -53,5 +59,16 @@ export default class Random {
 
     static randomChoice<T>(arr: T[]): T {
         return arr[Random.randomInt(0, arr.length - 1)]
+    }
+
+    static shuffleArray(array: any[]): any[] {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+            const temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+        }
+
+        return array
     }
 }

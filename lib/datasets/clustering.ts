@@ -1,5 +1,4 @@
 import Random from '../math/random'
-import { MathUtils } from '../utils/math-utils'
 
 /**
  * The clustering datasets are a set of synthetic 2D data to be used
@@ -8,7 +7,7 @@ import { MathUtils } from '../utils/math-utils'
  * of clustering algorithms
  *
  * Running sample for the current set of clustering datasets:
- * @sample_only documentation/clusteringDataset
+ * @sample documentation/clusteringComparison
  */
 export default class clustering {
     /**
@@ -19,16 +18,20 @@ export default class clustering {
     public static arc(count = 200): number[][] {
         const dataset = []
         for (let i = 0; i < count; i++) {
+            const angle = (Math.PI * Math.random() * 180) / 180 - Math.PI / 2
             dataset.push([
-                0.1 + (i / count) * 0.6 - 0.08 + Math.random() * 0.08,
-                0.4 + MathUtils.random(0.05, 0.25) * Math.cos((((Math.PI * 2) / 90) * i) / 2)
+                0.3 + Math.random() * 0.1 + 0.2 * Math.sin(angle),
+                0.3 + Math.random() * 0.1 + Math.cos(angle)
             ])
-        }
 
-        for (let i = 0; i < count; i++) {
             dataset.push([
-                0.35 + (i / count) * 0.6 - 0.08 + Math.random() * 0.08,
-                0.7 - MathUtils.random(0.05, 0.25) * Math.cos((((Math.PI * 2) / 90) * i) / 2)
+                0.7 + Math.random() * 0.1 + 0.2 * Math.sin(angle),
+                0.3 + Math.random() * 0.1 + Math.cos(angle)
+            ])
+
+            dataset.push([
+                0.5 + Math.random() * 0.1 + 0.2 * Math.sin(angle),
+                0.7 + Math.random() * 0.1 - Math.cos(angle)
             ])
         }
 
@@ -40,7 +43,7 @@ export default class clustering {
      * See "blob" representation from the running page sample
      * @param pointsPerCluster number of points to be generated / cluster
      */
-    public static blob(pointsPerCluster: number = 200): number[][] {
+    public static blob(pointsPerCluster = 100): number[][] {
         const dataset: number[][] = []
         const locations = [
             [0.2, 0.25],
@@ -50,10 +53,9 @@ export default class clustering {
         for (let j = 0; j < locations.length; j++) {
             const [x, y] = locations[j]
             for (let i = 0; i < pointsPerCluster; i++) {
-                dataset.push([
-                    x + Math.random() * 0.2 * Math.sin(((Math.PI * 2) / 90) * i),
-                    y + Math.random() * 0.2 * Math.cos(((Math.PI * 2) / 90) * i)
-                ])
+                const angle = (Math.random() * 360 * Math.PI) / 180
+                const length = Math.random() * 0.2
+                dataset.push([x + length * Math.sin(angle), y + length * Math.cos(angle)])
             }
         }
 
@@ -86,7 +88,7 @@ export default class clustering {
      * See "Concentric Rings" representation from the running page sample
      * @param count number of points / row and number of rows to generate
      */
-    public static fillSpace(count = 30): number[][] {
+    public static fillSpace(count = 50): number[][] {
         const dataset = []
         for (let i = 0; i < count; i++) {
             for (let j = 0; j < count; j++) {

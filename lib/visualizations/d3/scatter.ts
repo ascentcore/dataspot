@@ -78,8 +78,8 @@ export default class Scatter extends SVGBaseVisualization {
                         : palette(d.color)
                     : 'black'
             )
-            .attr('stroke', stroke === false ? undefined : '#000')
-            .attr('r', (d: TwoDPointScatter) => rx(d.r) || 1)
+            .attr('stroke', (d: TwoDPointScatter) => d.stroke || '#000')
+            .attr('r', (d: TwoDPointScatter) => d.fixedRadius || rx(d.r) || 1)
     }
 
     public setup(initialData?: TwoDPointScatter[]) {

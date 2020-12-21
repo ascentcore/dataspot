@@ -27,14 +27,14 @@ The Schwefel function is complex, with many local minima. The plot shows the two
 ▪ `Static` **DOMAIN**: number[] = [-512, 512]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/schwefel.ts:6](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/benchmark/schwefel.ts#L6)
+[lib/datasets/benchmark/schwefel.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/schwefel.ts#L6)
 
 ___
 
 ▪ `Static` **GLOBAL\_M**: number[] = [420.968746]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/schwefel.ts:8](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/benchmark/schwefel.ts#L8)
+[lib/datasets/benchmark/schwefel.ts:8](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/schwefel.ts#L8)
 
 ## Methods
 
@@ -50,4 +50,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/datasets/benchmark/schwefel.ts:10](https://github.com/ascentcore/dataspot/blob/12500c0/lib/datasets/benchmark/schwefel.ts#L10)
+[lib/datasets/benchmark/schwefel.ts:10](https://github.com/ascentcore/dataspot/blob/3098228/lib/datasets/benchmark/schwefel.ts#L10)

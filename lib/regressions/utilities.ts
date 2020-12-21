@@ -1,4 +1,5 @@
-import { MatrixUtils, VectorUtils } from '../utils/math-utils'
+import VectorUtils from '@ascentcore/dataspot/utils/vectorUtils'
+import MatrixUtils from '@ascentcore/dataspot/utils/matrixUtils'
 
 export type RegressionOutputType = {
     biasAndWeights: number[]
@@ -35,6 +36,12 @@ export function addBias(input: number[][]): number[][] {
     }
 
     return value
+}
+
+export function transpose(input: number[][]): number[][] {
+    const inputWithBias = addBias(input)
+
+    return inputWithBias
 }
 
 export function transposeAndNormalize(input: number[][]): number[][] {

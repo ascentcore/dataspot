@@ -1,9 +1,9 @@
 /* eslint-disable no-await-in-loop */
 import { JSDOM } from 'jsdom'
 import Sharp from 'sharp'
+import OSUtils from '@ascentcore/dataspot/utils/osUtils'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
-import getReportFolder from '../../utils/osutils'
 import SVGBaseVisualization from './svgbase'
 
 import serializeFunction from '../../utils/serialization-utils'
@@ -61,7 +61,7 @@ export default class SVGVisualizationWrapper {
                     // .resize(width, height)
                     .flatten({ background: { r: 255, g: 255, b: 255 } })
                     .png()
-                    .toFile(`${getReportFolder()}/${this.name}-output.png`)
+                    .toFile(`${OSUtils.getReportFolder()}/${this.name}-output.png`)
             } catch (err) {
                 console.log(err)
             }

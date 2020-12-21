@@ -1,4 +1,4 @@
-import ClusteringDataset from '../datasets/clustering'
+import ClusteringDataset from '@ascentcore/dataspot/datasets/clustering'
 import MeanShift from './meanShift'
 
 const fitData = ClusteringDataset.blob(40)

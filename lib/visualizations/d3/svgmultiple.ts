@@ -32,6 +32,7 @@ export default class SVGMultipleVisualization extends SVGBaseVisualization {
         Object.values(this.visualizations).forEach((viz: SVGBaseVisualization) =>
             viz.setContainer(this as SVGBaseVisualization)
         )
+        this.setup()
     }
 
     public setup(initialData: { data: any; elemClass: string }[] = []) {

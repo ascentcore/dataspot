@@ -1,58 +1,54 @@
-import { meanSquaredError } from '../functions/losses'
-import { gradientDescent } from '../functions/optimizers'
-import { VectorUtils } from '../utils/math-utils'
-import predictSinglevariable, { RegressionOutputType } from './utilities'
+import Optimizers from '@ascentcore/dataspot/functions/optimizers'
+import { roundToPrecision } from '../math'
+import Regression, { RegressionConfig } from './regression'
+import predictSinglevariable from './utilities'
 
-export default class LinearRegression {
-    static *fit(
-        input: number[],
-        target: number[],
-        learningRate: number,
-        epochs: number,
-        costFunction: Function
-    ): Generator<RegressionOutputType> {
-        const costHistory = []
-        const transformedInput = VectorUtils.normalize(input)
-        let biasAndWeights: number[] = [0, 0]
-        let updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)
-        let currentEpoch = 0
+export class LinearRegressionConfig extends RegressionConfig {
+    learningRate: number = 0.001
+}
 
-        while (true) {
-            let updated = true
+/**
+ * Simple linear regression is useful for finding relationship between two continuous variables.
+ * One is predictor or independent variable and other is response or dependent variable.
+ * Relationship between two variables is said to be deterministic if one variable can be accurately expressed by the other.
+ *
+ * @sample documentation/linearRegression
+ *
+ * Example:
+ * @code samples/backend/regressions/beLinReg.ts
+ */
+export class LinearRegression extends Regression<LinearRegressionConfig> {
+    private transformedInput: number[] | undefined
 
-            const bw = gradientDescent(transformedInput, target, biasAndWeights, learningRate, costFunction)
+    private transformedTarget: number[] | undefined
 
-            biasAndWeights = bw
+    private currentPrediction: number[] | undefined
 
-            // Calculate cost for auditing purposes
-            const cost = meanSquaredError(updatedPrediction, target)
-            costHistory.push(cost)
+    prepareDataset(input: number[], output: number[]): void {
+        this.transformedInput = input
+        this.transformedTarget = output
+        this.config.biasAndWeights = [0, 0]
+        this.currentPrediction = predictSinglevariable(this.transformedInput, this.config.biasAndWeights)
+    }
 
-            updatedPrediction = predictSinglevariable(transformedInput, biasAndWeights)
+    predict(data: number[]): number[] {
+        return predictSinglevariable(data, this.config.biasAndWeights)
+    }
 
-            currentEpoch += 1
-
-            if (
-                costHistory.length >= 3 &&
-                costHistory[costHistory.length - 1] === costHistory[costHistory.length - 2] &&
-                costHistory[costHistory.length - 2] === costHistory[costHistory.length - 3]
-            ) {
-                updated = false
-            }
-
-            if (!updated || currentEpoch === epochs) {
-                break
-            }
-
-            yield {
-                biasAndWeights,
-                costHistory
-            }
-        }
-
-        return {
+    step() {
+        const { biasAndWeights, learningRate } = this.config
+        this.config.biasAndWeights = Optimizers.gradientDescent(
+            this.transformedInput as number[],
+            this.transformedTarget as number[],
             biasAndWeights,
-            costHistory
-        }
+            learningRate,
+            this.costFunction
+        )
+
+        this.currentPrediction = predictSinglevariable(this.transformedInput as number[], this.config.biasAndWeights)
+        const loss: number = this.lossFunction(this.currentPrediction, this.transformedTarget)
+        const lossValue = roundToPrecision(loss, this.config.convergenceRoundingPrecision)
+        this.config.lossHistory.push(lossValue)
+        this.convergence.addValue(lossValue)
     }
 }
