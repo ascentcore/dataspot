@@ -94,13 +94,14 @@ ${content}
         /*
          */
         if (match != null) {
-            this.moduleRenames.push({
+            const item = {
                 renameTo: match[1]
                     .replace(/\.ts$/g, '')
                     .split('/')
                     .join('.'),
                 reflection: <ContainerReflection>reflection
-            })
+            }
+            this.moduleRenames.push(item)
         }
     }
 

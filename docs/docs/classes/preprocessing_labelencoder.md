@@ -43,35 +43,35 @@ Name | Type |
 **Returns:** [preprocessing.LabelEncoder](../preprocessing_labelencoder)
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:25](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L25)
+[lib/preprocessing/labelEncoder.ts:25](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L25)
 
 ## Properties
 
 • `Private` **internalMap**: Record\<string, any>
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:23](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L23)
+[lib/preprocessing/labelEncoder.ts:23](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L23)
 
 ___
 
 • `Private` **inversedInternalMap**: Record\<number, any>
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:25](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L25)
+[lib/preprocessing/labelEncoder.ts:25](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L25)
 
 ___
 
 • `Private` **nextKeyIterator**: Generator\<any>
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:19](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L19)
+[lib/preprocessing/labelEncoder.ts:19](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L19)
 
 ___
 
 • `Private` **valueEncoder**: [preprocessing.ValueEncoder](../../interfaces/preprocessing_valueencoder)
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:21](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L21)
+[lib/preprocessing/labelEncoder.ts:21](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L21)
 
 ## Methods
 
@@ -87,7 +87,7 @@ Name | Type |
 **Returns:** boolean
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:32](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L32)
+[lib/preprocessing/labelEncoder.ts:32](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L32)
 
 ___
 
@@ -103,7 +103,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:36](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L36)
+[lib/preprocessing/labelEncoder.ts:36](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L36)
 
 ___
 
@@ -119,7 +119,7 @@ Name | Type |
 **Returns:** any[]
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:66](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L66)
+[lib/preprocessing/labelEncoder.ts:66](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L66)
 
 ___
 
@@ -135,4 +135,4 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:52](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L52)
+[lib/preprocessing/labelEncoder.ts:52](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L52)

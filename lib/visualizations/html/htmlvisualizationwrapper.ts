@@ -2,7 +2,7 @@
 import { JSDOM } from 'jsdom'
 import nodeHtmlToImage from 'node-html-to-image'
 import fs from 'fs'
-import OSUtils from '@ascentcore/dataspot/utils/osUtils'
+import OSUtils from '@ascentcore/dataspot/utils/os'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
 import HTMLBaseVisualization from './htmlbase'

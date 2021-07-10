@@ -24,6 +24,7 @@ has_children: false
 |-----------|
 | [dataUpdate](#dataupdate) |
 | [destroy](#destroy) |
+| [getDataUpdateFn](#getdataupdatefn) |
 | [getDependency](#getdependency) |
 | [setContainer](#setcontainer) |
 | [setup](#setup) |
@@ -38,14 +39,14 @@ has_children: false
 Name | Type | Default value |
 ------ | ------ | ------ |
 `config` | any | - |
-`elemClass` | string | "mesh-elem" |
+`elemClass` | string | "three-elem" |
 
 **Returns:** [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization)
 
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[constructor](../visualizations_basevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threebase.ts:11](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/three/threebase.ts#L11)
+[lib/visualizations/three/threebase.ts:11](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/three/threebase.ts#L11)
 
 ## Properties
 
@@ -54,7 +55,7 @@ Name | Type | Default value |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
@@ -63,7 +64,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L13)
+[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L13)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -75,12 +76,12 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
 
 ## Methods
 
 {:.method-highlight}
-▸ `Abstract`**dataUpdate**(`data`: any, `elemClass?`: undefined \| string): (data: any, elemClass: string) => void \| null
+▸ `Abstract`**dataUpdate**(`data`: any, `elemClass?`: undefined \| string): void
 
 Isomorphic method used on every data update
 
@@ -91,12 +92,12 @@ Name | Type | Description |
 `data` | any | array of data values  |
 `elemClass?` | undefined \| string | - |
 
-**Returns:** (data: any, elemClass: string) => void \| null
+**Returns:** void
 
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:25](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L25)
+[lib/visualizations/basevisualization.ts:32](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L32)
 
 ___
 
@@ -106,7 +107,27 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/three/threebase.ts:44](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/three/threebase.ts#L44)
+[lib/visualizations/three/threebase.ts:44](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/three/threebase.ts#L44)
+
+___
+
+{:.method-highlight}
+▸ `Abstract`**getDataUpdateFn**(`elemClass?`: undefined \| string): function
+
+Function used to get data update function
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`elemClass?` | undefined \| string | html class for identification  |
+
+**Returns:** function
+
+*Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDataUpdateFn](../visualizations_basevisualization#getdataupdatefn)*
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L26)
 
 ___
 
@@ -124,7 +145,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:27](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L27)
+[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L34)
 
 ___
 
@@ -140,7 +161,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/three/threebase.ts:24](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/three/threebase.ts#L24)
+[lib/visualizations/three/threebase.ts:24](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/three/threebase.ts#L24)
 
 ___
 
@@ -161,4 +182,4 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:19](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L19)
+[lib/visualizations/basevisualization.ts:19](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L19)

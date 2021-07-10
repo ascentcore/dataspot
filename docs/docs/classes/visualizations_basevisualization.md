@@ -26,6 +26,7 @@ The same logic will be used isomorphically on node and web platforms
 | Methods |
 |-----------|
 | [dataUpdate](#dataupdate) |
+| [getDataUpdateFn](#getdataupdatefn) |
 | [getDependency](#getdependency) |
 | [setup](#setup) |
 
@@ -44,21 +45,21 @@ Name | Type |
 **Returns:** [visualizations.BaseVisualization](../visualizations_basevisualization)
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L6)
+[lib/visualizations/basevisualization.ts:6](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L6)
 
 ## Properties
 
 •  **config**: any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
 • `Protected` **dependencies**: any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L13)
+[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L13)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -68,12 +69,12 @@ ___
 •  **elemClass**: string
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
 
 ## Methods
 
 {:.method-highlight}
-▸ `Abstract`**dataUpdate**(`data`: any, `elemClass?`: undefined \| string): (data: any, elemClass: string) => void \| null
+▸ `Abstract`**dataUpdate**(`data`: any, `elemClass?`: undefined \| string): void
 
 Isomorphic method used on every data update
 
@@ -84,10 +85,28 @@ Name | Type | Description |
 `data` | any | array of data values  |
 `elemClass?` | undefined \| string | - |
 
-**Returns:** (data: any, elemClass: string) => void \| null
+**Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:25](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L25)
+[lib/visualizations/basevisualization.ts:32](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L32)
+
+___
+
+{:.method-highlight}
+▸ `Abstract`**getDataUpdateFn**(`elemClass?`: undefined \| string): function
+
+Function used to get data update function
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`elemClass?` | undefined \| string | html class for identification  |
+
+**Returns:** function
+
+{:.url-source-ref}
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L26)
 
 ___
 
@@ -103,7 +122,7 @@ Name | Type |
 **Returns:** any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:27](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L27)
+[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L34)
 
 ___
 
@@ -122,4 +141,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:19](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L19)
+[lib/visualizations/basevisualization.ts:19](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L19)

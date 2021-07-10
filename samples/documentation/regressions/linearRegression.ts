@@ -1,58 +1,98 @@
-/* eslint-disable no-new */
 import Random from '@ascentcore/dataspot/math/random'
-import { LinearRegressionConfig, LinearRegression } from '@ascentcore/dataspot/regressions/linearRegression'
-import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
+import { LinearRegression, LinearRegressionConfig } from '@ascentcore/dataspot/regressions/linearRegression'
+import Container from '@ascentcore/dataspot/ui/container'
 import LineGraph from '@ascentcore/dataspot/ui/visualization/lineGraph'
 import ScatterPlot from '@ascentcore/dataspot/ui/visualization/scatterPlot'
-import Container from '@ascentcore/dataspot/ui/container'
+import LinePlot from '@ascentcore/dataspot/visualizations/d3/lineplot'
+import StepAlgorithmWrapper from '@ascentcore/dataspot/wrappers/stepAlgorithmWrapper'
 
-export default (async () => {
-    Random.seed('regressionsample')
+function getDataset(type: string): any {
+    let input: number[] = new Array(100).fill(1)
+    let output: number[]
 
-    const ref: HTMLElement = Container.getRootContainer('[data-ref="documentation/linearRegression"]')
-    const plotConfig = { width: 300, height: 300, domainX: { min: 0, max: 1 }, domainY: { min: 0, max: 1 } }
-    const lineRegressionPlot = new LinePlot(plotConfig, 'line-elem')
-    const plot = new ScatterPlot(ref, plotConfig, [lineRegressionPlot])
+    switch (type) {
+        case 'decreasing':
+            input = input.map((val, index) => (index > 0.3 && index < 0.6 ? index : Math.random()))
+            output = input.map((i) => 1 - Math.max(i, 0.2) - 0.2 + Math.random() * 0.4)
+            break
+        case 'globular':
+            input = input.map((val, index) => (index < 50 ? Random.random(0.2, 0.4) : Random.random(0.6, 0.8)))
+            output = input.map((i, index) => (index < 50 ? Random.random(0.6, 0.8) : Random.random(0.2, 0.4)))
+            break
+        default:
+            input = input.map((val, index) => (index > 0.3 && index < 0.6 ? index : Math.random()))
+            output = input.map((i) => Math.max(i, 0.2) - 0.2 + Math.random() * 0.4)
+    }
 
-    const input = new Array(100).fill(1).map((val, index) => (index > 0.3 && index < 0.6 ? index : Math.random()))
-    const output = input.map((i) => Math.max(i, 0.2) - 0.2 + Math.random() * 0.4)
-
-    const ds: any = input.reduce((memo: any[], v, i) => {
+    const ds = input.reduce((memo: any[], v, i) => {
         memo.push({ x: v, y: output[i], fixedRadius: 2 })
         return memo
     }, [])
 
-    plot.dataUpdate(ds)
+    return [input, output, ds]
+}
 
+export default (async () => {
+    Random.seed('regressionsample')
+
+    // DOM Reference to be used for injecting the code
+    const ref = Container.getRootContainer('[data-ref="documentation/linearRegression"]')
+
+    // Create visualizations
+    const container = document.createElement('div')
+    const plotConfig = { width: 400, height: 300, domainX: { min: 0, max: 1 }, domainY: { min: 0, max: 1 } }
+    const lineRegressionPlot = new LinePlot(plotConfig, 'line-elem')
+    const plot = new ScatterPlot(container, plotConfig, [lineRegressionPlot])
+    const functionGraph = new LineGraph(container, 400, 300, 'Loss')
+
+    // Initialize regression
     const config = new LinearRegressionConfig()
-    config.learningRate = 0.5
+    config.learningRate = 0.2
     config.convergenceHistorySize = 5
     config.iterations = 10000
-    const linReg = new LinearRegression(config)
-    const gen = linReg.fitAsync(input, output)
-    const functionGraph = new LineGraph(ref, 400, 300, 'Loss')
-    function step() {
-        const res = gen.next()
-        const lineData = linReg.predict([0, 1])
-        lineRegressionPlot.dataUpdate(
-            [
-                { x: 0, y: lineData[0] },
-                { x: 1, y: lineData[1] }
-            ],
-            'line-elem'
-        )
+
+    // Setup configuration ui definitions
+    Object.assign(config.constructor, {
+        definitions: {
+            dataset: {
+                label: 'Selection Dataset',
+                options: ['increasing', 'decreasing', 'globular'],
+                default: 'increasing'
+            },
+            learningRate: { label: 'Learning Rate', min: 0, max: 1 }
+        }
+    })
+
+    // Initialize the linear regression
+    const regression = new LinearRegression(config)
+    let generator: Generator
+
+    // Initialize the experiment runner wrapper
+    const wrapper = new StepAlgorithmWrapper(ref as HTMLElement, regression, () => {
+        if (regression.getIteration() === 0) {
+            const [input, output, ds] = getDataset(regression.config.dataset as string)
+            plot.dataUpdate(ds)
+            generator = regression.fitAsync(input, output)
+        }
+
+        const result = generator.next()
+
+        const lineData = regression.predict([0, 1])
+        lineRegressionPlot.dataUpdate([
+            { x: 0, y: lineData[0] },
+            { x: 1, y: lineData[1] }
+        ])
 
         functionGraph.dataUpdate(
-            linReg.config.lossHistory.slice(-100).map((val, index) => ({
+            regression.config.lossHistory.slice(-100).map((val, index) => ({
                 x: index,
                 y: val
             }))
         )
 
-        if (!res.done) {
-            setTimeout(() => step(), 50)
-        }
-    }
+        return result.done
+    })
 
-    step()
+    // Append visuals to main view of the container
+    wrapper.mainView.appendChild(container)
 })()

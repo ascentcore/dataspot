@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 import { JSDOM } from 'jsdom'
 import Sharp from 'sharp'
-import OSUtils from '@ascentcore/dataspot/utils/osUtils'
+import OSUtils from '@ascentcore/dataspot/utils/os'
 import { getInstance } from '../../registry/registry'
 import Lab from '../../lab'
 import SVGBaseVisualization from './svgbase'

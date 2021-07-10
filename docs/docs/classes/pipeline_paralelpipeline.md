@@ -47,7 +47,7 @@ Name | Type | Default value |
 *Inherited from [pipeline.Pipeline](../pipeline_pipeline).[constructor](../pipeline_pipeline#constructor)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/pipeline.ts#L11)
+[lib/pipeline/pipeline.ts:11](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/pipeline.ts#L11)
 
 ## Properties
 
@@ -56,7 +56,7 @@ Name | Type | Default value |
 *Inherited from [pipeline.Step](../pipeline_step).[state](../pipeline_step#state)*
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/types.ts#L12)
+[lib/pipeline/types.ts:12](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/types.ts#L12)
 
 Internal pipeline state reference
 
@@ -67,7 +67,7 @@ ___
 *Inherited from [pipeline.Pipeline](../pipeline_pipeline).[steps](../pipeline_pipeline#steps)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/pipeline.ts#L12)
+[lib/pipeline/pipeline.ts:12](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/pipeline.ts#L12)
 
 ## Methods
 
@@ -87,7 +87,7 @@ Name | Type | Description |
 *Inherited from [pipeline.Pipeline](../pipeline_pipeline).[add](../pipeline_pipeline#add)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/pipeline.ts#L29)
+[lib/pipeline/pipeline.ts:29](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/pipeline.ts#L29)
 
 ___
 
@@ -112,7 +112,7 @@ Name | Type |
 *Overrides [pipeline.Pipeline](../pipeline_pipeline).[execute](../pipeline_pipeline#execute)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:73](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/pipeline.ts#L73)
+[lib/pipeline/pipeline.ts:73](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/pipeline.ts#L73)
 
 ___
 
@@ -132,7 +132,7 @@ Name | Type | Description |
 *Inherited from [pipeline.Step](../pipeline_step).[getStateKey](../pipeline_step#getstatekey)*
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/types.ts#L35)
+[lib/pipeline/types.ts:35](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/types.ts#L35)
 
 ___
 
@@ -154,7 +154,7 @@ Name | Type | Description |
 *Overrides [pipeline.Step](../pipeline_step).[setState](../pipeline_step#setstate)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/pipeline.ts#L20)
+[lib/pipeline/pipeline.ts:20](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/pipeline.ts#L20)
 
 ___
 
@@ -175,7 +175,7 @@ Name | Type | Description |
 *Inherited from [pipeline.Step](../pipeline_step).[setStateKey](../pipeline_step#setstatekey)*
 
 {:.url-source-ref}
-[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/types.ts#L27)
+[lib/pipeline/types.ts:27](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/types.ts#L27)
 
 ___
 
@@ -203,4 +203,4 @@ Name | Type | Description |
 *Inherited from [pipeline.Pipeline](../pipeline_pipeline).[executeStep](../pipeline_pipeline#executestep)*
 
 {:.url-source-ref}
-[lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/3098228/lib/pipeline/pipeline.ts#L43)
+[lib/pipeline/pipeline.ts:43](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/pipeline/pipeline.ts#L43)

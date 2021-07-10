@@ -39,14 +39,14 @@ Name | Type | Default value |
 **Returns:** [ui.visualization.LineGraph](../ui_visualization_linegraph)
 
 {:.url-source-ref}
-[lib/ui/visualization/lineGraph.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/visualization/lineGraph.ts#L7)
+[lib/ui/visualization/lineGraph.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/visualization/lineGraph.ts#L7)
 
 ## Properties
 
 • `Private` **functionPlot**: [visualizations.d3.SVGMultipleVisualization](../visualizations_d3_svgmultiplevisualization)
 
 {:.url-source-ref}
-[lib/ui/visualization/lineGraph.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/visualization/lineGraph.ts#L7)
+[lib/ui/visualization/lineGraph.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/visualization/lineGraph.ts#L7)
 
 ## Methods
 
@@ -62,4 +62,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/ui/visualization/lineGraph.ts:22](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/visualization/lineGraph.ts#L22)
+[lib/ui/visualization/lineGraph.ts:22](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/visualization/lineGraph.ts#L22)

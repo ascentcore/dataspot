@@ -22,4 +22,4 @@ has_children: false
 **Returns:** string
 
 {:.source-ref}
-lib/utils/osUtils.ts:6
+lib/utils/os.ts:6

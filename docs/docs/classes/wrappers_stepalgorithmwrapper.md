@@ -1,12 +1,12 @@
 ---
 layout: default
-title: DefinitionUI
-parent: ui
+title: StepAlgorithmWrapper
+parent: wrappers
 grand_parent: Dataspot
 has_children: false
 ---
 
-# DefinitionUI
+# StepAlgorithmWrapper
 
 ## Index
 
@@ -17,35 +17,34 @@ has_children: false
 | Properties |
 |-----------|
 | [container](#container) |
-| [currentConfig](#currentconfig) |
-| [inputFields](#inputfields) |
+| [mainView](#mainview) |
 | [root](#root) |
+| [running](#running) |
 
 | Methods |
 |-----------|
 | [destroy](#destroy) |
-| [getCurrentConfiguration](#getcurrentconfiguration) |
 | [getElement](#getelement) |
 
 ## Constructors
 
 {:.method-highlight}
-\+ **new DefinitionUI**(`root`: HTMLElement, `config`: any, `definitions`: FieldsDefinition): [ui.DefinitionUI](../ui_definitionui)
+\+ **new StepAlgorithmWrapper**(`container`: HTMLElement, `evolutionaryAlgorithm`: [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm)\<any>, `stepCallback?`: Function): [wrappers.StepAlgorithmWrapper](../wrappers_stepalgorithmwrapper)
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`root` | HTMLElement |
-`config` | any |
-`definitions` | FieldsDefinition |
+`container` | HTMLElement |
+`evolutionaryAlgorithm` | [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm)\<any> |
+`stepCallback?` | Function |
 
-**Returns:** [ui.DefinitionUI](../ui_definitionui)
+**Returns:** [wrappers.StepAlgorithmWrapper](../wrappers_stepalgorithmwrapper)
 
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[constructor](../ui_common_basecomponent#constructor)*
 
-{:.url-source-ref}
-[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/definitionUI.ts#L12)
+{:.source-ref}
+lib/wrappers/stepAlgorithmWrapper.ts:13
 
 ## Properties
 
@@ -58,17 +57,10 @@ Name | Type |
 
 ___
 
-• `Private` **currentConfig**: any
+•  **mainView**: HTMLElement
 
-{:.url-source-ref}
-[lib/ui/definitionUI.ts:10](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/definitionUI.ts#L10)
-
-___
-
-• `Private` **inputFields**: [ui.forms.FormField](../ui_forms_formfield)[] = []
-
-{:.url-source-ref}
-[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/definitionUI.ts#L12)
+{:.source-ref}
+lib/wrappers/stepAlgorithmWrapper.ts:11
 
 ___
 
@@ -78,6 +70,13 @@ ___
 
 {:.url-source-ref}
 [lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/common/baseComponent.ts#L2)
+
+___
+
+• `Private` **running**: boolean = false
+
+{:.source-ref}
+lib/wrappers/stepAlgorithmWrapper.ts:13
 
 ## Methods
 
@@ -90,16 +89,6 @@ ___
 
 {:.url-source-ref}
 [lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/common/baseComponent.ts#L31)
-
-___
-
-{:.method-highlight}
-▸ **getCurrentConfiguration**(): [common.SerializableConfig](../common_serializableconfig)
-
-**Returns:** [common.SerializableConfig](../common_serializableconfig)
-
-{:.url-source-ref}
-[lib/ui/definitionUI.ts:45](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/definitionUI.ts#L45)
 
 ___
 

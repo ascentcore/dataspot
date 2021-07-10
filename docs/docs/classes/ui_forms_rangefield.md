@@ -47,7 +47,7 @@ Name | Type |
 *Overrides [ui.forms.FormField](../ui_forms_formfield).[constructor](../ui_forms_formfield#constructor)*
 
 {:.url-source-ref}
-[lib/ui/forms/rangeField.ts:3](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/forms/rangeField.ts#L3)
+[lib/ui/forms/rangeField.ts:3](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/forms/rangeField.ts#L3)
 
 ## Properties
 
@@ -56,7 +56,7 @@ Name | Type |
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[container](../ui_common_basecomponent#container)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/common/baseComponent.ts#L4)
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 *Inherited from [ui.forms.FormField](../ui_forms_formfield).[inputField](../ui_forms_formfield#inputfield)*
 
 {:.url-source-ref}
-[lib/ui/forms/formField.ts:4](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/forms/formField.ts#L4)
+[lib/ui/forms/formField.ts:4](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/forms/formField.ts#L4)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 *Inherited from [ui.forms.FormField](../ui_forms_formfield).[key](../ui_forms_formfield#key)*
 
 {:.url-source-ref}
-[lib/ui/forms/formField.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/forms/formField.ts#L6)
+[lib/ui/forms/formField.ts:6](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/forms/formField.ts#L6)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[root](../ui_common_basecomponent#root)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/common/baseComponent.ts#L2)
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/common/baseComponent.ts#L2)
 
 ## Methods
 
@@ -95,7 +95,7 @@ ___
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[destroy](../ui_common_basecomponent#destroy)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/common/baseComponent.ts#L31)
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -116,7 +116,7 @@ Name | Type |
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[getElement](../ui_common_basecomponent#getelement)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/common/baseComponent.ts#L6)
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/common/baseComponent.ts#L6)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 *Inherited from [ui.forms.FormField](../ui_forms_formfield).[getValue](../ui_forms_formfield#getvalue)*
 
 {:.url-source-ref}
-[lib/ui/forms/formField.ts:19](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/forms/formField.ts#L19)
+[lib/ui/forms/formField.ts:19](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/forms/formField.ts#L19)
 
 ___
 
@@ -146,4 +146,4 @@ Name | Type |
 *Inherited from [ui.forms.FormField](../ui_forms_formfield).[setValue](../ui_forms_formfield#setvalue)*
 
 {:.url-source-ref}
-[lib/ui/forms/formField.ts:13](https://github.com/ascentcore/dataspot/blob/3098228/lib/ui/forms/formField.ts#L13)
+[lib/ui/forms/formField.ts:13](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/ui/forms/formField.ts#L13)

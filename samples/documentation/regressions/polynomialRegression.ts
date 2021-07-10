@@ -45,8 +45,7 @@ export default (async () => {
             predictInput.map((v, i) => ({
                 x: v,
                 y: lineData[i]
-            })),
-            'line-elem'
+            }))
         )
 
         functionGraph.dataUpdate(

@@ -1,6 +1,6 @@
 {
     "out": "../docs/docs",
-    "includes": "./lib",
+    "includes": "./",
     "exclude": ["*/**/*.tsx", "node_modules", "./tools/**/*.ts", "*/**/*.spec.ts"],
     "readme": "./README.md",
     "mode": "file",

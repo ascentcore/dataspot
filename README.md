@@ -31,6 +31,11 @@ Open: http://localhost:3000/
 
 ## Building Documentation
 
+One tyme only:
+```
+npm run build:plugins
+```
+
 ``` 
 npm run build:docs
 ```

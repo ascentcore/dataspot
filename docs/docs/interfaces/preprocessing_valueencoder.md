@@ -32,4 +32,4 @@ Name | Type |
 **Returns:** string
 
 {:.url-source-ref}
-[lib/preprocessing/labelEncoder.ts:9](https://github.com/ascentcore/dataspot/blob/3098228/lib/preprocessing/labelEncoder.ts#L9)
+[lib/preprocessing/labelEncoder.ts:9](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/preprocessing/labelEncoder.ts#L9)

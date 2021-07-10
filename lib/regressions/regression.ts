@@ -96,6 +96,11 @@ export default abstract class Regression<T extends RegressionConfig> extends Evo
         return this.iteration === this.config.iterations || this.convergence.hadConverged()
     }
 
+    reset() {
+        super.reset()
+        this.convergence = new Convergence(this.config.convergenceHistorySize)
+    }
+
     /**
      * Prepares input / output datasets for performing fitting
      * @param input input dataset

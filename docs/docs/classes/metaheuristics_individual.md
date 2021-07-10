@@ -28,42 +28,42 @@ has_children: false
 •  **bestFitnessValue**: number = Infinity
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:24](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L24)
+[lib/metaheuristics/populationMetaheuristic.ts:24](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L24)
 
 ___
 
 •  **bestPosition**: number[] = []
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:22](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L22)
+[lib/metaheuristics/populationMetaheuristic.ts:22](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L22)
 
 ___
 
 •  **fitness**: number = Infinity
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:20](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L20)
+[lib/metaheuristics/populationMetaheuristic.ts:20](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L20)
 
 ___
 
 •  **id**: number = 0
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:16](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L16)
+[lib/metaheuristics/populationMetaheuristic.ts:16](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L16)
 
 ___
 
 •  **position**: number[] = []
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:18](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L18)
+[lib/metaheuristics/populationMetaheuristic.ts:18](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L18)
 
 ___
 
 •  **velocity**: number[] \| null = null
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:26](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L26)
+[lib/metaheuristics/populationMetaheuristic.ts:26](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L26)
 
 ## Methods
 
@@ -79,4 +79,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:28](https://github.com/ascentcore/dataspot/blob/3098228/lib/metaheuristics/populationMetaheuristic.ts#L28)
+[lib/metaheuristics/populationMetaheuristic.ts:28](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/metaheuristics/populationMetaheuristic.ts#L28)

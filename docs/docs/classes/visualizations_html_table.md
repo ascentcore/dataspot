@@ -23,6 +23,7 @@ has_children: false
 | Methods |
 |-----------|
 | [dataUpdate](#dataupdate) |
+| [getDataUpdateFn](#getdataupdatefn) |
 | [getDependency](#getdependency) |
 | [injectDOM](#injectdom) |
 | [setContainer](#setcontainer) |
@@ -46,7 +47,7 @@ Name | Type | Default value |
 *Overrides [visualizations.html.HTMLBaseVisualization](../visualizations_html_htmlbasevisualization).[constructor](../visualizations_html_htmlbasevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:3](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/html/table.ts#L3)
+[lib/visualizations/html/table.ts:3](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/table.ts#L3)
 
 ## Properties
 
@@ -55,7 +56,7 @@ Name | Type | Default value |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
@@ -64,7 +65,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L13)
+[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L13)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -76,26 +77,37 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
 
 ## Methods
 
 {:.method-highlight}
-▸ **dataUpdate**(`data`: any[], `elemClass?`: string): [updateFn](../visualizations_html_table#updatefn)
+▸ **dataUpdate**(`data`: any[]): void
 
 #### Parameters:
 
-Name | Type | Default value |
------- | ------ | ------ |
-`data` | any[] | - |
-`elemClass` | string | this.elemClass |
+Name | Type |
+------ | ------ |
+`data` | any[] |
 
-**Returns:** [updateFn](../visualizations_html_table#updatefn)
+**Returns:** void
 
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:48](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/html/table.ts#L48)
+[lib/visualizations/html/table.ts:56](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/table.ts#L56)
+
+___
+
+{:.method-highlight}
+▸ **getDataUpdateFn**(): [updateFn](../visualizations_html_table#updatefn)
+
+**Returns:** [updateFn](../visualizations_html_table#updatefn)
+
+*Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[getDataUpdateFn](../visualizations_basevisualization#getdataupdatefn)*
+
+{:.url-source-ref}
+[lib/visualizations/html/table.ts:52](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/table.ts#L52)
 
 ___
 
@@ -113,7 +125,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:27](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/basevisualization.ts#L27)
+[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L34)
 
 ___
 
@@ -131,7 +143,7 @@ Name | Type |
 *Inherited from [visualizations.html.HTMLBaseVisualization](../visualizations_html_htmlbasevisualization).[injectDOM](../visualizations_html_htmlbasevisualization#injectdom)*
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/html/htmlbase.ts#L20)
+[lib/visualizations/html/htmlbase.ts:20](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/htmlbase.ts#L20)
 
 ___
 
@@ -149,19 +161,25 @@ Name | Type |
 *Inherited from [visualizations.html.HTMLBaseVisualization](../visualizations_html_htmlbasevisualization).[setContainer](../visualizations_html_htmlbasevisualization#setcontainer)*
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/html/htmlbase.ts#L24)
+[lib/visualizations/html/htmlbase.ts:24](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/htmlbase.ts#L24)
 
 ___
 
 {:.method-highlight}
-▸ **setup**(): void
+▸ **setup**(`initialData?`: any[]): void
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`initialData?` | any[] |
 
 **Returns:** void
 
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:8](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/html/table.ts#L8)
+[lib/visualizations/html/table.ts:46](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/table.ts#L46)
 
 ___
 
@@ -178,4 +196,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/html/table.ts:10](https://github.com/ascentcore/dataspot/blob/3098228/lib/visualizations/html/table.ts#L10)
+[lib/visualizations/html/table.ts:8](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/html/table.ts#L8)
