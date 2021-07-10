@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Segmentation
+title: Linear Regression
 parent: Showcase
 grand_parent: 
 has_children: false
 ---
 
-# MeanShift Image Segmentation
+# Linear regression
 
-Mean shift segmentation
+Linear regression
 
 <div data-ref="documentation/linearRegression"></div>
 <script src="/dataspot/samples/linearRegression.js"></script>
