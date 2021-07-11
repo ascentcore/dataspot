@@ -22,4 +22,4 @@ has_children: false
 **Returns:** string
 
 {:.url-source-ref}
-[lib/utils/os.ts:6](https://github.com/ascentcore/dataspot/blob/85054f3/lib/utils/os.ts#L6)
+[lib/utils/os.ts:6](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/utils/os.ts#L6)

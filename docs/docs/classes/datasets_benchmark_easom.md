@@ -24,14 +24,14 @@ has_children: false
 ▪ `Static` **DOMAIN**: number[] = [-5, 5]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/easom.ts:2](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/benchmark/easom.ts#L2)
+[lib/datasets/benchmark/easom.ts:2](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/datasets/benchmark/easom.ts#L2)
 
 ___
 
 ▪ `Static` **GLOBAL\_M**: number[] = [Math.PI]
 
 {:.url-source-ref}
-[lib/datasets/benchmark/easom.ts:4](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/benchmark/easom.ts#L4)
+[lib/datasets/benchmark/easom.ts:4](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/datasets/benchmark/easom.ts#L4)
 
 ## Methods
 
@@ -48,4 +48,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/datasets/benchmark/easom.ts:6](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/benchmark/easom.ts#L6)
+[lib/datasets/benchmark/easom.ts:6](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/datasets/benchmark/easom.ts#L6)

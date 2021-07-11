@@ -46,35 +46,35 @@ Name | Type |
 **Returns:** [visualizations.html.HTMLVisualizationWrapper](../visualizations_html_htmlvisualizationwrapper)
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:15](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L15)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:15](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L15)
 
 ## Properties
 
 • `Private` **asHtml**: boolean
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)
 
 ___
 
 • `Private` **name**: string
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)
 
 ___
 
 • `Private` **root**: Element \| null
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:15](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L15)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:15](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L15)
 
 ___
 
 • `Private` **visualization**: [visualizations.html.HTMLBaseVisualization](../visualizations_html_htmlbasevisualization)
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:17](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L17)
 
 ## Accessors
 
@@ -84,7 +84,7 @@ ___
 **Returns:** [lab\_index](../lab_index)
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:19](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L19)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:19](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L19)
 
 ## Methods
 
@@ -101,7 +101,7 @@ Name | Type |
 **Returns:** Promise\<void>
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:40](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L40)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:40](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L40)
 
 ___
 
@@ -117,4 +117,4 @@ Name | Type |
 **Returns:** Promise\<void>
 
 {:.url-source-ref}
-[lib/visualizations/html/htmlvisualizationwrapper.ts:23](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/html/htmlvisualizationwrapper.ts#L23)
+[lib/visualizations/html/htmlvisualizationwrapper.ts:23](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/visualizations/html/htmlvisualizationwrapper.ts#L23)

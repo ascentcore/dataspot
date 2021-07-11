@@ -45,7 +45,7 @@ Name | Type |
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[constructor](../ui_common_basecomponent#constructor)*
 
 {:.url-source-ref}
-[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/definitionUI.ts#L12)
+[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/definitionUI.ts#L12)
 
 ## Properties
 
@@ -54,21 +54,21 @@ Name | Type |
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[container](../ui_common_basecomponent#container)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L4)
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
 • `Private` **currentConfig**: any
 
 {:.url-source-ref}
-[lib/ui/definitionUI.ts:10](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/definitionUI.ts#L10)
+[lib/ui/definitionUI.ts:10](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/definitionUI.ts#L10)
 
 ___
 
 • `Private` **inputFields**: [ui.forms.FormField](../ui_forms_formfield)[] = []
 
 {:.url-source-ref}
-[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/definitionUI.ts#L12)
+[lib/ui/definitionUI.ts:12](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/definitionUI.ts#L12)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[root](../ui_common_basecomponent#root)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L2)
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L2)
 
 ## Methods
 
@@ -89,7 +89,7 @@ ___
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[destroy](../ui_common_basecomponent#destroy)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L31)
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 **Returns:** [common.SerializableConfig](../common_serializableconfig)
 
 {:.url-source-ref}
-[lib/ui/definitionUI.ts:43](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/definitionUI.ts#L43)
+[lib/ui/definitionUI.ts:43](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/definitionUI.ts#L43)
 
 ___
 
@@ -120,4 +120,4 @@ Name | Type |
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[getElement](../ui_common_basecomponent#getelement)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L6)
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L6)

@@ -44,7 +44,7 @@ Name | Type |
 *Overrides [ui.common.BaseComponent](../ui_common_basecomponent).[constructor](../ui_common_basecomponent#constructor)*
 
 {:.url-source-ref}
-[lib/wrappers/stepAlgorithmWrapper.ts:13](https://github.com/ascentcore/dataspot/blob/85054f3/lib/wrappers/stepAlgorithmWrapper.ts#L13)
+[lib/wrappers/stepAlgorithmWrapper.ts:13](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/wrappers/stepAlgorithmWrapper.ts#L13)
 
 ## Properties
 
@@ -53,14 +53,14 @@ Name | Type |
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[container](../ui_common_basecomponent#container)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L4)
+[lib/ui/common/baseComponent.ts:4](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L4)
 
 ___
 
 •  **mainView**: HTMLElement
 
 {:.url-source-ref}
-[lib/wrappers/stepAlgorithmWrapper.ts:11](https://github.com/ascentcore/dataspot/blob/85054f3/lib/wrappers/stepAlgorithmWrapper.ts#L11)
+[lib/wrappers/stepAlgorithmWrapper.ts:11](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/wrappers/stepAlgorithmWrapper.ts#L11)
 
 ___
 
@@ -69,14 +69,14 @@ ___
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[root](../ui_common_basecomponent#root)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L2)
+[lib/ui/common/baseComponent.ts:2](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L2)
 
 ___
 
 • `Private` **running**: boolean = false
 
 {:.url-source-ref}
-[lib/wrappers/stepAlgorithmWrapper.ts:13](https://github.com/ascentcore/dataspot/blob/85054f3/lib/wrappers/stepAlgorithmWrapper.ts#L13)
+[lib/wrappers/stepAlgorithmWrapper.ts:13](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/wrappers/stepAlgorithmWrapper.ts#L13)
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[destroy](../ui_common_basecomponent#destroy)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L31)
+[lib/ui/common/baseComponent.ts:31](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L31)
 
 ___
 
@@ -109,4 +109,4 @@ Name | Type |
 *Inherited from [ui.common.BaseComponent](../ui_common_basecomponent).[getElement](../ui_common_basecomponent#getelement)*
 
 {:.url-source-ref}
-[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/85054f3/lib/ui/common/baseComponent.ts#L6)
+[lib/ui/common/baseComponent.ts:6](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/ui/common/baseComponent.ts#L6)
