@@ -17,7 +17,6 @@ export default class DefinitionUI extends BaseComponent {
         const keys: string[] = Object.keys(definitions)
 
         this.currentConfig = ObjectUtils.deepClone(config)
-
         keys.forEach((key: string) => {
             const definition: FieldDefinition = definitions[key]
             // console.log(definition, config[key])
@@ -26,7 +25,6 @@ export default class DefinitionUI extends BaseComponent {
             //     const step = definition.step || (definition.max - definition.min) / 100
             //     inputElement = new RangeField(root, key, definition.label || key)
             // }
-
             if (definition.options) {
                 inputElement = new SelectionField(root, key, definition.label || key, definition.options)
             } else {

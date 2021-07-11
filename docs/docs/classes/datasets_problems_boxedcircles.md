@@ -44,21 +44,21 @@ Name | Type | Default value |
 **Returns:** [datasets.problems.BoxedCircles](../datasets_problems_boxedcircles)
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:18](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L18)
+[lib/datasets/problems/boxedCircles.ts:18](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L18)
 
 ## Properties
 
 • `Private` **multipleViz**: [visualizations.d3.SVGMultipleVisualization](../visualizations_d3_svgmultiplevisualization)
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:18](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L18)
+[lib/datasets/problems/boxedCircles.ts:18](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L18)
 
 ___
 
 • `Private` **numberOfCircles**: number
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:20](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L20)
+[lib/datasets/problems/boxedCircles.ts:20](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L20)
 
 ## Methods
 
@@ -76,7 +76,7 @@ Name | Type |
 *Implementation of [datasets.problems.MetaheuristicProblem](../../interfaces/datasets_problems_metaheuristicproblem)*
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:63](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L63)
+[lib/datasets/problems/boxedCircles.ts:63](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L63)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 *Implementation of [datasets.problems.MetaheuristicProblem](../../interfaces/datasets_problems_metaheuristicproblem)*
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:53](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L53)
+[lib/datasets/problems/boxedCircles.ts:53](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L53)
 
 ___
 
@@ -106,7 +106,7 @@ Name | Type |
 *Implementation of [datasets.problems.MetaheuristicProblem](../../interfaces/datasets_problems_metaheuristicproblem)*
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:35](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L35)
+[lib/datasets/problems/boxedCircles.ts:35](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L35)
 
 ___
 
@@ -122,4 +122,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/datasets/problems/boxedCircles.ts:40](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/datasets/problems/boxedCircles.ts#L40)
+[lib/datasets/problems/boxedCircles.ts:40](https://github.com/ascentcore/dataspot/blob/85054f3/lib/datasets/problems/boxedCircles.ts#L40)

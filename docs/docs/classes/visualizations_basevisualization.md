@@ -45,21 +45,21 @@ Name | Type |
 **Returns:** [visualizations.BaseVisualization](../visualizations_basevisualization)
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:6](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L6)
+[lib/visualizations/basevisualization.ts:6](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L6)
 
 ## Properties
 
 •  **config**: any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
 • `Protected` **dependencies**: any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L13)
+[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L13)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -69,7 +69,7 @@ ___
 •  **elemClass**: string
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L7)
 
 ## Methods
 
@@ -88,7 +88,7 @@ Name | Type | Description |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:32](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L32)
+[lib/visualizations/basevisualization.ts:32](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L32)
 
 ___
 
@@ -106,7 +106,7 @@ Name | Type | Description |
 **Returns:** function
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L26)
+[lib/visualizations/basevisualization.ts:26](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L26)
 
 ___
 
@@ -122,7 +122,7 @@ Name | Type |
 **Returns:** any
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L34)
+[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L34)
 
 ___
 
@@ -141,4 +141,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:19](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/visualizations/basevisualization.ts#L19)
+[lib/visualizations/basevisualization.ts:19](https://github.com/ascentcore/dataspot/blob/85054f3/lib/visualizations/basevisualization.ts#L19)

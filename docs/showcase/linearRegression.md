@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Linear Regression
-parent: Showcase
-grand_parent: 
+parent: Regressions
+grand_parent: Showcase
 has_children: false
 ---
 

@@ -32,4 +32,4 @@ Name | Type |
 **Returns:** Generator\<RegressionOutputType>
 
 {:.url-source-ref}
-[lib/regressions/logisticRegression.ts:8](https://github.com/ascentcore/dataspot/blob/c80cb27/lib/regressions/logisticRegression.ts#L8)
+[lib/regressions/logisticRegression.ts:8](https://github.com/ascentcore/dataspot/blob/85054f3/lib/regressions/logisticRegression.ts#L8)

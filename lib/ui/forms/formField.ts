@@ -3,6 +3,8 @@ import BaseComponent from '../common/baseComponent'
 export default class FormField extends BaseComponent {
     protected inputField: HTMLElement | undefined
 
+    protected parser: Function = (val: any) => val
+
     constructor(container: HTMLElement, public key: string, label: string) {
         super(container)
         this.root = this.getElement('div', ['form-group'], container)
@@ -18,7 +20,7 @@ export default class FormField extends BaseComponent {
 
     getValue(): string | undefined {
         if (this.inputField) {
-            const val = this.inputField.getAttribute('value')
+            const val = this.parser(this.inputField.getAttribute('value'))
             if (val === null) {
                 return undefined
             } else {
