@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 import irisDataset from '@ascentcore/dataspot/datasets/samples/iris'
 import Random from '@ascentcore/dataspot/math/random'
-import { LabelEncoder } from '@ascentcore/dataspot/preprocessing/labelEncoder'
+import LabelEncoder from '@ascentcore/dataspot/preprocessing/labelEncoder'
 import {
     MultivariableLinearRegression,
     MultivariableLinearRegressionConfig

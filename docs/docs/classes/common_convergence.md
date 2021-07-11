@@ -38,21 +38,21 @@ Name | Type | Default value |
 **Returns:** [common.Convergence](../common_convergence)
 
 {:.url-source-ref}
-[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/convergence.ts#L2)
+[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/convergence.ts#L2)
 
 ## Properties
 
 •  **history**: Array\<string> = []
 
 {:.url-source-ref}
-[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/convergence.ts#L2)
+[lib/common/convergence.ts:2](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/convergence.ts#L2)
 
 ___
 
 • `Private` **historySize**: number
 
 {:.url-source-ref}
-[lib/common/convergence.ts:4](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/convergence.ts#L4)
+[lib/common/convergence.ts:4](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/convergence.ts#L4)
 
 ## Methods
 
@@ -68,7 +68,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/common/convergence.ts:6](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/convergence.ts#L6)
+[lib/common/convergence.ts:6](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/convergence.ts#L6)
 
 ___
 
@@ -78,4 +78,4 @@ ___
 **Returns:** boolean
 
 {:.url-source-ref}
-[lib/common/convergence.ts:14](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/convergence.ts#L14)
+[lib/common/convergence.ts:14](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/convergence.ts#L14)

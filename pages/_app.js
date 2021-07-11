@@ -78,6 +78,14 @@ export default function MyApp({ Component, pageProps }) {
                             </li>
                         </ul>
                     </li>
+                    <li className='nav-item'>
+                        <a href='#'>Utils</a>
+                        <ul className='nav'>
+                            <li className='nav-item'>
+                                <a href='/samples/preprocessing/labelEncoder'>Label Encoder</a>
+                            </li>                           
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div style={{ padding: 10 }}>

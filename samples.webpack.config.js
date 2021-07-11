@@ -1,24 +1,23 @@
 require('webpack')
 const path = require('path')
+const glob = require('glob')
 
 const plugins = []
 
 function srcPaths(src) {
     return path.join(__dirname, src)
 }
+const entry = {}
+const files = glob.sync('samples/documentation/**/*.ts', {})
+files.forEach((item) => {
+    let fileName = item.substr(item.lastIndexOf('/') + 1).slice(0, -3)
+    entry[fileName] = `./${item}`
+})
+
+console.log(entry)
 
 const config = {
-    entry: {
-        sample: './samples/documentation/sample.ts',
-        clusteringComparison: './samples/documentation/clustering/comparison.ts',
-        benchmarkFunctions: './samples/documentation/benchmark/benchmark.ts',
-        meanShiftSegmentation: './samples/documentation/meanShiftSegmentation.ts',
-        circleFit: './samples/documentation/problems/circleFit.ts',
-        activationFunctions: './samples/documentation/functions/activation.ts',
-        linearRegression: './samples/documentation/regressions/linearRegression',
-        multivariateLinearRegression: './samples/documentation/regressions/multivariateLinearRegression',
-        polynomialRegression: './samples/documentation/regressions/polynomialRegression'
-    },
+    entry,
     plugins,
     output: {
         path: path.resolve(__dirname, 'docs/samples'),

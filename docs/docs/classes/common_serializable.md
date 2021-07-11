@@ -47,14 +47,14 @@ Name | Type |
 **Returns:** [common.Serializable](../common_serializable)
 
 {:.url-source-ref}
-[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/serializable.ts#L7)
+[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/serializable.ts#L7)
 
 ## Properties
 
 •  **config**: T
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/serializable.ts#L8)
 
 ## Methods
 
@@ -70,7 +70,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/serializable.ts#L14)
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/serializable.ts#L14)
 
 ___
 
@@ -80,4 +80,4 @@ ___
 **Returns:** string
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/common/serializable.ts#L10)
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/common/serializable.ts#L10)

@@ -48,7 +48,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/losses.ts:41](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/functions/losses.ts#L41)
+[lib/functions/losses.ts:41](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/losses.ts#L41)
 
 ___
 
@@ -68,7 +68,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/losses.ts:70](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/functions/losses.ts#L70)
+[lib/functions/losses.ts:70](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/losses.ts#L70)
 
 ___
 
@@ -87,7 +87,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/losses.ts:82](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/functions/losses.ts#L82)
+[lib/functions/losses.ts:82](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/losses.ts#L82)
 
 ___
 
@@ -110,7 +110,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/losses.ts:101](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/functions/losses.ts#L101)
+[lib/functions/losses.ts:101](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/losses.ts#L101)
 
 ___
 
@@ -133,7 +133,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/losses.ts:23](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/functions/losses.ts#L23)
+[lib/functions/losses.ts:23](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/losses.ts#L23)
 
 ___
 
@@ -150,4 +150,4 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/functions/losses.ts:110](https://github.com/ascentcore/dataspot/blob/74b97e8/lib/functions/losses.ts#L110)
+[lib/functions/losses.ts:110](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/losses.ts#L110)
