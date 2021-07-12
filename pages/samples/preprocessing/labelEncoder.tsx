@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable import/no-webpack-loader-syntax */
-// import '../../../samples/documentation/preprocessing/labelEncoder'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import codeString from '!!raw-loader!../../../samples/documentation/preprocessing/labelEncoder'
 

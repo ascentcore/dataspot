@@ -1,4 +1,4 @@
-import '../../../samples/documentation/clustering/comparison'
+import '../../../samples/documentation/clustering/clusteringComparison'
 
 export default function Sample() {
     return null

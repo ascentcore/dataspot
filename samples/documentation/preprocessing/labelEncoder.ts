@@ -5,7 +5,7 @@ export default (async () => {
 
     const labelEncoder = new LabelEncoder()
     const encoded = labelEncoder.fitTransform(animals)
-    
+
     console.log(encoded) // displays [0, 1, 0, 2, 0, 1, 1, 2]
     console.log(labelEncoder.inverse([0, 1, 2])) // displays ["🐕", "🐈", "🐹"]
 

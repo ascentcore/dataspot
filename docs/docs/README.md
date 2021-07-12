@@ -39,7 +39,7 @@ Open: http://localhost:3000/
 
 ## Building Documentation
 
-One tyme only:
+One time only:
 ```
 npm run build:plugins
 ```
