@@ -80,7 +80,7 @@ const plotClustering = async (initialDataset: any[], datasetName: string) => {
     }
 }
 ;(async () => {
-    const lab = new Lab('clustering')
+    const lab = new Lab('clustering', 'http://172.16.1.27:3100/db')
     try {
         await lab.connected
     } catch (err) {

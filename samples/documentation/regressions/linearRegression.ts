@@ -19,6 +19,22 @@ function getDataset(type: string): any {
             input = input.map((val, index) => (index < 50 ? Random.random(0.2, 0.4) : Random.random(0.6, 0.8)))
             output = input.map((i, index) => (index < 50 ? Random.random(0.6, 0.8) : Random.random(0.2, 0.4)))
             break
+        case 'increasingLin1':
+            input = input.map((val, index) => index / 100)
+            output = input.map((i) => i * 0.3 - 0.1 + Math.random() * 0.2)
+            break
+        case 'increasingLin1OutliersInc':
+            input = input.map((_, index) => index / 100)
+            output = input.map((_, index) =>
+                index % 17 === 0 ? 0.2 + (index / 100) * 0.8 : (index / 100) * 0.3 - 0.05 + Math.random() * 0.1
+            )
+            break
+        case 'increasingLin1OutliersDec':
+            input = input.map((_, index) => index / 100)
+            output = input.map((_, index) =>
+                index % 17 === 0 ? 0.8 - (index / 100) * 0.8 : (index / 100) * 0.3 - 0.05 + Math.random() * 0.1
+            )
+            break
         default:
             input = input.map((val, index) => (index > 0.3 && index < 0.6 ? index : Math.random()))
             output = input.map((i) => Math.max(i, 0.2) - 0.2 + Math.random() * 0.4)
@@ -56,7 +72,14 @@ export default (async () => {
         definitions: {
             dataset: {
                 label: 'Selection Dataset',
-                options: ['increasing', 'decreasing', 'globular'],
+                options: [
+                    'increasing',
+                    'decreasing',
+                    'globular',
+                    'increasingLin1',
+                    'increasingLin1OutliersInc',
+                    'increasingLin1OutliersDec'
+                ],
                 default: 'increasing'
             },
             learningRate: { label: 'Learning Rate', min: 0, max: 1 }
@@ -84,7 +107,7 @@ export default (async () => {
         ])
 
         functionGraph.dataUpdate(
-            regression.config.lossHistory.slice(-100).map((val, index) => ({
+            regression.config.lossHistory.slice(-400).map((val, index) => ({
                 x: index,
                 y: val
             }))

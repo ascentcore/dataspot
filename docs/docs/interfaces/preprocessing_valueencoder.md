@@ -31,5 +31,5 @@ Name | Type |
 
 **Returns:** string
 
-{:.source-ref}
-lib/preprocessing/encoderUtils.ts:9
+{:.url-source-ref}
+[lib/preprocessing/encoderUtils.ts:9](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/preprocessing/encoderUtils.ts#L9)

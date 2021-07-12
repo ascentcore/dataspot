@@ -32,7 +32,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/functions/optimizers.ts:20](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/optimizers.ts#L20)
+[lib/functions/optimizers.ts:20](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/functions/optimizers.ts#L20)
 
 ___
 
@@ -52,7 +52,7 @@ Name | Type |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/functions/optimizers.ts:29](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/optimizers.ts#L29)
+[lib/functions/optimizers.ts:29](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/functions/optimizers.ts#L29)
 
 ___
 
@@ -70,4 +70,4 @@ Name | Type |
 **Returns:** (number \| number[])[]
 
 {:.url-source-ref}
-[lib/functions/optimizers.ts:6](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/functions/optimizers.ts#L6)
+[lib/functions/optimizers.ts:6](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/functions/optimizers.ts#L6)

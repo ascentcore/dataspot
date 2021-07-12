@@ -36,14 +36,14 @@ Name | Type |
 **Returns:** [metaheuristics.selection.Tournament](../metaheuristics_selection_tournament)
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/tournament.ts:4](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/metaheuristics/selection/tournament.ts#L4)
+[lib/metaheuristics/selection/tournament.ts:4](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/selection/tournament.ts#L4)
 
 ## Properties
 
 • `Private` **numSelected**: number
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/tournament.ts:5](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/metaheuristics/selection/tournament.ts#L5)
+[lib/metaheuristics/selection/tournament.ts:5](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/selection/tournament.ts#L5)
 
 ## Methods
 
@@ -59,4 +59,4 @@ Name | Type |
 **Returns:** [metaheuristics.Individual](../metaheuristics_individual)[]
 
 {:.url-source-ref}
-[lib/metaheuristics/selection/tournament.ts:7](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/metaheuristics/selection/tournament.ts#L7)
+[lib/metaheuristics/selection/tournament.ts:7](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/selection/tournament.ts#L7)

@@ -49,7 +49,7 @@ Name | Type |
 *Overrides [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization).[constructor](../visualizations_three_threebasevisualization#constructor)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:5](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L5)
+[lib/visualizations/three/threemultiple.ts:5](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L5)
 
 ## Properties
 
@@ -58,7 +58,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[config](../visualizations_basevisualization#config)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[dependencies](../visualizations_basevisualization#dependencies)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/basevisualization.ts#L13)
+[lib/visualizations/basevisualization.ts:13](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/basevisualization.ts#L13)
 
 List of 3rd party dependencies that are are platform dependent
 E.g. D3 implementation, HTML Element refs
@@ -79,14 +79,14 @@ ___
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[elemClass](../visualizations_basevisualization#elemclass)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/basevisualization.ts#L7)
+[lib/visualizations/basevisualization.ts:7](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/basevisualization.ts#L7)
 
 ___
 
 • `Private` **visualizations**: { [name:string]: [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization);  }
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:5](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L5)
+[lib/visualizations/three/threemultiple.ts:5](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L5)
 
 ## Methods
 
@@ -105,7 +105,7 @@ Name | Type |
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[dataUpdate](../visualizations_basevisualization#dataupdate)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:38](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L38)
+[lib/visualizations/three/threemultiple.ts:38](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L38)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 *Overrides [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization).[destroy](../visualizations_three_threebasevisualization#destroy)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:45](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L45)
+[lib/visualizations/three/threemultiple.ts:45](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L45)
 
 ___
 
@@ -135,7 +135,7 @@ Name | Type |
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[getDataUpdateFn](../visualizations_basevisualization#getdataupdatefn)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:31](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L31)
+[lib/visualizations/three/threemultiple.ts:31](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L31)
 
 ___
 
@@ -153,7 +153,7 @@ Name | Type |
 *Inherited from [visualizations.BaseVisualization](../visualizations_basevisualization).[getDependency](../visualizations_basevisualization#getdependency)*
 
 {:.url-source-ref}
-[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/basevisualization.ts#L34)
+[lib/visualizations/basevisualization.ts:34](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/basevisualization.ts#L34)
 
 ___
 
@@ -171,7 +171,7 @@ Name | Type |
 *Overrides [visualizations.three.ThreeBaseVisualization](../visualizations_three_threebasevisualization).[setContainer](../visualizations_three_threebasevisualization#setcontainer)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:18](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L18)
+[lib/visualizations/three/threemultiple.ts:18](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L18)
 
 ___
 
@@ -189,7 +189,7 @@ Name | Type | Default value |
 *Overrides [visualizations.BaseVisualization](../visualizations_basevisualization).[setup](../visualizations_basevisualization#setup)*
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:25](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L25)
+[lib/visualizations/three/threemultiple.ts:25](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L25)
 
 ___
 
@@ -199,4 +199,4 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/visualizations/three/threemultiple.ts:16](https://github.com/ascentcore/dataspot/blob/bdbcf73/lib/visualizations/three/threemultiple.ts#L16)
+[lib/visualizations/three/threemultiple.ts:16](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/visualizations/three/threemultiple.ts#L16)
