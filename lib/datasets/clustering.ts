@@ -9,7 +9,9 @@ import Random from '../math/random'
  * Running sample for the current set of clustering datasets:
  * @sample documentation/clusteringComparison
  */
-export default class clustering {
+export default class Clustering {
+    public static list = ['arc', 'blob', 'concentricRings', 'towers', 'fillSpace', 'noisyWithBlob', 'potato']
+
     /**
      * Generates two interleaving arc shape like clusters.
      * See "arc" representation from the running page sample
@@ -78,6 +80,32 @@ export default class clustering {
                     0.5 + Random.random(0.2 * j, 0.2 * j + 0.05) * Math.cos((Math.PI / 180) * angle)
                 ])
             }
+        }
+
+        return dataset
+    }
+
+    /**
+     * Generates n concentric rings with a 0.15 distance between them
+     * See "concentric rings" representation from the running page sample
+     * @param count number of points / ring
+     * @param rings number of rings to generate
+     */
+    public static towers(count: number = 100, towers: number = 3): number[][] {
+        const dataset = []
+        const band = 1 / towers
+        const middle = band / 2
+        for (let j = 0; j < towers; j++) {
+            for (let i = 0; i < count; i++) {
+                dataset.push([band * j + middle + (-band / 12 + (Math.random() * band) / 6), Math.random()])
+            }
+            // for (let i = 1; i < count; i++) {
+            //     const angle = Math.floor(Math.random() * 360)
+            //     dataset.push([
+            //         0.5 + Random.random(0.2 * j, 0.2 * j + 0.05) * Math.sin((Math.PI / 180) * angle),
+            //         0.5 + Random.random(0.2 * j, 0.2 * j + 0.05) * Math.cos((Math.PI / 180) * angle)
+            //     ])
+            // }
         }
 
         return dataset

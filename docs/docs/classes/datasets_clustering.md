@@ -32,6 +32,7 @@ Running sample for the current set of clustering datasets:
 | [fillSpace](#fillspace) |
 | [noisyWithBlob](#noisywithblob) |
 | [potato](#potato) |
+| [towers](#towers) |
 
 ## Methods
 
@@ -50,7 +51,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:18](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/datasets/clustering.ts#L18)
+[lib/datasets/clustering.ts:18](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L18)
 
 ___
 
@@ -69,7 +70,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:46](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/datasets/clustering.ts#L46)
+[lib/datasets/clustering.ts:46](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L46)
 
 ___
 
@@ -89,7 +90,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:71](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/datasets/clustering.ts#L71)
+[lib/datasets/clustering.ts:71](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L71)
 
 ___
 
@@ -108,7 +109,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:91](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/datasets/clustering.ts#L91)
+[lib/datasets/clustering.ts:117](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L117)
 
 ___
 
@@ -127,7 +128,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:107](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/datasets/clustering.ts#L107)
+[lib/datasets/clustering.ts:133](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L133)
 
 ___
 
@@ -140,4 +141,24 @@ See "Potato" representation from the running page sample
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:129](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/datasets/clustering.ts#L129)
+[lib/datasets/clustering.ts:155](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L155)
+
+___
+
+{:.method-highlight}
+▸ `Static`**towers**(`count?`: number, `towers?`: number): number[][]
+
+Generates n concentric rings with a 0.15 distance between them
+See "concentric rings" representation from the running page sample
+
+#### Parameters:
+
+Name | Type | Default value | Description |
+------ | ------ | ------ | ------ |
+`count` | number | 100 | number of points / ring |
+`towers` | number | 3 | - |
+
+**Returns:** number[][]
+
+{:.url-source-ref}
+[lib/datasets/clustering.ts:92](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L92)

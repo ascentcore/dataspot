@@ -5,18 +5,25 @@ import BaseComponent from '@ascentcore/dataspot/ui/common/baseComponent'
 import DefinitionUI from '@ascentcore/dataspot/ui/definitionUI'
 import { Accordion, Button, TabBar, Divider } from '@ascentcore/dataspot/ui/components'
 import EvolutionaryAlgorithm, { EvolutionaryConfig } from '../common/evolutionaryAlgorithm'
-import { SerializableConfig } from '../common/serializable'
+import { FieldDefinition } from '../ui/common/fieldDefinition'
 
 export default class StepAlgorithmWrapper extends BaseComponent {
     public mainView: HTMLElement
 
     private running = false
 
-    constructor(container: HTMLElement, evolutionaryAlgorithm: EvolutionaryAlgorithm<any>, stepCallback?: Function) {
+    constructor(
+        container: HTMLElement,
+        evolutionaryAlgorithm: EvolutionaryAlgorithm<any>,
+        definitions?: Record<string, FieldDefinition>,
+        stepCallback?: Function
+    ) {
         super(container)
 
         const { config } = evolutionaryAlgorithm
         const { constructor } = config
+
+        const uiDef = definitions || constructor.definitions
 
         this.root = this.getElement('div', ['m-2', 'metaheuristic-wrapper', 'panel'], container)
         const title = this.getElement('div', ['panel-header'], this.root)
@@ -31,10 +38,9 @@ export default class StepAlgorithmWrapper extends BaseComponent {
         configContainer.classList.add('m-2')
         configContainer.classList.add('p-2')
 
-        if ('definitions' in constructor) {
+        if (uiDef) {
             if (configContainer) {
-                const { definitions } = constructor
-                const configUI = new DefinitionUI(configContainer, config, definitions)
+                const configUI = new DefinitionUI(configContainer, config, uiDef)
 
                 new Button(configContainer, 'Update Configuration', () => {
                     const newConfig = configUI.getCurrentConfiguration()

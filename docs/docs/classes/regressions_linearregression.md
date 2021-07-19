@@ -91,7 +91,7 @@ Name | Type |
 *Overrides [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:44](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L44)
+[lib/regressions/regression.ts:44](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L44)
 
 ## Properties
 
@@ -100,7 +100,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L8)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[convergence](../regressions_regression#convergence)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:36](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L36)
+[lib/regressions/regression.ts:36](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L36)
 
 ___
 
@@ -118,14 +118,14 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[costFunction](../regressions_regression#costfunction)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:42](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L42)
+[lib/regressions/regression.ts:42](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L42)
 
 ___
 
 • `Private` **currentPrediction**: number[] \| undefined
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/linearRegression.ts#L25)
+[lib/regressions/linearRegression.ts:25](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/linearRegression.ts#L25)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[input](../regressions_regression#input)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:38](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L38)
+[lib/regressions/regression.ts:38](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L38)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[iteration](../common_evolutionaryalgorithm#iteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[lossFunction](../regressions_regression#lossfunction)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:44](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L44)
+[lib/regressions/regression.ts:44](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L44)
 
 ___
 
@@ -161,21 +161,21 @@ ___
 *Inherited from [regressions.Regression](../regressions_regression).[target](../regressions_regression#target)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:40](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L40)
+[lib/regressions/regression.ts:40](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L40)
 
 ___
 
 • `Private` **transformedInput**: number[] \| undefined
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:21](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/linearRegression.ts#L21)
+[lib/regressions/linearRegression.ts:21](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/linearRegression.ts#L21)
 
 ___
 
 • `Private` **transformedTarget**: number[] \| undefined
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:23](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/linearRegression.ts#L23)
+[lib/regressions/linearRegression.ts:23](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/linearRegression.ts#L23)
 
 ## Methods
 
@@ -194,7 +194,7 @@ Name | Type |
 *Inherited from [regressions.Regression](../regressions_regression).[fit](../regressions_regression#fit)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:70](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L70)
+[lib/regressions/regression.ts:70](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L70)
 
 ___
 
@@ -213,7 +213,7 @@ Name | Type |
 *Inherited from [regressions.Regression](../regressions_regression).[fitAsync](../regressions_regression#fitasync)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:82](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L82)
+[lib/regressions/regression.ts:82](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L82)
 
 ___
 
@@ -225,7 +225,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[getIteration](../common_evolutionaryalgorithm#getiteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/evolutionaryAlgorithm.ts#L14)
+[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/evolutionaryAlgorithm.ts#L14)
 
 ___
 
@@ -243,25 +243,29 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L14)
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L14)
 
 ___
 
 {:.method-highlight}
 ▸ **predict**(`data`: number[]): number[]
 
+Predicts dataset after a training session
+
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`data` | number[] |
+Name | Type | Description |
+------ | ------ | ------ |
+`data` | number[] | dataset to predict |
 
 **Returns:** number[]
+
+classification
 
 *Overrides [regressions.Regression](../regressions_regression).[predict](../regressions_regression#predict)*
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:34](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/linearRegression.ts#L34)
+[lib/regressions/linearRegression.ts:39](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/linearRegression.ts#L39)
 
 ___
 
@@ -280,7 +284,7 @@ Name | Type |
 *Overrides [regressions.Regression](../regressions_regression).[prepareDataset](../regressions_regression#preparedataset)*
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:27](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/linearRegression.ts#L27)
+[lib/regressions/linearRegression.ts:27](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/linearRegression.ts#L27)
 
 ___
 
@@ -294,7 +298,7 @@ ___
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[reset](../common_evolutionaryalgorithm#reset)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:99](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L99)
+[lib/regressions/regression.ts:99](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L99)
 
 ___
 
@@ -306,7 +310,7 @@ ___
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L10)
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L10)
 
 ___
 
@@ -320,7 +324,7 @@ ___
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[shouldStop](../common_evolutionaryalgorithm#shouldstop)*
 
 {:.url-source-ref}
-[lib/regressions/regression.ts:95](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/regression.ts#L95)
+[lib/regressions/regression.ts:95](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/regression.ts#L95)
 
 ___
 
@@ -332,4 +336,4 @@ ___
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[step](../common_evolutionaryalgorithm#step)*
 
 {:.url-source-ref}
-[lib/regressions/linearRegression.ts:38](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/regressions/linearRegression.ts#L38)
+[lib/regressions/linearRegression.ts:43](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/regressions/linearRegression.ts#L43)

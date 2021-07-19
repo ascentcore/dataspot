@@ -31,6 +31,11 @@ export class LinearRegression extends Regression<LinearRegressionConfig> {
         this.currentPrediction = predictSinglevariable(this.transformedInput, this.config.biasAndWeights)
     }
 
+    /**
+     * Predicts dataset after a training session
+     * @param data dataset to predict
+     * @returns classification
+     */
     predict(data: number[]): number[] {
         return predictSinglevariable(data, this.config.biasAndWeights)
     }

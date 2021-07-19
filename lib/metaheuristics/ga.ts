@@ -4,18 +4,6 @@ import Random from '../math/random'
 import Convergence from '../common/convergence'
 import * as selectionFunctionMappings from './selection/selection-functions'
 
-export type FieldDefinition = {
-    label: string
-    min: number
-    max: number
-    step: number
-    options: string[]
-}
-
-export type FieldsDefinition = {
-    [key: string]: FieldDefinition
-}
-
 export class GAConfig extends PopulationMetaheuristicConfig {
     public numOffsprings = 10
 

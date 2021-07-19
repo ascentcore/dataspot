@@ -42,8 +42,8 @@ export default abstract class ClusteringAlgorithm<T extends EvolutionaryConfig> 
         this.prepareDataset(data)
         while (!this.shouldStop() && !this.canStop()) {
             this.step()
-            yield this.labels
             this.iteration++
+            yield this.labels
         }
         this.onEndFit()
         return this.labels

@@ -11,7 +11,7 @@ export class KMeansConfig extends CentroidConfig {
     public iterations: number = 300
 
     /** Kmeans initial convergence iterations */
-    public convergenceIterations: number = -1
+    public convergenceIterations: number = 5
 }
 
 /**
@@ -29,8 +29,6 @@ export class KMeansConfig extends CentroidConfig {
  *
  */
 export default class KMeans extends CentroidClustering<KMeansConfig> {
-    private convergence!: Convergence
-
     constructor(config?: KMeansConfig | undefined, distanceFunction?: DistanceMeasurement | undefined) {
         super(Object.assign(new KMeansConfig(), config))
         this.initializeDependencies(distanceFunction)
@@ -44,34 +42,28 @@ export default class KMeans extends CentroidClustering<KMeansConfig> {
         const { centroids, clusters } = config
 
         if (centroids.length === 0 && fitData) {
-            if (this.config.convergenceIterations > 0) {
-                this.convergence = new Convergence(this.config.convergenceIterations)
-            }
-            while (centroids.length < clusters) {
-                const selected: number[] = Random.randomChoice(fitData)
-                if (centroids.indexOf(selected) === -1) {
-                    centroids.push(ObjectUtils.deepClone(selected))
-                }
-                this.initialized = true
-            }
+            this.config.centroids = Random.shuffleArray(fitData)
+                .slice(0, clusters)
+                .map((item) => ObjectUtils.deepClone(item))
+
+            this.initialized = true
         }
 
         this.labels = this.predict(fitData)
 
         for (let i = 0; i < centroids.length; i++) {
-            const pointsBelongingToCentroid: number[][] = this.labels.reduce((memo: number[][], item, index) => {
-                if (item === i) {
-                    memo.push(this.fitData[index])
-                }
-                return memo
-            }, [])
-
-            centroids[i] = pointsBelongingToCentroid.length > 0 ? average(pointsBelongingToCentroid) : centroids[i]
+            const pointsBelongingToCentroid: number[][] = this.fitData.filter((val, index) => this.labels[index] === i)
+            centroids[i] = average(pointsBelongingToCentroid)
         }
 
         if (this.convergence) {
             this.convergence.addValue(centroids)
         }
+    }
+
+    reset(): void {
+        super.reset()
+        this.config.centroids.length = 0
     }
 
     /**

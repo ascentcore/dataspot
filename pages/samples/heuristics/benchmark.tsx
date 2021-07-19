@@ -108,7 +108,7 @@ function Representation({
         let doneMetaheuristic = false
         let metaheuristicValue = []
 
-        const pso = new PSO({ populationSize: 3 } as PSOConfig)
+        const pso = new PSO({ populationSize: 100 } as PSOConfig)
         const psoGenerator = pso.fitAsync(ff, [
             { min: domain[0], max: domain[1] },
             { min: domain[0], max: domain[1] }

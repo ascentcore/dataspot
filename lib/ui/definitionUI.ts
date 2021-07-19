@@ -1,7 +1,7 @@
 import ObjectUtils from '../common/objectUtils'
 import Serializable, { SerializableConfig } from '../common/serializable'
-import { FieldsDefinition, FieldDefinition } from '../metaheuristics/ga'
 import BaseComponent from './common/baseComponent'
+import { FieldsDefinition, FieldDefinition } from './common/fieldDefinition'
 import FormField from './forms/formField'
 import SelectionField from './forms/selectionField'
 import TextField from './forms/textField'

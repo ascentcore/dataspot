@@ -50,7 +50,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:53](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L53)
+[lib/utils/vectorUtils.ts:53](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L53)
 
 ___
 
@@ -68,7 +68,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:162](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L162)
+[lib/utils/vectorUtils.ts:162](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L162)
 
 ___
 
@@ -86,7 +86,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:154](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L154)
+[lib/utils/vectorUtils.ts:154](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L154)
 
 ___
 
@@ -105,7 +105,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:97](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L97)
+[lib/utils/vectorUtils.ts:97](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L97)
 
 ___
 
@@ -125,7 +125,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:12](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L12)
+[lib/utils/vectorUtils.ts:12](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L12)
 
 ___
 
@@ -143,7 +143,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:180](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L180)
+[lib/utils/vectorUtils.ts:180](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L180)
 
 ___
 
@@ -162,7 +162,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:29](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L29)
+[lib/utils/vectorUtils.ts:29](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L29)
 
 ___
 
@@ -178,7 +178,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:189](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L189)
+[lib/utils/vectorUtils.ts:189](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L189)
 
 ___
 
@@ -194,7 +194,7 @@ Name | Type |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:193](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L193)
+[lib/utils/vectorUtils.ts:193](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L193)
 
 ___
 
@@ -213,7 +213,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:82](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L82)
+[lib/utils/vectorUtils.ts:82](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L82)
 
 ___
 
@@ -231,7 +231,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:222](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L222)
+[lib/utils/vectorUtils.ts:222](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L222)
 
 ___
 
@@ -250,7 +250,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:111](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L111)
+[lib/utils/vectorUtils.ts:111](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L111)
 
 ___
 
@@ -269,7 +269,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:144](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L144)
+[lib/utils/vectorUtils.ts:144](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L144)
 
 ___
 
@@ -288,7 +288,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:133](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L133)
+[lib/utils/vectorUtils.ts:133](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L133)
 
 ___
 
@@ -307,7 +307,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:122](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L122)
+[lib/utils/vectorUtils.ts:122](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L122)
 
 ___
 
@@ -325,7 +325,7 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:201](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L201)
+[lib/utils/vectorUtils.ts:201](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L201)
 
 ___
 
@@ -344,7 +344,7 @@ Name | Type | Description |
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:67](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L67)
+[lib/utils/vectorUtils.ts:67](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L67)
 
 ___
 
@@ -362,4 +362,4 @@ Name | Type | Description |
 **Returns:** number
 
 {:.url-source-ref}
-[lib/utils/vectorUtils.ts:44](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/utils/vectorUtils.ts#L44)
+[lib/utils/vectorUtils.ts:44](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/utils/vectorUtils.ts#L44)

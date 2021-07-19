@@ -28,4 +28,4 @@ Name | Type |
 **Returns:** HTMLElement
 
 {:.url-source-ref}
-[lib/ui/container.ts:2](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/ui/container.ts#L2)
+[lib/ui/container.ts:2](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/ui/container.ts#L2)

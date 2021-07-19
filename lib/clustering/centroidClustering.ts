@@ -1,5 +1,6 @@
 import { EvolutionaryConfig } from '@ascentcore/dataspot/common/evolutionaryAlgorithm'
 import distances, { DistanceMeasurement } from '@ascentcore/dataspot/math/distances'
+import Convergence from '../common/convergence'
 import ClusteringAlgorithm from './clusteringBase'
 
 export class CentroidConfig extends EvolutionaryConfig {
@@ -10,6 +11,8 @@ export class CentroidConfig extends EvolutionaryConfig {
 
 export default abstract class CentroidClustering<T extends CentroidConfig> extends ClusteringAlgorithm<T> {
     protected distanceFunc!: Function
+
+    protected convergence!: Convergence
 
     constructor(config?: T | undefined, distanceFunction?: DistanceMeasurement | undefined) {
         super(Object.assign(new CentroidConfig(), config))
@@ -55,9 +58,16 @@ export default abstract class CentroidClustering<T extends CentroidConfig> exten
     initializeDependencies(distanceFunction?: DistanceMeasurement): void {
         const { distanceFn } = this.config
         this.distanceFunc = distanceFunction || distances[distanceFn]
-
+        const { convergenceIterations } = this.config
+        if (convergenceIterations > 0) {
+            this.convergence = new Convergence(convergenceIterations as number)
+        }
         if (!this.distanceFunc) {
             throw new Error('distance function not passed or not found')
         }
+    }
+
+    hadConverged(): boolean {
+        return this.convergence ? this.convergence.hadConverged() : false
     }
 }

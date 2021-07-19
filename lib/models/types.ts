@@ -8,6 +8,7 @@ export type FunctioDefinitionMesh = {
     xMax: number
     yMin: number
     yMax: number
+    stroke?: boolean
 }
 
 export type ThreeDPointScatter = { id?: number; x: number; y: number; z: number; r?: number }

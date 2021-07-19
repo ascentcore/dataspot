@@ -54,6 +54,7 @@ export default class Scatter extends SVGBaseVisualization {
             .select(`.${elemClass}`)
             .selectAll('circle')
             .data(data)
+            .join('circle')
             .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
             .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
             .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
@@ -64,22 +65,22 @@ export default class Scatter extends SVGBaseVisualization {
                         : palette(d.color)
                     : 'black'
             )
-            .attr('stroke', stroke === false ? undefined : '#000')
-            .attr('r', (d: TwoDPointScatter) => rx(d.r) || 1)
-            .enter()
-            .append('circle')
-            .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
-            .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
-            .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
-            .attr('fill', (d: TwoDPointScatter) =>
-                d.color !== undefined && d.color !== null
-                    ? typeof d.color === 'string'
-                        ? d.color
-                        : palette(d.color)
-                    : 'black'
-            )
-            .attr('stroke', (d: TwoDPointScatter) => d.stroke || '#000')
+            .attr('stroke', (d: TwoDPointScatter) => (!d.stroke ? 'undefined' : '#000'))
             .attr('r', (d: TwoDPointScatter) => d.fixedRadius || rx(d.r) || 1)
+        // .enter()
+        // .append('circle')
+        // .attr('data-id', (d: TwoDPointScatter) => (d.id !== undefined ? d.id : ''))
+        // .attr('cx', (d: TwoDPointScatter) => x(d.x) || 0)
+        // .attr('cy', (d: TwoDPointScatter) => y(d.y) || 0)
+        // .attr('fill', (d: TwoDPointScatter) =>
+        //     d.color !== undefined && d.color !== null
+        //         ? typeof d.color === 'string'
+        //             ? d.color
+        //             : palette(d.color)
+        //         : 'black'
+        // )
+        // .attr('stroke', (d: TwoDPointScatter) => d.stroke || '#000')
+        // .attr('r', (d: TwoDPointScatter) => d.fixedRadius || rx(d.r) || 1)
     }
 
     public setup(initialData?: TwoDPointScatter[]) {

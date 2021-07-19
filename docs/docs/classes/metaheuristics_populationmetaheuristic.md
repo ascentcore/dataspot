@@ -62,7 +62,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[constructor](../common_serializable#constructor)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L7)
+[lib/common/serializable.ts:7](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L7)
 
 ## Properties
 
@@ -71,28 +71,28 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[config](../common_serializable#config)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L8)
+[lib/common/serializable.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L8)
 
 ___
 
 • `Protected` **dimensions**: { max: number ; min: number  }[]
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:43](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L43)
+[lib/metaheuristics/populationMetaheuristic.ts:43](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L43)
 
 ___
 
 • `Protected` **fitnessFunction**: Function
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:41](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L41)
+[lib/metaheuristics/populationMetaheuristic.ts:41](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L41)
 
 ___
 
 • `Protected` **individuals**: [metaheuristics.Individual](../metaheuristics_individual)[]
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:39](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L39)
+[lib/metaheuristics/populationMetaheuristic.ts:39](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L39)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[iteration](../common_evolutionaryalgorithm#iteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/evolutionaryAlgorithm.ts#L8)
+[lib/common/evolutionaryAlgorithm.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/evolutionaryAlgorithm.ts#L8)
 
 ## Methods
 
@@ -111,7 +111,7 @@ ___
 **Returns:** boolean
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:45](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L45)
+[lib/metaheuristics/populationMetaheuristic.ts:45](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L45)
 
 ___
 
@@ -128,7 +128,7 @@ Name | Type |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:111](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L111)
+[lib/metaheuristics/populationMetaheuristic.ts:111](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L111)
 
 ___
 
@@ -145,7 +145,7 @@ Name | Type |
 **Returns:** Generator
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:98](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L98)
+[lib/metaheuristics/populationMetaheuristic.ts:98](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L98)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 **Returns:** number[]
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:126](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L126)
+[lib/metaheuristics/populationMetaheuristic.ts:126](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L126)
 
 ___
 
@@ -167,7 +167,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[getIteration](../common_evolutionaryalgorithm#getiteration)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/evolutionaryAlgorithm.ts#L14)
+[lib/common/evolutionaryAlgorithm.ts:14](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/evolutionaryAlgorithm.ts#L14)
 
 ___
 
@@ -185,7 +185,7 @@ Name | Type |
 *Inherited from [common.Serializable](../common_serializable).[loadState](../common_serializable#loadstate)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L14)
+[lib/common/serializable.ts:14](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L14)
 
 ___
 
@@ -201,7 +201,7 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:49](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L49)
+[lib/metaheuristics/populationMetaheuristic.ts:49](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L49)
 
 ___
 
@@ -211,7 +211,7 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:124](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L124)
+[lib/metaheuristics/populationMetaheuristic.ts:124](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L124)
 
 ___
 
@@ -223,7 +223,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[reset](../common_evolutionaryalgorithm#reset)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:18](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/evolutionaryAlgorithm.ts#L18)
+[lib/common/evolutionaryAlgorithm.ts:18](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/evolutionaryAlgorithm.ts#L18)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:73](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L73)
+[lib/metaheuristics/populationMetaheuristic.ts:73](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L73)
 
 ___
 
@@ -245,7 +245,7 @@ ___
 *Inherited from [common.Serializable](../common_serializable).[serialize](../common_serializable#serialize)*
 
 {:.url-source-ref}
-[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/serializable.ts#L10)
+[lib/common/serializable.ts:10](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/serializable.ts#L10)
 
 ___
 
@@ -257,7 +257,7 @@ ___
 *Inherited from [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[shouldStop](../common_evolutionaryalgorithm#shouldstop)*
 
 {:.url-source-ref}
-[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/common/evolutionaryAlgorithm.ts#L10)
+[lib/common/evolutionaryAlgorithm.ts:10](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/evolutionaryAlgorithm.ts#L10)
 
 ___
 
@@ -267,7 +267,7 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:51](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L51)
+[lib/metaheuristics/populationMetaheuristic.ts:51](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L51)
 
 ___
 
@@ -279,7 +279,7 @@ ___
 *Overrides [common.EvolutionaryAlgorithm](../common_evolutionaryalgorithm).[step](../common_evolutionaryalgorithm#step)*
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:96](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L96)
+[lib/metaheuristics/populationMetaheuristic.ts:96](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L96)
 
 ___
 
@@ -289,4 +289,4 @@ ___
 **Returns:** void
 
 {:.url-source-ref}
-[lib/metaheuristics/populationMetaheuristic.ts:55](https://github.com/ascentcore/dataspot/blob/e77cac2/lib/metaheuristics/populationMetaheuristic.ts#L55)
+[lib/metaheuristics/populationMetaheuristic.ts:55](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/metaheuristics/populationMetaheuristic.ts#L55)

@@ -54,6 +54,12 @@ export default function MyApp({ Component, pageProps }) {
                         <a href='#'>Clustering</a>
                         <ul className='nav'>
                             <li className='nav-item'>
+                                <a href='/samples/clustering/kmeans'>KMeans</a>
+                            </li>
+                            <li className='nav-item'>
+                                <a href='/samples/clustering/dbscan'>DBScan</a>
+                            </li>
+                            <li className='nav-item'>
                                 <a href='/samples/clustering/datasets'>Datasets</a>
                             </li>
                             <li className='nav-item'>
@@ -83,7 +89,7 @@ export default function MyApp({ Component, pageProps }) {
                         <ul className='nav'>
                             <li className='nav-item'>
                                 <a href='/samples/preprocessing/labelEncoder'>Label Encoder</a>
-                            </li>                           
+                            </li>
                         </ul>
                     </li>
                 </ul>
