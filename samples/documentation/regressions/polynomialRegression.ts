@@ -65,7 +65,7 @@ export default (async () => {
     let generator: Generator
 
     // Initialize the experiment runner wrapper
-    const wrapper = new StepAlgorithmWrapper(ref as HTMLElement, regression, () => {
+    const wrapper = new StepAlgorithmWrapper(ref as HTMLElement, regression, undefined, () => {
         if (regression.getIteration() === 0) {
             const [input, output, ds] = getDataset(regression.config.dataset as string)
             plot.dataUpdate(ds)

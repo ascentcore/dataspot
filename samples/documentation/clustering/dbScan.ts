@@ -44,7 +44,7 @@ export default (async () => {
         // }
         if (dbScan.getIteration() === 0) {
             const dataset: string = (dbScan.config.dataset as string) || 'blob'
-            ds = ClusteringDataset[dataset]()
+            ds = ClusteringDataset.getStaticProperty(dataset)()
             generator = dbScan.fitAsync(ds)
         }
 

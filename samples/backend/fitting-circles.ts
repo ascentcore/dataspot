@@ -1,11 +1,12 @@
 /* eslint-disable no-await-in-loop */
+import BoxedCircles from '@ascentcore/dataspot/datasets/problems/boxedCircles'
 import GA, { GAConfig } from '../../lib/metaheuristics/ga'
 import SVGVisualizationWrapper from '../../lib/visualizations/d3/svgvisualizationwrapper'
 import Scatter from '../../lib/visualizations/d3/scatter'
 import Lab from '../../lib/lab'
 import LinePlot from '../../lib/visualizations/d3/lineplot'
 import SVGMultipleVisualization from '../../lib/visualizations/d3/svgmultiple'
-import BoxedCircles from '@ascentcore/dataspot/datasets/problems/boxedCircles'
+
 ;(async () => {
     const lab = new Lab('metaheuristics')
     try {

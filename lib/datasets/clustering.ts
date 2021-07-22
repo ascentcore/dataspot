@@ -1,5 +1,9 @@
 import Random from '../math/random'
 
+interface Indexable {
+    [key: string]: any
+}
+
 /**
  * The clustering datasets are a set of synthetic 2D data to be used
  * for benchmarking clustering algorithms. The dataset is intended to grow
@@ -11,6 +15,10 @@ import Random from '../math/random'
  */
 export default class Clustering {
     public static list = ['arc', 'blob', 'concentricRings', 'towers', 'fillSpace', 'noisyWithBlob', 'potato']
+
+    public static getStaticProperty(propertyName: string): Function {
+        return (Clustering as Indexable)[propertyName]
+    }
 
     /**
      * Generates two interleaving arc shape like clusters.

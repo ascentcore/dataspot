@@ -44,7 +44,7 @@ export default (async () => {
     let labelEncoder: LabelEncoder
 
     // Initialize the experiment runner wrapper
-    const wrapper = new StepAlgorithmWrapper(ref as HTMLElement, regression, () => {
+    const wrapper = new StepAlgorithmWrapper(ref as HTMLElement, regression, undefined, () => {
         if (regression.getIteration() === 0) {
             const input: number[][] = []
             const output: string[] = []

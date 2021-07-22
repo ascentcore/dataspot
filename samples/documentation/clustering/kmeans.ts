@@ -43,7 +43,7 @@ export default (async () => {
         }
         if (kmeans.getIteration() === 0) {
             const dataset: string = (kmeans.config.dataset as string) || 'blob'
-            ds = ClusteringDataset[dataset]()
+            ds = ClusteringDataset.getStaticProperty(dataset)()
             generator = kmeans.fitAsync(ds)
         }
 
