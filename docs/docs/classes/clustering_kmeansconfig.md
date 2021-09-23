@@ -29,21 +29,21 @@ has_children: false
 *Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[centroids](../clustering_centroidconfig#centroids)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:6](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/clustering/centroidClustering.ts#L6)
+[lib/clustering/centroidClustering.ts:7](https://github.com/ascentcore/dataspot/blob/236fcea/lib/clustering/centroidClustering.ts#L7)
 
 ___
 
 •  **clusters**: number = 8
 
 {:.url-source-ref}
-[lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/clustering/kMeans.ts#L9)
+[lib/clustering/kMeans.ts:9](https://github.com/ascentcore/dataspot/blob/236fcea/lib/clustering/kMeans.ts#L9)
 
 ___
 
 •  **convergenceIterations**: number = 5
 
 {:.url-source-ref}
-[lib/clustering/kMeans.ts:14](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/clustering/kMeans.ts#L14)
+[lib/clustering/kMeans.ts:14](https://github.com/ascentcore/dataspot/blob/236fcea/lib/clustering/kMeans.ts#L14)
 
 Kmeans initial convergence iterations
 
@@ -54,7 +54,7 @@ ___
 *Inherited from [clustering.CentroidConfig](../clustering_centroidconfig).[distanceFn](../clustering_centroidconfig#distancefn)*
 
 {:.url-source-ref}
-[lib/clustering/centroidClustering.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/clustering/centroidClustering.ts#L8)
+[lib/clustering/centroidClustering.ts:9](https://github.com/ascentcore/dataspot/blob/236fcea/lib/clustering/centroidClustering.ts#L9)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 *Overrides [common.EvolutionaryConfig](../common_evolutionaryconfig).[iterations](../common_evolutionaryconfig#iterations)*
 
 {:.url-source-ref}
-[lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/clustering/kMeans.ts#L11)
+[lib/clustering/kMeans.ts:11](https://github.com/ascentcore/dataspot/blob/236fcea/lib/clustering/kMeans.ts#L11)

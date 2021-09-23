@@ -39,21 +39,21 @@ Name | Type |
 **Returns:** [ui.visualization.ScatterPlot](../ui_visualization_scatterplot)
 
 {:.url-source-ref}
-[lib/ui/visualization/scatterPlot.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/ui/visualization/scatterPlot.ts#L8)
+[lib/ui/visualization/scatterPlot.ts:8](https://github.com/ascentcore/dataspot/blob/236fcea/lib/ui/visualization/scatterPlot.ts#L8)
 
 ## Properties
 
 • `Private` **composition**: [visualizations.d3.SVGBaseVisualization](../visualizations_d3_svgbasevisualization)[]
 
 {:.url-source-ref}
-[lib/ui/visualization/scatterPlot.ts:10](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/ui/visualization/scatterPlot.ts#L10)
+[lib/ui/visualization/scatterPlot.ts:10](https://github.com/ascentcore/dataspot/blob/236fcea/lib/ui/visualization/scatterPlot.ts#L10)
 
 ___
 
 • `Private` **functionPlot**: [visualizations.d3.SVGMultipleVisualization](../visualizations_d3_svgmultiplevisualization)
 
 {:.url-source-ref}
-[lib/ui/visualization/scatterPlot.ts:8](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/ui/visualization/scatterPlot.ts#L8)
+[lib/ui/visualization/scatterPlot.ts:8](https://github.com/ascentcore/dataspot/blob/236fcea/lib/ui/visualization/scatterPlot.ts#L8)
 
 ## Methods
 
@@ -69,4 +69,4 @@ Name | Type |
 **Returns:** void
 
 {:.url-source-ref}
-[lib/ui/visualization/scatterPlot.ts:18](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/ui/visualization/scatterPlot.ts#L18)
+[lib/ui/visualization/scatterPlot.ts:18](https://github.com/ascentcore/dataspot/blob/236fcea/lib/ui/visualization/scatterPlot.ts#L18)

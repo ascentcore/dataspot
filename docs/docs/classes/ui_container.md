@@ -17,15 +17,16 @@ has_children: false
 ## Methods
 
 {:.method-highlight}
-▸ `Static`**getRootContainer**(`docRef?`: undefined \| string): HTMLElement
+▸ `Static`**getRootContainer**(`docRef?`: undefined \| string, `experimentId?`: undefined \| string): HTMLElement
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
 `docRef?` | undefined \| string |
+`experimentId?` | undefined \| string |
 
 **Returns:** HTMLElement
 
 {:.url-source-ref}
-[lib/ui/container.ts:2](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/ui/container.ts#L2)
+[lib/ui/container.ts:4](https://github.com/ascentcore/dataspot/blob/236fcea/lib/ui/container.ts#L4)

@@ -34,4 +34,4 @@ Name | Type |
 **Returns:** T
 
 {:.url-source-ref}
-[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/common/objectUtils.ts#L6)
+[lib/common/objectUtils.ts:6](https://github.com/ascentcore/dataspot/blob/236fcea/lib/common/objectUtils.ts#L6)

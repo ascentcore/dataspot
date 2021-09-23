@@ -1,12 +1,12 @@
 ---
 layout: default
-title: clustering
+title: Clustering
 parent: datasets
 grand_parent: Dataspot
 has_children: false
 ---
 
-# clustering
+# Clustering
 
 The clustering datasets are a set of synthetic 2D data to be used
 for benchmarking clustering algorithms. The dataset is intended to grow
@@ -24,15 +24,27 @@ Running sample for the current set of clustering datasets:
 
 ## Index
 
+| Properties |
+|-----------|
+| [list](#list) |
+
 | Methods |
 |-----------|
 | [arc](#arc) |
 | [blob](#blob) |
 | [concentricRings](#concentricrings) |
 | [fillSpace](#fillspace) |
+| [getStaticProperty](#getstaticproperty) |
 | [noisyWithBlob](#noisywithblob) |
 | [potato](#potato) |
 | [towers](#towers) |
+
+## Properties
+
+▪ `Static` **list**: string[] = ['arc', 'blob', 'concentricRings', 'towers', 'fillSpace', 'noisyWithBlob', 'potato']
+
+{:.url-source-ref}
+[lib/datasets/clustering.ts:17](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L17)
 
 ## Methods
 
@@ -51,7 +63,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:18](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L18)
+[lib/datasets/clustering.ts:28](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L28)
 
 ___
 
@@ -70,7 +82,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:46](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L46)
+[lib/datasets/clustering.ts:56](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L56)
 
 ___
 
@@ -90,7 +102,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:71](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L71)
+[lib/datasets/clustering.ts:81](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L81)
 
 ___
 
@@ -109,7 +121,23 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:117](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L117)
+[lib/datasets/clustering.ts:127](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L127)
+
+___
+
+{:.method-highlight}
+▸ `Static`**getStaticProperty**(`propertyName`: string): Function
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`propertyName` | string |
+
+**Returns:** Function
+
+{:.url-source-ref}
+[lib/datasets/clustering.ts:19](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L19)
 
 ___
 
@@ -128,7 +156,7 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:133](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L133)
+[lib/datasets/clustering.ts:143](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L143)
 
 ___
 
@@ -141,7 +169,7 @@ See "Potato" representation from the running page sample
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:155](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L155)
+[lib/datasets/clustering.ts:165](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L165)
 
 ___
 
@@ -161,4 +189,4 @@ Name | Type | Default value | Description |
 **Returns:** number[][]
 
 {:.url-source-ref}
-[lib/datasets/clustering.ts:92](https://github.com/ascentcore/dataspot/blob/aac35bc/lib/datasets/clustering.ts#L92)
+[lib/datasets/clustering.ts:102](https://github.com/ascentcore/dataspot/blob/236fcea/lib/datasets/clustering.ts#L102)
